@@ -1,0 +1,39 @@
+{
+  "project": "UNESCO XI + AI Website",
+  "version": "1.1.0-design-content-checkpoint",
+  "generated": "2026-10-07",
+  "frontend": "Astro 7.3.0 + TypeScript 5.9.3",
+  "backend": ".NET 10 LTS",
+  "database": "SQL Server",
+  "status": "DESIGN_CONTENT_SOURCE_COMPLETED_STATIC_VALIDATION_PASS",
+  "webPageFiles": 44,
+  "visualAssetsSvg": 5,
+  "priorityPagesRedesigned": [
+    "home",
+    "unesco-xi",
+    "unesco-xi-ai",
+    "ai-accounting",
+    "ai-invoice",
+    "ai-bank",
+    "cost-accounting",
+    "accounting-service",
+    "pricing",
+    "download",
+    "guides",
+    "knowledge",
+    "video",
+    "about"
+  ],
+  "staticValidation": "PASS",
+  "svgXmlValidation": "PASS",
+  "productionPlaceholderGate": "BLOCKED_BY_DESIGN",
+  "runtimeBuild": "NOT_RUN_ENVIRONMENT",
+  "knownGates": [
+    "official company identity placeholders",
+    "official domain",
+    "approved legal copy",
+    "official installer+SHA256",
+    ".NET SDK runtime build/UAT",
+    "Node package install/build in network-enabled environment"
+  ]
+}

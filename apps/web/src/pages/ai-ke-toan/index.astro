@@ -1,0 +1,15 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+const cards = [
+  ['🧾','AI Hóa đơn điện tử','Đọc trường dữ liệu và dòng hàng, hỗ trợ nhận dạng đối tượng và dữ liệu kế toán.','/ai-ke-toan/ai-hoa-don/'],
+  ['🏦','AI Sổ phụ ngân hàng','Chuẩn hóa giao dịch, truy vết đối tượng, đối chiếu và gợi ý tài khoản.','/ai-ke-toan/ai-so-phu-ngan-hang/'],
+  ['✨','AI Gợi ý hạch toán','Tạo đề xuất dựa trên dữ liệu hiện tại, lịch sử nghiệp vụ và quy tắc doanh nghiệp.','/ai-ke-toan/ai-goi-y-hach-toan/'],
+  ['🔎','AI Mã khách hàng/NCC','Ưu tiên đối tượng đã có và tạo đề xuất mới khi chưa đủ dữ liệu đối chiếu.','/ai-ke-toan/ai-ma-khach-hang/'],
+  ['🖼️','AI OCR','Hỗ trợ tài liệu PDF scan và hình ảnh theo phạm vi từng phiên bản.','/ai-ke-toan/ai-ocr/'],
+  ['📊','AI Giá thành','Hỗ trợ định mức, đối chiếu chi phí và cảnh báo chênh lệch cần kiểm tra.','/nghiep-vu/gia-thanh/']
+];
+---
+<ContentLayout title="AI kế toán" description="AI hỗ trợ đọc dữ liệu, đối chiếu và tạo gợi ý ngay trong quy trình kế toán — để người dùng kiểm tra trước khi ghi nhận." eyebrow="UNESCO AI">
+<section class="section"><div class="container"><div class="section-head"><div><span class="eyebrow">Một lớp hỗ trợ xuyên suốt</span><h2>AI không đứng riêng bên ngoài phần mềm kế toán</h2></div><p>Mỗi nhóm AI đều gắn với một bài toán nghiệp vụ cụ thể và có điểm kiểm soát để kế toán xác nhận kết quả.</p></div><div class="grid grid-3">{cards.map(c=><a class="card feature-card" href={c[3]}><div class="icon">{c[0]}</div><h3>{c[1]}</h3><p class="muted">{c[2]}</p><strong class="link-arrow">Xem chi tiết</strong></a>)}</div></div></section>
+<section class="section surface-soft"><div class="container split"><div class="visual-card"><img src="/visuals/hero-ai-accounting.svg" width="1440" height="940" alt="Trung tâm AI kế toán UNESCO XI + AI" loading="lazy"/></div><div><span class="eyebrow">Nguyên tắc AI</span><h2>Đề xuất phải có dữ liệu tham chiếu và điểm duyệt</h2><div class="feature-list"><div class="feature-row"><span class="check">1</span><div><strong>Dữ liệu gốc</strong><span>Giữ thông tin nguồn để người dùng có thể đối chiếu.</span></div></div><div class="feature-row"><span class="check">2</span><div><strong>Candidate & mức tin cậy</strong><span>Hiển thị gợi ý theo thứ tự ưu tiên thay vì ẩn quyết định.</span></div></div><div class="feature-row"><span class="check">3</span><div><strong>Kế toán duyệt</strong><span>Quyết định nghiệp vụ thuộc về người sử dụng tại các điểm cần kiểm soát.</span></div></div></div><a class="btn btn-primary" href="/lien-he/#demo">XEM DEMO AI KẾ TOÁN</a></div></div></section>
+</ContentLayout>

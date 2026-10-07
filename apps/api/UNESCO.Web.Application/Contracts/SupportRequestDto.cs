@@ -1,0 +1,3 @@
+using System.ComponentModel.DataAnnotations;
+namespace UNESCO.Web.Application.Contracts;
+public sealed class SupportRequestDto { [Required,MaxLength(120)] public string FullName {get;set;}=""; [MaxLength(200)] public string? CompanyName {get;set;} [Required,MaxLength(30)] public string Phone {get;set;}=""; [EmailAddress,MaxLength(200)] public string? Email {get;set;} [Required,MaxLength(60)] public string ProductCode {get;set;}="UNESCO_XI_AI"; [MaxLength(40)] public string? Version {get;set;} [Required,MaxLength(200)] public string Subject {get;set;}=""; [Required,MaxLength(4000)] public string Description {get;set;}=""; }

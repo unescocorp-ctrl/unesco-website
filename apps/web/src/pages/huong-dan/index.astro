@@ -1,0 +1,8 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+const guides=[['🚀','Bắt đầu sử dụng','Cài đặt, cấu hình ban đầu và các bước cần kiểm tra trước khi nhập liệu.'],['🧾','Hóa đơn & mua bán','Quy trình nhập, phân tích và kiểm tra dữ liệu mua vào – bán ra.'],['🏦','Tiền & ngân hàng','Đọc sổ phụ, xử lý giao dịch và đối chiếu công nợ.'],['🏭','Giá thành','Định mức, tập hợp chi phí, phân bổ và kiểm tra dở dang.'],['📊','Sổ sách & báo cáo','Kiểm tra dữ liệu trước khi lập sổ và báo cáo.'],['🛠️','Khắc phục lỗi','Phiên bản, log, dữ liệu cần chuẩn bị khi gửi yêu cầu hỗ trợ.']];
+---
+<ContentLayout title="Hướng dẫn sử dụng" description="Trung tâm hướng dẫn được tổ chức theo nghiệp vụ và phiên bản, giúp người dùng tìm đúng quy trình thay vì đọc một tài liệu dài." eyebrow="Help Center">
+<section class="section"><div class="container"><div class="grid grid-3">{guides.map(g=><div class="card"><div class="icon">{g[0]}</div><h3>{g[1]}</h3><p class="muted">{g[2]}</p><span class="caption">Nội dung chi tiết sẽ được gắn theo phiên bản tài liệu đã xác minh.</span></div>)}</div></div></section>
+<section class="section surface-soft"><div class="container"><div class="quote-band"><div><h2>Cần đúng tài liệu cho đúng phiên bản?</h2><p>Kiểm tra Release Notes và Download Center trước để xác định phiên bản đang dùng, sau đó xem hướng dẫn tương ứng.</p></div><div class="actions"><a class="btn btn-primary" href="/release-notes/">RELEASE NOTES</a><a class="btn btn-secondary" href="/download/">DOWNLOAD CENTER</a></div></div></div></section>
+</ContentLayout>

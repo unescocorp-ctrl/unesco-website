@@ -1,0 +1,8 @@
+---
+import ContentLayout from '../../../layouts/ContentLayout.astro';
+const cards = [["Dữ liệu thống nhất", "Hạn chế phân tán giữa nhiều tệp xử lý.", "#"], ["Kiểm soát nghiệp vụ", "Theo dõi dữ liệu cần duyệt và trạng thái xử lý.", "#"], ["Báo cáo", "Từ dữ liệu đã kiểm tra đến sổ sách và báo cáo.", "#"]];
+---
+<ContentLayout title="Giải pháp cho doanh nghiệp" description="Hợp nhất chứng từ, ngân hàng, công nợ, kho, giá thành và báo cáo trong quy trình kế toán.">
+<section class="section"><div class="container"><div class="grid grid-3">{cards.map(c=><a class="card" href={c[2]}><h3>{c[0]}</h3><p class="muted">{c[1]}</p><strong style="color:var(--primary)">Xem thêm →</strong></a>)}</div></div></section>
+<section class="section surface"><div class="container"><div class="notice"><strong>Nguyên tắc kiểm soát:</strong> nội dung website chỉ mô tả tính năng đã được công bố theo phiên bản; AI tạo phân tích/gợi ý và người dùng kiểm tra trước các nghiệp vụ cần phê duyệt.</div><div class="actions" style="margin-top:24px"><a class="btn btn-primary" href="/lien-he/#demo">ĐĂNG KÝ XEM DEMO</a><a class="btn btn-secondary" href="/lien-he/">NHẬN TƯ VẤN</a></div></div></section>
+</ContentLayout>

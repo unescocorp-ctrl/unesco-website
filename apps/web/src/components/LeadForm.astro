@@ -1,0 +1,26 @@
+---
+const { kind='lead', heading='Đăng ký tư vấn' } = Astro.props;
+---
+<div class="card" id={kind==='demo'?'demo':undefined}>
+  <h2 style="font-size:2rem">{heading}</h2><p class="muted">Chọn đúng nhu cầu để bộ phận phụ trách chuẩn bị nội dung tư vấn hoặc demo phù hợp, tránh mất thời gian của bạn.</p>
+  <form id={`lead-${kind}`} data-kind={kind}>
+    <div class="form-grid">
+      <div class="field"><label for={`${kind}-name`}>Họ tên *</label><input id={`${kind}-name`} name="fullName" required maxlength="120" autocomplete="name"/></div>
+      <div class="field"><label for={`${kind}-company`}>Doanh nghiệp</label><input id={`${kind}-company`} name="companyName" maxlength="200" autocomplete="organization"/></div>
+      <div class="field"><label for={`${kind}-phone`}>Điện thoại *</label><input id={`${kind}-phone`} name="phone" required maxlength="30" autocomplete="tel" inputmode="tel"/></div>
+      <div class="field"><label for={`${kind}-email`}>Email</label><input id={`${kind}-email`} name="email" type="email" maxlength="200" autocomplete="email"/></div>
+      <div class="field full"><label for={`${kind}-interest`}>Nhu cầu *</label><select id={`${kind}-interest`} name="interestCode" required><option value="">Chọn nhu cầu</option><option value="UNESCO_XI_AI">UNESCO XI + AI</option><option value="KE_TOAN_DICH_VU">Giải pháp kế toán dịch vụ</option><option value="AI_HOA_DON">AI hóa đơn điện tử</option><option value="AI_SO_PHU">AI sổ phụ ngân hàng</option><option value="GIA_THANH">Tính giá thành</option><option value="SAN_XUAT">Giải pháp sản xuất</option><option value="XAY_DUNG">Giải pháp xây dựng</option><option value="KHAC">Nhu cầu khác</option></select></div>
+      <div class="field full"><label for={`${kind}-message`}>Ghi chú</label><textarea id={`${kind}-message`} name="message" maxlength="2000"></textarea></div>
+      <div class="field full"><label><input name="consent" type="checkbox" required/> Tôi đồng ý để doanh nghiệp sử dụng thông tin đã cung cấp nhằm liên hệ và xử lý yêu cầu theo Chính sách Bảo vệ dữ liệu cá nhân.</label></div>
+    </div>
+    <div class="actions" style="margin-top:18px"><button class="btn btn-primary" type="submit">GỬI YÊU CẦU</button></div><div class="form-status" role="status" aria-live="polite"></div>
+  </form>
+</div>
+<script is:inline define:vars={{ apiBase: import.meta.env.PUBLIC_API_URL || 'http://localhost:5000/api/v1' }}>
+  document.querySelectorAll('form[data-kind]').forEach(form=>form.addEventListener('submit',async e=>{
+    e.preventDefault(); const f=e.currentTarget, s=f.querySelector('.form-status'); s.textContent='Đang gửi...';
+    const data=Object.fromEntries(new FormData(f).entries()); data.source='website'; data.landingPage=location.pathname; data.requestType=f.dataset.kind;
+    try{const r=await fetch(`${apiBase}/leads`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});if(!r.ok) throw new Error('request_failed');s.textContent='Đã tiếp nhận yêu cầu. Cảm ơn bạn.';f.reset();}
+    catch{ s.textContent='Chưa gửi được yêu cầu. Vui lòng sử dụng thông tin liên hệ công bố trên website.'; }
+  }));
+</script>

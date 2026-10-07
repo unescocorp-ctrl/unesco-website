@@ -1,0 +1,2 @@
+namespace UNESCO.Web.Domain.Entities;
+public sealed class Product { public Guid Id {get;set;}=Guid.NewGuid(); public string Code {get;set;}=""; public string Name {get;set;}=""; public string Slug {get;set;}=""; public string? ShortDescription {get;set;} public string Status {get;set;}="ACTIVE"; public int DisplayOrder {get;set;} public DateTimeOffset CreatedAt {get;set;}=DateTimeOffset.UtcNow; public DateTimeOffset UpdatedAt {get;set;}=DateTimeOffset.UtcNow; }

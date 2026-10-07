@@ -1,0 +1,4 @@
+namespace UNESCO.Web.Domain.Entities;
+public sealed class WebLead {
+ public Guid Id {get;set;}=Guid.NewGuid(); public string LeadCode {get;set;}=""; public string FullName {get;set;}=""; public string? CompanyName {get;set;} public string Phone {get;set;}=""; public string? Email {get;set;} public string? Province {get;set;} public string InterestCode {get;set;}=""; public string? Message {get;set;} public string Source {get;set;}="website"; public string? LandingPage {get;set;} public string? UtmSource {get;set;} public string? UtmMedium {get;set;} public string? UtmCampaign {get;set;} public DateTimeOffset ConsentAt {get;set;}=DateTimeOffset.UtcNow; public string? IpHash {get;set;} public string? UserAgent {get;set;} public string Status {get;set;}="NEW"; public string? AssignedTo {get;set;} public DateTimeOffset CreatedAt {get;set;}=DateTimeOffset.UtcNow; public DateTimeOffset UpdatedAt {get;set;}=DateTimeOffset.UtcNow;
+}

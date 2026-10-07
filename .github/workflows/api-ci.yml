@@ -1,0 +1,18 @@
+name: api-ci
+on:
+  pull_request:
+    paths: ['apps/api/**', '.github/workflows/api-ci.yml']
+  push:
+    branches: [main, develop]
+    paths: ['apps/api/**', '.github/workflows/api-ci.yml']
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - run: dotnet restore apps/api/UNESCO.Web.sln
+      - run: dotnet build apps/api/UNESCO.Web.sln -c Release --no-restore
+      - run: dotnet test apps/api/UNESCO.Web.sln -c Release --no-build --verbosity normal

@@ -1,0 +1,7 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+const cats=[['📘','Kế toán','Nghiệp vụ, quy trình kiểm soát số liệu và hướng dẫn thực hành.'],['🧾','Hóa đơn điện tử','Đọc dữ liệu, kiểm tra hóa đơn và các tình huống nghiệp vụ liên quan.'],['🏦','Ngân hàng','Sổ phụ, đối chiếu giao dịch, công nợ và xử lý nội dung chuyển khoản.'],['🏭','Giá thành','Sản xuất, xây dựng, định mức, phân bổ và dở dang.'],['🤖','AI kế toán','Cách AI phân tích, mức tin cậy và nguyên tắc người dùng phê duyệt.'],['📰','Cập nhật sản phẩm','Release notes, thay đổi phiên bản và hướng dẫn nâng cấp.']];
+---
+<ContentLayout title="Trung tâm kiến thức kế toán" description="Nội dung theo chủ đề kế toán, hóa đơn, ngân hàng, giá thành và AI kế toán; ưu tiên bài viết có nguồn và ngày cập nhật rõ ràng." eyebrow="Knowledge Hub">
+<section class="section"><div class="container"><div class="grid grid-3">{cats.map(c=><div class="card"><div class="icon">{c[0]}</div><h3>{c[1]}</h3><p class="muted">{c[2]}</p></div>)}</div><div class="notice" style="margin-top:28px"><strong>Chuẩn biên tập:</strong> bài viết pháp lý/thuế phải ghi ngày cập nhật và nguồn tham chiếu; không dùng nội dung cũ như kết luận cho quy định mới.</div></div></section>
+</ContentLayout>

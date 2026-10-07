@@ -1,0 +1,22 @@
+name: security
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '17 2 * * 1'
+jobs:
+  repository-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reject dangerous tracked file types
+        shell: bash
+        run: |
+          set -e
+          bad=$(git ls-files | grep -E '\.(pfx|p12|pem|key|bak|mdf|ldf|mdb|accdb)$' || true)
+          if [ -n "$bad" ]; then echo "$bad"; exit 1; fi
+      - name: Reject obvious private key markers
+        shell: bash
+        run: |
+          ! git grep -n -E 'BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY' -- . ':!docs/**'

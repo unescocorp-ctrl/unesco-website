@@ -1,0 +1,28 @@
+---
+import { mainNav } from '../data/navigation';
+---
+<div class="topbar">UNESCO XI + AI · Hóa đơn · Sổ phụ · Giá thành · Báo cáo kế toán</div>
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="/" aria-label="UNESCO XI + AI - Trang chủ">
+      <span class="brand-mark">U</span>
+      <span class="brand-copy"><span>UNESCO XI + AI</span><small>ACCOUNTING SOFTWARE</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Điều hướng chính">
+      {mainNav.map(item => <a href={item.href}>{item.label}</a>)}
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-secondary" href="/download/">Tải phần mềm</a>
+      <a class="btn btn-primary" href="/lien-he/#demo">Xem demo</a>
+      <button class="menu-btn" id="menuButton" type="button" aria-label="Mở menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+  <div class="container mobile-panel" id="mobilePanel">
+    {mainNav.map(item => <a href={item.href}>{item.label}</a>)}
+    <a href="/lien-he/#demo"><strong>Đăng ký xem demo</strong></a>
+  </div>
+</header>
+<script is:inline>
+  const b=document.getElementById('menuButton'),p=document.getElementById('mobilePanel');
+  b?.addEventListener('click',()=>{const open=p?.classList.toggle('open')??false;b.setAttribute('aria-expanded',String(open));b.textContent=open?'✕':'☰';});
+</script>

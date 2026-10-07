@@ -1,0 +1,5 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import { currentRelease as r } from '../../data/releases';
+---
+<ContentLayout title="Release Notes" description="Lịch sử phiên bản và thay đổi của UNESCO XI + AI."><section class="section"><div class="container"><article class="card"><span class="tag">{r.productCode}</span><h2 style="font-size:2rem;margin-top:14px">{r.version}</h2><p class="muted">{r.releaseDate}</p><ul>{r.notes.map(n=><li>{n}</li>)}</ul></article></div></section></ContentLayout>

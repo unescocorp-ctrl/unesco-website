@@ -1,0 +1,21 @@
+---
+import { site } from '../config/site.config';
+const y = new Date().getFullYear();
+const safe = (v:string) => !v.includes('{{') ? v : '';
+---
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand"><span class="brand-mark">U</span><span class="brand-copy"><span>UNESCO XI + AI</span><small>ACCOUNTING SOFTWARE</small></span></div>
+        <p>Phần mềm kế toán ứng dụng AI hỗ trợ xử lý hóa đơn, sổ phụ ngân hàng, gợi ý hạch toán, giá thành và lập sổ sách báo cáo.</p>
+        {safe(site.company.legalName) && <small>{site.company.legalName}<br/>{safe(site.company.contactAddress)}</small>}
+      </div>
+      <div><h3>Sản phẩm</h3><a href="/san-pham/unesco-xi/">UNESCO XI</a><a href="/san-pham/unesco-xi-ai/">UNESCO XI + AI</a><a href="/ai-ke-toan/">AI kế toán</a><a href="/bang-gia/">Bảng giá</a><a href="/download/">Download</a></div>
+      <div><h3>Giải pháp</h3><a href="/giai-phap/ke-toan-dich-vu/">Kế toán dịch vụ</a><a href="/giai-phap/san-xuat/">Sản xuất</a><a href="/giai-phap/xay-dung/">Xây dựng</a><a href="/giai-phap/thuong-mai-dien-tu/">TMĐT</a></div>
+      <div><h3>Tài nguyên</h3><a href="/huong-dan/">Hướng dẫn</a><a href="/kien-thuc/">Kiến thức</a><a href="/video/">Video</a><a href="/faq/">FAQ</a><a href="/release-notes/">Release Notes</a></div>
+      <div><h3>Pháp lý & hỗ trợ</h3><a href="/ban-quyen/">Bản quyền</a><a href="/legal/privacy/">Quyền riêng tư</a><a href="/legal/data-protection/">Bảo vệ dữ liệu</a><a href="/legal/terms/">Điều khoản</a><a href="/ho-tro/">Gửi yêu cầu hỗ trợ</a></div>
+    </div>
+    <div class="footer-bottom"><small>© {y} {safe(site.company.legalName) || 'UNESCO XI + AI'}. All rights reserved.{safe(site.company.taxCode) && <> · MST: {site.company.taxCode}</>}</small></div>
+  </div>
+</footer>

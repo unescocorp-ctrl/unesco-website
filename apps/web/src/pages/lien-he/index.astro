@@ -1,0 +1,6 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import LeadForm from '../../components/LeadForm.astro';
+import { site } from '../../config/site.config';
+---
+<ContentLayout title="Liên hệ & Đăng ký demo" description="Gửi yêu cầu tư vấn, xem demo hoặc yêu cầu báo giá UNESCO XI + AI."><section class="section"><div class="container grid grid-2"><div><span class="eyebrow">Thông tin liên hệ</span><h2>Trao đổi trực tiếp với bộ phận phụ trách</h2><div class="card"><p><strong>Đơn vị:</strong> {site.company.legalName}</p><p><strong>Điện thoại:</strong> {site.company.phone}</p><p><strong>Di động/Zalo:</strong> {site.company.mobile} / {site.company.zalo}</p><p><strong>Email:</strong> {site.company.email}</p><p><strong>Địa chỉ:</strong> {site.company.contactAddress}</p></div><div class="notice" style="margin-top:18px">Thông tin placeholder phải được thay bằng dữ liệu pháp nhân chính thức trước production.</div></div><LeadForm kind="demo" heading="Đăng ký xem demo"/></div></section></ContentLayout>

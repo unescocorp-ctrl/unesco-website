@@ -1,0 +1,8 @@
+---
+import ContentLayout from '../../../layouts/ContentLayout.astro';
+const cards = [["Nhiều giao dịch", "Thiết kế cho khối lượng phát sinh lớn.", "#"], ["Đối soát", "Hỗ trợ tổng hợp doanh thu và luồng tiền.", "#"], ["Không tuyên bố tích hợp giả", "Chỉ công bố connector trực tiếp khi đã có tích hợp được kiểm thử.", "#"]];
+---
+<ContentLayout title="Giải pháp kế toán cho thương mại điện tử" description="Hỗ trợ doanh nghiệp có nhiều hóa đơn, nhiều giao dịch và nhu cầu đối soát thường xuyên.">
+<section class="section"><div class="container"><div class="grid grid-3">{cards.map(c=><a class="card" href={c[2]}><h3>{c[0]}</h3><p class="muted">{c[1]}</p><strong style="color:var(--primary)">Xem thêm →</strong></a>)}</div></div></section>
+<section class="section surface"><div class="container"><div class="notice"><strong>Nguyên tắc kiểm soát:</strong> nội dung website chỉ mô tả tính năng đã được công bố theo phiên bản; AI tạo phân tích/gợi ý và người dùng kiểm tra trước các nghiệp vụ cần phê duyệt.</div><div class="actions" style="margin-top:24px"><a class="btn btn-primary" href="/lien-he/#demo">ĐĂNG KÝ XEM DEMO</a><a class="btn btn-secondary" href="/lien-he/">NHẬN TƯ VẤN</a></div></div></section>
+</ContentLayout>

@@ -1,0 +1,38 @@
+# Node
+node_modules/
+dist/
+.astro/
+
+# .NET
+bin/
+obj/
+.vs/
+*.user
+*.suo
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+appsettings.Production.json
+*.pfx
+*.p12
+*.key
+*.pem
+
+# DB/backup/customer data
+*.bak
+*.mdf
+*.ldf
+*.mdb
+*.accdb
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Build artifacts
+artifacts/
+*.zip
