@@ -1,0 +1,42 @@
+# Deploy lên Cloudflare Pages — CHỈ chạy thủ công (Actions → website-deploy-cloudflare → Run workflow).
+# Cần: secrets CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID và variable CLOUDFLARE_PAGES_PROJECT.
+# (Trước đây workflow này tự chạy mỗi lần push main và luôn báo lỗi khi chưa có secrets.)
+name: website-deploy-cloudflare
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v7
+      - name: Check Cloudflare configuration
+        env:
+          CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CF_ACCOUNT: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CF_PROJECT: ${{ vars.CLOUDFLARE_PAGES_PROJECT }}
+        run: |
+          if [ -z "$CF_TOKEN" ] || [ -z "$CF_ACCOUNT" ] || [ -z "$CF_PROJECT" ]; then
+            echo "::error::Thiếu CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID (secrets) hoặc CLOUDFLARE_PAGES_PROJECT (variable)."
+            exit 1
+          fi
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - name: Install and build website
+        working-directory: apps/web
+        env:
+          PUBLIC_SITE_URL: ${{ vars.PUBLIC_SITE_URL }}
+          PUBLIC_API_URL: ${{ vars.PUBLIC_API_URL }}
+        run: |
+          npm install --no-audit --no-fund
+          npm run build
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy apps/web/dist --project-name=${{ vars.CLOUDFLARE_PAGES_PROJECT }}

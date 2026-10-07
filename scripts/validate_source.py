@@ -23,12 +23,26 @@ for p in (root/'apps/web/src').rglob('*.astro'):
 # internal href route checks, ignore fragments/static/legal dynamic none
 for p in (root/'apps/web/src').rglob('*.astro'):
  text=p.read_text(encoding='utf-8')
- for href in re.findall(r'href=["\'](/[^"\']*)["\']',text):
+ hrefs=re.findall(r'href=["\'](/[^"\']*)["\']',text)
+ if hrefs: errors.append(f'Hardcoded root-relative href (use url() for GitHub Pages base path): {p.relative_to(root)} -> {hrefs[0]}')
+ hrefs+=re.findall(r'href=\{url\([\'"](/[^\'"]*)[\'"]\)\}',text)
+ for href in hrefs:
   clean=href.split('#')[0].split('?')[0]
   if not clean or clean=='/': continue
   if clean.startswith('/favicon') or clean.startswith('/og-'): continue
   if not clean.endswith('/'): clean+='/'
   if clean not in routes: errors.append(f'Broken internal href: {p.relative_to(root)} -> {href}')
+# internal links declared in data files (rendered through url())
+for p in (root/'apps/web/src').rglob('*.ts'):
+ text=p.read_text(encoding='utf-8')
+ for href in re.findall(r"['\"](/(?:[a-z0-9\-]+/)+)['\"]",text):
+  if p.name in ('sitemap.xml.ts',) or 'utils' in p.parts or href.startswith('/api/'): continue
+  if href not in routes: errors.append(f'Broken internal link in data: {p.relative_to(root)} -> {href}')
+# sitemap must list every route
+sm=(pages/'sitemap.xml.ts').read_text(encoding='utf-8')
+listed=set(re.findall(r'"(/[^"]*)"',sm))
+for r in sorted(routes-listed): errors.append(f'Route missing from sitemap: {r}')
+for r in sorted(listed-routes): errors.append(f'Sitemap lists unknown route: {r}')
 # required config
 for f in ['apps/web/package.json','apps/api/UNESCO.Web.sln','database/migrations/001_init.sql','.github/workflows/website-ci.yml']:
  if not (root/f).exists(): errors.append('Missing required '+f)

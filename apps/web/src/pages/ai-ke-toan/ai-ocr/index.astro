@@ -1,8 +1,9 @@
 ---
+import { url } from '../../../utils/url';
 import ContentLayout from '../../../layouts/ContentLayout.astro';
 const cards = [["PDF scan", "Nhận dạng nội dung trong tài liệu quét.", "#"], ["Hình ảnh", "Trích xuất vùng dữ liệu cần thiết.", "#"], ["Kiểm tra lại", "Dữ liệu OCR phải được đối chiếu trước khi dùng cho nghiệp vụ.", "#"]];
 ---
 <ContentLayout title="AI OCR cho chứng từ kế toán" description="Hỗ trợ đọc PDF scan và hình ảnh khi nguồn dữ liệu không có text cấu trúc.">
-<section class="section"><div class="container"><div class="grid grid-3">{cards.map(c=><a class="card" href={c[2]}><h3>{c[0]}</h3><p class="muted">{c[1]}</p><strong style="color:var(--primary)">Xem thêm →</strong></a>)}</div></div></section>
-<section class="section surface"><div class="container"><div class="notice"><strong>Nguyên tắc kiểm soát:</strong> nội dung website chỉ mô tả tính năng đã được công bố theo phiên bản; AI tạo phân tích/gợi ý và người dùng kiểm tra trước các nghiệp vụ cần phê duyệt.</div><div class="actions" style="margin-top:24px"><a class="btn btn-primary" href="/lien-he/#demo">ĐĂNG KÝ XEM DEMO</a><a class="btn btn-secondary" href="/lien-he/">NHẬN TƯ VẤN</a></div></div></section>
+<section class="section"><div class="container"><div class="grid grid-3">{cards.map(c => c[2] === "#" ? <div class="card"><h3>{c[0]}</h3><p class="muted">{c[1]}</p></div> : <a class="card" href={url(c[2])}><h3>{c[0]}</h3><p class="muted">{c[1]}</p><strong style="color:var(--primary)">Xem thêm →</strong></a>)}</div></div></section>
+<section class="section surface"><div class="container"><div class="notice"><strong>Nguyên tắc kiểm soát:</strong> nội dung website chỉ mô tả tính năng đã được công bố theo phiên bản; AI tạo phân tích/gợi ý và người dùng kiểm tra trước các nghiệp vụ cần phê duyệt.</div><div class="actions" style="margin-top:24px"><a class="btn btn-primary" href={url('/lien-he/#demo')}>ĐĂNG KÝ XEM DEMO</a><a class="btn btn-secondary" href={url('/lien-he/')}>NHẬN TƯ VẤN</a></div></div></section>
 </ContentLayout>

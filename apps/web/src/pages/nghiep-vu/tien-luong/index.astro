@@ -1,6 +1,7 @@
 ---
+import { url } from '../../../utils/url';
 import ContentLayout from '../../../layouts/ContentLayout.astro';
 ---
 <ContentLayout title="Tiền lương" description="Theo dõi dữ liệu lương và các nghiệp vụ kế toán liên quan theo phạm vi phiên bản.">
-<section class="section"><div class="container"><div class="grid grid-3"><div class="card"><h3>Nhân viên</h3><p class="muted">Nội dung được công bố theo phạm vi phiên bản chính thức.</p></div><div class="card"><h3>Chi trả</h3><p class="muted">Hướng dẫn và tính năng sẽ được cập nhật theo release.</p></div><div class="card"><h3>Hạch toán</h3><p class="muted">Liên kết tới quy trình tư vấn/demo khi cần.</p></div></div><div class="actions" style="margin-top:28px"><a class="btn btn-primary" href="/lien-he/#demo">ĐĂNG KÝ XEM DEMO</a><a class="btn btn-secondary" href="/lien-he/">NHẬN TƯ VẤN</a></div></div></section>
+<section class="section"><div class="container"><div class="grid grid-3"><div class="card"><h3>Nhân viên</h3><p class="muted">Nội dung được công bố theo phạm vi phiên bản chính thức.</p></div><div class="card"><h3>Chi trả</h3><p class="muted">Hướng dẫn và tính năng sẽ được cập nhật theo release.</p></div><div class="card"><h3>Hạch toán</h3><p class="muted">Liên kết tới quy trình tư vấn/demo khi cần.</p></div></div><div class="actions" style="margin-top:28px"><a class="btn btn-primary" href={url('/lien-he/#demo')}>ĐĂNG KÝ XEM DEMO</a><a class="btn btn-secondary" href={url('/lien-he/')}>NHẬN TƯ VẤN</a></div></div></section>
 </ContentLayout>

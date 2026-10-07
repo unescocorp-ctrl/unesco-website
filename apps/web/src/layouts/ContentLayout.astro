@@ -1,9 +1,10 @@
 ---
+import { url } from '../utils/url';
 import BaseLayout from './BaseLayout.astro';
 const { title, description, eyebrow='UNESCO XI + AI' } = Astro.props;
 ---
 <BaseLayout title={title} description={description}>
-  <section class="surface"><div class="container breadcrumb"><a href="/">Trang chủ</a> / {title}</div></section>
+  <section class="surface"><div class="container breadcrumb"><a href={url('/')}>Trang chủ</a> / {title}</div></section>
   <section class="content-hero"><div class="container"><span class="eyebrow">{eyebrow}</span><h1>{title}</h1>{description && <p class="lead">{description}</p>}<div class="pill-row"><span class="pill">Thiết kế cho kế toán Việt Nam</span><span class="pill">AI hỗ trợ · Kế toán kiểm soát</span><span class="pill">Dữ liệu thống nhất</span></div></div></section>
   <slot/>
 </BaseLayout>

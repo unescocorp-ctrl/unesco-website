@@ -1,4 +1,5 @@
 ---
+import { url } from '../../utils/url';
 import ContentLayout from '../../layouts/ContentLayout.astro';
 ---
-<ContentLayout title="Câu hỏi thường gặp" description="Các câu hỏi về sản phẩm, AI, cài đặt, nâng cấp và hỗ trợ."><section class="section"><div class="container"><div class="grid grid-3"><a class="card" href="/download/"><h3>Download</h3><p class="muted">Phiên bản và file cài đã xác minh.</p></a><a class="card" href="/release-notes/"><h3>Release Notes</h3><p class="muted">Theo dõi thay đổi theo từng phiên bản.</p></a><a class="card" href="/lien-he/"><h3>Liên hệ</h3><p class="muted">Gửi nhu cầu tư vấn hoặc hỗ trợ.</p></a></div></div></section></ContentLayout>
+<ContentLayout title="Câu hỏi thường gặp" description="Các câu hỏi về sản phẩm, AI, cài đặt, nâng cấp và hỗ trợ."><section class="section"><div class="container"><div class="grid grid-3"><a class="card" href={url('/download/')}><h3>Download</h3><p class="muted">Phiên bản và file cài đã xác minh.</p></a><a class="card" href={url('/release-notes/')}><h3>Release Notes</h3><p class="muted">Theo dõi thay đổi theo từng phiên bản.</p></a><a class="card" href={url('/lien-he/')}><h3>Liên hệ</h3><p class="muted">Gửi nhu cầu tư vấn hoặc hỗ trợ.</p></a></div></div></section></ContentLayout>

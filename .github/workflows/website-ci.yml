@@ -3,8 +3,9 @@ on:
   pull_request:
     paths: ['apps/web/**', '.github/workflows/website-ci.yml']
   push:
-    branches: [main, develop]
+    branches: [develop]
     paths: ['apps/web/**', '.github/workflows/website-ci.yml']
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -12,10 +13,18 @@ jobs:
       run:
         working-directory: apps/web
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: '22'
+          package-manager-cache: false
       - run: npm install --no-audit --no-fund
+      - name: Validate source (routes, links, sitemap)
+        working-directory: .
+        run: python3 scripts/validate_source.py
       - run: npm run check
-      - run: npm run build
+      - name: Build (mô phỏng GitHub Pages project site)
+        env:
+          PUBLIC_SITE_URL: https://example.github.io
+          BASE_PATH: /${{ github.event.repository.name }}
+        run: npm run build

@@ -1,6 +1,7 @@
 ---
+import { url } from '../../utils/url';
 import ContentLayout from '../../layouts/ContentLayout.astro';
 ---
 <ContentLayout title="Tin tức & Cập nhật" description="Thông tin phiên bản, sản phẩm và cập nhật liên quan đến UNESCO XI + AI.">
-<section class="section"><div class="container"><div class="grid grid-3"><div class="card"><h3>Phiên bản mới</h3><p class="muted">Nội dung được công bố theo phạm vi phiên bản chính thức.</p></div><div class="card"><h3>Sản phẩm</h3><p class="muted">Hướng dẫn và tính năng sẽ được cập nhật theo release.</p></div><div class="card"><h3>Thông báo</h3><p class="muted">Liên kết tới quy trình tư vấn/demo khi cần.</p></div></div><div class="actions" style="margin-top:28px"><a class="btn btn-primary" href="/lien-he/#demo">ĐĂNG KÝ XEM DEMO</a><a class="btn btn-secondary" href="/lien-he/">NHẬN TƯ VẤN</a></div></div></section>
+<section class="section"><div class="container"><div class="grid grid-3"><div class="card"><h3>Phiên bản mới</h3><p class="muted">Nội dung được công bố theo phạm vi phiên bản chính thức.</p></div><div class="card"><h3>Sản phẩm</h3><p class="muted">Hướng dẫn và tính năng sẽ được cập nhật theo release.</p></div><div class="card"><h3>Thông báo</h3><p class="muted">Liên kết tới quy trình tư vấn/demo khi cần.</p></div></div><div class="actions" style="margin-top:28px"><a class="btn btn-primary" href={url('/lien-he/#demo')}>ĐĂNG KÝ XEM DEMO</a><a class="btn btn-secondary" href={url('/lien-he/')}>NHẬN TƯ VẤN</a></div></div></section>
 </ContentLayout>

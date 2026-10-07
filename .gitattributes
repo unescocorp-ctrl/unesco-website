@@ -1,0 +1,7 @@
+# Giữ CRLF cho script Windows
+*.cmd text eol=crlf
+*.bat text eol=crlf
+# Còn lại chuẩn hoá LF
+* text=auto
+*.png binary
+*.zip binary

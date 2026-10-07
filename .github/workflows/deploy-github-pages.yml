@@ -1,0 +1,84 @@
+# Deploy website tĩnh (apps/web) lên GitHub Pages.
+#
+# Chuẩn bị 1 lần: Settings → Pages → Build and deployment → Source = "GitHub Actions".
+# Sau đó mỗi lần push lên nhánh main, website tự build và cập nhật.
+#
+# Tự động nhận đúng địa chỉ:
+#   - https://<user>.github.io/<repo>/  (project site)  → base = /<repo>
+#   - https://<user>.github.io/          (repo <user>.github.io) hoặc tên miền riêng → base = /
+#
+# Tuỳ chọn: Settings → Secrets and variables → Actions → Variables → PUBLIC_API_URL
+#   (URL API nhận form, ví dụ https://api.ten-mien.vn/api/v1). Bỏ trống nếu chưa có API.
+name: deploy-github-pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/web
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          package-manager-cache: false
+
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci --no-audit --no-fund
+          else
+            npm install --no-audit --no-fund
+          fi
+
+      - name: Build website
+        env:
+          PUBLIC_SITE_URL: ${{ steps.pages.outputs.origin }}
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          PUBLIC_API_URL: ${{ vars.PUBLIC_API_URL }}
+        run: |
+          echo "Site: $PUBLIC_SITE_URL  Base: ${BASE_PATH:-/}"
+          npm run build
+
+      - name: Kiểm tra placeholder (chỉ cảnh báo, không chặn deploy)
+        working-directory: .
+        run: |
+          python3 scripts/check_placeholders.py || echo "::warning title=Placeholder::Còn giá trị {{...}} trong site.config.ts – website vẫn chạy, các ô thông tin công ty hiển thị 'Đang cập nhật'."
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: apps/web/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

@@ -24,6 +24,10 @@ See:
 All values in `{{DOUBLE_BRACES}}` are deployment placeholders. Production deployment must fail while required placeholders remain.
 Do not commit credentials, customer accounting data, private certificates, license secrets, API secrets, or production database backups.
 
+## Chạy trên GitHub Pages (V1.1.1)
+Xem **`HUONG_DAN_GITHUB_PAGES.md`**. Tóm tắt: đưa nội dung thư mục này lên gốc repo → Settings → Pages → Source = **GitHub Actions** → workflow `deploy-github-pages` tự build và deploy mỗi lần push `main`.
+Link nội bộ trong `.astro` phải dùng `url('/duong-dan/')` (file `apps/web/src/utils/url.ts`) để chạy đúng dưới thư mục con `/<repo>/`.
+
 ## Quick start (Windows)
 Run `RUN_NOW.cmd` after Node.js 22+ and .NET SDK 10 are installed.
 

@@ -1,5 +1,7 @@
 ---
+import { site, isPlaceholder } from '../config/site.config';
 const { kind='lead', heading='Đăng ký tư vấn' } = Astro.props;
+const contactEmail = isPlaceholder(site.company.email) ? '' : site.company.email;
 ---
 <div class="card" id={kind==='demo'?'demo':undefined}>
   <h2 style="font-size:2rem">{heading}</h2><p class="muted">Chọn đúng nhu cầu để bộ phận phụ trách chuẩn bị nội dung tư vấn hoặc demo phù hợp, tránh mất thời gian của bạn.</p>
@@ -16,11 +18,27 @@ const { kind='lead', heading='Đăng ký tư vấn' } = Astro.props;
     <div class="actions" style="margin-top:18px"><button class="btn btn-primary" type="submit">GỬI YÊU CẦU</button></div><div class="form-status" role="status" aria-live="polite"></div>
   </form>
 </div>
-<script is:inline define:vars={{ apiBase: import.meta.env.PUBLIC_API_URL || 'http://localhost:5000/api/v1' }}>
-  document.querySelectorAll('form[data-kind]').forEach(form=>form.addEventListener('submit',async e=>{
-    e.preventDefault(); const f=e.currentTarget, s=f.querySelector('.form-status'); s.textContent='Đang gửi...';
-    const data=Object.fromEntries(new FormData(f).entries()); data.source='website'; data.landingPage=location.pathname; data.requestType=f.dataset.kind;
-    try{const r=await fetch(`${apiBase}/leads`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});if(!r.ok) throw new Error('request_failed');s.textContent='Đã tiếp nhận yêu cầu. Cảm ơn bạn.';f.reset();}
-    catch{ s.textContent='Chưa gửi được yêu cầu. Vui lòng sử dụng thông tin liên hệ công bố trên website.'; }
-  }));
+<script is:inline define:vars={{ apiBase: site.apiUrl, contactEmail }}>
+  // apiBase rỗng = chưa có API (ví dụ website chạy trên GitHub Pages): không gửi đi đâu cả,
+  // chuyển sang mở email (nếu đã cấu hình) hoặc hướng dẫn liên hệ trực tiếp.
+  document.querySelectorAll('form[data-kind]').forEach(form=>{
+    if(form.dataset.bound) return; form.dataset.bound='1';
+    form.addEventListener('submit',async e=>{
+      e.preventDefault(); const f=e.currentTarget, s=f.querySelector('.form-status');
+      const data=Object.fromEntries(new FormData(f).entries()); data.source='website'; data.landingPage=location.pathname; data.requestType=f.dataset.kind;
+      if(!apiBase){
+        if(contactEmail){
+          const body=['Họ tên: '+(data.fullName||''),'Doanh nghiệp: '+(data.companyName||''),'Điện thoại: '+(data.phone||''),'Email: '+(data.email||''),'Nhu cầu: '+(data.interestCode||''),'Ghi chú: '+(data.message||''),'Trang: '+location.href].join('\n');
+          location.href='mailto:'+contactEmail+'?subject='+encodeURIComponent('[Website] Yêu cầu '+(data.requestType==='demo'?'xem demo':'tư vấn')+' – '+(data.fullName||''))+'&body='+encodeURIComponent(body);
+          s.textContent='Đã mở ứng dụng email để bạn gửi yêu cầu.';
+        } else {
+          s.textContent='Chức năng gửi trực tuyến đang được cập nhật. Vui lòng liên hệ trực tiếp qua thông tin tại trang Liên hệ.';
+        }
+        return;
+      }
+      s.textContent='Đang gửi...';
+      try{const r=await fetch(`${apiBase}/leads`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});if(!r.ok) throw new Error('request_failed');s.textContent='Đã tiếp nhận yêu cầu. Cảm ơn bạn.';f.reset();}
+      catch{ s.textContent='Chưa gửi được yêu cầu. Vui lòng sử dụng thông tin liên hệ công bố trên website.'; }
+    });
+  });
 </script>

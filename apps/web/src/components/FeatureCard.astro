@@ -1,4 +1,5 @@
 ---
+import { url } from '../utils/url';
 const { icon, title, text, href } = Astro.props;
 ---
-<a class="card feature-card" href={href}><div class="icon">{icon}</div><h3>{title}</h3><p class="muted">{text}</p><strong class="link-arrow">Xem chi tiết</strong></a>
+<a class="card feature-card" href={url(href)}><div class="icon">{icon}</div><h3>{title}</h3><p class="muted">{text}</p><strong class="link-arrow">Xem chi tiết</strong></a>
