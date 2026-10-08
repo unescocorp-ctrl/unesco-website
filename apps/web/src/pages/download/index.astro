@@ -2,9 +2,36 @@
 import { url } from '../../utils/url';
 import ContentLayout from '../../layouts/ContentLayout.astro';
 import { currentRelease as r } from '../../data/releases';
-const disabled=!r.downloadUrl;
+import { contact, telHref, zaloHref, mailHref } from '../../data/contact';
+const hasDownload = !!r.downloadUrl;
+const steps = [
+  ['Nhận bộ cài', 'Liên hệ bộ phận kinh doanh để nhận bộ cài và thông tin bản quyền.', ''],
+  ['Cài bộ font chữ', 'Cài bộ font .Vn đi kèm để màn hình và báo cáo hiển thị đúng tiếng Việt.', ''],
+  ['Cài đặt & kích hoạt AI', 'Chạy bộ cài, khai báo doanh nghiệp, năm tài chính; mở màn hình AI và nhập mã kích hoạt.', '/video/#tong-quan'],
+  ['Số dư đầu kỳ', 'Lấy số dư từ năm trước hoặc nhập tồn kho, công nợ đầu kỳ.', ''],
+  ['Hoá đơn & chứng từ', 'Tải hoá đơn điện tử, AI tạo mã còn thiếu, xem trước và ghi chứng từ.', '/video/#hoa-don-chung-tu'],
+  ['Báo cáo & tờ khai', 'Kiểm tra khoá sổ, lập báo cáo tài chính, xuất XML 01/GTGT, BCTC sang HTKK.', '/video/#bao-cao-thue'],
+];
 ---
-<ContentLayout title="Download Center" description="Tải bộ cài UNESCO, kiểm tra phiên bản, ngày phát hành, SHA-256 và release notes trước khi cài đặt." eyebrow="Tải phần mềm chính thức">
-<section class="section"><div class="container"><div class="grid grid-2" style="align-items:start"><div class="card release-box"><div><div class="pill-row" style="margin-top:0"><span class="tag">STABLE</span><span class="tag tag-blue">WINDOWS</span></div><h2 style="font-size:2.2rem;margin-top:12px">UNESCO XI + AI</h2><p><strong>Phiên bản:</strong> {r.version}<br/><strong>Ngày phát hành:</strong> {r.releaseDate}<br/><strong>Hệ điều hành:</strong> {r.os}<br/><strong>Kiến trúc:</strong> {r.architecture}<br/><strong>Dung lượng:</strong> {r.size}</p><strong>SHA-256</strong><div class="hash">{r.sha256}</div></div><div><a class="btn btn-primary" href={r.downloadUrl || '#'} aria-disabled={disabled}>TẢI BỘ CÀI</a><div style="height:9px"></div><a class="btn btn-secondary" href={url('/release-notes/')}>XEM THAY ĐỔI</a></div></div><div class="card"><span class="eyebrow">Tải an toàn</span><h2 style="font-size:2rem;margin-top:14px">3 bước kiểm tra trước khi cài</h2><div class="feature-list"><div class="feature-row"><span class="check">1</span><div><strong>Kiểm tra phiên bản</strong><span>Đối chiếu phiên bản đang sử dụng với Release Notes.</span></div></div><div class="feature-row"><span class="check">2</span><div><strong>Kiểm tra SHA-256</strong><span>Đảm bảo file tải về đúng với file phát hành chính thức.</span></div></div><div class="feature-row"><span class="check">3</span><div><strong>Sao lưu dữ liệu</strong><span>Thực hiện theo hướng dẫn nâng cấp của từng phiên bản trước khi chạy bộ cài.</span></div></div></div></div></div><div class="notice" style="margin-top:24px"><strong>Release Gate:</strong> nút tải chỉ được mở khi installer chính thức, file size và SHA-256 đã được xác minh. Website không phát hành file cài mẫu hoặc URL giả.</div></div></section>
-<section class="section surface-soft"><div class="container"><div class="section-head"><div><span class="eyebrow">Trung tâm phiên bản</span><h2>Mỗi bản phát hành phải có thông tin đủ để kiểm tra</h2></div><p>Không chỉ đặt một nút tải. Download Center phải giúp người dùng biết họ đang tải gì, có gì thay đổi và cách xác minh file.</p></div><div class="grid grid-4"><div class="card"><h3>Version</h3><p class="muted">Số phiên bản và kênh Stable/Preview/Legacy.</p></div><div class="card"><h3>Release Notes</h3><p class="muted">Tính năng mới, cải tiến, lỗi sửa và known issues.</p></div><div class="card"><h3>Integrity</h3><p class="muted">File size và SHA-256 được công bố cùng installer.</p></div><div class="card"><h3>Hướng dẫn</h3><p class="muted">Yêu cầu hệ thống, sao lưu và quy trình nâng cấp.</p></div></div></div></section>
+<ContentLayout title="Tải phần mềm UNESCO AI" description="Nhận bộ cài phần mềm kế toán UNESCO AI 2026, yêu cầu hệ thống, kích hoạt AI và các bước bắt đầu sử dụng có video hướng dẫn." eyebrow="Download Center">
+<section class="section"><div class="container"><div class="grid grid-2" style="align-items:start">
+  <div class="card release-box"><div><div class="pill-row" style="margin-top:0"><span class="tag">BẢN HIỆN HÀNH</span><span class="tag tag-blue">WINDOWS</span></div><h2 style="font-size:2.1rem;margin-top:12px">UNESCO AI</h2><p><strong>Phiên bản:</strong> {r.version}<br/><strong>Hệ điều hành:</strong> {r.os}<br/><strong>Kiến trúc:</strong> {r.architecture}<br/><strong>Phát hành:</strong> {r.releaseDate}</p>{hasDownload && <><strong>SHA-256</strong><div class="hash">{r.sha256}</div></>}</div>
+    <div>{hasDownload ? <a class="btn btn-primary" href={r.downloadUrl}>TẢI BỘ CÀI</a> : <a class="btn btn-primary" href={telHref(contact.sales.mobile)}>NHẬN BỘ CÀI</a>}<div style="height:9px"></div><a class="btn btn-secondary" href={url('/release-notes/')}>XEM THAY ĐỔI</a></div></div>
+  <div class="card"><span class="eyebrow">Nhận bộ cài nhanh</span><h2 style="font-size:1.9rem;margin-top:14px">Liên hệ để được cấp bộ cài</h2><p class="muted">Bộ cài được gửi trực tiếp kèm hướng dẫn và thông tin bản quyền, bảo đảm bạn dùng đúng bản chính thức.</p>
+    <div class="feature-list"><div class="feature-row"><span class="check">☎</span><div><strong>Kinh doanh</strong><span><a href={telHref(contact.sales.mobile)}>{contact.sales.mobile}</a> · <a href={telHref(contact.sales.phone)}>{contact.sales.phone}</a> ({contact.sales.ext})</span></div></div><div class="feature-row"><span class="check">💬</span><div><strong>Zalo</strong><span><a href={zaloHref} target="_blank" rel="noopener">{contact.zalo}</a></span></div></div><div class="feature-row"><span class="check">✉</span><div><strong>Email</strong><span><a href={mailHref}>{contact.email}</a></span></div></div></div></div>
+</div></div></section>
+
+<section class="section surface-soft"><div class="container"><div class="section-head"><div><span class="eyebrow">Yêu cầu hệ thống</span><h2>Chuẩn bị máy tính trước khi cài</h2></div></div>
+  <div class="req-grid">
+    <div class="card"><h3>Máy tính</h3><ul class="checks"><li>Windows 10 hoặc Windows 11</li><li>Phần mềm 32-bit, chạy được trên Windows 64-bit</li><li>Có quyền quản trị để cài đặt lần đầu</li></ul></div>
+    <div class="card"><h3>Font chữ & in ấn</h3><ul class="checks"><li>Cài bộ font .Vn đi kèm bộ cài</li><li>Máy in hoặc xuất Excel/PDF để lưu báo cáo</li></ul></div>
+    <div class="card"><h3>Dữ liệu kế toán</h3><ul class="checks"><li>Mỗi doanh nghiệp, mỗi năm tài chính một tệp dữ liệu (.MDB)</li><li>Có lưu trữ tự động; nên sao lưu thêm ra ổ ngoài hoặc đám mây</li></ul></div>
+    <div class="card"><h3>Trợ lý AI</h3><ul class="checks"><li>Mở màn hình AI từ ô AI trên màn hình chính; máy mới nhập mã kích hoạt AI (không cần Internet)</li><li>Ảnh, PDF scan đọc bằng Google Document AI cài sẵn hoặc Tesseract trên máy</li></ul></div>
+  </div>
+</div></section>
+
+<section class="section"><div class="container"><div class="section-head"><div><span class="eyebrow">Bắt đầu sử dụng</span><h2>6 bước từ cài đặt đến báo cáo đầu tiên</h2></div><p>Các bước có video hướng dẫn được gắn liên kết bên dưới.</p></div>
+  <ol class="steps5 steps3">{steps.map((s) => <li><b>{s[0]}</b><small>{s[1]}</small>{s[2] && <small><a href={url(s[2])} style="color:var(--primary);font-weight:800">Xem video →</a></small>}</li>)}</ol>
+  <div class="notice" style="margin-top:24px"><strong>Tải an toàn:</strong> chỉ cài bộ cài do UNESCO cung cấp trực tiếp hoặc từ trang này khi nút tải được mở. Khi có link tải công khai, SHA-256 và dung lượng sẽ được công bố để bạn kiểm tra tệp.</div>
+</div></section>
 </ContentLayout>

@@ -1,13 +1,14 @@
 ---
 import { url } from '../utils/url';
 import { mainNav } from '../data/navigation';
+import { contact, telHref } from '../data/contact';
 ---
-<div class="topbar">UNESCO XI + AI · Hóa đơn · Sổ phụ · Giá thành · Báo cáo kế toán</div>
+<div class="topbar"><span class="hide-sm">UNESCO AI · Phần mềm kế toán tích hợp AI</span><span class="sep hide-sm">|</span>Kinh doanh: <a href={telHref(contact.sales.mobile)}>{contact.sales.mobile}</a><span class="sep">·</span>Hỗ trợ: <a href={telHref(contact.support.phone)}>{contact.support.phone}</a></div>
 <header class="header">
   <div class="container nav">
-    <a class="brand" href={url('/')} aria-label="UNESCO XI + AI - Trang chủ">
+    <a class="brand" href={url('/')} aria-label="UNESCO AI - Trang chủ">
       <span class="brand-mark">U</span>
-      <span class="brand-copy"><span>UNESCO XI + AI</span><small>ACCOUNTING SOFTWARE</small></span>
+      <span class="brand-copy"><span>UNESCO AI</span><small>ACCOUNTING SOFTWARE</small></span>
     </a>
     <nav class="nav-links" aria-label="Điều hướng chính">
       {mainNav.map(item => <a href={url(item.href)}>{item.label}</a>)}

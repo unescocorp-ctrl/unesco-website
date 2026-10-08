@@ -3,12 +3,11 @@ export const site = {
   shortName: 'UNESCO AI',
 
   description:
-    'Phần mềm kế toán UNESCO XI tích hợp AI hỗ trợ hóa đơn điện tử, sổ phụ ngân hàng, gợi ý hạch toán, giá thành, kiểm soát dữ liệu, sổ sách và báo cáo kế toán.',
+    'Phần mềm kế toán UNESCO AI: tải hoá đơn điện tử từ Cơ quan Thuế, AI tạo mã và đề xuất chứng từ, đọc sổ phụ ngân hàng, tờ khai hải quan, báo cáo thuế XML HTKK, giá thành có Cân đối AI.',
 
-  // Website chính thức.
-  // Khi build production có thể đặt:
-  // PUBLIC_SITE_URL=https://unesco.com.vn
-  url: (import.meta.env.SITE || 'https://unesco.com.vn').replace(/\/+$/, ''),
+  // Website chính thức: https://www.unescosoft.com
+  // Khi build trên GitHub Pages, giá trị này lấy tự động từ cấu hình tên miền (biến PUBLIC_SITE_URL).
+  url: (import.meta.env.SITE || 'https://www.unescosoft.com').replace(/\/+$/, ''),
 
   // Local dev dùng API .NET.
   // Production để trống nếu website tĩnh và chưa triển khai API.
@@ -38,11 +37,10 @@ export const site = {
     mobile: '093 3456 567',
     zalo: '093 3456 567',
 
-    email: 'sale.unesco@gmail.com',
+    email: 'unesco.corp@gmail.com',
 
-    // Tạm dùng cùng email công khai cho hỗ trợ.
-    // Có thể đổi thành email support riêng khi anh cung cấp.
-    supportEmail: 'sale.unesco@gmail.com'
+    // Email hỗ trợ (đang dùng chung email công ty).
+    supportEmail: 'unesco.corp@gmail.com'
   },
 
   copyright: {

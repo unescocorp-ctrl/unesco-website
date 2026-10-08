@@ -1,6 +1,7 @@
 ---
 import { url } from '../utils/url';
 import { site } from '../config/site.config';
+import { contact, telHref, mailHref, zaloHref } from '../data/contact';
 const y = new Date().getFullYear();
 const safe = (v:string) => !v.includes('{{') ? v : '';
 ---
@@ -8,15 +9,22 @@ const safe = (v:string) => !v.includes('{{') ? v : '';
   <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="brand"><span class="brand-mark">U</span><span class="brand-copy"><span>UNESCO XI + AI</span><small>ACCOUNTING SOFTWARE</small></span></div>
+        <div class="brand"><span class="brand-mark">U</span><span class="brand-copy"><span>UNESCO AI</span><small>ACCOUNTING SOFTWARE</small></span></div>
         <p>Phần mềm kế toán ứng dụng AI hỗ trợ xử lý hóa đơn, sổ phụ ngân hàng, gợi ý hạch toán, giá thành và lập sổ sách báo cáo.</p>
-        {safe(site.company.legalName) && <small>{site.company.legalName}<br/>{safe(site.company.contactAddress)}</small>}
+        {safe(site.company.legalName) && <small>{site.company.legalName}</small>}
+        <div class="contact-lines">
+          <span>Kinh doanh: <a href={telHref(contact.sales.mobile)}>{contact.sales.mobile}</a> · <a href={telHref(contact.sales.phone)}>{contact.sales.phone}</a> ({contact.sales.ext})</span>
+          <span>Hỗ trợ sử dụng: <a href={telHref(contact.support.phone)}>{contact.support.phone}</a> ({contact.support.ext})</span>
+          <span>Email: <a href={mailHref}>{contact.email}</a> · <a href={zaloHref} target="_blank" rel="noopener">Zalo</a></span>
+          <span>{contact.address}</span>
+          <span>Website: <a href={contact.website}>{contact.websiteLabel}</a></span>
+        </div>
       </div>
-      <div><h3>Sản phẩm</h3><a href={url('/san-pham/unesco-xi/')}>UNESCO XI</a><a href={url('/san-pham/unesco-xi-ai/')}>UNESCO XI + AI</a><a href={url('/ai-ke-toan/')}>AI kế toán</a><a href={url('/bang-gia/')}>Bảng giá</a><a href={url('/download/')}>Download</a></div>
+      <div><h3>Sản phẩm</h3><a href={url('/san-pham/unesco-xi-ai/')}>UNESCO AI</a><a href={url('/san-pham/unesco-xi/')}>Lõi kế toán UNESCO XI</a><a href={url('/video/')}>Video giới thiệu</a><a href={url('/ai-ke-toan/')}>AI kế toán</a><a href={url('/bang-gia/')}>Bảng giá</a><a href={url('/download/')}>Download</a></div>
       <div><h3>Giải pháp</h3><a href={url('/giai-phap/ke-toan-dich-vu/')}>Kế toán dịch vụ</a><a href={url('/giai-phap/san-xuat/')}>Sản xuất</a><a href={url('/giai-phap/xay-dung/')}>Xây dựng</a><a href={url('/giai-phap/thuong-mai-dien-tu/')}>TMĐT</a></div>
-      <div><h3>Tài nguyên</h3><a href={url('/huong-dan/')}>Hướng dẫn</a><a href={url('/kien-thuc/')}>Kiến thức</a><a href={url('/video/')}>Video</a><a href={url('/faq/')}>FAQ</a><a href={url('/release-notes/')}>Release Notes</a></div>
-      <div><h3>Pháp lý & hỗ trợ</h3><a href={url('/ban-quyen/')}>Bản quyền</a><a href={url('/legal/privacy/')}>Quyền riêng tư</a><a href={url('/legal/data-protection/')}>Bảo vệ dữ liệu</a><a href={url('/legal/terms/')}>Điều khoản</a><a href={url('/ho-tro/')}>Gửi yêu cầu hỗ trợ</a></div>
+      <div><h3>Tài nguyên</h3><a href={url('/video/')}>Video hướng dẫn</a><a href={url('/huong-dan/')}>Hướng dẫn</a><a href={url('/kien-thuc/')}>Kiến thức</a><a href={url('/faq/')}>FAQ</a><a href={url('/release-notes/')}>Release Notes</a></div>
+      <div><h3>Pháp lý & hỗ trợ</h3><a href={url('/ban-quyen/')}>Bản quyền</a><a href={url('/legal/privacy/')}>Quyền riêng tư</a><a href={url('/legal/data-protection/')}>Bảo vệ dữ liệu</a><a href={url('/legal/terms/')}>Điều khoản</a><a href={url('/ho-tro/')}>Gửi yêu cầu hỗ trợ</a><a href={url('/lien-he/')}>Liên hệ</a></div>
     </div>
-    <div class="footer-bottom"><small>© {y} {safe(site.company.legalName) || 'UNESCO XI + AI'}. All rights reserved.{safe(site.company.taxCode) && <> · MST: {site.company.taxCode}</>}</small></div>
+    <div class="footer-bottom"><small>© {y} {safe(site.company.legalName) || 'UNESCO AI'}. All rights reserved.{safe(site.company.taxCode) && <> · MST: {site.company.taxCode}</>}</small></div>
   </div>
 </footer>

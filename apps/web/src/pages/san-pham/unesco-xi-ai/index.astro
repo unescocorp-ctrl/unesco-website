@@ -2,10 +2,72 @@
 import { url } from '../../../utils/url';
 import ContentLayout from '../../../layouts/ContentLayout.astro';
 import LeadForm from '../../../components/LeadForm.astro';
+import Screenshot from '../../../components/Screenshot.astro';
+import { shots } from '../../../data/screenshots';
+import { modules, utilities } from '../../../data/modules';
+import { reportGroups } from '../../../data/reports';
+import { aiTabs, activation } from '../../../data/ai';
+import { videoBySlug } from '../../../data/videos';
 ---
-<ContentLayout title="UNESCO XI + AI – Phần mềm kế toán kết hợp trợ lý AI" description="Kết hợp hệ thống kế toán UNESCO XI với lớp AI hỗ trợ đọc dữ liệu, phân tích nghiệp vụ và đưa đề xuất vào đúng nơi kế toán cần kiểm tra." eyebrow="Sản phẩm chủ lực">
-<section class="section"><div class="container split"><div class="visual-card"><img src={url('/visuals/hero-ai-accounting.svg')} width="1440" height="940" alt="Giao diện minh họa UNESCO XI + AI"/></div><div><span class="eyebrow">Một hệ thống thống nhất</span><h2>Từ chứng từ đầu vào đến sổ sách, báo cáo và kiểm soát dữ liệu</h2><p class="lead">UNESCO XI + AI không tách AI thành một công cụ rời. Các đề xuất được đặt trong ngữ cảnh nghiệp vụ kế toán để người dùng dễ đối chiếu và phê duyệt.</p><div class="feature-list"><div class="feature-row"><span class="check">✓</span><div><strong>AI hóa đơn</strong><span>Đọc dữ liệu, dòng hàng và gợi ý thông tin liên quan.</span></div></div><div class="feature-row"><span class="check">✓</span><div><strong>AI sổ phụ</strong><span>Chuẩn hóa nội dung, truy vết đối tượng và hỗ trợ gợi ý tài khoản.</span></div></div><div class="feature-row"><span class="check">✓</span><div><strong>Giá thành</strong><span>Tập hợp chi phí sản xuất, xây dựng và hỗ trợ đối chiếu định mức.</span></div></div><div class="feature-row"><span class="check">✓</span><div><strong>Sổ sách & báo cáo</strong><span>Dữ liệu đã kiểm tra đi tiếp trong quy trình kế toán hiện hữu.</span></div></div></div><div class="actions"><a class="btn btn-primary" href={url('/lien-he/#demo')}>ĐĂNG KÝ DEMO</a><a class="btn btn-secondary" href={url('/download/')}>DOWNLOAD CENTER</a></div></div></div></section>
-<section class="section surface-soft"><div class="container"><div class="section-head"><div><span class="eyebrow">4 lớp giá trị</span><h2>AI được đặt đúng chỗ trong quy trình kế toán</h2></div><p>Không tạo “hộp đen” tự động. Website giải thích rõ dữ liệu đến từ đâu, AI đề xuất gì và điểm nào cần kế toán duyệt.</p></div><div class="grid grid-4"><div class="card"><span class="tag">01 · INPUT</span><h3 style="margin-top:18px">Thu nhận dữ liệu</h3><p class="muted">Hóa đơn, bảng tính, PDF, ảnh và dữ liệu ngân hàng theo phạm vi hỗ trợ.</p></div><div class="card"><span class="tag tag-blue">02 · AI</span><h3 style="margin-top:18px">Phân tích & đối chiếu</h3><p class="muted">Chuẩn hóa nội dung, tìm dữ kiện liên quan và tạo candidate phù hợp.</p></div><div class="card"><span class="tag tag-gold">03 · REVIEW</span><h3 style="margin-top:18px">Kế toán kiểm tra</h3><p class="muted">Hiển thị đề xuất, dữ liệu tham chiếu và mức tin cậy để người dùng quyết định.</p></div><div class="card"><span class="tag">04 · OUTPUT</span><h3 style="margin-top:18px">Sổ sách & báo cáo</h3><p class="muted">Dữ liệu sau duyệt tiếp tục vào hệ thống kế toán, không tạo luồng rời rạc.</p></div></div></div></section>
-<section class="section"><div class="container"><div class="quote-band"><div><h2>Trải nghiệm đúng bài toán của doanh nghiệp, không chỉ xem giao diện mẫu.</h2><p>Đăng ký demo để lựa chọn nhóm nghiệp vụ cần xem: hóa đơn, sổ phụ, giá thành, kế toán dịch vụ, sản xuất hoặc xây dựng.</p></div><div class="actions"><a class="btn btn-primary" href={url('/lien-he/#demo')}>XEM DEMO THỰC TẾ</a></div></div></div></section>
-<section class="section surface"><div class="container"><LeadForm kind="demo" heading="Đăng ký demo UNESCO XI + AI"/></div></section>
+<ContentLayout title="UNESCO AI – Phần mềm kế toán tích hợp AI" description="UNESCO AI: nền tảng kế toán UNESCO 9 phân hệ cộng màn hình AI 8 thẻ — tải hoá đơn điện tử, tự động xử lý, tờ khai hải quan, sổ phụ ngân hàng, bảng lương, kết chuyển cuối kỳ, báo cáo & nhật ký, cổng dịch vụ công." eyebrow="Sản phẩm chủ lực">
+
+<section class="section"><div class="container split"><div><Screenshot shot={shots.autoProcess} eager={true} /></div><div><span class="eyebrow">Một hệ thống thống nhất</span><h2>Kế toán đầy đủ nghiệp vụ, AI làm phần việc lặp lại</h2><p class="lead">UNESCO AI là phần mềm kế toán UNESCO (bản XI) tích hợp màn hình AI. Dữ liệu mỗi doanh nghiệp – mỗi năm tài chính nằm trong một bộ sổ riêng; AI làm việc trên chính bộ sổ đó và chỉ ghi khi kế toán đồng ý.</p>
+  <div class="feature-list">
+    <div class="feature-row"><span class="check">AI</span><div><strong>Màn hình AI 8 thẻ</strong><span>Tự động xử lý, danh sách hoá đơn, tờ khai HQ, sổ phụ, bảng lương, kết chuyển, báo cáo & nhật ký, cổng dịch vụ công.</span></div></div>
+    <div class="feature-row"><span class="check">✓</span><div><strong>9 phân hệ kế toán</strong><span>Chi phí – tổng hợp, vật tư, công nợ, TSCĐ, CCDC, giá thành, lương, BHXH, báo cáo – sổ kế toán.</span></div></div>
+    <div class="feature-row"><span class="check">✓</span><div><strong>Thuế & HTKK</strong><span>Tải hoá đơn điện tử; xuất XML 01/GTGT, BCTC, 03/TNDN để nhập vào HTKK.</span></div></div>
+  </div>
+  <div class="actions"><a class="btn btn-primary" href={url('/lien-he/#demo')}>ĐĂNG KÝ DEMO</a><a class="btn btn-secondary" href={url('/video/')}>▶ XEM VIDEO</a></div></div></div></section>
+
+<section class="section surface-soft"><div class="container"><div class="section-head"><div><span class="eyebrow">Màn hình AI</span><h2>8 thẻ nghiệp vụ</h2></div><p>Theo đúng thứ tự trên phần mềm. Bấm vào ảnh để xem kích thước lớn.</p></div>
+  <nav class="tab-index" aria-label="Các thẻ của màn hình AI">{aiTabs.map((t) => <a href={`#${t.key}`}><span>{t.n}</span>{t.title}</a>)}</nav>
+  {aiTabs.map((t, i) => {
+    const vid = t.video ? videoBySlug(t.video) : undefined;
+    return (
+      <div class={`split tab-row${i % 2 ? ' reverse' : ''}`} id={t.key}>
+        <div><Screenshot shot={shots[t.shot]} /></div>
+        <div>
+          <span class="eyebrow">Thẻ {t.n}</span>
+          <h3 class="tab-title"><span aria-hidden="true">{t.icon}</span> {t.title}</h3>
+          <p class="lead">{t.lead}</p>
+          <ul class="checks">{t.points.map((p) => <li>{p}</li>)}</ul>
+          {vid && <div class="actions"><a class="btn btn-secondary" href={url(`/video/#video-${vid.slug}`)}>▶ VIDEO {vid.duration}</a></div>}
+        </div>
+      </div>
+    );
+  })}
+</div></section>
+
+<section class="section"><div class="container"><div class="section-head"><div><span class="eyebrow">Tải hoá đơn hàng loạt</span><h2>Từ cổng thuế vào phần mềm trong vài bước</h2></div><p>Công cụ chạy trên Chrome, tải theo kỳ, chỉ lấy hoá đơn mới, gộp hoá đơn bán lẻ và chuyển kết quả sang màn hình AI.</p></div>
+  <div class="gallery g3">
+    <Screenshot shot={shots.bulkDownload} />
+    <Screenshot shot={shots.retailSummary} />
+    <Screenshot shot={shots.downloadResult} />
+  </div>
+</div></section>
+
+<section class="section surface" id="phan-he"><div class="container"><div class="section-head"><div><span class="eyebrow">9 phân hệ</span><h2>Nền tảng kế toán UNESCO</h2></div><p>Mỗi phân hệ mở sơ đồ chức năng riêng, người mới nhìn là biết bước tiếp theo.</p></div>
+  <div class="module-grid">{modules.map((m) => <div class="module">{m.shot && <Screenshot shot={shots[m.shot]} showCaption={false} class="mini" />}<div class="icon">{m.icon}</div><h3>{m.title}</h3><p>{m.summary}</p><ul>{m.features.map((f) => <li>{f}</li>)}</ul>{m.href && <a class="link-arrow" href={url(m.href)}>Xem nghiệp vụ →</a>}</div>)}</div>
+</div></section>
+
+<section class="section"><div class="container"><div class="section-head"><div><span class="eyebrow">Nhân sự – báo cáo</span><h2>Lao động, bảo hiểm và báo cáo thuế</h2></div></div>
+  <div class="gallery g3">
+    <Screenshot shot={shots.hrDashboard} />
+    <Screenshot shot={shots.hrInsurance} />
+    <Screenshot shot={shots.vatReport} />
+  </div>
+</div></section>
+
+<section class="section surface-soft"><div class="container"><div class="section-head"><div><span class="eyebrow">Sổ sách & báo cáo</span><h2>Đủ mẫu sổ, báo cáo tài chính, báo cáo thuế</h2></div><p>Mỗi báo cáo chọn được kỳ theo tháng, quý hoặc ngày; xem, in hoặc xuất Excel.</p></div>
+  <div class="report-cols">{reportGroups.map((g) => <div class="grp"><h3>{g.title}</h3><ul>{g.items.map((i) => <li>{i}</li>)}</ul></div>)}</div>
+</div></section>
+
+<section class="section"><div class="container"><div class="section-head"><div><span class="eyebrow">Tiện ích</span><h2>Những công cụ giúp tiết kiệm thời gian mỗi ngày</h2></div></div>
+  <div class="util-grid">{utilities.map((u) => <div class="module-mini"><div class="icon">{u.icon}</div><div><b>{u.title}</b><span>{u.text}</span></div></div>)}</div>
+</div></section>
+
+<section class="section surface-soft" id="kich-hoat-ai"><div class="container split"><div><span class="eyebrow">Kích hoạt AI</span><h2>Một mã kích hoạt cho mọi tính năng AI</h2><p class="lead">Máy mới mở màn hình AI lần đầu sẽ được hỏi mã kích hoạt. Phần kế toán vẫn dùng bình thường khi chưa kích hoạt.</p><a class="btn btn-primary" href={url('/bang-gia/')}>XEM CÁC GÓI</a></div><div class="card"><ul class="checks">{activation.map((a) => <li>{a}</li>)}</ul></div></div></section>
+
+<section class="section"><div class="container"><div class="quote-band"><div><h2>Trải nghiệm đúng bài toán của doanh nghiệp, không chỉ xem giao diện mẫu.</h2><p>Đăng ký demo để chọn nhóm nghiệp vụ cần xem: hoá đơn, sổ phụ, tờ khai hải quan, giá thành, kế toán dịch vụ, sản xuất hoặc xây dựng.</p></div><div class="actions"><a class="btn btn-primary" href={url('/lien-he/#demo')}>XEM DEMO THỰC TẾ</a></div></div></div></section>
+<section class="section surface"><div class="container"><LeadForm kind="demo" heading="Đăng ký demo UNESCO AI"/></div></section>
 </ContentLayout>

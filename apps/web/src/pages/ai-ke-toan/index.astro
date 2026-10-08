@@ -1,16 +1,70 @@
 ---
 import { url } from '../../utils/url';
 import ContentLayout from '../../layouts/ContentLayout.astro';
+import Screenshot from '../../components/Screenshot.astro';
+import VideoCard from '../../components/VideoCard.astro';
+import { shots } from '../../data/screenshots';
+import { aiFlow, aiCounters, invoiceDownload, bankImport, costAi, assistant, customerCodeRules, aiSafety, activation } from '../../data/ai';
+import { videoBySlug } from '../../data/videos';
+const vAssistant = videoBySlug('m08-tro-ly-ai')!;
+const vCost = videoBySlug('m07-gia-thanh')!;
 const cards = [
-  ['🧾','AI Hóa đơn điện tử','Đọc trường dữ liệu và dòng hàng, hỗ trợ nhận dạng đối tượng và dữ liệu kế toán.','/ai-ke-toan/ai-hoa-don/'],
-  ['🏦','AI Sổ phụ ngân hàng','Chuẩn hóa giao dịch, truy vết đối tượng, đối chiếu và gợi ý tài khoản.','/ai-ke-toan/ai-so-phu-ngan-hang/'],
-  ['✨','AI Gợi ý hạch toán','Tạo đề xuất dựa trên dữ liệu hiện tại, lịch sử nghiệp vụ và quy tắc doanh nghiệp.','/ai-ke-toan/ai-goi-y-hach-toan/'],
-  ['🔎','AI Mã khách hàng/NCC','Ưu tiên đối tượng đã có và tạo đề xuất mới khi chưa đủ dữ liệu đối chiếu.','/ai-ke-toan/ai-ma-khach-hang/'],
-  ['🖼️','AI OCR','Hỗ trợ tài liệu PDF scan và hình ảnh theo phạm vi từng phiên bản.','/ai-ke-toan/ai-ocr/'],
-  ['📊','AI Giá thành','Hỗ trợ định mức, đối chiếu chi phí và cảnh báo chênh lệch cần kiểm tra.','/nghiep-vu/gia-thanh/']
+  ['🧾','AI Hoá đơn điện tử','Tải, phân tích, ghép mã và định khoản hoá đơn mua vào – bán ra.','/ai-ke-toan/ai-hoa-don/'],
+  ['🏦','AI Sổ phụ ngân hàng','Xếp nhóm giao dịch, tìm đối tác, tài khoản đối ứng, lập phiếu báo có – báo nợ.','/ai-ke-toan/ai-so-phu-ngan-hang/'],
+  ['✨','AI Gợi ý hạch toán','Học từ chứng từ cũ và quy tắc hạch toán của từng bộ sổ.','/ai-ke-toan/ai-goi-y-hach-toan/'],
+  ['🔎','AI Mã khách hàng/NCC','Ưu tiên mã có sẵn; mã mới theo quy tắc MST, chờ kế toán duyệt.','/ai-ke-toan/ai-ma-khach-hang/'],
+  ['🖼️','AI Ảnh/PDF sang Excel','Đọc ảnh, PDF scan bằng Google Document AI hoặc Tesseract không cần Internet.','/ai-ke-toan/ai-ocr/'],
+  ['🏭','AI Giá thành','Cân đối AI, định mức tự động, giá thành theo đối tượng.','/nghiep-vu/gia-thanh/']
 ];
 ---
-<ContentLayout title="AI kế toán" description="AI hỗ trợ đọc dữ liệu, đối chiếu và tạo gợi ý ngay trong quy trình kế toán — để người dùng kiểm tra trước khi ghi nhận." eyebrow="UNESCO AI">
-<section class="section"><div class="container"><div class="section-head"><div><span class="eyebrow">Một lớp hỗ trợ xuyên suốt</span><h2>AI không đứng riêng bên ngoài phần mềm kế toán</h2></div><p>Mỗi nhóm AI đều gắn với một bài toán nghiệp vụ cụ thể và có điểm kiểm soát để kế toán xác nhận kết quả.</p></div><div class="grid grid-3">{cards.map(c=><a class="card feature-card" href={url(c[3])}><div class="icon">{c[0]}</div><h3>{c[1]}</h3><p class="muted">{c[2]}</p><strong class="link-arrow">Xem chi tiết</strong></a>)}</div></div></section>
-<section class="section surface-soft"><div class="container split"><div class="visual-card"><img src={url('/visuals/hero-ai-accounting.svg')} width="1440" height="940" alt="Trung tâm AI kế toán UNESCO XI + AI" loading="lazy"/></div><div><span class="eyebrow">Nguyên tắc AI</span><h2>Đề xuất phải có dữ liệu tham chiếu và điểm duyệt</h2><div class="feature-list"><div class="feature-row"><span class="check">1</span><div><strong>Dữ liệu gốc</strong><span>Giữ thông tin nguồn để người dùng có thể đối chiếu.</span></div></div><div class="feature-row"><span class="check">2</span><div><strong>Candidate & mức tin cậy</strong><span>Hiển thị gợi ý theo thứ tự ưu tiên thay vì ẩn quyết định.</span></div></div><div class="feature-row"><span class="check">3</span><div><strong>Kế toán duyệt</strong><span>Quyết định nghiệp vụ thuộc về người sử dụng tại các điểm cần kiểm soát.</span></div></div></div><a class="btn btn-primary" href={url('/lien-he/#demo')}>XEM DEMO AI KẾ TOÁN</a></div></div></section>
+<ContentLayout title="AI kế toán trong UNESCO AI" description="Màn hình AI của phần mềm kế toán UNESCO AI: tải và phân tích hoá đơn điện tử, tạo mã còn thiếu, đề xuất chứng từ, đọc sổ phụ ngân hàng, giá thành có Cân đối AI và trợ lý AI ngay trên màn hình — kế toán xem trước rồi mới ghi sổ." eyebrow="UNESCO AI">
+
+<section class="section"><div class="container split"><div><Screenshot shot={shots.invoiceList} eager={true} /></div><div><span class="eyebrow">AI chuẩn bị – kế toán quyết định</span><h2>AI làm phần việc lặp lại, kế toán giữ quyền ghi sổ</h2><p class="lead">AI đọc hoá đơn, sổ phụ, tờ khai; so khớp với danh mục của bộ sổ; đề xuất mã và định khoản kèm điểm tin cậy và nguồn ghép. Mỗi chứng từ mở ra điền sẵn để kế toán kiểm tra rồi bấm Ghi như khi nhập tay.</p>
+  <div class="feature-list">
+    <div class="feature-row"><span class="check">1</span><div><strong>Điểm tin cậy cho từng dòng</strong><span>Điểm càng cao AI càng chắc; dòng điểm thấp được đưa vào Cần xem lại.</span></div></div>
+    <div class="feature-row"><span class="check">2</span><div><strong>Học từ chứng từ cũ</strong><span>Lần đầu dùng trên bộ sổ đã có dữ liệu, AI học cách doanh nghiệp đã hạch toán.</span></div></div>
+    <div class="feature-row"><span class="check">3</span><div><strong>Ghi nhớ cách bạn sửa</strong><span>Mỗi lần sửa tài khoản, tính chất, đối tác, lần sau AI gợi ý đúng hơn.</span></div></div>
+  </div></div></div></section>
+
+<section class="section surface-soft"><div class="container"><div class="section-head"><div><span class="eyebrow">Quy trình xử lý tự động</span><h2>Năm bước mỗi tháng</h2></div><p>Khung Quy trình trên thẻ Tự động xử lý cho biết AI đang ở bước nào; chữ xanh là đã xong.</p></div>
+  <ol class="steps5">{aiFlow.map((s) => <li><b>{s.t}</b><small>{s.d}</small></li>)}</ol>
+  <h3 style="margin-top:34px">Bốn ô số kiểm soát kết quả AI</h3>
+  <div class="legend">{aiCounters.map((c) => <div class={c.cls}><b>{c.t}</b>{c.d}</div>)}</div>
+</div></section>
+
+<section class="section" id="hoa-don"><div class="container"><div class="section-head"><div><span class="eyebrow">Hoá đơn điện tử</span><h2>Tải hàng loạt, phân tích ngay, định khoản trước khi lập</h2></div><p>Cứ 200 hoá đơn công cụ chuyển sang phần mềm một lần; khi xong màn hình AI báo số hoá đơn mới và số hoá đơn được cập nhật trạng thái.</p></div>
+  <div class="split"><div><Screenshot shot={shots.downloadResult} /></div><div class="rules">{invoiceDownload.map((f) => <div><b>{f.t}</b><span>{f.d}</span></div>)}</div></div>
+</div></section>
+
+<section class="section surface" id="so-phu"><div class="container split reverse"><div><Screenshot shot={shots.bank} /></div><div><span class="eyebrow">Sổ phụ ngân hàng</span><h2>Sáu cách đưa sao kê vào phần mềm</h2><p class="lead">Trước khi nhập, AI đối chiếu số tài khoản và tên chủ tài khoản với công ty đang mở — khác công ty thì không nhập.</p><ul class="checks">{bankImport.map((b) => <li>{b}</li>)}</ul><a class="btn btn-secondary" href={url('/ai-ke-toan/ai-so-phu-ngan-hang/')}>CHI TIẾT SỔ PHỤ</a></div></div></section>
+
+<section class="section surface-soft" id="gia-thanh"><div class="container"><div class="section-head"><div><span class="eyebrow">Giá thành có AI</span><h2>Cân đối AI, định mức tự động, giá thành theo đối tượng</h2></div><p>Khung Cân đối AI chỉ đọc, không ghi sổ. Số liệu chỉ vào sổ khi kế toán bấm Ghi ở Kết chuyển thành phẩm.</p></div>
+  <div class="gallery g3">
+    <Screenshot shot={shots.costAdjust} />
+    <Screenshot shot={shots.costMaterial} />
+    <Screenshot shot={shots.costAutoNorm} />
+  </div>
+  <div class="grid grid-3" style="margin-top:26px">
+    <div class="card"><h3>Cân đối AI kiểm 3 điều</h3><ul class="checks">{costAi.checks.map((c) => <li><b>{c.t}.</b> {c.d}</li>)}</ul></div>
+    <div class="card"><h3>Định mức tự động – 3 phương án</h3><ul class="checks">{costAi.autoNorm.map((a) => <li>{a}</li>)}</ul><p class="caption">Mỗi phương án kèm điểm tin cậy; chỉ dòng được chọn mới ghi, định mức cũ không bị xoá.</p></div>
+    <div class="card"><h3>Xử lý NVL thiếu</h3><ul class="checks">{costAi.shortage.map((a) => <li>{a}</li>)}</ul></div>
+  </div>
+  <div class="split" style="margin-top:34px"><div><VideoCard video={vCost} /></div><div><h3>Danh mục trong hộp Giá thành</h3><p class="muted">Sơ đồ chức năng đi theo thứ tự: dở dang đầu kỳ → nhập kho thành phẩm → sổ giá thành → tính lại giá xuất kho.</p><div class="tab-cloud" style="margin-top:14px">{costAi.catalog.map((t) => <span>{t}</span>)}</div></div></div>
+</div></section>
+
+<section class="section" id="tro-ly-ai"><div class="container split"><div><VideoCard video={vAssistant} large={true} /></div><div><span class="eyebrow">Trợ lý AI</span><h2>Hướng dẫn ngay trên màn hình, không cần mở tài liệu</h2><div class="rules">{assistant.map((a) => <div><b>{a.t}</b><span>{a.d}</span></div>)}</div></div></div></section>
+
+<section class="section surface"><div class="container"><div class="section-head"><div><span class="eyebrow">Mã khách hàng & nhà cung cấp</span><h2>Không tự bịa mã, không tạo mã trùng</h2></div><p>Mã đối tác được gợi ý theo quy tắc của bộ sổ, thường là 4 số cuối mã số thuế, và chỉ được tạo khi kế toán xác nhận.</p></div>
+  <div class="rules">{customerCodeRules.map((r) => <div><b>{r.k}</b><span>{r.v}</span></div>)}</div>
+</div></section>
+
+<section class="section"><div class="container"><div class="section-head"><div><span class="eyebrow">An toàn dữ liệu</span><h2>Ranh giới rõ ràng giữa AI và sổ sách kế toán</h2></div><p>Mọi lần tải, nhập, phân tích, kết xuất đều được ghi nhật ký; mỗi lần AI lập chứng từ là một lô có thể huỷ.</p></div>
+  <div class="do-dont"><div class="card do"><h3>AI làm</h3><ul>{aiSafety.allowed.map((a) => <li>{a}</li>)}</ul></div><div class="card dont"><h3>AI không làm</h3><ul>{aiSafety.forbidden.map((a) => <li>{a}</li>)}</ul></div></div>
+</div></section>
+
+<section class="section surface-soft"><div class="container split"><div><span class="eyebrow">Kích hoạt AI</span><h2>Một mã cho mọi tính năng AI</h2><p class="lead">Phần kế toán dùng bình thường khi chưa kích hoạt. Mã kích hoạt mở toàn bộ tính năng AI trên máy và bộ sổ được cấp.</p></div><div class="card"><ul class="checks">{activation.map((a) => <li>{a}</li>)}</ul></div></div></section>
+
+<section class="section"><div class="container"><div class="section-head"><div><span class="eyebrow">Tìm hiểu theo chức năng</span><h2>Chi tiết từng nhóm AI</h2></div></div><div class="grid grid-3">{cards.map(c=><a class="card feature-card" href={url(c[3])}><div class="icon">{c[0]}</div><h3>{c[1]}</h3><p class="muted">{c[2]}</p><strong class="link-arrow">Xem chi tiết</strong></a>)}</div>
+  <div class="actions" style="margin-top:26px"><a class="btn btn-primary" href={url('/lien-he/#demo')}>XEM DEMO AI KẾ TOÁN</a><a class="btn btn-secondary" href={url('/video/')}>▶ VIDEO HƯỚNG DẪN</a></div>
+</div></section>
 </ContentLayout>

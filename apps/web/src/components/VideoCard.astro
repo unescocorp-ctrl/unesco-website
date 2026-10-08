@@ -1,0 +1,34 @@
+---
+import { url } from '../utils/url';
+import type { Video } from '../data/videos';
+interface Props { video: Video; large?: boolean }
+const { video, large = false } = Astro.props;
+const id = video.youtube.trim();
+---
+<article class={`video-card${large ? ' video-large' : ''}`} id={`video-${video.slug}`}>
+  {id ? (
+    <button class="video-thumb" type="button" data-yt={id} aria-label={`Phát video: ${video.title}`}>
+      <img src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`} alt="" loading="lazy" width="480" height="360" />
+      <span class="play" aria-hidden="true">▶</span>
+      <span class="dur">{video.duration}</span>
+    </button>
+  ) : video.src ? (
+    <div class="video-thumb is-video">
+      <video controls preload="none" playsinline poster={url(video.poster)} width="1280" height="720" aria-label={video.title}>
+        <source src={url(video.src)} type="video/mp4" />
+        Trình duyệt không hỗ trợ video. <a href={url(video.src)}>Tải video</a>.
+      </video>
+    </div>
+  ) : (
+    <div class="video-thumb pending" role="img" aria-label={`${video.title} – video sắp đăng`}>
+      <span class="play" aria-hidden="true">▶</span>
+      <span class="soon">Sắp đăng</span>
+      <span class="dur">{video.duration}</span>
+    </div>
+  )}
+  <div class="video-body">
+    <div class="video-meta"><span class="tag">{video.topic}</span><span class="time">⏱ {video.duration}</span></div>
+    <h3>{video.title}</h3>
+    <p class="muted">{video.desc}</p>
+  </div>
+</article>

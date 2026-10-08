@@ -1,0 +1,13 @@
+---
+import { url } from '../utils/url';
+import type { Shot } from '../data/screenshots';
+interface Props { shot: Shot; eager?: boolean; showCaption?: boolean; class?: string }
+const { shot, eager = false, showCaption = true, class: cls = '' } = Astro.props;
+---
+<figure class={`shot ${cls}`}>
+  <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>{shot.title}</span></div>
+  <a href={url(shot.src)} target="_blank" rel="noopener" aria-label={`Xem ảnh lớn: ${shot.caption}`}>
+    <img src={url(shot.src)} alt={shot.alt} width={shot.width} height={shot.height} loading={eager ? 'eager' : 'lazy'} decoding="async" />
+  </a>
+  {showCaption && <figcaption><strong>{shot.caption}</strong>{shot.desc}</figcaption>}
+</figure>

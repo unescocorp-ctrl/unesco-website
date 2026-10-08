@@ -1,6 +1,47 @@
 ---
+import { url } from '../../utils/url';
 import ContentLayout from '../../layouts/ContentLayout.astro';
+import VideoCard from '../../components/VideoCard.astro';
+import { videos, videoTopics, topicSlug, videoBySlug } from '../../data/videos';
+import { contact, telHref } from '../../data/contact';
+const intro = videoBySlug('gioi-thieu-unesco-ai')!;
+const rest = videos.filter((v) => v.slug !== intro.slug);
 ---
-<ContentLayout title="Thư viện video" description="Khu vực tập trung video giới thiệu, demo và hướng dẫn sử dụng UNESCO XI + AI theo từng nghiệp vụ." eyebrow="Video Center">
-<section class="section"><div class="container"><div class="grid grid-3"><div class="card"><div class="icon">▶</div><h3>Giới thiệu UNESCO XI + AI</h3><p class="muted">Video tổng quan sản phẩm, định vị AI và quy trình từ dữ liệu đầu vào đến báo cáo.</p><span class="tag tag-gold">CHỜ VIDEO ĐƯỢC DUYỆT</span></div><div class="card"><div class="icon">🧠</div><h3>Demo AI kế toán</h3><p class="muted">Hóa đơn, sổ phụ ngân hàng, gợi ý hạch toán và mức tin cậy.</p><span class="tag tag-gold">CHỜ VIDEO ĐƯỢC DUYỆT</span></div><div class="card"><div class="icon">🎓</div><h3>Hướng dẫn nghiệp vụ</h3><p class="muted">Video ngắn theo từng tác vụ để người dùng tìm đúng nội dung cần làm.</p><span class="tag tag-gold">CHỜ VIDEO ĐƯỢC DUYỆT</span></div></div><div class="notice" style="margin-top:28px"><strong>Không dùng video giả:</strong> chỉ xuất bản khi file/video URL, thumbnail, tiêu đề và phiên bản áp dụng đã được xác minh.</div></div></section>
+<ContentLayout title="Video phần mềm kế toán UNESCO AI" description="Video giới thiệu và bộ video hướng dẫn từng module của phần mềm kế toán UNESCO AI: tải hoá đơn điện tử, danh sách hoá đơn, tự động xử lý, sổ phụ ngân hàng, báo cáo & nhật ký, giá thành, trợ lý AI." eyebrow="Video Center">
+<section class="section"><div class="container">
+  <div class="split video-split">
+    <div><VideoCard video={intro} large={true} /></div>
+    <div><span class="eyebrow">Bắt đầu từ đây</span><h2>Giới thiệu UNESCO AI trong {intro.duration}</h2><p class="lead">{intro.desc}</p><p class="muted">Sau đó xem từng module theo đúng việc bạn cần làm. Mỗi video có lời đọc và chữ chú thích từng bước.</p>
+      <div class="pill-row">{videoTopics.map((t) => <a class="pill" href={`#${topicSlug(t)}`}>{t}</a>)}</div>
+    </div>
+  </div>
+  {videoTopics.map((t) => {
+    const list = rest.filter((v) => v.topic === t);
+    return list.length > 0 && (
+      <div style="margin-top:42px" id={topicSlug(t)}>
+        <h2 style="font-size:1.7rem">{t}</h2>
+        <div class="video-grid">{list.map((v) => <VideoCard video={v} />)}</div>
+      </div>
+    );
+  })}
+  <div class="notice" style="margin-top:36px"><strong>Sắp có:</strong> Bảng lương & chứng từ khác, Kết chuyển cuối kỳ, Cổng dịch vụ công, Quy tắc hạch toán & kích hoạt AI, Import hoá đơn từ Excel, Tờ khai hải quan (bản đầy đủ).</div>
+</div></section>
+<section class="section surface-soft"><div class="container"><div class="quote-band"><div><h2>Muốn được hướng dẫn trực tiếp?</h2><p>Bộ phận hỗ trợ sử dụng: {contact.support.phone} ({contact.support.ext}).</p></div><div class="actions"><a class="btn btn-primary" href={telHref(contact.support.phone)}>GỌI HỖ TRỢ</a><a class="btn btn-secondary" href={url('/ho-tro/')}>GỬI YÊU CẦU</a></div></div></div></section>
+<script is:inline>
+  document.querySelectorAll('button.video-thumb[data-yt]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(btn.getAttribute('data-yt')) + '?autoplay=1&rel=0';
+      f.title = btn.getAttribute('aria-label') || 'Video';
+      f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      f.allowFullscreen = true;
+      var box = document.createElement('div'); box.className = 'video-thumb'; box.appendChild(f);
+      btn.replaceWith(box);
+    });
+  });
+  // Chỉ phát một video tại một thời điểm
+  document.addEventListener('play', function (e) {
+    document.querySelectorAll('video').forEach(function (v) { if (v !== e.target) v.pause(); });
+  }, true);
+</script>
 </ContentLayout>

@@ -1,44 +1,107 @@
 ---
 import { url } from '../utils/url';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import FeatureCard from '../components/FeatureCard.astro';
 import LeadForm from '../components/LeadForm.astro';
-import { aiFeatures } from '../data/features';
+import Screenshot from '../components/Screenshot.astro';
+import VideoCard from '../components/VideoCard.astro';
+import { shots } from '../data/screenshots';
+import { modules } from '../data/modules';
+import { aiTabs, aiFlow, aiCounters, invoiceDownload, costAi, assistant } from '../data/ai';
+import { videos, videoBySlug } from '../data/videos';
+import { contact, telHref, zaloHref } from '../data/contact';
+const intro = videoBySlug('gioi-thieu-unesco-ai')!;
+const featuredVideos = ['m02-tai-hoa-don', 'm05-so-phu-ngan-hang', 'm07-gia-thanh'].map((s) => videoBySlug(s)!);
 const solutionCards = [
-  ['🧑‍💼','Kế toán dịch vụ','Quản lý nhiều doanh nghiệp, xử lý hóa đơn và sổ phụ theo quy trình thống nhất.','/giai-phap/ke-toan-dich-vu/'],
-  ['🏪','Bán lẻ & TMĐT','Hỗ trợ khối lượng giao dịch lớn, doanh thu và hàng hóa phát sinh theo ngày.','/giai-phap/thuong-mai-dien-tu/'],
-  ['🏭','Sản xuất','Định mức, nguyên vật liệu, chi phí, dở dang và tính giá thành theo đối tượng.','/giai-phap/san-xuat/'],
-  ['🏗️','Xây dựng','Theo dõi công trình, hạng mục, vật tư và tập hợp chi phí theo đối tượng.','/giai-phap/xay-dung/'],
+  ['🧑‍💼','Kế toán dịch vụ','Nhiều doanh nghiệp, mỗi đơn vị – mỗi năm một bộ sổ riêng; tải hoá đơn, đọc sổ phụ theo cùng một quy trình.','/giai-phap/ke-toan-dich-vu/'],
+  ['🏪','Thương mại – Bán lẻ','Gộp hoá đơn máy tính tiền theo ngày, công nợ kèm mã VietQR, tờ khai hải quan hàng nhập khẩu.','/giai-phap/ban-le/'],
+  ['🏭','Sản xuất','Định mức NVL, định mức tự động bằng AI, kết chuyển thành phẩm với Cân đối AI.','/giai-phap/san-xuat/'],
+  ['🏗️','Xây dựng – Đầu tư','Giá thành theo đối tượng: phân bổ 1541, 1542, 1543 cho từng công trình, lô.','/giai-phap/xay-dung/'],
 ];
 ---
-<BaseLayout title="Phần mềm kế toán UNESCO XI + AI" description="UNESCO XI + AI hỗ trợ hóa đơn điện tử, sổ phụ ngân hàng, gợi ý hạch toán, giá thành và báo cáo kế toán.">
+<BaseLayout title="Phần mềm kế toán UNESCO AI" description="UNESCO AI: phần mềm kế toán tích hợp AI — tải hoá đơn điện tử từ Cơ quan Thuế, AI tạo mã và đề xuất chứng từ, đọc sổ phụ ngân hàng, tờ khai hải quan, xuất XML HTKK, giá thành có Cân đối AI.">
 <section class="hero"><div class="container hero-grid">
   <div>
-    <span class="eyebrow">Phần mềm kế toán UNESCO XI + AI</span>
+    <span class="eyebrow">Phần mềm kế toán UNESCO AI</span>
     <h1>Kế toán nhanh hơn.<br/><span>Tự động hơn.</span><br/>Kiểm soát tốt hơn.</h1>
-    <p class="lead">Kết hợp hệ thống kế toán UNESCO với lớp hỗ trợ AI để đọc chứng từ, phân tích sổ phụ, gợi ý nghiệp vụ, tập hợp giá thành và đưa dữ liệu đã kiểm tra vào sổ sách – báo cáo.</p>
-    <div class="actions"><a class="btn btn-primary" href={url('/lien-he/#demo')}>ĐĂNG KÝ XEM DEMO</a><a class="btn btn-secondary" href={url('/san-pham/unesco-xi-ai/')}>XEM UNESCO XI + AI</a></div>
-    <div class="hero-proof"><span class="proof-pill">Hóa đơn điện tử</span><span class="proof-pill">Sổ phụ ngân hàng</span><span class="proof-pill">Giá thành</span><span class="proof-pill">Sổ sách & báo cáo</span></div>
+    <p class="lead">Phần mềm kế toán UNESCO tích hợp AI: tải hoá đơn điện tử từ Cơ quan Thuế, AI phân tích – tạo mã còn thiếu – đề xuất chứng từ, đọc sổ phụ ngân hàng, lập tờ khai và báo cáo. Kế toán xem trước rồi mới ghi sổ.</p>
+    <div class="actions"><a class="btn btn-primary" href={url('/lien-he/#demo')}>ĐĂNG KÝ XEM DEMO</a><a class="btn btn-secondary" href="#video-gioi-thieu">▶ XEM VIDEO GIỚI THIỆU</a></div>
+    <div class="hero-proof"><span class="proof-pill">Màn hình AI 8 thẻ</span><span class="proof-pill">Tải HĐĐT từ Cơ quan Thuế</span><span class="proof-pill">Sổ phụ & VietQR</span><span class="proof-pill">XML HTKK · TT133</span></div>
   </div>
-  <div class="hero-visual"><img src={url('/visuals/hero-ai-accounting.svg')} width="1440" height="940" alt="Minh họa trung tâm điều hành kế toán UNESCO XI + AI" fetchpriority="high"/></div>
+  <div class="hero-shot">
+    <Screenshot shot={shots.autoProcess} eager={true} showCaption={false} />
+    <div class="float-badge"><b>AI chuẩn bị – kế toán quyết định</b><small>Mọi hoá đơn được phân loại vào 4 ô kiểm soát trước khi lập chứng từ.</small><div class="chips"><span class="m1">Chờ duyệt</span><span class="m2">Chưa phân tích</span><span class="m3">Không xử lý</span><span class="m4">Cần xem lại</span></div></div>
+  </div>
 </div></section>
 
-<section class="section-sm surface"><div class="container"><div class="trust-strip"><div class="trust-item"><strong>AI hỗ trợ</strong><span>Phân tích, đối chiếu và tạo gợi ý</span></div><div class="trust-item"><strong>Kế toán kiểm soát</strong><span>Duyệt trước nghiệp vụ cần kiểm tra</span></div><div class="trust-item"><strong>Dữ liệu xuyên suốt</strong><span>Từ chứng từ đến sổ sách – báo cáo</span></div><div class="trust-item"><strong>Triển khai theo phiên bản</strong><span>Tính năng công bố rõ phạm vi hỗ trợ</span></div></div></div></section>
+<section class="section-sm surface"><div class="container"><div class="trust-strip"><div class="trust-item"><strong>Hoá đơn điện tử</strong><span>Tải mua vào – bán ra, cả hoá đơn máy tính tiền</span></div><div class="trust-item"><strong>AI có kiểm soát</strong><span>Điểm tin cậy, nguồn ghép, xem trước khi ghi</span></div><div class="trust-item"><strong>Thuế & HTKK</strong><span>01/GTGT, BCTC, 03/TNDN xuất XML nhập HTKK</span></div><div class="trust-item"><strong>9 phân hệ kế toán</strong><span>Nền tảng UNESCO XI đã đăng ký quyền tác giả</span></div></div></div></section>
 
-<section class="section"><div class="container"><div class="section-head"><div><span class="eyebrow">AI cho nghiệp vụ kế toán</span><h2>Giảm thao tác lặp lại, tăng thời gian kiểm soát số liệu</h2></div><p>UNESCO AI tập trung vào những công việc tốn thời gian: đọc dữ liệu, chuẩn hóa nội dung, tìm đối tượng, đối chiếu lịch sử và tạo đề xuất để kế toán kiểm tra.</p></div><div class="grid grid-3">{aiFeatures.map(f=><FeatureCard {...f}/>)}</div></div></section>
+<section class="section" id="video-gioi-thieu"><div class="container split video-split">
+  <div><VideoCard video={intro} large={true} /></div>
+  <div><span class="eyebrow">Video giới thiệu</span><h2>Xem UNESCO AI làm việc trong 9 phút</h2><p class="lead">Quay trực tiếp trên phần mềm: từ màn hình chính đến màn hình AI, tải hoá đơn, đọc sổ phụ, xuất tờ khai và tính giá thành.</p>
+    <ul class="checks"><li>Màn hình chính 9 phân hệ và khung AI</li><li>Tải hoá đơn hàng loạt, AI tạo mã và lập chứng từ</li><li>Sổ phụ ngân hàng, công nợ kèm mã VietQR</li><li>Báo cáo thuế, kiểm tra khoá sổ, giá thành có AI</li></ul>
+    <div class="actions"><a class="btn btn-primary" href={url('/video/')}>XEM {videos.length - 1} VIDEO HƯỚNG DẪN</a><a class="btn btn-secondary" href={url('/lien-he/#demo')}>ĐĂNG KÝ DEMO</a></div>
+  </div>
+</div></section>
 
-<section class="section surface-soft"><div class="container"><div class="section-head"><div><span class="eyebrow">Quy trình kiểm soát</span><h2>Từ dữ liệu đầu vào đến báo cáo kế toán</h2></div><p>Mỗi bước đều có dấu vết rõ ràng. AI không thay người dùng phê duyệt những nghiệp vụ cần kiểm soát.</p></div><div class="process-grid"><div class="process-step"><span class="num">01</span><strong>Nhận dữ liệu</strong><small>Hóa đơn, Excel, PDF, ảnh, sổ phụ.</small></div><div class="process-step"><span class="num">02</span><strong>Đọc & chuẩn hóa</strong><small>Chuyển dữ liệu về cấu trúc thống nhất.</small></div><div class="process-step"><span class="num">03</span><strong>AI phân tích</strong><small>Nhận dạng nội dung và ngữ cảnh nghiệp vụ.</small></div><div class="process-step"><span class="num">04</span><strong>Đối chiếu</strong><small>Khách hàng, hóa đơn, công nợ, lịch sử.</small></div><div class="process-step"><span class="num">05</span><strong>Kế toán duyệt</strong><small>Kiểm tra gợi ý và mức tin cậy.</small></div><div class="process-step"><span class="num">06</span><strong>Sổ sách & báo cáo</strong><small>Dữ liệu sau duyệt đi tiếp trong hệ thống.</small></div></div><div class="notice" style="margin-top:26px"><strong>Nguyên tắc truyền thông:</strong> AI hỗ trợ phân tích và đề xuất; người sử dụng kiểm tra và phê duyệt trước khi ghi nhận các nghiệp vụ cần kiểm soát.</div></div></section>
+<section class="section surface-soft"><div class="container"><div class="section-head"><div><span class="eyebrow">Màn hình AI</span><h2>8 thẻ nghiệp vụ trên một màn hình</h2></div><p>Mở từ ô AI trên màn hình chính UNESCO. Mỗi thẻ xử lý một nhóm việc tốn thời gian nhất của kế toán.</p></div>
+  <div class="ai-tabs">{aiTabs.map((t) => <a class="ai-tab" href={url(`/san-pham/unesco-xi-ai/#${t.key}`)}><span class="ai-tab-n">{t.n}</span><span class="ai-tab-icon" aria-hidden="true">{t.icon}</span><b>{t.title}</b><small>{t.lead}</small></a>)}</div>
+  <div class="assistant-row"><div class="assistant-head"><span class="ai-tab-icon" aria-hidden="true">🤖</span><div><b>Trợ lý AI đi theo trên mọi thẻ</b><small>Giải thích từng nút, gợi ý việc nên làm tiếp, trả lời câu hỏi tiếng Việt.</small></div></div><ul>{assistant.map((a) => <li><b>{a.t}:</b> {a.d}</li>)}</ul></div>
+</div></section>
 
-<section class="section"><div class="container split"><div class="visual-card"><img src={url('/visuals/invoice-ai.svg')} width="1200" height="820" alt="Minh họa AI đọc và phân tích hóa đơn điện tử" loading="lazy"/></div><div><span class="eyebrow">AI hóa đơn điện tử</span><h2>Từ hóa đơn đến dữ liệu kế toán có cấu trúc</h2><p class="lead">Đọc các trường thông tin chính, phân tích dòng hàng và hỗ trợ gợi ý đối tượng – vật tư – tài khoản theo phạm vi dữ liệu của doanh nghiệp.</p><div class="feature-list"><div class="feature-row"><span class="check">✓</span><div><strong>Nhiều nguồn dữ liệu</strong><span>XML, Excel, PDF text, PDF scan hoặc hình ảnh theo khả năng từng phiên bản.</span></div></div><div class="feature-row"><span class="check">✓</span><div><strong>Đọc chi tiết hóa đơn</strong><span>MST, số/ký hiệu, ngày, tiền hàng, thuế, tổng thanh toán và dòng hàng.</span></div></div><div class="feature-row"><span class="check">✓</span><div><strong>Gợi ý để kiểm tra</strong><span>Mã khách hàng/NCC, vật tư và tài khoản được trình bày cho người dùng duyệt.</span></div></div></div><div class="actions"><a class="btn btn-primary" href={url('/ai-ke-toan/ai-hoa-don/')}>KHÁM PHÁ AI HÓA ĐƠN</a></div></div></div></section>
+<section class="section"><div class="container"><div class="section-head"><div><span class="eyebrow">Quy trình xử lý tự động</span><h2>AI chuẩn bị và đề xuất, chứng từ chỉ ghi khi bạn đồng ý</h2></div><p>Mỗi tháng làm theo cùng một quy trình. Hoá đơn đã có trong phần mềm không bị nhập thành bản thứ hai, chỉ được cập nhật trạng thái.</p></div>
+  <ol class="steps5">{aiFlow.map((s) => <li><b>{s.t}</b><small>{s.d}</small></li>)}</ol>
+  <div class="legend" style="margin-top:22px">{aiCounters.map((c) => <div class={c.cls}><b>{c.t}</b>{c.d}</div>)}</div>
+</div></section>
 
-<section class="section surface"><div class="container split reverse"><div class="visual-card"><img src={url('/visuals/bank-ai.svg')} width="1200" height="820" alt="Minh họa AI phân tích sổ phụ ngân hàng" loading="lazy"/></div><div><span class="eyebrow">AI sổ phụ ngân hàng</span><h2>Đọc nội dung giao dịch theo cách kế toán có thể kiểm tra</h2><p class="lead">Chuẩn hóa nội dung không dấu hoặc khó đọc, truy vết tên đối tượng và hỗ trợ đối chiếu với khách hàng, hóa đơn, công nợ và lịch sử nghiệp vụ.</p><div class="feature-list"><div class="feature-row"><span class="check">✓</span><div><strong>Chuẩn hóa mô tả giao dịch</strong><span>Giải nghĩa viết tắt và ký hiệu theo từ điển nghiệp vụ.</span></div></div><div class="feature-row"><span class="check">✓</span><div><strong>Truy vết đối tượng</strong><span>Tìm tên người chuyển/nhận, khách hàng, nhà cung cấp hoặc nhân viên liên quan.</span></div></div><div class="feature-row"><span class="check">✓</span><div><strong>Hiển thị mức tin cậy</strong><span>Đề xuất được tách rõ để người dùng kiểm tra trước khi duyệt.</span></div></div></div><div class="actions"><a class="btn btn-tech" href={url('/ai-ke-toan/ai-so-phu-ngan-hang/')}>XEM AI SỔ PHỤ</a></div></div></div></section>
+<section class="section surface"><div class="container split reverse"><div><Screenshot shot={shots.bulkDownload} /></div><div><span class="eyebrow">Hoá đơn điện tử</span><h2>Tải hoá đơn từ Cơ quan Thuế, không gõ lại từng tờ</h2><p class="lead">Chọn MUA VÀO hoặc BÁN RA, chọn kỳ rồi bấm Tải. Hoá đơn tự vào màn hình AI và được phân tích ngay.</p>
+  <div class="feature-list">{invoiceDownload.slice(0, 4).map((f) => <div class="feature-row"><span class="check">✓</span><div><strong>{f.t}</strong><span>{f.d}</span></div></div>)}</div>
+  <div class="actions"><a class="btn btn-secondary" href={url('/video/#video-m02-tai-hoa-don')}>▶ VIDEO TẢI HOÁ ĐƠN</a><a class="btn btn-secondary" href={url('/ai-ke-toan/#hoa-don')}>CHI TIẾT</a></div></div></div></section>
 
-<section class="section"><div class="container"><div class="section-head"><div><span class="eyebrow">Giải pháp theo mô hình</span><h2>Không chỉ liệt kê chức năng — giải quyết bài toán của từng loại doanh nghiệp</h2></div><p>Mỗi landing page đi theo quy trình nghiệp vụ thực tế để khách hàng nhanh chóng thấy phần mềm phù hợp với công việc của mình ở đâu.</p></div><div class="grid grid-4">{solutionCards.map(c=><a class="card solution-card" href={url(c[3])}><div class="solution-icon">{c[0]}</div><h3>{c[1]}</h3><p class="muted">{c[2]}</p><strong class="link-arrow">Xem giải pháp</strong></a>)}</div><div class="visual-card" style="margin-top:30px"><img src={url('/visuals/solutions-ai.svg')} width="1200" height="760" alt="UNESCO XI + AI cho kế toán dịch vụ, bán lẻ, sản xuất và xây dựng" loading="lazy"/></div></div></section>
+<section class="section surface-soft"><div class="container split"><div><Screenshot shot={shots.bank} /></div><div><span class="eyebrow">Sổ phụ ngân hàng</span><h2>AI đọc sao kê như một kế toán</h2><p class="lead">Mỗi giao dịch được xếp nhóm nghiệp vụ, tìm đối tác và tài khoản đối ứng. Dòng chắc chắn sẵn sàng lập phiếu; dòng còn nghi ngờ chờ bạn xác nhận.</p>
+  <div class="feature-list"><div class="feature-row"><span class="check">1</span><div><strong>Excel, CSV, PDF, ảnh scan</strong><span>Đọc file của các ngân hàng phổ biến; ảnh và PDF scan được chuyển sang Excel tô màu để kiểm tra.</span></div></div><div class="feature-row"><span class="check">2</span><div><strong>Đúng công ty, không trùng</strong><span>Đối chiếu số tài khoản, chủ tài khoản với công ty đang mở; nhập lại file cũ không tạo dòng trùng.</span></div></div><div class="feature-row"><span class="check">QR</span><div><strong>Công nợ kèm mã VietQR</strong><span>Thông báo công nợ cho từng khách, khách quét mã chuyển đúng số tiền; sổ phụ về là AI tự khớp.</span></div></div></div>
+  <div class="actions"><a class="btn btn-secondary" href={url('/video/#video-m05-so-phu-ngan-hang')}>▶ VIDEO SỔ PHỤ</a><a class="btn btn-secondary" href={url('/ai-ke-toan/ai-so-phu-ngan-hang/')}>CHI TIẾT</a></div></div></div></section>
 
-<section class="section surface-soft"><div class="container split"><div class="visual-card"><img src={url('/visuals/cost-accounting.svg')} width="1200" height="820" alt="Minh họa tính giá thành sản xuất và xây dựng" loading="lazy"/></div><div><span class="eyebrow">Tính giá thành</span><h2>Tập hợp chi phí, phân bổ và kiểm soát dở dang trong cùng quy trình</h2><p class="lead">Hỗ trợ doanh nghiệp sản xuất và xây dựng quản lý nguyên vật liệu, nhân công, chi phí chung, định mức và đối tượng tính giá thành.</p><div class="feature-list"><div class="feature-row"><span class="check">01</span><div><strong>Sản xuất</strong><span>Định mức, NVL, nhân công, chi phí chung và dở dang.</span></div></div><div class="feature-row"><span class="check">02</span><div><strong>Xây dựng</strong><span>Công trình, hạng mục, vật tư và tập hợp chi phí theo đối tượng.</span></div></div><div class="feature-row"><span class="check">AI</span><div><strong>Hỗ trợ phân tích</strong><span>Đề xuất định mức, đối chiếu và cảnh báo chênh lệch cần kiểm tra.</span></div></div></div><a class="btn btn-primary" href={url('/nghiep-vu/gia-thanh/')}>KHÁM PHÁ GIÁ THÀNH</a></div></div></section>
+<section class="section surface"><div class="container split reverse"><div><Screenshot shot={shots.reports} /></div><div><span class="eyebrow">Báo cáo & thuế</span><h2>Tờ khai, báo cáo tài chính và kiểm tra trước khoá sổ</h2><p class="lead">Thẻ Báo cáo & nhật ký gom toàn bộ việc cuối kỳ, kèm nhật ký những gì AI đã làm.</p>
+  <div class="feature-list"><div class="feature-row"><span class="check">✓</span><div><strong>01/GTGT sang HTKK</strong><span>Xem trước từng chỉ tiêu, cảnh báo lệch với sổ kế toán, kết xuất XML để nhập vào HTKK. Phần mềm không ký, không nộp thay.</span></div></div><div class="feature-row"><span class="check">✓</span><div><strong>BCTC & quyết toán</strong><span>B01, B02, B03, B09, 03/TNDN; xuất một lần cả bộ báo cáo năm; biểu mẫu sổ sách TT133.</span></div></div><div class="feature-row"><span class="check">✓</span><div><strong>Kiểm tra khoá sổ</strong><span>Hơn 20 phép kiểm tra: tiền âm, tồn kho âm, chưa kết chuyển, chưa trích khấu hao… mỗi lỗi một sheet chi tiết.</span></div></div></div>
+  <div class="actions"><a class="btn btn-secondary" href={url('/video/#video-m06-bao-cao-nhat-ky')}>▶ VIDEO BÁO CÁO</a></div></div></div></section>
 
-<section class="section"><div class="container"><div class="quote-band"><div><span class="eyebrow" style="color:#7fe2ba">UNESCO XI + AI</span><h2>Một nền tảng để giới thiệu, dùng thử, tải phần mềm và tiếp cận hỗ trợ.</h2><p>Website V1 kết nối Product Center, Download Center, Release Notes, hướng dẫn và biểu mẫu tư vấn trên cùng hệ thống nội dung.</p></div><div class="actions"><a class="btn btn-primary" href={url('/download/')}>TẢI PHẦN MỀM</a><a class="btn btn-secondary" href={url('/huong-dan/')}>XEM HƯỚNG DẪN</a></div></div></div></section>
+<section class="section surface-soft"><div class="container split"><div><Screenshot shot={shots.costBalance} /></div><div><span class="eyebrow">Giá thành có AI</span><h2>Kết chuyển thành phẩm với khung Cân đối AI</h2><p class="lead">Trước khi ghi phiếu kết chuyển, Cân đối AI kiểm ba điều. Dòng đỏ là chỗ cần xử lý trước khi ghi.</p>
+  <div class="feature-list">{costAi.checks.map((c, i) => <div class="feature-row"><span class="check">{`0${i + 1}`}</span><div><strong>{c.t}</strong><span>{c.d}</span></div></div>)}<div class="feature-row"><span class="check">AI</span><div><strong>Định mức tự động</strong><span>Sản phẩm mới chưa có định mức: AI lập từ sản phẩm tương tự, thực tế xuất kho hoặc tỷ lệ giá bán.</span></div></div></div>
+  <div class="actions"><a class="btn btn-primary" href={url('/ai-ke-toan/#gia-thanh')}>KHÁM PHÁ GIÁ THÀNH</a><a class="btn btn-secondary" href={url('/video/#video-m07-gia-thanh')}>▶ VIDEO</a></div></div></div></section>
 
-<section class="section surface"><div class="container"><span class="eyebrow">FAQ</span><h2>Câu hỏi thường gặp</h2><div class="faq"><details><summary>AI có tự ghi sổ hoàn toàn không?</summary><p>Website mô tả AI theo nguyên tắc phân tích và đề xuất. Người dùng kiểm tra và phê duyệt các nghiệp vụ cần kiểm soát trước khi ghi nhận.</p></details><details><summary>UNESCO xử lý được hóa đơn và sổ phụ ở định dạng nào?</summary><p>Phạm vi hỗ trợ được công bố theo từng phiên bản. Nhóm tính năng hiện được thiết kế cho XML, Excel, PDF, ảnh và các nguồn dữ liệu ngân hàng phù hợp.</p></details><details><summary>Có hỗ trợ doanh nghiệp sản xuất và xây dựng?</summary><p>Có landing page riêng cho sản xuất, xây dựng và nghiệp vụ giá thành, với quy trình tập hợp chi phí theo đối tượng.</p></details><details><summary>Tôi có thể nâng cấp từ phiên bản UNESCO cũ?</summary><p>Chính sách nâng cấp, khả năng chuyển đổi dữ liệu và yêu cầu kỹ thuật sẽ được công bố theo từng phiên bản phát hành chính thức.</p></details></div></div></section>
-<section class="section"><div class="container"><LeadForm kind="demo" heading="Muốn xem UNESCO XI + AI xử lý dữ liệu kế toán thực tế?"/></div></section>
+<section class="section"><div class="container"><div class="section-head"><div><span class="eyebrow">Nền tảng kế toán</span><h2>Đủ 9 phân hệ kế toán cho doanh nghiệp Việt Nam</h2></div><p>AI làm việc trên chính bộ sổ UNESCO: dữ liệu nhập ở phân hệ nào cũng đi thẳng vào sổ sách và báo cáo.</p></div>
+  <div class="grid grid-3">{modules.map((m) => <div class="module-mini"><div class="icon">{m.icon}</div><div><b>{m.title}</b><span>{m.summary}</span></div></div>)}</div>
+  <div class="actions" style="margin-top:28px"><a class="btn btn-secondary" href={url('/san-pham/unesco-xi-ai/#phan-he')}>XEM GIAO DIỆN TỪNG PHÂN HỆ</a></div>
+</div></section>
+
+<section class="section surface"><div class="container"><div class="section-head"><div><span class="eyebrow">Video hướng dẫn</span><h2>Học từng thao tác qua video ngắn</h2></div><p>Bộ video hướng dẫn từng module của màn hình AI, có lời đọc và chữ chú thích.</p></div>
+  <div class="video-grid">{featuredVideos.map((v) => <VideoCard video={v} />)}</div>
+  <div class="actions" style="margin-top:26px"><a class="btn btn-secondary" href={url('/video/')}>XEM TẤT CẢ VIDEO</a></div>
+</div></section>
+
+<section class="section"><div class="container"><div class="section-head"><div><span class="eyebrow">Giải pháp theo mô hình</span><h2>Phù hợp với cách doanh nghiệp của bạn vận hành</h2></div><p>Chọn mô hình gần nhất để xem quy trình, báo cáo và phân hệ cần dùng.</p></div><div class="grid grid-4">{solutionCards.map(c=><a class="card solution-card" href={url(c[3])}><div class="solution-icon">{c[0]}</div><h3>{c[1]}</h3><p class="muted">{c[2]}</p><strong class="link-arrow">Xem giải pháp</strong></a>)}</div></div></section>
+
+<section class="section surface"><div class="container"><div class="quote-band"><div><span class="eyebrow" style="color:#7fe2ba">Tư vấn trực tiếp</span><h2>Gọi ngay để được demo trên chính dữ liệu của bạn.</h2><p>Kinh doanh: {contact.sales.mobile} · {contact.sales.phone} ({contact.sales.ext}). Hỗ trợ sử dụng: {contact.support.phone} ({contact.support.ext}).</p></div><div class="actions"><a class="btn btn-primary" href={telHref(contact.sales.mobile)}>GỌI {contact.sales.mobile}</a><a class="btn btn-secondary" href={zaloHref} target="_blank" rel="noopener">CHAT ZALO</a></div></div></div></section>
+
+<section class="section"><div class="container"><span class="eyebrow">FAQ</span><h2>Câu hỏi thường gặp</h2><div class="faq">
+  <details><summary>AI có tự ghi sổ không?</summary><p>Mặc định là không. AI chuẩn bị và đề xuất; từng chứng từ mở ra điền sẵn để kế toán xem trước rồi bấm Ghi. Tuỳ chọn Tự động ghi chỉ chạy khi bạn bật, với hoá đơn có điểm tin cậy từ 90 trở lên. Ghi sai cả lô vẫn huỷ được ở thẻ Báo cáo & nhật ký; phần mềm chỉ xoá chứng từ do AI lập, chứng từ nhập tay luôn được giữ nguyên.</p></details>
+  <details><summary>Tải hoá đơn có cần lưu mật khẩu cổng thuế không?</summary><p>Không. Bạn tự gõ mã số thuế, mật khẩu và captcha khi đăng nhập; công cụ không lưu mật khẩu và chỉ tải khi tài khoản đăng nhập cùng mã số thuế với bộ sổ đang mở.</p></details>
+  <details><summary>Phần mềm có nộp tờ khai thay không?</summary><p>Không. UNESCO AI kết xuất tệp XML (01/GTGT, BCTC, 03/TNDN) để bạn nhập vào HTKK, kiểm tra rồi nộp như thường lệ. Phần mềm không ký và không nộp thay.</p></details>
+  <details><summary>Đọc được sao kê của những ngân hàng nào?</summary><p>Phần mềm đọc file Excel, CSV và PDF có chữ của các ngân hàng phổ biến, tự nhận ngân hàng theo nội dung file. Sao kê là ảnh chụp hoặc PDF scan thì dùng chức năng Ảnh, PDF sang Excel (mỗi trang trừ vào số trang của mã kích hoạt AI).</p></details>
+  <details><summary>Không có mã kích hoạt AI thì có dùng được phần mềm không?</summary><p>Có. Phần kế toán 9 phân hệ dùng bình thường. Mã kích hoạt mở các tính năng AI: màn hình AI, chuyển PDF sang Excel, trích xuất sổ phụ, Cân đối AI, giá thành theo đối tượng, Tờ khai HQ, Import Excel.</p></details>
+</div></div></section>
+<section class="section surface-soft"><div class="container"><LeadForm kind="demo" heading="Muốn xem UNESCO AI xử lý dữ liệu kế toán thực tế?"/></div></section>
+<script is:inline>
+  document.querySelectorAll('button.video-thumb[data-yt]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(btn.getAttribute('data-yt')) + '?autoplay=1&rel=0';
+      f.title = btn.getAttribute('aria-label') || 'Video';
+      f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      f.allowFullscreen = true;
+      var box = document.createElement('div'); box.className = 'video-thumb'; box.appendChild(f);
+      btn.replaceWith(box);
+    });
+  });
+</script>
 </BaseLayout>
