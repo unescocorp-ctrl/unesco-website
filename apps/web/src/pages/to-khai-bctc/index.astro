@@ -1,0 +1,54 @@
+---
+import { url } from '../../utils/url';
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import Screenshot from '../../components/Screenshot.astro';
+import VideoCard from '../../components/VideoCard.astro';
+import Icon from '../../components/Icon.astro';
+import { shots } from '../../data/screenshots';
+import { reportGroups } from '../../data/reports';
+import { videoBySlug } from '../../data/videos';
+const flow = [['history', 'Tự lấy kỳ trước', '[22] = [43] kỳ trước, người ký, cơ quan thuế tự điền'], ['file-xml', 'Khuôn XML từ HTKK', 'Học từ chính HTKK trên máy'], ['shield-check', 'Soát ràng buộc', 'Lệch 1 đồng ở ràng buộc là dừng'], ['eye', 'Xem trước', 'So kỳ trước, kiểm số chuyển kỳ, kiểm chéo trong kỳ'], ['download', 'Đưa vào HTKK', 'Chỉ chép khi bấm Đưa vào HTKK; không ghi đè kỳ đã có']];
+const reps = ['01/GTGT', 'B01a-DNN', 'B02-DNN', 'B03-DNN', 'F01-DNN', 'B09-DNN', '03/TNDN', '05/QTT-TNCN'];
+const warns = [['[!] Phải xem', 'Số chuyển kỳ khác tờ khai kỳ trước, lệch giữa các tờ khai trong kỳ'], ['[?] Nên kiểm tra', 'Biến động lớn so với kỳ trước'], ['[i] Thông tin', 'Nguồn số liệu, kỳ đã có trong HTKK (không ghi đè)']];
+const more = [
+  ['users', 'Thuế TNCN đủ bộ', '05/KK-TNCN quý, 05/QTT-TNCN năm kèm 05-1 / 05-2 / 05-3, đăng ký thuế NLĐ 05-ĐKT-TH, đối chiếu TNCN với sổ.', 'g'],
+  ['database', 'Nhập toàn bộ HTKK theo MST', 'Một lần đọc mọi tờ khai của MST: số dư TK cuối năm so sổ, lỗ chuyển, [22] kỳ sau, TNCN, BCTC năm trước.', 'b'],
+  ['layers', 'Xuất 1 lần báo cáo năm', 'Tích một lần B01a, B02, B03, F01, B09, 03/TNDN, 05/QTT – Excel mẫu in HTKK, XML hoặc cả hai.', 't'],
+  ['history', 'Số liệu năm trước BCTC', 'Lấy cột Năm trước / Số đầu năm từ Excel, XML, ZIP, HTKK; đổi mã TT200 / TT133 sang TT99; xem trước, Đồng ý mới ghi.', 'y'],
+  ['percent', 'Ước tính TNDN quý', 'Ước tính TNDN từ đầu năm (phụ lục 03-1A), gợi ý thuế suất 15 / 17 / 20%.', 'g'],
+  ['list-checks', 'Kiểm tra khoá sổ', 'LỖI / CẢNH BÁO / ĐẠT: số dư, kết chuyển, công nợ, tồn kho âm…', 'b'],
+];
+const v = videoBySlug('m06-bao-cao-nhat-ky')!;
+---
+<ContentLayout title="Tờ khai & BCTC – Soát trước khi xuất" description="Soát trước khi xuất – phát hiện lệch trước khi nộp: xem trước 01/GTGT, báo cáo tài chính B01–B09, 03/TNDN, cảnh báo lệch với sổ, kiểm tra khoá sổ và xuất XML HTKK. Phần mềm không ký, không nộp thay." eyebrow="Tờ khai & BCTC" display="TỜ KHAI & |BCTC" subtitle="Soát trước khi xuất – phát hiện lệch trước khi nộp" heroShot={shots.reports}>
+
+<section class="section"><div class="container">
+  <div class="sec-c"><span class="eyebrow">Quy trình kết xuất</span><h2>5 bước từ sổ kế toán đến tệp XML</h2></div>
+  <ol class="flow" style="--n:5">{flow.map((f, i) => <li><span class={`ic lg ring ${['g', 'g', 'y', 'b', 'g'][i]}`}><Icon name={f[0]} /></span><b>{f[1]}</b><small>{f[2]}</small></li>)}</ol>
+</div></section>
+
+<section class="section surface"><div class="container">
+  <div class="tri">
+    <div class="card"><h3 class="tg">Danh sách báo cáo</h3><ul class="rep-list">{reps.map((r) => <li><Icon name="file-text" />{r}</li>)}</ul></div>
+    <div class="card"><h3 class="ty">Màn hình Xem trước</h3><p style="display:flex;gap:8px;align-items:center;margin:0 0 14px;font-family:var(--font-h);font-weight:700"><span class="tr"><Icon name="alert" /></span>Đọc dòng [!] trước khi đưa vào HTKK</p><ul class="warn-list">{warns.map((w) => <li><b>{w[0]}</b><span>{w[1]}</span></li>)}</ul></div>
+    <div class="card"><h3 class="tb">Xem trước báo cáo</h3><p style="margin:0 0 10px;font-family:var(--font-h);font-weight:700;font-size:1.2rem">01/GTGT · Tờ khai thuế GTGT</p>
+      <div class="xt"><table><thead><tr><th>Chỉ tiêu</th><th>Trạng thái</th></tr></thead><tbody><tr><td>Doanh thu hàng hoá, dịch vụ</td><td><span class="lbl y">lệch với sổ</span></td></tr><tr><td>Thuế GTGT đầu ra</td><td><span class="lbl y">lệch với sổ</span></td></tr><tr><td>Thuế GTGT đầu vào</td><td><span class="lbl g">khớp</span></td></tr></tbody></table></div>
+      <p class="caption" style="margin:10px 0 0">Ví dụ minh hoạ · Phạm vi mẫu biểu theo phiên bản công bố hỗ trợ.</p></div>
+  </div>
+  <div class="metrics" style="margin-top:24px"><div class="metric-box"><b>74 / 74</b><small>chỉ tiêu B01a-DNN khớp BCTC thật 2025, lệch 0 đồng</small></div><div class="metric-box"><b>0 lệch</b><small>28 ràng buộc 03/TNDN trên tờ khai thật 2025</small></div><div class="metric-box"><b>3 – 4,5 giây</b><small>đọc 927 – 1.252 tờ khai HTKK của một MST</small></div></div>
+  <div class="grid grid-3" style="margin-top:24px">{more.map((m) => <div class={`card top-${m[3]}`}><span class={`ic ${m[3]}`} style="margin-bottom:14px"><Icon name={m[0]} /></span><h3>{m[1]}</h3><p class="muted" style="margin:0">{m[2]}</p></div>)}</div>
+  <div class="callout y" style="margin-top:24px"><span class="ic"><Icon name="target" /></span><div><h3>Phát hiện trước khi nộp</h3><p>Kiểm tra khoá sổ hơn 20 phép (tiền âm, tồn kho âm, chưa kết chuyển, chưa trích khấu hao…), mỗi lỗi một sheet chi tiết kèm cách xử lý. Phần mềm không ký và không nộp thay.</p></div></div>
+</div></section>
+
+<section class="section"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Ảnh phần mềm</span><h2>Báo cáo thuế, sổ sách và nhật ký AI</h2></div></div>
+  <div class="gallery g3"><Screenshot shot={shots.reports} /><Screenshot shot={shots.vatReport} /><Screenshot shot={shots.ledgers} /></div>
+</div></section>
+
+<section class="section surface-soft"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Sổ sách & báo cáo</span><h2>Đủ mẫu sổ, báo cáo tài chính, báo cáo thuế</h2></div><p>Mỗi báo cáo chọn được kỳ theo tháng, quý hoặc ngày; xem, in hoặc xuất Excel. Theo TT133 và TT99.</p></div>
+  <div class="report-cols">{reportGroups.map((g) => <div class="grp"><h3>{g.title}</h3><ul>{g.items.map((i) => <li>{i}</li>)}</ul></div>)}</div>
+</div></section>
+
+<section class="section"><div class="container split video-split"><div><VideoCard video={v} large={true} /></div><div><span class="eyebrow">Video hướng dẫn</span><h2>Báo cáo & nhật ký trên phần mềm</h2><p class="lead">{v.desc}</p><div class="actions"><a class="btn btn-primary" href={url('/lien-he/#demo')}>Đăng ký xem demo</a><a class="btn btn-secondary" href={url('/ho-so-thue/')}>Hồ sơ Thuế</a></div></div></div></section>
+</ContentLayout>

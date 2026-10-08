@@ -23,23 +23,28 @@ const s = (name: string, width: number, height: number, title: string, caption: 
 });
 
 export const shots = {
+  // ── Màn hình chính ────────────────────────────────────────────
+  mainScreen: s('man-hinh-chinh-unesco-ai', 1536, 1024, 'UNESCO Accounting System', 'Màn hình chính UNESCO AI',
+    '9 phân hệ kế toán quanh trung tâm Báo cáo – Sổ kế toán; ô UCDIT AI mở màn hình AI.',
+    'Màn hình chính phần mềm kế toán UNESCO AI với 9 phân hệ và khung trợ lý AI'),
+
   // ── Màn hình AI: 8 thẻ nghiệp vụ ──────────────────────────────
-  autoProcess: s('ai-tu-dong-xu-ly', 1600, 841, 'UNESCO XI + AI – Tự động xử lý', 'Thẻ Tự động xử lý',
+  autoProcess: s('ai-tu-dong-xu-ly', 1600, 841, 'UNESCO AI – Tự động xử lý', 'Thẻ Tự động xử lý',
     'Bốn ô kiểm soát kết quả AI, Bước 1 tạo mã còn thiếu, Bước 2 lập chứng từ, sổ phụ – bảng lương và quy trình xử lý tự động.',
     'Màn hình AI của UNESCO AI: thẻ Tự động xử lý với các ô Chờ duyệt, Chưa phân tích, Không xử lý, Cần xem lại'),
-  invoiceList: s('ai-danh-sach-hoa-don', 1600, 900, 'UNESCO XI + AI – Danh sách hoá đơn', 'Thẻ Danh sách hoá đơn',
+  invoiceList: s('ai-danh-sach-hoa-don', 1600, 900, 'UNESCO AI – Danh sách hoá đơn', 'Thẻ Danh sách hoá đơn',
     'Trạng thái, chứng từ đã lập, điểm tin cậy của AI và từng dòng hàng kèm mã vật tư, tài khoản, nguồn ghép.'),
-  customs: s('ai-to-khai-hai-quan', 1600, 900, 'UNESCO XI + AI – Tờ khai HQ', 'Thẻ Tờ khai hải quan nhập khẩu',
+  customs: s('ai-to-khai-hai-quan', 1600, 900, 'UNESCO AI – Tờ khai HQ', 'Thẻ Tờ khai hải quan nhập khẩu',
     'Đọc tờ khai nhập khẩu từ tệp Excel, ghép mã hàng – nhà cung cấp, phân bổ chi phí và lập chứng từ.'),
-  bank: s('ai-so-phu-ngan-hang', 1600, 900, 'UNESCO XI + AI – Sổ phụ ngân hàng', 'Thẻ Sổ phụ ngân hàng',
+  bank: s('ai-so-phu-ngan-hang', 1600, 900, 'UNESCO AI – Sổ phụ ngân hàng', 'Thẻ Sổ phụ ngân hàng',
     'AI xếp nhóm nghiệp vụ, tìm tài khoản đối ứng và đối tác cho từng giao dịch; kế toán sửa, xác nhận rồi lập phiếu.'),
-  payroll: s('ai-bang-luong', 1600, 900, 'UNESCO XI + AI – Bảng lương & chứng từ khác', 'Thẻ Bảng lương & chứng từ khác',
+  payroll: s('ai-bang-luong', 1600, 900, 'UNESCO AI – Bảng lương & chứng từ khác', 'Thẻ Bảng lương & chứng từ khác',
     'Import bảng lương, đối chiếu và lập chứng từ lương, tạm ứng, thu – chi khác.'),
-  closing: s('ai-ket-chuyen-cuoi-ky', 1600, 900, 'UNESCO XI + AI – Kết chuyển cuối kỳ', 'Thẻ Kết chuyển cuối kỳ',
+  closing: s('ai-ket-chuyen-cuoi-ky', 1600, 900, 'UNESCO AI – Kết chuyển cuối kỳ', 'Thẻ Kết chuyển cuối kỳ',
     'Checklist cuối kỳ: phân bổ công cụ dụng cụ, chi phí trả trước, khấu hao TSCĐ – thực hiện tất cả trong một lần.'),
-  reports: s('ai-bao-cao-nhat-ky', 1600, 900, 'UNESCO XI + AI – Báo cáo & nhật ký', 'Thẻ Báo cáo & nhật ký',
+  reports: s('ai-bao-cao-nhat-ky', 1600, 900, 'UNESCO AI – Báo cáo & nhật ký', 'Thẻ Báo cáo & nhật ký',
     'Thuế GTGT, thuế TNDN, báo cáo tài chính, sổ kế toán, biểu mẫu chứng từ; các lô AI đã lập và nhật ký 30 ngày.'),
-  publicPortal: s('ai-cong-dich-vu-cong', 1448, 1086, 'UNESCO XI + AI – Cổng dịch vụ công', 'Thẻ Cổng dịch vụ công',
+  publicPortal: s('ai-cong-dich-vu-cong', 1448, 1086, 'UNESCO AI – Cổng dịch vụ công', 'Thẻ Cổng dịch vụ công',
     'Lấy dữ liệu từ Cổng dịch vụ công Thuế: thông báo, hồ sơ khai thuế, nghĩa vụ thuế về phần mềm để đối chiếu.'),
 
   // ── Tải hoá đơn hàng loạt ─────────────────────────────────────
@@ -59,6 +64,8 @@ export const shots = {
     'So lượng cần theo định mức với tồn đầu, nhập trong tháng; chọn cách xử lý rồi tính lại.'),
   costAutoNorm: s('gt-dinh-muc-tu-dong', 1600, 900, 'Định mức tự động cho sản phẩm', 'Định mức tự động bằng AI',
     'Sản phẩm mới chưa có định mức: AI lập từ sản phẩm tương tự, từ thực tế xuất kho hoặc theo tỷ lệ giá bán.'),
+  costSteps: s('gt-trinh-tu-7-buoc', 1180, 1000, 'Giá thành – Trình tự giá thành tháng', 'Trình tự giá thành 7 bước (đèn màu)',
+    'Mỗi bước có đèn xanh / vàng / đỏ / xám theo số của sổ; nút Làm bước này mở đúng màn hình. Hình trong Hướng dẫn trực quan, số đỏ là chú thích.'),
   costByObject: s('gt-theo-doi-tuong', 1600, 900, 'Giá thành theo đối tượng (TT133)', 'Giá thành theo đối tượng',
     'Phân bổ chi phí 1541, 1542, 1543 cho từng công trình, lô hoặc sản phẩm; xem trước kết quả trước khi bật.'),
 

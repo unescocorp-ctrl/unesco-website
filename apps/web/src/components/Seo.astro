@@ -2,11 +2,11 @@
 import { site, isPlaceholder } from '../config/site.config';
 import { absoluteUrl } from '../utils/url';
 interface Props { title:string; description?:string; image?:string; noindex?:boolean; }
-const { title, description=site.description, image='/og-default.svg', noindex=false } = Astro.props;
+const { title, description=site.description, image='/og-default.jpg', noindex=false } = Astro.props;
 const origin = Astro.site ?? site.url;
 const canonical = absoluteUrl(Astro.url.pathname, origin);
 const imageUrl = absoluteUrl(image, origin);
-const fullTitle = title.includes('UNESCO') ? title : `${title} | UNESCO XI + AI`;
+const fullTitle = title.includes('UNESCO') ? title : `${title} | UNESCO AI Accounting`;
 const orgName = isPlaceholder(site.company.legalName) ? site.name : site.company.legalName;
 const org = { '@context':'https://schema.org','@type':'Organization',name:orgName,url:absoluteUrl('/', origin) };
 ---

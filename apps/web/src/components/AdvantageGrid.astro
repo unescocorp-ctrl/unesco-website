@@ -1,0 +1,23 @@
+---
+import { url } from '../utils/url';
+import Icon from './Icon.astro';
+import { advantageGroups } from '../data/advantages';
+/** base: đường dẫn trang chi tiết; để trống khi đang ở chính trang Tính năng ưu việt. */
+interface Props { base?: string }
+const { base = '' } = Astro.props;
+const link = (h: string) => (h.startsWith('#') ? (base ? url(base) + h : h) : url(h));
+---
+<div class="adv-groups">
+  {advantageGroups.map((g) => (
+    <div class={`adv-group c-${g.c}`}>
+      <h3 class="adv-h">{g.t}</h3>
+      <div class="adv-list">{g.items.map((a) => (
+        <a class="adv" href={link(a.href)}>
+          <span class="adv-no">{String(a.n).padStart(2, '0')}</span>
+          <span class={`ic sm ${g.c}`}><Icon name={a.icon} /></span>
+          <span class="adv-t"><b>{a.t}{a.isNew && <em class="new">Mới</em>}</b><small>{a.d}</small></span>
+        </a>
+      ))}</div>
+    </div>
+  ))}
+</div>

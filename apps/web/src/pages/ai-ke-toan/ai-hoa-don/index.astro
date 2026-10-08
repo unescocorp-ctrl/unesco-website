@@ -1,10 +1,76 @@
 ---
 import { url } from '../../../utils/url';
 import ContentLayout from '../../../layouts/ContentLayout.astro';
+import Screenshot from '../../../components/Screenshot.astro';
+import VideoCard from '../../../components/VideoCard.astro';
+import Icon from '../../../components/Icon.astro';
+import { shots } from '../../../data/screenshots';
+import { aiCounters } from '../../../data/ai';
+import { videoBySlug } from '../../../data/videos';
+const flow = [
+  ['cloud-upload', 'Cổng HĐĐT', 'Tải XML mua vào – bán ra từ Cơ quan Thuế'],
+  ['file-search', 'Tải & phân tích', 'AI đọc dữ liệu, kiểm tra, chấm điểm tin cậy'],
+  ['list-checks', 'Phân loại & trạng thái', 'Mọi hoá đơn vào 4 ô kiểm soát'],
+  ['network', 'Tạo mã KH/NCC/VTHH', 'Gợi ý mã còn thiếu theo quy tắc bộ sổ'],
+  ['file-check', 'Xác nhận & xem trước', 'Chứng từ mở ra điền sẵn để kế toán kiểm tra'],
+  ['file-plus', 'Lập chứng từ', 'Ghi khi kế toán đồng ý; lập sai thì huỷ cả lô'],
+  ['bank', 'Kiểm tra trạng thái CQT', 'Phát hiện hoá đơn huỷ, thay thế cuối kỳ'],
+];
+const dot: Record<string, string> = { 'lg-green': 'g', 'lg-gold': 'y', 'lg-red': 'r', 'lg-blue': 'b' };
+const feats = [
+  ['cart', 'Mua vào', 'Tải và phân tích hoá đơn mua vào; AI ghép mã vật tư, nhà cung cấp, tài khoản.'],
+  ['send', 'Bán ra', 'Tải hoá đơn bán ra, ghép khách hàng và mã hàng, lập chứng từ bán hàng.'],
+  ['calculator', 'Máy tính tiền', 'Tra cứu cả hoá đơn có mã khởi tạo từ máy tính tiền; gộp hoá đơn bán lẻ theo ngày, vài ngày hoặc tuần.'],
+  ['file-xml', 'Xem XML', 'XML là bản gốc để kê khai; xem nhanh nội dung hoá đơn ngay trên phần mềm.'],
+  ['paperclip', 'Gắn chứng từ có sẵn', 'Gắn hoá đơn với chứng từ đã lập (nhập kho, phiếu chi…) thay vì tạo chứng từ trùng.'],
+  ['refresh', 'Hoá đơn thay thế / điều chỉnh', 'Kiểm tra trạng thái trên cơ quan thuế; hoá đơn huỷ, thay thế, điều chỉnh vào ô Không xử lý.'],
+  ['wallet', 'Phiếu chi / UNC', 'Lập phiếu chi / uỷ nhiệm chi từ hoá đơn; bán hàng tồn kho tự sinh giá vốn; vừa hàng vừa dịch vụ vẫn có đường đi.'],
+  ['calendar-clock', 'Cả năm tự chia tháng, hẹn giờ tải', 'Chọn cả năm là tự chia theo tháng; hẹn giờ tải theo lịch Windows; mỗi mã số thuế một hồ sơ Chrome riêng.'],
+];
+const ctrl = [
+  ['star', 'Điểm tin cậy & nút “Vì sao?”', 'Giải thích căn cứ AI từng hoá đơn: điểm từng dòng, nguồn ghép, đối tượng, ngưỡng; lọc hoá đơn tin cậy thấp; báo cáo “AI đã làm gì tháng này”.', 'g'],
+  ['receipt', 'Hoá đơn chi phí không sinh mã rác', 'Ăn uống, xăng dầu, dịch vụ được chấm điểm theo cả hoá đơn – từ 60 điểm hạch toán thẳng chi phí.', 't'],
+  ['file-check', 'Quy tắc hạch toán theo màn hình nhập', 'Chỉ chuyển vào sổ khi tài khoản đúng màn hình nhập (15x, 511, chi phí) và đúng tháng hoá đơn; sai thì Cần xem lại kèm lý do.', 'b'],
+  ['scale', 'Đối chiếu HĐĐT', 'Đối chiếu từng hoá đơn đã tải với chứng từ và bảng kê thuế trong sổ; chỉ đọc sổ, lập Excel.', 'y'],
+  ['alert', 'Soát rủi ro hoá đơn trước kỳ khai', '5 nhóm rủi ro: thanh toán từ 5 triệu; huỷ / thay thế / trùng / lệch; người bán; mã CQT; sổ có mà CQT không – chỉ đánh dấu.', 'g'],
+  ['shield-lock', 'Chống trùng, huỷ cả lô', 'Hoá đơn nhận theo khoá MST – mẫu số – ký hiệu – số; mọi lô AI ghi đều có nhật ký và huỷ được cả lô.', 'b'],
+];
+const vids = ['m02-tai-hoa-don', 'm03-danh-sach-hoa-don', 'm04-tu-dong-xu-ly'].map((s) => videoBySlug(s)!);
 ---
-<ContentLayout title="AI hỗ trợ xử lý hóa đơn điện tử cho kế toán" description="Từ XML, Excel, PDF hoặc hình ảnh đến dữ liệu hóa đơn có cấu trúc để kế toán kiểm tra, đối chiếu và tiếp tục hạch toán." eyebrow="AI hóa đơn điện tử">
-<section class="section"><div class="container split"><div class="visual-card"><img src={url('/visuals/invoice-ai.svg')} width="1200" height="820" alt="AI UNESCO đọc và phân tích hóa đơn điện tử"/></div><div><span class="eyebrow">Đọc đúng dữ liệu cần dùng</span><h2>Không chỉ OCR — đưa hóa đơn về cấu trúc nghiệp vụ</h2><p class="lead">Mục tiêu không dừng ở nhận diện chữ. Dữ liệu phải được tách đúng trường, đúng dòng hàng và có thể đối chiếu với danh mục kế toán hiện hữu.</p><div class="feature-list"><div class="feature-row"><span class="check">1</span><div><strong>Thông tin hóa đơn</strong><span>MST, tên nhà cung cấp, số, ký hiệu, ngày và trạng thái theo dữ liệu nguồn.</span></div></div><div class="feature-row"><span class="check">2</span><div><strong>Số tiền & thuế</strong><span>Tiền hàng, thuế suất, thuế GTGT, chiết khấu/phí nếu có và tổng thanh toán.</span></div></div><div class="feature-row"><span class="check">3</span><div><strong>Dòng hàng</strong><span>Tên hàng, ĐVT, số lượng, đơn giá và các trường phục vụ gợi ý vật tư.</span></div></div></div><a class="btn btn-primary" href={url('/lien-he/#demo')}>XEM DEMO AI HÓA ĐƠN</a></div></div></section>
-<section class="section surface-soft"><div class="container"><div class="section-head"><div><span class="eyebrow">Quy trình</span><h2>6 bước để biến hóa đơn thành dữ liệu có thể kiểm soát</h2></div><p>Mỗi bước tách riêng giúp người dùng biết dữ liệu nào đến từ chứng từ gốc và dữ liệu nào là đề xuất của AI.</p></div><div class="process-grid"><div class="process-step"><span class="num">01</span><strong>Nhận file</strong><small>XML / Excel / PDF / ảnh.</small></div><div class="process-step"><span class="num">02</span><strong>Đọc cấu trúc</strong><small>Lấy trường thông tin chính.</small></div><div class="process-step"><span class="num">03</span><strong>Kiểm tra</strong><small>Phát hiện dữ liệu thiếu hoặc bất thường.</small></div><div class="process-step"><span class="num">04</span><strong>Đối chiếu</strong><small>Khách hàng/NCC, vật tư, lịch sử.</small></div><div class="process-step"><span class="num">05</span><strong>Gợi ý</strong><small>Mã đối tượng, vật tư, tài khoản.</small></div><div class="process-step"><span class="num">06</span><strong>Duyệt</strong><small>Kế toán kiểm tra trước ghi nhận.</small></div></div></div></section>
-<section class="section"><div class="container grid grid-3"><div class="card"><span class="tag">NHẬN DIỆN</span><h3 style="margin-top:18px">Nhà cung cấp & hóa đơn</h3><p class="muted">Tìm đúng thông tin định danh để hạn chế thao tác nhập lại.</p></div><div class="card"><span class="tag tag-blue">ĐỐI CHIẾU</span><h3 style="margin-top:18px">Danh mục hiện có</h3><p class="muted">Ưu tiên đối tượng và vật tư đã tồn tại trước khi tạo đề xuất mới.</p></div><div class="card"><span class="tag tag-gold">KIỂM SOÁT</span><h3 style="margin-top:18px">Tách dữ liệu gốc và gợi ý</h3><p class="muted">Người dùng biết phần nào đọc từ hóa đơn và phần nào cần quyết định nghiệp vụ.</p></div></div></section>
-<section class="section surface"><div class="container"><div class="notice"><strong>Nguyên tắc kiểm soát:</strong> AI tạo phân tích và gợi ý theo dữ liệu có sẵn; kế toán kiểm tra chứng từ, danh mục và nghiệp vụ trước khi phê duyệt.</div></div></section>
+<ContentLayout title="AI Hoá đơn – Tự động xử lý hoá đơn đầu vào" description="Nhận diện – kiểm tra – hạch toán hoá đơn nhanh chóng, chính xác: tải hoá đơn điện tử từ Cơ quan Thuế, AI tạo mã còn thiếu, đề xuất chứng từ; kế toán xem trước rồi mới ghi sổ." eyebrow="AI Hoá đơn" display="AI |HOÁ ĐƠN" subtitle="Từ hoá đơn điện tử đến chứng từ kế toán – giảm nhập lại dữ liệu" heroShot={shots.invoiceList}>
+
+<section class="section"><div class="container">
+  <div class="sec-c"><span class="eyebrow">Quy trình xử lý</span><h2>7 bước từ cổng thuế đến sổ kế toán</h2><p>Mỗi bước tách riêng để biết dữ liệu nào đọc từ hoá đơn gốc và dữ liệu nào là đề xuất của AI.</p></div>
+  <ol class="flow" style="--n:7">{flow.map((f, i) => <li><span class={`ic lg ring ${i < 4 ? 'g' : i < 6 ? 'b' : 't'}`}><Icon name={f[0]} /></span><b><span class="n">{i + 1}.</span> {f[1]}</b><small>{f[2]}</small></li>)}</ol>
+</div></section>
+
+<section class="section surface"><div class="container split"><div><Screenshot shot={shots.autoProcess} /></div><div>
+  <span class="eyebrow">Phân loại & trạng thái</span><h2>Bốn ô kiểm soát – không hoá đơn nào bị bỏ sót</h2>
+  <p class="lead">Sau khi tải, mọi hoá đơn nằm trong một trong bốn ô. Kế toán biết ngay việc nào AI đã xong, việc nào cần mình xử lý.</p>
+  <ul class="status-list">{aiCounters.map((c) => <li><span class={`dotc ${dot[c.cls]}`}></span>{c.t.toUpperCase()}<small>{c.d}</small></li>)}</ul>
+  <div class="callout b" style="margin-top:20px"><span class="ic"><Icon name="bank" /></span><div><h3>Đối soát với Cơ quan Thuế</h3><p>Cuối kỳ kiểm tra lại trạng thái hoá đơn trên cơ quan thuế; hoá đơn đổi trạng thái sau khi đã hạch toán được đưa vào ô Cần xem lại.</p></div></div>
+</div></div></section>
+
+<section class="section"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Tính năng</span><h2>Đủ các loại hoá đơn kế toán gặp mỗi tháng</h2></div><p>Hoá đơn mua vào, bán ra, máy tính tiền, thay thế – điều chỉnh đều có chỗ xử lý riêng.</p></div>
+  <div class="grid grid-4">{feats.map((f, i) => <div class={`card ${['top-g', 'top-t', 'top-b', 'top-y'][i % 4]}`}><span class={`ic ${['g', 't', 'b', 'y'][i % 4]}`} style="margin-bottom:14px"><Icon name={f[0]} /></span><h3>{f[1]}</h3><p class="muted" style="margin:0">{f[2]}</p></div>)}</div>
+  <div class="callout" style="margin-top:24px"><span class="ic"><Icon name="star" /></span><div><h3>Lợi ích nổi bật</h3><p>Giảm thời gian nhập liệu, tăng năng suất kế toán · Dữ liệu chính xác, minh bạch, đáp ứng kiểm tra thuế · Quy trình khép kín – tự động – dễ kiểm soát.</p></div></div>
+</div></section>
+
+<section class="section surface"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Kiểm soát</span><h2>Biết vì sao AI đề xuất – soát rủi ro trước kỳ khai</h2></div><p>Mỗi đề xuất có căn cứ; chỗ nào không chắc thì hỏi người.</p></div>
+  <div class="grid grid-3">{ctrl.map((c) => <div class={`card top-${c[3]}`}><span class={`ic ${c[3]}`} style="margin-bottom:14px"><Icon name={c[0]} /></span><h3>{c[1]}</h3><p class="muted" style="margin:0">{c[2]}</p></div>)}</div>
+  <div class="metrics" style="margin-top:24px"><div class="metric-box"><b>1,7 giây</b><small>phân tích 59 hoá đơn mua (86 dòng) trên bộ sổ thật</small></div><div class="metric-box"><b>~1 giây</b><small>mở màn hình AI (0,6 – 1,0 giây sau tối ưu)</small></div><div class="metric-box"><b>3.823 / 3.823</b><small>dòng bán ra mang mã hàng ghép đúng mã ngay</small></div><div class="metric-box"><b>61 lần dò</b><small>cho 1.110 dòng bán ra nhờ nhớ kết quả theo tên hàng</small></div></div>
+</div></section>
+
+<section class="section surface-soft"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Tải hoá đơn hàng loạt</span><h2>Từ cổng thuế vào phần mềm trong vài bước</h2></div><p>Công cụ chạy trên Chrome: bạn tự đăng nhập, công cụ không lưu mật khẩu và chỉ tải khi tài khoản cùng mã số thuế với bộ sổ đang mở.</p></div>
+  <div class="gallery g3"><Screenshot shot={shots.bulkDownload} /><Screenshot shot={shots.retailSummary} /><Screenshot shot={shots.downloadResult} /></div>
+</div></section>
+
+<section class="section"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Video hướng dẫn</span><h2>Xem AI Hoá đơn trên phần mềm thật</h2></div><p>Quay trực tiếp trên UNESCO AI, có lời đọc và chữ chú thích từng bước.</p></div>
+  <div class="video-grid">{vids.map((v) => <VideoCard video={v} />)}</div>
+  <div class="actions" style="margin-top:26px"><a class="btn btn-primary" href={url('/lien-he/#demo')}>Xem demo AI Hoá đơn</a><a class="btn btn-secondary" href={url('/an-toan-kiem-soat-ai/')}>Nguyên tắc an toàn AI</a></div>
+</div></section>
 </ContentLayout>

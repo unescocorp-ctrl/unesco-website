@@ -1,0 +1,60 @@
+---
+import { url } from '../../../utils/url';
+import ContentLayout from '../../../layouts/ContentLayout.astro';
+import Screenshot from '../../../components/Screenshot.astro';
+import VideoCard from '../../../components/VideoCard.astro';
+import Icon from '../../../components/Icon.astro';
+import { shots } from '../../../data/screenshots';
+import { costAi } from '../../../data/ai';
+import { videoBySlug } from '../../../data/videos';
+const steps = [
+  ['folder', 'Loại hình sản xuất', 'Chọn 1 lần: hàng loạt theo điện, hàng loạt, theo đơn hàng hoặc gia công'],
+  ['file-text', 'Hồ sơ định mức', 'Chọn 1 lần: nguyên liệu chính, cách chia chi phí'],
+  ['settings', 'Định mức NVL', 'Theo mã, định mức tự động (AI) hoặc theo tỷ lệ giá bán'],
+  ['calculator', 'Chi phí tháng (154)', 'Đã ghi đủ chi phí sản xuất trong tháng chưa'],
+  ['factory', 'Sản lượng thành phẩm', 'Tháng này có sản xuất, nhập kho thành phẩm'],
+  ['bar-chart', 'Tính và ghi giá thành', 'Kết chuyển thành phẩm với khung Cân đối AI'],
+  ['clipboard-check', 'Kiểm tra kết quả', 'Báo cáo kiểm tra giá thành'],
+];
+const evid = [['file-plus', 'Phiếu nhập NVL'], ['file-text', 'Phiếu xuất kho'], ['shield-check', 'Sản lượng bán (632)'], ['zap', 'Hoá đơn điện'], ['scale', 'Định mức NVL'], ['database', 'Tồn đầu kỳ']];
+const review = [['eye', 'Cân đối AI chỉ đọc, không ghi sổ'], ['user-check', 'Kế toán chọn dòng cần điều chỉnh'], ['clipboard-check', 'Kế toán kiểm tra số liệu'], ['book-open', 'Ghi ở Kết chuyển thành phẩm']];
+const vCost = videoBySlug('m07-gia-thanh')!;
+---
+<ContentLayout title="AI Giá thành – Tính giá thành chính xác" description="Tự động tập hợp chi phí – tính giá thành theo phương pháp chuẩn: Cân đối AI kiểm sản lượng, điện, nguyên vật liệu; định mức tự động; giá thành theo đối tượng TT133. Kế toán kiểm tra rồi mới ghi." eyebrow="AI Giá thành" display="AI |GIÁ THÀNH" subtitle="AI lập phương án giá thành – số liệu vẫn phải có căn cứ" heroShot={shots.costBalance}>
+
+<section class="section"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Trình tự giá thành tháng · GĐ161 – GĐ165</span><h2>7 bước đèn màu – biết tháng này còn thiếu bước nào</h2></div><p>Đèn của từng bước tính bằng số của sổ: xanh là xong, vàng cần xem, đỏ còn thiếu, xám không áp dụng. Nút “Làm bước này” mở đúng màn hình.</p></div>
+  <div class="split top w14" style="margin-bottom:34px"><div><Screenshot shot={shots.costSteps} /></div><div>
+    <ul class="status-list"><li><span class="dotc g"></span>XANH<small>Bước đã xong theo số của sổ.</small></li><li><span class="dotc y"></span>VÀNG<small>Cần xem lại trước khi đi tiếp.</small></li><li><span class="dotc r"></span>ĐỎ<small>Còn thiếu – bấm Làm bước này.</small></li><li><span class="dotc" style="background:#AAB4BC"></span>XÁM<small>Không áp dụng cho loại hình sản xuất đã chọn.</small></li></ul>
+    <div class="callout y" style="margin-top:18px"><span class="ic"><Icon name="tag" /></span><div><h3>Định mức theo tỷ lệ giá bán</h3><p>AI đề xuất tỷ lệ giá vốn / giá bán từ thực tế 3 tháng, sản phẩm tương tự hoặc mẫu ngành – có giá bán là có định mức. Phần mềm lập định mức NVL theo tỷ lệ và so thực tế với mục tiêu.</p></div></div>
+  </div></div>
+  <ol class="steps10 s7">{steps.map((s) => <li><Icon name={s[0]} /><b>{s[1]}</b><small>{s[2]}</small></li>)}</ol>
+  <div class="split top w14" style="margin-top:36px">
+    <div>
+      <h3 style="display:flex;gap:10px;align-items:center"><Icon name="shield-check" />Evidence – bằng chứng kèm theo</h3>
+      <div class="chips-ev">{evid.map((e) => <span><Icon name={e[0]} />{e[1]}</span>)}</div>
+      <div class="callout y" style="margin-top:18px"><span class="ic"><Icon name="alert" /></span><div><h3>155/632 và điện chỉ là cơ sở</h3><p>Không phải kết quả thành phẩm tự động. Mỗi phương án AI đề xuất đều kèm số liệu gốc để kế toán đối chiếu.</p></div></div>
+    </div>
+    <div class="review"><h3><Icon name="check-circle" />Vùng review</h3>{review.map((r) => <div><Icon name={r[0]} />{r[1]}</div>)}</div>
+  </div>
+</div></section>
+
+<section class="section surface"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Cân đối AI</span><h2>Ba điều được kiểm trước khi ghi phiếu kết chuyển</h2></div><p>Dòng đỏ trong khung Cân đối AI là chỗ cần xử lý trước khi ghi.</p></div>
+  <div class="grid grid-3">{costAi.checks.map((c, i) => <div class={`card ${['top-g', 'top-b', 'top-y'][i]}`}><span class={`ic ${['g', 'b', 'y'][i]}`} style="margin-bottom:14px"><Icon name={['shield-check', 'zap', 'layers'][i]} /></span><h3>{c.t}</h3><p class="muted" style="margin:0">{c.d}</p></div>)}</div>
+  <div class="gallery g3" style="margin-top:28px"><Screenshot shot={shots.costAdjust} /><Screenshot shot={shots.costMaterial} /><Screenshot shot={shots.costAutoNorm} /></div>
+</div></section>
+
+<section class="section"><div class="container">
+  <div class="grid grid-3">
+    <div class="card top-g"><h3>Định mức tự động – 3 phương án</h3><ul class="checks">{costAi.autoNorm.map((a) => <li>{a}</li>)}</ul><p class="caption">Mỗi phương án kèm điểm tin cậy; chỉ dòng được chọn mới ghi, định mức cũ không bị xoá.</p></div>
+    <div class="card top-t"><h3>Xử lý NVL thiếu</h3><ul class="checks">{costAi.shortage.map((a) => <li>{a}</li>)}</ul></div>
+    <div class="card top-b"><h3>Giá thành theo đối tượng (TT133 / TT99)</h3><p class="muted">Phân bổ chi phí 1541, 1542, 1543 cho từng công trình, lô hoặc sản phẩm; xem trước kết quả trước khi bật.</p><a class="link-arrow" href={url('/giai-phap/xay-dung/')}><strong>Giải pháp xây dựng →</strong></a></div>
+  </div>
+</div></section>
+
+<section class="section surface"><div class="container"><div class="callout b"><span class="ic"><Icon name="scale" /></span><div><h3>Báo cáo kiểm tra giá thành</h3><p>Giá thành so giá bán, kỳ này so kỳ trước, so mục tiêu; cảnh báo giá thành bằng 0, cao hơn giá bán, đổi trên 25%. Chỉ đọc sổ – dùng số của các phiếu kết chuyển đã ghi.</p></div></div></div></section>
+
+<section class="section surface-soft"><div class="container split"><div><VideoCard video={vCost} large={true} /></div><div><span class="eyebrow">Danh mục trong hộp Giá thành</span><h2>Có căn cứ trước khi chuyển bản nháp</h2><p class="lead">Sơ đồ chức năng đi theo thứ tự: dở dang đầu kỳ → nhập kho thành phẩm → sổ giá thành → tính lại giá xuất kho.</p><div class="tab-cloud" style="margin-top:14px">{costAi.catalog.map((t) => <span>{t}</span>)}</div>
+  <div class="actions" style="margin-top:22px"><a class="btn btn-primary" href={url('/lien-he/#demo')}>Xem demo giá thành</a><a class="btn btn-secondary" href={url('/giai-phap/san-xuat/')}>Giải pháp sản xuất</a></div></div></div></section>
+</ContentLayout>

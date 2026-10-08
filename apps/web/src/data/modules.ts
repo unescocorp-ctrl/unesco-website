@@ -103,10 +103,10 @@ export const modules: Module[] = [
 
 /** Tiện ích đi kèm (menu Hệ thống / Dữ liệu / Tải hóa đơn điện tử / Tiện ích). */
 export const utilities = [
-  { icon: '⬇️', title: 'Tải hóa đơn điện tử', text: 'Tải hóa đơn mua vào, bán ra và hóa đơn từ máy tính tiền theo kỳ, sẵn sàng tạo chứng từ.' },
-  { icon: '📤', title: 'Xuất XML HTKK', text: 'Xuất bộ báo cáo tài chính và tờ khai quyết toán TNDN ra XML để nộp qua HTKK.' },
-  { icon: '💾', title: 'Lưu trữ tự động', text: 'Tự động sao lưu tệp dữ liệu; gửi tệp dữ liệu qua email khi cần hỗ trợ.' },
-  { icon: '🔐', title: 'Phân quyền người dùng', text: 'Danh sách người sử dụng, mật khẩu và quyền truy cập chứng từ ghi sổ.' },
-  { icon: '🔁', title: 'Xử lý số liệu', text: 'Đổi mã vật tư, tổng hợp số liệu, lấy số dư đầu kỳ sang năm mới.' },
-  { icon: '🌐', title: 'Diễn giải song ngữ', text: 'Khai báo diễn giải song ngữ cho chứng từ và báo cáo.' },
+  { icon: '⬇️', ic: 'download', title: 'Tải hóa đơn điện tử', text: 'Tải hóa đơn mua vào, bán ra và hóa đơn từ máy tính tiền theo kỳ, sẵn sàng tạo chứng từ.' },
+  { icon: '📤', ic: 'file-xml', title: 'Xuất XML HTKK', text: 'Xuất bộ báo cáo tài chính và tờ khai quyết toán TNDN ra XML để nộp qua HTKK.' },
+  { icon: '💾', ic: 'database', title: 'Lưu trữ tự động', text: 'Tự động sao lưu tệp dữ liệu; gửi tệp dữ liệu qua email khi cần hỗ trợ.' },
+  { icon: '🔐', ic: 'lock', title: 'Phân quyền người dùng', text: 'Danh sách người sử dụng, mật khẩu và quyền truy cập chứng từ ghi sổ.' },
+  { icon: '🔁', ic: 'refresh', title: 'Xử lý số liệu', text: 'Đổi mã vật tư, tổng hợp số liệu, lấy số dư đầu kỳ sang năm mới.' },
+  { icon: '🌐', ic: 'globe', title: 'Diễn giải song ngữ', text: 'Khai báo diễn giải song ngữ cho chứng từ và báo cáo.' },
 ];

@@ -8,16 +8,22 @@ import { modules, utilities } from '../../../data/modules';
 import { reportGroups } from '../../../data/reports';
 import { aiTabs, activation } from '../../../data/ai';
 import { videoBySlug } from '../../../data/videos';
+import Icon from '../../../components/Icon.astro';
+import { productPillars } from '../../../data/design';
 ---
-<ContentLayout title="UNESCO AI – Phần mềm kế toán tích hợp AI" description="UNESCO AI: nền tảng kế toán UNESCO 9 phân hệ cộng màn hình AI 8 thẻ — tải hoá đơn điện tử, tự động xử lý, tờ khai hải quan, sổ phụ ngân hàng, bảng lương, kết chuyển cuối kỳ, báo cáo & nhật ký, cổng dịch vụ công." eyebrow="Sản phẩm chủ lực">
+<ContentLayout title="UNESCO AI – Phần mềm kế toán tích hợp AI" description="Nền tảng kế toán UNESCO 9 phân hệ cộng màn hình AI 8 thẻ: tải hoá đơn điện tử, tự động xử lý, tờ khai hải quan, sổ phụ ngân hàng, bảng lương, kết chuyển cuối kỳ, báo cáo & nhật ký, cổng dịch vụ công." eyebrow="Product page / UNESCO AI" display="UNESCO |AI" subtitle="AI làm việc ngay trên bộ sổ UNESCO XI – không cần chuyển đổi hệ thống kế toán." heroShot={shots.mainScreen}>
+
+<section class="section-sm surface"><div class="container"><div class="num-grid">{productPillars.map((p, i) => <a class={`num-card${p.c === 't' ? ' c-t' : p.c === 'b' ? ' c-b' : p.c === 'y' ? ' c-y' : ''}`} href={url(p.href)}><span class="no">{i + 1}</span><span class="ic"><Icon name={p.icon} /></span><h3>{p.t}</h3><p>Xem chi tiết →</p></a>)}</div>
+  <div class="callout" style="margin-top:22px"><span class="ic"><Icon name="star" /></span><div><h3>16 điểm ưu việt · 65 tính năng AI</h3><p>Hoá đơn, sổ phụ, giá thành, thuế – HTKK, khoá sổ và báo cáo cho chủ doanh nghiệp: số liệu đo trên bộ sổ thật, mỗi con số kèm nguồn.</p></div><a class="btn btn-primary" style="margin-left:auto" href={url('/tinh-nang-uu-viet/')}>Tính năng ưu việt</a></div>
+</div></section>
 
 <section class="section"><div class="container split"><div><Screenshot shot={shots.autoProcess} eager={true} /></div><div><span class="eyebrow">Một hệ thống thống nhất</span><h2>Kế toán đầy đủ nghiệp vụ, AI làm phần việc lặp lại</h2><p class="lead">UNESCO AI là phần mềm kế toán UNESCO (bản XI) tích hợp màn hình AI. Dữ liệu mỗi doanh nghiệp – mỗi năm tài chính nằm trong một bộ sổ riêng; AI làm việc trên chính bộ sổ đó và chỉ ghi khi kế toán đồng ý.</p>
   <div class="feature-list">
-    <div class="feature-row"><span class="check">AI</span><div><strong>Màn hình AI 8 thẻ</strong><span>Tự động xử lý, danh sách hoá đơn, tờ khai HQ, sổ phụ, bảng lương, kết chuyển, báo cáo & nhật ký, cổng dịch vụ công.</span></div></div>
-    <div class="feature-row"><span class="check">✓</span><div><strong>9 phân hệ kế toán</strong><span>Chi phí – tổng hợp, vật tư, công nợ, TSCĐ, CCDC, giá thành, lương, BHXH, báo cáo – sổ kế toán.</span></div></div>
-    <div class="feature-row"><span class="check">✓</span><div><strong>Thuế & HTKK</strong><span>Tải hoá đơn điện tử; xuất XML 01/GTGT, BCTC, 03/TNDN để nhập vào HTKK.</span></div></div>
+    <div class="feature-row"><span class="check"><Icon name="cpu" size={18} /></span><div><strong>AI hỗ trợ trong workflow hiện hữu</strong><span>Màn hình AI 8 thẻ: tự động xử lý, danh sách hoá đơn, tờ khai HQ, sổ phụ, bảng lương, kết chuyển, báo cáo & nhật ký, cổng dịch vụ công.</span></div></div>
+    <div class="feature-row"><span class="check"><Icon name="layers" size={18} /></span><div><strong>9 phân hệ kế toán</strong><span>Chi phí – tổng hợp, vật tư, công nợ, TSCĐ, CCDC, giá thành, lương, BHXH, báo cáo – sổ kế toán.</span></div></div>
+    <div class="feature-row"><span class="check"><Icon name="user-check" size={18} /></span><div><strong>Kế toán kiểm tra trước khi ghi</strong><span>Chứng từ AI lập mở ra điền sẵn để xem trước; xuất XML 01/GTGT, BCTC, 03/TNDN để nhập vào HTKK.</span></div></div>
   </div>
-  <div class="actions"><a class="btn btn-primary" href={url('/lien-he/#demo')}>ĐĂNG KÝ DEMO</a><a class="btn btn-secondary" href={url('/video/')}>▶ XEM VIDEO</a></div></div></div></section>
+  <div class="actions"><a class="btn btn-primary" href={url('/lien-he/#demo')}>ĐĂNG KÝ DEMO</a><a class="btn btn-secondary" href={url('/video/')}><Icon name="play-circle" />Xem video</a></div></div></div></section>
 
 <section class="section surface-soft"><div class="container"><div class="section-head"><div><span class="eyebrow">Màn hình AI</span><h2>8 thẻ nghiệp vụ</h2></div><p>Theo đúng thứ tự trên phần mềm. Bấm vào ảnh để xem kích thước lớn.</p></div>
   <nav class="tab-index" aria-label="Các thẻ của màn hình AI">{aiTabs.map((t) => <a href={`#${t.key}`}><span>{t.n}</span>{t.title}</a>)}</nav>
@@ -28,10 +34,10 @@ import { videoBySlug } from '../../../data/videos';
         <div><Screenshot shot={shots[t.shot]} /></div>
         <div>
           <span class="eyebrow">Thẻ {t.n}</span>
-          <h3 class="tab-title"><span aria-hidden="true">{t.icon}</span> {t.title}</h3>
+          <h3 class="tab-title"><span class="ic sm g" style="display:inline-grid;vertical-align:middle;margin-right:10px"><Icon name={t.ic} /></span>{t.title}</h3>
           <p class="lead">{t.lead}</p>
           <ul class="checks">{t.points.map((p) => <li>{p}</li>)}</ul>
-          {vid && <div class="actions"><a class="btn btn-secondary" href={url(`/video/#video-${vid.slug}`)}>▶ VIDEO {vid.duration}</a></div>}
+          {vid && <div class="actions"><a class="btn btn-secondary" href={url(`/video/#video-${vid.slug}`)}><Icon name="play-circle" />Video {vid.duration}</a></div>}
         </div>
       </div>
     );
@@ -47,7 +53,7 @@ import { videoBySlug } from '../../../data/videos';
 </div></section>
 
 <section class="section surface" id="phan-he"><div class="container"><div class="section-head"><div><span class="eyebrow">9 phân hệ</span><h2>Nền tảng kế toán UNESCO</h2></div><p>Mỗi phân hệ mở sơ đồ chức năng riêng, người mới nhìn là biết bước tiếp theo.</p></div>
-  <div class="module-grid">{modules.map((m) => <div class="module">{m.shot && <Screenshot shot={shots[m.shot]} showCaption={false} class="mini" />}<div class="icon">{m.icon}</div><h3>{m.title}</h3><p>{m.summary}</p><ul>{m.features.map((f) => <li>{f}</li>)}</ul>{m.href && <a class="link-arrow" href={url(m.href)}>Xem nghiệp vụ →</a>}</div>)}</div>
+  <div class="module-grid">{modules.map((m) => <div class="module">{m.shot && <Screenshot shot={shots[m.shot]} showCaption={false} class="mini" />}<h3>{m.title}</h3><p>{m.summary}</p><ul>{m.features.map((f) => <li>{f}</li>)}</ul>{m.href && <a class="link-arrow" href={url(m.href)}>Xem nghiệp vụ →</a>}</div>)}</div>
 </div></section>
 
 <section class="section"><div class="container"><div class="section-head"><div><span class="eyebrow">Nhân sự – báo cáo</span><h2>Lao động, bảo hiểm và báo cáo thuế</h2></div></div>
@@ -63,7 +69,7 @@ import { videoBySlug } from '../../../data/videos';
 </div></section>
 
 <section class="section"><div class="container"><div class="section-head"><div><span class="eyebrow">Tiện ích</span><h2>Những công cụ giúp tiết kiệm thời gian mỗi ngày</h2></div></div>
-  <div class="util-grid">{utilities.map((u) => <div class="module-mini"><div class="icon">{u.icon}</div><div><b>{u.title}</b><span>{u.text}</span></div></div>)}</div>
+  <div class="util-grid">{utilities.map((u) => <div class="module-mini"><div class="icon"><Icon name={u.ic} /></div><div><b>{u.title}</b><span>{u.text}</span></div></div>)}</div>
 </div></section>
 
 <section class="section surface-soft" id="kich-hoat-ai"><div class="container split"><div><span class="eyebrow">Kích hoạt AI</span><h2>Một mã kích hoạt cho mọi tính năng AI</h2><p class="lead">Máy mới mở màn hình AI lần đầu sẽ được hỏi mã kích hoạt. Phần kế toán vẫn dùng bình thường khi chưa kích hoạt.</p><a class="btn btn-primary" href={url('/bang-gia/')}>XEM CÁC GÓI</a></div><div class="card"><ul class="checks">{activation.map((a) => <li>{a}</li>)}</ul></div></div></section>

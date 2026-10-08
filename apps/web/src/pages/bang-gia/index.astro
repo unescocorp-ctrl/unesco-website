@@ -2,6 +2,13 @@
 import { url } from '../../utils/url';
 import ContentLayout from '../../layouts/ContentLayout.astro';
 import { contact, telHref, zaloHref } from '../../data/contact';
+import Icon from '../../components/Icon.astro';
+const plans = [
+  { c: 'g', cls: '', btn: 'btn-primary', icon: 'box', t: 'UNESCO XI', who: 'Doanh nghiệp cần đủ nghiệp vụ kế toán, sổ sách và báo cáo thuế.', f: ['Kế toán tài chính 9 phân hệ', 'Kế toán quản trị', 'Báo cáo theo TT133, TT99', 'Tải hoá đơn điện tử, XML HTKK'], s: ['Hỗ trợ kỹ thuật', 'Cập nhật phiên bản', 'Tài liệu & video hướng dẫn'] },
+  { c: 't', cls: ' feat p-t', btn: 'btn-teal', icon: 'cpu', t: 'UNESCO AI', who: 'Doanh nghiệp muốn nâng cao hiệu quả với trí tuệ nhân tạo.', f: ['UNESCO XI toàn diện', 'Màn hình AI 8 thẻ', 'Gợi ý & phân tích AI', 'Cân đối AI, cảnh báo trước khoá sổ'], s: ['Hỗ trợ kỹ thuật', 'Cập nhật phiên bản', 'Tư vấn triển khai AI'] },
+  { c: 'b', cls: ' p-b', btn: 'btn-blue', icon: 'headset', t: 'Dịch vụ triển khai', who: 'Doanh nghiệp cần triển khai và tối ưu hệ thống.', f: ['Khảo sát & tư vấn', 'Cấu hình quy tắc hạch toán, định mức', 'Đào tạo người dùng'], s: ['Hỗ trợ triển khai', 'Hỗ trợ sau triển khai', 'Nghiệm thu & bàn giao'] },
+  { c: 'y', cls: ' p-y', btn: 'btn-yellow', icon: 'trend', t: 'Nâng cấp', who: 'Doanh nghiệp đang dùng UNESCO XI muốn nâng cấp hoặc mở rộng.', f: ['Nâng cấp phiên bản', 'Kích hoạt thêm tính năng AI', 'Chuyển số dư sang năm mới'], s: ['Hỗ trợ kỹ thuật', 'Kiểm tra & đánh giá dữ liệu', 'Hỗ trợ sau nâng cấp'] },
+];
 const rows: [string, boolean, boolean][] = [
   ['9 phân hệ kế toán (tổng hợp, vật tư, công nợ, TSCĐ, CCDC, giá thành, lương, BHXH, báo cáo)', true, true],
   ['Báo cáo tài chính, sổ kế toán theo TT133 và TT99; báo cáo thuế GTGT, TNDN, TNCN', true, true],
@@ -15,17 +22,29 @@ const rows: [string, boolean, boolean][] = [
   ['Trợ lý AI hướng dẫn ngay trên màn hình', false, true],
 ];
 ---
-<ContentLayout title="Bảng giá UNESCO AI" description="Chọn đúng phạm vi trước khi nhận báo giá: kế toán nền tảng, UNESCO AI với mã kích hoạt AI theo thời hạn và số công ty, cùng dịch vụ triển khai." eyebrow="Gói sản phẩm">
-<section class="section"><div class="container"><div class="grid grid-3 pricing">
-  <div class="card price-card"><span class="tag">KẾ TOÁN</span><h3 style="margin-top:18px">Kế toán nền tảng</h3><p class="muted">Dành cho doanh nghiệp cần đủ nghiệp vụ kế toán, sổ sách và báo cáo thuế.</p><div class="price">Liên hệ báo giá</div><ul class="checks"><li>9 phân hệ kế toán</li><li>Báo cáo TT133 · TT99</li><li>Tải hoá đơn điện tử</li><li>Xuất XML HTKK</li></ul><a class="btn btn-secondary" href={url('/lien-he/')} style="margin-top:22px">YÊU CẦU BÁO GIÁ</a></div>
-  <div class="card price-card featured"><span class="tag">ĐỀ XUẤT</span><h3 style="margin-top:18px">UNESCO AI</h3><p class="muted">Kế toán nền tảng cộng màn hình AI 8 thẻ cho đơn vị có nhiều hoá đơn, sổ phụ, giá thành.</p><div class="price">Liên hệ báo giá</div><ul class="checks"><li>Toàn bộ kế toán nền tảng</li><li>Tải & tự động xử lý hoá đơn</li><li>Sổ phụ ngân hàng, VietQR</li><li>Tờ khai HQ, bảng lương, kết chuyển</li><li>Giá thành có Cân đối AI</li></ul><a class="btn btn-primary" href={url('/lien-he/#demo')} style="margin-top:22px">ĐĂNG KÝ DEMO</a></div>
-  <div class="card price-card"><span class="tag tag-blue">DỊCH VỤ</span><h3 style="margin-top:18px">Triển khai & đào tạo</h3><p class="muted">Cài đặt, chuyển dữ liệu và hướng dẫn để bộ phận kế toán dùng được ngay.</p><div class="price">Theo phạm vi</div><ul class="checks"><li>Cài đặt phần mềm, bộ font</li><li>Nhập/chuyển số dư đầu kỳ</li><li>Quy tắc hạch toán, định mức</li><li>Hướng dẫn theo nghiệp vụ</li></ul><a class="btn btn-secondary" href={url('/lien-he/')} style="margin-top:22px">NHẬN TƯ VẤN</a></div>
-</div></div></section>
+<ContentLayout title="Bảng giá / Gói sản phẩm UNESCO AI" description="Lựa chọn gói phù hợp với nhu cầu doanh nghiệp: UNESCO XI, UNESCO AI, dịch vụ triển khai và nâng cấp. Vui lòng liên hệ để nhận báo giá chi tiết." eyebrow="Báo cáo giải pháp UNESCO AI" display="BẢNG GIÁ / |GÓI SẢN PHẨM" tone="ng" subtitle="Lựa chọn gói phù hợp với nhu cầu doanh nghiệp">
+<section class="section"><div class="container">
+  <div class="plans">{plans.map((p) => (
+    <div class={`plan${p.cls}`}>
+      <span class={`ic lg ${p.c}`}><Icon name={p.icon} /></span>
+      <h3>{p.t}</h3>
+      <p class="who">{p.who}</p>
+      <h4><Icon name="settings" />Tính năng</h4>
+      <ul>{p.f.map((x) => <li>{x}</li>)}</ul>
+      <h4><Icon name="headset" />Phạm vi hỗ trợ</h4>
+      <ul>{p.s.map((x) => <li>{x}</li>)}</ul>
+      <div class="spacer"></div>
+      <a class={`btn ${p.btn}`} href={url('/lien-he/#demo')}>Liên hệ báo giá</a>
+    </div>
+  ))}</div>
+  <div class="callout" style="margin-top:26px"><span class="ic"><Icon name="shield-lock" /></span><div><h3>Không công bố giá số khi chưa xác minh</h3><p>Giá được xây dựng theo mô hình triển khai, quy mô dữ liệu và yêu cầu cụ thể của từng doanh nghiệp. Vui lòng liên hệ để được tư vấn và báo giá chính xác.</p></div></div>
+  <div class="motto">MINH BẠCH – CHÍNH XÁC – HIỆU QUẢ</div>
+</div></section>
 
-<section class="section surface-soft"><div class="container split"><div><span class="eyebrow">Mã kích hoạt AI</span><h2>Một mã cho mọi tính năng AI</h2><p class="lead">Gói AI được cấp bằng mã kích hoạt. Phần kế toán dùng bình thường khi chưa có mã.</p></div><div class="card"><ul class="checks"><li><b>Thời hạn:</b> 1, 3, 6 tháng, 1, 2 năm hoặc vĩnh viễn</li><li><b>Số công ty:</b> tính theo mã số thuế của bộ sổ</li><li><b>Số trang:</b> mỗi trang ảnh hoặc PDF scan chuyển sang Excel trừ vào số trang của mã; tệp Excel và CSV không tính; nạp thêm thì số trang cộng dồn</li><li><b>Gia hạn:</b> còn 7 ngày phần mềm nhắc gia hạn</li></ul></div></div></section>
+<section class="section surface-soft"><div class="container split"><div><span class="eyebrow">Mã kích hoạt AI</span><h2>Một mã cho mọi tính năng AI</h2><p class="lead">Gói AI được cấp bằng mã kích hoạt. Phần kế toán dùng bình thường khi chưa có mã.</p></div><div class="card"><ul class="checks"><li><b>Thời hạn:</b> 1, 3, 6 tháng, 1, 2 năm hoặc vĩnh viễn</li><li><b>Số công ty:</b> tính theo mã số thuế của bộ sổ</li><li><b>Số trang:</b> mỗi trang ảnh hoặc PDF scan chuyển sang Excel trừ vào số trang của mã; tệp Excel và CSV không tính; nạp thêm thì số trang cộng dồn</li><li><b>Ba chế độ:</b> đã kích hoạt / dùng thử 15 ngày / chỉ xem; mã yêu cầu riêng từng máy</li><li><b>Gia hạn:</b> còn 7 ngày phần mềm nhắc gia hạn</li></ul></div></div></section>
 
-<section class="section surface"><div class="container"><div class="section-head"><div><span class="eyebrow">So sánh</span><h2>Kế toán nền tảng và UNESCO AI</h2></div><p>AI làm việc trên chính bộ sổ UNESCO, nên doanh nghiệp đang dùng UNESCO XI có thể kích hoạt AI khi cần.</p></div>
-  <div class="table-wrap"><table class="compare"><thead><tr><th>Chức năng</th><th class="c">Nền tảng</th><th class="c">UNESCO AI</th></tr></thead><tbody>{rows.map((r) => <tr><td>{r[0]}</td><td class={r[1] ? 'y' : 'n'}>{r[1] ? '✓' : '—'}</td><td class={r[2] ? 'y' : 'n'}>{r[2] ? '✓' : '—'}</td></tr>)}</tbody></table></div>
+<section class="section surface"><div class="container"><div class="section-head"><div><span class="eyebrow">So sánh</span><h2>UNESCO XI và UNESCO AI</h2></div><p>AI làm việc trên chính bộ sổ UNESCO, nên doanh nghiệp đang dùng UNESCO XI có thể kích hoạt AI khi cần.</p></div>
+  <div class="table-wrap"><table class="compare"><thead><tr><th>Chức năng</th><th class="c">UNESCO XI</th><th class="c">UNESCO AI</th></tr></thead><tbody>{rows.map((r) => <tr><td>{r[0]}</td><td class={r[1] ? 'y' : 'n'}>{r[1] ? '✓' : '—'}</td><td class={r[2] ? 'y' : 'n'}>{r[2] ? '✓' : '—'}</td></tr>)}</tbody></table></div>
 </div></section>
 
 <section class="section surface-soft"><div class="container"><div class="section-head"><div><span class="eyebrow">Trước khi báo giá</span><h2>4 thông tin giúp xác định đúng gói</h2></div><p>Chuẩn bị trước các thông tin này, bộ phận kinh doanh sẽ báo giá nhanh và chính xác hơn.</p></div><div class="grid grid-4"><div class="card"><h3>Loại hình</h3><p class="muted">Thương mại, dịch vụ, sản xuất, xây dựng, hộ kinh doanh hoặc kế toán dịch vụ.</p></div><div class="card"><h3>Số công ty</h3><p class="muted">Số bộ sổ (mã số thuế) cần quản lý và số máy sử dụng.</p></div><div class="card"><h3>Khối lượng AI</h3><p class="muted">Số hoá đơn mỗi tháng, ngân hàng đang dùng, sao kê dạng file hay ảnh scan.</p></div><div class="card"><h3>Dữ liệu hiện có</h3><p class="muted">Phần mềm đang dùng và nhu cầu chuyển số dư đầu kỳ.</p></div></div></div></section>

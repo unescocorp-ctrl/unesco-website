@@ -4,7 +4,7 @@ export type Release = {
 
 export const currentRelease: Release = {
   productCode: 'UNESCO_XI_AI',
-  version: 'UNESCO AI 2026 (UNESCO XI + AI)',
+  version: 'UNESCO AI 2026',
   releaseDate: 'Cấp bộ cài trực tiếp khi đăng ký',
   architecture: '32-bit (chạy trên Windows 64-bit)',
   os: 'Windows 10/11',
@@ -14,8 +14,9 @@ export const currentRelease: Release = {
   downloadUrl: '',
   notes: [
     'Màn hình AI 8 thẻ: Tự động xử lý, Danh sách hoá đơn, Tờ khai HQ, Sổ phụ ngân hàng, Bảng lương & chứng từ khác, Kết chuyển cuối kỳ, Báo cáo & nhật ký, Cổng dịch vụ công.',
-    'Nền tảng kế toán UNESCO XI 2026: 9 phân hệ, báo cáo theo TT133 và TT99, tải hoá đơn điện tử, xuất XML HTKK.',
-    'Một mã kích hoạt AI cho mọi tính năng AI; phần kế toán dùng bình thường khi chưa kích hoạt.',
+    'Bản GĐ169 (09/10/2026): 65 tính năng AI trong 11 nhóm, 14 tính năng mới GĐ159 – GĐ168 (báo cáo cho chủ doanh nghiệp, giá thành 7 bước, thuế TNCN, nhập toàn bộ HTKK theo MST…).',
+    'Nền tảng kế toán UNESCO XI: 9 phân hệ, sổ sách – báo cáo theo TT133/2016 hoặc TT99/2025 (chọn theo bộ sổ), bộ cài kèm sổ mẫu năm 2026.',
+    'Khoá AI 3 chế độ: đã kích hoạt / dùng thử / chỉ xem; phần kế toán dùng bình thường khi chưa kích hoạt.',
     'Bộ cài được cấp trực tiếp sau khi đăng ký để gắn bản quyền và hướng dẫn cài đặt.'
   ]
 };

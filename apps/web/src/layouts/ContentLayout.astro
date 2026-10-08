@@ -1,10 +1,28 @@
 ---
 import { url } from '../utils/url';
 import BaseLayout from './BaseLayout.astro';
-const { title, description, eyebrow='UNESCO AI' } = Astro.props;
+import Screenshot from '../components/Screenshot.astro';
+import type { Shot } from '../data/screenshots';
+/**
+ * title    : tiêu đề SEO và đường dẫn breadcrumb.
+ * display  : tiêu đề lớn IN HOA trên trang (tuỳ chọn). Dấu | tách phần màu xanh lá và phần màu xanh dương,
+ *            ví dụ "AN TOÀN & |KIỂM SOÁT AI". Không có display thì hiện title.
+ * tone     : 'gb' = xanh lá + xanh dương (mặc định), 'ng' = xanh đậm + xanh lá.
+ * subtitle : dòng tiêu đề phụ đậm dưới tiêu đề lớn.
+ * heroShot : ảnh phần mềm thật đặt trong khung trình duyệt bên phải.
+ */
+interface Props { title: string; description?: string; eyebrow?: string; heroShot?: Shot; display?: string; tone?: 'gb' | 'ng'; subtitle?: string; pills?: string[] }
+const { title, description, eyebrow = 'UNESCO AI', heroShot, display, tone = 'gb', subtitle, pills = ['AI hỗ trợ – kế toán quyết định', 'Dữ liệu thật trên bộ sổ UNESCO', 'Có nhật ký – có thể lùi'] } = Astro.props;
+const parts = display ? display.split('|') : [];
 ---
 <BaseLayout title={title} description={description}>
   <section class="surface"><div class="container breadcrumb"><a href={url('/')}>Trang chủ</a> / {title}</div></section>
-  <section class="content-hero"><div class="container"><span class="eyebrow">{eyebrow}</span><h1>{title}</h1>{description && <p class="lead">{description}</p>}<div class="pill-row"><span class="pill">Thiết kế cho kế toán Việt Nam</span><span class="pill">AI hỗ trợ · Kế toán kiểm soát</span><span class="pill">Dữ liệu thống nhất</span></div></div></section>
+  <section class="content-hero"><span class="stripes tr" aria-hidden="true"></span><div class={`container${heroShot ? ' content-hero-grid' : ''}`}><div>
+    <span class="eyebrow">{eyebrow}</span>
+    {display ? <h1 class="display"><span class={tone === 'ng' ? 'tn' : 'tg'}>{parts[0]}</span>{parts[1] && <span class={tone === 'ng' ? 'tg' : 'tb'}>{parts[1]}</span>}</h1> : <h1>{title}</h1>}
+    {subtitle && <p class="hero-sub">{subtitle}</p>}
+    {description && <p class="lead">{description}</p>}
+    {pills.length > 0 && <div class="pill-row">{pills.map((p) => <span class="pill">{p}</span>)}</div>}
+  </div>{heroShot && <div class="hero-shot"><Screenshot shot={heroShot} eager={true} showCaption={false} class="glow" /></div>}</div></section>
   <slot/>
 </BaseLayout>

@@ -1,0 +1,43 @@
+---
+import { url } from '../../utils/url';
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import Screenshot from '../../components/Screenshot.astro';
+import Icon from '../../components/Icon.astro';
+import { shots } from '../../data/screenshots';
+const principles = [
+  ['clipboard-check', 'Theo dõi hồ sơ', 'Nắm trạng thái hồ sơ khai thuế đã nộp theo dữ liệu trên Cổng dịch vụ công.', 'g'],
+  ['calendar-clock', 'Đối chiếu trước hạn', 'Đối chiếu sớm số liệu tờ khai với sổ; hạn nộp tự tính, báo kỳ đến hạn chưa thấy tờ khai.', 'b'],
+  ['shield-x', 'Không tự nộp thay', 'Chỉ hỗ trợ tra cứu, đối chiếu và lưu trữ; không ký, không nộp hồ sơ thay doanh nghiệp.', 'y'],
+];
+const blocks = [
+  ['clipboard-check', 'Dạy một lần, dùng mãi', 'Kế toán đăng nhập, tra cứu như bình thường; AI đọc kết quả, mở từng hồ sơ trong một tab.', 'g'],
+  ['folder-check', 'Tờ khai đã nộp', 'Danh sách tờ khai đã nộp và trạng thái tiếp nhận / chấp nhận của cơ quan thuế.', 't'],
+  ['bell', 'Thông báo', 'Thông báo của cơ quan thuế, mở tệp đính kèm ngay trong phần mềm.', 'b'],
+  ['scale', 'Đối chiếu 01/GTGT với sổ', 'So từng chỉ tiêu tờ khai đã nộp với sổ kế toán; lệch trên 1.000 đồng được tô đỏ.', 'y'],
+  ['percent', 'Số phải nộp', 'Tính theo tờ khai có hiệu lực, đối chiếu với giấy nộp tiền và sổ phụ ngân hàng.', 'g'],
+  ['calendar-clock', 'Hạn nộp tính cả ngày lễ', 'Hạn nộp tự lùi qua thứ Bảy, Chủ nhật, ngày lễ; báo kỳ đã đến hạn mà chưa thấy tờ khai.', 'b'],
+];
+const states = [['file-check', 'Đã nộp'], ['file-search', 'Đang kiểm tra'], ['clipboard-check', 'Đã chấp nhận'], ['check-circle', 'Hoàn tất']];
+---
+<ContentLayout title="Hồ sơ Thuế – Theo dõi, đối chiếu, lưu trữ" description="Theo dõi – đối chiếu – cảnh báo để tuân thủ đúng hạn: tải thông báo, hồ sơ khai thuế đã nộp, nghĩa vụ thuế, giấy nộp tiền từ Cổng dịch vụ công Thuế về UNESCO AI. Chỉ tra cứu, không nộp hay ký thay." eyebrow="Kế toán thông minh" display="HỒ SƠ |THUẾ" subtitle="Theo dõi – Đối chiếu – Cảnh báo để tuân thủ đúng hạn" heroShot={shots.publicPortal}>
+
+<section class="section"><div class="container">
+  <div class="grid grid-3">{principles.map((p) => <div class={`card top-${p[3]}`}><span class={`ic lg ring ${p[3]}`} style="margin-bottom:14px"><Icon name={p[0]} /></span><h3>{p[1]}</h3><p class="muted" style="margin:0">{p[2]}</p></div>)}</div>
+</div></section>
+
+<section class="section surface"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Tab Hồ sơ thuế · Cổng dịch vụ công</span><h2>Hồ sơ thuế trong một tab</h2></div><p>Tờ khai đã nộp, thông báo, đối chiếu sổ, số phải nộp, hạn nộp tính cả ngày lễ – không phải mở từng trang trên cổng.</p></div>
+  <div class="grid grid-3">{blocks.map((b) => <div class="card"><span class={`ic ${b[3]}`} style="margin-bottom:14px"><Icon name={b[0]} /></span><h3>{b[1]}</h3><p class="muted" style="margin:0">{b[2]}</p></div>)}</div>
+</div></section>
+
+<section class="section"><div class="container split"><div><Screenshot shot={shots.publicPortal} /></div><div>
+  <span class="eyebrow">Hồ sơ đã nộp</span><h2>Theo dõi trạng thái hồ sơ</h2>
+  <p class="lead">Trạng thái hồ sơ hiển thị theo thông báo của cơ quan thuế, giúp kế toán biết hồ sơ nào đã xong, hồ sơ nào cần bổ sung.</p>
+  <ol class="flow" style="--n:4;margin-top:24px">{states.map((s, i) => <li><span class={`ic ring ${i < 2 ? 'g' : 'b'}`}><Icon name={s[0]} /></span><b>{s[1]}</b></li>)}</ol>
+  <div class="callout y" style="margin-top:26px"><span class="ic"><Icon name="shield-x" /></span><div><h3>Không tự nộp thay</h3><p>Phần mềm chỉ hỗ trợ theo dõi, đối chiếu và cảnh báo. Việc ký và nộp hồ sơ do doanh nghiệp tự thực hiện.</p></div></div>
+</div></div></section>
+
+<section class="section surface-soft"><div class="container">
+  <div class="callout b"><span class="ic"><Icon name="file-xml" /></span><div><h3>Tiếp theo: Tờ khai & BCTC</h3><p>Soát trước khi xuất – phát hiện lệch trước khi nộp: 01/GTGT, báo cáo tài chính, 03/TNDN xuất XML HTKK.</p></div><a class="btn btn-secondary" style="margin-left:auto" href={url('/to-khai-bctc/')}>Xem Tờ khai & BCTC</a></div>
+</div></section>
+</ContentLayout>

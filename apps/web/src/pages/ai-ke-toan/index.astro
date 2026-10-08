@@ -3,21 +3,22 @@ import { url } from '../../utils/url';
 import ContentLayout from '../../layouts/ContentLayout.astro';
 import Screenshot from '../../components/Screenshot.astro';
 import VideoCard from '../../components/VideoCard.astro';
+import Icon from '../../components/Icon.astro';
 import { shots } from '../../data/screenshots';
 import { aiFlow, aiCounters, invoiceDownload, bankImport, costAi, assistant, customerCodeRules, aiSafety, activation } from '../../data/ai';
 import { videoBySlug } from '../../data/videos';
 const vAssistant = videoBySlug('m08-tro-ly-ai')!;
 const vCost = videoBySlug('m07-gia-thanh')!;
 const cards = [
-  ['🧾','AI Hoá đơn điện tử','Tải, phân tích, ghép mã và định khoản hoá đơn mua vào – bán ra.','/ai-ke-toan/ai-hoa-don/'],
-  ['🏦','AI Sổ phụ ngân hàng','Xếp nhóm giao dịch, tìm đối tác, tài khoản đối ứng, lập phiếu báo có – báo nợ.','/ai-ke-toan/ai-so-phu-ngan-hang/'],
-  ['✨','AI Gợi ý hạch toán','Học từ chứng từ cũ và quy tắc hạch toán của từng bộ sổ.','/ai-ke-toan/ai-goi-y-hach-toan/'],
-  ['🔎','AI Mã khách hàng/NCC','Ưu tiên mã có sẵn; mã mới theo quy tắc MST, chờ kế toán duyệt.','/ai-ke-toan/ai-ma-khach-hang/'],
-  ['🖼️','AI Ảnh/PDF sang Excel','Đọc ảnh, PDF scan bằng Google Document AI hoặc Tesseract không cần Internet.','/ai-ke-toan/ai-ocr/'],
-  ['🏭','AI Giá thành','Cân đối AI, định mức tự động, giá thành theo đối tượng.','/nghiep-vu/gia-thanh/']
+  ['receipt','AI Hoá đơn điện tử','Tải, phân tích, ghép mã và định khoản hoá đơn mua vào – bán ra.','/ai-ke-toan/ai-hoa-don/'],
+  ['bank','AI Sổ phụ ngân hàng','Xếp nhóm giao dịch, tìm đối tác, tài khoản đối ứng, lập phiếu báo có – báo nợ.','/ai-ke-toan/ai-so-phu-ngan-hang/'],
+  ['sparkles','AI Gợi ý hạch toán','Học từ chứng từ cũ và quy tắc hạch toán của từng bộ sổ.','/ai-ke-toan/ai-goi-y-hach-toan/'],
+  ['file-search','AI Mã khách hàng/NCC','Ưu tiên mã có sẵn; mã mới theo quy tắc MST, chờ kế toán duyệt.','/ai-ke-toan/ai-ma-khach-hang/'],
+  ['camera','AI Ảnh/PDF sang Excel','Đọc ảnh, PDF scan bằng Google Document AI hoặc Tesseract không cần Internet.','/ai-ke-toan/ai-ocr/'],
+  ['calculator','AI Giá thành','Cân đối AI, định mức tự động, giá thành theo đối tượng.','/ai-ke-toan/ai-gia-thanh/']
 ];
 ---
-<ContentLayout title="AI kế toán trong UNESCO AI" description="Màn hình AI của phần mềm kế toán UNESCO AI: tải và phân tích hoá đơn điện tử, tạo mã còn thiếu, đề xuất chứng từ, đọc sổ phụ ngân hàng, giá thành có Cân đối AI và trợ lý AI ngay trên màn hình — kế toán xem trước rồi mới ghi sổ." eyebrow="UNESCO AI">
+<ContentLayout title="AI kế toán trong UNESCO AI" description="Màn hình AI của phần mềm kế toán UNESCO AI: tải và phân tích hoá đơn điện tử, tạo mã còn thiếu, đề xuất chứng từ, đọc sổ phụ ngân hàng, giá thành có Cân đối AI và trợ lý AI ngay trên màn hình — kế toán xem trước rồi mới ghi sổ." eyebrow="Kế toán thông minh AI" display="AI |KẾ TOÁN" subtitle="AI làm phần việc lặp lại – kế toán giữ quyền ghi sổ" heroShot={shots.autoProcess}>
 
 <section class="section"><div class="container split"><div><Screenshot shot={shots.invoiceList} eager={true} /></div><div><span class="eyebrow">AI chuẩn bị – kế toán quyết định</span><h2>AI làm phần việc lặp lại, kế toán giữ quyền ghi sổ</h2><p class="lead">AI đọc hoá đơn, sổ phụ, tờ khai; so khớp với danh mục của bộ sổ; đề xuất mã và định khoản kèm điểm tin cậy và nguồn ghép. Mỗi chứng từ mở ra điền sẵn để kế toán kiểm tra rồi bấm Ghi như khi nhập tay.</p>
   <div class="feature-list">
@@ -64,7 +65,7 @@ const cards = [
 
 <section class="section surface-soft"><div class="container split"><div><span class="eyebrow">Kích hoạt AI</span><h2>Một mã cho mọi tính năng AI</h2><p class="lead">Phần kế toán dùng bình thường khi chưa kích hoạt. Mã kích hoạt mở toàn bộ tính năng AI trên máy và bộ sổ được cấp.</p></div><div class="card"><ul class="checks">{activation.map((a) => <li>{a}</li>)}</ul></div></div></section>
 
-<section class="section"><div class="container"><div class="section-head"><div><span class="eyebrow">Tìm hiểu theo chức năng</span><h2>Chi tiết từng nhóm AI</h2></div></div><div class="grid grid-3">{cards.map(c=><a class="card feature-card" href={url(c[3])}><div class="icon">{c[0]}</div><h3>{c[1]}</h3><p class="muted">{c[2]}</p><strong class="link-arrow">Xem chi tiết</strong></a>)}</div>
+<section class="section"><div class="container"><div class="section-head"><div><span class="eyebrow">Tìm hiểu theo chức năng</span><h2>Chi tiết từng nhóm AI</h2></div></div><div class="grid grid-3">{cards.map(c=><a class="card feature-card" href={url(c[3])}><div class="icon"><Icon name={c[0]} /></div><h3>{c[1]}</h3><p class="muted">{c[2]}</p><strong class="link-arrow">Xem chi tiết</strong></a>)}</div>
   <div class="actions" style="margin-top:26px"><a class="btn btn-primary" href={url('/lien-he/#demo')}>XEM DEMO AI KẾ TOÁN</a><a class="btn btn-secondary" href={url('/video/')}>▶ VIDEO HƯỚNG DẪN</a></div>
 </div></section>
 </ContentLayout>

@@ -1,0 +1,45 @@
+---
+import { url } from '../../utils/url';
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import Screenshot from '../../components/Screenshot.astro';
+import Icon from '../../components/Icon.astro';
+import AiDoDont from '../../components/AiDoDont.astro';
+import { shots } from '../../data/screenshots';
+import { aiSafety, aiCounters } from '../../data/ai';
+import { aiRules } from '../../data/ai-catalog';
+const controls = [
+  ['star', 'Điểm tin cậy cho từng dòng', 'Điểm càng cao AI càng chắc; dòng điểm thấp được đưa vào ô Cần xem lại.', 'g'],
+  ['eye', 'Xem trước rồi mới ghi', 'Chứng từ AI lập mở ra điền sẵn trên màn hình quen thuộc; kế toán kiểm tra rồi bấm Ghi.', 'b'],
+  ['undo', 'Huỷ cả lô khi lập sai', 'Mỗi lần AI lập chứng từ là một lô; huỷ được ở thẻ Báo cáo & nhật ký.', 't'],
+  ['history', 'Nhật ký 30 ngày', 'Mọi lần tải, nhập, phân tích, kết xuất đều được ghi lại để tra cứu.', 'y'],
+  ['lock', 'Không lưu mật khẩu cổng thuế', 'Kế toán tự gõ mã số thuế, mật khẩu, captcha khi tải hoá đơn.', 'g'],
+  ['building', 'Đúng công ty, không trùng', 'Chỉ tải hoá đơn, nhập sổ phụ khi khớp mã số thuế, tài khoản của bộ sổ đang mở; hoá đơn nhận theo khoá MST – mẫu số – ký hiệu – số.', 'b'],
+  ['database', 'Sao lưu tự động', 'Sao lưu bộ sổ mỗi ngày và trước việc lớn (khoá sổ, gộp mã, sửa mã trả hộ), giữ 7 ngày + 12 bản cuối tháng; kiểm toàn vẹn nhanh.', 't'],
+  ['key', 'Cập nhật có chữ ký số', 'Kênh cập nhật có chữ ký số; kiểm từng tệp, sao lưu trước khi chép; lỗi giữa chừng thì khôi phục.', 'y'],
+  ['clipboard-check', 'Hơn 18.000 phép kiểm mỗi gói', 'Mỗi gói cập nhật chạy lại hơn 18.000 phép kiểm tự động trước khi giao; nhật ký che mật khẩu, số tài khoản chỉ ghi 4 số cuối.', 'g'],
+];
+---
+<ContentLayout title="An toàn & kiểm soát AI trong kế toán" description="Ranh giới rõ ràng giữa AI và sổ sách kế toán: AI đọc dữ liệu, ghép mã, đề xuất tài khoản, lập chứng từ để duyệt, đối chiếu và báo lệch; không vượt captcha, không lưu mật khẩu, không ký hay nộp thay, không tự sửa chứng từ nhập tay." eyebrow="Báo cáo ứng dụng AI trong kế toán" display="AN TOÀN & |KIỂM SOÁT AI" subtitle="AI chuẩn bị – kế toán quyết định. Có nhật ký – có thể lùi." heroShot={shots.reports}>
+
+<section class="section"><div class="container">
+  <AiDoDont />
+  <h3 style="margin-top:34px">Ba câu chốt</h3>
+  <div class="rules3">{aiRules.map((r, i) => <div><span>{i + 1}</span>{r}</div>)}</div>
+</div></section>
+
+<section class="section surface"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Cơ chế kiểm soát</span><h2>Các lớp kiểm soát trên phần mềm</h2></div><p>Các cơ chế này có sẵn trên màn hình AI, không cần cấu hình thêm.</p></div>
+  <div class="grid grid-3">{controls.map((c) => <div class={`card top-${c[3]}`}><span class={`ic ${c[3]}`} style="margin-bottom:14px"><Icon name={c[0]} /></span><h3>{c[1]}</h3><p class="muted" style="margin:0">{c[2]}</p></div>)}</div>
+</div></section>
+
+<section class="section"><div class="container split"><div><Screenshot shot={shots.autoProcess} /></div><div>
+  <span class="eyebrow">Bốn ô kiểm soát</span><h2>Biết ngay việc nào AI đã xong, việc nào cần bạn</h2>
+  <div class="legend" style="grid-template-columns:1fr 1fr;margin-top:18px">{aiCounters.map((c) => <div class={c.cls}><b>{c.t}</b>{c.d}</div>)}</div>
+</div></div></section>
+
+<section class="section surface-soft"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Chi tiết</span><h2>Ranh giới giữa AI và sổ sách kế toán</h2></div></div>
+  <div class="do-dont"><div class="card do"><h3>AI làm</h3><ul>{aiSafety.allowed.map((a) => <li>{a}</li>)}</ul></div><div class="card dont"><h3>AI không làm</h3><ul>{aiSafety.forbidden.map((a) => <li>{a}</li>)}</ul></div></div>
+  <div class="actions" style="margin-top:24px"><a class="btn btn-primary" href={url('/lien-he/#demo')}>Xem demo trên dữ liệu của bạn</a><a class="btn btn-secondary" href={url('/legal/data-protection/')}>Chính sách dữ liệu</a></div>
+</div></section>
+</ContentLayout>

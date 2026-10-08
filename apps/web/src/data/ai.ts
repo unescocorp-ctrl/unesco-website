@@ -8,14 +8,14 @@
 import type { ShotKey } from './screenshots';
 
 export type AiTab = {
-  key: string; n: number; icon: string; title: string; shot: ShotKey; video?: string;
+  key: string; n: number; icon: string; ic: string; title: string; shot: ShotKey; video?: string;
   lead: string; points: string[];
 };
 
 /** 8 thẻ nghiệp vụ trên màn hình AI (theo đúng thứ tự trên phần mềm). */
 export const aiTabs: AiTab[] = [
   {
-    key: 'tu-dong-xu-ly', n: 1, icon: '⚙️', title: 'Tự động xử lý', shot: 'autoProcess', video: 'm04-tu-dong-xu-ly',
+    key: 'tu-dong-xu-ly', n: 1, icon: '⚙️', ic: 'settings', title: 'Tự động xử lý', shot: 'autoProcess', video: 'm04-tu-dong-xu-ly',
     lead: 'Bảng điều khiển hoá đơn mua vào – bán ra: tải, phân tích, tạo mã còn thiếu và lập chứng từ hàng loạt.',
     points: [
       'Bốn ô kiểm soát: Chờ duyệt, Chưa phân tích, Không xử lý, Cần xem lại',
@@ -25,7 +25,7 @@ export const aiTabs: AiTab[] = [
     ],
   },
   {
-    key: 'danh-sach-hoa-don', n: 2, icon: '🧾', title: 'Danh sách hoá đơn', shot: 'invoiceList', video: 'm03-danh-sach-hoa-don',
+    key: 'danh-sach-hoa-don', n: 2, icon: '🧾', ic: 'receipt', title: 'Danh sách hoá đơn', shot: 'invoiceList', video: 'm03-danh-sach-hoa-don',
     lead: 'Soi từng hoá đơn: trạng thái, chứng từ đã lập, điểm tin cậy và nguồn ghép mã của AI.',
     points: [
       'Lọc theo tháng hoặc khoảng ngày, sắp xếp theo cột bất kỳ',
@@ -35,7 +35,7 @@ export const aiTabs: AiTab[] = [
     ],
   },
   {
-    key: 'to-khai-hai-quan', n: 3, icon: '🚢', title: 'Tờ khai hải quan', shot: 'customs', video: 'to-khai-hai-quan',
+    key: 'to-khai-hai-quan', n: 3, icon: '🚢', ic: 'ship', title: 'Tờ khai hải quan', shot: 'customs', video: 'to-khai-hai-quan',
     lead: 'Đọc tờ khai nhập khẩu từ tệp Excel (bản in VNACCS/ECUS), ghép mã hàng – nhà cung cấp, phân bổ chi phí vào giá vốn.',
     points: [
       'Đọc số tờ khai, ngày thông quan, trị giá ngoại tệ, tỷ giá, thuế NK, TTĐB, GTGT',
@@ -45,7 +45,7 @@ export const aiTabs: AiTab[] = [
     ],
   },
   {
-    key: 'so-phu-ngan-hang', n: 4, icon: '🏦', title: 'Sổ phụ ngân hàng', shot: 'bank', video: 'm05-so-phu-ngan-hang',
+    key: 'so-phu-ngan-hang', n: 4, icon: '🏦', ic: 'bank', title: 'Sổ phụ ngân hàng', shot: 'bank', video: 'm05-so-phu-ngan-hang',
     lead: 'Đưa sao kê vào phần mềm, AI đọc từng giao dịch, xếp nhóm, tìm đối tác và tài khoản đối ứng rồi lập phiếu báo có, báo nợ.',
     points: [
       'Đọc file Excel, CSV, PDF có chữ của các ngân hàng phổ biến; ảnh và PDF scan chuyển sang Excel',
@@ -55,7 +55,7 @@ export const aiTabs: AiTab[] = [
     ],
   },
   {
-    key: 'bang-luong', n: 5, icon: '👥', title: 'Bảng lương & chứng từ khác', shot: 'payroll',
+    key: 'bang-luong', n: 5, icon: '👥', ic: 'users', title: 'Bảng lương & chứng từ khác', shot: 'payroll',
     lead: 'Import bảng lương Excel, đối chiếu và lập chứng từ lương; chứng từ tạm ứng, thu – chi khác.',
     points: [
       'Import bảng lương, đối chiếu từng phần và xuất Excel đối chiếu lương',
@@ -65,7 +65,7 @@ export const aiTabs: AiTab[] = [
     ],
   },
   {
-    key: 'ket-chuyen-cuoi-ky', n: 6, icon: '🔄', title: 'Kết chuyển cuối kỳ', shot: 'closing',
+    key: 'ket-chuyen-cuoi-ky', n: 6, icon: '🔄', ic: 'refresh', title: 'Kết chuyển cuối kỳ', shot: 'closing',
     lead: 'Checklist cuối kỳ cho công cụ dụng cụ, chi phí trả trước 242, khấu hao TSCĐ — thấy ngay việc nào Đã làm, việc nào CHƯA.',
     points: [
       'Lưới checklist theo tháng kèm số tiền từng việc',
@@ -75,7 +75,7 @@ export const aiTabs: AiTab[] = [
     ],
   },
   {
-    key: 'bao-cao-nhat-ky', n: 7, icon: '📊', title: 'Báo cáo & nhật ký', shot: 'reports', video: 'm06-bao-cao-nhat-ky',
+    key: 'bao-cao-nhat-ky', n: 7, icon: '📊', ic: 'bar-chart', title: 'Báo cáo & nhật ký', shot: 'reports', video: 'm06-bao-cao-nhat-ky',
     lead: 'Gom việc cuối kỳ: tờ khai thuế, báo cáo tài chính, sổ sách, kiểm tra trước khoá sổ và nhật ký những gì AI đã làm.',
     points: [
       'Xuất 01/GTGT: xem trước từng chỉ tiêu, cảnh báo lệch với sổ, kết xuất XML nhập vào HTKK',
@@ -85,7 +85,7 @@ export const aiTabs: AiTab[] = [
     ],
   },
   {
-    key: 'cong-dich-vu-cong', n: 8, icon: '🏛️', title: 'Cổng dịch vụ công', shot: 'publicPortal',
+    key: 'cong-dich-vu-cong', n: 8, icon: '🏛️', ic: 'globe', title: 'Cổng dịch vụ công', shot: 'publicPortal',
     lead: 'Tải dữ liệu từ Cổng dịch vụ công Thuế về phần mềm để tra cứu và đối chiếu — chỉ tra cứu, không nộp hay ký thay.',
     points: [
       'Tra cứu thông báo, giấy nộp tiền, hồ sơ khai thuế đã nộp, nghĩa vụ thuế',
@@ -156,7 +156,8 @@ export const costAi = {
 export const assistant = [
   { t: 'Việc nên làm tiếp', d: 'Đọc số liệu của bộ sổ và liệt kê việc cần làm kèm nút phải bấm.' },
   { t: 'Đang xem', d: 'Rê chuột lên nút hay ô nào, trợ lý giải thích ngay: làm gì, khi nào dùng, cần lưu ý gì.' },
-  { t: 'Hỏi bằng tiếng Việt', d: 'Gõ câu hỏi, ví dụ “huỷ chứng từ đã lập thế nào?”, trợ lý trả lời theo đúng phiên bản đang dùng.' },
+  { t: 'Hơn 1.600 mục soạn sẵn', d: 'F1 ở mọi màn hình mở đúng mục; bấm ? rồi bấm nút để xem hướng dẫn thay vì chạy; dùng được khi không có Internet.' },
+  { t: 'Hỏi bằng tiếng Việt', d: 'Tuỳ chọn, cần khoá Claude API: gõ câu hỏi như “huỷ chứng từ đã lập thế nào?” – chỉ gửi câu hỏi, mục hướng dẫn liên quan và vài số đếm.' },
   { t: 'Chỉ hướng dẫn', d: 'Trợ lý không tự bấm nút hay ghi sổ thay kế toán.' },
 ];
 
@@ -166,6 +167,7 @@ export const activation = [
   'Phần kế toán UNESCO XI vẫn dùng bình thường, không cần mã',
   'Mỗi trang ảnh hoặc PDF scan chuyển sang Excel trừ vào số trang của mã; tệp Excel và CSV không tính',
   'Mã cấp theo gói 1, 3, 6 tháng, 1, 2 năm hoặc vĩnh viễn, kèm số công ty tính theo mã số thuế',
+  'Khoá AI 3 chế độ: đã kích hoạt / dùng thử 15 ngày / chỉ xem; mã yêu cầu riêng từng máy',
   'Kích hoạt không cần Internet; còn 7 ngày phần mềm nhắc gia hạn',
 ];
 

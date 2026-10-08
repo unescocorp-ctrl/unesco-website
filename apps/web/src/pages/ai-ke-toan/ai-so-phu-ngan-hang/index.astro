@@ -1,9 +1,60 @@
 ---
 import { url } from '../../../utils/url';
 import ContentLayout from '../../../layouts/ContentLayout.astro';
+import Screenshot from '../../../components/Screenshot.astro';
+import VideoCard from '../../../components/VideoCard.astro';
+import Icon from '../../../components/Icon.astro';
+import { shots } from '../../../data/screenshots';
+import { bankImport } from '../../../data/ai';
+import { videoBySlug } from '../../../data/videos';
+const rows = [
+  ['bank', 'CHUYEN TIEN NGUYEN VAN A CT TU 123456', 'Thanh toán từ đối tác A', 'tên người trả', 'g'],
+  ['qr-code', 'VTPAY*QR 9704 AHD12', 'Thanh toán QR – hoá đơn AHD12', 'số hoá đơn', 'b'],
+  ['bank', 'CTY TNHH ABC THANH TOAN HD 2505', 'Thanh toán hoá đơn từ Cty ABC', 'số hoá đơn', 'b'],
+  ['users', 'LUONG T5/2025 NV VAN PHONG', 'Chi trả lương tháng 5/2025', 'nội dung lương', 'y'],
+  ['refresh', 'CHUYEN KHOAN NOI BO', 'Chuyển khoản nội bộ công ty', 'chuyển nội bộ', 'p'],
+  ['bank', 'PHI DICH VU SMS BANKING', 'Phí dịch vụ ngân hàng', 'phí ngân hàng', 'o'],
+  ['qr-code', 'VCB 1234567890 MB NAPAS NGUYEN V A', 'Nhận tiền qua VietQR từ khách hàng', 'công nợ khách hàng', 'g'],
+  ['ban', '(dòng của file sao kê đã nhập)', 'Giao dịch đã tồn tại – bỏ qua', 'chống nhập trùng', 'n'],
+];
+const trace = [
+  ['user', 'Tên người chuyển / nhận', 'Tách tên và ngân hàng từ chuỗi mô tả giao dịch.', 'g'],
+  ['receipt', 'Số hoá đơn / ký hiệu', 'Dùng dữ kiện trong nội dung để truy vết chứng từ liên quan.', 't'],
+  ['calendar', 'Số tiền & ngày', 'Đối chiếu giao dịch gần thời điểm phát sinh và khoản công nợ.', 'b'],
+  ['history', 'Công nợ mở & bí danh', 'Khớp theo công nợ mở của từng đối tác; học bí danh người trả; không tự phân bổ khi thiếu / dư.', 'y'],
+];
+const vids = ['m05-so-phu-ngan-hang', 'cong-no-ma-qr'].map((s) => videoBySlug(s)!);
 ---
-<ContentLayout title="Biến sổ phụ ngân hàng thành dữ liệu kế toán có thể kiểm soát" description="Đọc giao dịch, chuẩn hóa nội dung và hỗ trợ truy vết khách hàng, hóa đơn, công nợ, nhân viên và tài khoản đối ứng." eyebrow="AI sổ phụ ngân hàng">
-<section class="section"><div class="container split reverse"><div class="visual-card"><img src={url('/visuals/bank-ai.svg')} width="1200" height="820" alt="AI UNESCO phân tích nội dung sổ phụ ngân hàng"/></div><div><span class="eyebrow">Đọc sổ phụ như kế toán</span><h2>Từ chuỗi ký hiệu khó đọc đến nội dung có ngữ nghĩa</h2><p class="lead">AI hỗ trợ chuẩn hóa nội dung giao dịch, nhận diện tên người chuyển/nhận và dùng các dữ kiện như số hóa đơn, số tiền, ngày tháng để truy vết đối tượng liên quan.</p><div class="feature-list"><div class="feature-row"><span class="check">✓</span><div><strong>Chuẩn hóa tiếng Việt</strong><span>Nội dung không dấu, viết tắt hoặc ký hiệu ngân hàng được diễn giải theo từ điển nghiệp vụ.</span></div></div><div class="feature-row"><span class="check">✓</span><div><strong>Đối chiếu đa nguồn</strong><span>Khách hàng/NCC, bảng kê mua bán, hóa đơn, công nợ, nhân viên và lịch sử giao dịch.</span></div></div><div class="feature-row"><span class="check">✓</span><div><strong>Gợi ý tài khoản có kiểm soát</strong><span>Hiển thị đề xuất và mức tin cậy để người dùng duyệt thay vì tự ghi nhận mù.</span></div></div></div><a class="btn btn-tech" href={url('/lien-he/#demo')}>XEM DEMO SỔ PHỤ AI</a></div></div></section>
-<section class="section surface-soft"><div class="container"><div class="section-head"><div><span class="eyebrow">Truy vết giao dịch</span><h2>Không chỉ dựa vào một từ khóa</h2></div><p>Quy trình ưu tiên dữ kiện cụ thể trong giao dịch và đối chiếu với dữ liệu kế toán trước khi đưa ra gợi ý.</p></div><div class="grid grid-4"><div class="card"><span class="tag">01</span><h3 style="margin-top:18px">Tên người chuyển/nhận</h3><p class="muted">Tách tên và ngân hàng từ chuỗi mô tả giao dịch.</p></div><div class="card"><span class="tag tag-blue">02</span><h3 style="margin-top:18px">Số hóa đơn / ký hiệu</h3><p class="muted">Dùng dữ kiện có trong nội dung để truy vết chứng từ liên quan.</p></div><div class="card"><span class="tag tag-gold">03</span><h3 style="margin-top:18px">Số tiền & ngày</h3><p class="muted">Đối chiếu các giao dịch gần thời điểm phát sinh và khoản công nợ.</p></div><div class="card"><span class="tag">04</span><h3 style="margin-top:18px">Lịch sử doanh nghiệp</h3><p class="muted">Ưu tiên cách xử lý đã được doanh nghiệp dùng và duyệt trước đó.</p></div></div></div></section>
-<section class="section"><div class="container"><div class="quote-band"><div><h2>Biến bảng sổ phụ dài thành danh sách giao dịch cần xử lý theo mức ưu tiên.</h2><p>Giao dịch tin cậy cao được trình bày rõ; giao dịch mơ hồ giữ trạng thái cần xem xét để tránh tự động hóa quá mức.</p></div><div class="actions"><a class="btn btn-primary" href={url('/ai-ke-toan/ai-goi-y-hach-toan/')}>XEM GỢI Ý HẠCH TOÁN</a></div></div></div></section>
+<ContentLayout title="AI Sổ phụ – Đối chiếu công nợ thông minh" description="Tự động đối chiếu – cảnh báo chênh lệch – tiết kiệm thời gian: AI đọc sao kê, chuẩn hoá nội dung, tìm đối tác và tài khoản đối ứng, lập phiếu báo có – báo nợ để kế toán duyệt." eyebrow="Báo cáo giải pháp AI kế toán" display="AI |SỔ PHỤ" subtitle="Chuẩn hoá nội dung ngân hàng trước khi lập chứng từ" heroShot={shots.bank}>
+
+<section class="section"><div class="container">
+  <div class="sec-c"><span class="eyebrow">Quy trình xử lý</span><h2>Parse – Chuẩn hoá – Đối chiếu</h2><p>Nội dung giao dịch thô được trích xuất, làm sạch rồi gắn ngữ cảnh kế toán trước khi đề xuất hạch toán.</p></div>
+  <ol class="flow" style="--n:3;max-width:860px;margin:0 auto 40px"><li><span class="ic lg ring g"><Icon name="file-search" /></span><b>Parse</b><small>Trích xuất nội dung từ Excel, CSV, PDF, ảnh scan</small></li><li><span class="ic lg ring t"><Icon name="list-checks" /></span><b>Chuẩn hoá</b><small>Làm sạch, dịch không dấu sang có dấu</small></li><li><span class="ic lg ring b"><Icon name="scale" /></span><b>Đối chiếu</b><small>Đối chiếu khách hàng, hoá đơn, công nợ, gắn ngữ cảnh</small></li></ol>
+  <div class="xform">
+    <div class="xt"><div class="xh">NỘI DUNG NGÂN HÀNG (THÔ)</div><table><thead><tr><th></th><th>Nội dung giao dịch</th></tr></thead><tbody>{rows.map((r) => <tr><td><Icon name={r[0]} /></td><td>{r[1]}</td></tr>)}</tbody></table></div>
+    <div class="arrow"><Icon name="arrow-right" /></div>
+    <div class="xt green"><div class="xh">DIỄN GIẢI THEO NGỮ CẢNH KẾ TOÁN</div><table><thead><tr><th>Diễn giải đã chuẩn hoá</th><th>Nhãn gắn</th></tr></thead><tbody>{rows.map((r) => <tr><td>{r[2]}</td><td><span class={`lbl ${r[4]}`}>{r[3]}</span></td></tr>)}</tbody></table></div>
+  </div>
+  <p class="caption" style="margin-top:12px">Ví dụ minh hoạ – tên và số tài khoản là dữ liệu giả lập.</p>
+</div></section>
+
+<section class="section-sm"><div class="container"><div class="metrics"><div class="metric-box"><b>786 / 1.027</b><small>dòng sao kê thật nhận ra tên người trả</small></div><div class="metric-box"><b>148 → 0</b><small>dòng treo 1388 trên 213 dòng sổ phụ thật</small></div><div class="metric-box"><b>31 / 31</b><small>dòng chi lương viết tắt nhận đúng nhóm</small></div><div class="metric-box"><b>1.022 dòng</b><small>dòng trùng bị chặn khi nhập lại sổ phụ – chỉ nhận 5 dòng mới</small></div></div></div></section>
+
+<section class="section surface"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Truy vết giao dịch</span><h2>Không chỉ dựa vào một từ khoá</h2></div><p>AI ưu tiên dữ kiện cụ thể trong giao dịch và đối chiếu với dữ liệu kế toán trước khi gợi ý.</p></div>
+  <div class="grid grid-4">{trace.map((c) => <div class={`card top-${c[3]}`}><span class={`ic ${c[3]}`} style="margin-bottom:14px"><Icon name={c[0]} /></span><h3>{c[1]}</h3><p class="muted" style="margin:0">{c[2]}</p></div>)}</div>
+</div></section>
+
+<section class="section"><div class="container split"><div><Screenshot shot={shots.bank} /></div><div>
+  <span class="eyebrow">Import sổ phụ</span><h2>Sáu cách đưa sao kê vào phần mềm</h2>
+  <p class="lead">Trước khi nhập, AI đối chiếu số tài khoản và tên chủ tài khoản với công ty đang mở — khác công ty thì không nhập. Ảnh / PDF scan đọc qua OCR Offline (không gửi ảnh ra ngoài) hoặc Google Document AI, luôn vào Cần xem lại và bắt buộc khớp số dư.</p>
+  <ul class="checks">{bankImport.map((b) => <li>{b}</li>)}</ul>
+</div></div></section>
+
+<section class="section surface-soft"><div class="container">
+  <div class="callout" style="margin-bottom:30px"><span class="ic"><Icon name="file-check" /></span><div><h3>Chuẩn hoá nội dung trước khi lập chứng từ</h3><p>Giao dịch tin cậy cao sẵn sàng lập phiếu báo có, báo nợ; giao dịch mơ hồ giữ trạng thái chờ kế toán xác nhận. Bảng lương khớp lệnh chi theo số thực nhận; mã VietQR trên thông báo công nợ giúp tiền về nhận ra ngay.</p></div></div>
+  <div class="section-head"><div><span class="eyebrow">Video hướng dẫn</span><h2>Sổ phụ ngân hàng và công nợ kèm mã VietQR</h2></div></div>
+  <div class="video-grid">{vids.map((v) => <VideoCard video={v} />)}</div>
+  <div class="actions" style="margin-top:26px"><a class="btn btn-primary" href={url('/lien-he/#demo')}>Xem demo AI Sổ phụ</a><a class="btn btn-secondary" href={url('/ai-ke-toan/ai-goi-y-hach-toan/')}>Gợi ý hạch toán</a></div>
+</div></section>
 </ContentLayout>

@@ -1,18 +1,71 @@
 ---
 import { url } from '../../utils/url';
 import ContentLayout from '../../layouts/ContentLayout.astro';
-import { videos, videoTopics, topicSlug } from '../../data/videos';
+import VideoCard from '../../components/VideoCard.astro';
+import Icon from '../../components/Icon.astro';
+import { videoBySlug } from '../../data/videos';
 import { contact, telHref } from '../../data/contact';
-const icons: Record<string, string> = { 'Tổng quan': '🚀', 'Hoá đơn & chứng từ': '🧾', 'Ngân hàng & công nợ': '🏦', 'Báo cáo & thuế': '📊', 'Giá thành': '🏭', 'Trợ lý AI': '🤖' };
+import { guide, whenToUse } from '../../data/visual-guide';
+import { docs } from '../../data/advantages';
+const topics = [
+  ['home', 'Bắt đầu', '/video/#tong-quan'],
+  ['settings', 'Cài đặt', '/download/'],
+  ['cart', 'Mua vào', '/video/#video-m02-tai-hoa-don'],
+  ['send', 'Bán ra', '/nghiep-vu/ban-ra/'],
+  ['bank', 'Ngân hàng', '/video/#video-m05-so-phu-ngan-hang'],
+  ['bot', 'AI', '/video/#video-m08-tro-ly-ai'],
+  ['calculator', 'Giá thành', '/video/#video-m07-gia-thanh'],
+  ['bar-chart', 'Báo cáo', '/video/#video-m06-bao-cao-nhat-ky'],
+  ['refresh', 'Cập nhật', '/release-notes/'],
+  ['wrench', 'Khắc phục lỗi', '/ho-tro/'],
+];
+const center = [
+  ['m04-tu-dong-xu-ly', 'AI'], ['m02-tai-hoa-don', 'Hoá đơn'], ['m05-so-phu-ngan-hang', 'Sổ phụ'],
+  ['m07-gia-thanh', 'Giá thành'], ['m06-bao-cao-nhat-ky', 'Báo cáo'], ['to-khai-hai-quan', 'Hải quan'],
+].map(([s, label]) => ({ v: videoBySlug(s)!, label }));
+const know = [
+  ['download', 'Cài đặt & bắt đầu', 'Yêu cầu hệ thống và 6 bước từ cài đặt đến báo cáo đầu tiên.', '/download/', 'g'],
+  ['sparkles', 'Dùng màn hình AI', 'Quy trình xử lý tự động, bốn ô kiểm soát và trợ lý AI trên màn hình.', '/ai-ke-toan/', 't'],
+  ['book-open', 'Kiến thức kế toán', 'Bài viết theo chủ đề hoá đơn, ngân hàng, giá thành, thuế.', '/kien-thuc/', 'b'],
+  ['info', 'Câu hỏi thường gặp', 'Giải đáp nhanh về sản phẩm, AI, cài đặt, nâng cấp.', '/faq/', 'y'],
+  ['history', 'Release notes', 'Lịch sử phiên bản và có gì mới theo từng gói.', '/release-notes/', 'g'],
+  ['list-checks', 'Tổng hợp 65 tính năng AI', 'Mỗi tính năng làm gì, mở từ menu / nút nào.', '/tinh-nang-ai/', 't'],
+  ['star', 'Tính năng ưu việt', '16 điểm ưu việt và số liệu đo thực tế.', '/tinh-nang-uu-viet/', 'y'],
+  ['headset', 'Gửi yêu cầu hỗ trợ', 'Ghi rõ phiên bản và thao tác đang làm để được hỗ trợ nhanh.', '/ho-tro/', 'b'],
+];
 ---
-<ContentLayout title="Hướng dẫn sử dụng UNESCO AI" description="Trung tâm hướng dẫn phần mềm kế toán UNESCO AI theo nghiệp vụ: video từng module, quy trình bắt đầu sử dụng và kênh hỗ trợ trực tiếp." eyebrow="Help Center">
-<section class="section"><div class="container"><div class="grid grid-3">{videoTopics.map((t) => (
-  <a class="card" href={url(`/video/#${topicSlug(t)}`)}><div class="icon">{icons[t]}</div><h3>{t}</h3><ul class="checks" style="margin-top:12px">{videos.filter((v) => v.topic === t).map((v) => <li>{v.title} <span class="caption">({v.duration})</span></li>)}</ul><strong class="link-arrow" style="margin-top:14px">Xem video</strong></a>
-))}</div></div></section>
-<section class="section surface-soft"><div class="container"><div class="grid grid-3">
-  <a class="card" href={url('/download/')}><div class="icon">⬇️</div><h3>Cài đặt & bắt đầu</h3><p class="muted">Yêu cầu hệ thống và các bước từ cài đặt đến báo cáo đầu tiên.</p><strong class="link-arrow">Xem các bước</strong></a>
-  <a class="card" href={url('/ai-ke-toan/')}><div class="icon">✨</div><h3>Dùng màn hình AI</h3><p class="muted">Quy trình xử lý tự động, bốn ô kiểm soát và trợ lý AI trên màn hình.</p><strong class="link-arrow">Xem hướng dẫn</strong></a>
-  <a class="card" href={url('/ho-tro/')}><div class="icon">🛠️</div><h3>Gửi yêu cầu hỗ trợ</h3><p class="muted">Ghi rõ phiên bản và thao tác đang làm để được hỗ trợ nhanh.</p><strong class="link-arrow">Gửi yêu cầu</strong></a>
-</div></div></section>
-<section class="section"><div class="container"><div class="quote-band"><div><h2>Cần hướng dẫn trực tiếp?</h2><p>Hỗ trợ sử dụng: {contact.support.phone} ({contact.support.ext}).</p></div><div class="actions"><a class="btn btn-primary" href={telHref(contact.support.phone)}>GỌI HỖ TRỢ</a><a class="btn btn-secondary" href={url('/release-notes/')}>RELEASE NOTES</a></div></div></div></section>
+<ContentLayout title="Guide / Knowledge / Video Center – Hướng dẫn UNESCO AI" description="Trung tâm hướng dẫn phần mềm kế toán UNESCO AI: video từng module quay trên phần mềm thật, kiến thức kế toán, câu hỏi thường gặp, release notes và kênh hỗ trợ trực tiếp." eyebrow="Help Center" display="GUIDE / KNOWLEDGE / |VIDEO CENTER" subtitle="Học từng thao tác theo đúng việc bạn cần làm">
+
+<section class="section"><div class="container">
+  <nav class="topic-bar" aria-label="Chủ đề hướng dẫn">{topics.map((t, i) => <a class={i === 0 ? 'on' : ''} href={url(t[2])}><Icon name={t[0]} />{t[1]}</a>)}</nav>
+  <div class="video-grid">{center.map((c) => <div><p class="sub-line" style="margin:0 0 10px">{c.label}</p><VideoCard video={c.v} /></div>)}</div>
+  <div class="actions" style="margin-top:26px"><a class="btn btn-primary" href={url('/video/')}><Icon name="play-circle" />Tất cả video</a></div>
+</div></section>
+
+<section class="section surface-soft" id="truc-quan"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Hướng dẫn trực quan · GĐ159 – GĐ168</span><h2>12 chức năng mới: mở ở đâu, bấm nút nào</h2></div><p>Các báo cáo mới chỉ đọc sổ; ghi sổ hoặc chép vào HTKK chỉ khi kế toán bấm Ghi, Đồng ý, Đưa vào HTKK. Ở bất kỳ màn hình nào, bấm F1 để Trợ lý AI mở đúng mục hướng dẫn.</p></div>
+  <h3>Dùng vào lúc nào trong năm</h3>
+  <div class="when5" style="margin:12px 0 30px">{whenToUse.map((w) => <div><b>{w.t}</b><small>{w.d}</small></div>)}</div>
+  <div class="guide-grid">{guide.map((g) => (
+    <article class="guide" id={`hd-${g.n}`}>
+      <div class="guide-top"><span class="n">{g.n}</span><span class="ic sm g"><Icon name={g.icon} /></span><span class="code">{g.code}</span></div>
+      <h3>{g.t}</h3><p>{g.d}</p>
+      <div class="crumbs">{g.path.map((x, i) => <>{i > 0 && <i>›</i>}<span>{x}</span></>)}</div>
+      <ol>{g.steps.map((st) => <li>{st}</li>)}</ol>
+    </article>
+  ))}</div>
+  <div class="doc-grid" style="margin-top:28px">{docs.map((f) => <a class="doc" href={url(f.file)} target="_blank" rel="noopener"><span class="ic g"><Icon name={f.icon} /></span><span><b>{f.t}</b><small>{f.d}</small><span class="dl-tag"><Icon name="download" />PDF · {f.size}</span></span></a>)}</div>
+</div></section>
+
+<section class="section surface"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Knowledge</span><h2>Tài liệu & hỗ trợ</h2></div><p>Mỗi mục dẫn tới trang chi tiết; cần hỗ trợ trực tiếp hãy gọi bộ phận hỗ trợ sử dụng.</p></div>
+  <div class="grid grid-3">{know.map((k) => <a class={`card top-${k[4]}`} href={url(k[3])}><span class={`ic ${k[4]}`} style="margin-bottom:14px"><Icon name={k[0]} /></span><h3>{k[1]}</h3><p class="muted">{k[2]}</p><strong class="link-arrow">Xem</strong></a>)}</div>
+</div></section>
+
+<section class="section"><div class="container"><div class="quote-band"><div><h2>Cần hướng dẫn trực tiếp?</h2><p>Hỗ trợ sử dụng: {contact.support.phone} ({contact.support.ext}).</p></div><div class="actions"><a class="btn btn-primary" href={telHref(contact.support.phone)}>Gọi hỗ trợ</a><a class="btn btn-secondary" href={url('/ho-tro/')}>Gửi yêu cầu</a></div></div></div></section>
+<script is:inline>
+  document.addEventListener('play', function (e) {
+    document.querySelectorAll('video').forEach(function (v) { if (v !== e.target) v.pause(); });
+  }, true);
+</script>
 </ContentLayout>

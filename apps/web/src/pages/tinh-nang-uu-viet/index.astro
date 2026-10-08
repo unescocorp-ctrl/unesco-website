@@ -1,0 +1,55 @@
+---
+import { url } from '../../utils/url';
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import Screenshot from '../../components/Screenshot.astro';
+import Icon from '../../components/Icon.astro';
+import AiDoDont from '../../components/AiDoDont.astro';
+import MonthFlow from '../../components/MonthFlow.astro';
+import AdvantageGrid from '../../components/AdvantageGrid.astro';
+import { shots } from '../../data/screenshots';
+import { kpis, details, sources, docs, release } from '../../data/advantages';
+---
+<ContentLayout title="Tính năng ưu việt của UNESCO AI" description="16 điểm ưu việt của phần mềm kế toán UNESCO AI: hoá đơn, sổ phụ, giá thành, thuế – HTKK, khoá sổ và báo cáo cho chủ doanh nghiệp; nhanh như tự động nhưng mọi con số vẫn đi qua đúng sổ kế toán và luôn có người duyệt." eyebrow={`Bản ${release.code} · ${release.date}`} display="TÍNH NĂNG |ƯU VIỆT" subtitle="Nhanh như tự động – nhưng mọi con số vẫn đi qua đúng sổ kế toán và luôn có người duyệt" heroShot={shots.mainScreen} pills={['10 điểm nền tảng', '6 điểm mới', 'Số liệu đo trên bộ sổ thật']}>
+
+<section class="section-sm surface"><div class="container">
+  <div class="kpi4">{kpis.map((k) => <div class={`k c-${k.c}`}><span class={`ic ${k.c}`}><Icon name={k.icon} /></span><b>{k.v}</b><small>{k.d}</small></div>)}</div>
+  <p class="caption" style="margin-top:12px">Số liệu đo trên bộ sổ, hồ sơ thật (đã ẩn tên khách hàng) hoặc từ bộ kiểm thử đi kèm từng bản cập nhật – xem <a class="tg" href="#nguon">nguồn số liệu</a>.</p>
+</div></section>
+
+<section class="section"><div class="container">
+  <div class="sec-c"><span class="eyebrow">Tổng quan</span><h2>Một tháng kế toán với <span class="tg">UNESCO AI</span></h2><p>Bảy bước đi đúng thứ tự công việc của kế toán; bước nào cũng xem lại và lùi lại được.</p></div>
+  <MonthFlow />
+</div></section>
+
+<section class="section surface-soft" id="16-diem"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Sắp xếp theo lợi ích</span><h2 class="display"><span class="tg">16 điểm</span> <span class="tb">ưu việt</span></h2><p class="sub-line" style="margin:0">Mười điểm nền tảng và sáu điểm mới (đánh dấu <em class="new" style="margin:0">Mới</em>)</p></div><p>Bấm vào từng điểm để xem chi tiết, số liệu đo thực tế và trang tính năng liên quan.</p></div>
+  <AdvantageGrid />
+</div></section>
+
+{details.map((d) => (
+  <section class="dtl" id={d.id}><div class="container">
+    <div class={`dtl-grid${d.shot ? '' : ' noshot'}`}>
+      <div>
+        <div class="dtl-head"><span class="no">{d.n}</span><span class="ic g"><Icon name={d.icon} /></span><h2>{d.t}{d.isNew && <em class="new">Mới</em>}</h2></div>
+        <p class="sub-line">{d.sub}</p>
+        {d.id === 'ranh-gioi' ? <AiDoDont compact={true} /> : <ul class="dots">{d.points.map((p) => <li>{p}</li>)}</ul>}
+        {d.note && <div class="callout" style="margin-top:18px"><span class="ic"><Icon name="shield-lock" /></span><div><p>{d.note}</p></div></div>}
+        {d.metrics.length > 0 && <div class="metrics">{d.metrics.map((m) => <div class="metric-box"><b>{m.v}</b><small>{m.d}</small></div>)}</div>}
+        {d.href && <div class="actions" style="margin-top:22px"><a class="btn btn-secondary" href={url(d.href)}>{d.link} →</a></div>}
+      </div>
+      {d.shot && <div><Screenshot shot={shots[d.shot]} /></div>}
+    </div>
+  </div></section>
+))}
+
+<section class="section" id="nguon"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Nguồn</span><h2>Các con số đến từ đâu</h2></div><p>Tên khách hàng được ẩn. Kết quả trên bộ sổ khác có thể khác tuỳ chất lượng dữ liệu đầu vào (sao kê chụp mờ, hoá đơn không có XML gốc…).</p></div>
+  <div class="table-wrap" style="border:0"><table class="src-table"><thead><tr><th>Số liệu</th><th>Nguồn đo</th></tr></thead><tbody>{sources.map((s) => <tr><td>{s[0]}</td><td>{s[1]}</td></tr>)}</tbody></table></div>
+</div></section>
+
+<section class="section surface-soft" id="tai-lieu"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Tài liệu</span><h2>Tải tài liệu giới thiệu (PDF)</h2></div><p>Bản {release.code} · {release.date}. Có thể in hoặc gửi cho khách hàng.</p></div>
+  <div class="doc-grid">{docs.map((f) => <a class="doc" href={url(f.file)} target="_blank" rel="noopener"><span class="ic g"><Icon name={f.icon} /></span><span><b>{f.t}</b><small>{f.d}</small><span class="dl-tag"><Icon name="download" />PDF · {f.size}</span></span></a>)}</div>
+  <div class="actions" style="margin-top:24px"><a class="btn btn-primary" href={url('/tinh-nang-ai/')}>Xem đủ 65 tính năng AI</a><a class="btn btn-secondary" href={url('/huong-dan/#truc-quan')}>Hướng dẫn trực quan</a></div>
+</div></section>
+</ContentLayout>

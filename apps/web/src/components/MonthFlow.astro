@@ -1,0 +1,18 @@
+---
+import Icon from './Icon.astro';
+import { month7 } from '../data/advantages';
+const whoLabel: Record<string, string> = { g: 'AI xử lý', b: 'Kế toán duyệt', n: 'Kế toán thực hiện' };
+---
+<div class="month">
+  <div class="month-side">
+    <div class="card"><span class="ic sm g"><Icon name="network" /></span><b>Đúng thứ tự công việc của kế toán</b></div>
+    <div class="card"><span class="ic sm g"><Icon name="undo" /></span><b>Bước nào cũng xem lại và lùi lại được</b></div>
+    <div class="card"><span class="ic sm b"><Icon name="database" /></span><b>Ngay trong UNESCO XI đang dùng – không chuyển dữ liệu</b></div>
+  </div>
+  <div class="month-flow">
+    <div class="head"><h3>Một tháng kế toán với UNESCO AI</h3><p>AI nằm ngay trong UNESCO XI – không phải phần mềm mới, không phải chuyển dữ liệu.</p></div>
+    <ol>{month7.map((s, i) => <li class={s.who === 'g' ? '' : 'wait'}><span class="k">{String(i + 1).padStart(2, '0')}</span><span class="ico"><Icon name={s.icon} /></span><div><b>{s.t}</b><small>{s.d}</small></div><span class={`st ${s.who === 'g' ? 'done' : s.who === 'b' ? 'check' : 'todo'}`}>{s.who === 'g' ? <Icon name="check-circle" size={16} /> : <Icon name="user-check" size={16} />}{whoLabel[s.who]}</span></li>)}</ol>
+    <div class="ai-note"><span class="ic sm b"><Icon name="cpu" /></span><span><span class="tb">AI</span> chuẩn bị, đối chiếu, đề xuất. <span class="tg">Kế toán</span> xem trước, duyệt và quyết định – ghi sổ qua đúng thủ tục của phần mềm.</span></div>
+    <div class="foot">Dữ liệu an toàn – Minh bạch – Tuân thủ chuẩn mực kế toán và thuế</div>
+  </div>
+</div>

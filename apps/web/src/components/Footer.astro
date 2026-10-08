@@ -2,16 +2,38 @@
 import { url } from '../utils/url';
 import { site } from '../config/site.config';
 import { contact, telHref, mailHref, zaloHref } from '../data/contact';
+import Icon from './Icon.astro';
 const y = new Date().getFullYear();
-const safe = (v:string) => !v.includes('{{') ? v : '';
+const safe = (v: string) => (!v.includes('{{') ? v : '');
+const cols = [
+  { h: 'Sản phẩm', icon: 'box', cls: 'f-g', links: [
+    ['AI Hóa đơn', '/ai-ke-toan/ai-hoa-don/'], ['AI Sổ phụ', '/ai-ke-toan/ai-so-phu-ngan-hang/'], ['AI Giá thành', '/ai-ke-toan/ai-gia-thanh/'],
+    ['Hồ sơ Thuế', '/ho-so-thue/'], ['Tờ khai & BCTC', '/to-khai-bctc/'], ['Tổng quan nền tảng', '/san-pham/unesco-xi-ai/'], ['Tính năng ưu việt', '/tinh-nang-uu-viet/'], ['Tổng hợp tính năng AI', '/tinh-nang-ai/'],
+  ] },
+  { h: 'Giải pháp', icon: 'lightbulb', cls: 'f-t', links: [
+    ['Kế toán dịch vụ', '/giai-phap/ke-toan-dich-vu/'], ['Doanh nghiệp', '/giai-phap/doanh-nghiep/'], ['Bán lẻ – TMĐT', '/giai-phap/ban-le/'],
+    ['Sản xuất', '/giai-phap/san-xuat/'], ['Xây dựng', '/giai-phap/xay-dung/'], ['Ngành nghề ứng dụng', '/giai-phap/'], ['Bảng giá', '/bang-gia/'],
+  ] },
+  { h: 'Hỗ trợ', icon: 'headset', cls: 'f-b', links: [
+    ['Trung tâm trợ giúp', '/huong-dan/'], ['Hướng dẫn sử dụng', '/video/'], ['Câu hỏi thường gặp', '/faq/'], ['Liên hệ hỗ trợ', '/ho-tro/'],
+    ['Có gì mới', '/release-notes/'], ['Hướng dẫn trực quan', '/huong-dan/#truc-quan'], ['Download Center', '/download/'],
+  ] },
+  { h: 'Pháp lý', icon: 'shield-check', cls: 'f-y', links: [
+    ['Chính sách bảo mật', '/legal/privacy/'], ['Điều khoản sử dụng', '/legal/terms/'], ['Chính sách dữ liệu', '/legal/data-protection/'],
+    ['An toàn & kiểm soát AI', '/an-toan-kiem-soat-ai/'], ['Bản quyền & lịch sử', '/ban-quyen/'], ['Tiếp nhận khiếu nại', '/legal/complaints/'],
+  ] },
+];
 ---
+<section class="cta-band"><div class="container wrap">
+  <div><h2>Sẵn sàng xem UNESCO AI trên dữ liệu của bạn?</h2><p>Kinh doanh: {contact.sales.mobile} · {contact.sales.phone} ({contact.sales.ext}) · Hỗ trợ: {contact.support.phone}</p></div>
+  <a class="cta-big" href={url('/lien-he/#demo')}><Icon name="trend" />Đăng ký xem demo <span class="sep">|</span> Nhận tư vấn</a>
+</div></section>
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="brand"><span class="brand-mark">U</span><span class="brand-copy"><span>UNESCO AI</span><small>ACCOUNTING SOFTWARE</small></span></div>
-        <p>Phần mềm kế toán ứng dụng AI hỗ trợ xử lý hóa đơn, sổ phụ ngân hàng, gợi ý hạch toán, giá thành và lập sổ sách báo cáo.</p>
-        {safe(site.company.legalName) && <small>{site.company.legalName}</small>}
+        <div class="brand"><img class="brand-logo" src={url('/brand/unesco-star.png')} alt="" width="48" height="48" loading="lazy" /><span class="brand-copy"><span>UNESCO <b>AI</b></span><small>PHẦN MỀM KẾ TOÁN DOANH NGHIỆP</small></span></div>
+        <p>Phần mềm kế toán ứng dụng AI: hoá đơn điện tử, sổ phụ ngân hàng, giá thành, hồ sơ thuế, tờ khai và báo cáo tài chính — AI hỗ trợ, kế toán quyết định.</p>
         <div class="contact-lines">
           <span>Kinh doanh: <a href={telHref(contact.sales.mobile)}>{contact.sales.mobile}</a> · <a href={telHref(contact.sales.phone)}>{contact.sales.phone}</a> ({contact.sales.ext})</span>
           <span>Hỗ trợ sử dụng: <a href={telHref(contact.support.phone)}>{contact.support.phone}</a> ({contact.support.ext})</span>
@@ -20,11 +42,10 @@ const safe = (v:string) => !v.includes('{{') ? v : '';
           <span>Website: <a href={contact.website}>{contact.websiteLabel}</a></span>
         </div>
       </div>
-      <div><h3>Sản phẩm</h3><a href={url('/san-pham/unesco-xi-ai/')}>UNESCO AI</a><a href={url('/san-pham/unesco-xi/')}>Lõi kế toán UNESCO XI</a><a href={url('/video/')}>Video giới thiệu</a><a href={url('/ai-ke-toan/')}>AI kế toán</a><a href={url('/bang-gia/')}>Bảng giá</a><a href={url('/download/')}>Download</a></div>
-      <div><h3>Giải pháp</h3><a href={url('/giai-phap/ke-toan-dich-vu/')}>Kế toán dịch vụ</a><a href={url('/giai-phap/san-xuat/')}>Sản xuất</a><a href={url('/giai-phap/xay-dung/')}>Xây dựng</a><a href={url('/giai-phap/thuong-mai-dien-tu/')}>TMĐT</a></div>
-      <div><h3>Tài nguyên</h3><a href={url('/video/')}>Video hướng dẫn</a><a href={url('/huong-dan/')}>Hướng dẫn</a><a href={url('/kien-thuc/')}>Kiến thức</a><a href={url('/faq/')}>FAQ</a><a href={url('/release-notes/')}>Release Notes</a></div>
-      <div><h3>Pháp lý & hỗ trợ</h3><a href={url('/ban-quyen/')}>Bản quyền</a><a href={url('/legal/privacy/')}>Quyền riêng tư</a><a href={url('/legal/data-protection/')}>Bảo vệ dữ liệu</a><a href={url('/legal/terms/')}>Điều khoản</a><a href={url('/ho-tro/')}>Gửi yêu cầu hỗ trợ</a><a href={url('/lien-he/')}>Liên hệ</a></div>
+      {cols.map((c) => (
+        <div><h3 class={c.cls}><Icon name={c.icon} />{c.h}</h3>{c.links.map((l) => <a href={url(l[1])}>{l[0]}</a>)}</div>
+      ))}
     </div>
-    <div class="footer-bottom"><small>© {y} {safe(site.company.legalName) || 'UNESCO AI'}. All rights reserved.{safe(site.company.taxCode) && <> · MST: {site.company.taxCode}</>}</small></div>
+    <div class="footer-bottom"><small>© {y} {(safe(site.company.legalName) || 'Công ty Phát triển Phần mềm UNESCO').toUpperCase()}{safe(site.company.taxCode) && <> · MST: {site.company.taxCode}</>}</small></div>
   </div>
 </footer>

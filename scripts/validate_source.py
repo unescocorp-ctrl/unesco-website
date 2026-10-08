@@ -30,6 +30,7 @@ for p in (root/'apps/web/src').rglob('*.astro'):
   clean=href.split('#')[0].split('?')[0]
   if not clean or clean=='/': continue
   if clean.startswith('/favicon') or clean.startswith('/og-'): continue
+  if (root/'apps/web/public'/clean.lstrip('/')).is_file(): continue  # tệp tĩnh trong public/
   if not clean.endswith('/'): clean+='/'
   if clean not in routes: errors.append(f'Broken internal href: {p.relative_to(root)} -> {href}')
 # internal links declared in data files (rendered through url())

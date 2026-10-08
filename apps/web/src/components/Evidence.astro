@@ -1,0 +1,21 @@
+---
+import Icon from './Icon.astro';
+import { evidence } from '../data/design';
+const fmt = (n: number) => n.toLocaleString('vi-VN');
+---
+<div class="ev-grid">
+  {evidence.map((e, i) => (
+    <div class={`ev c-${e.c}`} style={`--p:${e.p}`}>
+      <div class="ev-top"><span class="no">{i + 1}</span><b>{e.v}</b></div>
+      <p>{e.d}</p>
+      <div class="vis">
+        {e.vis === 'icon' && <Icon name={e.icon} size={58} />}
+        {e.vis === 'ring' && <span class="ring-pct" style={`--p:${e.p}`}><span>{e.p}%</span></span>}
+        {e.vis === 'bars' && <div class="hbars"><div><i style={`width:${(e.a / 1250) * 100}%`}></i>{fmt(e.a)}</div><div><i style={`width:${(e.b / 1250) * 100}%`}></i>{fmt(e.b)}</div></div>}
+      </div>
+      {e.vis !== 'icon' && <div class="pbar"><span><i></i></span>{String(e.p).replace('.', ',')}%</div>}
+      <small class="ev-src">Nguồn: {e.src}</small>
+    </div>
+  ))}
+</div>
+<div class="info-note"><span class="ic"><Icon name="info" /></span><span>Số liệu đo trên bộ sổ, hồ sơ thật (đã ẩn tên khách hàng) hoặc bộ kiểm thử đi kèm từng bản cập nhật. Kết quả trên bộ sổ khác có thể khác tuỳ chất lượng dữ liệu đầu vào.</span></div>
