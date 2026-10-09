@@ -1013,3 +1013,12 @@ em.new{display:inline-block;font-style:normal;font-family:var(--font-h);font-siz
 @media(max-width:1100px){.hx-more{grid-template-columns:1fr;max-width:820px;margin:32px auto 0}.hx-ver{align-items:center;text-align:center}.hx-spec,.hx-forms{justify-content:center}.hx-tt{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(max-width:900px){.hx-tt{grid-template-columns:1fr 1fr}}
 @media(max-width:760px){.hx{padding:22px 0 8px}.hx-more{gap:12px;margin-top:26px}.hx-ver{align-items:flex-start;text-align:left}.hx-ver-n{padding:5px 14px}.hx-spec{justify-content:flex-start;padding:10px 14px;gap:12px}.hx-spec .chev .i{width:26px;height:26px;margin-right:-12px}.hx-forms{justify-content:flex-start;padding:12px 14px;gap:14px}.hx-forms .hx-doc{width:40px;height:48px}.hx-forms .hx-doc .i{width:24px;height:24px}.hx-tt{gap:8px}.hx-tt a{padding:7px 8px 7px 7px;gap:8px}.hx-tt .ti{width:32px;height:32px}.hx-tt .ti .i{width:18px;height:18px}.hx-tt small{font-size:12.5px}.hx-gold{margin-top:20px;text-align:center}}
+/* v2.7.1: nhãn "Phần mềm offline…" nằm dưới câu kiểm soát */
+.hx{padding-top:38px}
+.hx-copy .hx-pill{margin:14px 0 0;padding:8px 18px 8px 14px;gap:10px;font-size:clamp(14px,2.6cqw,17px)}
+.hx-copy .hx-pill .i{width:24px;height:24px}
+@media(max-width:760px){.hx{padding-top:22px}.hx-copy .hx-pill{margin:12px 0 0;padding:8px 14px;gap:8px}.hx-copy .hx-pill .i{width:22px;height:22px}}
+/* v2.7.2: chữ UNESCO AI trên tiêu đề banner */
+.hx-logo{margin:0 0 10px;line-height:0}
+.hx-logo img{display:block;width:min(64cqw,380px);height:auto;transform:translateX(-1.7%)}
+@media(max-width:760px){.hx-logo{margin-bottom:8px}.hx-logo img{width:min(72cqw,320px)}}

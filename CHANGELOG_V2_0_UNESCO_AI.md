@@ -113,3 +113,10 @@ Nguồn: 3 tài liệu bản GĐ169 (09/10/2026) – Tính năng ưu việt củ
   - 4 thẻ thông tư: 99/2025/TT-BTC, 133/2016/TT-BTC (mở trang Tờ khai & BCTC), 58/2026/TT-BTC (Hướng dẫn #hd-23), 152/2025/TT-BTC (Hướng dẫn #hd-24).
 - Dòng vàng "TRẢ PHÍ 1 LẦN SỬ DỤNG MÃI MÃI – KHÔNG PHÍ HÀNG NĂM" dời xuống cuối banner, sát mép dưới; nhãn "Phần mềm offline…" lên đầu banner.
 - Máy tính bảng: các khung mới xếp 1 cột, 4 thẻ thông tư 1 hàng (2 × 2 từ 900px trở xuống); điện thoại: 2 × 2.
+
+# v2.7.1 (09/10/2026): nhãn "Phần mềm offline dữ liệu linh hoạt – bảo mật" dời xuống dưới câu "AI có thể nhanh, nhưng số liệu kế toán không được mất kiểm soát."
+- Nhãn nằm trong cột chữ, canh trái theo tiêu đề; đầu banner không còn dòng nhãn riêng (khoảng trên chỉnh lại 38px).
+
+# v2.7.2 (09/10/2026): chữ UNESCO AI trên tiêu đề banner
+- Ảnh chữ 3D "UNESCO AI" (từ hình mẫu, đã tách nền thành trong suốt, giữ quầng sáng quanh chữ): `apps/web/public/banner/chu-unesco-ai.webp` (663 × 122).
+- Đặt ngay trên dòng "Hiểu việc – nhắc việc kế toán", canh trái theo tiêu đề; rộng tối đa 380px (điện thoại 320px).

@@ -5,6 +5,8 @@
  * Dải "Kế thừa giao diện quen thuộc" nằm ngay dưới banner (màn hình UNESCO đời cũ).
  * v2.6.1: nội dung banner nằm trong khung trang (.container 1200px) – thẳng mép với logo, menu và các mục bên dưới.
  * v2.7: thêm dòng cập nhật tự động version cũ / version đặc thù, biểu mẫu Bộ Tài chính, 4 thông tư; dòng trả phí dời xuống sát mép dưới.
+ * v2.7.1: nhãn "Phần mềm offline…" dời xuống ngay dưới câu "AI có thể nhanh…".
+ * v2.7.2: chữ UNESCO AI (ảnh 3D, nền trong suốt – public/banner/chu-unesco-ai.webp) đặt trên tiêu đề.
  */
 import { url } from '../utils/url';
 import Icon from './Icon.astro';
@@ -30,15 +32,16 @@ const legacy = [
 <section class="hx" aria-labelledby="hx-title">
   <span class="hx-glow g1" aria-hidden="true"></span><span class="hx-glow g2" aria-hidden="true"></span>
   <div class="container hx-wrap">
-    <p class="hx-pill"><Icon name="shield-check" /><b>Phần mềm offline dữ liệu linh hoạt – bảo mật</b></p>
     <div class="hx-grid">
       <div class="hx-copy">
+        <p class="hx-logo"><img src={url('/banner/chu-unesco-ai.webp')} width="663" height="122" alt="UNESCO AI" decoding="async" /></p>
         <h1 id="hx-title" class="hx-title">
           <span class="ln"><span class="dk">Hiểu việc – nhắc việc</span> <span class="bl">kế toán</span></span>
           <span class="ln"><span class="dk">Làm thay phần việc</span> <span class="gr">kế toán</span></span>
           <span class="ln"><span class="bl">Kế toán</span> <span class="dk">kiểm soát và xác nhận</span></span>
         </h1>
         <p class="hx-trust"><span class="sh"><Icon name="shield-check" /></span><b>AI có thể nhanh, nhưng số liệu kế toán không được mất kiểm soát.</b></p>
+        <p class="hx-pill"><Icon name="shield-check" /><b>Phần mềm offline dữ liệu linh hoạt – bảo mật</b></p>
         <div class="hx-cta">
           <a class="hx-btn dl" href={url('/download/')}><Icon name="download" />Tải phần mềm</a>
           <a class="hx-btn demo" href={url('/lien-he/#demo')}>Đăng ký demo<Icon name="chevron-right" /></a>
