@@ -4,7 +4,7 @@ import { mainNav } from '../data/navigation';
 import { contact, telHref } from '../data/contact';
 import Icon from './Icon.astro';
 ---
-<div class="topbar"><span class="hide-sm"><Icon name="sparkles" /><b>UNESCO AI</b> – Kế toán chủ động, dữ liệu đáng tin cậy.<a class="more" href={url('/san-pham/unesco-xi-ai/')}>Tìm hiểu thêm →</a></span><span class="sep hide-sm">|</span><span>Kinh doanh<span class="hide-sm"> – Zalo</span>: <a href={telHref(contact.sales.mobile)}>{contact.sales.mobile}</a><span class="sep">·</span>Hỗ trợ: <a href={telHref(contact.support.phone)}>{contact.support.phone}</a></span></div>
+<div class="topbar"><span class="hide-sm tb-msg"><Icon name="megaphone" /><b>UNESCO AI</b> – Hiểu việc kế toán · Nhắc việc tự động · Kế toán kiểm soát &amp; xác nhận</span><span class="sep hide-sm">|</span><a class="more hide-sm" href={url('/san-pham/unesco-xi-ai/')}>Tìm hiểu thêm →</a><span class="sep hide-sm sep-wide">|</span><span class="tb-contact"><Icon name="phone" />Kinh doanh<span class="hide-sm"> – Zalo</span>: <a href={telHref(contact.sales.mobile)}>{contact.sales.mobile}</a></span><span class="sep">|</span><span class="tb-contact"><Icon name="headset" />Hỗ trợ: <a href={telHref(contact.support.phone)}>{contact.support.phone}</a></span></div>
 <header class="header">
   <div class="container nav">
     <a class="brand" href={url('/')} aria-label="UNESCO AI - Trang chủ">
@@ -22,8 +22,8 @@ import Icon from './Icon.astro';
       ))}
     </nav>
     <div class="nav-cta">
-      <a class="btn btn-secondary" href={url('/download/')}>Tải phần mềm</a>
-      <a class="btn btn-primary" href={url('/lien-he/#demo')}>Đăng ký demo</a>
+      <a class="btn btn-secondary btn-dl" href={url('/download/')}><Icon name="download" />Tải phần mềm</a>
+      <a class="btn btn-primary btn-demo" href={url('/lien-he/#demo')}>Đăng ký demo<Icon name="chevron-right" /></a>
       <button class="menu-btn" id="menuButton" type="button" aria-label="Mở menu" aria-expanded="false">☰</button>
     </div>
   </div>

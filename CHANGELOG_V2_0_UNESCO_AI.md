@@ -95,3 +95,8 @@ Nguồn: 3 tài liệu bản GĐ169 (09/10/2026) – Tính năng ưu việt củ
 - Hướng dẫn trực quan: bỏ dòng "Các chức năng có đổi mã VB6 cần Full Compile + Make .exe…" (trang 3), bỏ khung "Sau mỗi gói cập nhật có đổi VB6" (Đóng VB6, Mở lại Sas.vbp, Full Compile) và sửa "Sau Full Compile + Make .exe" thành "Sau khi cài gói cập nhật", bỏ chữ "Python" (trang 33); ảnh `hd-27.webp` làm lại.
 - Tính năng ưu việt: "soát mã VB6 trước khi Make .exe" → "chạy lại mỗi gói cập nhật trước khi phát hành" (trang 2); bỏ "và soát mã VB6" (trang 6).
 - Tổng hợp tính năng AI: "cửa sổ công cụ Python" → "các cửa sổ công cụ" (trang 8).
+
+# v2.6 (09/10/2026): banner chính theo code mẫu, bảng giá công bố
+- Thanh trên: "UNESCO AI – Hiểu việc kế toán · Nhắc việc tự động · Kế toán kiểm soát & xác nhận", Tìm hiểu thêm, Kinh doanh – Zalo, Hỗ trợ. Nút đầu trang: TẢI PHẦN MỀM (biểu tượng tải) và ĐĂNG KÝ DEMO ›.
+- Banner chính (`HeroBanner.astro`, CSS khối "v2.6"): dòng vàng "TRẢ PHÍ 1 LẦN SỬ DỤNG MÃI MÃI – KHÔNG PHÍ HÀNG NĂM", "Phần mềm offline dữ liệu linh hoạt – bảo mật", 3 dòng "Hiểu việc – nhắc việc kế toán / Làm thay phần việc kế toán / Kế toán kiểm soát và xác nhận", câu kiểm soát; laptop màn hình chính UNESCO AI + 4 thẻ. Font Be Vietnam Pro. Dải "Kế thừa giao diện quen thuộc" chuyển xuống ngay dưới banner.
+- Bảng giá: dòng vàng trả phí 1 lần; UNESCO XI 6.000.000 đ / MST (dịch vụ kế toán 7.000.000 đ / 3 MST, thêm 1 MST 1.000.000 đ, trên 10 MST giảm 30%); UNESCO AI 10.000.000 đ / MST (dịch vụ kế toán 10.000.000 đ / 3 MST, thêm 1 MST 1.200.000 đ, trên 10 MST giảm 30%); triển khai miễn phí; nâng cấp 50% giá gói mới.
