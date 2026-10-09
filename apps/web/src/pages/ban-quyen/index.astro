@@ -4,10 +4,11 @@ import ContentLayout from '../../layouts/ContentLayout.astro';
 import Icon from '../../components/Icon.astro';
 import { site } from '../../config/site.config';
 import { contact } from '../../data/contact';
-import { copyrightCerts, productTimeline } from '../../data/copyright';
+import { copyrightCerts, productHistory } from '../../data/copyright';
 const co = site.company;
 const old = site.formerCompany;
 const cr = site.copyright;
+const og = site.origin;
 const nowRows = [
   ['Tên công ty', co.legalName],
   ['Tên tiếng nước ngoài', co.legalNameEn],
@@ -27,16 +28,23 @@ const oldRows = [
   ['Vai trò', 'Chủ sở hữu ghi trên 4 giấy chứng nhận đăng ký quyền tác giả 2011 – 2012'],
 ];
 ---
-<ContentLayout title="Bản quyền & pháp lý UNESCO" description={`Bản quyền phần mềm UNESCO: 4 giấy chứng nhận đăng ký quyền tác giả 2011 – 2012, tác giả ${cr.author}. Pháp nhân trước đây là ${old.legalName}, nay là ${co.legalName} (MST ${co.taxCode}).`} eyebrow="Bản quyền tác giả – pháp nhân – lịch sử sản phẩm" display="BẢN QUYỀN & |PHÁP LÝ" tone="ng" subtitle={`Tác giả phần mềm: ${cr.author} · Pháp nhân hiện nay: ${co.legalName}`} pills={['4 giấy chứng nhận quyền tác giả', `Tác giả: ${cr.author}`, `MST ${co.taxCode}`]}>
+<ContentLayout title="Bản quyền & pháp lý UNESCO" description={`Phần mềm kế toán UNESCO ra đời năm 1999. Bản quyền: 4 giấy chứng nhận đăng ký quyền tác giả 2011 – 2012, tác giả ${cr.author}. Pháp nhân trước đây là ${old.legalName}, nay là ${co.legalName} (MST ${co.taxCode}).`} eyebrow="Bản quyền tác giả – pháp nhân – lịch sử sản phẩm" display="BẢN QUYỀN & |PHÁP LÝ" tone="ng" subtitle={`Tác giả phần mềm: ${cr.author} · Pháp nhân hiện nay: ${co.legalName}`} pills={['Ra đời năm 1999', '4 giấy chứng nhận quyền tác giả', `Tác giả: ${cr.author}`]}>
 
 <section class="section"><div class="container">
-  <div class="sec-c"><span class="eyebrow">Pháp nhân & tác giả</span><h2>Đổi pháp nhân – <span class="tg">tác giả không đổi</span></h2><p>Trước đây, pháp nhân của các phần mềm UNESCO là {old.legalName} – Giám đốc và tác giả là {cr.author}. Nay pháp nhân chuyển sang {co.legalName}; tác giả phần mềm vẫn là {cr.author}.</p></div>
-  <div class="entity-flow">
+  <div class="sec-c"><span class="eyebrow">Pháp nhân & tác giả</span><h2>Từ {og.founded} – <span class="tg">kế thừa và phát triển liên tục</span></h2><p>Phần mềm kế toán UNESCO ra đời năm {og.founded} tại {og.name}, do {og.founder} thành lập. Trung tâm giải thể năm {og.dissolved}; các thành viên kế thừa và phát triển qua {old.legalName} – Giám đốc và tác giả là {cr.author}. Nay pháp nhân chuyển sang {co.legalName}; tác giả phần mềm vẫn là {cr.author}.</p></div>
+  <div class="entity-flow e3">
+    <div class="entity root">
+      <span class="when">{og.founded} – {og.dissolved}</span>
+      <h3>{og.name}</h3>
+      <p class="en">{og.short} Software Center</p>
+      <ul><li>Do <b>{og.founder}</b> thành lập năm {og.founded}</li><li>Ra đời Chương trình kế toán UNESCO</li><li>Giải thể năm {og.dissolved}</li></ul>
+    </div>
+    <div class="entity-arrow" aria-hidden="true"><Icon name="arrow-right" /></div>
     <div class="entity was">
-      <span class="when">Trước đây</span>
+      <span class="when">Từ 2011</span>
       <h3>{old.legalName}</h3>
       <p class="en">{old.legalNameEn}</p>
-      <ul><li>Số ĐKKD <b>{old.businessRegistration}</b> – ngày {old.registered}</li><li>Giám đốc: <b>{old.director}</b></li><li>Chủ sở hữu ghi trên 4 giấy chứng nhận quyền tác giả</li></ul>
+      <ul><li>Số ĐKKD <b>{old.businessRegistration}</b> – ngày {old.registered}</li><li>Giám đốc: <b>{old.director}</b></li><li>Các thành viên kế thừa và phát triển; chủ sở hữu ghi trên 4 giấy chứng nhận quyền tác giả</li></ul>
     </div>
     <div class="entity-arrow" aria-hidden="true"><Icon name="arrow-right" /></div>
     <div class="entity now">
@@ -79,9 +87,17 @@ const oldRows = [
   </div>
 </div></section>
 
-<section class="section surface-soft"><div class="container">
-  <div class="sec-c"><span class="eyebrow">Lịch sử sản phẩm</span><h2>Các thế hệ phần mềm UNESCO</h2></div>
-  <div class="timeline">{productTimeline.map((t) => <div class="tl"><span class="ic"><Icon name={t.icon} /></span><em class="tl-y">{t.y}</em><b>{t.t}</b><small>{t.d}</small></div>)}</div>
+<section class="section surface-soft" id="lich-su"><div class="container">
+  <div class="sec-c"><span class="eyebrow">Lịch sử sản phẩm</span><h2>Phần mềm kế toán UNESCO <span class="tg">từ 1999</span></h2><p>Ảnh màn hình lưu trữ; thông tin khách hàng và liên hệ cũ trên ảnh đã được làm mờ.</p></div>
+  <ol class="hist">
+    {productHistory.map((h) => (
+      <li class={h.img ? '' : 'noimg'}>
+        <div class="hist-y"><span class="ic sm g"><Icon name={h.icon} /></span><b>{h.y}</b></div>
+        <div class="hist-c"><span class="hist-yr">{h.y}</span><h3>{h.t}</h3><p>{h.d}</p></div>
+        {h.img && <a class="hist-img" href={url(h.img)} target="_blank" rel="noopener"><img src={url(h.img)} alt={h.alt} loading="lazy" decoding="async" /></a>}
+      </li>
+    ))}
+  </ol>
   <div class="callout" style="margin-top:30px"><span class="ic"><Icon name="history" /></span><div><h3>Xem lịch sử cập nhật UNESCO AI</h3><p>Từng gói cập nhật và 6 nhóm tính năng mới nhất.</p></div><a class="btn btn-secondary" style="margin-left:auto" href={url('/release-notes/')}>Release notes</a><a class="btn btn-primary" href={url('/phan-tich-tinh-nang/')}>Tính năng mới 2026</a></div>
 </div></section>
 </ContentLayout>

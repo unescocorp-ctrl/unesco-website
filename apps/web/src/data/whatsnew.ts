@@ -1,9 +1,15 @@
 /**
- * CÓ GÌ MỚI THEO TỪNG GÓI CẬP NHẬT (GĐ136 – GĐ169)
- * Nguồn: phụ lục "Có gì mới" của tài liệu Tổng hợp tính năng AI bản GĐ169, lấy từ bộ hướng dẫn Trợ lý AI.
+ * CÓ GÌ MỚI THEO TỪNG GÓI CẬP NHẬT (GĐ136 – GĐ175)
+ * Nguồn: phụ lục "Có gì mới" của tài liệu Tổng hợp tính năng AI bản GĐ175, lấy từ bộ hướng dẫn Trợ lý AI.
  * Thêm gói mới: chèn một dòng lên đầu danh sách.
  */
 export const whatsNew: { code: string; t: string; d: string }[] = [
+  { code: 'GĐ175', t: 'Hướng dẫn trực quan đủ GĐ150 – GĐ174', d: 'Hướng dẫn sử dụng trực quan nay có 27 chức năng (thêm 15 chức năng GĐ150 – GĐ158 và GĐ170 – GĐ174): mỗi chức năng một trang có hình màn hình đánh số, các bước, lưu ý.' },
+  { code: 'GĐ174', t: 'Hồ sơ kèm chứng từ và yêu cầu chứng từ khách', d: 'Màn hình AI, thẻ Báo cáo và nhật ký, nhóm Chứng từ kế toán có 2 nút mới: Hồ sơ kèm chứng từ (mỗi hoá đơn / tháng lương một bộ chứng từ, báo thiếu) và Yêu cầu chứng từ khách (thư yêu cầu bổ sung + thư mục nhận tệp).' },
+  { code: 'GĐ173', t: 'Trợ lý lập định mức NVL thông minh (sổ mới)', d: 'Màn hình Định mức tự động có nút Trợ lý lập định mức (sổ mới): công ty mới / sản phẩm mới lập định mức NVL không gõ số – AI đọc hoá đơn mua / bán, tên sản phẩm, mẫu ngành rồi đề xuất, người dùng chọn và ghi.' },
+  { code: 'GĐ172', t: 'Hộ kinh doanh: sổ TT 152/2025 và tờ khai 01/CNKD', d: 'Menu Dữ liệu có mục Hộ kinh doanh: sổ S1a / S2a / S2b-HKD (TT 152/2025) và tờ khai 01/CNKD (TT 50/2026) Excel xem trước + XML vào HTKK, lập từ chứng từ của sổ.' },
+  { code: 'GĐ171', t: 'Bộ sổ và BCTC doanh nghiệp siêu nhỏ TT 58/2026', d: 'Menu Dữ liệu có mục Bộ sổ và BCTC doanh nghiệp siêu nhỏ (TT 58/2026): 9 sổ S1 / S2a / S3a, S2b, S2c, S2d, S3b, S4a – S4d và B01-DNSN, B02-DNSN + XML 58_BCTC vào HTKK, lập từ chứng từ và số dư của sổ.' },
+  { code: 'GĐ170', t: 'Biểu mẫu 2026: mẫu mới HTKK, biến động lao động, R6 R7', d: 'Theo dõi mẫu tờ khai mới trên HTKK, Mẫu số 33 thông báo biến động lao động, soát thời điểm lập / ký hoá đơn, người bán trong danh sách rủi ro; lịch thêm 4 việc. Không đổi mẫu đang xuất.' },
   { code: 'GĐ169', t: 'Hướng dẫn trực quan, tổng hợp AI, tính năng ưu việt', d: 'Ba tài liệu mới đi kèm phần mềm: hướng dẫn sử dụng trực quan các chức năng GĐ159 – GĐ168, tổng hợp toàn bộ tính năng AI và Tính năng ưu việt của UNESCO AI.' },
   { code: 'GĐ168', t: 'Nhập toàn bộ dữ liệu HTKK theo MST', d: 'Một lần bấm đọc mọi tờ khai của mã số thuế công ty trên HTKK, tờ khai lưu trữ và hồ sơ thuế, thay cho nhập từng mẫu: số dư, số chuyển kỳ, BCTC năm trước.' },
   { code: 'GĐ167', t: 'Biểu tượng phần mềm theo logo sao UNESCO', d: 'Mọi màn hình, tệp UNESCO .exe, lối tắt Desktop / Start và cửa sổ công cụ dùng chung một biểu tượng: ngôi sao 5 cánh có đồng $ ở giữa.' },

@@ -4,7 +4,7 @@ import ContentLayout from '../../layouts/ContentLayout.astro';
 import Icon from '../../components/Icon.astro';
 import { aiGroups, aiMap, aiRules, aiFeatureCount, aiNewCount } from '../../data/ai-catalog';
 import { whatsNew } from '../../data/whatsnew';
-import { release } from '../../data/advantages';
+import { latest as release } from '../../data/advantages';
 ---
 <ContentLayout title={`Tổng hợp ${aiFeatureCount} tính năng AI trong UNESCO AI`} description={`AI nằm ở đâu trong phần mềm kế toán UNESCO, mỗi tính năng làm gì, mở từ menu / nút nào và ranh giới AI không bao giờ vượt – ${aiFeatureCount} tính năng trong ${aiGroups.length} nhóm.`} eyebrow={`Tài liệu tổng hợp · bản ${release.code}`} display={`${aiFeatureCount} TÍNH NĂNG |AI`} subtitle="AI nằm ở đâu, mỗi tính năng làm gì, mở từ menu / nút nào" pills={[`${aiFeatureCount} tính năng trong ${aiGroups.length} nhóm`, `${aiNewCount} tính năng mới GĐ159 – GĐ168`, '1 nguyên tắc: AI chuẩn bị, người duyệt']}>
 

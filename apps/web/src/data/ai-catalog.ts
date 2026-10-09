@@ -1,7 +1,7 @@
 /**
  * TỔNG HỢP TOÀN BỘ TÍNH NĂNG AI TRONG UNESCO XI (UNESCO AI)
  * ------------------------------------------------------------------
- * Nguồn: tài liệu "Tổng hợp toàn bộ tính năng AI" bản GĐ169 (09/10/2026).
+ * Nguồn: tài liệu "Tổng hợp toàn bộ tính năng AI" bản GĐ175 (09/10/2026).
  * 65 tính năng trong 11 nhóm; mỗi dòng: tên – mở ở đâu – AI làm gì; isNew = tính năng mới GĐ159 – GĐ168.
  * Ghi chú: các mục mới của menu Dữ liệu và Hệ thống hiện KHÔNG DẤU trên máy (ví dụ "Lai theo mat hang / khach hang...").
  */
@@ -10,7 +10,7 @@ export type AiGroup = { id: string; n: string; icon: string; t: string; where: s
 
 /** Bốn nơi làm việc chính của AI trong UNESCO XI. */
 export const aiMap = [
-  { icon: 'home', t: 'Màn hình chính', items: ['Menu Dữ liệu: 12 mục quản trị, kiểm soát, khoá sổ', 'Hệ thống: Nguồn HTKK, Số liệu năm trước BCTC, Sửa chữ Việt', 'Thẻ Quản lý công việc, Việc cần làm', 'Trợ giúp: Hướng dẫn sử dụng, Cập nhật phần mềm'] },
+  { icon: 'home', t: 'Màn hình chính', items: ['Menu Dữ liệu: 14 mục quản trị, kiểm soát, khoá sổ, sổ DN siêu nhỏ, hộ kinh doanh', 'Hệ thống: Nguồn HTKK, Số liệu năm trước BCTC, Sửa chữ Việt', 'Thẻ Quản lý công việc, Việc cần làm', 'Trợ giúp: Hướng dẫn sử dụng, Cập nhật phần mềm'] },
   { icon: 'cpu', t: 'Màn hình AI – Hoá đơn điện tử', items: ['Thẻ Tự động xử lý, Danh sách hoá đơn, Báo cáo & nhật ký', 'Thẻ Sổ phụ ngân hàng, Bảng lương, Tờ khai HQ', 'Cổng Kết nối BHXH, Quản lý công việc', 'Thẻ Cổng dịch vụ công (Hồ sơ thuế)'] },
   { icon: 'calculator', t: 'Module Giá thành', items: ['Trình tự giá thành 7 bước', 'Định mức tự động (AI), theo tỷ lệ giá bán', 'Kết chuyển thành phẩm – Cân đối AI', 'Báo cáo kiểm tra giá thành'] },
   { icon: 'chat', t: 'Mọi màn hình', items: ['Trợ lý AI: F1, nút ?, rê chuột', 'Gợi ý cột, bấm đúp sửa, tra mã', 'Nhật ký: mọi lô AI ghi đều huỷ được'] },

@@ -44,10 +44,13 @@ export const copyrightCerts: CopyrightCert[] = [
   },
 ];
 
-/** Các mốc sản phẩm. */
-export const productTimeline = [
-  { icon: 'award', y: '2011', t: 'UNESCO ACC & UNESCO INV', d: 'Đăng ký quyền tác giả phần mềm kế toán (1563/2011/QTG) và bán hàng – hoá đơn (1583/2011/QTG)' },
-  { icon: 'layers', y: '2012', t: 'UNESCO Business ERP & FRM.NET XII', d: 'Đăng ký quyền tác giả hệ thống ERP (230/2012/QTG) và tài chính kế toán .NET (248/2012/QTG)' },
-  { icon: 'bar-chart', y: 'UNESCO XI', t: 'Nền tảng kế toán UNESCO XI', d: 'Kế toán doanh nghiệp 9 phân hệ, theo TT 133 / TT 99' },
-  { icon: 'cpu', y: '2026', t: 'UNESCO AI', d: 'UNESCO XI tích hợp màn hình AI: hoá đơn, sổ phụ, giá thành, thuế – HTKK' },
+/** Lịch sử phần mềm UNESCO từ 1999 (theo doanh nghiệp cung cấp, kèm ảnh màn hình lưu trữ). img: đường dẫn trong public/. */
+export interface HistoryItem { y: string; icon: string; t: string; d: string; img: string; alt: string }
+export const productHistory: HistoryItem[] = [
+  { y: '1999', icon: 'building', t: 'Trung tâm UNESCO Phát triển Công nghệ Thông tin (UCDIT)', d: 'Do Hiệp hội UNESCO thành lập. Ra đời Chương trình kế toán UNESCO – UCDIT Accounting Software cho Windows 95/NT, phiên bản 1.99, chạy mạng LAN hoặc máy đơn.', img: '/banner/unesco-ucdit-1999.webp', alt: 'Màn hình khởi động UCDIT Accounting Software phiên bản 1.99' },
+  { y: '2000 – 2004', icon: 'refresh', t: 'Chương trình kế toán UNESCO – SAS99, SAS04', d: 'Hơn mười bản cập nhật liên tục: 13/03/2000, 31/07/2001, 05/10/2001, 15/12/2001, 27/01/2002, 18/04/2002, 06/12/2002 … đến SAS04 năm 2004. Nhập chứng từ, kế toán chi tiết, kế toán tổng hợp.', img: '/banner/unesco-classic-1999.webp', alt: 'Màn hình chính Chương trình kế toán UNESCO – bản quyền Trung tâm UNESCO Phát triển Công nghệ Thông tin' },
+  { y: '2010', icon: 'users', t: 'Trung tâm giải thể – các thành viên kế thừa', d: 'Các thành viên của Trung tâm tiếp tục kế thừa và phát triển phần mềm kế toán UNESCO.', img: '', alt: '' },
+  { y: '2011 – 2012', icon: 'award', t: 'Công ty Cổ phần Phát triển Phần mềm UNESCO', d: 'ĐKKD 0310861633 (18/05/2011). Đăng ký quyền tác giả 4 phần mềm: kế toán UNESCO, UNESCO INV, UNESCO Business ERP, UNESCO Financial XII.NET – tác giả Ông Nguyễn Đình Thăng.', img: '/banner/unesco-2011.webp', alt: 'Giao diện phần mềm kế toán UNESCO năm 2011' },
+  { y: 'UNESCO XI', icon: 'bar-chart', t: 'Nền tảng kế toán UNESCO XI', d: 'Kế toán doanh nghiệp 9 phân hệ theo TT 133 / TT 99; tải hoá đơn điện tử.', img: '/banner/unesco-xi.webp', alt: 'Màn hình chính UNESCO XI' },
+  { y: 'Hiện nay', icon: 'cpu', t: 'Công ty TNHH Phần mềm UNESCO – UNESCO XI + AI', d: 'MST 0313057886. Phát triển và cung cấp UNESCO XI + AI: hoá đơn, sổ phụ, giá thành, thuế – HTKK với AI; tác giả phần mềm vẫn là Ông Nguyễn Đình Thăng.', img: '/screenshots/man-hinh-chinh-unesco-ai.webp', alt: 'Màn hình chính UNESCO XI + AI' },
 ];

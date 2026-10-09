@@ -5,7 +5,7 @@ import VideoCard from '../../components/VideoCard.astro';
 import Icon from '../../components/Icon.astro';
 import { videoBySlug } from '../../data/videos';
 import { contact, telHref } from '../../data/contact';
-import { guide, whenToUse } from '../../data/visual-guide';
+import { guide, guideGroups, guideRelease, whenToUse } from '../../data/visual-guide';
 import { docs } from '../../data/advantages';
 const topics = [
   ['home', 'Bắt đầu', '/video/#tong-quan'],
@@ -43,17 +43,25 @@ const know = [
 </div></section>
 
 <section class="section surface-soft" id="truc-quan"><div class="container">
-  <div class="section-head"><div><span class="eyebrow">Hướng dẫn trực quan · GĐ159 – GĐ168</span><h2>12 chức năng mới: mở ở đâu, bấm nút nào</h2></div><p>Các báo cáo mới chỉ đọc sổ; ghi sổ hoặc chép vào HTKK chỉ khi kế toán bấm Ghi, Đồng ý, Đưa vào HTKK. Ở bất kỳ màn hình nào, bấm F1 để Trợ lý AI mở đúng mục hướng dẫn.</p></div>
+  <div class="section-head"><div><span class="eyebrow">Hướng dẫn trực quan · GĐ150 – GĐ174 · bản {guideRelease.code}</span><h2>{guide.length} chức năng mới: mở ở đâu, bấm nút nào</h2></div><p>Mỗi chức năng một trang có hình màn hình đánh số, các bước và lưu ý. Các báo cáo mới chỉ đọc sổ; ghi sổ hoặc chép vào HTKK chỉ khi kế toán bấm Ghi, Đồng ý, Đưa vào HTKK. Ở bất kỳ màn hình nào, bấm F1 để Trợ lý AI mở đúng mục hướng dẫn.</p></div>
   <h3>Dùng vào lúc nào trong năm</h3>
-  <div class="when5" style="margin:12px 0 30px">{whenToUse.map((w) => <div><b>{w.t}</b><small>{w.d}</small></div>)}</div>
-  <div class="guide-grid">{guide.map((g) => (
-    <article class="guide" id={`hd-${g.n}`}>
-      <div class="guide-top"><span class="n">{g.n}</span><span class="ic sm g"><Icon name={g.icon} /></span><span class="code">{g.code}</span></div>
-      <h3>{g.t}</h3><p>{g.d}</p>
-      <div class="crumbs">{g.path.map((x, i) => <>{i > 0 && <i>›</i>}<span>{x}</span></>)}</div>
-      <ol>{g.steps.map((st) => <li>{st}</li>)}</ol>
-    </article>
-  ))}</div>
+  <div class="when6" style="margin:12px 0 26px">{whenToUse.map((w) => <div><b>{w.t}</b><small>{w.d}</small></div>)}</div>
+  <nav class="cat-nav" aria-label="Nhóm chức năng">{guideGroups.map((gr) => <a href={`#nhom-${gr.id}`}><span>{guide.filter((g) => g.grp === gr.id).length}</span>{gr.t}</a>)}</nav>
+  {guideGroups.map((gr) => (
+    <div class="guide-sec" id={`nhom-${gr.id}`}>
+      <div class="guide-sec-h"><h3>{gr.t}</h3><span class="code">{gr.code}</span></div>
+      <div class="guide-grid">{guide.filter((g) => g.grp === gr.id).map((g) => (
+        <article class="guide has-img" id={`hd-${g.n}`}>
+          <a class="guide-img" href={`${url(guideRelease.pdf)}#page=${g.page}`} target="_blank" rel="noopener" aria-label={`Mở trang hướng dẫn ${g.n} trong PDF`}><img src={url(`/huong-dan/hd-${g.n}.webp`)} alt={`Hướng dẫn trực quan ${g.n} – ${g.t}: hình màn hình đánh số (số liệu mẫu)`} width="760" height="669" loading="lazy" decoding="async" /><span class="zoom">Xem trang {g.page} trong PDF</span></a>
+          <div class="guide-top"><span class="n">{g.n}</span><span class="ic sm g"><Icon name={g.icon} /></span><span class="code">{g.code}</span></div>
+          <h3>{g.t}</h3><p>{g.d}</p>
+          <div class="crumbs">{g.path.map((x, i) => <>{i > 0 && <i>›</i>}<span>{x}</span></>)}</div>
+          <ol>{g.steps.map((st) => <li>{st}</li>)}</ol>
+        </article>
+      ))}</div>
+    </div>
+  ))}
+  <p class="caption" style="margin-top:14px">Hình là bố cục màn hình dựng từ chữ và hình của phần mềm; số liệu trên hình là số mẫu, không phải số của công ty nào.</p>
   <div class="doc-grid" style="margin-top:28px">{docs.map((f) => <a class="doc" href={url(f.file)} target="_blank" rel="noopener"><span class="ic g"><Icon name={f.icon} /></span><span><b>{f.t}</b><small>{f.d}</small><span class="dl-tag"><Icon name="download" />PDF · {f.size}</span></span></a>)}</div>
 </div></section>
 

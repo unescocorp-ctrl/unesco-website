@@ -17,7 +17,7 @@ const tiles = [
   { icon: 'bar-chart', t: 'Thuế & Báo cáo', c: 't', href: '/to-khai-bctc/' },
 ];
 const legacy = [
-  { img: 'unesco-2011', t: 'UNESCO', y: '2011' },
+  { img: 'unesco-classic-1999', t: 'Kế toán UNESCO', y: '1999' },
   { img: 'unesco-frm-net', t: 'UNESCO FRM.NET XII', y: '2012' },
   { img: 'unesco-xi', t: 'UNESCO XI', y: 'Thế hệ trước' },
 ];
@@ -58,7 +58,7 @@ const legacy = [
         {tiles.map((x) => <li class={`c-${x.c}`}><a href={url(x.href)}><span class="ti"><Icon name={x.icon} /></span><b>{x.t}</b><span class="ok" aria-hidden="true"><Icon name="check" /></span></a></li>)}
       </ul>
       <div class="ub-legacy">
-        <div class="ub-legacy-h"><b><span aria-hidden="true">»</span> Kế thừa giao diện quen thuộc</b><span>Từ các phiên bản UNESCO trước đến UNESCO XI + AI</span></div>
+        <div class="ub-legacy-h"><b><span aria-hidden="true">»</span> Kế thừa giao diện quen thuộc</b><span>Từ năm 1999 đến UNESCO XI + AI</span></div>
         <div class="ub-legacy-row">
           {legacy.map((x) => <figure><img src={url(`/banner/${x.img}.webp`)} width="560" height="350" alt={`Giao diện ${x.t} (${x.y})`} loading="lazy" decoding="async" /><figcaption><b>{x.t}</b><span>{x.y}</span></figcaption></figure>)}
         </div>

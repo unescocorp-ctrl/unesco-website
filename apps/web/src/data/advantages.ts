@@ -8,6 +8,8 @@
 import type { ShotKey } from './screenshots';
 
 export const release = { code: 'GĐ169', date: '09/10/2026' };
+/** Bản mới nhất của bộ tài liệu Tổng hợp AI / Hướng dẫn trực quan. */
+export const latest = { code: 'GĐ175', date: '09/10/2026' };
 
 /** 4 con số nổi bật đầu trang. */
 export const kpis = [
@@ -239,7 +241,7 @@ export const sources = [
 
 /** Tài liệu PDF tải về. */
 export const docs = [
-  { t: 'Tính năng ưu việt của UNESCO AI', d: '16 điểm ưu việt, số liệu đo thực tế và nguồn – 6 trang.', file: '/tai-lieu/tinh-nang-uu-viet-unesco-ai.pdf', size: '330 KB', icon: 'star' },
-  { t: 'Tổng hợp toàn bộ tính năng AI', d: '65 tính năng trong 11 nhóm, mở ở đâu, AI làm gì; phụ lục Có gì mới – 9 trang.', file: '/tai-lieu/tong-hop-tinh-nang-ai-unesco.pdf', size: '323 KB', icon: 'list-checks' },
-  { t: 'Hướng dẫn sử dụng trực quan GĐ159 – GĐ168', d: '12 chức năng mới, mỗi chức năng một trang có hình đánh số – 15 trang.', file: '/tai-lieu/huong-dan-truc-quan-gd159-gd168.pdf', size: '2 MB', icon: 'book-open' },
+  { t: 'Tính năng ưu việt của UNESCO AI', d: '16 điểm ưu việt, số liệu đo thực tế và nguồn – 6 trang.', file: '/tai-lieu/tinh-nang-uu-viet-unesco-ai.pdf', size: '369 KB', icon: 'star' },
+  { t: 'Tổng hợp toàn bộ tính năng AI', d: '65 tính năng trong 11 nhóm, mở ở đâu, AI làm gì; phụ lục Có gì mới đến GĐ175 – 9 trang.', file: '/tai-lieu/tong-hop-tinh-nang-ai-unesco.pdf', size: '330 KB', icon: 'list-checks' },
+  { t: 'Hướng dẫn sử dụng trực quan GĐ150 – GĐ174', d: '27 chức năng, mỗi chức năng một trang có hình màn hình đánh số, các bước, lưu ý – 33 trang.', file: '/tai-lieu/huong-dan-truc-quan-gd150-gd174.pdf', size: '3,4 MB', icon: 'book-open' },
 ];

@@ -14,7 +14,8 @@ export const currentRelease: Release = {
   downloadUrl: '',
   notes: [
     'Màn hình AI 8 thẻ: Tự động xử lý, Danh sách hoá đơn, Tờ khai HQ, Sổ phụ ngân hàng, Bảng lương & chứng từ khác, Kết chuyển cuối kỳ, Báo cáo & nhật ký, Cổng dịch vụ công.',
-    'Bản GĐ169 (09/10/2026): 65 tính năng AI trong 11 nhóm, 14 tính năng mới GĐ159 – GĐ168 (báo cáo cho chủ doanh nghiệp, giá thành 7 bước, thuế TNCN, nhập toàn bộ HTKK theo MST…).',
+    'Bản GĐ175 (09/10/2026): thêm sổ và BCTC doanh nghiệp siêu nhỏ (TT 58/2026), hộ kinh doanh – sổ TT 152/2025 và tờ khai 01/CNKD, biểu mẫu 2026 (mẫu mới HTKK, Mẫu số 33 lao động), Trợ lý lập định mức NVL, hồ sơ kèm chứng từ và yêu cầu chứng từ khách; hướng dẫn trực quan đủ 27 chức năng GĐ150 – GĐ174.',
+    'Bản GĐ169: 65 tính năng AI trong 11 nhóm (báo cáo cho chủ doanh nghiệp, giá thành 7 bước, thuế TNCN, nhập toàn bộ HTKK theo MST…).',
     'Nền tảng kế toán UNESCO XI: 9 phân hệ, sổ sách – báo cáo theo TT133/2016 hoặc TT99/2025 (chọn theo bộ sổ), bộ cài kèm sổ mẫu năm 2026.',
     'Khoá AI 3 chế độ: đã kích hoạt / dùng thử / chỉ xem; phần kế toán dùng bình thường khi chưa kích hoạt.',
     'Bộ cài được cấp trực tiếp sau khi đăng ký để gắn bản quyền và hướng dẫn cài đặt.'

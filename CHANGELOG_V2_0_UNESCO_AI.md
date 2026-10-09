@@ -78,3 +78,20 @@ Nguồn: 3 tài liệu bản GĐ169 (09/10/2026) – Tính năng ưu việt củ
 ## Số liên hệ (thống nhất toàn website theo banner)
 - Kinh doanh – Zalo: 093 3456 567 · Hỗ trợ: 028 3755 5755 – 3755 4755 ext 103-105 (`apps/web/src/data/contact.ts`).
 - Cập nhật cả chân màn hình chính UNESCO AI (ảnh) và khung liên hệ PDF "Tính năng ưu việt".
+
+# v2.4 (09/10/2026): lịch sử phần mềm UNESCO từ 1999
+- Trang `/ban-quyen/`: 3 giai đoạn pháp nhân – Trung tâm UNESCO Phát triển Công nghệ Thông tin (UCDIT, do Hiệp hội UNESCO thành lập 1999, giải thể 2010) → Công ty Cổ phần Phát triển Phần mềm UNESCO (từ 2011, các thành viên kế thừa và phát triển) → Công ty TNHH Phần mềm UNESCO (hiện nay).
+- Mục "Phần mềm kế toán UNESCO từ 1999": dòng thời gian 1999 (UCDIT Accounting Software v1.99, Windows 95/NT), 2000 – 2004 (SAS99, SAS04), 2010, 2011 – 2012, UNESCO XI, hiện nay; kèm ảnh màn hình lưu trữ.
+- Ảnh `public/banner/unesco-ucdit-1999.webp`, `unesco-classic-1999.webp`: đã làm mờ tên, địa chỉ, điện thoại, tài khoản ngân hàng, MST của khách hàng và địa chỉ, điện thoại, email cũ của Trung tâm.
+- Banner trang chủ: dải "Kế thừa giao diện quen thuộc" có màn hình Chương trình kế toán UNESCO 1999. Trang Giới thiệu cập nhật nguồn gốc 1999.
+
+# v2.5 (09/10/2026): tài liệu GĐ175 – hướng dẫn trực quan 27 chức năng có hình
+- PDF mới: Tổng hợp tính năng AI bản GĐ175 (phụ lục thêm GĐ170 – GĐ175); Hướng dẫn sử dụng trực quan GĐ150 – GĐ174 (33 trang, 27 chức năng) – đổi tên tệp thành `huong-dan-truc-quan-gd150-gd174.pdf`, bìa sửa thành CÔNG TY TNHH PHẦN MỀM UNESCO.
+- PDF Tính năng ưu việt gửi kèm không đổi nội dung (vẫn GĐ169, chân trang liên hệ cũ) – website giữ bản đã sửa liên hệ và tên công ty.
+- Trang Hướng dẫn (`/huong-dan/#truc-quan`): 27 chức năng chia 4 nhóm, mỗi thẻ có ảnh trang hướng dẫn (bấm mở đúng trang trong PDF), đường mở, các bước; lịch "Dùng vào lúc nào" 6 mốc. Ảnh: `apps/web/public/huong-dan/hd-01.webp … hd-27.webp`.
+- Có gì mới / Release notes: thêm GĐ170 – GĐ175. Tổng hợp tính năng AI: bản GĐ175, menu Dữ liệu 14 mục.
+
+# v2.5.1 (09/10/2026): bỏ ghi chú kỹ thuật dành cho lập trình viên khỏi tài liệu PDF
+- Hướng dẫn trực quan: bỏ dòng "Các chức năng có đổi mã VB6 cần Full Compile + Make .exe…" (trang 3), bỏ khung "Sau mỗi gói cập nhật có đổi VB6" (Đóng VB6, Mở lại Sas.vbp, Full Compile) và sửa "Sau Full Compile + Make .exe" thành "Sau khi cài gói cập nhật", bỏ chữ "Python" (trang 33); ảnh `hd-27.webp` làm lại.
+- Tính năng ưu việt: "soát mã VB6 trước khi Make .exe" → "chạy lại mỗi gói cập nhật trước khi phát hành" (trang 2); bỏ "và soát mã VB6" (trang 6).
+- Tổng hợp tính năng AI: "cửa sổ công cụ Python" → "các cửa sổ công cụ" (trang 8).

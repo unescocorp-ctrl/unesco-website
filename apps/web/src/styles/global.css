@@ -923,3 +923,41 @@ em.new{display:inline-block;font-style:normal;font-family:var(--font-h);font-siz
 .ub-contact .ci{display:flex;align-items:flex-start;gap:8px}
 .ub-contact .ci>.i{flex:none;margin-top:1px}
 @media(max-width:760px){.ub-logo{height:60px}.ub-badges{grid-template-columns:1fr}}
+/* v2.4: lịch sử từ 1999 */
+.entity-flow.e3{grid-template-columns:1fr 48px 1fr 48px 1fr;max-width:1200px}
+.entity.root{border-top:5px solid var(--yellow)}.entity.root .when{background:var(--yellow-l);color:#7A5B00}
+.entity-flow.e3 .entity h3{font-size:1.15rem}
+.entity-flow.e3 .entity-arrow .i{width:36px;height:36px}
+.hist{list-style:none;margin:0 auto;padding:0;max-width:1060px;position:relative}
+.hist:before{content:"";position:absolute;left:88px;top:10px;bottom:10px;width:3px;border-radius:3px;background:linear-gradient(180deg,var(--yellow),var(--green),var(--teal),var(--blue))}
+.hist>li{position:relative;display:grid;grid-template-columns:150px minmax(0,1fr) 300px;gap:22px;align-items:center;padding:16px 0}
+.hist>li.noimg{grid-template-columns:150px minmax(0,1fr)}
+.hist-y{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;position:relative;z-index:1;width:178px;margin-left:-14px}
+.hist-y .ic{background:#fff;border:2px solid var(--green);box-shadow:0 0 0 5px var(--surface-soft,#F4F8F6)}
+.hist-y b{font-family:var(--font-h);font-weight:800;font-size:1rem;color:var(--green-d);background:#fff;border:1px solid var(--line);border-radius:999px;padding:2px 10px}
+.hist-c h3{margin:0 0 6px;font-size:1.15rem;line-height:1.3}
+.hist-c p{margin:0;color:#3F4E5C;font-size:.95rem;line-height:1.55}
+.hist-yr{display:none;font-family:var(--font-h);font-weight:800;font-size:.85rem;color:var(--green-d);background:#E6F5EC;border-radius:999px;padding:1px 10px;margin-bottom:6px}
+.hist-img{display:block;border:1px solid #D5E0EA;border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 8px 20px rgba(23,38,58,.08);line-height:0}
+.hist-img img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top}
+@media(max-width:980px){.entity-flow.e3{grid-template-columns:1fr}.entity-flow.e3 .entity-arrow{transform:rotate(90deg);height:36px}}
+@media(max-width:860px){.hist:before{left:22px}.hist>li,.hist>li.noimg{grid-template-columns:1fr;gap:10px;padding-left:56px}.hist-y{position:absolute;left:0;top:16px;width:auto;margin:0;align-items:flex-start}.hist-y b{display:none}.hist-yr{display:inline-block!important}.hist-img{max-width:420px}}
+/* v2.5: hướng dẫn trực quan 27 chức năng có hình */
+.when6{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.when6 div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--teal);border-radius:12px;padding:14px}
+.when6 div:nth-child(3n+2){border-top-color:var(--green)}.when6 div:nth-child(3n+3){border-top-color:var(--blue)}
+.when6 b{display:block;font-family:var(--font-h);font-size:1.02rem;margin-bottom:4px}
+.when6 small{color:#3F4E5C;font-size:.86rem;line-height:1.45;display:block}
+.guide-sec{scroll-margin-top:90px;margin-top:30px}
+.guide-sec-h{display:flex;align-items:center;gap:12px;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--line)}
+.guide-sec-h h3{margin:0;font-size:1.3rem}
+.guide-sec-h .code{font-family:var(--font-h);font-weight:700;font-size:.82rem;color:var(--blue);border:1.5px solid #BFD3F0;border-radius:999px;padding:2px 10px}
+.guide.has-img{padding:0 0 18px;overflow:hidden}
+.guide.has-img>*:not(.guide-img){margin-left:18px;margin-right:18px}
+.guide-img{position:relative;display:block;line-height:0;border-bottom:1px solid var(--line);background:#F4F7FA;margin-bottom:6px}
+.guide-img img{width:100%;height:auto;aspect-ratio:760/669;object-fit:cover;object-position:top}
+.guide-img .zoom{position:absolute;right:10px;bottom:10px;line-height:1.2;font-size:.76rem;font-weight:700;color:#fff;background:rgba(23,38,58,.78);border-radius:999px;padding:5px 11px;opacity:0;transition:.2s ease}
+.guide-img:hover .zoom,.guide-img:focus-visible .zoom{opacity:1}
+@media(max-width:980px){.when6{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:720px){.when6{grid-template-columns:1fr}.guide-img .zoom{opacity:1}}
+.guide-sec-h .code{white-space:nowrap}

@@ -48,6 +48,15 @@ export const site = {
     supportEmail: 'unesco.corp@gmail.com'
   },
 
+  /** Nơi ra đời phần mềm UNESCO (1999 – 2010). */
+  origin: {
+    name: 'Trung tâm UNESCO Phát triển Công nghệ Thông tin',
+    short: 'UCDIT',
+    founded: '1999',
+    founder: 'Hiệp hội UNESCO',
+    dissolved: '2010'
+  },
+
   /** Pháp nhân trước đây – chủ sở hữu ghi trên 4 giấy chứng nhận đăng ký quyền tác giả 2011 – 2012. */
   formerCompany: {
     legalName: 'Công ty Cổ phần Phát triển Phần mềm UNESCO',
