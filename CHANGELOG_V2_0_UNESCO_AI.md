@@ -105,3 +105,11 @@ Nguồn: 3 tài liệu bản GĐ169 (09/10/2026) – Tính năng ưu việt củ
 - Nội dung banner (dòng vàng, nhãn offline, tiêu đề, câu kiểm soát, laptop, 4 thẻ) dùng khung `.container` 1200px như thanh trên, đầu trang, dải "Kế thừa giao diện" và các mục bên dưới: mép trái thẳng logo, mép phải thẳng nút ĐĂNG KÝ DEMO. Nền banner vẫn tràn hết chiều ngang.
 - Cỡ chữ theo bề rộng khung (container query): dòng vàng tối đa 38px một dòng, tiêu đề 3 dòng không xuống hàng, laptop và 4 thẻ thu gọn cho vừa khung.
 - Máy tính bảng: banner 1 cột từ 1100px trở xuống; nút Tải phần mềm / Đăng ký demo trong banner hiện từ 1080px (khi đầu trang ẩn nút Tải phần mềm). Thanh trên không còn xuống 2 dòng: ẩn "Tìm hiểu thêm" từ 1280px, ẩn câu giới thiệu từ 1100px.
+
+# v2.7 (09/10/2026): banner – version cũ, biểu mẫu Bộ Tài chính, thông tư; dòng trả phí sát mép dưới
+- Thêm dưới tiêu đề và laptop (cùng 2 cột của banner):
+  - "CẬP NHẬT TỰ ĐỘNG CÁC VERSION CŨ" kèm dải 1.99 • 2.04 • 4.8 • 5.1 • 6.0 • 7.1; khung xanh lá "VER ĐẶC THÙ: SÔNG ĐÀ • HÀNG HẢI • MISU".
+  - Khung xanh đậm "CẬP NHẬT ĐẦY ĐỦ BIỂU MẪU SỔ SÁCH BÁO CÁO – THEO QUY ĐỊNH MỚI NHẤT CỦA BỘ TÀI CHÍNH".
+  - 4 thẻ thông tư: 99/2025/TT-BTC, 133/2016/TT-BTC (mở trang Tờ khai & BCTC), 58/2026/TT-BTC (Hướng dẫn #hd-23), 152/2025/TT-BTC (Hướng dẫn #hd-24).
+- Dòng vàng "TRẢ PHÍ 1 LẦN SỬ DỤNG MÃI MÃI – KHÔNG PHÍ HÀNG NĂM" dời xuống cuối banner, sát mép dưới; nhãn "Phần mềm offline…" lên đầu banner.
+- Máy tính bảng: các khung mới xếp 1 cột, 4 thẻ thông tư 1 hàng (2 × 2 từ 900px trở xuống); điện thoại: 2 × 2.

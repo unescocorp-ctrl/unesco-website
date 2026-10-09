@@ -4,6 +4,7 @@
  * Chữ là HTML thật, font Be Vietnam Pro (Google Fonts). Màn hình trong laptop là màn hình chính UNESCO AI thật.
  * Dải "Kế thừa giao diện quen thuộc" nằm ngay dưới banner (màn hình UNESCO đời cũ).
  * v2.6.1: nội dung banner nằm trong khung trang (.container 1200px) – thẳng mép với logo, menu và các mục bên dưới.
+ * v2.7: thêm dòng cập nhật tự động version cũ / version đặc thù, biểu mẫu Bộ Tài chính, 4 thông tư; dòng trả phí dời xuống sát mép dưới.
  */
 import { url } from '../utils/url';
 import Icon from './Icon.astro';
@@ -12,6 +13,13 @@ const tiles = [
   { icon: 'bank', t: 'Sổ phụ', t2: 'ngân hàng', c: 'b', href: '/ai-ke-toan/ai-so-phu-ngan-hang/' },
   { icon: 'settings', t: 'Giá thành', t2: '', c: 'y', href: '/ai-ke-toan/ai-gia-thanh/' },
   { icon: 'bar-chart', t: 'Thuế &', t2: 'báo cáo', c: 't', href: '/to-khai-bctc/' },
+];
+const versions = ['1.99', '2.04', '4.8', '5.1', '6.0', '7.1'];
+const circulars = [
+  { no: '99/2025/TT-BTC', c: 'b', href: '/to-khai-bctc/' },
+  { no: '133/2016/TT-BTC', c: 'g', href: '/to-khai-bctc/' },
+  { no: '58/2026/TT-BTC', c: 'r', href: '/huong-dan/#hd-23' },
+  { no: '152/2025/TT-BTC', c: 'y', href: '/huong-dan/#hd-24' },
 ];
 const legacy = [
   { img: 'unesco-classic-1999', t: 'Kế toán UNESCO', y: '1999' },
@@ -22,7 +30,6 @@ const legacy = [
 <section class="hx" aria-labelledby="hx-title">
   <span class="hx-glow g1" aria-hidden="true"></span><span class="hx-glow g2" aria-hidden="true"></span>
   <div class="container hx-wrap">
-    <p class="hx-gold"><span>Trả phí 1 lần sử dụng mãi mãi – Không phí hàng năm</span></p>
     <p class="hx-pill"><Icon name="shield-check" /><b>Phần mềm offline dữ liệu linh hoạt – bảo mật</b></p>
     <div class="hx-grid">
       <div class="hx-copy">
@@ -48,6 +55,15 @@ const legacy = [
         </ul>
       </div>
     </div>
+    <div class="hx-more">
+      <div class="hx-ver"><p class="hx-ver-t">Cập nhật tự động các version cũ</p><p class="hx-ver-n">{versions.map((v) => <span>{v}</span>)}</p></div>
+      <div class="hx-spec"><span class="chev" aria-hidden="true"><Icon name="chevron-right" /><Icon name="chevron-right" /><Icon name="chevron-right" /></span><p><b>Ver đặc thù:</b><span>Sông Đà • Hàng Hải • MISU</span></p></div>
+      <div class="hx-forms"><span class="hx-doc" aria-hidden="true"><Icon name="file-text" /></span><p><b>Cập nhật đầy đủ biểu mẫu sổ sách báo cáo</b><span>Theo quy định mới nhất của Bộ Tài chính</span></p></div>
+      <ul class="hx-tt" aria-label="Chế độ kế toán theo thông tư">
+        {circulars.map((x) => <li><a class={`c-${x.c}`} href={url(x.href)}><span class="ti"><Icon name="file-text" /></span><span class="tx"><small>Thông tư</small><b>{x.no}</b></span></a></li>)}
+      </ul>
+    </div>
+    <p class="hx-gold"><span>Trả phí 1 lần sử dụng mãi mãi – Không phí hàng năm</span></p>
   </div>
 </section>
 <section class="hx-legacy" aria-label="Kế thừa giao diện quen thuộc">
