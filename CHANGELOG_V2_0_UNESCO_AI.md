@@ -100,3 +100,8 @@ Nguồn: 3 tài liệu bản GĐ169 (09/10/2026) – Tính năng ưu việt củ
 - Thanh trên: "UNESCO AI – Hiểu việc kế toán · Nhắc việc tự động · Kế toán kiểm soát & xác nhận", Tìm hiểu thêm, Kinh doanh – Zalo, Hỗ trợ. Nút đầu trang: TẢI PHẦN MỀM (biểu tượng tải) và ĐĂNG KÝ DEMO ›.
 - Banner chính (`HeroBanner.astro`, CSS khối "v2.6"): dòng vàng "TRẢ PHÍ 1 LẦN SỬ DỤNG MÃI MÃI – KHÔNG PHÍ HÀNG NĂM", "Phần mềm offline dữ liệu linh hoạt – bảo mật", 3 dòng "Hiểu việc – nhắc việc kế toán / Làm thay phần việc kế toán / Kế toán kiểm soát và xác nhận", câu kiểm soát; laptop màn hình chính UNESCO AI + 4 thẻ. Font Be Vietnam Pro. Dải "Kế thừa giao diện quen thuộc" chuyển xuống ngay dưới banner.
 - Bảng giá: dòng vàng trả phí 1 lần; UNESCO XI 6.000.000 đ / MST (dịch vụ kế toán 7.000.000 đ / 3 MST, thêm 1 MST 1.000.000 đ, trên 10 MST giảm 30%); UNESCO AI 10.000.000 đ / MST (dịch vụ kế toán 10.000.000 đ / 3 MST, thêm 1 MST 1.200.000 đ, trên 10 MST giảm 30%); triển khai miễn phí; nâng cấp 50% giá gói mới.
+
+# v2.6.1 (09/10/2026): banner chính nằm trong khung trang
+- Nội dung banner (dòng vàng, nhãn offline, tiêu đề, câu kiểm soát, laptop, 4 thẻ) dùng khung `.container` 1200px như thanh trên, đầu trang, dải "Kế thừa giao diện" và các mục bên dưới: mép trái thẳng logo, mép phải thẳng nút ĐĂNG KÝ DEMO. Nền banner vẫn tràn hết chiều ngang.
+- Cỡ chữ theo bề rộng khung (container query): dòng vàng tối đa 38px một dòng, tiêu đề 3 dòng không xuống hàng, laptop và 4 thẻ thu gọn cho vừa khung.
+- Máy tính bảng: banner 1 cột từ 1100px trở xuống; nút Tải phần mềm / Đăng ký demo trong banner hiện từ 1080px (khi đầu trang ẩn nút Tải phần mềm). Thanh trên không còn xuống 2 dòng: ẩn "Tìm hiểu thêm" từ 1280px, ẩn câu giới thiệu từ 1100px.

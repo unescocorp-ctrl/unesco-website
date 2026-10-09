@@ -3,6 +3,7 @@
  * BANNER CHÍNH TRANG CHỦ – UNESCO XI + AI (theo code + hình mẫu UNESCO_TOPBAR_HERO_CODE, 09/10/2026)
  * Chữ là HTML thật, font Be Vietnam Pro (Google Fonts). Màn hình trong laptop là màn hình chính UNESCO AI thật.
  * Dải "Kế thừa giao diện quen thuộc" nằm ngay dưới banner (màn hình UNESCO đời cũ).
+ * v2.6.1: nội dung banner nằm trong khung trang (.container 1200px) – thẳng mép với logo, menu và các mục bên dưới.
  */
 import { url } from '../utils/url';
 import Icon from './Icon.astro';
@@ -20,7 +21,7 @@ const legacy = [
 ---
 <section class="hx" aria-labelledby="hx-title">
   <span class="hx-glow g1" aria-hidden="true"></span><span class="hx-glow g2" aria-hidden="true"></span>
-  <div class="hx-wrap">
+  <div class="container hx-wrap">
     <p class="hx-gold"><span>Trả phí 1 lần sử dụng mãi mãi – Không phí hàng năm</span></p>
     <p class="hx-pill"><Icon name="shield-check" /><b>Phần mềm offline dữ liệu linh hoạt – bảo mật</b></p>
     <div class="hx-grid">
