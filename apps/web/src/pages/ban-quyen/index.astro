@@ -2,34 +2,86 @@
 import { url } from '../../utils/url';
 import ContentLayout from '../../layouts/ContentLayout.astro';
 import Icon from '../../components/Icon.astro';
-/** Danh sách chứng nhận theo bộ thiết kế website. Chỉ ghi số khi đã đối chiếu giấy gốc. */
-const certs = [
-  ['Phần mềm quản trị – tài chính – kế toán UNESCO', 'Số 1563/2011/QTG', 'g'],
-  ['UNESCO INV – Phần mềm quản lý bán hàng – hoá đơn GTGT', 'Số 1583/2011/QTG – 15/06/2011', 't'],
-  ['UNESCO BUSINESS – Hệ thống ERP', 'Hiển thị chứng nhận gốc; không ghi số khi chưa xác minh', 'b'],
-  ['UNESCO Financial XII.NET', 'Số 248/2012/QTG – 07/02/2012', 'y'],
+import { site } from '../../config/site.config';
+import { contact } from '../../data/contact';
+import { copyrightCerts, productTimeline } from '../../data/copyright';
+const co = site.company;
+const old = site.formerCompany;
+const cr = site.copyright;
+const nowRows = [
+  ['Tên công ty', co.legalName],
+  ['Tên tiếng nước ngoài', co.legalNameEn],
+  ['Loại hình', 'Công ty trách nhiệm hữu hạn một thành viên'],
+  ['Mã số doanh nghiệp / MST', co.taxCode],
+  ['Đăng ký lần đầu', co.firstRegistered],
+  ['Đăng ký thay đổi', co.latestChange],
+  ['Trụ sở chính', co.registeredAddress],
+  ['Nơi cấp', co.registrationAuthority],
 ];
-const timeline = [
-  ['award', 'UNESCO Accounting & UNESCO INV', 'Bản quyền phần mềm kế toán và bán hàng – hoá đơn'],
-  ['layers', 'UNESCO Business ERP / Financial XII.NET', 'Hệ thống quản trị doanh nghiệp, tài chính'],
-  ['bar-chart', 'Các thế hệ sản phẩm dẫn tới UNESCO XI', 'Nền tảng kế toán 9 phân hệ'],
-  ['cpu', 'UNESCO AI', 'UNESCO XI tích hợp màn hình AI 8 thẻ'],
+const oldRows = [
+  ['Tên công ty', old.legalName],
+  ['Tên tiếng nước ngoài', old.legalNameEn],
+  ['Số đăng ký kinh doanh', `${old.businessRegistration} – ngày ${old.registered}`],
+  ['Địa chỉ', old.address],
+  ['Giám đốc', old.director],
+  ['Vai trò', 'Chủ sở hữu ghi trên 4 giấy chứng nhận đăng ký quyền tác giả 2011 – 2012'],
 ];
 ---
-<ContentLayout title="Bản quyền & lịch sử sản phẩm UNESCO" description="Giấy chứng nhận bản quyền tác giả và lịch sử các thế hệ phần mềm UNESCO: UNESCO Accounting, UNESCO INV, UNESCO Business ERP, UNESCO Financial XII.NET, UNESCO XI và UNESCO AI." eyebrow="Giải pháp quản trị – kế toán thông minh với AI" display="BẢN QUYỀN & LỊCH SỬ |SẢN PHẨM UNESCO" tone="ng" subtitle="Lịch sử sản phẩm theo mốc đã được ghi nhận" pills={['Giấy chứng nhận quyền tác giả', 'Thông tin đối chiếu theo giấy gốc']}>
+<ContentLayout title="Bản quyền & pháp lý UNESCO" description={`Bản quyền phần mềm UNESCO: 4 giấy chứng nhận đăng ký quyền tác giả 2011 – 2012, tác giả ${cr.author}. Pháp nhân trước đây là ${old.legalName}, nay là ${co.legalName} (MST ${co.taxCode}).`} eyebrow="Bản quyền tác giả – pháp nhân – lịch sử sản phẩm" display="BẢN QUYỀN & |PHÁP LÝ" tone="ng" subtitle={`Tác giả phần mềm: ${cr.author} · Pháp nhân hiện nay: ${co.legalName}`} pills={['4 giấy chứng nhận quyền tác giả', `Tác giả: ${cr.author}`, `MST ${co.taxCode}`]}>
 
 <section class="section"><div class="container">
-  <div class="section-head"><div><span class="eyebrow">Chứng nhận</span><h2>Giấy chứng nhận đăng ký quyền tác giả</h2></div><p>Ảnh chứng nhận gốc sẽ được đăng kèm khi doanh nghiệp cung cấp bản scan.</p></div>
-  <div class="cert-grid">{certs.map((c) => <div class="cert"><span class={`ic ${c[2]}`}><Icon name="award" /></span><div><b>{c[0]}</b><span>{c[1]}</span></div></div>)}</div>
-  <div class="grid grid-2" style="margin-top:22px">
-    <div class="callout"><span class="ic"><Icon name="camera" /></span><div><h3>Nguồn ảnh gốc cần doanh nghiệp cung cấp</h3><p>Website chỉ đăng ảnh chứng nhận sau khi có bản scan giấy gốc.</p></div></div>
-    <div class="callout b"><span class="ic"><Icon name="shield-check" /></span><div><h3>Tên chủ sở hữu</h3><p>Tên chủ sở hữu trên chứng nhận lịch sử được giữ nguyên theo giấy gốc; website hiện dùng tên CÔNG TY PHÁT TRIỂN PHẦN MỀM UNESCO.</p></div></div>
+  <div class="sec-c"><span class="eyebrow">Pháp nhân & tác giả</span><h2>Đổi pháp nhân – <span class="tg">tác giả không đổi</span></h2><p>Trước đây, pháp nhân của các phần mềm UNESCO là {old.legalName} – Giám đốc và tác giả là {cr.author}. Nay pháp nhân chuyển sang {co.legalName}; tác giả phần mềm vẫn là {cr.author}.</p></div>
+  <div class="entity-flow">
+    <div class="entity was">
+      <span class="when">Trước đây</span>
+      <h3>{old.legalName}</h3>
+      <p class="en">{old.legalNameEn}</p>
+      <ul><li>Số ĐKKD <b>{old.businessRegistration}</b> – ngày {old.registered}</li><li>Giám đốc: <b>{old.director}</b></li><li>Chủ sở hữu ghi trên 4 giấy chứng nhận quyền tác giả</li></ul>
+    </div>
+    <div class="entity-arrow" aria-hidden="true"><Icon name="arrow-right" /></div>
+    <div class="entity now">
+      <span class="when">Hiện nay</span>
+      <h3>{co.legalName}</h3>
+      <p class="en">{co.legalNameEn}</p>
+      <ul><li>Mã số doanh nghiệp <b>{co.taxCode}</b></li><li>{co.latestChange}</li><li>Phát triển và cung cấp phần mềm kế toán UNESCO AI</li></ul>
+    </div>
+  </div>
+  <div class="author-bar"><span class="ic"><Icon name="user-check" /></span><div><b>Tác giả phần mềm: {cr.author}</b><span>Tác giả của cả 4 phần mềm đã đăng ký quyền tác giả – không thay đổi khi đổi pháp nhân.</span></div></div>
+</div></section>
+
+<section class="section surface" id="chung-nhan"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Chứng nhận</span><h2>Giấy chứng nhận đăng ký quyền tác giả</h2></div><p>Do Cục Bản quyền tác giả – Bộ Văn hoá, Thể thao và Du lịch cấp. Loại hình: chương trình máy tính. Bấm vào ảnh để xem cỡ lớn.</p></div>
+  <div class="qtg-list">
+    {copyrightCerts.map((c) => (
+      <article class={`qtg c-${c.c}`}>
+        <a class="qtg-img" href={url(`/chung-nhan/${c.img}-lon.webp`)} target="_blank" rel="noopener"><img src={url(`/chung-nhan/${c.img}.webp`)} alt={`Giấy chứng nhận đăng ký quyền tác giả số ${c.no} – ${c.work}`} width="1200" height="575" loading="lazy" decoding="async" /></a>
+        <div class="qtg-info">
+          <span class="qtg-no"><Icon name="award" />Số {c.no}</span>
+          <h3>{c.work}</h3>
+          <dl>
+            <dt>Ngày cấp</dt><dd>{c.date}</dd>
+            <dt>Sản phẩm</dt><dd>{c.product}</dd>
+            <dt>Tác giả</dt><dd>{cr.author}</dd>
+            <dt>Chủ sở hữu</dt><dd>{old.legalName} (ĐKKD {old.businessRegistration})</dd>
+          </dl>
+        </div>
+      </article>
+    ))}
+  </div>
+  <p class="caption" style="margin-top:16px">Ảnh đã che số CMND, địa chỉ cá nhân của tác giả và thông tin khách hàng trên ảnh màn hình. Bao bì và đĩa cài đặt giai đoạn 2011 – 2012 in thông tin liên hệ cũ; liên hệ hiện nay: {contact.email} · {contact.websiteLabel}.</p>
+</div></section>
+
+<section class="section"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Thông tin doanh nghiệp</span><h2>Pháp nhân hiện nay và trước đây</h2></div><p>Theo giấy chứng nhận đăng ký doanh nghiệp và giấy chứng nhận quyền tác giả.</p></div>
+  <div class="grid grid-2" style="align-items:start">
+    <div class="table-wrap" style="border:0"><table class="src-table"><thead><tr><th colspan="2">Hiện nay</th></tr></thead><tbody>{nowRows.map((r) => <tr><td>{r[0]}</td><td>{r[1]}</td></tr>)}</tbody></table></div>
+    <div class="table-wrap" style="border:0"><table class="src-table was"><thead><tr><th colspan="2">Trước đây</th></tr></thead><tbody>{oldRows.map((r) => <tr><td>{r[0]}</td><td>{r[1]}</td></tr>)}</tbody></table></div>
   </div>
 </div></section>
 
-<section class="section surface"><div class="container">
+<section class="section surface-soft"><div class="container">
   <div class="sec-c"><span class="eyebrow">Lịch sử sản phẩm</span><h2>Các thế hệ phần mềm UNESCO</h2></div>
-  <div class="timeline">{timeline.map((t) => <div class="tl"><span class="ic"><Icon name={t[0]} /></span><b>{t[1]}</b><small>{t[2]}</small></div>)}</div>
-  <div class="callout" style="margin-top:30px"><span class="ic"><Icon name="history" /></span><div><h3>Lịch sử sản phẩm theo mốc đã được ghi nhận</h3><p>Mỗi mốc được công bố khi có giấy tờ đối chiếu. Xem thêm lịch sử phiên bản ở Release notes.</p></div><a class="btn btn-secondary" style="margin-left:auto" href={url('/release-notes/')}>Release notes</a></div>
+  <div class="timeline">{productTimeline.map((t) => <div class="tl"><span class="ic"><Icon name={t.icon} /></span><em class="tl-y">{t.y}</em><b>{t.t}</b><small>{t.d}</small></div>)}</div>
+  <div class="callout" style="margin-top:30px"><span class="ic"><Icon name="history" /></span><div><h3>Xem lịch sử cập nhật UNESCO AI</h3><p>Từng gói cập nhật và 6 nhóm tính năng mới nhất.</p></div><a class="btn btn-secondary" style="margin-left:auto" href={url('/release-notes/')}>Release notes</a><a class="btn btn-primary" href={url('/phan-tich-tinh-nang/')}>Tính năng mới 2026</a></div>
 </div></section>
 </ContentLayout>

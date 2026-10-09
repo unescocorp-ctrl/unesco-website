@@ -18,6 +18,7 @@ export const mainNav: NavGroup[] = [
       { label: 'Tờ khai & BCTC', href: '/to-khai-bctc/', icon: 'file-xml' },
       { label: 'An toàn & kiểm soát AI', href: '/an-toan-kiem-soat-ai/', icon: 'shield-check' },
       { label: 'Tổng hợp 65 tính năng AI', href: '/tinh-nang-ai/', icon: 'list-checks' },
+      { label: 'Tính năng mới 2026', href: '/phan-tich-tinh-nang/', icon: 'sparkles' },
     ],
   },
   {
@@ -39,7 +40,7 @@ export const mainNav: NavGroup[] = [
       { label: 'Video hướng dẫn', href: '/video/', icon: 'play-circle' },
       { label: 'Kiến thức kế toán', href: '/kien-thuc/', icon: 'lightbulb' },
       { label: 'Release notes', href: '/release-notes/', icon: 'history' },
-      { label: 'Bản quyền & lịch sử', href: '/ban-quyen/', icon: 'award' },
+      { label: 'Bản quyền & pháp lý', href: '/ban-quyen/', icon: 'award' },
     ],
   },
   {

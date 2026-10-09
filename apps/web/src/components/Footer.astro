@@ -8,7 +8,7 @@ const safe = (v: string) => (!v.includes('{{') ? v : '');
 const cols = [
   { h: 'Sản phẩm', icon: 'box', cls: 'f-g', links: [
     ['AI Hóa đơn', '/ai-ke-toan/ai-hoa-don/'], ['AI Sổ phụ', '/ai-ke-toan/ai-so-phu-ngan-hang/'], ['AI Giá thành', '/ai-ke-toan/ai-gia-thanh/'],
-    ['Hồ sơ Thuế', '/ho-so-thue/'], ['Tờ khai & BCTC', '/to-khai-bctc/'], ['Tổng quan nền tảng', '/san-pham/unesco-xi-ai/'], ['Tính năng ưu việt', '/tinh-nang-uu-viet/'], ['Tổng hợp tính năng AI', '/tinh-nang-ai/'],
+    ['Hồ sơ Thuế', '/ho-so-thue/'], ['Tờ khai & BCTC', '/to-khai-bctc/'], ['Tổng quan nền tảng', '/san-pham/unesco-xi-ai/'], ['Tính năng ưu việt', '/tinh-nang-uu-viet/'], ['Tổng hợp tính năng AI', '/tinh-nang-ai/'], ['Tính năng mới 2026', '/phan-tich-tinh-nang/'],
   ] },
   { h: 'Giải pháp', icon: 'lightbulb', cls: 'f-t', links: [
     ['Kế toán dịch vụ', '/giai-phap/ke-toan-dich-vu/'], ['Doanh nghiệp', '/giai-phap/doanh-nghiep/'], ['Bán lẻ – TMĐT', '/giai-phap/ban-le/'],
@@ -20,12 +20,12 @@ const cols = [
   ] },
   { h: 'Pháp lý', icon: 'shield-check', cls: 'f-y', links: [
     ['Chính sách bảo mật', '/legal/privacy/'], ['Điều khoản sử dụng', '/legal/terms/'], ['Chính sách dữ liệu', '/legal/data-protection/'],
-    ['An toàn & kiểm soát AI', '/an-toan-kiem-soat-ai/'], ['Bản quyền & lịch sử', '/ban-quyen/'], ['Tiếp nhận khiếu nại', '/legal/complaints/'],
+    ['An toàn & kiểm soát AI', '/an-toan-kiem-soat-ai/'], ['Bản quyền & pháp lý', '/ban-quyen/'], ['Tiếp nhận khiếu nại', '/legal/complaints/'],
   ] },
 ];
 ---
 <section class="cta-band"><div class="container wrap">
-  <div><h2>Sẵn sàng xem UNESCO AI trên dữ liệu của bạn?</h2><p>Kinh doanh: {contact.sales.mobile} · {contact.sales.phone} ({contact.sales.ext}) · Hỗ trợ: {contact.support.phone}</p></div>
+  <div><h2>Sẵn sàng xem UNESCO AI trên dữ liệu của bạn?</h2><p>{contact.sales.label}: {contact.sales.mobile} · {contact.support.label}: {contact.support.line}</p></div>
   <a class="cta-big" href={url('/lien-he/#demo')}><Icon name="trend" />Đăng ký xem demo <span class="sep">|</span> Nhận tư vấn</a>
 </div></section>
 <footer class="footer">
@@ -35,8 +35,8 @@ const cols = [
         <div class="brand"><img class="brand-logo" src={url('/brand/unesco-star.png')} alt="" width="48" height="48" loading="lazy" /><span class="brand-copy"><span>UNESCO <b>AI</b></span><small>PHẦN MỀM KẾ TOÁN DOANH NGHIỆP</small></span></div>
         <p>Phần mềm kế toán ứng dụng AI: hoá đơn điện tử, sổ phụ ngân hàng, giá thành, hồ sơ thuế, tờ khai và báo cáo tài chính — AI hỗ trợ, kế toán quyết định.</p>
         <div class="contact-lines">
-          <span>Kinh doanh: <a href={telHref(contact.sales.mobile)}>{contact.sales.mobile}</a> · <a href={telHref(contact.sales.phone)}>{contact.sales.phone}</a> ({contact.sales.ext})</span>
-          <span>Hỗ trợ sử dụng: <a href={telHref(contact.support.phone)}>{contact.support.phone}</a> ({contact.support.ext})</span>
+          <span>{contact.sales.label}: <a href={telHref(contact.sales.mobile)}>{contact.sales.mobile}</a></span>
+          <span>{contact.support.label}: <a href={telHref(contact.support.phone)}>{contact.support.phone}</a> – <a href={telHref(contact.support.phone2)}>3755 4755</a> {contact.support.ext}</span>
           <span>Email: <a href={mailHref}>{contact.email}</a> · <a href={zaloHref} target="_blank" rel="noopener">Zalo</a></span>
           <span>{contact.address}</span>
           <span>Website: <a href={contact.website}>{contact.websiteLabel}</a></span>
@@ -46,6 +46,6 @@ const cols = [
         <div><h3 class={c.cls}><Icon name={c.icon} />{c.h}</h3>{c.links.map((l) => <a href={url(l[1])}>{l[0]}</a>)}</div>
       ))}
     </div>
-    <div class="footer-bottom"><small>© {y} {(safe(site.company.legalName) || 'Công ty Phát triển Phần mềm UNESCO').toUpperCase()}{safe(site.company.taxCode) && <> · MST: {site.company.taxCode}</>}</small></div>
+    <div class="footer-bottom"><small>© {y} {(safe(site.company.legalName) || 'Công ty TNHH Phần mềm UNESCO').toUpperCase()}{safe(site.company.taxCode) && <> · MST: {site.company.taxCode}</>} · Tác giả phần mềm: <a href={url('/ban-quyen/')}>{site.copyright.author}</a></small></div>
   </div>
 </footer>

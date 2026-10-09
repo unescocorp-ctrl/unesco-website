@@ -62,7 +62,7 @@ const know = [
   <div class="grid grid-3">{know.map((k) => <a class={`card top-${k[4]}`} href={url(k[3])}><span class={`ic ${k[4]}`} style="margin-bottom:14px"><Icon name={k[0]} /></span><h3>{k[1]}</h3><p class="muted">{k[2]}</p><strong class="link-arrow">Xem</strong></a>)}</div>
 </div></section>
 
-<section class="section"><div class="container"><div class="quote-band"><div><h2>Cần hướng dẫn trực tiếp?</h2><p>Hỗ trợ sử dụng: {contact.support.phone} ({contact.support.ext}).</p></div><div class="actions"><a class="btn btn-primary" href={telHref(contact.support.phone)}>Gọi hỗ trợ</a><a class="btn btn-secondary" href={url('/ho-tro/')}>Gửi yêu cầu</a></div></div></div></section>
+<section class="section"><div class="container"><div class="quote-band"><div><h2>Cần hướng dẫn trực tiếp?</h2><p>Hỗ trợ sử dụng: {contact.support.line}.</p></div><div class="actions"><a class="btn btn-primary" href={telHref(contact.support.phone)}>Gọi hỗ trợ</a><a class="btn btn-secondary" href={url('/ho-tro/')}>Gửi yêu cầu</a></div></div></div></section>
 <script is:inline>
   document.addEventListener('play', function (e) {
     document.querySelectorAll('video').forEach(function (v) { if (v !== e.target) v.pause(); });

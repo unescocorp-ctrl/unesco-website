@@ -9,6 +9,7 @@ import Evidence from '../components/Evidence.astro';
 import AiDoDont from '../components/AiDoDont.astro';
 import MonthFlow from '../components/MonthFlow.astro';
 import AdvantageGrid from '../components/AdvantageGrid.astro';
+import HeroBanner from '../components/HeroBanner.astro';
 import { shots } from '../data/screenshots';
 import { aiTabs, invoiceDownload, costAi } from '../data/ai';
 import { videos, videoBySlug } from '../data/videos';
@@ -18,17 +19,9 @@ const intro = videoBySlug('gioi-thieu-unesco-ai')!;
 const featuredVideos = ['m02-tai-hoa-don', 'm05-so-phu-ngan-hang', 'm07-gia-thanh'].map((s) => videoBySlug(s)!);
 ---
 <BaseLayout title="UNESCO AI Accounting – Nền tảng kế toán thông minh cho doanh nghiệp" description="UNESCO AI: phần mềm kế toán tích hợp AI — tải hoá đơn điện tử, ghép mã, đọc sổ phụ ngân hàng, hỗ trợ lập chứng từ, kiểm tra khoá sổ, giá thành, tờ khai và báo cáo tài chính. AI hỗ trợ, kế toán quyết định.">
-<section class="hero"><span class="stripes tr" aria-hidden="true"></span><div class="container">
-  <div class="hero-grid">
-    <div>
-      <span class="eyebrow">Phần mềm kế toán UNESCO AI</span>
-      <h1>UNESCO <span>AI</span> –<br/>Kế toán nhanh hơn với dữ liệu thật – kiểm soát vẫn thuộc về kế toán</h1>
-      <p class="lead">Tải hoá đơn điện tử, ghép mã, đọc sổ phụ ngân hàng, hỗ trợ lập chứng từ, kiểm tra khoá sổ, xử lý giá thành, tờ khai và báo cáo tài chính ngay trong UNESCO AI.</p>
-      <div class="actions"><a class="btn btn-primary" href={url('/lien-he/#demo')}><Icon name="calendar" />Đăng ký xem demo</a><a class="btn btn-secondary" href="#video-gioi-thieu"><Icon name="play-circle" />Xem UNESCO AI hoạt động</a></div>
-      <div class="trust-note"><span class="ic sm g"><Icon name="shield-check" /></span>AI hỗ trợ xử lý – kế toán kiểm tra và quyết định.</div>
-    </div>
-    <div class="hero-shot"><Screenshot shot={shots.mainScreen} eager={true} showCaption={false} class="glow" /></div>
-  </div>
+<HeroBanner />
+
+<section class="section-sm"><div class="container">
   <div class="feat5">{heroValues.map((v) => <div class="card"><span class={`ic ring ${v.c}`}><Icon name={v.icon} /></span><h3>{v.t}</h3><p>{v.d}</p></div>)}</div>
 </div></section>
 
@@ -52,7 +45,7 @@ const featuredVideos = ['m02-tai-hoa-don', 'm05-so-phu-ngan-hang', 'm07-gia-than
 <section class="section surface"><div class="container">
   <div class="section-head"><div><span class="eyebrow">Tính năng ưu việt · bản GĐ169</span><h2 class="display"><span class="tg">16 điểm</span> <span class="tb">ưu việt</span></h2><p class="sub-line" style="margin:0">Mười điểm nền tảng và sáu điểm mới <em class="new" style="margin:0">Mới</em></p></div><p>Hoá đơn, sổ phụ, giá thành, thuế, khoá sổ và báo cáo cho chủ doanh nghiệp – nhanh như tự động, nhưng mọi con số vẫn đi qua đúng sổ kế toán và luôn có người duyệt.</p></div>
   <AdvantageGrid base="/tinh-nang-uu-viet/" />
-  <div class="actions" style="margin-top:24px"><a class="btn btn-primary" href={url('/tinh-nang-uu-viet/')}>Xem chi tiết 16 điểm ưu việt</a><a class="btn btn-secondary" href={url('/tinh-nang-ai/')}>Tổng hợp 65 tính năng AI</a></div>
+  <div class="actions" style="margin-top:24px"><a class="btn btn-primary" href={url('/tinh-nang-uu-viet/')}>Xem chi tiết 16 điểm ưu việt</a><a class="btn btn-secondary" href={url('/tinh-nang-ai/')}>Tổng hợp 65 tính năng AI</a><a class="btn btn-secondary" href={url('/phan-tich-tinh-nang/')}>Tính năng mới 2026</a></div>
 </div></section>
 
 <section class="section surface-soft"><div class="container">

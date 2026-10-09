@@ -48,3 +48,33 @@ Nguồn: 3 tài liệu bản GĐ169 (09/10/2026) – Tính năng ưu việt củ
 | Có gì mới theo từng gói | `apps/web/src/data/whatsnew.ts` |
 | 12 chức năng hướng dẫn trực quan | `apps/web/src/data/visual-guide.ts` |
 | Tệp PDF tải về | `apps/web/public/tai-lieu/` |
+
+# v2.2 (09/10/2026): bản quyền – pháp lý, phân tích tính năng & lộ trình 2026
+
+## Bản quyền & pháp lý
+- **Pháp nhân hiện nay** theo Giấy chứng nhận đăng ký doanh nghiệp (thay đổi lần 10, 12/02/2026): Công ty TNHH Phần mềm UNESCO – UNESCO SOFTWARE COMPANY LIMITED – mã số doanh nghiệp / MST 0313057886, đăng ký lần đầu 18/12/2014, trụ sở Số 8 Đường Số 17, Phường Bình Phú, TP.HCM.
+- **Pháp nhân trước đây**: Công ty Cổ phần Phát triển Phần mềm UNESCO (ĐKKD 0310861633 – 18/05/2011) – Giám đốc và tác giả Ông Nguyễn Đình Thăng. **Tác giả phần mềm vẫn là Ông Nguyễn Đình Thăng.**
+- Trang `/ban-quyen/` làm lại: pháp nhân trước / nay, 4 giấy chứng nhận đăng ký quyền tác giả (1563/2011/QTG, 1583/2011/QTG, 230/2012/QTG, 248/2012/QTG) kèm ảnh, bảng thông tin doanh nghiệp, lịch sử sản phẩm.
+- Ảnh chứng nhận `public/chung-nhan/` (bản thường + bản lớn): đã che kín số CMND, địa chỉ cá nhân của tác giả; làm mờ thông tin khách hàng trên ảnh màn hình ERP.
+- Chân trang: © CÔNG TY TNHH PHẦN MỀM UNESCO · MST 0313057886 · Tác giả phần mềm. Trang Liên hệ, Giới thiệu cập nhật thông tin pháp lý.
+- PDF "Tính năng ưu việt": khung liên hệ trang 6 đổi tên công ty thành Công ty TNHH Phần mềm UNESCO, email unesco.corp@gmail.com, website www.unescosoft.com.
+
+## Phân tích tính năng & lộ trình 2026 – trang mới `/phan-tich-tinh-nang/`
+- Bảy bước một tháng kế toán: đã có / đang phát triển; 6 lợi thế khác biệt; bảng năng lực (Đã có – Một phần – Đang phát triển); văn bản pháp luật 2026; lộ trình 6 nhóm (T, H, C, D, E, F) và thứ tự làm; Trợ lý lập định mức nguyên vật liệu (đang phân tích).
+- Không nêu tên phần mềm của doanh nghiệp khác, không đăng tên / số liệu khách hàng; tài liệu phân tích nội bộ (PDF) không đăng lên website.
+- Dữ liệu: `apps/web/src/data/roadmap.ts`; bản quyền: `apps/web/src/data/copyright.ts`; pháp nhân: `apps/web/src/config/site.config.ts`.
+
+# v2.3 (09/10/2026): banner UNESCO XI + AI, tính năng mới đã hoàn thành, số liên hệ mới
+
+## Banner đầu trang chủ
+- Thiết kế lại theo mẫu: chữ HTML thật (logo UNESCO nền trong suốt, "UNESCO XI + AI", 2 dòng thông điệp, câu cam kết kiểm soát, 3 điểm bán hàng, 2 nút, liên hệ); màu chủ đạo website (xanh lá, xanh dương, vàng, xanh ngọc), chữ Inter.
+- Bên phải: **màn hình chính UNESCO AI** trong khung máy tính, 4 thẻ Hoá đơn điện tử / Sổ phụ ngân hàng / Giá thành / Thuế & Báo cáo, dải "Kế thừa giao diện quen thuộc" với 3 màn hình UNESCO đời cũ (UNESCO 2011, FRM.NET XII 2012, UNESCO XI).
+- Thành phần: `apps/web/src/components/HeroBanner.astro`; CSS khối "v2.3" trong `global.css`; ảnh `apps/web/public/banner/`.
+- Ảnh banner xuất riêng (không đưa lên web): 1920×768 và 768×900 JPG.
+
+## Tính năng mới đã hoàn thành
+- Trang `/phan-tich-tinh-nang/`: 6 nhóm tính năng (T, H, C, D, E, F) và Trợ lý lập định mức chuyển sang "Đã hoàn thành"; bảng năng lực, văn bản 2026, KPI 18 / 18. Menu: "Tính năng mới 2026".
+
+## Số liên hệ (thống nhất toàn website theo banner)
+- Kinh doanh – Zalo: 093 3456 567 · Hỗ trợ: 028 3755 5755 – 3755 4755 ext 103-105 (`apps/web/src/data/contact.ts`).
+- Cập nhật cả chân màn hình chính UNESCO AI (ảnh) và khung liên hệ PDF "Tính năng ưu việt".

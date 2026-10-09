@@ -1,0 +1,88 @@
+---
+import { url } from '../../utils/url';
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import Icon from '../../components/Icon.astro';
+import { analysisDate, roadmapKpis, lifecycle, edges, capabilities, statusLabel, complianceDone, complianceNext, roadmapGroups, roadmapRules, bomLevels, bomSteps, bomEngines, bomIndustries } from '../../data/roadmap';
+const tops = ['top-g', 'top-t', 'top-b', 'top-y'];
+---
+<ContentLayout title="Phân tích tính năng & tính năng mới UNESCO AI 2026" description="UNESCO AI trong vòng đời một tháng kế toán, lợi thế khác biệt, văn bản 2026 và 6 nhóm tính năng mới đã hoàn thành: tuân thủ, hoá đơn, công nợ, đóng sổ, trợ lý hỏi đáp, kế toán dịch vụ, cùng Trợ lý lập định mức." eyebrow={`Phân tích ngày ${analysisDate}`} display="PHÂN TÍCH TÍNH NĂNG |& TÍNH NĂNG MỚI 2026" subtitle="Đang đứng ở đâu – lợi thế gì – mới có gì" pills={['18 / 18 tiện ích đề xuất đã hoàn thành', '6 nhóm tính năng mới', 'Lõi AI chạy trên máy']}>
+
+<section class="section-sm surface"><div class="container">
+  <div class="kpi4">{roadmapKpis.map((k) => <div class={`k c-${k.c}`}><span class={`ic ${k.c}`}><Icon name={k.icon} /></span><b>{k.v}</b><small>{k.d}</small></div>)}</div>
+  <nav class="cat-nav" aria-label="Mục lục" style="margin:22px 0 0"><a href="#vong-doi">Vòng đời tháng</a><a href="#loi-the">Lợi thế</a><a href="#nang-luc">Bảng năng lực</a><a href="#tuan-thu">Văn bản 2026</a><a href="#tinh-nang-moi">Tính năng mới</a><a href="#dinh-muc">Trợ lý lập định mức</a></nav>
+</div></section>
+
+<section class="section" id="vong-doi"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">UNESCO AI đang đứng ở đâu</span><h2>Bảy bước của một tháng kế toán</h2></div><p>Bản GĐ151 – GĐ160 bổ sung điều hành nhiều bộ sổ, kiểm soát rủi ro và báo cáo cho chủ doanh nghiệp; các gói mới nhất hoàn thiện nốt từng bước.</p></div>
+  <ol class="life7">
+    {lifecycle.map((s, i) => (
+      <li>
+        <div class="life-h"><span class="n">{i + 1}</span><span class="ic sm g"><Icon name={s.icon} /></span><h3>{s.t}</h3></div>
+        <div class="life-c have"><span class="st co">Đã có</span><ul>{s.have.map((x) => <li>{x}</li>)}</ul></div>
+        <div class="life-c next"><span class="st moi">Mới hoàn thành</span><ul>{s.next.map((x) => <li>{x}</li>)}</ul></div>
+      </li>
+    ))}
+  </ol>
+</div></section>
+
+<section class="section surface-soft" id="loi-the"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Lợi thế khác biệt</span><h2>Vì sao chọn UNESCO AI</h2></div><p>Rút ra từ khảo sát thị trường phần mềm kế toán trong và ngoài nước tháng 10/2026.</p></div>
+  <div class="grid grid-3">{edges.map((e, i) => <div class={`card ${tops[i % 4]}`}><span class={`ic ${e.c}`} style="margin-bottom:14px"><Icon name={e.icon} /></span><h3>{e.t}</h3><p class="muted" style="margin:0">{e.d}</p></div>)}</div>
+</div></section>
+
+<section class="section" id="nang-luc"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Bảng năng lực</span><h2>Năng lực trong bản mới nhất</h2></div><p>Mọi năng lực dưới đây đã có trong phần mềm; “Mới hoàn thành” là tính năng vừa bổ sung.</p></div>
+  <div class="table-wrap" style="border:0"><table class="cap-table"><thead><tr><th>Năng lực</th><th>UNESCO AI</th><th>Ghi chú</th></tr></thead><tbody>
+    {capabilities.map((r) => <tr><td>{r.t}</td><td><span class={`st ${r.st}`}>{statusLabel[r.st]}</span></td><td>{r.note}</td></tr>)}
+  </tbody></table></div>
+</div></section>
+
+<section class="section surface" id="tuan-thu"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Tuân thủ</span><h2>Văn bản pháp luật 2026</h2></div><p>Tham số pháp luật đọc từ bộ tham số năm theo ngày hiệu lực; mẫu tờ khai học từ HTKK trên máy.</p></div>
+  <div class="info-cols">
+    <div class="col"><h3><span class="st co">Đã cập nhật</span></h3><ul class="law-list">{complianceDone.map((x) => <li><Icon name="check-circle" /><div><b>{x.t}</b><span>{x.d}</span></div></li>)}</ul></div>
+    <div class="col"><h3><span class="st moi">Mới hoàn thành</span></h3><ul class="law-list next">{complianceNext.map((x) => <li><Icon name="calendar-clock" /><div><b>{x.t}</b><span>{x.d}</span></div></li>)}</ul></div>
+  </div>
+</div></section>
+
+<section class="section" id="tinh-nang-moi"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Tính năng mới nhất</span><h2>Sáu nhóm tính năng mới – <span class="tg">đã hoàn thành</span></h2></div><p>Đã có trong bản mới nhất của UNESCO XI + AI. Mọi tính năng ghi sổ vẫn xem trước, sao lưu và hoàn tác được.</p></div>
+  <nav class="cat-nav" aria-label="Nhóm tính năng mới">{roadmapGroups.map((g) => <a href={`#${g.id}`}><span>{g.items.length}</span>{g.t}</a>)}</nav>
+  <div class="rm-grid">
+    {roadmapGroups.map((g) => (
+      <div class={`rm-group c-${g.c}`} id={g.id}>
+        <div class="rm-h"><span class="k">{g.k}</span><div><h3>{g.t}</h3><small>{g.sub}</small></div><span class="st moi">Đã hoàn thành</span></div>
+        <ul>{g.items.map((f) => <li><span class="code">{f.code}</span><div><b>{f.t}</b><p>{f.d}</p></div></li>)}</ul>
+      </div>
+    ))}
+  </div>
+  <h3 style="margin-top:36px">Nguyên tắc giữ nguyên cho mọi tính năng mới</h3>
+  <div class="rules3">{roadmapRules.map((r, i) => <div><span>{i + 1}</span>{r}</div>)}</div>
+</div></section>
+
+<section class="section surface-soft" id="dinh-muc"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Mới hoàn thành · AI Giá thành</span><h2>Trợ lý lập định mức nguyên vật liệu</h2></div><p>Cho công ty mới, sản phẩm mới: không gõ số lượng NVL từng dòng – trả lời vài câu hỏi, xem bảng AI đề xuất, sửa chỗ sai, bấm Ghi. AI chỉ đề xuất, người dùng xác nhận.</p></div>
+  <div class="table-wrap" style="border:0"><table class="src-table bom"><thead><tr><th>Mức</th><th>Tình huống</th><th>Có gì trong sổ</th><th>Cách AI lập định mức</th></tr></thead><tbody>
+    {bomLevels.map((l) => <tr><td>{l.k}</td><td>{l.t}</td><td>{l.have}</td><td>{l.how}</td></tr>)}
+  </tbody></table></div>
+  <h3 style="margin:34px 0 22px">Bảy bước của trợ lý</h3>
+  <ol class="steps10 s7 from1">{bomSteps.map((s) => <li><Icon name={s.icon} /><b>{s.t}</b><small>{s.d}</small></li>)}</ol>
+  <div class="split" style="margin-top:34px;align-items:start">
+    <div>
+      <h3>Nguồn suy luận và độ tin cậy nền</h3>
+      <ul class="conf-list">{bomEngines.map((e) => <li><span>{e.t}</span><span class="bar"><i style={`width:${e.p}%`}></i></span><b>{(e.p / 100).toFixed(2).replace('.', ',')}</b></li>)}</ul>
+      <p class="caption">Khi từ hai nguồn trở lên cho kết quả, bảng hiện khoảng (thấp nhất – cao nhất) và chọn trung vị làm đề xuất.</p>
+    </div>
+    <div>
+      <h3>Vòng học sau khi sản xuất thật</h3>
+      <ul class="checks"><li>Cuối tháng AI so xuất kho theo định mức với xuất kho thật, điện, tồn NVL.</li><li>Lệch trong ngưỡng (mặc định 5%) thì ghi nhận “định mức đúng”; lệch hơn thì đề xuất phiên bản tháng sau kèm lý do.</li><li>Không bao giờ tự sửa định mức đã ghi – người dùng bấm chấp nhận.</li><li>Tri thức ngành nội bộ chỉ giữ số tổng hợp ẩn danh, nằm trên máy, mặc định tắt.</li></ul>
+      <h3 style="margin-top:22px">Thư viện ngành</h3>
+      <p class="muted" style="margin:0 0 8px">Đợt đầu:</p>
+      <div class="ind-chips">{bomIndustries.first.map((x) => <span class="g">{x}</span>)}</div>
+      <p class="muted" style="margin:12px 0 8px">Đợt sau:</p>
+      <div class="ind-chips">{bomIndustries.next.map((x) => <span>{x}</span>)}</div>
+    </div>
+  </div>
+  <div class="actions" style="margin-top:30px"><a class="btn btn-primary" href={url('/ai-ke-toan/ai-gia-thanh/')}>AI Giá thành hiện có</a><a class="btn btn-secondary" href={url('/tinh-nang-ai/')}>Tổng hợp tính năng AI</a><a class="btn btn-secondary" href={url('/tinh-nang-uu-viet/')}>16 điểm ưu việt</a></div>
+</div></section>
+</ContentLayout>

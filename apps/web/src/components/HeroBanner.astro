@@ -1,0 +1,68 @@
+---
+/**
+ * BANNER ĐẦU TRANG CHỦ – UNESCO XI + AI (thiết kế lại theo mẫu 09/10/2026)
+ * Chữ là HTML thật; màu chủ đạo website (xanh lá, xanh dương, vàng, xanh ngọc).
+ * Ảnh: màn hình chính UNESCO AI (public/screenshots), màn hình UNESCO đời cũ và logo (public/banner).
+ * Nội dung liên hệ lấy từ src/data/contact.ts.
+ */
+import { url } from '../utils/url';
+import Icon from './Icon.astro';
+import { contact, telHref } from '../data/contact';
+interface Props { exportMode?: boolean }
+const { exportMode = false } = Astro.props;
+const tiles = [
+  { icon: 'file-text', t: 'Hoá đơn điện tử', c: 'g', href: '/ai-ke-toan/ai-hoa-don/' },
+  { icon: 'bank', t: 'Sổ phụ ngân hàng', c: 'b', href: '/ai-ke-toan/ai-so-phu-ngan-hang/' },
+  { icon: 'settings', t: 'Giá thành', c: 'y', href: '/ai-ke-toan/ai-gia-thanh/' },
+  { icon: 'bar-chart', t: 'Thuế & Báo cáo', c: 't', href: '/to-khai-bctc/' },
+];
+const legacy = [
+  { img: 'unesco-2011', t: 'UNESCO', y: '2011' },
+  { img: 'unesco-frm-net', t: 'UNESCO FRM.NET XII', y: '2012' },
+  { img: 'unesco-xi', t: 'UNESCO XI', y: 'Thế hệ trước' },
+];
+---
+<section class={`ub${exportMode ? ' ub-export' : ''}`} aria-labelledby="ub-title">
+  <span class="ub-bg" aria-hidden="true"></span>
+  <span class="stripes tr" aria-hidden="true"></span>
+  <div class="ub-wrap">
+    <div class="ub-copy">
+      <img class="ub-logo" src={url('/banner/logo-unesco.webp')} width="736" height="220" alt="UNESCO – Tri thức cộng đồng, Kết nối thành công!" fetchpriority="high" />
+      <span class="ub-pill">PHẦN MỀM KẾ TOÁN DOANH NGHIỆP</span>
+      <h1 id="ub-title" class="ub-title"><span class="xi">UNESCO XI</span><span class="plus">+</span><span class="ai">AI</span></h1>
+      <p class="ub-head"><span class="l1"><span class="g">AI hiểu việc kế toán</span> <span class="w">– làm nhanh phần việc kế toán</span></span><span class="l2">Kế toán <em>kiểm soát</em> và <em>xác nhận</em></span></p>
+      <div class="ub-trust"><span class="sh"><Icon name="shield-check" /></span><span>AI có thể nhanh, nhưng số liệu kế toán không được mất kiểm soát.</span></div>
+      <p class="ub-desc">Tự động hoá hoá đơn, sổ phụ ngân hàng, hạch toán, giá thành, thuế và báo cáo ngay trong phần mềm kế toán UNESCO.</p>
+      <ul class="ub-badges">
+        <li class="g"><span class="bi"><Icon name="lock" /></span>OFFLINE – dữ liệu bảo mật</li>
+        <li class="y"><span class="bi inf" aria-hidden="true">∞</span>Trả phí 1 lần – sử dụng mãi mãi</li>
+        <li class="b"><span class="bi"><Icon name="database" /></span>Không tốn chi phí hàng năm</li>
+      </ul>
+      <div class="ub-cta">
+        <a class="ub-btn dl" href={url('/download/')}><Icon name="download" />TẢI PHẦN MỀM</a>
+        <a class="ub-btn demo" href={url('/lien-he/#demo')}><Icon name="monitor" />ĐĂNG KÝ DEMO<span class="chev" aria-hidden="true">›</span></a>
+      </div>
+      <div class="ub-contact">
+        <span class="ci"><Icon name="phone" /><span>{contact.sales.label}: <a href={telHref(contact.sales.mobile)}>{contact.sales.mobile}</a></span></span>
+        <span class="ci"><Icon name="headset" /><span>{contact.support.label}: <a href={telHref(contact.support.phone)}>{contact.support.phone}</a> – <a href={telHref(contact.support.phone2)}>3755 4755</a> {contact.support.ext}</span></span>
+      </div>
+    </div>
+
+    <div class="ub-visual">
+      <div class="ub-device">
+        <div class="ub-screen"><img src={url('/screenshots/man-hinh-chinh-unesco-ai.webp')} width="1536" height="1024" alt="Màn hình chính phần mềm kế toán UNESCO XI + AI" fetchpriority="high" /></div>
+        <div class="ub-base" aria-hidden="true"></div>
+        <span class="ub-tag"><Icon name="sparkles" />Màn hình chính UNESCO XI + AI</span>
+      </div>
+      <ul class="ub-tiles">
+        {tiles.map((x) => <li class={`c-${x.c}`}><a href={url(x.href)}><span class="ti"><Icon name={x.icon} /></span><b>{x.t}</b><span class="ok" aria-hidden="true"><Icon name="check" /></span></a></li>)}
+      </ul>
+      <div class="ub-legacy">
+        <div class="ub-legacy-h"><b><span aria-hidden="true">»</span> Kế thừa giao diện quen thuộc</b><span>Từ các phiên bản UNESCO trước đến UNESCO XI + AI</span></div>
+        <div class="ub-legacy-row">
+          {legacy.map((x) => <figure><img src={url(`/banner/${x.img}.webp`)} width="560" height="350" alt={`Giao diện ${x.t} (${x.y})`} loading="lazy" decoding="async" /><figcaption><b>{x.t}</b><span>{x.y}</span></figcaption></figure>)}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

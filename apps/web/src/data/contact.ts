@@ -1,7 +1,7 @@
 /**
  * Thông tin liên hệ hiển thị trên website.
- * Nguồn: chân màn hình chính phần mềm UNESCO XI (Kinh doanh / Hỗ trợ sử dụng / Địa chỉ)
- * và src/config/site.config.ts (email, điện thoại). Sửa tại đây khi số điện thoại hoặc địa chỉ thay đổi.
+ * Theo banner UNESCO XI + AI (09/10/2026): Kinh doanh – Zalo 093 3456 567;
+ * Hỗ trợ 028 3755 5755 – 3755 4755 ext 103-105. Sửa tại đây khi số điện thoại hoặc địa chỉ thay đổi.
  */
 import { site, isPlaceholder } from '../config/site.config';
 
@@ -12,15 +12,16 @@ export const telHref = (phone: string) => `tel:${phone.replace(/[^\d+]/g, '')}`;
 
 export const contact = {
   sales: {
-    label: 'Kinh doanh',
+    label: 'Kinh doanh – Zalo',
     mobile: pick(site.company.mobile, '093 3456 567'),
-    phone: pick(site.company.phone, '028 3755 4755'),
-    ext: 'Ext 101–105',
   },
   support: {
-    label: 'Hỗ trợ sử dụng',
+    label: 'Hỗ trợ',
     phone: '028 3755 5755',
-    ext: 'Ext 106–113',
+    phone2: '028 3755 4755',
+    ext: 'ext 103-105',
+    /** Một dòng hiển thị: 028 3755 5755 – 3755 4755 ext 103-105 */
+    line: '028 3755 5755 – 3755 4755 ext 103-105',
   },
   zalo: pick(site.company.zalo, '093 3456 567'),
   email: pick(site.company.email, 'unesco.corp@gmail.com'),

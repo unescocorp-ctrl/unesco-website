@@ -2,9 +2,33 @@
 import { url } from '../../utils/url';
 import ContentLayout from '../../layouts/ContentLayout.astro';
 import Screenshot from '../../components/Screenshot.astro';
+import Icon from '../../components/Icon.astro';
 import { shots } from '../../data/screenshots';
+import { site } from '../../config/site.config';
+const co = site.company;
+const old = site.formerCompany;
+const cr = site.copyright;
 ---
-<ContentLayout title="Về UNESCO AI" description="Giới thiệu định hướng sản phẩm, nguyên tắc phát triển và thông tin đơn vị sở hữu/phát triển sau khi được xác minh." eyebrow="Về sản phẩm">
-<section class="section"><div class="container split"><div><span class="eyebrow">Định hướng</span><h2>Phần mềm kế toán lấy dữ liệu và khả năng kiểm soát làm trung tâm</h2><p class="lead">UNESCO AI được định vị như hệ thống kế toán có lớp hỗ trợ AI: giảm thao tác lặp lại nhưng vẫn giữ vai trò kiểm tra và quyết định nghiệp vụ của kế toán.</p><div class="feature-list"><div class="feature-row"><span class="check">1</span><div><strong>Không tự động hóa mù</strong><span>Đề xuất cần có dữ liệu tham chiếu và điểm duyệt.</span></div></div><div class="feature-row"><span class="check">2</span><div><strong>Không tách AI khỏi nghiệp vụ</strong><span>AI phục vụ hóa đơn, ngân hàng, công nợ, kho, giá thành và báo cáo.</span></div></div><div class="feature-row"><span class="check">3</span><div><strong>Không công bố thông tin chưa xác minh</strong><span>Pháp nhân, bản quyền, giá và số liệu thương mại chỉ công bố sau khi đối chiếu giấy tờ chính thức.</span></div></div></div></div><div><Screenshot shot={shots.mainScreen} /></div></div></section>
-<section class="section surface-soft"><div class="container grid grid-3"><a class="card" href={url('/ban-quyen/')}><h3>Bản quyền & chứng nhận</h3><p class="muted">Thông tin chỉ hiển thị sau khi đối chiếu giấy tờ chính thức.</p><strong class="link-arrow">Xem khu bản quyền</strong></a><a class="card" href={url('/release-notes/')}><h3>Lịch sử phiên bản</h3><p class="muted">Theo dõi thay đổi, bản phát hành và known issues.</p><strong class="link-arrow">Xem release notes</strong></a><a class="card" href={url('/lien-he/')}><h3>Liên hệ chính thức</h3><p class="muted">Kênh tư vấn, hỗ trợ và thông tin doanh nghiệp.</p><strong class="link-arrow">Liên hệ</strong></a></div></section>
+<ContentLayout title="Về UNESCO AI" description={`Giới thiệu định hướng sản phẩm UNESCO AI và đơn vị phát triển: ${co.legalName} (MST ${co.taxCode}); tác giả phần mềm ${cr.author}.`} eyebrow="Về sản phẩm">
+<section class="section"><div class="container split"><div><span class="eyebrow">Định hướng</span><h2>Phần mềm kế toán lấy dữ liệu và khả năng kiểm soát làm trung tâm</h2><p class="lead">UNESCO AI được định vị như hệ thống kế toán có lớp hỗ trợ AI: giảm thao tác lặp lại nhưng vẫn giữ vai trò kiểm tra và quyết định nghiệp vụ của kế toán.</p><div class="feature-list"><div class="feature-row"><span class="check">1</span><div><strong>Không tự động hóa mù</strong><span>Đề xuất cần có dữ liệu tham chiếu và điểm duyệt.</span></div></div><div class="feature-row"><span class="check">2</span><div><strong>Không tách AI khỏi nghiệp vụ</strong><span>AI phục vụ hóa đơn, ngân hàng, công nợ, kho, giá thành và báo cáo.</span></div></div><div class="feature-row"><span class="check">3</span><div><strong>Minh bạch pháp lý</strong><span>Pháp nhân, bản quyền và số liệu công bố theo giấy tờ chính thức và kết quả đo trên bộ sổ thật.</span></div></div></div></div><div><Screenshot shot={shots.mainScreen} /></div></div></section>
+
+<section class="section surface"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Đơn vị phát triển</span><h2>{co.legalName}</h2></div><p>Trước đây là {old.legalName} – Giám đốc và tác giả: {cr.author}. Nay pháp nhân chuyển sang {co.legalName}; tác giả phần mềm vẫn là {cr.author}.</p></div>
+  <div class="info-cols">
+    <div class="col">
+      <h3>Pháp nhân hiện nay</h3>
+      <div class="info-line b"><span class="ic"><Icon name="building" /></span><div><b>{co.legalName}</b><br/><span>{co.legalNameEn}</span></div></div>
+      <div class="info-line b"><span class="ic"><Icon name="file-text" /></span><div><span>Mã số doanh nghiệp / MST: <b>{co.taxCode}</b> · đăng ký lần đầu {co.firstRegistered}</span></div></div>
+      <div class="info-line b"><span class="ic"><Icon name="map-pin" /></span><div><span>Trụ sở chính: {co.registeredAddress}</span></div></div>
+    </div>
+    <div class="col">
+      <h3>Tác giả & bản quyền</h3>
+      <div class="info-line"><span class="ic"><Icon name="user-check" /></span><div><b>{cr.author}</b><br/><span>Tác giả phần mềm UNESCO</span></div></div>
+      <div class="info-line"><span class="ic"><Icon name="award" /></span><div><span>4 giấy chứng nhận đăng ký quyền tác giả 2011 – 2012 (Cục Bản quyền tác giả)</span></div></div>
+      <div class="info-line"><span class="ic"><Icon name="history" /></span><div><span>Pháp nhân trước đây: {old.legalName} (ĐKKD {old.businessRegistration})</span></div></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="section surface-soft"><div class="container grid grid-3"><a class="card" href={url('/ban-quyen/')}><h3>Bản quyền & pháp lý</h3><p class="muted">4 giấy chứng nhận quyền tác giả, tác giả {cr.author}, pháp nhân trước đây và hiện nay.</p><strong class="link-arrow">Xem bản quyền</strong></a><a class="card" href={url('/phan-tich-tinh-nang/')}><h3>Phân tích tính năng & tính năng mới 2026</h3><p class="muted">UNESCO AI đứng ở đâu, lợi thế khác biệt và 6 nhóm tính năng mới đã hoàn thành.</p><strong class="link-arrow">Xem phân tích</strong></a><a class="card" href={url('/lien-he/')}><h3>Liên hệ chính thức</h3><p class="muted">Kênh tư vấn, hỗ trợ và thông tin doanh nghiệp.</p><strong class="link-arrow">Liên hệ</strong></a></div></section>
 </ContentLayout>

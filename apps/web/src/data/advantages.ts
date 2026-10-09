@@ -1,7 +1,7 @@
 /**
  * TÍNH NĂNG ƯU VIỆT CỦA UNESCO AI
  * ------------------------------------------------------------------
- * Nguồn: tài liệu "Tính năng ưu việt của UNESCO AI" bản GĐ169 (09/10/2026) của Công ty Phát triển Phần mềm UNESCO.
+ * Nguồn: tài liệu "Tính năng ưu việt của UNESCO AI" bản GĐ169 (09/10/2026) của Công ty TNHH Phần mềm UNESCO.
  * Số liệu đo trên bộ sổ, hồ sơ thật (đã ẩn tên khách hàng) hoặc từ bộ kiểm thử đi kèm từng bản cập nhật.
  * Sắp xếp lại cho website: 16 điểm ưu việt chia 4 nhóm; 12 mục chi tiết; bảng nguồn số liệu.
  */
@@ -239,7 +239,7 @@ export const sources = [
 
 /** Tài liệu PDF tải về. */
 export const docs = [
-  { t: 'Tính năng ưu việt của UNESCO AI', d: '16 điểm ưu việt, số liệu đo thực tế và nguồn – 6 trang.', file: '/tai-lieu/tinh-nang-uu-viet-unesco-ai.pdf', size: '288 KB', icon: 'star' },
+  { t: 'Tính năng ưu việt của UNESCO AI', d: '16 điểm ưu việt, số liệu đo thực tế và nguồn – 6 trang.', file: '/tai-lieu/tinh-nang-uu-viet-unesco-ai.pdf', size: '330 KB', icon: 'star' },
   { t: 'Tổng hợp toàn bộ tính năng AI', d: '65 tính năng trong 11 nhóm, mở ở đâu, AI làm gì; phụ lục Có gì mới – 9 trang.', file: '/tai-lieu/tong-hop-tinh-nang-ai-unesco.pdf', size: '323 KB', icon: 'list-checks' },
   { t: 'Hướng dẫn sử dụng trực quan GĐ159 – GĐ168', d: '12 chức năng mới, mỗi chức năng một trang có hình đánh số – 15 trang.', file: '/tai-lieu/huong-dan-truc-quan-gd159-gd168.pdf', size: '2 MB', icon: 'book-open' },
 ];

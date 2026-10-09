@@ -17,23 +17,28 @@ export const site = {
   ).replace(/\/+$/, ''),
 
   company: {
-    legalName: 'Công ty Phát triển Phần mềm UNESCO',
+    // Theo Giấy chứng nhận đăng ký doanh nghiệp (công ty TNHH một thành viên),
+    // đăng ký thay đổi lần thứ 10 ngày 12/02/2026 – Phòng Đăng ký kinh doanh, Sở Tài chính TP. Hồ Chí Minh.
+    legalName: 'Công ty TNHH Phần mềm UNESCO',
+    legalNameEn: 'UNESCO SOFTWARE COMPANY LIMITED',
 
-    // Chưa có MST chính thức được xác nhận.
-    // KHÔNG dùng số 01234567890 trên ảnh demo.
-    taxCode: '{{TAX_CODE}}',
+    // Mã số doanh nghiệp (đồng thời là mã số thuế).
+    taxCode: '0313057886',
+    businessRegistration: '0313057886',
+    firstRegistered: '18/12/2014',
+    latestChange: 'Thay đổi lần thứ 10 – ngày 12/02/2026',
+    registrationAuthority: 'Phòng Đăng ký kinh doanh – Sở Tài chính TP. Hồ Chí Minh',
 
-    // Chưa có số đăng ký doanh nghiệp chính thức.
-    businessRegistration: '{{BUSINESS_REGISTRATION}}',
-
-    // Chưa xác nhận đây có phải địa chỉ đăng ký pháp lý trên GCNĐKDN hay không.
-    registeredAddress: '{{REGISTERED_ADDRESS}}',
+    // Trụ sở chính ghi trên giấy chứng nhận đăng ký doanh nghiệp.
+    registeredAddress: 'Số 8 Đường Số 17, Phường Bình Phú, Thành phố Hồ Chí Minh',
 
     // Địa chỉ liên hệ đang sử dụng trên tài liệu/giao diện UNESCO.
     contactAddress:
       '30 Đường số 50, Phường 10, Quận 6, Thành phố Hồ Chí Minh',
 
-    phone: '028 3755 4755',
+    // Hỗ trợ: 028 3755 5755 – 3755 4755 ext 103-105 (theo banner 09/10/2026).
+    phone: '028 3755 5755',
+    phone2: '028 3755 4755',
     mobile: '093 3456 567',
     zalo: '093 3456 567',
 
@@ -43,11 +48,24 @@ export const site = {
     supportEmail: 'unesco.corp@gmail.com'
   },
 
-  copyright: {
-    certNumber: '1563/2011',
-    certDate: '15/06/2011',
+  /** Pháp nhân trước đây – chủ sở hữu ghi trên 4 giấy chứng nhận đăng ký quyền tác giả 2011 – 2012. */
+  formerCompany: {
+    legalName: 'Công ty Cổ phần Phát triển Phần mềm UNESCO',
+    legalNameEn: 'Unesco Software Development Corporation',
+    businessRegistration: '0310861633',
+    registered: '18/05/2011',
+    address: '30 Đường số 50, Phường 10, Quận 6, TP. Hồ Chí Minh',
+    director: 'Ông Nguyễn Đình Thăng'
+  },
 
-    // Theo nội dung Giấy chứng nhận anh đã cung cấp trong phần giới thiệu.
+  copyright: {
+    // Tác giả các phần mềm UNESCO (không đổi khi đổi pháp nhân).
+    author: 'Ông Nguyễn Đình Thăng',
+    certNumber: '1563/2011/QTG',
+    certDate: '15/06/2011',
+    issuer: 'Cục Bản quyền tác giả – Bộ Văn hoá, Thể thao và Du lịch',
+
+    // Chủ sở hữu ghi trên giấy chứng nhận tại thời điểm cấp.
     owner: 'Công ty Cổ phần Phát triển Phần mềm UNESCO'
   },
 

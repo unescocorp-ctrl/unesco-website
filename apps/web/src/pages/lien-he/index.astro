@@ -15,7 +15,7 @@ const legal = [
   ['file-text', 'Điều khoản sử dụng', '/legal/terms/'],
   ['lock', 'Chính sách bảo mật', '/legal/privacy/'],
   ['wallet', 'Thanh toán', '/legal/payment/'],
-  ['award', 'Bản quyền & lịch sử', '/ban-quyen/'],
+  ['award', 'Bản quyền & pháp lý', '/ban-quyen/'],
   ['shield-check', 'An toàn & kiểm soát AI', '/an-toan-kiem-soat-ai/'],
 ];
 ---
@@ -35,8 +35,8 @@ const legal = [
     <div class="info-cols one">
       <div class="col">
         <h3>Thông tin liên hệ</h3>
-        <div class="info-line"><span class="ic"><Icon name="phone" /></span><div><b><a href={telHref(contact.sales.mobile)}>{contact.sales.mobile}</a></b><br/><span>Kinh doanh · <a href={telHref(contact.sales.phone)}>{contact.sales.phone}</a> ({contact.sales.ext})</span></div></div>
-        <div class="info-line"><span class="ic"><Icon name="headset" /></span><div><b><a href={telHref(contact.support.phone)}>{contact.support.phone}</a></b><br/><span>Hỗ trợ sử dụng ({contact.support.ext})</span></div></div>
+        <div class="info-line"><span class="ic"><Icon name="phone" /></span><div><b><a href={telHref(contact.sales.mobile)}>{contact.sales.mobile}</a></b><br/><span>{contact.sales.label}</span></div></div>
+        <div class="info-line"><span class="ic"><Icon name="headset" /></span><div><b><a href={telHref(contact.support.phone)}>{contact.support.phone}</a></b><br/><span>Hỗ trợ sử dụng · <a href={telHref(contact.support.phone2)}>{contact.support.phone2}</a> {contact.support.ext}</span></div></div>
         <div class="info-line"><span class="ic"><Icon name="chat" /></span><div><b><a href={zaloHref} target="_blank" rel="noopener">Zalo {contact.zalo}</a></b></div></div>
         <div class="info-line"><span class="ic"><Icon name="mail" /></span><div><b><a href={mailHref}>{contact.email}</a></b></div></div>
         <div class="info-line"><span class="ic"><Icon name="map-pin" /></span><div><span>{contact.address}</span><br/><a href={mapsHref} target="_blank" rel="noopener"><strong class="tg">Xem bản đồ →</strong></a></div></div>
@@ -44,12 +44,13 @@ const legal = [
       </div>
       <div class="col">
         <h3 class="tb">Thông tin pháp lý</h3>
-        <div class="info-line b"><span class="ic"><Icon name="building" /></span><div><b>{show(site.company.legalName, official)}</b><br/><span>Đơn vị phát triển</span></div></div>
-        <div class="info-line b"><span class="ic"><Icon name="file-text" /></span><div><span>Mã số thuế: {isPlaceholder(site.company.taxCode) ? official : site.company.taxCode}</span></div></div>
-        <div class="info-line b"><span class="ic"><Icon name="map-pin" /></span><div><span>Địa chỉ đăng ký: {show(site.company.registeredAddress, official)}</span></div></div>
+        <div class="info-line b"><span class="ic"><Icon name="building" /></span><div><b>{show(site.company.legalName, official)}</b><br/><span>{site.company.legalNameEn} · Đơn vị phát triển và cung cấp UNESCO AI</span></div></div>
+        <div class="info-line b"><span class="ic"><Icon name="file-text" /></span><div><span>Mã số doanh nghiệp / MST: <b>{isPlaceholder(site.company.taxCode) ? official : site.company.taxCode}</b><br/>Đăng ký lần đầu {site.company.firstRegistered} · {site.company.latestChange}</span></div></div>
+        <div class="info-line b"><span class="ic"><Icon name="map-pin" /></span><div><span>Trụ sở chính: {show(site.company.registeredAddress, official)}</span></div></div>
+        <div class="info-line b"><span class="ic"><Icon name="award" /></span><div><span>Tác giả phần mềm: <b>{site.copyright.author}</b></span></div></div>
       </div>
     </div>
-    <div class="callout y" style="margin-top:18px"><span class="ic"><Icon name="clipboard-check" /></span><div><h3>Thông tin pháp lý cần đối soát hồ sơ chính thức</h3><p>Mã số thuế và địa chỉ đăng ký chỉ công bố sau khi đối chiếu giấy chứng nhận đăng ký doanh nghiệp.</p></div></div>
+    <div class="callout b" style="margin-top:18px"><span class="ic"><Icon name="history" /></span><div><h3>Pháp nhân trước đây</h3><p>{site.formerCompany.legalName} (mã số {site.formerCompany.businessRegistration}) – chủ sở hữu ghi trên 4 giấy chứng nhận quyền tác giả 2011 – 2012. Nay pháp nhân là {site.company.legalName}; tác giả vẫn là {site.copyright.author}.</p><a class="tg" href={url('/ban-quyen/')}><strong>Xem bản quyền & pháp lý →</strong></a></div></div>
   </div>
 </div></div></section>
 
