@@ -1,5 +1,24 @@
 ---
 import { url } from '../../utils/url';
 import ContentLayout from '../../layouts/ContentLayout.astro';
+import { contact } from '../../data/contact';
+/** 12 câu hỏi thường gặp – theo phần mềm UNESCO AI bản GĐ178 (tài liệu "Đối chiếu website với UNESCO AI bản GĐ178"). */
+const faqs = [
+  ['Phần mềm có tự ghi sổ hay tự nộp tờ khai không?', 'Các báo cáo mới chỉ xem sổ. Ghi sổ hay đưa vào HTKK chỉ xảy ra khi kế toán bấm Ghi, Đồng ý hoặc Đưa vào HTKK (hoặc khi kế toán tự bật chế độ ghi tự động cho hoá đơn tin cậy từ 90 điểm). Ký và nộp trên eTax do kế toán thực hiện.'],
+  ['Đưa tờ khai vào HTKK như thế nào?', 'Xuất tờ khai (Excel hoặc XML), xem trước và so với kỳ trước, rồi bấm Đưa vào HTKK.'],
+  ['Có lập sổ và BCTC cho doanh nghiệp siêu nhỏ theo Thông tư 58/2026 không?', 'Có. Chọn trường hợp thuế theo Điều 5 – 8, phần mềm lập sổ S1, S2a – S2d, S3a – S3b, sổ tự chọn S4a – S4d và BCTC B01 / B02-DNSN từ chứng từ và số dư.'],
+  ['Hộ kinh doanh cần những sổ nào?', 'Theo Thông tư 152/2025/TT-BTC: S1a, S2a – S2e, S3a-HKD. Phần mềm lập S1a, S2a, S2b (và S2c – S2e, S3a ở chức năng In toàn bộ sổ).'],
+  ['Hộ kinh doanh doanh thu đến 1 tỷ đồng có phải khai 01/CNKD không?', 'Theo Nghị định 141/2026/NĐ-CP, doanh thu năm đến 1 tỷ đồng không nộp GTGT, TNCN; hộ ghi sổ S1a và gửi Thông báo doanh thu 01/TKN-CNKD trước 31/01. Trên 1 tỷ khai 01/CNKD theo quý. Nên đối chiếu văn bản gốc cho trường hợp cụ thể.'],
+  ['Làm sao biết tháng này khoá sổ được chưa?', 'Dùng Điểm sẵn sàng khoá sổ; phần mềm cũng luôn có bản sao lưu tự động.'],
+  ['Soát rủi ro hoá đơn kiểm những gì?', '7 nhóm R1 – R7, trong đó R6 (thời điểm ký số so với ngày lập hoá đơn) và R7 (danh sách doanh nghiệp rủi ro do cơ quan thuế công bố).'],
+  ['Chưa có định mức nguyên vật liệu thì lấy từ đâu?', 'Trợ lý lập định mức hỏi vài câu rồi đề xuất theo một trong 4 phương pháp: Sản phẩm tương tự, Cân bằng khối lượng, Tỷ lệ giá bán, Mẫu ngành; mỗi dòng có độ tin cậy xanh / vàng / đỏ.'],
+  ['Vì sao không thấy thẻ Kết chuyển cuối kỳ?', 'Thẻ này ẩn mặc định từ GĐ138. Việc kết chuyển làm ở menu Dữ liệu (Chứng từ kết chuyển, Kết chuyển số liệu, Khoá số liệu tháng). Muốn hiện thẻ, liên hệ bộ phận hỗ trợ.'],
+  ['Chữ trên màn hình AI bị cắt hoặc bị đè thì sao?', 'Từ GĐ176b chữ tự thu theo độ rộng cửa sổ. Nên mở cửa sổ AI rộng từ khoảng 1.000 điểm ảnh (đủ hàng thẻ); bảng Xuất báo cáo đủ chữ từ khoảng 1.380 điểm ảnh.'],
+  ['Cài bản cập nhật có mất tệp cũ không?', 'Không. Mỗi lần cài, gói cập nhật sao lưu các tệp sắp bị thay vào thư mục sao lưu để có thể trả lại bản cũ.'],
+  ['Gặp lỗi thì liên hệ ai?', `Gọi bộ phận hỗ trợ: ${contact.support.lineVi}; cho biết số bản GĐ đang cài và gửi ảnh màn hình lỗi.`],
+];
 ---
-<ContentLayout title="Câu hỏi thường gặp" description="Các câu hỏi về sản phẩm, AI, cài đặt, nâng cấp và hỗ trợ."><section class="section"><div class="container"><div class="grid grid-3"><a class="card" href={url('/download/')}><h3>Download</h3><p class="muted">Phiên bản và file cài đã xác minh.</p></a><a class="card" href={url('/release-notes/')}><h3>Release Notes</h3><p class="muted">Theo dõi thay đổi theo từng phiên bản.</p></a><a class="card" href={url('/lien-he/')}><h3>Liên hệ</h3><p class="muted">Gửi nhu cầu tư vấn hoặc hỗ trợ.</p></a></div></div></section></ContentLayout>
+<ContentLayout title="Câu hỏi thường gặp" description="Các câu hỏi về sản phẩm, AI, biểu mẫu 2026, cài đặt, nâng cấp và hỗ trợ."><section class="section"><div class="container">
+  <div class="faq">{faqs.map((q) => <details><summary>{q[0]}</summary><p>{q[1]}</p></details>)}</div>
+  <div class="grid grid-3" style="margin-top:32px"><a class="card" href={url('/download/')}><h3>Trung tâm tải về</h3><p class="muted">Nhận bộ cài qua điện thoại hoặc Zalo.</p></a><a class="card" href={url('/release-notes/')}><h3>Có gì mới</h3><p class="muted">Theo dõi thay đổi theo từng phiên bản.</p></a><a class="card" href={url('/lien-he/')}><h3>Liên hệ</h3><p class="muted">Gửi nhu cầu tư vấn hoặc hỗ trợ.</p></a></div>
+</div></section></ContentLayout>

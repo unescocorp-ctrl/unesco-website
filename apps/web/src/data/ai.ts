@@ -48,17 +48,17 @@ export const aiTabs: AiTab[] = [
     key: 'so-phu-ngan-hang', n: 4, icon: '🏦', ic: 'bank', title: 'Sổ phụ ngân hàng', shot: 'bank', video: 'm05-so-phu-ngan-hang',
     lead: 'Đưa sao kê vào phần mềm, AI đọc từng giao dịch, xếp nhóm, tìm đối tác và tài khoản đối ứng rồi lập phiếu báo có, báo nợ.',
     points: [
-      'Đọc file Excel, CSV, PDF có chữ của các ngân hàng phổ biến; ảnh và PDF scan chuyển sang Excel',
-      'Đối chiếu số tài khoản và chủ tài khoản với công ty đang mở; nhập lại file cũ không tạo dòng trùng',
+      'Đọc tệp Excel, CSV, PDF có chữ của các ngân hàng phổ biến; ảnh chụp và PDF dạng ảnh chuyển sang Excel',
+      'Đối chiếu số tài khoản và chủ tài khoản với công ty đang mở; nhập lại tệp cũ không tạo dòng trùng',
       'Nhóm nghiệp vụ: chuyển nội bộ, rút tiền mặt, thu khách hàng, trả nhà cung cấp, lương, vay…',
       'Công nợ kèm mã VietQR: thông báo công nợ cho từng khách, khách quét mã chuyển đúng số tiền, đúng nội dung',
     ],
   },
   {
     key: 'bang-luong', n: 5, icon: '👥', ic: 'users', title: 'Bảng lương & chứng từ khác', shot: 'payroll',
-    lead: 'Import bảng lương Excel, đối chiếu và lập chứng từ lương; chứng từ tạm ứng, thu – chi khác.',
+    lead: 'Nhập bảng lương Excel, đối chiếu và lập chứng từ lương; chứng từ tạm ứng, thu – chi khác.',
     points: [
-      'Import bảng lương, đối chiếu từng phần và xuất Excel đối chiếu lương',
+      'Nhập bảng lương, đối chiếu từng phần và xuất Excel đối chiếu lương',
       'Tạo nhân viên còn thiếu, chọn nhân viên cho dòng chưa có mã',
       'Lập chứng từ lương (334x/338x) từ bảng lương AI',
       'Chứng từ khác: lương, tạm ứng, thu – chi',
@@ -66,9 +66,9 @@ export const aiTabs: AiTab[] = [
   },
   {
     key: 'ket-chuyen-cuoi-ky', n: 6, icon: '🔄', ic: 'refresh', title: 'Kết chuyển cuối kỳ', shot: 'closing',
-    lead: 'Checklist cuối kỳ cho công cụ dụng cụ, chi phí trả trước 242, khấu hao TSCĐ — thấy ngay việc nào Đã làm, việc nào CHƯA.',
+    lead: 'Danh sách việc cuối kỳ cho công cụ dụng cụ, chi phí trả trước 242, khấu hao TSCĐ — thấy ngay việc nào đã làm, việc nào chưa làm.',
     points: [
-      'Lưới checklist theo tháng kèm số tiền từng việc',
+      'Bảng việc cuối kỳ theo tháng kèm số tiền từng việc',
       'Chi tiết hoá đơn CCDC / 242 / TSCĐ: đã ghi sổ hay chưa, chứng từ số mấy',
       'Hoá đơn có TSCĐ, CCDC: gợi ý loại, số năm, số kỳ phân bổ trước khi lập chứng từ',
       'Thực hiện tất cả, xuất Excel sổ chi tiết',
@@ -78,7 +78,7 @@ export const aiTabs: AiTab[] = [
     key: 'bao-cao-nhat-ky', n: 7, icon: '📊', ic: 'bar-chart', title: 'Báo cáo & nhật ký', shot: 'reports', video: 'm06-bao-cao-nhat-ky',
     lead: 'Gom việc cuối kỳ: tờ khai thuế, báo cáo tài chính, sổ sách, kiểm tra trước khoá sổ và nhật ký những gì AI đã làm.',
     points: [
-      'Xuất 01/GTGT: xem trước từng chỉ tiêu, cảnh báo lệch với sổ, kết xuất XML nhập vào HTKK',
+      'Xuất 01/GTGT: xem trước từng chỉ tiêu, cảnh báo lệch với sổ, xuất tệp XML để nhập vào HTKK',
       'Báo cáo tài chính B01, B02, B03, B09; quyết toán TNDN 03/TNDN và XML HTKK BCTC',
       'Kiểm tra khoá sổ: hơn 20 phép kiểm tra, kết quả Đạt/Lỗi/Cảnh báo kèm cách xử lý',
       'Các lô AI đã lập (huỷ cả lô khi lập sai) và nhật ký 30 ngày gần nhất',
@@ -89,7 +89,7 @@ export const aiTabs: AiTab[] = [
     lead: 'Tải dữ liệu từ Cổng dịch vụ công Thuế về phần mềm để tra cứu và đối chiếu — chỉ tra cứu, không nộp hay ký thay.',
     points: [
       'Tra cứu thông báo, giấy nộp tiền, hồ sơ khai thuế đã nộp, nghĩa vụ thuế',
-      'Mở tệp đính kèm của thông báo ngay trong phần mềm',
+      'Mở văn bản đính kèm của thông báo ngay trong phần mềm',
       'Lấy bảng đang mở trên cổng, công cụ tự lật trang',
       'Đối chiếu nộp thuế với sổ phụ ngân hàng',
     ],
@@ -115,22 +115,22 @@ export const aiCounters = [
 
 /** Công cụ tải hoá đơn hàng loạt (Module 02). */
 export const invoiceDownload = [
-  { t: 'Đăng nhập an toàn', d: 'Tự gõ mã số thuế, mật khẩu, captcha; công cụ không lưu mật khẩu và chỉ tải khi tài khoản cùng MST với bộ sổ đang mở.' },
+  { t: 'Đăng nhập an toàn', d: 'Tự gõ mã số thuế, mật khẩu, mã xác nhận; công cụ không lưu mật khẩu và chỉ tải khi tài khoản cùng MST với bộ sổ đang mở.' },
   { t: 'Đồng bộ cả kỳ', d: 'Lấy cả mua vào và bán ra theo tháng hoặc quý; kỳ dài được chia từng tháng rồi gộp lại.' },
   { t: 'Hoá đơn máy tính tiền', d: 'Tra cứu cả hoá đơn điện tử và hoá đơn có mã khởi tạo từ máy tính tiền.' },
-  { t: 'Tải XML, PDF, Excel', d: 'XML là bản gốc để kê khai, PDF để lưu trữ; hoá đơn đã có thì bỏ qua, lỗi mạng tự thử lại.' },
-  { t: 'Gộp hoá đơn bán lẻ', d: 'Gộp hoá đơn bán cho người không có MST theo ngày, vài ngày hoặc tuần thành chứng từ bảng kê BKBL.' },
+  { t: 'Tải hoá đơn gốc (XML), PDF, Excel', d: 'XML là bản gốc để kê khai, PDF để lưu trữ; hoá đơn đã có thì bỏ qua, lỗi mạng tự thử lại.' },
+  { t: 'Gộp hoá đơn bán lẻ', d: 'Gộp hoá đơn bán cho người không có MST theo ngày, vài ngày hoặc tuần thành chứng từ bảng kê bán lẻ (BKBL).' },
   { t: 'Định khoản AI – Bước 5', d: 'Xem tài khoản Nợ/Có, thuế, cách thanh toán của từng hoá đơn; sửa, lưu và xuất Excel để soát trước khi lập.' },
 ];
 
-/** Hộp Import sổ phụ – 6 cách nhập. */
+/** Hộp nhập sổ phụ (nút Import trên thẻ Sổ phụ ngân hàng) – 6 cách nhập. */
 export const bankImport = [
-  'Một file sổ phụ Excel, CSV hoặc PDF có chữ',
-  'Cả thư mục nhiều file',
-  'Ảnh hoặc PDF scan chuyển thành file Excel sổ phụ tô màu để kiểm tra',
+  'Một tệp sổ phụ: bảng Excel, tệp văn bản (CSV) hoặc PDF có chữ',
+  'Cả thư mục nhiều tệp',
+  'Ảnh chụp hoặc PDF dạng ảnh chuyển thành tệp Excel sổ phụ tô màu để kiểm tra',
   'Dịch nội dung không dấu sang tiếng Việt có dấu',
   'Cài đặt / kiểm tra Google Document AI (khoá cài sẵn, đã mã hoá)',
-  'Chép Tesseract để đọc ảnh không cần Internet trên máy khác',
+  'Chép công cụ đọc ảnh Tesseract sang máy khác (không cần mạng)',
 ];
 
 /** Giá thành có AI (Module 07). */
@@ -157,16 +157,16 @@ export const assistant = [
   { t: 'Việc nên làm tiếp', d: 'Đọc số liệu của bộ sổ và liệt kê việc cần làm kèm nút phải bấm.' },
   { t: 'Đang xem', d: 'Rê chuột lên nút hay ô nào, trợ lý giải thích ngay: làm gì, khi nào dùng, cần lưu ý gì.' },
   { t: 'Hơn 1.600 mục soạn sẵn', d: 'F1 ở mọi màn hình mở đúng mục; bấm ? rồi bấm nút để xem hướng dẫn thay vì chạy; dùng được khi không có Internet.' },
-  { t: 'Hỏi bằng tiếng Việt', d: 'Tuỳ chọn, cần khoá Claude API: gõ câu hỏi như “huỷ chứng từ đã lập thế nào?” – chỉ gửi câu hỏi, mục hướng dẫn liên quan và vài số đếm.' },
+  { t: 'Hỏi bằng tiếng Việt', d: 'Tuỳ chọn, cần khoá dịch vụ AI bên ngoài: gõ câu hỏi như “huỷ chứng từ đã lập thế nào?” – chỉ gửi câu hỏi, mục hướng dẫn liên quan và vài số đếm.' },
   { t: 'Chỉ hướng dẫn', d: 'Trợ lý không tự bấm nút hay ghi sổ thay kế toán.' },
 ];
 
 /** Kích hoạt AI (Module 12). */
 export const activation = [
-  'Một mã kích hoạt dùng cho mọi tính năng AI: màn hình AI, chuyển PDF sang Excel, trích xuất sổ phụ, Cân đối AI, giá thành theo đối tượng, Tờ khai HQ, Import Excel',
+  'Một mã kích hoạt dùng cho mọi tính năng AI: màn hình AI, chuyển PDF sang Excel, trích xuất sổ phụ, Cân đối AI, giá thành theo đối tượng, tờ khai hải quan, nhập hoá đơn từ bảng kê Excel',
   'Phần kế toán UNESCO XI vẫn dùng bình thường, không cần mã',
-  'Mỗi trang ảnh hoặc PDF scan chuyển sang Excel trừ vào số trang của mã; tệp Excel và CSV không tính',
-  'Mã cấp theo gói 1, 3, 6 tháng, 1, 2 năm hoặc vĩnh viễn, kèm số công ty tính theo mã số thuế',
+  'Mỗi trang ảnh chụp hoặc PDF dạng ảnh chuyển sang Excel trừ vào số trang của mã; tệp Excel và CSV không tính',
+  'Mã cấp theo gói 1, 3, 6 tháng, 1, 2 năm hoặc vĩnh viễn, kèm số lượng công ty được tính theo mã số thuế',
   'Khoá AI 3 chế độ: đã kích hoạt / dùng thử 15 ngày / chỉ xem; mã yêu cầu riêng từng máy',
   'Kích hoạt không cần Internet; còn 7 ngày phần mềm nhắc gia hạn',
 ];
@@ -186,7 +186,7 @@ export const aiSafety = {
     'Đề xuất mã, tài khoản, định khoản kèm điểm tin cậy và nguồn ghép',
     'Mở chứng từ điền sẵn để kế toán xem trước rồi bấm Ghi',
     'Ghi nhớ cách kế toán sửa để lần sau gợi ý đúng hơn',
-    'Ghi nhật ký mọi lần tải, nhập, phân tích, kết xuất',
+    'Ghi nhật ký mọi lần tải, nhập, phân tích, xuất tệp',
   ],
   forbidden: [
     'Ghi sổ khi kế toán chưa đồng ý (Tự động ghi chỉ chạy khi được bật, với hoá đơn tin cậy từ 90 điểm)',

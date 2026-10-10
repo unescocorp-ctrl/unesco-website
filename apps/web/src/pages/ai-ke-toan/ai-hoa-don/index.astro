@@ -8,7 +8,7 @@ import { shots } from '../../../data/screenshots';
 import { aiCounters } from '../../../data/ai';
 import { videoBySlug } from '../../../data/videos';
 const flow = [
-  ['cloud-upload', 'Cổng HĐĐT', 'Tải XML mua vào – bán ra từ Cơ quan Thuế'],
+  ['cloud-upload', 'Cổng HĐĐT', 'Tải hoá đơn gốc (XML) mua vào – bán ra từ Cơ quan Thuế'],
   ['file-search', 'Tải & phân tích', 'AI đọc dữ liệu, kiểm tra, chấm điểm tin cậy'],
   ['list-checks', 'Phân loại & trạng thái', 'Mọi hoá đơn vào 4 ô kiểm soát'],
   ['network', 'Tạo mã KH/NCC/VTHH', 'Gợi ý mã còn thiếu theo quy tắc bộ sổ'],
@@ -21,19 +21,19 @@ const feats = [
   ['cart', 'Mua vào', 'Tải và phân tích hoá đơn mua vào; AI ghép mã vật tư, nhà cung cấp, tài khoản.'],
   ['send', 'Bán ra', 'Tải hoá đơn bán ra, ghép khách hàng và mã hàng, lập chứng từ bán hàng.'],
   ['calculator', 'Máy tính tiền', 'Tra cứu cả hoá đơn có mã khởi tạo từ máy tính tiền; gộp hoá đơn bán lẻ theo ngày, vài ngày hoặc tuần.'],
-  ['file-xml', 'Xem XML', 'XML là bản gốc để kê khai; xem nhanh nội dung hoá đơn ngay trên phần mềm.'],
+  ['file-xml', 'Xem hoá đơn gốc (XML)', 'Tệp XML là bản gốc để kê khai; xem nhanh nội dung hoá đơn ngay trên phần mềm.'],
   ['paperclip', 'Gắn chứng từ có sẵn', 'Gắn hoá đơn với chứng từ đã lập (nhập kho, phiếu chi…) thay vì tạo chứng từ trùng.'],
   ['refresh', 'Hoá đơn thay thế / điều chỉnh', 'Kiểm tra trạng thái trên cơ quan thuế; hoá đơn huỷ, thay thế, điều chỉnh vào ô Không xử lý.'],
   ['wallet', 'Phiếu chi / UNC', 'Lập phiếu chi / uỷ nhiệm chi từ hoá đơn; bán hàng tồn kho tự sinh giá vốn; vừa hàng vừa dịch vụ vẫn có đường đi.'],
-  ['calendar-clock', 'Cả năm tự chia tháng, hẹn giờ tải', 'Chọn cả năm là tự chia theo tháng; hẹn giờ tải theo lịch Windows; mỗi mã số thuế một hồ sơ Chrome riêng.'],
+  ['calendar-clock', 'Cả năm tự chia tháng, hẹn giờ tải', 'Chọn cả năm là tự chia theo tháng; hẹn giờ tải tự động; mỗi mã số thuế một cửa sổ trình duyệt riêng.'],
 ];
 const ctrl = [
   ['star', 'Điểm tin cậy & nút “Vì sao?”', 'Giải thích căn cứ AI từng hoá đơn: điểm từng dòng, nguồn ghép, đối tượng, ngưỡng; lọc hoá đơn tin cậy thấp; báo cáo “AI đã làm gì tháng này”.', 'g'],
   ['receipt', 'Hoá đơn chi phí không sinh mã rác', 'Ăn uống, xăng dầu, dịch vụ được chấm điểm theo cả hoá đơn – từ 60 điểm hạch toán thẳng chi phí.', 't'],
   ['file-check', 'Quy tắc hạch toán theo màn hình nhập', 'Chỉ chuyển vào sổ khi tài khoản đúng màn hình nhập (15x, 511, chi phí) và đúng tháng hoá đơn; sai thì Cần xem lại kèm lý do.', 'b'],
-  ['scale', 'Đối chiếu HĐĐT', 'Đối chiếu từng hoá đơn đã tải với chứng từ và bảng kê thuế trong sổ; chỉ đọc sổ, lập Excel.', 'y'],
+  ['scale', 'Đối chiếu HĐĐT', 'Đối chiếu từng hoá đơn đã tải với chứng từ và bảng kê thuế trong sổ; chỉ xem sổ, không sửa, lập Excel.', 'y'],
   ['alert', 'Soát rủi ro hoá đơn trước kỳ khai', '5 nhóm rủi ro: thanh toán từ 5 triệu; huỷ / thay thế / trùng / lệch; người bán; mã CQT; sổ có mà CQT không – chỉ đánh dấu.', 'g'],
-  ['shield-lock', 'Chống trùng, huỷ cả lô', 'Hoá đơn nhận theo khoá MST – mẫu số – ký hiệu – số; mọi lô AI ghi đều có nhật ký và huỷ được cả lô.', 'b'],
+  ['shield-lock', 'Chống trùng, huỷ cả lô', 'Hoá đơn nhận theo tổ hợp MST, mẫu số, ký hiệu và số hoá đơn; mọi lô AI ghi đều có nhật ký và huỷ được cả lô.', 'b'],
 ];
 const vids = ['m02-tai-hoa-don', 'm03-danh-sach-hoa-don', 'm04-tu-dong-xu-ly'].map((s) => videoBySlug(s)!);
 ---
@@ -60,11 +60,11 @@ const vids = ['m02-tai-hoa-don', 'm03-danh-sach-hoa-don', 'm04-tu-dong-xu-ly'].m
 <section class="section surface"><div class="container">
   <div class="section-head"><div><span class="eyebrow">Kiểm soát</span><h2>Biết vì sao AI đề xuất – soát rủi ro trước kỳ khai</h2></div><p>Mỗi đề xuất có căn cứ; chỗ nào không chắc thì hỏi người.</p></div>
   <div class="grid grid-3">{ctrl.map((c) => <div class={`card top-${c[3]}`}><span class={`ic ${c[3]}`} style="margin-bottom:14px"><Icon name={c[0]} /></span><h3>{c[1]}</h3><p class="muted" style="margin:0">{c[2]}</p></div>)}</div>
-  <div class="metrics" style="margin-top:24px"><div class="metric-box"><b>1,7 giây</b><small>phân tích 59 hoá đơn mua (86 dòng) trên bộ sổ thật</small></div><div class="metric-box"><b>~1 giây</b><small>mở màn hình AI (0,6 – 1,0 giây sau tối ưu)</small></div><div class="metric-box"><b>3.823 / 3.823</b><small>dòng bán ra mang mã hàng ghép đúng mã ngay</small></div><div class="metric-box"><b>61 lần dò</b><small>cho 1.110 dòng bán ra nhờ nhớ kết quả theo tên hàng</small></div></div>
+  <div class="metrics" style="margin-top:24px"><div class="metric-box"><b>1,7 giây</b><small>phân tích 59 hoá đơn mua (86 dòng) trên bộ sổ thật</small></div><div class="metric-box"><b>~1 giây</b><small>mở màn hình AI (0,6 – 1,0 giây sau khi cải thiện tốc độ)</small></div><div class="metric-box"><b>3.823 / 3.823</b><small>dòng bán ra mang mã hàng ghép đúng mã ngay</small></div><div class="metric-box"><b>61 lần tra cứu</b><small>cho 1.110 dòng bán ra nhờ nhớ kết quả theo tên hàng</small></div></div>
 </div></section>
 
 <section class="section surface-soft"><div class="container">
-  <div class="section-head"><div><span class="eyebrow">Tải hoá đơn hàng loạt</span><h2>Từ cổng thuế vào phần mềm trong vài bước</h2></div><p>Công cụ chạy trên Chrome: bạn tự đăng nhập, công cụ không lưu mật khẩu và chỉ tải khi tài khoản cùng mã số thuế với bộ sổ đang mở.</p></div>
+  <div class="section-head"><div><span class="eyebrow">Tải hoá đơn hàng loạt</span><h2>Từ cổng thuế vào phần mềm trong vài bước</h2></div><p>Công cụ chạy trên trình duyệt Chrome: bạn tự đăng nhập, công cụ không lưu mật khẩu và chỉ tải khi tài khoản cùng mã số thuế với bộ sổ đang mở.</p></div>
   <div class="gallery g3"><Screenshot shot={shots.bulkDownload} /><Screenshot shot={shots.retailSummary} /><Screenshot shot={shots.downloadResult} /></div>
 </div></section>
 

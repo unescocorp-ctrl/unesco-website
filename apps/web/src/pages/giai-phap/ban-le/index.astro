@@ -1,9 +1,9 @@
 ---
 import { url } from '../../../utils/url';
 import ContentLayout from '../../../layouts/ContentLayout.astro';
-const cards = [["Doanh thu theo ngày", "Tổng hợp và đối chiếu luồng doanh thu.", "#"], ["Hàng hóa", "Theo dõi dữ liệu hàng bán liên quan.", "#"], ["Ngân hàng", "Đối chiếu các dòng tiền phát sinh.", "#"]];
+const cards = [["Doanh thu theo ngày", "Gộp hoá đơn máy tính tiền theo ngày, vài ngày hoặc tuần thành một chứng từ bảng kê bán lẻ.", "#"], ["Hàng hóa", "Ghép mã hàng trên hoá đơn bán ra với danh mục vật tư; bán hàng tồn kho tự sinh giá vốn.", "#"], ["Ngân hàng", "Đọc sao kê, nhận tiền khách chuyển qua mã VietQR và khớp đúng công nợ.", "#"]];
 ---
 <ContentLayout title="Giải pháp kế toán cho bán lẻ" description="Hỗ trợ doanh thu, hóa đơn và khối lượng giao dịch lớn theo ngày.">
 <section class="section"><div class="container"><div class="grid grid-3">{cards.map(c => c[2] === "#" ? <div class="card"><h3>{c[0]}</h3><p class="muted">{c[1]}</p></div> : <a class="card" href={url(c[2])}><h3>{c[0]}</h3><p class="muted">{c[1]}</p><strong style="color:var(--primary)">Xem thêm →</strong></a>)}</div></div></section>
-<section class="section surface"><div class="container"><div class="notice"><strong>Nguyên tắc kiểm soát:</strong> nội dung website chỉ mô tả tính năng đã được công bố theo phiên bản; AI tạo phân tích/gợi ý và người dùng kiểm tra trước các nghiệp vụ cần phê duyệt.</div><div class="actions" style="margin-top:24px"><a class="btn btn-primary" href={url('/lien-he/#demo')}>ĐĂNG KÝ XEM DEMO</a><a class="btn btn-secondary" href={url('/lien-he/')}>NHẬN TƯ VẤN</a></div></div></section>
+<section class="section surface"><div class="container"><div class="notice"><strong>Nguyên tắc kiểm soát:</strong> trang này chỉ nêu tính năng đã có trong bản phần mềm hiện hành. AI đưa ra phân tích và gợi ý; kế toán kiểm tra rồi mới duyệt ghi sổ.</div><div class="actions" style="margin-top:24px"><a class="btn btn-primary" href={url('/lien-he/#demo')}>ĐĂNG KÝ XEM DEMO</a><a class="btn btn-secondary" href={url('/lien-he/')}>NHẬN TƯ VẤN</a></div></div></section>
 </ContentLayout>

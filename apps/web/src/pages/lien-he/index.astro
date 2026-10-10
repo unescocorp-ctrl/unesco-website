@@ -19,7 +19,7 @@ const legal = [
   ['shield-check', 'An toàn & kiểm soát AI', '/an-toan-kiem-soat-ai/'],
 ];
 ---
-<ContentLayout title="Liên hệ – Hỗ trợ – Pháp lý" description="Liên hệ bộ phận kinh doanh, hỗ trợ sử dụng UNESCO AI; đăng ký demo, nhận báo giá; chính sách bảo vệ dữ liệu, hoàn trả, giao nhận, bảo hành và tiếp nhận khiếu nại." eyebrow="Báo cáo năng lực kế toán AI" display="CONTACT / SUPPORT / |LEGAL" subtitle="Liên hệ – Hỗ trợ – Thông tin pháp lý" pills={[]}>
+<ContentLayout title="Liên hệ – Hỗ trợ – Pháp lý" description="Liên hệ bộ phận kinh doanh, hỗ trợ sử dụng UNESCO AI; đăng ký demo, nhận báo giá; chính sách bảo vệ dữ liệu, hoàn trả, giao nhận, bảo hành và tiếp nhận khiếu nại." eyebrow="Liên hệ" display="LIÊN HỆ · HỖ TRỢ |· PHÁP LÝ" subtitle="Liên hệ – Hỗ trợ – Thông tin pháp lý" pills={[]}>
 
 <section class="section"><div class="container">
   <div class="csl">
@@ -36,7 +36,7 @@ const legal = [
       <div class="col">
         <h3>Thông tin liên hệ</h3>
         <div class="info-line"><span class="ic"><Icon name="phone" /></span><div><b><a href={telHref(contact.sales.mobile)}>{contact.sales.mobile}</a></b><br/><span>{contact.sales.label}</span></div></div>
-        <div class="info-line"><span class="ic"><Icon name="headset" /></span><div><b><a href={telHref(contact.support.phone)}>{contact.support.phone}</a></b><br/><span>Hỗ trợ sử dụng · <a href={telHref(contact.support.phone2)}>{contact.support.phone2}</a> {contact.support.ext}</span></div></div>
+        <div class="info-line"><span class="ic"><Icon name="headset" /></span><div><b><a href={telHref(contact.support.phone)}>{contact.support.phone}</a></b><br/><span>Hỗ trợ sử dụng · <a href={telHref(contact.support.phone2)}>{contact.support.phone2}</a> ({contact.support.extVi})</span></div></div>
         <div class="info-line"><span class="ic"><Icon name="chat" /></span><div><b><a href={zaloHref} target="_blank" rel="noopener">Zalo {contact.zalo}</a></b></div></div>
         <div class="info-line"><span class="ic"><Icon name="mail" /></span><div><b><a href={mailHref}>{contact.email}</a></b></div></div>
         <div class="info-line"><span class="ic"><Icon name="map-pin" /></span><div><span>{contact.address}</span><br/><a href={mapsHref} target="_blank" rel="noopener"><strong class="tg">Xem bản đồ →</strong></a></div></div>

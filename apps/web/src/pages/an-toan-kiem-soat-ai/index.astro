@@ -11,15 +11,15 @@ const controls = [
   ['star', 'Điểm tin cậy cho từng dòng', 'Điểm càng cao AI càng chắc; dòng điểm thấp được đưa vào ô Cần xem lại.', 'g'],
   ['eye', 'Xem trước rồi mới ghi', 'Chứng từ AI lập mở ra điền sẵn trên màn hình quen thuộc; kế toán kiểm tra rồi bấm Ghi.', 'b'],
   ['undo', 'Huỷ cả lô khi lập sai', 'Mỗi lần AI lập chứng từ là một lô; huỷ được ở thẻ Báo cáo & nhật ký.', 't'],
-  ['history', 'Nhật ký 30 ngày', 'Mọi lần tải, nhập, phân tích, kết xuất đều được ghi lại để tra cứu.', 'y'],
-  ['lock', 'Không lưu mật khẩu cổng thuế', 'Kế toán tự gõ mã số thuế, mật khẩu, captcha khi tải hoá đơn.', 'g'],
-  ['building', 'Đúng công ty, không trùng', 'Chỉ tải hoá đơn, nhập sổ phụ khi khớp mã số thuế, tài khoản của bộ sổ đang mở; hoá đơn nhận theo khoá MST – mẫu số – ký hiệu – số.', 'b'],
-  ['database', 'Sao lưu tự động', 'Sao lưu bộ sổ mỗi ngày và trước việc lớn (khoá sổ, gộp mã, sửa mã trả hộ), giữ 7 ngày + 12 bản cuối tháng; kiểm toàn vẹn nhanh.', 't'],
-  ['key', 'Cập nhật có chữ ký số', 'Kênh cập nhật có chữ ký số; kiểm từng tệp, sao lưu trước khi chép; lỗi giữa chừng thì khôi phục.', 'y'],
+  ['history', 'Nhật ký 30 ngày', 'Mọi lần tải, nhập, phân tích, xuất tệp đều được ghi lại để tra cứu.', 'y'],
+  ['lock', 'Không lưu mật khẩu cổng thuế', 'Kế toán tự gõ mã số thuế, mật khẩu, mã xác nhận khi tải hoá đơn.', 'g'],
+  ['building', 'Đúng công ty, không trùng', 'Chỉ tải hoá đơn, nhập sổ phụ khi khớp mã số thuế, tài khoản của bộ sổ đang mở; hoá đơn nhận theo tổ hợp MST, mẫu số, ký hiệu và số hoá đơn.', 'b'],
+  ['database', 'Sao lưu tự động', 'Sao lưu bộ sổ mỗi ngày và trước việc lớn (khoá sổ, gộp mã, sửa mã trả hộ), giữ 7 ngày + 12 bản cuối tháng; kiểm tra dữ liệu nhanh.', 't'],
+  ['key', 'Cập nhật có chữ ký số', 'Nguồn cập nhật có chữ ký số; kiểm từng tệp, sao lưu trước khi chép; lỗi giữa chừng thì khôi phục.', 'y'],
   ['clipboard-check', 'Hơn 18.000 phép kiểm mỗi gói', 'Mỗi gói cập nhật chạy lại hơn 18.000 phép kiểm tự động trước khi giao; nhật ký che mật khẩu, số tài khoản chỉ ghi 4 số cuối.', 'g'],
 ];
 ---
-<ContentLayout title="An toàn & kiểm soát AI trong kế toán" description="Ranh giới rõ ràng giữa AI và sổ sách kế toán: AI đọc dữ liệu, ghép mã, đề xuất tài khoản, lập chứng từ để duyệt, đối chiếu và báo lệch; không vượt captcha, không lưu mật khẩu, không ký hay nộp thay, không tự sửa chứng từ nhập tay." eyebrow="Báo cáo ứng dụng AI trong kế toán" display="AN TOÀN & |KIỂM SOÁT AI" subtitle="AI chuẩn bị – kế toán quyết định. Có nhật ký – có thể lùi." heroShot={shots.reports}>
+<ContentLayout title="An toàn & kiểm soát AI trong kế toán" description="Ranh giới rõ ràng giữa AI và sổ sách kế toán: AI đọc dữ liệu, ghép mã, đề xuất tài khoản, lập chứng từ để duyệt, đối chiếu và báo lệch; không tự vượt mã xác nhận, không lưu mật khẩu, không ký hay nộp thay, không tự sửa chứng từ nhập tay." eyebrow="Ứng dụng AI trong kế toán" display="AN TOÀN & |KIỂM SOÁT AI" subtitle="AI chuẩn bị – kế toán quyết định. Có nhật ký – có thể hoàn tác." heroShot={shots.reports}>
 
 <section class="section"><div class="container">
   <AiDoDont />

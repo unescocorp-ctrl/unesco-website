@@ -1,9 +1,9 @@
 ---
 import { url } from '../../../utils/url';
 import ContentLayout from '../../../layouts/ContentLayout.astro';
-const cards = [["Đề xuất có kiểm soát", "Gợi ý tài khoản và đối tượng kèm ngữ cảnh kiểm tra.", "#"], ["Không fallback âm thầm", "Trường hợp không đủ căn cứ được đưa về trạng thái cần duyệt.", "#"], ["Theo dữ liệu doanh nghiệp", "Thiết kế hướng tới học theo lịch sử và phạm vi từng doanh nghiệp.", "#"]];
+const cards = [["Đề xuất có kiểm soát", "Gợi ý tài khoản và đối tượng kèm ngữ cảnh kiểm tra.", "#"], ["Không tự động thay thế âm thầm", "Trường hợp không đủ căn cứ được đưa về trạng thái cần duyệt.", "#"], ["Theo dữ liệu doanh nghiệp", "Thiết kế để rút kinh nghiệm từ lịch sử ghi sổ của từng doanh nghiệp.", "#"]];
 ---
 <ContentLayout title="AI gợi ý hạch toán" description="Phân tích dữ liệu, lịch sử nghiệp vụ và ngữ cảnh chứng từ để tạo đề xuất cho kế toán.">
 <section class="section"><div class="container"><div class="grid grid-3">{cards.map(c => c[2] === "#" ? <div class="card"><h3>{c[0]}</h3><p class="muted">{c[1]}</p></div> : <a class="card" href={url(c[2])}><h3>{c[0]}</h3><p class="muted">{c[1]}</p><strong style="color:var(--primary)">Xem thêm →</strong></a>)}</div></div></section>
-<section class="section surface"><div class="container"><div class="notice"><strong>Nguyên tắc kiểm soát:</strong> nội dung website chỉ mô tả tính năng đã được công bố theo phiên bản; AI tạo phân tích/gợi ý và người dùng kiểm tra trước các nghiệp vụ cần phê duyệt.</div><div class="actions" style="margin-top:24px"><a class="btn btn-primary" href={url('/lien-he/#demo')}>ĐĂNG KÝ XEM DEMO</a><a class="btn btn-secondary" href={url('/lien-he/')}>NHẬN TƯ VẤN</a></div></div></section>
+<section class="section surface"><div class="container"><div class="notice"><strong>Nguyên tắc kiểm soát:</strong> trang này chỉ nêu tính năng đã có trong bản phần mềm hiện hành. AI đưa ra phân tích và gợi ý; kế toán kiểm tra rồi mới duyệt ghi sổ.</div><div class="actions" style="margin-top:24px"><a class="btn btn-primary" href={url('/lien-he/#demo')}>ĐĂNG KÝ XEM DEMO</a><a class="btn btn-secondary" href={url('/lien-he/')}>NHẬN TƯ VẤN</a></div></div></section>
 </ContentLayout>

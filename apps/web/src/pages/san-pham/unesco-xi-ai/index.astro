@@ -11,7 +11,7 @@ import { videoBySlug } from '../../../data/videos';
 import Icon from '../../../components/Icon.astro';
 import { productPillars } from '../../../data/design';
 ---
-<ContentLayout title="UNESCO AI – Phần mềm kế toán tích hợp AI" description="Nền tảng kế toán UNESCO 9 phân hệ cộng màn hình AI 8 thẻ: tải hoá đơn điện tử, tự động xử lý, tờ khai hải quan, sổ phụ ngân hàng, bảng lương, kết chuyển cuối kỳ, báo cáo & nhật ký, cổng dịch vụ công." eyebrow="Product page / UNESCO AI" display="UNESCO |AI" subtitle="AI làm việc ngay trên bộ sổ UNESCO XI – không cần chuyển đổi hệ thống kế toán." heroShot={shots.mainScreen}>
+<ContentLayout title="UNESCO AI – Phần mềm kế toán tích hợp AI" description="Nền tảng kế toán UNESCO gồm 9 phân hệ và màn hình AI 8 thẻ: tải hoá đơn điện tử, tự động xử lý, tờ khai hải quan, sổ phụ ngân hàng, bảng lương, kết chuyển cuối kỳ, báo cáo & nhật ký, cổng dịch vụ công." eyebrow="Sản phẩm / UNESCO AI" display="UNESCO |AI" subtitle="AI làm việc ngay trên bộ sổ UNESCO XI – không cần chuyển đổi hệ thống kế toán." heroShot={shots.mainScreen}>
 
 <section class="section-sm surface"><div class="container"><div class="num-grid">{productPillars.map((p, i) => <a class={`num-card${p.c === 't' ? ' c-t' : p.c === 'b' ? ' c-b' : p.c === 'y' ? ' c-y' : ''}`} href={url(p.href)}><span class="no">{i + 1}</span><span class="ic"><Icon name={p.icon} /></span><h3>{p.t}</h3><p>Xem chi tiết →</p></a>)}</div>
   <div class="callout" style="margin-top:22px"><span class="ic"><Icon name="star" /></span><div><h3>16 điểm ưu việt · 65 tính năng AI</h3><p>Hoá đơn, sổ phụ, giá thành, thuế – HTKK, khoá sổ và báo cáo cho chủ doanh nghiệp: số liệu đo trên bộ sổ thật, mỗi con số kèm nguồn.</p></div><a class="btn btn-primary" style="margin-left:auto" href={url('/tinh-nang-uu-viet/')}>Tính năng ưu việt</a></div>
@@ -19,9 +19,9 @@ import { productPillars } from '../../../data/design';
 
 <section class="section"><div class="container split"><div><Screenshot shot={shots.autoProcess} eager={true} /></div><div><span class="eyebrow">Một hệ thống thống nhất</span><h2>Kế toán đầy đủ nghiệp vụ, AI làm phần việc lặp lại</h2><p class="lead">UNESCO AI là phần mềm kế toán UNESCO (bản XI) tích hợp màn hình AI. Dữ liệu mỗi doanh nghiệp – mỗi năm tài chính nằm trong một bộ sổ riêng; AI làm việc trên chính bộ sổ đó và chỉ ghi khi kế toán đồng ý.</p>
   <div class="feature-list">
-    <div class="feature-row"><span class="check"><Icon name="cpu" size={18} /></span><div><strong>AI hỗ trợ trong workflow hiện hữu</strong><span>Màn hình AI 8 thẻ: tự động xử lý, danh sách hoá đơn, tờ khai HQ, sổ phụ, bảng lương, kết chuyển, báo cáo & nhật ký, cổng dịch vụ công.</span></div></div>
+    <div class="feature-row"><span class="check"><Icon name="cpu" size={18} /></span><div><strong>AI hỗ trợ ngay trong quy trình đang dùng</strong><span>Màn hình AI 8 thẻ: tự động xử lý, danh sách hoá đơn, tờ khai hải quan, sổ phụ, bảng lương, kết chuyển, báo cáo & nhật ký, cổng dịch vụ công.</span></div></div>
     <div class="feature-row"><span class="check"><Icon name="layers" size={18} /></span><div><strong>9 phân hệ kế toán</strong><span>Chi phí – tổng hợp, vật tư, công nợ, TSCĐ, CCDC, giá thành, lương, BHXH, báo cáo – sổ kế toán.</span></div></div>
-    <div class="feature-row"><span class="check"><Icon name="user-check" size={18} /></span><div><strong>Kế toán kiểm tra trước khi ghi</strong><span>Chứng từ AI lập mở ra điền sẵn để xem trước; xuất XML 01/GTGT, BCTC, 03/TNDN để nhập vào HTKK.</span></div></div>
+    <div class="feature-row"><span class="check"><Icon name="user-check" size={18} /></span><div><strong>Kế toán kiểm tra trước khi ghi</strong><span>Chứng từ AI lập sẵn được mở ra, đã điền sẵn, để kế toán xem trước; xuất XML 01/GTGT, BCTC, 03/TNDN để nhập vào HTKK.</span></div></div>
   </div>
   <div class="actions"><a class="btn btn-primary" href={url('/lien-he/#demo')}>ĐĂNG KÝ DEMO</a><a class="btn btn-secondary" href={url('/video/')}><Icon name="play-circle" />Xem video</a></div></div></div></section>
 
@@ -44,7 +44,7 @@ import { productPillars } from '../../../data/design';
   })}
 </div></section>
 
-<section class="section"><div class="container"><div class="section-head"><div><span class="eyebrow">Tải hoá đơn hàng loạt</span><h2>Từ cổng thuế vào phần mềm trong vài bước</h2></div><p>Công cụ chạy trên Chrome, tải theo kỳ, chỉ lấy hoá đơn mới, gộp hoá đơn bán lẻ và chuyển kết quả sang màn hình AI.</p></div>
+<section class="section"><div class="container"><div class="section-head"><div><span class="eyebrow">Tải hoá đơn hàng loạt</span><h2>Từ cổng thuế vào phần mềm trong vài bước</h2></div><p>Công cụ chạy trên trình duyệt Chrome, tải theo kỳ, chỉ lấy hoá đơn mới, gộp hoá đơn bán lẻ và chuyển kết quả sang màn hình AI.</p></div>
   <div class="gallery g3">
     <Screenshot shot={shots.bulkDownload} />
     <Screenshot shot={shots.retailSummary} />

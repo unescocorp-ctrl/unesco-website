@@ -11,25 +11,25 @@ const prices: Record<string, { v: string; unit: string; dv: string[] }> = {
   'Nâng cấp': { v: '50%', unit: 'giá gói mới', dv: [] },
 };
 const plans = [
-  { c: 'g', cls: '', btn: 'btn-primary', icon: 'box', t: 'UNESCO XI', who: 'Doanh nghiệp cần đủ nghiệp vụ kế toán, sổ sách và báo cáo thuế.', f: ['Kế toán tài chính 9 phân hệ', 'Kế toán quản trị', 'Báo cáo theo TT133, TT99', 'Tải hoá đơn điện tử, XML HTKK'], s: ['Hỗ trợ kỹ thuật', 'Cập nhật phiên bản', 'Tài liệu & video hướng dẫn'] },
+  { c: 'g', cls: '', btn: 'btn-primary', icon: 'box', t: 'UNESCO XI', who: 'Doanh nghiệp cần đủ nghiệp vụ kế toán, sổ sách và báo cáo thuế.', f: ['Kế toán tài chính 9 phân hệ', 'Kế toán quản trị', 'Báo cáo theo Thông tư 133, Thông tư 99', 'Tải hoá đơn điện tử, XML HTKK'], s: ['Hỗ trợ kỹ thuật', 'Cập nhật phiên bản', 'Tài liệu & video hướng dẫn'] },
   { c: 't', cls: ' feat p-t', btn: 'btn-teal', icon: 'cpu', t: 'UNESCO AI', who: 'Doanh nghiệp muốn nâng cao hiệu quả với trí tuệ nhân tạo.', f: ['UNESCO XI toàn diện', 'Màn hình AI 8 thẻ', 'Gợi ý & phân tích AI', 'Cân đối AI, cảnh báo trước khoá sổ'], s: ['Hỗ trợ kỹ thuật', 'Cập nhật phiên bản', 'Tư vấn triển khai AI'] },
   { c: 'b', cls: ' p-b', btn: 'btn-blue', icon: 'headset', t: 'Dịch vụ triển khai', who: 'Doanh nghiệp cần triển khai và tối ưu hệ thống.', f: ['Khảo sát & tư vấn', 'Cấu hình quy tắc hạch toán, định mức', 'Đào tạo người dùng'], s: ['Hỗ trợ triển khai', 'Hỗ trợ sau triển khai', 'Nghiệm thu & bàn giao'] },
   { c: 'y', cls: ' p-y', btn: 'btn-yellow', icon: 'trend', t: 'Nâng cấp', who: 'Doanh nghiệp đang dùng UNESCO XI muốn nâng cấp hoặc mở rộng.', f: ['Nâng cấp phiên bản', 'Kích hoạt thêm tính năng AI', 'Chuyển số dư sang năm mới'], s: ['Hỗ trợ kỹ thuật', 'Kiểm tra & đánh giá dữ liệu', 'Hỗ trợ sau nâng cấp'] },
 ];
 const rows: [string, boolean, boolean][] = [
   ['9 phân hệ kế toán (tổng hợp, vật tư, công nợ, TSCĐ, CCDC, giá thành, lương, BHXH, báo cáo)', true, true],
-  ['Báo cáo tài chính, sổ kế toán theo TT133 và TT99; báo cáo thuế GTGT, TNDN, TNCN', true, true],
+  ['Báo cáo tài chính, sổ kế toán theo Thông tư 133 và Thông tư 99; báo cáo thuế GTGT, TNDN, TNCN', true, true],
   ['Tải hoá đơn điện tử về phần mềm; xuất XML HTKK', true, true],
   ['Màn hình AI: Tự động xử lý, Danh sách hoá đơn (tạo mã, định khoản, lập chứng từ hàng loạt)', false, true],
-  ['Sổ phụ ngân hàng: AI đọc sao kê Excel/CSV/PDF, ảnh scan; công nợ kèm mã VietQR', false, true],
-  ['Tờ khai hải quan nhập khẩu; Import bảng kê hoá đơn Excel', false, true],
+  ['Sổ phụ ngân hàng: AI đọc sao kê Excel/CSV/PDF, ảnh chụp; công nợ kèm mã VietQR', false, true],
+  ['Tờ khai hải quan nhập khẩu; nhập hoá đơn từ bảng kê Excel', false, true],
   ['Bảng lương & chứng từ khác; Kết chuyển cuối kỳ; Cổng dịch vụ công', false, true],
   ['Báo cáo & nhật ký: 01/GTGT, BCTC, 03/TNDN, kiểm tra khoá sổ', false, true],
   ['Giá thành: Cân đối AI, định mức tự động, giá thành theo đối tượng', false, true],
   ['Trợ lý AI hướng dẫn ngay trên màn hình', false, true],
 ];
 ---
-<ContentLayout title="Bảng giá / Gói sản phẩm UNESCO AI" description="Bảng giá phần mềm kế toán UNESCO: trả phí 1 lần sử dụng mãi mãi, không phí hàng năm. UNESCO XI 6.000.000 đ / MST, UNESCO AI 10.000.000 đ / MST; giá riêng cho dịch vụ kế toán; triển khai miễn phí; nâng cấp 50% giá gói mới." eyebrow="Báo cáo giải pháp UNESCO AI" display="BẢNG GIÁ / |GÓI SẢN PHẨM" tone="ng" subtitle="Lựa chọn gói phù hợp với nhu cầu doanh nghiệp">
+<ContentLayout title="Bảng giá / Gói sản phẩm UNESCO AI" description="Bảng giá phần mềm kế toán UNESCO: trả phí 1 lần sử dụng mãi mãi, không phí hàng năm. UNESCO XI 6.000.000 đ / MST, UNESCO AI 10.000.000 đ / MST; giá riêng cho dịch vụ kế toán; triển khai miễn phí; nâng cấp 50% giá gói mới." eyebrow="Bảng giá" display="BẢNG GIÁ / |GÓI SẢN PHẨM" tone="ng" subtitle="Lựa chọn gói phù hợp với nhu cầu doanh nghiệp">
 <section class="section"><div class="container">
   <p class="price-gold"><span>Trả phí 1 lần sử dụng mãi mãi – Không phí hàng năm</span></p>
   <div class="plans">{plans.map((p) => (
@@ -53,13 +53,13 @@ const rows: [string, boolean, boolean][] = [
   <div class="motto">MINH BẠCH – CHÍNH XÁC – HIỆU QUẢ</div>
 </div></section>
 
-<section class="section surface-soft"><div class="container split"><div><span class="eyebrow">Mã kích hoạt AI</span><h2>Một mã cho mọi tính năng AI</h2><p class="lead">Gói AI được cấp bằng mã kích hoạt theo mã số thuế. Phần kế toán dùng bình thường khi chưa có mã.</p></div><div class="card"><ul class="checks"><li><b>Thời hạn:</b> vĩnh viễn khi mua bản quyền (trả phí 1 lần); phần mềm cũng cấp được mã 1, 3, 6 tháng, 1, 2 năm</li><li><b>Số công ty:</b> tính theo mã số thuế của bộ sổ</li><li><b>Số trang:</b> mỗi trang ảnh hoặc PDF scan chuyển sang Excel trừ vào số trang của mã; tệp Excel và CSV không tính; nạp thêm thì số trang cộng dồn</li><li><b>Ba chế độ:</b> đã kích hoạt / dùng thử 15 ngày / chỉ xem; mã yêu cầu riêng từng máy</li><li><b>Mã có thời hạn:</b> còn 7 ngày phần mềm nhắc gia hạn</li></ul></div></div></section>
+<section class="section surface-soft"><div class="container split"><div><span class="eyebrow">Mã kích hoạt AI</span><h2>Một mã cho mọi tính năng AI</h2><p class="lead">Gói AI được cấp bằng mã kích hoạt theo mã số thuế. Phần kế toán dùng bình thường khi chưa có mã.</p></div><div class="card"><ul class="checks"><li><b>Thời hạn:</b> vĩnh viễn khi mua bản quyền (trả phí 1 lần); phần mềm cũng cấp được mã 1, 3, 6 tháng, 1, 2 năm</li><li><b>Số công ty:</b> tính theo mã số thuế của bộ sổ</li><li><b>Số trang:</b> mỗi trang ảnh chụp hoặc PDF dạng ảnh chuyển sang Excel trừ vào số trang của mã; tệp Excel và CSV không tính; nạp thêm thì số trang cộng dồn</li><li><b>Ba chế độ:</b> đã kích hoạt / dùng thử 15 ngày / chỉ xem; mã yêu cầu riêng từng máy</li><li><b>Mã có thời hạn:</b> còn 7 ngày phần mềm nhắc gia hạn</li></ul></div></div></section>
 
 <section class="section surface"><div class="container"><div class="section-head"><div><span class="eyebrow">So sánh</span><h2>UNESCO XI và UNESCO AI</h2></div><p>AI làm việc trên chính bộ sổ UNESCO, nên doanh nghiệp đang dùng UNESCO XI có thể kích hoạt AI khi cần.</p></div>
   <div class="table-wrap"><table class="compare"><thead><tr><th>Chức năng</th><th class="c">UNESCO XI</th><th class="c">UNESCO AI</th></tr></thead><tbody>{rows.map((r) => <tr><td>{r[0]}</td><td class={r[1] ? 'y' : 'n'}>{r[1] ? '✓' : '—'}</td><td class={r[2] ? 'y' : 'n'}>{r[2] ? '✓' : '—'}</td></tr>)}</tbody></table></div>
 </div></section>
 
-<section class="section surface-soft"><div class="container"><div class="section-head"><div><span class="eyebrow">Trước khi báo giá</span><h2>4 thông tin giúp xác định đúng gói</h2></div><p>Chuẩn bị trước các thông tin này, bộ phận kinh doanh sẽ báo giá nhanh và chính xác hơn.</p></div><div class="grid grid-4"><div class="card"><h3>Loại hình</h3><p class="muted">Thương mại, dịch vụ, sản xuất, xây dựng, hộ kinh doanh hoặc kế toán dịch vụ.</p></div><div class="card"><h3>Số công ty</h3><p class="muted">Số bộ sổ (mã số thuế) cần quản lý và số máy sử dụng.</p></div><div class="card"><h3>Khối lượng AI</h3><p class="muted">Số hoá đơn mỗi tháng, ngân hàng đang dùng, sao kê dạng file hay ảnh scan.</p></div><div class="card"><h3>Dữ liệu hiện có</h3><p class="muted">Phần mềm đang dùng và nhu cầu chuyển số dư đầu kỳ.</p></div></div></div></section>
+<section class="section surface-soft"><div class="container"><div class="section-head"><div><span class="eyebrow">Trước khi báo giá</span><h2>4 thông tin giúp xác định đúng gói</h2></div><p>Chuẩn bị trước các thông tin này, bộ phận kinh doanh sẽ báo giá nhanh và chính xác hơn.</p></div><div class="grid grid-4"><div class="card"><h3>Loại hình</h3><p class="muted">Thương mại, dịch vụ, sản xuất, xây dựng, hộ kinh doanh hoặc kế toán dịch vụ.</p></div><div class="card"><h3>Số công ty</h3><p class="muted">Số bộ sổ (mã số thuế) cần quản lý và số máy sử dụng.</p></div><div class="card"><h3>Khối lượng AI</h3><p class="muted">Số hoá đơn mỗi tháng, ngân hàng đang dùng, sao kê dạng tệp hay ảnh chụp.</p></div><div class="card"><h3>Dữ liệu hiện có</h3><p class="muted">Phần mềm đang dùng và nhu cầu chuyển số dư đầu kỳ.</p></div></div></div></section>
 
-<section class="section"><div class="container"><div class="quote-band"><div><h2>Liên hệ để nhận báo giá phù hợp</h2><p>{contact.sales.label}: {contact.sales.mobile} · Email: {contact.email}</p></div><div class="actions"><a class="btn btn-primary" href={telHref(contact.sales.mobile)}>GỌI {contact.sales.mobile}</a><a class="btn btn-secondary" href={zaloHref} target="_blank" rel="noopener">CHAT ZALO</a></div></div></div></section>
+<section class="section"><div class="container"><div class="quote-band"><div><h2>Liên hệ để nhận báo giá phù hợp</h2><p>{contact.sales.label}: {contact.sales.mobile} · Email: {contact.email}</p></div><div class="actions"><a class="btn btn-primary" href={telHref(contact.sales.mobile)}>GỌI {contact.sales.mobile}</a><a class="btn btn-secondary" href={zaloHref} target="_blank" rel="noopener">NHẮN ZALO</a></div></div></div></section>
 </ContentLayout>

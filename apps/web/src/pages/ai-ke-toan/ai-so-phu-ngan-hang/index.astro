@@ -15,7 +15,7 @@ const rows = [
   ['refresh', 'CHUYEN KHOAN NOI BO', 'Chuyển khoản nội bộ công ty', 'chuyển nội bộ', 'p'],
   ['bank', 'PHI DICH VU SMS BANKING', 'Phí dịch vụ ngân hàng', 'phí ngân hàng', 'o'],
   ['qr-code', 'VCB 1234567890 MB NAPAS NGUYEN V A', 'Nhận tiền qua VietQR từ khách hàng', 'công nợ khách hàng', 'g'],
-  ['ban', '(dòng của file sao kê đã nhập)', 'Giao dịch đã tồn tại – bỏ qua', 'chống nhập trùng', 'n'],
+  ['ban', '(các dòng khác của tệp sao kê đã nhập trước đó)', 'Giao dịch đã tồn tại – bỏ qua', 'chống nhập trùng', 'n'],
 ];
 const trace = [
   ['user', 'Tên người chuyển / nhận', 'Tách tên và ngân hàng từ chuỗi mô tả giao dịch.', 'g'],
@@ -25,11 +25,11 @@ const trace = [
 ];
 const vids = ['m05-so-phu-ngan-hang', 'cong-no-ma-qr'].map((s) => videoBySlug(s)!);
 ---
-<ContentLayout title="AI Sổ phụ – Đối chiếu công nợ thông minh" description="Tự động đối chiếu – cảnh báo chênh lệch – tiết kiệm thời gian: AI đọc sao kê, chuẩn hoá nội dung, tìm đối tác và tài khoản đối ứng, lập phiếu báo có – báo nợ để kế toán duyệt." eyebrow="Báo cáo giải pháp AI kế toán" display="AI |SỔ PHỤ" subtitle="Chuẩn hoá nội dung ngân hàng trước khi lập chứng từ" heroShot={shots.bank}>
+<ContentLayout title="AI Sổ phụ – Đối chiếu công nợ thông minh" description="Tự động đối chiếu – cảnh báo chênh lệch – tiết kiệm thời gian: AI đọc sao kê, chuẩn hoá nội dung, tìm đối tác và tài khoản đối ứng, lập phiếu báo có – báo nợ để kế toán duyệt." eyebrow="AI Sổ phụ ngân hàng" display="AI |SỔ PHỤ" subtitle="Chuẩn hoá nội dung ngân hàng trước khi lập chứng từ" heroShot={shots.bank}>
 
 <section class="section"><div class="container">
-  <div class="sec-c"><span class="eyebrow">Quy trình xử lý</span><h2>Parse – Chuẩn hoá – Đối chiếu</h2><p>Nội dung giao dịch thô được trích xuất, làm sạch rồi gắn ngữ cảnh kế toán trước khi đề xuất hạch toán.</p></div>
-  <ol class="flow" style="--n:3;max-width:860px;margin:0 auto 40px"><li><span class="ic lg ring g"><Icon name="file-search" /></span><b>Parse</b><small>Trích xuất nội dung từ Excel, CSV, PDF, ảnh scan</small></li><li><span class="ic lg ring t"><Icon name="list-checks" /></span><b>Chuẩn hoá</b><small>Làm sạch, dịch không dấu sang có dấu</small></li><li><span class="ic lg ring b"><Icon name="scale" /></span><b>Đối chiếu</b><small>Đối chiếu khách hàng, hoá đơn, công nợ, gắn ngữ cảnh</small></li></ol>
+  <div class="sec-c"><span class="eyebrow">Quy trình xử lý</span><h2>Đọc tệp – Chuẩn hoá – Đối chiếu</h2><p>Nội dung giao dịch thô được trích xuất, làm sạch rồi gắn ngữ cảnh kế toán trước khi đề xuất hạch toán.</p></div>
+  <ol class="flow" style="--n:3;max-width:860px;margin:0 auto 40px"><li><span class="ic lg ring g"><Icon name="file-search" /></span><b>Đọc tệp</b><small>Lấy nội dung từ bảng Excel, tệp CSV, PDF, ảnh chụp</small></li><li><span class="ic lg ring t"><Icon name="list-checks" /></span><b>Chuẩn hoá</b><small>Làm sạch, dịch không dấu sang có dấu</small></li><li><span class="ic lg ring b"><Icon name="scale" /></span><b>Đối chiếu</b><small>Đối chiếu khách hàng, hoá đơn, công nợ, gắn ngữ cảnh</small></li></ol>
   <div class="xform">
     <div class="xt"><div class="xh">NỘI DUNG NGÂN HÀNG (THÔ)</div><table><thead><tr><th></th><th>Nội dung giao dịch</th></tr></thead><tbody>{rows.map((r) => <tr><td><Icon name={r[0]} /></td><td>{r[1]}</td></tr>)}</tbody></table></div>
     <div class="arrow"><Icon name="arrow-right" /></div>
@@ -46,8 +46,8 @@ const vids = ['m05-so-phu-ngan-hang', 'cong-no-ma-qr'].map((s) => videoBySlug(s)
 </div></section>
 
 <section class="section"><div class="container split"><div><Screenshot shot={shots.bank} /></div><div>
-  <span class="eyebrow">Import sổ phụ</span><h2>Sáu cách đưa sao kê vào phần mềm</h2>
-  <p class="lead">Trước khi nhập, AI đối chiếu số tài khoản và tên chủ tài khoản với công ty đang mở — khác công ty thì không nhập. Ảnh / PDF scan đọc qua OCR Offline (không gửi ảnh ra ngoài) hoặc Google Document AI, luôn vào Cần xem lại và bắt buộc khớp số dư.</p>
+  <span class="eyebrow">Nhập sổ phụ</span><h2>Sáu cách đưa sao kê vào phần mềm</h2>
+  <p class="lead">Trước khi nhập, AI đối chiếu số tài khoản và tên chủ tài khoản với công ty đang mở — khác công ty thì không nhập. Ảnh chụp / PDF dạng ảnh đọc bằng công cụ đọc chữ trên máy (không gửi ảnh ra ngoài) hoặc Google Document AI, luôn vào Cần xem lại và bắt buộc khớp số dư.</p>
   <ul class="checks">{bankImport.map((b) => <li>{b}</li>)}</ul>
 </div></div></section>
 

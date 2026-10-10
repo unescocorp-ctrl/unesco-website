@@ -22,6 +22,9 @@ export const contact = {
     ext: 'ext 103-105',
     /** Một dòng hiển thị: 028 3755 5755 – 3755 4755 ext 103-105 */
     line: '028 3755 5755 – 3755 4755 ext 103-105',
+    /** Cách ghi tiếng Việt dùng trong nội dung các trang (chân trang vẫn dùng ext / line ở trên cho tới khi anh duyệt). */
+    extVi: 'máy lẻ 103 – 105',
+    lineVi: '028 3755 5755 – 3755 4755 (máy lẻ 103 – 105)',
   },
   zalo: pick(site.company.zalo, '093 3456 567'),
   email: pick(site.company.email, 'unesco.corp@gmail.com'),

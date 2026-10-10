@@ -1,7 +1,9 @@
 ---
 import { url } from '../../utils/url';
 import ContentLayout from '../../layouts/ContentLayout.astro';
+import { whatsNew, packDate } from '../../data/whatsnew';
+const w = whatsNew[0];
 ---
 <ContentLayout title="Tin tức & Cập nhật" description="Thông tin phiên bản, sản phẩm và cập nhật liên quan đến UNESCO AI.">
-<section class="section"><div class="container"><div class="grid grid-3"><div class="card"><h3>Phiên bản mới</h3><p class="muted">Nội dung được công bố theo phạm vi phiên bản chính thức.</p></div><div class="card"><h3>Sản phẩm</h3><p class="muted">Hướng dẫn và tính năng sẽ được cập nhật theo release.</p></div><div class="card"><h3>Thông báo</h3><p class="muted">Liên kết tới quy trình tư vấn/demo khi cần.</p></div></div><div class="actions" style="margin-top:28px"><a class="btn btn-primary" href={url('/lien-he/#demo')}>ĐĂNG KÝ XEM DEMO</a><a class="btn btn-secondary" href={url('/lien-he/')}>NHẬN TƯ VẤN</a></div></div></section>
+<section class="section"><div class="container"><div class="grid grid-3"><a class="card" href={url('/release-notes/')}><h3>Phiên bản mới</h3><p class="muted">{w.code} ({packDate(w.code)}): {w.t}.</p><strong class="link-arrow">Xem có gì mới</strong></a><a class="card" href={url('/to-khai-bctc/#bieu-mau-2026')}><h3>Sản phẩm</h3><p class="muted">Biểu mẫu 2026: sổ và BCTC doanh nghiệp siêu nhỏ (Thông tư 58/2026/TT-BTC), sổ hộ kinh doanh (Thông tư 152/2025/TT-BTC) và tờ khai 01/CNKD.</p><strong class="link-arrow">Xem biểu mẫu 2026</strong></a><a class="card" href={url('/download/')}><h3>Thông báo</h3><p class="muted">Bộ cài không đăng trên website: nhận bộ cài qua điện thoại hoặc Zalo.</p><strong class="link-arrow">Trung tâm tải về</strong></a></div><div class="actions" style="margin-top:28px"><a class="btn btn-primary" href={url('/lien-he/#demo')}>ĐĂNG KÝ XEM DEMO</a><a class="btn btn-secondary" href={url('/lien-he/')}>NHẬN TƯ VẤN</a></div></div></section>
 </ContentLayout>

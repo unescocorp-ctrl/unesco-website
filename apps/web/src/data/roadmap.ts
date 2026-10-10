@@ -13,7 +13,7 @@ export const analysisDate = '09/10/2026';
 export const roadmapKpis = [
   { icon: 'check-circle', c: 'g', v: '18 / 18', d: 'tiện ích AI đề xuất trong phân tích GĐ150 đã hoàn thành' },
   { icon: 'list-checks', c: 'b', v: '7 / 7', d: 'bước của một tháng kế toán đều có AI hỗ trợ' },
-  { icon: 'monitor', c: 't', v: 'Trên máy', d: 'lõi AI chạy trên máy – không bắt buộc Internet hay mô hình ngôn ngữ lớn' },
+  { icon: 'monitor', c: 't', v: 'Trên máy', d: 'lõi AI chạy trên máy – không bắt buộc Internet hay dịch vụ AI tạo văn bản bên ngoài' },
   { icon: 'sparkles', c: 'y', v: '6 nhóm', d: 'tính năng mới 2026 đã hoàn thành, kèm Trợ lý lập định mức' },
 ];
 
@@ -21,7 +21,7 @@ export const roadmapKpis = [
 export const lifecycle = [
   {
     icon: 'cloud-upload', t: 'Thu thập chứng từ',
-    have: ['Tải hoá đơn từ Cơ quan Thuế theo lịch hẹn; nhập XML, ZIP, bảng kê Excel', 'Đọc ảnh, PDF (OCR); sổ phụ 20 ngân hàng; bảng lương Excel; tờ khai hải quan'],
+    have: ['Tải hoá đơn từ Cơ quan Thuế theo lịch hẹn; nhập XML, ZIP, bảng kê Excel', 'Đọc ảnh chụp, PDF dạng ảnh; sổ phụ 20 ngân hàng; bảng lương Excel; tờ khai hải quan'],
     next: ['Thu hoá đơn từ hộp thư (.eml, .msg, PDF, XML)', 'Yêu cầu chứng từ còn thiếu từ khách hàng'],
   },
   {
@@ -36,13 +36,13 @@ export const lifecycle = [
   },
   {
     icon: 'calendar-clock', t: 'Cuối kỳ & khoá sổ',
-    have: ['Checklist kết chuyển, giá thành AI, định mức tự động, tạm tính TNDN', 'Kiểm tra trước khoá sổ, điểm sẵn sàng khoá sổ 0 – 100, sao lưu tự động'],
+    have: ['Danh sách việc kết chuyển, giá thành AI, định mức tự động, tạm tính TNDN', 'Kiểm tra trước khoá sổ, điểm sẵn sàng khoá sổ 0 – 100, sao lưu tự động'],
     next: ['Bút toán cuối tháng tự đề xuất: trích trước, phân bổ, khấu hao', 'Giải trình “vì sao kỳ này khác kỳ trước”', 'Trợ lý lập định mức cho công ty, sản phẩm mới'],
   },
   {
     icon: 'file-xml', t: 'Khai thuế, nộp hồ sơ',
     have: ['01/GTGT, 03/TNDN, 05/TNCN, BCTC → XML vào thẳng HTKK, mở HTKK đúng mã số thuế', 'Đối chiếu hồ sơ đã nộp, số thuế phải nộp; soát rủi ro hoá đơn trước kỳ khai; kết nối BHXH'],
-    next: ['Theo dõi mẫu tờ khai mới theo TT 89/2026 trên HTKK', 'Soát thời điểm lập hoá đơn bán ra; nhà cung cấp rủi ro theo danh sách cơ quan thuế', 'Đối chiếu nghĩa vụ thuế theo ID khoản phải nộp; hồ sơ hoàn thuế GTGT'],
+    next: ['Theo dõi mẫu tờ khai mới theo TT 89/2026 trên HTKK', 'Soát thời điểm lập hoá đơn bán ra; nhà cung cấp rủi ro theo danh sách cơ quan thuế', 'Đối chiếu nghĩa vụ thuế theo mã khoản phải nộp; hồ sơ hoàn thuế GTGT'],
   },
   {
     icon: 'bar-chart', t: 'Báo cáo cho chủ doanh nghiệp',
@@ -59,11 +59,11 @@ export const lifecycle = [
 /** Lợi thế khác biệt. */
 export const edges = [
   { icon: 'user-check', c: 'g', t: 'AI soạn – kế toán duyệt', d: 'Đúng hướng các phần mềm kế toán đang đi năm 2026: AI phân loại, đối chiếu, đề xuất; người duyệt mới ghi sổ. Mỗi đề xuất có điểm tin cậy, căn cứ “Vì sao?”, nhật ký và huỷ được cả lô.' },
-  { icon: 'monitor', c: 't', t: 'Chạy trên máy, không bắt buộc Internet', d: 'Lõi AI là bộ quy tắc và học lịch sử ngay trên máy – không bắt buộc mô hình ngôn ngữ lớn. Claude chỉ là tuỳ chọn để viết câu giải trình, không dùng cho số liệu.' },
+  { icon: 'monitor', c: 't', t: 'Phần lõi chạy trên máy, không cần Internet', d: 'Lõi AI là bộ quy tắc và học lịch sử ngay trên máy – không bắt buộc AI tạo văn bản bên ngoài. Dịch vụ AI bên ngoài chỉ là tuỳ chọn để viết câu giải trình, không dùng cho số liệu. Riêng việc lấy sao kê qua kết nối ngân hàng thì cần Internet.' },
   { icon: 'scale', c: 'b', t: 'Soát rủi ro theo đúng luật Việt Nam', d: 'Mốc thanh toán 5 triệu không dùng tiền mặt, hoá đơn huỷ / thay thế / điều chỉnh, hoá đơn chưa có mã của cơ quan thuế, hoá đơn có trong sổ mà không có trên cơ quan thuế.' },
   { icon: 'layers', c: 'y', t: 'Thiết kế cho kế toán dịch vụ', d: 'Một màn hình cho mọi bộ sổ, chạy hàng loạt qua đêm, điểm sẵn sàng khoá sổ – nhân hiệu quả của mọi tiện ích lên từng khách hàng.' },
-  { icon: 'file-xml', c: 'g', t: 'Tờ khai, BCTC vào thẳng HTKK', d: 'XML theo khuôn học từ HTKK trên máy, xem trước so kỳ trước, mở HTKK đúng mã số thuế. Không ký, không nộp thay.' },
-  { icon: 'bar-chart', c: 'b', t: 'Chủ doanh nghiệp nhìn thấy AI', d: 'Lãi theo mặt hàng, tồn kho, dòng tiền, thuế dự kiến gọn trong báo cáo 1 trang – chỉ đọc sổ, không ghi gì.' },
+  { icon: 'file-xml', c: 'g', t: 'Tờ khai, BCTC vào thẳng HTKK', d: 'Tệp XML theo mẫu lấy từ HTKK trên máy, xem trước so kỳ trước, mở HTKK đúng mã số thuế. Không ký, không nộp thay.' },
+  { icon: 'bar-chart', c: 'b', t: 'Chủ doanh nghiệp nhìn thấy AI', d: 'Lãi theo mặt hàng, tồn kho, dòng tiền, thuế dự kiến gọn trong báo cáo 1 trang – chỉ xem sổ, không ghi gì.' },
 ];
 
 /** Bảng năng lực – bản mới nhất. st: co = Đã có, moi = Mới hoàn thành. */
@@ -74,12 +74,12 @@ export const capabilities = [
   { t: 'Điểm sẵn sàng khoá sổ, chạy hàng loạt qua đêm', st: 'co', note: 'Bảng điều hành nhiều bộ sổ' },
   { t: 'Báo cáo chủ doanh nghiệp: lãi, tồn kho, dòng tiền, thuế dự kiến', st: 'co', note: 'Báo cáo 1 trang A4' },
   { t: 'Tờ khai, BCTC vào thẳng HTKK, xem trước so kỳ trước', st: 'co', note: 'Không ký, không nộp thay' },
-  { t: 'Hoạt động không cần Internet, không bắt buộc mô hình ngôn ngữ lớn', st: 'co', note: 'Lợi thế riêng' },
+  { t: 'Phần lõi không cần Internet, không bắt buộc AI tạo văn bản bên ngoài', st: 'co', note: 'Lợi thế riêng; kết nối ngân hàng lấy sao kê thì cần Internet' },
   { t: 'Bút toán cuối tháng tự đề xuất (trích trước, phân bổ)', st: 'moi', note: 'Trích trước, phân bổ 242, khấu hao, hoàn nhập – xem trước rồi mới ghi' },
   { t: 'Hộ kinh doanh, doanh nghiệp siêu nhỏ', st: 'moi', note: 'Sổ TT 152/2025, tờ khai 01/CNKD, chế độ kế toán TT 58/2026' },
   { t: 'Gợi ý bộ hồ sơ kèm chứng từ, yêu cầu chứng từ từ khách', st: 'moi', note: 'Đánh dấu đã có / thiếu, thư yêu cầu điền sẵn' },
   { t: 'Đối chiếu công nợ tự động, nhắc nợ soạn sẵn', st: 'moi', note: 'Kèm mã VietQR; người dùng tự gửi' },
-  { t: 'Hỏi số liệu bằng tiếng Việt, tạo chứng từ từ câu lệnh', st: 'moi', note: 'Câu hỏi mẫu chỉ đọc; chứng từ nháp luôn xem trước' },
+  { t: 'Hỏi số liệu bằng tiếng Việt, tạo chứng từ từ câu lệnh', st: 'moi', note: 'Câu hỏi mẫu chỉ xem số liệu; chứng từ nháp luôn xem trước' },
   { t: 'So chuẩn ngành ẩn danh giữa các bộ sổ cùng ngành', st: 'moi', note: 'Không lộ tên khách hàng' },
 ];
 
@@ -93,7 +93,7 @@ export const complianceDone = [
   { t: 'Chế độ kế toán doanh nghiệp', d: 'TT 133/2016 hoặc TT 99/2025 – chọn theo từng bộ sổ.' },
 ];
 export const complianceNext = [
-  { t: 'Thông tư 89/2026/TT-BTC (từ 01/7/2026)', d: 'Theo dõi mẫu tờ khai mới xuất hiện trên HTKK, bảng ánh xạ chỉ tiêu mẫu cũ → mẫu mới chuẩn bị sẵn.' },
+  { t: 'Thông tư 89/2026/TT-BTC (từ 01/7/2026)', d: 'Theo dõi mẫu tờ khai mới xuất hiện trên HTKK, bảng đối chiếu chỉ tiêu mẫu cũ → mẫu mới chuẩn bị sẵn.' },
   { t: 'Nghị định 254/2026/NĐ-CP về hoá đơn', d: 'Soát thời điểm lập hoá đơn bán ra so với ngày giao hàng, nghiệm thu, thu tiền.' },
   { t: 'Thông tư 58/2026/TT-BTC – doanh nghiệp siêu nhỏ', d: 'Chế độ kế toán thứ ba cạnh TT 133 / TT 99: sổ, BCTC ra Excel và XML HTKK.' },
   { t: 'Hộ kinh doanh bỏ thuế khoán', d: 'Lập tờ khai 01/CNKD tháng / quý / năm từ sổ, XML vào HTKK.' },
@@ -105,7 +105,7 @@ export const roadmapGroups = [
   {
     id: 'tuan-thu', k: 'T', icon: 'shield-check', c: 'g', t: 'Tuân thủ 2026', sub: 'Theo văn bản mới có hiệu lực năm 2026',
     items: [
-      { code: 'T1', t: 'Theo dõi mẫu tờ khai mới trên HTKK', d: 'Phát hiện mẫu theo TT 89/2026 khi HTKK cập nhật; báo ở Việc cần làm và Trợ lý; ánh xạ chỉ tiêu chuẩn bị sẵn.' },
+      { code: 'T1', t: 'Theo dõi mẫu tờ khai mới trên HTKK', d: 'Phát hiện mẫu theo TT 89/2026 khi HTKK cập nhật; báo ở Việc cần làm và Trợ lý; bảng đối chiếu chỉ tiêu chuẩn bị sẵn.' },
       { code: 'T2', t: 'Chế độ kế toán doanh nghiệp siêu nhỏ', d: 'Thông tư thứ ba cho bộ sổ: sổ, BCTC ra Excel và XML HTKK, tiêu đề mẫu theo TT 58/2026.' },
       { code: 'T3', t: 'Hộ kinh doanh trọn gói', d: 'Hoàn thiện sổ TT 152/2025; 01/CNKD từ sổ; đọc hoá đơn máy tính tiền; GTGT / TNCN theo tỷ lệ ngành.' },
       { code: 'T4', t: 'Thông báo biến động lao động', d: 'Từ danh sách nhân viên / bảng lương: tháng có người vào / ra thì nhắc việc kèm bảng điền sẵn.' },
@@ -137,16 +137,16 @@ export const roadmapGroups = [
       { code: 'D1', t: 'Bút toán cuối tháng tự đề xuất', d: 'Trích trước chi phí chưa có hoá đơn, phân bổ 242, khấu hao, hoàn nhập – bảng xem trước, người ghi; hoá đơn về thì tự đối trừ.' },
       { code: 'D2', t: 'Giải trình chênh lệch kỳ', d: '“Vì sao doanh thu / chi phí / thuế kỳ này khác kỳ trước”: phân rã theo tài khoản đối ứng, khách hàng, nhà cung cấp, vật tư.' },
       { code: 'D3', t: 'So ngân sách / kế hoạch', d: 'Nhập ngân sách năm theo tài khoản, tháng; báo cáo chủ doanh nghiệp và cảnh báo so với ngân sách.' },
-      { code: 'D4', t: 'Kết nối sao kê tự động', d: 'Lấy sao kê qua kết nối ngân hàng doanh nghiệp (khi có hợp đồng) thay vì tải tệp; vẫn qua lưới sổ phụ để duyệt.' },
+      { code: 'D4', t: 'Kết nối sao kê tự động', d: 'Lấy sao kê qua kết nối ngân hàng doanh nghiệp (khi có hợp đồng) thay vì tải tệp (cần Internet); vẫn qua bảng sổ phụ để duyệt.' },
     ],
   },
   {
-    id: 'tro-ly', k: 'E', icon: 'chat', c: 'g', t: 'Trợ lý & hỏi đáp', sub: 'Hỏi bằng tiếng Việt – an toàn, chỉ đọc',
+    id: 'tro-ly', k: 'E', icon: 'chat', c: 'g', t: 'Trợ lý & hỏi đáp', sub: 'Hỏi bằng tiếng Việt – an toàn, chỉ xem',
     items: [
-      { code: 'E1', t: 'Hỏi số liệu bằng tiếng Việt', d: '“Khách nào nợ quá 60 ngày”, “doanh thu tháng 9 theo mặt hàng” – chạy bộ câu hỏi mẫu chỉ đọc, không tự sinh truy vấn.' },
+      { code: 'E1', t: 'Hỏi số liệu bằng tiếng Việt', d: '“Khách nào nợ quá 60 ngày”, “doanh thu tháng 9 theo mặt hàng” – chạy bộ câu hỏi mẫu chỉ xem số liệu, không tự tạo câu lệnh tra cứu mới.' },
       { code: 'E2', t: 'Tạo chứng từ từ câu lệnh', d: '“Lập phiếu chi 5 triệu trả tiền điện tháng 9” → phiếu nháp mở trên màn hình gốc, luôn xem trước.' },
       { code: 'E3', t: 'Tìm báo cáo theo mục đích', d: 'Hỏi “muốn xem gì” → mở đúng báo cáo và kỳ, dựa trên kho Trợ lý hơn 1.600 mục.' },
-      { code: 'E4', t: 'Cổng dữ liệu chỉ đọc cho trợ lý AI', d: 'Tuỳ chọn: cho trợ lý AI trên máy đọc số đếm, báo cáo đã lập để trả lời; không bao giờ ghi.' },
+      { code: 'E4', t: 'Cổng dữ liệu chỉ xem cho trợ lý AI', d: 'Tuỳ chọn: cho trợ lý AI trên máy đọc số đếm, báo cáo đã lập để trả lời; không bao giờ ghi.' },
     ],
   },
   {
@@ -155,16 +155,16 @@ export const roadmapGroups = [
       { code: 'F1', t: 'Yêu cầu chứng từ từ khách', d: 'Danh sách thứ còn thiếu → thư / tin nhắn điền sẵn và thư mục nhận; tệp về tự xếp vào bộ đọc; Bảng điều hành hiện khách còn nợ chứng từ.' },
       { code: 'F2', t: 'So chuẩn ngành ẩn danh', d: 'Nhiều bộ sổ cùng ngành: trung vị biên lãi gộp, chi phí / doanh thu, số ngày thu nợ – cột “so với ngành”, không lộ tên khách.' },
       { code: 'F3', t: 'Bàn giao bộ sổ / hồ sơ thanh tra', d: 'Một nút: sổ bắt buộc, BCTC, tờ khai đã nộp, bảng kê, biên bản đối chiếu – Excel và PDF có mục lục.' },
-      { code: 'F4', t: 'Ẩn danh hoá bộ sổ', d: 'Đổi tên, mã số thuế, địa chỉ để demo, kiểm thử, gửi hỗ trợ mà không lộ khách hàng.' },
+      { code: 'F4', t: 'Ẩn danh hoá bộ sổ', d: 'Đổi tên, mã số thuế, địa chỉ để trình diễn, kiểm thử, gửi hỗ trợ mà không lộ khách hàng.' },
     ],
   },
 ];
 
 /** Nguyên tắc giữ nguyên cho mọi tính năng mới. */
 export const roadmapRules = [
-  'Chỉ đọc là mặc định; tính năng ghi sổ đi qua đúng lớp ghi của phần mềm, có xem trước, sao lưu, hoàn tác.',
-  'Không vượt captcha, không lưu mật khẩu, không ký / nộp thay – việc với cơ quan thuế, BHXH, dịch vụ việc làm do người dùng gửi.',
-  'Lõi không cần Internet hay mô hình ngôn ngữ lớn; tham số pháp luật đọc từ bộ tham số năm; mỗi gói có bộ kiểm thử riêng.',
+  'Chỉ xem là mặc định; tính năng ghi sổ đi qua đúng bước ghi sổ của phần mềm, có xem trước, sao lưu, hoàn tác.',
+  'Không tự vượt mã xác nhận, không lưu mật khẩu, không ký / nộp thay – việc với cơ quan thuế, BHXH, dịch vụ việc làm do người dùng gửi.',
+  'Lõi không cần Internet hay AI tạo văn bản bên ngoài; tham số pháp luật đọc từ bộ tham số năm; mỗi gói có bộ kiểm thử riêng.',
 ];
 
 /* ---------- Trợ lý lập định mức nguyên vật liệu (đã hoàn thành) ---------- */
@@ -178,11 +178,11 @@ export const bomLevels = [
 
 export const bomSteps = [
   { icon: 'building', t: 'Công ty làm gì?', d: 'Chọn ngành – AI gợi ý từ tên công ty, sản phẩm bán ra' },
-  { icon: 'package', t: 'Nguyên liệu của mình?', d: 'NVL tách từ hoá đơn mua, đã chia nhóm – chỉ tick sửa' },
+  { icon: 'package', t: 'Nguyên liệu của mình?', d: 'NVL tách từ hoá đơn mua, đã chia nhóm – chỉ đánh dấu chỗ cần sửa' },
   { icon: 'list-checks', t: 'Sản phẩm cần định mức', d: 'Xếp theo giá trị, tách gram / ml / kích thước, gom nhóm' },
   { icon: 'paperclip', t: 'Tài liệu sẵn có', d: 'Kéo thả Excel, ảnh, PDF – không có thì bỏ qua' },
   { icon: 'sparkles', t: 'AI đề xuất', d: 'Lượng / 1 đơn vị, nguồn, độ tin cậy, kiểm hợp lý' },
-  { icon: 'file-check', t: 'Xem, sửa, ghi', d: 'Mã xanh ghi hàng loạt, vàng hỏi từng nhóm, đỏ không ghi' },
+  { icon: 'file-check', t: 'Xem, sửa, ghi', d: 'Mã xanh (tin cậy cao) ghi hàng loạt sau khi kế toán bấm xác nhận; vàng hỏi từng nhóm; đỏ không ghi' },
   { icon: 'refresh', t: 'Sau tháng đầu', d: 'So với thực tế, đề xuất hiệu chỉnh – bấm chấp nhận' },
 ];
 

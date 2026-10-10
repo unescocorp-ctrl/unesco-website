@@ -14,7 +14,7 @@ const cards = [
   ['bank','AI Sổ phụ ngân hàng','Xếp nhóm giao dịch, tìm đối tác, tài khoản đối ứng, lập phiếu báo có – báo nợ.','/ai-ke-toan/ai-so-phu-ngan-hang/'],
   ['sparkles','AI Gợi ý hạch toán','Học từ chứng từ cũ và quy tắc hạch toán của từng bộ sổ.','/ai-ke-toan/ai-goi-y-hach-toan/'],
   ['file-search','AI Mã khách hàng/NCC','Ưu tiên mã có sẵn; mã mới theo quy tắc MST, chờ kế toán duyệt.','/ai-ke-toan/ai-ma-khach-hang/'],
-  ['camera','AI Ảnh/PDF sang Excel','Đọc ảnh, PDF scan bằng Google Document AI hoặc Tesseract không cần Internet.','/ai-ke-toan/ai-ocr/'],
+  ['camera','AI Ảnh/PDF sang Excel','Đọc ảnh chụp, PDF dạng ảnh bằng Google Document AI, hoặc bằng công cụ Tesseract trên máy (không cần Internet).','/ai-ke-toan/ai-ocr/'],
   ['calculator','AI Giá thành','Cân đối AI, định mức tự động, giá thành theo đối tượng.','/ai-ke-toan/ai-gia-thanh/']
 ];
 ---
@@ -33,13 +33,13 @@ const cards = [
   <div class="legend">{aiCounters.map((c) => <div class={c.cls}><b>{c.t}</b>{c.d}</div>)}</div>
 </div></section>
 
-<section class="section" id="hoa-don"><div class="container"><div class="section-head"><div><span class="eyebrow">Hoá đơn điện tử</span><h2>Tải hàng loạt, phân tích ngay, định khoản trước khi lập</h2></div><p>Cứ 200 hoá đơn công cụ chuyển sang phần mềm một lần; khi xong màn hình AI báo số hoá đơn mới và số hoá đơn được cập nhật trạng thái.</p></div>
+<section class="section" id="hoa-don"><div class="container"><div class="section-head"><div><span class="eyebrow">Hoá đơn điện tử</span><h2>Tải hàng loạt, phân tích ngay, định khoản trước khi lập</h2></div><p>Cứ 200 hoá đơn, công cụ chuyển sang phần mềm một lần; khi xong màn hình AI báo số hoá đơn mới và số hoá đơn được cập nhật trạng thái.</p></div>
   <div class="split"><div><Screenshot shot={shots.downloadResult} /></div><div class="rules">{invoiceDownload.map((f) => <div><b>{f.t}</b><span>{f.d}</span></div>)}</div></div>
 </div></section>
 
 <section class="section surface" id="so-phu"><div class="container split reverse"><div><Screenshot shot={shots.bank} /></div><div><span class="eyebrow">Sổ phụ ngân hàng</span><h2>Sáu cách đưa sao kê vào phần mềm</h2><p class="lead">Trước khi nhập, AI đối chiếu số tài khoản và tên chủ tài khoản với công ty đang mở — khác công ty thì không nhập.</p><ul class="checks">{bankImport.map((b) => <li>{b}</li>)}</ul><a class="btn btn-secondary" href={url('/ai-ke-toan/ai-so-phu-ngan-hang/')}>CHI TIẾT SỔ PHỤ</a></div></div></section>
 
-<section class="section surface-soft" id="gia-thanh"><div class="container"><div class="section-head"><div><span class="eyebrow">Giá thành có AI</span><h2>Cân đối AI, định mức tự động, giá thành theo đối tượng</h2></div><p>Khung Cân đối AI chỉ đọc, không ghi sổ. Số liệu chỉ vào sổ khi kế toán bấm Ghi ở Kết chuyển thành phẩm.</p></div>
+<section class="section surface-soft" id="gia-thanh"><div class="container"><div class="section-head"><div><span class="eyebrow">Giá thành có AI</span><h2>Cân đối AI, định mức tự động, giá thành theo đối tượng</h2></div><p>Khung Cân đối AI chỉ xem, không ghi sổ. Số liệu chỉ vào sổ khi kế toán bấm Ghi ở Kết chuyển thành phẩm.</p></div>
   <div class="gallery g3">
     <Screenshot shot={shots.costAdjust} />
     <Screenshot shot={shots.costMaterial} />
@@ -59,7 +59,7 @@ const cards = [
   <div class="rules">{customerCodeRules.map((r) => <div><b>{r.k}</b><span>{r.v}</span></div>)}</div>
 </div></section>
 
-<section class="section"><div class="container"><div class="section-head"><div><span class="eyebrow">An toàn dữ liệu</span><h2>Ranh giới rõ ràng giữa AI và sổ sách kế toán</h2></div><p>Mọi lần tải, nhập, phân tích, kết xuất đều được ghi nhật ký; mỗi lần AI lập chứng từ là một lô có thể huỷ.</p></div>
+<section class="section"><div class="container"><div class="section-head"><div><span class="eyebrow">An toàn dữ liệu</span><h2>Ranh giới rõ ràng giữa AI và sổ sách kế toán</h2></div><p>Mọi lần tải, nhập, phân tích, xuất tệp đều được ghi nhật ký; mỗi lần AI lập chứng từ là một lô có thể huỷ.</p></div>
   <div class="do-dont"><div class="card do"><h3>AI làm</h3><ul>{aiSafety.allowed.map((a) => <li>{a}</li>)}</ul></div><div class="card dont"><h3>AI không làm</h3><ul>{aiSafety.forbidden.map((a) => <li>{a}</li>)}</ul></div></div>
 </div></section>
 
