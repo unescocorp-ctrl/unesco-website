@@ -8,7 +8,7 @@ export const reportGroups: { title: string; items: string[] }[] = [
       'Báo cáo lưu chuyển tiền tệ (trực tiếp)',
       'Thuyết minh báo cáo tài chính',
       'Bảng cân đối tài khoản, cân đối số phát sinh',
-      'Theo TT133 (B01a, B01b-DNN, DNNKLT) và TT99',
+      'Theo Thông tư 133 (B01a, B01b-DNN, DNNKLT) và Thông tư 99',
       'Báo cáo chi nhánh, tổng hợp chi nhánh',
     ],
   },

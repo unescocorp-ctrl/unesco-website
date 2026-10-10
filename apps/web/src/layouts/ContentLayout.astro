@@ -12,7 +12,7 @@ import type { Shot } from '../data/screenshots';
  * heroShot : ảnh phần mềm thật đặt trong khung trình duyệt bên phải.
  */
 interface Props { title: string; description?: string; eyebrow?: string; heroShot?: Shot; display?: string; tone?: 'gb' | 'ng'; subtitle?: string; pills?: string[] }
-const { title, description, eyebrow = 'UNESCO AI', heroShot, display, tone = 'gb', subtitle, pills = ['AI hỗ trợ – kế toán quyết định', 'Dữ liệu thật trên bộ sổ UNESCO', 'Có nhật ký – có thể lùi'] } = Astro.props;
+const { title, description, eyebrow = 'UNESCO AI', heroShot, display, tone = 'gb', subtitle, pills = ['AI hỗ trợ – kế toán quyết định', 'Dữ liệu thật trên bộ sổ UNESCO', 'Có nhật ký – có thể hoàn tác'] } = Astro.props;
 const parts = display ? display.split('|') : [];
 ---
 <BaseLayout title={title} description={description}>

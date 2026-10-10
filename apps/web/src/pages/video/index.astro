@@ -7,11 +7,11 @@ import { contact, telHref } from '../../data/contact';
 const intro = videoBySlug('gioi-thieu-unesco-ai')!;
 const rest = videos.filter((v) => v.slug !== intro.slug);
 ---
-<ContentLayout title="Video phần mềm kế toán UNESCO AI" description="Video giới thiệu và bộ video hướng dẫn từng module của phần mềm kế toán UNESCO AI: tải hoá đơn điện tử, danh sách hoá đơn, tự động xử lý, sổ phụ ngân hàng, báo cáo & nhật ký, giá thành, trợ lý AI." eyebrow="Guide / Knowledge / Video" display="VIDEO |CENTER" subtitle="Video quay trực tiếp trên phần mềm UNESCO AI">
+<ContentLayout title="Video phần mềm kế toán UNESCO AI" description="Video giới thiệu và bộ video hướng dẫn từng mô-đun của phần mềm kế toán UNESCO AI: tải hoá đơn điện tử, danh sách hoá đơn, tự động xử lý, sổ phụ ngân hàng, báo cáo & nhật ký, giá thành, trợ lý AI." eyebrow="Hướng dẫn / Kiến thức / Video" display="TRUNG TÂM |VIDEO" subtitle="Video quay trực tiếp trên phần mềm UNESCO AI">
 <section class="section"><div class="container">
   <div class="split video-split">
     <div><VideoCard video={intro} large={true} /></div>
-    <div><span class="eyebrow">Bắt đầu từ đây</span><h2>Giới thiệu UNESCO AI trong {intro.duration}</h2><p class="lead">{intro.desc}</p><p class="muted">Sau đó xem từng module theo đúng việc bạn cần làm. Mỗi video có lời đọc và chữ chú thích từng bước.</p>
+    <div><span class="eyebrow">Bắt đầu từ đây</span><h2>Giới thiệu UNESCO AI trong {intro.duration}</h2><p class="lead">{intro.desc}</p><p class="muted">Sau đó xem từng mô-đun theo đúng việc bạn cần làm. Mỗi video có lời đọc và chữ chú thích từng bước.</p>
       <div class="pill-row">{videoTopics.map((t) => <a class="pill" href={`#${topicSlug(t)}`}>{t}</a>)}</div>
     </div>
   </div>
@@ -24,9 +24,9 @@ const rest = videos.filter((v) => v.slug !== intro.slug);
       </div>
     );
   })}
-  <div class="notice" style="margin-top:36px"><strong>Sắp có:</strong> Bảng lương & chứng từ khác, Kết chuyển cuối kỳ, Cổng dịch vụ công, Quy tắc hạch toán & kích hoạt AI, Import hoá đơn từ Excel, Tờ khai hải quan (bản đầy đủ).</div>
+  <div class="notice" style="margin-top:36px"><strong>Sắp có (bài 09 – 14):</strong> Bài 09 · Bảng lương: đưa bảng lương Excel vào, đối chiếu, lập chứng từ lương; Bài 10 · Kết chuyển cuối kỳ: khấu hao, phân bổ, trích lương, kết chuyển 911; Bài 11 · Cổng dịch vụ công: thông báo thuế, nghĩa vụ thuế, đối chiếu nộp thuế; Bài 12 · Quy tắc hạch toán và kích hoạt AI; Bài 13 · Nhập hoá đơn từ bảng kê Excel; Bài 14 · Tờ khai hải quan nhập khẩu (bản đầy đủ).</div>
 </div></section>
-<section class="section surface-soft"><div class="container"><div class="quote-band"><div><h2>Muốn được hướng dẫn trực tiếp?</h2><p>Bộ phận hỗ trợ sử dụng: {contact.support.line}.</p></div><div class="actions"><a class="btn btn-primary" href={telHref(contact.support.phone)}>GỌI HỖ TRỢ</a><a class="btn btn-secondary" href={url('/ho-tro/')}>GỬI YÊU CẦU</a></div></div></div></section>
+<section class="section surface-soft"><div class="container"><div class="quote-band"><div><h2>Muốn được hướng dẫn trực tiếp?</h2><p>Bộ phận hỗ trợ sử dụng: {contact.support.lineVi}.</p></div><div class="actions"><a class="btn btn-primary" href={telHref(contact.support.phone)}>GỌI HỖ TRỢ</a><a class="btn btn-secondary" href={url('/ho-tro/')}>GỬI YÊU CẦU</a></div></div></div></section>
 <script is:inline>
   document.querySelectorAll('button.video-thumb[data-yt]').forEach(function (btn) {
     btn.addEventListener('click', function () {

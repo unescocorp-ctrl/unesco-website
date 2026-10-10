@@ -120,3 +120,11 @@ Nguồn: 3 tài liệu bản GĐ169 (09/10/2026) – Tính năng ưu việt củ
 # v2.7.2 (09/10/2026): chữ UNESCO AI trên tiêu đề banner
 - Ảnh chữ 3D "UNESCO AI" (từ hình mẫu, đã tách nền thành trong suốt, giữ quầng sáng quanh chữ): `apps/web/public/banner/chu-unesco-ai.webp` (663 × 122).
 - Đặt ngay trên dòng "Hiểu việc – nhắc việc kế toán", canh trái theo tiêu đề; rộng tối đa 380px (điện thoại 320px).
+
+# v2.8 (10/10/2026): sửa chữ, bỏ chữ kỹ thuật tiếng Anh, cập nhật theo phần mềm GĐ178 – nhánh `sua-chu-web`
+- `astro.config.mjs`: luôn dùng https:// cho canonical, og:url, og:image, sitemap.xml, robots.txt (trừ chạy thử localhost).
+- Bỏ chữ kỹ thuật tiếng Anh trong menu, tiêu đề, nội dung (không đụng chân trang): Trung tâm tải về, Hướng dẫn / Kiến thức / Video, Có gì mới, mã xác nhận, tệp, ảnh chụp / PDF dạng ảnh, mô-đun / phân hệ, dịch vụ AI bên ngoài…; Thông tư 133 / 99 ghi đủ số hiệu.
+- Sửa câu giữ chỗ, câu cụt, lỗi chữ: 7 trang Nghiệp vụ, Giải pháp, Sản phẩm UNESCO XI, Tin tức, Kiến thức; số thứ tự 12 mục chi tiết Tính năng ưu việt khớp 16 điểm.
+- GĐ178: Có gì mới thêm GĐ175b – GĐ178 và ngày từng gói; Biểu mẫu 2026 (Tờ khai & BCTC, Hồ sơ thuế); Trợ lý lập định mức (AI Giá thành); FAQ 12 câu; Video "Sắp có" = Bài 09 – 14.
+- Tải về: chỉ "Nhận bộ cài qua điện thoại hoặc Zalo"; bỏ ngày, dung lượng, SHA-256, liên kết tải.
+- Việc cần anh chọn (chân trang, nút demo, khẩu hiệu, mã GĐ, địa chỉ, pháp nhân, giờ làm việc, pháp lý, giá, tên trang AI OCR, nút Xem nghiệp vụ) ghi trong mô tả Pull Request.

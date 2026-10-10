@@ -6,7 +6,7 @@ const { title, description=site.description, image='/og-default.jpg', noindex=fa
 const origin = Astro.site ?? site.url;
 const canonical = absoluteUrl(Astro.url.pathname, origin);
 const imageUrl = absoluteUrl(image, origin);
-const fullTitle = title.includes('UNESCO') ? title : `${title} | UNESCO AI Accounting`;
+const fullTitle = title.includes('UNESCO') ? title : `${title} | UNESCO AI – Phần mềm kế toán`;
 const orgName = isPlaceholder(site.company.legalName) ? site.name : site.company.legalName;
 const org = { '@context':'https://schema.org','@type':'Organization',name:orgName,url:absoluteUrl('/', origin) };
 ---

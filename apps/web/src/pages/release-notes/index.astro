@@ -3,16 +3,18 @@ import { url } from '../../utils/url';
 import ContentLayout from '../../layouts/ContentLayout.astro';
 import Icon from '../../components/Icon.astro';
 import { currentRelease as r } from '../../data/releases';
-import { whatsNew } from '../../data/whatsnew';
+import { whatsNew, packDate } from '../../data/whatsnew';
+const first = whatsNew[whatsNew.length - 1].code;
+const last = whatsNew[0].code;
 ---
-<ContentLayout title="Release Notes – Lịch sử cập nhật UNESCO AI" description="Lịch sử phiên bản và các gói cập nhật của phần mềm kế toán UNESCO AI: có gì mới theo từng gói GĐ136 – GĐ169." eyebrow="Cập nhật hệ thống" display="RELEASE |NOTES" subtitle="Có gì mới theo từng gói cập nhật" pills={['Cập nhật tự động có chữ ký số', 'Sao lưu trước khi cài', 'Hơn 18.000 phép kiểm mỗi gói']}>
+<ContentLayout title="Có gì mới – Lịch sử cập nhật UNESCO AI" description={`Lịch sử phiên bản và các gói cập nhật của phần mềm kế toán UNESCO AI: có gì mới theo từng gói ${first} – ${last}, kèm ngày phát hành.`} eyebrow="Cập nhật phần mềm" display="CÓ GÌ |MỚI" subtitle="Lịch sử cập nhật theo từng gói" pills={['Cập nhật tự động có chữ ký số', 'Sao lưu trước khi cài', 'Hơn 18.000 phép kiểm mỗi gói']}>
 <section class="section"><div class="container split top">
   <div class="card top-g"><span class="tag">BẢN HIỆN HÀNH</span><h2 style="font-size:1.9rem;margin-top:14px">{r.version}</h2><p class="muted">Gói mới nhất: {whatsNew[0].code} – {whatsNew[0].t}</p><ul class="checks">{r.notes.map((n) => <li>{n}</li>)}</ul></div>
-  <div><div class="callout b"><span class="ic"><Icon name="refresh" /></span><div><h3>Cập nhật phần mềm tự động</h3><p>Phần mềm tự kiểm tra kênh cập nhật mỗi ngày; có bản mới thì Việc cần làm báo. Bấm Cập nhật phần mềm là tải, kiểm chữ ký số, sao lưu rồi cài; lỗi giữa chừng thì khôi phục.</p></div></div>
-  <div class="actions" style="margin-top:18px"><a class="btn btn-primary" href={url('/download/')}>Download Center</a><a class="btn btn-secondary" href={url('/tinh-nang-ai/')}>Tổng hợp tính năng AI</a></div></div>
+  <div><div class="callout b"><span class="ic"><Icon name="refresh" /></span><div><h3>Cập nhật phần mềm tự động</h3><p>Phần mềm tự kiểm tra nguồn cập nhật mỗi ngày; có bản mới thì mục Việc cần làm sẽ báo. Bấm Cập nhật phần mềm là tải, kiểm chữ ký số, sao lưu rồi cài; lỗi giữa chừng thì khôi phục.</p></div></div>
+  <div class="actions" style="margin-top:18px"><a class="btn btn-primary" href={url('/download/')}>Trung tâm tải về</a><a class="btn btn-secondary" href={url('/tinh-nang-ai/')}>Tổng hợp tính năng AI</a></div></div>
 </div></section>
 <section class="section surface-soft"><div class="container">
-  <div class="section-head"><div><span class="eyebrow">Có gì mới</span><h2>Các gói cập nhật {whatsNew[whatsNew.length - 1].code} – {whatsNew[0].code}</h2></div><p>Trên phần mềm: F1 rồi gõ “co gi moi gd…” để xem chi tiết.</p></div>
-  <ul class="wn-list">{whatsNew.map((w) => <li><b><span class="code">{w.code}</span>{w.t}</b><p>{w.d}</p></li>)}</ul>
+  <div class="section-head"><div><span class="eyebrow">Có gì mới</span><h2>Các gói cập nhật {first} – {last}</h2></div><p>Trên phần mềm: F1 rồi gõ “co gi moi gd…” để xem chi tiết. Ngày là ngày ghi trên gói cập nhật.</p></div>
+  <ul class="wn-list">{whatsNew.map((w) => <li><b><span class="code">{w.code}</span>{w.t}</b><small class="wn-meta">{packDate(w.code)}{w.kind && ` · ${w.kind}`}</small><p>{w.d}</p></li>)}</ul>
 </div></section>
 </ContentLayout>

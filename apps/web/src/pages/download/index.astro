@@ -2,51 +2,47 @@
 import { url } from '../../utils/url';
 import ContentLayout from '../../layouts/ContentLayout.astro';
 import { currentRelease as r } from '../../data/releases';
-import { contact, telHref, zaloHref, mailHref } from '../../data/contact';
+import { contact, telHref, zaloHref } from '../../data/contact';
 import Icon from '../../components/Icon.astro';
-const hasDownload = !!r.downloadUrl;
 const steps = [
-  ['Nhận bộ cài', 'Liên hệ bộ phận kinh doanh để nhận bộ cài và thông tin bản quyền.', ''],
-  ['Cài bộ font chữ', 'Cài bộ font .Vn đi kèm để màn hình và báo cáo hiển thị đúng tiếng Việt.', ''],
+  ['Nhận bộ cài', 'Nhận bộ cài qua điện thoại hoặc Zalo, kèm thông tin bản quyền và hướng dẫn cài đặt.', ''],
+  ['Cài bộ phông chữ', 'Cài bộ phông chữ .Vn đi kèm để màn hình và báo cáo hiển thị đúng tiếng Việt.', ''],
   ['Cài đặt & kích hoạt AI', 'Chạy bộ cài, khai báo doanh nghiệp, năm tài chính; mở màn hình AI và nhập mã kích hoạt.', '/video/#tong-quan'],
   ['Số dư đầu kỳ', 'Lấy số dư từ năm trước hoặc nhập tồn kho, công nợ đầu kỳ.', ''],
   ['Hoá đơn & chứng từ', 'Tải hoá đơn điện tử, AI tạo mã còn thiếu, xem trước và ghi chứng từ.', '/video/#hoa-don-chung-tu'],
   ['Báo cáo & tờ khai', 'Kiểm tra khoá sổ, lập báo cáo tài chính, xuất XML 01/GTGT, BCTC sang HTKK.', '/video/#bao-cao-thue'],
 ];
 ---
-<ContentLayout title="Download Center – Tải phần mềm UNESCO AI" description="Bộ cài chính thức, xác minh tệp bằng SHA-256 và lịch sử thay đổi của phần mềm kế toán UNESCO AI; yêu cầu hệ thống và các bước bắt đầu sử dụng." eyebrow="Báo cáo giải pháp UNESCO AI" display="DOWNLOAD |CENTER" subtitle="Official installer + checksum + release notes">
+<ContentLayout title="Trung tâm tải về – Phần mềm UNESCO AI" description="Nhận bộ cài phần mềm kế toán UNESCO AI qua điện thoại hoặc Zalo; yêu cầu hệ thống, lịch sử thay đổi và các bước bắt đầu sử dụng." eyebrow="Tải về" display="TRUNG TÂM |TẢI VỀ" subtitle="Nhận bộ cài qua điện thoại hoặc Zalo">
 <section class="section"><div class="container">
   <div class="dl">
-    <div class="dl-side"><div><span class="ic ring g"><Icon name="monitor" /></span>Phiên bản</div><div><span class="ic ring b"><Icon name="shield-check" /></span>Xác minh tệp</div><div><span class="ic ring y"><Icon name="file-text" /></span>Lịch sử thay đổi</div></div>
+    <div class="dl-side"><div><span class="ic ring g"><Icon name="monitor" /></span>Phiên bản</div><div><span class="ic ring b"><Icon name="phone" /></span>Nhận bộ cài qua điện thoại / Zalo</div><div><span class="ic ring y"><Icon name="file-text" /></span>Lịch sử thay đổi</div></div>
     <div class="dl-box"><div class="bar"><i></i><i></i><i></i></div><div class="dl-body">
       <div class="dl-title"><img src={url('/brand/unesco-star.png')} alt="" width="54" height="54" loading="lazy" /><h2><span class="tn">UNESCO</span> <span class="tg">AI</span></h2></div>
       <div class="dl-row"><Icon name="monitor" /><b>{r.os}</b><span>{r.architecture}</span></div>
       <div class="dl-row"><Icon name="layers" /><b>Phiên bản</b><span>{r.version}</span></div>
-      <div class="dl-row"><Icon name="calendar" /><b>Phát hành</b><span>{r.releaseDate}</span></div>
-      <div class="dl-row"><Icon name="file-text" /><b>Dung lượng</b><span>{r.size}</span></div>
-      <p style="margin:14px 0 6px;font-family:var(--font-h);font-weight:700;color:var(--blue)">SHA-256</p><div class="hash">{r.sha256}</div>
-      <div class="actions" style="margin-top:18px">{hasDownload ? <a class="btn btn-primary btn-lg" href={r.downloadUrl}><Icon name="download" />Tải bộ cài</a> : <a class="btn btn-primary btn-lg" href={telHref(contact.sales.mobile)}><Icon name="download" />Nhận bộ cài</a>}<a class="btn btn-secondary btn-lg" href={url('/release-notes/')}><Icon name="file-text" />Xem thay đổi</a></div>
+      <div class="dl-row"><Icon name="phone" /><b>Nhận bộ cài qua điện thoại hoặc Zalo</b><span>{contact.sales.label}: {contact.sales.mobile}</span></div>
+      <div class="actions" style="margin-top:18px"><a class="btn btn-primary btn-lg" href={telHref(contact.sales.mobile)}><Icon name="phone" />Gọi {contact.sales.mobile}</a><a class="btn btn-secondary btn-lg" href={zaloHref} target="_blank" rel="noopener"><Icon name="chat" />Nhắn Zalo</a><a class="btn btn-secondary btn-lg" href={url('/release-notes/')}><Icon name="file-text" />Xem thay đổi</a></div>
     </div></div>
   </div>
-  <div class="callout b" style="margin-top:26px"><span class="ic"><Icon name="monitor-check" /></span><div><h3>Official installer + checksum + release notes</h3><p>Tải bộ cài chính thức để bảo đảm an toàn và ổn định. Luôn xác minh tính toàn vẹn tệp bằng checksum và tham khảo lịch sử thay đổi trước khi nâng cấp.</p><p style="margin-top:8px;color:var(--red);font-family:var(--font-h);font-weight:700;display:flex;gap:8px;align-items:center"><Icon name="alert" size={20} />Không dùng installer giả – chỉ cài bộ cài do UNESCO cung cấp.</p></div></div>
-  <div class="grid grid-3" style="margin-top:26px">
-    <a class="card" href={telHref(contact.sales.mobile)}><span class="ic g" style="margin-bottom:12px"><Icon name="phone" /></span><h3>Kinh doanh</h3><p class="muted" style="margin:0">{contact.sales.mobile} (Zalo)</p></a>
+  <div class="callout b" style="margin-top:26px"><span class="ic"><Icon name="monitor-check" /></span><div><h3>Nhận bộ cài qua điện thoại hoặc Zalo</h3><p>Website không đăng bộ cài. Gọi hoặc nhắn Zalo bộ phận kinh doanh để nhận bộ cài chính thức, kèm hướng dẫn cài đặt và mã kích hoạt; xem lịch sử thay đổi trước khi nâng cấp.</p><p style="margin-top:8px;color:var(--red);font-family:var(--font-h);font-weight:700;display:flex;gap:8px;align-items:center"><Icon name="alert" size={20} />Không cài bộ cài từ nguồn khác – chỉ cài bộ cài do UNESCO gửi.</p></div></div>
+  <div class="grid grid-2" style="margin-top:26px">
+    <a class="card" href={telHref(contact.sales.mobile)}><span class="ic g" style="margin-bottom:12px"><Icon name="phone" /></span><h3>Điện thoại</h3><p class="muted" style="margin:0">{contact.sales.mobile}</p></a>
     <a class="card" href={zaloHref} target="_blank" rel="noopener"><span class="ic b" style="margin-bottom:12px"><Icon name="chat" /></span><h3>Zalo</h3><p class="muted" style="margin:0">{contact.zalo}</p></a>
-    <a class="card" href={mailHref}><span class="ic y" style="margin-bottom:12px"><Icon name="mail" /></span><h3>Email</h3><p class="muted" style="margin:0">{contact.email}</p></a>
   </div>
 </div></section>
 
 <section class="section surface-soft"><div class="container"><div class="section-head"><div><span class="eyebrow">Yêu cầu hệ thống</span><h2>Chuẩn bị máy tính trước khi cài</h2></div></div>
   <div class="req-grid">
     <div class="card"><h3>Máy tính</h3><ul class="checks"><li>Windows 10 hoặc Windows 11</li><li>Phần mềm 32-bit, chạy được trên Windows 64-bit</li><li>Có quyền quản trị để cài đặt lần đầu</li></ul></div>
-    <div class="card"><h3>Font chữ & in ấn</h3><ul class="checks"><li>Cài bộ font .Vn đi kèm bộ cài</li><li>Máy in hoặc xuất Excel/PDF để lưu báo cáo</li></ul></div>
-    <div class="card"><h3>Dữ liệu kế toán</h3><ul class="checks"><li>Mỗi doanh nghiệp, mỗi năm tài chính một tệp dữ liệu (.MDB); chọn TT133/2016 hoặc TT99/2025 theo bộ sổ</li><li>Bộ cài kèm sổ mẫu năm 2026 theo TT133 và TT99</li><li>Sao lưu tự động mỗi ngày và trước việc lớn; nên sao lưu thêm ra ổ ngoài hoặc đám mây</li><li>Cập nhật phần mềm tự động qua kênh có chữ ký số</li></ul></div>
-    <div class="card"><h3>Trợ lý AI</h3><ul class="checks"><li>Mở màn hình AI từ ô AI trên màn hình chính; máy mới nhập mã kích hoạt AI (không cần Internet)</li><li>Ảnh, PDF scan đọc bằng Google Document AI cài sẵn hoặc Tesseract trên máy</li></ul></div>
+    <div class="card"><h3>Phông chữ & in ấn</h3><ul class="checks"><li>Cài bộ phông chữ .Vn đi kèm bộ cài</li><li>Máy in hoặc xuất Excel/PDF để lưu báo cáo</li></ul></div>
+    <div class="card"><h3>Dữ liệu kế toán</h3><ul class="checks"><li>Mỗi doanh nghiệp, mỗi năm tài chính một tệp dữ liệu; chọn Thông tư 133/2016 hoặc Thông tư 99/2025 theo bộ sổ</li><li>Bộ cài kèm sổ mẫu năm 2026 theo Thông tư 133 và Thông tư 99</li><li>Sao lưu tự động mỗi ngày và trước việc lớn; nên sao lưu thêm ra ổ ngoài hoặc đám mây</li><li>Cập nhật phần mềm tự động qua nguồn có chữ ký số</li></ul></div>
+    <div class="card"><h3>Trợ lý AI</h3><ul class="checks"><li>Mở màn hình AI từ ô AI trên màn hình chính; máy mới nhập mã kích hoạt AI (nhập mã không cần Internet)</li><li>Ảnh chụp, PDF dạng ảnh: đọc bằng Google Document AI (cần Internet) hoặc công cụ Tesseract trên máy (không cần Internet)</li></ul></div>
   </div>
 </div></section>
 
 <section class="section"><div class="container"><div class="section-head"><div><span class="eyebrow">Bắt đầu sử dụng</span><h2>6 bước từ cài đặt đến báo cáo đầu tiên</h2></div><p>Các bước có video hướng dẫn được gắn liên kết bên dưới.</p></div>
   <ol class="steps5 steps3">{steps.map((s) => <li><b>{s[0]}</b><small>{s[1]}</small>{s[2] && <small><a href={url(s[2])} style="color:var(--green);font-weight:700">Xem video →</a></small>}</li>)}</ol>
-  <div class="notice" style="margin-top:24px"><strong>Tải an toàn:</strong> khi có link tải công khai, SHA-256 và dung lượng sẽ được công bố tại đây để bạn kiểm tra tệp trước khi cài.</div>
+  <div class="notice" style="margin-top:24px"><strong>Bộ cài không đăng trên website:</strong> nhận bộ cài qua điện thoại hoặc Zalo để được gửi đúng bản và hướng dẫn cài đặt.</div>
 </div></section>
 </ContentLayout>

@@ -16,7 +16,7 @@ const id = video.youtube.trim();
     <div class="video-thumb is-video">
       <video controls preload="none" playsinline poster={url(video.poster)} width="1280" height="720" aria-label={video.title}>
         <source src={url(video.src)} type="video/mp4" />
-        Trình duyệt không hỗ trợ video. <a href={url(video.src)}>Tải video</a>.
+        Nếu video không phát, hãy bấm <a href={url(video.src)}>Tải video</a> để xem trên máy.
       </video>
     </div>
   ) : (

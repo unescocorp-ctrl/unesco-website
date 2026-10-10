@@ -9,6 +9,6 @@ const { compact = false } = Astro.props;
   <div class="col no"><div class="col-h"><Icon name="x" />AI không làm</div><ul>{aiDont.map((a) => <li><span class="ic"><Icon name={a.icon} /></span>{a.t}</li>)}</ul></div>
 </div>
 {!compact && <>
-  <div class="banner-log"><span class="ic"><Icon name="shield-check" /></span><span class="ic"><Icon name="undo" /></span>Có nhật ký – có thể lùi</div>
+  <div class="banner-log"><span class="ic"><Icon name="shield-check" /></span><span class="ic"><Icon name="undo" /></span>Có nhật ký – có thể hoàn tác</div>
   <div class="decide"><span class="ic lg b"><Icon name="user-check" /></span><b>Quyền quyết định<br/><span>vẫn thuộc về kế toán</span></b></div>
 </>}

@@ -10,12 +10,19 @@ const principles = [
   ['shield-x', 'Không tự nộp thay', 'Chỉ hỗ trợ tra cứu, đối chiếu và lưu trữ; không ký, không nộp hồ sơ thay doanh nghiệp.', 'y'],
 ];
 const blocks = [
-  ['clipboard-check', 'Dạy một lần, dùng mãi', 'Kế toán đăng nhập, tra cứu như bình thường; AI đọc kết quả, mở từng hồ sơ trong một tab.', 'g'],
+  ['clipboard-check', 'Thiết lập một lần, dùng mãi', 'Kế toán đăng nhập, tra cứu như bình thường; AI đọc kết quả, mở từng hồ sơ trên một thẻ.', 'g'],
   ['folder-check', 'Tờ khai đã nộp', 'Danh sách tờ khai đã nộp và trạng thái tiếp nhận / chấp nhận của cơ quan thuế.', 't'],
-  ['bell', 'Thông báo', 'Thông báo của cơ quan thuế, mở tệp đính kèm ngay trong phần mềm.', 'b'],
+  ['bell', 'Thông báo', 'Thông báo của cơ quan thuế, mở văn bản đính kèm ngay trong phần mềm.', 'b'],
   ['scale', 'Đối chiếu 01/GTGT với sổ', 'So từng chỉ tiêu tờ khai đã nộp với sổ kế toán; lệch trên 1.000 đồng được tô đỏ.', 'y'],
   ['percent', 'Số phải nộp', 'Tính theo tờ khai có hiệu lực, đối chiếu với giấy nộp tiền và sổ phụ ngân hàng.', 'g'],
-  ['calendar-clock', 'Hạn nộp tính cả ngày lễ', 'Hạn nộp tự lùi qua thứ Bảy, Chủ nhật, ngày lễ; báo kỳ đã đến hạn mà chưa thấy tờ khai.', 'b'],
+  ['calendar-clock', 'Hạn nộp tự lùi qua ngày nghỉ', 'Hạn nộp tự lùi qua cuối tuần và ngày lễ; báo kỳ đã đến hạn mà chưa thấy tờ khai.', 'b'],
+];
+/** Mới 2026 (GĐ170, GĐ174) – theo tài liệu "Đối chiếu website với UNESCO AI bản GĐ178". */
+const new2026 = [
+  ['users', 'Biến động lao động – Mẫu số 33', 'Theo Nghị định 374/2025 (hiệu lực 01/01/2026): lập Mẫu số 33 từ dữ liệu lao động và BHXH – đầu kỳ, tăng, giảm, cuối kỳ, tạm hoãn; xuất Excel theo tháng; nhắc việc khi có biến động.', 'g'],
+  ['alert', 'Soát rủi ro hoá đơn R6, R7', 'R6: thời điểm ký số so với ngày lập hoá đơn. R7: đối chiếu với danh sách doanh nghiệp rủi ro do cơ quan thuế công bố (người dùng tự tải danh sách vào thư mục). Hộp soát nay có 7 nhóm.', 'y'],
+  ['folder-check', 'Hồ sơ kèm chứng từ', 'Xuất Excel 6 sheet, kết luận đủ / thiếu / chờ cho từng giao dịch – sẵn sàng khi cơ quan thuế yêu cầu giải trình.', 'b'],
+  ['send', 'Yêu cầu chứng từ khách', 'Lập thư yêu cầu (bản in và bản gửi Zalo), nhận chứng từ khách gửi về. Phần mềm không tự gửi thư và không xoá tệp của khách.', 't'],
 ];
 const states = [['file-check', 'Đã nộp'], ['file-search', 'Đang kiểm tra'], ['clipboard-check', 'Đã chấp nhận'], ['check-circle', 'Hoàn tất']];
 ---
@@ -26,7 +33,7 @@ const states = [['file-check', 'Đã nộp'], ['file-search', 'Đang kiểm tra'
 </div></section>
 
 <section class="section surface"><div class="container">
-  <div class="section-head"><div><span class="eyebrow">Tab Hồ sơ thuế · Cổng dịch vụ công</span><h2>Hồ sơ thuế trong một tab</h2></div><p>Tờ khai đã nộp, thông báo, đối chiếu sổ, số phải nộp, hạn nộp tính cả ngày lễ – không phải mở từng trang trên cổng.</p></div>
+  <div class="section-head"><div><span class="eyebrow">Thẻ Hồ sơ thuế · Cổng dịch vụ công</span><h2>Hồ sơ thuế trên một thẻ</h2></div><p>Tờ khai đã nộp, thông báo, đối chiếu sổ, số phải nộp, hạn nộp tự lùi qua ngày nghỉ – không phải mở từng trang trên cổng.</p></div>
   <div class="grid grid-3">{blocks.map((b) => <div class="card"><span class={`ic ${b[3]}`} style="margin-bottom:14px"><Icon name={b[0]} /></span><h3>{b[1]}</h3><p class="muted" style="margin:0">{b[2]}</p></div>)}</div>
 </div></section>
 
@@ -36,6 +43,11 @@ const states = [['file-check', 'Đã nộp'], ['file-search', 'Đang kiểm tra'
   <ol class="flow" style="--n:4;margin-top:24px">{states.map((s, i) => <li><span class={`ic ring ${i < 2 ? 'g' : 'b'}`}><Icon name={s[0]} /></span><b>{s[1]}</b></li>)}</ol>
   <div class="callout y" style="margin-top:26px"><span class="ic"><Icon name="shield-x" /></span><div><h3>Không tự nộp thay</h3><p>Phần mềm chỉ hỗ trợ theo dõi, đối chiếu và cảnh báo. Việc ký và nộp hồ sơ do doanh nghiệp tự thực hiện.</p></div></div>
 </div></div></section>
+
+<section class="section surface" id="moi-2026"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Mới · GĐ170 – GĐ174</span><h2>Biểu mẫu và hồ sơ 2026</h2></div><p>Đã có trong phần mềm; căn cứ tóm tắt theo văn bản tại thời điểm cập nhật (10/2026) – hãy đối chiếu văn bản gốc cho trường hợp cụ thể.</p></div>
+  <div class="grid grid-4">{new2026.map((b) => <div class={`card top-${b[3]}`}><span class={`ic ${b[3]}`} style="margin-bottom:14px"><Icon name={b[0]} /></span><h3>{b[1]}</h3><p class="muted" style="margin:0">{b[2]}</p></div>)}</div>
+</div></section>
 
 <section class="section surface-soft"><div class="container">
   <div class="callout b"><span class="ic"><Icon name="file-xml" /></span><div><h3>Tiếp theo: Tờ khai & BCTC</h3><p>Soát trước khi xuất – phát hiện lệch trước khi nộp: 01/GTGT, báo cáo tài chính, 03/TNDN xuất XML HTKK.</p></div><a class="btn btn-secondary" style="margin-left:auto" href={url('/to-khai-bctc/')}>Xem Tờ khai & BCTC</a></div>

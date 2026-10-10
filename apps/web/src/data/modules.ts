@@ -65,7 +65,7 @@ export const modules: Module[] = [
       'Danh điểm công trình, sản phẩm',
       'Định mức thành phẩm theo hóa đơn; điều chỉnh định mức',
       'Dở dang đầu kỳ; kết chuyển thành phẩm',
-      'Sổ giá thành theo TT133 và TT99',
+      'Sổ giá thành theo Thông tư 133 và Thông tư 99',
     ],
   },
   {
@@ -92,7 +92,7 @@ export const modules: Module[] = [
     icon: '📊', title: 'Báo cáo – Sổ kế toán', shot: 'ledgers', href: '/nghiep-vu/bao-cao/',
     summary: 'Trung tâm của hệ thống: sổ sách, báo cáo tài chính, báo cáo thuế, quản trị.',
     features: [
-      'Báo cáo tài chính theo TT133 và TT99',
+      'Báo cáo tài chính theo Thông tư 133/2016/TT-BTC và Thông tư 99/2025/TT-BTC',
       'Báo cáo thuế GTGT, TNDN, TNCN, môn bài, TTĐB',
       'Sổ cái, sổ chi tiết, nhật ký chung, sổ quỹ, sổ tiền gửi',
       'Sổ kế toán hộ kinh doanh; báo cáo chi nhánh, quản trị',

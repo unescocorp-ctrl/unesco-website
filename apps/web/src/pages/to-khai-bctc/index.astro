@@ -7,23 +7,29 @@ import Icon from '../../components/Icon.astro';
 import { shots } from '../../data/screenshots';
 import { reportGroups } from '../../data/reports';
 import { videoBySlug } from '../../data/videos';
-const flow = [['history', 'Tự lấy kỳ trước', '[22] = [43] kỳ trước, người ký, cơ quan thuế tự điền'], ['file-xml', 'Khuôn XML từ HTKK', 'Học từ chính HTKK trên máy'], ['shield-check', 'Soát ràng buộc', 'Lệch 1 đồng ở ràng buộc là dừng'], ['eye', 'Xem trước', 'So kỳ trước, kiểm số chuyển kỳ, kiểm chéo trong kỳ'], ['download', 'Đưa vào HTKK', 'Chỉ chép khi bấm Đưa vào HTKK; không ghi đè kỳ đã có']];
+const flow = [['history', 'Tự lấy kỳ trước', '[22] = [43] kỳ trước, người ký, cơ quan thuế tự điền'], ['file-xml', 'Mẫu tệp lấy từ HTKK', 'Lấy cách khai từ chính HTKK trên máy'], ['shield-check', 'Soát ràng buộc', 'Lệch 1 đồng ở ràng buộc là dừng'], ['eye', 'Xem trước', 'So kỳ trước, kiểm số chuyển kỳ, kiểm chéo trong kỳ'], ['download', 'Đưa vào HTKK', 'Chỉ chép khi bấm Đưa vào HTKK; không ghi đè kỳ đã có']];
 const reps = ['01/GTGT', 'B01a-DNN', 'B02-DNN', 'B03-DNN', 'F01-DNN', 'B09-DNN', '03/TNDN', '05/QTT-TNCN'];
 const warns = [['[!] Phải xem', 'Số chuyển kỳ khác tờ khai kỳ trước, lệch giữa các tờ khai trong kỳ'], ['[?] Nên kiểm tra', 'Biến động lớn so với kỳ trước'], ['[i] Thông tin', 'Nguồn số liệu, kỳ đã có trong HTKK (không ghi đè)']];
 const more = [
   ['users', 'Thuế TNCN đủ bộ', '05/KK-TNCN quý, 05/QTT-TNCN năm kèm 05-1 / 05-2 / 05-3, đăng ký thuế NLĐ 05-ĐKT-TH, đối chiếu TNCN với sổ.', 'g'],
   ['database', 'Nhập toàn bộ HTKK theo MST', 'Một lần đọc mọi tờ khai của MST: số dư TK cuối năm so sổ, lỗ chuyển, [22] kỳ sau, TNCN, BCTC năm trước.', 'b'],
   ['layers', 'Xuất 1 lần báo cáo năm', 'Tích một lần B01a, B02, B03, F01, B09, 03/TNDN, 05/QTT – Excel mẫu in HTKK, XML hoặc cả hai.', 't'],
-  ['history', 'Số liệu năm trước BCTC', 'Lấy cột Năm trước / Số đầu năm từ Excel, XML, ZIP, HTKK; đổi mã TT200 / TT133 sang TT99; xem trước, Đồng ý mới ghi.', 'y'],
+  ['history', 'Số liệu năm trước BCTC', 'Lấy cột Năm trước / Số đầu năm từ tệp Excel, tệp XML, tệp nén, HTKK; đổi mã theo Thông tư 200 / Thông tư 133 sang Thông tư 99; xem trước, Đồng ý mới ghi.', 'y'],
   ['percent', 'Ước tính TNDN quý', 'Ước tính TNDN từ đầu năm (phụ lục 03-1A), gợi ý thuế suất 15 / 17 / 20%.', 'g'],
   ['list-checks', 'Kiểm tra khoá sổ', 'LỖI / CẢNH BÁO / ĐẠT: số dư, kết chuyển, công nợ, tồn kho âm…', 'b'],
 ];
 const v = videoBySlug('m06-bao-cao-nhat-ky')!;
+/** Biểu mẫu 2026 đã có trong phần mềm (GĐ170 – GĐ176) – theo tài liệu "Đối chiếu website với UNESCO AI bản GĐ178". */
+const forms2026 = [
+  ['Sổ và BCTC doanh nghiệp siêu nhỏ', 'Thông tư 58/2026/TT-BTC (ngày 25/5/2026, hiệu lực 01/7/2026, thay Thông tư 132/2018): ghi thẳng sổ chi tiết, không dùng hệ thống tài khoản; 4 trường hợp theo phương pháp tính thuế (Điều 5 – 8); BCTC B01-DNSN và B02-DNSN, nộp trong 90 ngày (Điều 10).', 'Lập sổ S1, S2a – S2d, S3a – S3b và sổ tự chọn S4a – S4d từ chứng từ và số dư (chỉ xem, không sửa sổ); xuất Excel hoặc Excel + XML, xem trước, so kỳ trước rồi Đưa vào HTKK. Mở ở menu Dữ liệu, hoặc thẻ Sổ kế toán - báo cáo hộ kinh doanh.'],
+  ['Hộ kinh doanh: sổ và tờ khai 01/CNKD', 'Nghị định 68/2026 và Nghị định 141/2026/NĐ-CP: doanh thu năm đến 1 tỷ đồng không nộp GTGT, TNCN; trên 1 tỷ khai 01/CNKD theo quý, trên 50 tỷ theo tháng. Thông tư 152/2025/TT-BTC: sổ S1a, S2a – S2e, S3a-HKD. Thông tư 18/2026 và Thông tư 50/2026/TT-BTC: mẫu 01/CNKD, 01/BK-STK, 01/BK-HTK.', '3 trường hợp: miễn thuế (sổ S1a), theo tỷ lệ doanh thu (S2a + 01/CNKD), theo thu nhập (S2b – S2e + 01/CNKD). XML 01/CNKD theo mẫu của HTKK, xem trước rồi Đưa vào HTKK; nhắc việc theo hạn nộp.'],
+  ['Theo dõi mẫu tờ khai mới trên HTKK', 'Chuẩn bị cho Thông tư 89/2026/TT-BTC: xuất đúng mẫu mới ngay khi cơ quan thuế phát hành.', 'Đọc danh sách mẫu của HTKK trên máy (chỉ xem), báo khi có mẫu mới hoặc phiên bản mới hơn mẫu đang xuất. 01/GTGT đã xuất theo mẫu mới; 05/KK-TNCN, 03/TNDN, 05/QTT-TNCN theo mẫu hiện hành của HTKK.'],
+];
 ---
-<ContentLayout title="Tờ khai & BCTC – Soát trước khi xuất" description="Soát trước khi xuất – phát hiện lệch trước khi nộp: xem trước 01/GTGT, báo cáo tài chính B01–B09, 03/TNDN, cảnh báo lệch với sổ, kiểm tra khoá sổ và xuất XML HTKK. Phần mềm không ký, không nộp thay." eyebrow="Tờ khai & BCTC" display="TỜ KHAI & |BCTC" subtitle="Soát trước khi xuất – phát hiện lệch trước khi nộp" heroShot={shots.reports}>
+<ContentLayout title="Tờ khai & BCTC – Soát trước khi xuất" description="Soát trước khi xuất – phát hiện lệch trước khi nộp: xem trước 01/GTGT, báo cáo tài chính B01a, B02, B03, F01, B09, 03/TNDN, biểu mẫu 2026 (doanh nghiệp siêu nhỏ, hộ kinh doanh), cảnh báo lệch với sổ, kiểm tra khoá sổ và xuất XML HTKK. Phần mềm không ký, không nộp thay." eyebrow="Tờ khai & BCTC" display="TỜ KHAI & |BCTC" subtitle="Soát trước khi xuất – phát hiện lệch trước khi nộp" heroShot={shots.reports}>
 
 <section class="section"><div class="container">
-  <div class="sec-c"><span class="eyebrow">Quy trình kết xuất</span><h2>5 bước từ sổ kế toán đến tệp XML</h2></div>
+  <div class="sec-c"><span class="eyebrow">Quy trình xuất tờ khai</span><h2>5 bước từ sổ kế toán đến tệp XML</h2></div>
   <ol class="flow" style="--n:5">{flow.map((f, i) => <li><span class={`ic lg ring ${['g', 'g', 'y', 'b', 'g'][i]}`}><Icon name={f[0]} /></span><b>{f[1]}</b><small>{f[2]}</small></li>)}</ol>
 </div></section>
 
@@ -33,7 +39,7 @@ const v = videoBySlug('m06-bao-cao-nhat-ky')!;
     <div class="card"><h3 class="ty">Màn hình Xem trước</h3><p style="display:flex;gap:8px;align-items:center;margin:0 0 14px;font-family:var(--font-h);font-weight:700"><span class="tr"><Icon name="alert" /></span>Đọc dòng [!] trước khi đưa vào HTKK</p><ul class="warn-list">{warns.map((w) => <li><b>{w[0]}</b><span>{w[1]}</span></li>)}</ul></div>
     <div class="card"><h3 class="tb">Xem trước báo cáo</h3><p style="margin:0 0 10px;font-family:var(--font-h);font-weight:700;font-size:1.2rem">01/GTGT · Tờ khai thuế GTGT</p>
       <div class="xt"><table><thead><tr><th>Chỉ tiêu</th><th>Trạng thái</th></tr></thead><tbody><tr><td>Doanh thu hàng hoá, dịch vụ</td><td><span class="lbl y">lệch với sổ</span></td></tr><tr><td>Thuế GTGT đầu ra</td><td><span class="lbl y">lệch với sổ</span></td></tr><tr><td>Thuế GTGT đầu vào</td><td><span class="lbl g">khớp</span></td></tr></tbody></table></div>
-      <p class="caption" style="margin:10px 0 0">Ví dụ minh hoạ · Phạm vi mẫu biểu theo phiên bản công bố hỗ trợ.</p></div>
+      <p class="caption" style="margin:10px 0 0">Ví dụ minh hoạ · Phạm vi mẫu biểu theo phiên bản đã công bố.</p></div>
   </div>
   <div class="metrics" style="margin-top:24px"><div class="metric-box"><b>74 / 74</b><small>chỉ tiêu B01a-DNN khớp BCTC thật 2025, lệch 0 đồng</small></div><div class="metric-box"><b>0 lệch</b><small>28 ràng buộc 03/TNDN trên tờ khai thật 2025</small></div><div class="metric-box"><b>3 – 4,5 giây</b><small>đọc 927 – 1.252 tờ khai HTKK của một MST</small></div></div>
   <div class="grid grid-3" style="margin-top:24px">{more.map((m) => <div class={`card top-${m[3]}`}><span class={`ic ${m[3]}`} style="margin-bottom:14px"><Icon name={m[0]} /></span><h3>{m[1]}</h3><p class="muted" style="margin:0">{m[2]}</p></div>)}</div>
@@ -46,8 +52,17 @@ const v = videoBySlug('m06-bao-cao-nhat-ky')!;
 </div></section>
 
 <section class="section surface-soft"><div class="container">
-  <div class="section-head"><div><span class="eyebrow">Sổ sách & báo cáo</span><h2>Đủ mẫu sổ, báo cáo tài chính, báo cáo thuế</h2></div><p>Mỗi báo cáo chọn được kỳ theo tháng, quý hoặc ngày; xem, in hoặc xuất Excel. Theo TT133 và TT99.</p></div>
+  <div class="section-head"><div><span class="eyebrow">Sổ sách & báo cáo</span><h2>Đủ mẫu sổ, báo cáo tài chính, báo cáo thuế</h2></div><p>Mỗi báo cáo chọn được kỳ theo tháng, quý hoặc ngày; xem, in hoặc xuất Excel. Theo Thông tư 133/2016/TT-BTC và Thông tư 99/2025/TT-BTC.</p></div>
   <div class="report-cols">{reportGroups.map((g) => <div class="grp"><h3>{g.title}</h3><ul>{g.items.map((i) => <li>{i}</li>)}</ul></div>)}</div>
+</div></section>
+
+<section class="section" id="bieu-mau-2026"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Mới · GĐ170 – GĐ176</span><h2>Biểu mẫu 2026</h2></div><p>Đã có trong phần mềm: sổ và báo cáo cho doanh nghiệp siêu nhỏ, hộ kinh doanh, và theo dõi mẫu tờ khai mới trên HTKK. Mọi tờ khai đều xem trước, so kỳ trước rồi mới đưa vào HTKK.</p></div>
+  <div class="table-wrap" style="border:0"><table class="feat-table"><thead><tr><th>Biểu mẫu</th><th>Căn cứ</th><th>Phần mềm làm gì</th></tr></thead><tbody>
+    {forms2026.map((f) => <tr><td>{f[0]}</td><td>{f[1]}</td><td>{f[2]}</td></tr>)}
+  </tbody></table></div>
+  <p class="caption" style="margin-top:12px">Căn cứ tóm tắt theo văn bản tại thời điểm cập nhật (10/2026); hãy đối chiếu văn bản gốc cho trường hợp cụ thể, nhất là hạn nộp. Chưa có trong phần mềm: phụ lục giảm thuế GTGT cho hộ kinh doanh, 01/CNKD kỳ năm (quyết toán), nhiều địa điểm kinh doanh, hộ thương mại điện tử.</p>
+  <div class="actions" style="margin-top:18px"><a class="btn btn-secondary" href={url('/huong-dan/#hd-23')}>Hướng dẫn sổ doanh nghiệp siêu nhỏ</a><a class="btn btn-secondary" href={url('/huong-dan/#hd-24')}>Hướng dẫn hộ kinh doanh</a></div>
 </div></section>
 
 <section class="section"><div class="container split video-split"><div><VideoCard video={v} large={true} /></div><div><span class="eyebrow">Video hướng dẫn</span><h2>Báo cáo & nhật ký trên phần mềm</h2><p class="lead">{v.desc}</p><div class="actions"><a class="btn btn-primary" href={url('/lien-he/#demo')}>Đăng ký xem demo</a><a class="btn btn-secondary" href={url('/ho-so-thue/')}>Hồ sơ Thuế</a></div></div></div></section>

@@ -28,13 +28,13 @@ const know = [
   ['sparkles', 'Dùng màn hình AI', 'Quy trình xử lý tự động, bốn ô kiểm soát và trợ lý AI trên màn hình.', '/ai-ke-toan/', 't'],
   ['book-open', 'Kiến thức kế toán', 'Bài viết theo chủ đề hoá đơn, ngân hàng, giá thành, thuế.', '/kien-thuc/', 'b'],
   ['info', 'Câu hỏi thường gặp', 'Giải đáp nhanh về sản phẩm, AI, cài đặt, nâng cấp.', '/faq/', 'y'],
-  ['history', 'Release notes', 'Lịch sử phiên bản và có gì mới theo từng gói.', '/release-notes/', 'g'],
-  ['list-checks', 'Tổng hợp 65 tính năng AI', 'Mỗi tính năng làm gì, mở từ menu / nút nào.', '/tinh-nang-ai/', 't'],
+  ['history', 'Có gì mới', 'Lịch sử phiên bản và nội dung từng gói cập nhật.', '/release-notes/', 'g'],
+  ['list-checks', 'Tổng hợp tính năng AI', 'Mỗi tính năng làm gì, mở từ menu / nút nào.', '/tinh-nang-ai/', 't'],
   ['star', 'Tính năng ưu việt', '16 điểm ưu việt và số liệu đo thực tế.', '/tinh-nang-uu-viet/', 'y'],
   ['headset', 'Gửi yêu cầu hỗ trợ', 'Ghi rõ phiên bản và thao tác đang làm để được hỗ trợ nhanh.', '/ho-tro/', 'b'],
 ];
 ---
-<ContentLayout title="Guide / Knowledge / Video Center – Hướng dẫn UNESCO AI" description="Trung tâm hướng dẫn phần mềm kế toán UNESCO AI: video từng module quay trên phần mềm thật, kiến thức kế toán, câu hỏi thường gặp, release notes và kênh hỗ trợ trực tiếp." eyebrow="Help Center" display="GUIDE / KNOWLEDGE / |VIDEO CENTER" subtitle="Học từng thao tác theo đúng việc bạn cần làm">
+<ContentLayout title="Trung tâm hướng dẫn – Hướng dẫn UNESCO AI" description="Trung tâm hướng dẫn phần mềm kế toán UNESCO AI: video từng mô-đun quay trên phần mềm thật, hướng dẫn trực quan, kiến thức kế toán, câu hỏi thường gặp, lịch sử cập nhật và kênh hỗ trợ trực tiếp." eyebrow="Trung tâm trợ giúp" display="HƯỚNG DẪN · KIẾN THỨC |· VIDEO" subtitle="Học từng thao tác theo đúng việc bạn cần làm">
 
 <section class="section"><div class="container">
   <nav class="topic-bar" aria-label="Chủ đề hướng dẫn">{topics.map((t, i) => <a class={i === 0 ? 'on' : ''} href={url(t[2])}><Icon name={t[0]} />{t[1]}</a>)}</nav>
@@ -43,7 +43,7 @@ const know = [
 </div></section>
 
 <section class="section surface-soft" id="truc-quan"><div class="container">
-  <div class="section-head"><div><span class="eyebrow">Hướng dẫn trực quan · GĐ150 – GĐ174 · bản {guideRelease.code}</span><h2>{guide.length} chức năng mới: mở ở đâu, bấm nút nào</h2></div><p>Mỗi chức năng một trang có hình màn hình đánh số, các bước và lưu ý. Các báo cáo mới chỉ đọc sổ; ghi sổ hoặc chép vào HTKK chỉ khi kế toán bấm Ghi, Đồng ý, Đưa vào HTKK. Ở bất kỳ màn hình nào, bấm F1 để Trợ lý AI mở đúng mục hướng dẫn.</p></div>
+  <div class="section-head"><div><span class="eyebrow">Hướng dẫn trực quan · GĐ150 – GĐ174 · bản {guideRelease.code}</span><h2>{guide.length} chức năng mới: mở ở đâu, bấm nút nào</h2></div><p>Mỗi chức năng một trang có hình màn hình đánh số, các bước và lưu ý. Các báo cáo mới chỉ xem sổ, không sửa; ghi sổ hoặc chép vào HTKK chỉ khi kế toán bấm Ghi, Đồng ý, Đưa vào HTKK. Ở bất kỳ màn hình nào, bấm F1 để Trợ lý AI mở đúng mục hướng dẫn.</p></div>
   <h3>Dùng vào lúc nào trong năm</h3>
   <div class="when6" style="margin:12px 0 26px">{whenToUse.map((w) => <div><b>{w.t}</b><small>{w.d}</small></div>)}</div>
   <nav class="cat-nav" aria-label="Nhóm chức năng">{guideGroups.map((gr) => <a href={`#nhom-${gr.id}`}><span>{guide.filter((g) => g.grp === gr.id).length}</span>{gr.t}</a>)}</nav>
@@ -66,11 +66,11 @@ const know = [
 </div></section>
 
 <section class="section surface"><div class="container">
-  <div class="section-head"><div><span class="eyebrow">Knowledge</span><h2>Tài liệu & hỗ trợ</h2></div><p>Mỗi mục dẫn tới trang chi tiết; cần hỗ trợ trực tiếp hãy gọi bộ phận hỗ trợ sử dụng.</p></div>
+  <div class="section-head"><div><span class="eyebrow">Kiến thức</span><h2>Tài liệu & hỗ trợ</h2></div><p>Mỗi mục dẫn tới trang chi tiết; cần hỗ trợ trực tiếp hãy gọi bộ phận hỗ trợ sử dụng.</p></div>
   <div class="grid grid-3">{know.map((k) => <a class={`card top-${k[4]}`} href={url(k[3])}><span class={`ic ${k[4]}`} style="margin-bottom:14px"><Icon name={k[0]} /></span><h3>{k[1]}</h3><p class="muted">{k[2]}</p><strong class="link-arrow">Xem</strong></a>)}</div>
 </div></section>
 
-<section class="section"><div class="container"><div class="quote-band"><div><h2>Cần hướng dẫn trực tiếp?</h2><p>Hỗ trợ sử dụng: {contact.support.line}.</p></div><div class="actions"><a class="btn btn-primary" href={telHref(contact.support.phone)}>Gọi hỗ trợ</a><a class="btn btn-secondary" href={url('/ho-tro/')}>Gửi yêu cầu</a></div></div></div></section>
+<section class="section"><div class="container"><div class="quote-band"><div><h2>Cần hướng dẫn trực tiếp?</h2><p>Hỗ trợ sử dụng: {contact.support.lineVi}.</p></div><div class="actions"><a class="btn btn-primary" href={telHref(contact.support.phone)}>Gọi hỗ trợ</a><a class="btn btn-secondary" href={url('/ho-tro/')}>Gửi yêu cầu</a></div></div></div></section>
 <script is:inline>
   document.addEventListener('play', function (e) {
     document.querySelectorAll('video').forEach(function (v) { if (v !== e.target) v.pause(); });

@@ -17,13 +17,20 @@ import { kpis, details, sources, docs, release, latest } from '../../data/advant
 </div></section>
 
 <section class="section"><div class="container">
-  <div class="sec-c"><span class="eyebrow">Tổng quan</span><h2>Một tháng kế toán với <span class="tg">UNESCO AI</span></h2><p>Bảy bước đi đúng thứ tự công việc của kế toán; bước nào cũng xem lại và lùi lại được.</p></div>
+  <div class="sec-c"><span class="eyebrow">Tổng quan</span><h2>Một tháng kế toán với <span class="tg">UNESCO AI</span></h2><p>Bảy bước đi đúng thứ tự công việc của kế toán; bước nào cũng xem lại và hoàn tác được.</p></div>
   <MonthFlow />
 </div></section>
 
 <section class="section surface-soft" id="16-diem"><div class="container">
   <div class="section-head"><div><span class="eyebrow">Sắp xếp theo lợi ích</span><h2 class="display"><span class="tg">16 điểm</span> <span class="tb">ưu việt</span></h2><p class="sub-line" style="margin:0">Mười điểm nền tảng và sáu điểm mới (đánh dấu <em class="new" style="margin:0">Mới</em>)</p></div><p>Bấm vào từng điểm để xem chi tiết, số liệu đo thực tế và trang tính năng liên quan.</p></div>
   <AdvantageGrid />
+  <div class="callout b" style="margin-top:28px" id="moi-gd178"><span class="ic"><Icon name="sparkles" /></span><div><h3>Bổ sung sau tài liệu bản {release.code}: GĐ170 – GĐ178</h3><ul class="dots">
+    <li>Hồ sơ kèm chứng từ: xuất Excel 6 sheet, kết luận đủ / thiếu / chờ cho từng giao dịch (GĐ174).</li>
+    <li>Yêu cầu chứng từ khách: lập thư (bản in và bản gửi Zalo), nhận chứng từ khách gửi; phần mềm không tự gửi thư, không xoá tệp của khách (GĐ174).</li>
+    <li>Trợ lý lập định mức cho sổ mới: 4 phương pháp – sản phẩm tương tự, cân bằng khối lượng, tỷ lệ giá bán, mẫu ngành; độ tin cậy hiện bằng dòng xanh / vàng / đỏ (GĐ173, GĐ175b).</li>
+    <li>Báo cáo quản trị có biểu đồ: báo cáo một trang cho chủ doanh nghiệp, lãi theo mặt hàng / khách hàng / tháng, tồn kho, dự báo dòng tiền 4 – 13 tuần, thuế TNDN dự kiến (GĐ176).</li>
+    <li>Biểu mẫu 2026: sổ và BCTC doanh nghiệp siêu nhỏ theo Thông tư 58/2026/TT-BTC, sổ hộ kinh doanh theo Thông tư 152/2025/TT-BTC và tờ khai 01/CNKD (GĐ171, GĐ172, GĐ176).</li>
+  </ul></div></div>
 </div></section>
 
 {details.map((d) => (
@@ -50,6 +57,6 @@ import { kpis, details, sources, docs, release, latest } from '../../data/advant
 <section class="section surface-soft" id="tai-lieu"><div class="container">
   <div class="section-head"><div><span class="eyebrow">Tài liệu</span><h2>Tải tài liệu giới thiệu (PDF)</h2></div><p>Tính năng ưu việt bản {release.code}; Tổng hợp tính năng AI và Hướng dẫn trực quan bản {latest.code} · {latest.date}. Có thể in hoặc gửi cho khách hàng.</p></div>
   <div class="doc-grid">{docs.map((f) => <a class="doc" href={url(f.file)} target="_blank" rel="noopener"><span class="ic g"><Icon name={f.icon} /></span><span><b>{f.t}</b><small>{f.d}</small><span class="dl-tag"><Icon name="download" />PDF · {f.size}</span></span></a>)}</div>
-  <div class="actions" style="margin-top:24px"><a class="btn btn-primary" href={url('/tinh-nang-ai/')}>Xem đủ 65 tính năng AI</a><a class="btn btn-secondary" href={url('/huong-dan/#truc-quan')}>Hướng dẫn trực quan</a></div>
+  <div class="actions" style="margin-top:24px"><a class="btn btn-primary" href={url('/tinh-nang-ai/')}>Xem tổng hợp tính năng AI</a><a class="btn btn-secondary" href={url('/huong-dan/#truc-quan')}>Hướng dẫn trực quan</a></div>
 </div></section>
 </ContentLayout>
