@@ -14,7 +14,7 @@ export const currentRelease: Release = {
   sha256: '',
   downloadUrl: '',
   notes: [
-    'Cập nhật 09/10/2026: thẻ Hệ thống trên màn hình AI, báo cáo quản trị có biểu đồ, bộ tham số năm trong từng mô-đun Lương, BHXH, Thuế; chữ tự thu theo độ rộng cửa sổ; hướng dẫn theo mô-đun M01 – M14 và hướng dẫn trực quan 34 chức năng, 48 trang.',
+    'Cập nhật 09/10/2026: thẻ Hệ thống trên màn hình AI, báo cáo quản trị có biểu đồ, bộ tham số năm trong từng mô-đun Lương, BHXH, Thuế; chữ tự thu theo độ rộng cửa sổ; hướng dẫn theo mô-đun M01 – M14 và hướng dẫn trực quan 35 chức năng, 49 trang.',
     'Màn hình AI 8 thẻ: Tự động xử lý, Danh sách hoá đơn, Tờ khai HQ, Sổ phụ ngân hàng, Bảng lương & chứng từ khác, Kết chuyển cuối kỳ, Báo cáo & nhật ký, Cổng dịch vụ công.',
     'Cập nhật 09/10/2026: thêm sổ và BCTC doanh nghiệp siêu nhỏ (TT 58/2026), hộ kinh doanh – sổ TT 152/2025 và tờ khai 01/CNKD, biểu mẫu 2026 (mẫu mới HTKK, Mẫu số 33 lao động), Trợ lý lập định mức NVL, hồ sơ kèm chứng từ và yêu cầu chứng từ khách; hướng dẫn trực quan đủ 27 chức năng.',
     '65 tính năng AI trong 11 nhóm (báo cáo cho chủ doanh nghiệp, giá thành 7 bước, thuế TNCN, nhập toàn bộ HTKK theo MST…).',

@@ -242,6 +242,6 @@ export const sources = [
 /** Tài liệu PDF tải về. */
 export const docs = [
   { t: 'Tính năng ưu việt của UNESCO AI', d: '16 điểm ưu việt, số liệu đo thực tế và nguồn – 6 trang.', file: '/tai-lieu/tinh-nang-uu-viet-unesco-ai.pdf', size: '369 KB', icon: 'star' },
-  { t: 'Tổng hợp toàn bộ tính năng AI', d: '65 tính năng trong 11 nhóm, mở ở đâu, AI làm gì; phụ lục Có gì mới – 9 trang.', file: '/tai-lieu/tong-hop-tinh-nang-ai-unesco.pdf', size: '330 KB', icon: 'list-checks' },
-  { t: 'Hướng dẫn sử dụng trực quan UNESCO XI + AI', d: '34 chức năng, mỗi chức năng một trang có hình màn hình đánh số, các bước, lưu ý – 48 trang.', file: '/tai-lieu/huong-dan-truc-quan-gd150-gd174.pdf', size: '4,3 MB', icon: 'book-open' },
+  { t: 'Tổng hợp toàn bộ tính năng AI', d: '74 tính năng trong 12 nhóm, mở ở đâu, AI làm gì; phụ lục Có gì mới – 10 trang.', file: '/tai-lieu/tong-hop-tinh-nang-ai-unesco.pdf', size: '330 KB', icon: 'list-checks' },
+  { t: 'Hướng dẫn sử dụng trực quan UNESCO XI + AI', d: '35 chức năng, mỗi chức năng một trang có hình màn hình đánh số, các bước, lưu ý – 49 trang.', file: '/tai-lieu/huong-dan-truc-quan-gd150-gd174.pdf', size: '4,3 MB', icon: 'book-open' },
 ];

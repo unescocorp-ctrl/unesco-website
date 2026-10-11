@@ -19,7 +19,7 @@ export function packDate(code: string): string {
 }
 
 export const whatsNew: WhatsNew[] = [
-  { code: '178', kind: 'Tài liệu', t: 'Hướng dẫn trực quan 34 chức năng, 48 trang', d: 'Hướng dẫn trực quan lên 34 chức năng, 48 trang. Thêm 6 chương cho mô-đun Định mức – Giá thành thông minh: bản đồ mô-đun, Trình tự 7 bước, Trợ lý lập định mức, định mức theo tỷ lệ giá bán, tiêu thức và báo cáo mục tiêu, xử lý đèn vàng đèn đỏ và kiểm cuối tháng.' },
+  { code: '178', kind: 'Tài liệu', t: 'Hướng dẫn trực quan 35 chức năng, 49 trang', d: 'Hướng dẫn trực quan lên 35 chức năng, 49 trang. Thêm 7 chương cho mô-đun Định mức – Giá thành thông minh: bản đồ mô-đun, Trình tự 7 bước, Trợ lý lập định mức, định mức theo tỷ lệ giá bán, tiêu thức và báo cáo mục tiêu, xử lý đèn vàng đèn đỏ và kiểm cuối tháng, nhập thành phẩm theo định mức mới.' },
   { code: '177b', kind: 'Tài liệu', t: 'Hướng dẫn trực quan: chỉ dẫn Điểm sẵn sàng khoá sổ', d: 'Hướng dẫn trực quan đổi nhãn theo bản cập nhật trước đó. Mục Điểm sẵn sàng khoá sổ thêm chỉ dẫn cho dòng mở màn hình AI (Kết chuyển cuối kỳ / Báo cáo); giải thích vì sao dòng này mở thẻ Báo cáo khi thẻ Kết chuyển đang ẩn. Bìa có dòng trỏ tới Hướng dẫn theo mô-đun.' },
   { code: '177', kind: 'Tài liệu', t: 'Hướng dẫn theo mô-đun M01 – M14', d: 'Hướng dẫn theo mô-đun M01 – M14: sửa lời đọc M01 – M08 cho đúng tên thẻ và menu thực tế; thêm lời đọc M09 – M14.' },
   { code: '176b', kind: 'Giao diện', t: 'Chữ không còn bị cắt, bị đè', d: 'Sửa chữ bị cắt, bị đè trên màn hình AI và hộp thoại: hộp Sao lưu tự động, Báo cáo chủ doanh nghiệp; hàng thẻ, nút và tiêu đề tự thu chữ theo độ rộng cửa sổ. Ở cửa sổ rất hẹp, một số nút dài trong bảng Xuất báo cáo vẫn có thể bị cắt cuối.' },
