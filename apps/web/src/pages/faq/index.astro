@@ -2,7 +2,7 @@
 import { url } from '../../utils/url';
 import ContentLayout from '../../layouts/ContentLayout.astro';
 import { contact } from '../../data/contact';
-/** 12 câu hỏi thường gặp – theo phần mềm UNESCO AI bản GĐ178 (tài liệu "Đối chiếu website với UNESCO AI bản GĐ178"). */
+/** 12 câu hỏi thường gặp – theo phần mềm UNESCO AI (cập nhật 10/10/2026). */
 const faqs = [
   ['Phần mềm có tự ghi sổ hay tự nộp tờ khai không?', 'Các báo cáo mới chỉ xem sổ. Ghi sổ hay đưa vào HTKK chỉ xảy ra khi kế toán bấm Ghi, Đồng ý hoặc Đưa vào HTKK (hoặc khi kế toán tự bật chế độ ghi tự động cho hoá đơn tin cậy từ 90 điểm). Ký và nộp trên eTax do kế toán thực hiện.'],
   ['Đưa tờ khai vào HTKK như thế nào?', 'Xuất tờ khai (Excel hoặc XML), xem trước và so với kỳ trước, rồi bấm Đưa vào HTKK.'],
@@ -12,10 +12,10 @@ const faqs = [
   ['Làm sao biết tháng này khoá sổ được chưa?', 'Dùng Điểm sẵn sàng khoá sổ; phần mềm cũng luôn có bản sao lưu tự động.'],
   ['Soát rủi ro hoá đơn kiểm những gì?', '7 nhóm R1 – R7, trong đó R6 (thời điểm ký số so với ngày lập hoá đơn) và R7 (danh sách doanh nghiệp rủi ro do cơ quan thuế công bố).'],
   ['Chưa có định mức nguyên vật liệu thì lấy từ đâu?', 'Trợ lý lập định mức hỏi vài câu rồi đề xuất theo một trong 4 phương pháp: Sản phẩm tương tự, Cân bằng khối lượng, Tỷ lệ giá bán, Mẫu ngành; mỗi dòng có độ tin cậy xanh / vàng / đỏ.'],
-  ['Vì sao không thấy thẻ Kết chuyển cuối kỳ?', 'Thẻ này ẩn mặc định từ GĐ138. Việc kết chuyển làm ở menu Dữ liệu (Chứng từ kết chuyển, Kết chuyển số liệu, Khoá số liệu tháng). Muốn hiện thẻ, liên hệ bộ phận hỗ trợ.'],
-  ['Chữ trên màn hình AI bị cắt hoặc bị đè thì sao?', 'Từ GĐ176b chữ tự thu theo độ rộng cửa sổ. Nên mở cửa sổ AI rộng từ khoảng 1.000 điểm ảnh (đủ hàng thẻ); bảng Xuất báo cáo đủ chữ từ khoảng 1.380 điểm ảnh.'],
+  ['Vì sao không thấy thẻ Kết chuyển cuối kỳ?', 'Thẻ này ẩn mặc định. Việc kết chuyển làm ở menu Dữ liệu (Chứng từ kết chuyển, Kết chuyển số liệu, Khoá số liệu tháng). Muốn hiện thẻ, liên hệ bộ phận hỗ trợ.'],
+  ['Chữ trên màn hình AI bị cắt hoặc bị đè thì sao?', 'Bản cập nhật mới chữ tự thu theo độ rộng cửa sổ. Nên mở cửa sổ AI rộng từ khoảng 1.000 điểm ảnh (đủ hàng thẻ); bảng Xuất báo cáo đủ chữ từ khoảng 1.380 điểm ảnh.'],
   ['Cài bản cập nhật có mất tệp cũ không?', 'Không. Mỗi lần cài, gói cập nhật sao lưu các tệp sắp bị thay vào thư mục sao lưu để có thể trả lại bản cũ.'],
-  ['Gặp lỗi thì liên hệ ai?', `Gọi bộ phận hỗ trợ: ${contact.support.lineVi}; cho biết số bản GĐ đang cài và gửi ảnh màn hình lỗi.`],
+  ['Gặp lỗi thì liên hệ ai?', `Gọi bộ phận hỗ trợ: ${contact.support.lineVi}; cho biết ngày cập nhật đang cài và gửi ảnh màn hình lỗi.`],
 ];
 ---
 <ContentLayout title="Câu hỏi thường gặp" description="Các câu hỏi về sản phẩm, AI, biểu mẫu 2026, cài đặt, nâng cấp và hỗ trợ."><section class="section"><div class="container">

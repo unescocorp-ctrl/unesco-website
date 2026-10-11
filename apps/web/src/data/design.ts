@@ -15,7 +15,7 @@ export const heroValues = [
 ];
 
 
-/** Evidence / Benchmark – số liệu đo trên bộ sổ, hồ sơ thật hoặc bộ kiểm thử (tài liệu Tính năng ưu việt bản GĐ169).
+/** Evidence / Benchmark – số liệu đo trên bộ sổ, hồ sơ thật hoặc bộ kiểm thử (tài liệu Tính năng ưu việt, 09/10/2026).
  *  vis: ring (tỷ lệ), bars (so sánh hai số), icon (biểu tượng). src: nguồn đo. */
 export const evidence = [
   { c: 'g', v: '1,7 giây', d: 'phân tích 59 hoá đơn mua vào (86 dòng hàng) trên bộ sổ thật', vis: 'icon', icon: 'timer', p: 100, a: 0, b: 0, src: 'Bộ sổ thật, sau đợt cải thiện tốc độ' },
@@ -29,7 +29,7 @@ export const evidence = [
   { c: 'b', v: '1.252 tờ khai', d: 'HTKK của một mã số thuế đọc trong 3 – 4,5 giây', vis: 'icon', icon: 'file-xml', p: 100, a: 0, b: 0, src: 'Dữ liệu HTKK thật trên máy, chỉ xem, không sửa' },
 ];
 
-/** AI LÀM / AI KHÔNG LÀM (tài liệu Tổng hợp tính năng AI bản GĐ169). */
+/** AI LÀM / AI KHÔNG LÀM (tài liệu Tổng hợp tính năng AI, 09/10/2026). */
 export const aiDo = [
   { icon: 'file-search', t: 'Tải và đọc hoá đơn, sổ phụ, tờ khai, thông báo, dữ liệu HTKK' },
   { icon: 'puzzle', t: 'Ghép mã, đề xuất tài khoản, định mức, tỷ lệ – để người duyệt' },

@@ -1,7 +1,7 @@
 /**
  * PHÂN TÍCH TÍNH NĂNG & LỘ TRÌNH 2026
  * ------------------------------------------------------------------
- * Nguồn: tài liệu nội bộ "Phân tích chi tiết tính năng" (07 – 09/10/2026): phân tích tiện ích AI bổ sung (GĐ150),
+ * Nguồn: tài liệu nội bộ "Phân tích chi tiết tính năng" (07 – 09/10/2026): phân tích tiện ích AI bổ sung,
  * khảo sát thị trường 10/2026, phân tích định mức nguyên vật liệu thông minh.
  * Nguyên tắc đăng web: không nêu tên sản phẩm của doanh nghiệp khác, không ghi tên / số liệu khách hàng,
  * 09/10/2026: 6 nhóm tính năng mới (T, H, C, D, E, F) và Trợ lý lập định mức đã hoàn thành (xác nhận của doanh nghiệp).
@@ -11,7 +11,7 @@
 export const analysisDate = '09/10/2026';
 
 export const roadmapKpis = [
-  { icon: 'check-circle', c: 'g', v: '18 / 18', d: 'tiện ích AI đề xuất trong phân tích GĐ150 đã hoàn thành' },
+  { icon: 'check-circle', c: 'g', v: '18 / 18', d: 'tiện ích AI đề xuất trong phân tích đã hoàn thành' },
   { icon: 'list-checks', c: 'b', v: '7 / 7', d: 'bước của một tháng kế toán đều có AI hỗ trợ' },
   { icon: 'monitor', c: 't', v: 'Trên máy', d: 'lõi AI chạy trên máy – không bắt buộc Internet hay dịch vụ AI tạo văn bản bên ngoài' },
   { icon: 'sparkles', c: 'y', v: '6 nhóm', d: 'tính năng mới 2026 đã hoàn thành, kèm Trợ lý lập định mức' },

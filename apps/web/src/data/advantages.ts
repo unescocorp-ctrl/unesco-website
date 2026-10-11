@@ -1,15 +1,15 @@
 /**
  * TÍNH NĂNG ƯU VIỆT CỦA UNESCO AI
  * ------------------------------------------------------------------
- * Nguồn: tài liệu "Tính năng ưu việt của UNESCO AI" bản GĐ169 (09/10/2026) của Công ty TNHH Phần mềm UNESCO.
+ * Nguồn: tài liệu "Tính năng ưu việt của UNESCO AI" (09/10/2026) của Công ty TNHH Phần mềm UNESCO.
  * Số liệu đo trên bộ sổ, hồ sơ thật (đã ẩn tên khách hàng) hoặc từ bộ kiểm thử đi kèm từng bản cập nhật.
  * Sắp xếp lại cho website: 16 điểm ưu việt chia 4 nhóm; 12 mục chi tiết; bảng nguồn số liệu.
  */
 import type { ShotKey } from './screenshots';
 
-export const release = { code: 'GĐ169', date: '09/10/2026' };
+export const release = { code: '169', date: '09/10/2026' };
 /** Bản mới nhất của bộ tài liệu Tổng hợp AI / Hướng dẫn trực quan. */
-export const latest = { code: 'GĐ175', date: '09/10/2026' };
+export const latest = { code: '175', date: '09/10/2026' };
 
 /** 4 con số nổi bật đầu trang. */
 export const kpis = [
@@ -229,19 +229,19 @@ export const details: Detail[] = [
 
 /** Các con số trong tài liệu đến từ đâu. */
 export const sources = [
-  ['1,7 giây / 59 hoá đơn; mở màn hình AI ~1 giây', 'Bộ sổ thật của khách hàng, sau đợt cải thiện tốc độ (GĐ31)'],
-  ['3.823 / 3.823 dòng bán ra có mã hàng', 'Hoá đơn bán ra thật của một doanh nghiệp sản xuất (GĐ49)'],
-  ['786 / 1.027 dòng nhận tên người trả; 31 / 31 dòng lương', 'Sao kê ngân hàng thật 1.027 dòng (GĐ50)'],
-  ['1.022 dòng trùng bị chặn, 5 dòng mới', 'Mô phỏng nhập lại sổ phụ thật lần hai (GĐ30b)'],
-  ['74 / 74 chỉ tiêu B01a-DNN; 0 lệch 28 ràng buộc 03/TNDN', 'BCTC và tờ khai quyết toán thật năm 2025 (GĐ24, GĐ29b)'],
-  ['927 – 1.252 tờ khai của một MST đọc trong 3 – 4,5 giây', 'Dữ liệu HTKK thật trên máy, 3 mã số thuế nhiều tờ khai nhất, chỉ xem (GĐ168)'],
-  ['Khoảng 1.300 tệp bản sao có thêm “(1)” sau tên tệp, khoảng 280 khác tệp gốc', 'Cùng thư mục dữ liệu của HTKK, chỉ đếm (GĐ168)'],
-  ['Hơn 1.600 mục Trợ lý; hơn 18.000 phép kiểm', 'Bộ hướng dẫn Trợ lý và 185 bộ kiểm tra tự động của bản GĐ168'],
+  ['1,7 giây / 59 hoá đơn; mở màn hình AI ~1 giây', 'Bộ sổ thật của khách hàng, sau đợt cải thiện tốc độ'],
+  ['3.823 / 3.823 dòng bán ra có mã hàng', 'Hoá đơn bán ra thật của một doanh nghiệp sản xuất'],
+  ['786 / 1.027 dòng nhận tên người trả; 31 / 31 dòng lương', 'Sao kê ngân hàng thật 1.027 dòng'],
+  ['1.022 dòng trùng bị chặn, 5 dòng mới', 'Mô phỏng nhập lại sổ phụ thật lần hai'],
+  ['74 / 74 chỉ tiêu B01a-DNN; 0 lệch 28 ràng buộc 03/TNDN', 'BCTC và tờ khai quyết toán thật năm 2025'],
+  ['927 – 1.252 tờ khai của một MST đọc trong 3 – 4,5 giây', 'Dữ liệu HTKK thật trên máy, 3 mã số thuế nhiều tờ khai nhất, chỉ xem'],
+  ['Khoảng 1.300 tệp bản sao có thêm “(1)” sau tên tệp, khoảng 280 khác tệp gốc', 'Cùng thư mục dữ liệu của HTKK, chỉ đếm'],
+  ['Hơn 1.600 mục Trợ lý; hơn 18.000 phép kiểm', 'Bộ hướng dẫn Trợ lý và 185 bộ kiểm tra tự động của bản cập nhật 09/10/2026'],
 ];
 
 /** Tài liệu PDF tải về. */
 export const docs = [
   { t: 'Tính năng ưu việt của UNESCO AI', d: '16 điểm ưu việt, số liệu đo thực tế và nguồn – 6 trang.', file: '/tai-lieu/tinh-nang-uu-viet-unesco-ai.pdf', size: '369 KB', icon: 'star' },
-  { t: 'Tổng hợp toàn bộ tính năng AI', d: '65 tính năng trong 11 nhóm, mở ở đâu, AI làm gì; phụ lục Có gì mới đến GĐ175 – 9 trang.', file: '/tai-lieu/tong-hop-tinh-nang-ai-unesco.pdf', size: '330 KB', icon: 'list-checks' },
+  { t: 'Tổng hợp toàn bộ tính năng AI', d: '65 tính năng trong 11 nhóm, mở ở đâu, AI làm gì; phụ lục Có gì mới – 9 trang.', file: '/tai-lieu/tong-hop-tinh-nang-ai-unesco.pdf', size: '330 KB', icon: 'list-checks' },
   { t: 'Hướng dẫn sử dụng trực quan UNESCO XI + AI', d: '34 chức năng, mỗi chức năng một trang có hình màn hình đánh số, các bước, lưu ý – 48 trang.', file: '/tai-lieu/huong-dan-truc-quan-gd150-gd174.pdf', size: '4,3 MB', icon: 'book-open' },
 ];

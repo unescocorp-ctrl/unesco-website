@@ -19,7 +19,7 @@ const more = [
   ['list-checks', 'Kiểm tra khoá sổ', 'LỖI / CẢNH BÁO / ĐẠT: số dư, kết chuyển, công nợ, tồn kho âm…', 'b'],
 ];
 const v = videoBySlug('m06-bao-cao-nhat-ky')!;
-/** Biểu mẫu 2026 đã có trong phần mềm (GĐ170 – GĐ176) – theo tài liệu "Đối chiếu website với UNESCO AI bản GĐ178". */
+/** Biểu mẫu 2026 đã có trong phần mềm. */
 const forms2026 = [
   ['Sổ và BCTC doanh nghiệp siêu nhỏ', 'Thông tư 58/2026/TT-BTC (ngày 25/5/2026, hiệu lực 01/7/2026, thay Thông tư 132/2018): ghi thẳng sổ chi tiết, không dùng hệ thống tài khoản; 4 trường hợp theo phương pháp tính thuế (Điều 5 – 8); BCTC B01-DNSN và B02-DNSN, nộp trong 90 ngày (Điều 10).', 'Lập sổ S1, S2a – S2d, S3a – S3b và sổ tự chọn S4a – S4d từ chứng từ và số dư (chỉ xem, không sửa sổ); xuất Excel hoặc Excel + XML, xem trước, so kỳ trước rồi Đưa vào HTKK. Mở ở menu Dữ liệu, hoặc thẻ Sổ kế toán - báo cáo hộ kinh doanh.'],
   ['Hộ kinh doanh: sổ và tờ khai 01/CNKD', 'Nghị định 68/2026 và Nghị định 141/2026/NĐ-CP: doanh thu năm đến 1 tỷ đồng không nộp GTGT, TNCN; trên 1 tỷ khai 01/CNKD theo quý, trên 50 tỷ theo tháng. Thông tư 152/2025/TT-BTC: sổ S1a, S2a – S2e, S3a-HKD. Thông tư 18/2026 và Thông tư 50/2026/TT-BTC: mẫu 01/CNKD, 01/BK-STK, 01/BK-HTK.', '3 trường hợp: miễn thuế (sổ S1a), theo tỷ lệ doanh thu (S2a + 01/CNKD), theo thu nhập (S2b – S2e + 01/CNKD). XML 01/CNKD theo mẫu của HTKK, xem trước rồi Đưa vào HTKK; nhắc việc theo hạn nộp.'],
@@ -57,7 +57,7 @@ const forms2026 = [
 </div></section>
 
 <section class="section" id="bieu-mau-2026"><div class="container">
-  <div class="section-head"><div><span class="eyebrow">Mới · GĐ170 – GĐ176</span><h2>Biểu mẫu 2026</h2></div><p>Đã có trong phần mềm: sổ và báo cáo cho doanh nghiệp siêu nhỏ, hộ kinh doanh, và theo dõi mẫu tờ khai mới trên HTKK. Mọi tờ khai đều xem trước, so kỳ trước rồi mới đưa vào HTKK.</p></div>
+  <div class="section-head"><div><span class="eyebrow">Mới</span><h2>Biểu mẫu 2026</h2></div><p>Đã có trong phần mềm: sổ và báo cáo cho doanh nghiệp siêu nhỏ, hộ kinh doanh, và theo dõi mẫu tờ khai mới trên HTKK. Mọi tờ khai đều xem trước, so kỳ trước rồi mới đưa vào HTKK.</p></div>
   <div class="table-wrap" style="border:0"><table class="feat-table"><thead><tr><th>Biểu mẫu</th><th>Căn cứ</th><th>Phần mềm làm gì</th></tr></thead><tbody>
     {forms2026.map((f) => <tr><td>{f[0]}</td><td>{f[1]}</td><td>{f[2]}</td></tr>)}
   </tbody></table></div>
