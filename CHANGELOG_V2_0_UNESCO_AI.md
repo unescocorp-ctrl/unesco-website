@@ -27,9 +27,9 @@
 
 ---
 
-# v2.1 (10/2026): Tính năng ưu việt & tổng hợp tính năng AI (bản phần mềm GĐ169)
+# v2.1 (10/2026): Tính năng ưu việt & tổng hợp tính năng AI (bản phần mềm gói 169)
 
-Nguồn: 3 tài liệu bản GĐ169 (09/10/2026) – Tính năng ưu việt của UNESCO AI, Tổng hợp toàn bộ tính năng AI, Hướng dẫn sử dụng trực quan GĐ159 – GĐ168.
+Nguồn: 3 tài liệu gói 169 (09/10/2026) – Tính năng ưu việt của UNESCO AI, Tổng hợp toàn bộ tính năng AI, Hướng dẫn sử dụng trực quan gói 159 – gói 168.
 
 ## Trang mới
 - `/tinh-nang-uu-viet/` – 16 điểm ưu việt xếp theo 4 nhóm (Tự động hoá chứng từ · Thuế & tuân thủ · Giá thành, kiểm soát & quản trị · An toàn & vận hành), 12 mục chi tiết kèm số liệu đo thực tế, bảng nguồn số liệu, tải 3 tài liệu PDF.
@@ -37,7 +37,7 @@ Nguồn: 3 tài liệu bản GĐ169 (09/10/2026) – Tính năng ưu việt củ
 
 ## Trang cập nhật
 - Trang chủ: 4 con số nổi bật, "Một tháng kế toán" 7 bước theo tài liệu, 16 điểm ưu việt, Evidence 9 số liệu kèm nguồn, AI làm / không làm theo tài liệu.
-- AI Hoá đơn, AI Sổ phụ, AI Giá thành (trình tự 7 bước đèn màu + ảnh màn hình mới), Hồ sơ Thuế, Tờ khai & BCTC, An toàn & kiểm soát AI, Kế toán dịch vụ (một người, nhiều bộ sổ), Bảng giá (khoá AI 3 chế độ), Download, Release notes (có gì mới GĐ136 – GĐ169), Hướng dẫn (12 chức năng trực quan, dùng vào lúc nào trong năm).
+- AI Hoá đơn, AI Sổ phụ, AI Giá thành (trình tự 7 bước đèn màu + ảnh màn hình mới), Hồ sơ Thuế, Tờ khai & BCTC, An toàn & kiểm soát AI, Kế toán dịch vụ (một người, nhiều bộ sổ), Bảng giá (khoá AI 3 chế độ), Download, Release notes (có gì mới gói 136 – gói 169), Hướng dẫn (12 chức năng trực quan, dùng vào lúc nào trong năm).
 - Menu Sản phẩm: thêm Tính năng ưu việt, Tổng hợp 65 tính năng AI.
 
 ## Sửa nội dung ở đâu
@@ -85,11 +85,11 @@ Nguồn: 3 tài liệu bản GĐ169 (09/10/2026) – Tính năng ưu việt củ
 - Ảnh `public/banner/unesco-ucdit-1999.webp`, `unesco-classic-1999.webp`: đã làm mờ tên, địa chỉ, điện thoại, tài khoản ngân hàng, MST của khách hàng và địa chỉ, điện thoại, email cũ của Trung tâm.
 - Banner trang chủ: dải "Kế thừa giao diện quen thuộc" có màn hình Chương trình kế toán UNESCO 1999. Trang Giới thiệu cập nhật nguồn gốc 1999.
 
-# v2.5 (09/10/2026): tài liệu GĐ175 – hướng dẫn trực quan 27 chức năng có hình
-- PDF mới: Tổng hợp tính năng AI bản GĐ175 (phụ lục thêm GĐ170 – GĐ175); Hướng dẫn sử dụng trực quan GĐ150 – GĐ174 (33 trang, 27 chức năng) – đổi tên tệp thành `huong-dan-truc-quan-gd150-gd174.pdf`, bìa sửa thành CÔNG TY TNHH PHẦN MỀM UNESCO.
-- PDF Tính năng ưu việt gửi kèm không đổi nội dung (vẫn GĐ169, chân trang liên hệ cũ) – website giữ bản đã sửa liên hệ và tên công ty.
+# v2.5 (09/10/2026): tài liệu gói 175 – hướng dẫn trực quan 27 chức năng có hình
+- PDF mới: Tổng hợp tính năng AI gói 175 (phụ lục thêm gói 170 – gói 175); Hướng dẫn sử dụng trực quan gói 150 – gói 174 (33 trang, 27 chức năng) – đổi tên tệp thành `huong-dan-truc-quan-gd150-gd174.pdf`, bìa sửa thành CÔNG TY TNHH PHẦN MỀM UNESCO.
+- PDF Tính năng ưu việt gửi kèm không đổi nội dung (vẫn gói 169, chân trang liên hệ cũ) – website giữ bản đã sửa liên hệ và tên công ty.
 - Trang Hướng dẫn (`/huong-dan/#truc-quan`): 27 chức năng chia 4 nhóm, mỗi thẻ có ảnh trang hướng dẫn (bấm mở đúng trang trong PDF), đường mở, các bước; lịch "Dùng vào lúc nào" 6 mốc. Ảnh: `apps/web/public/huong-dan/hd-01.webp … hd-27.webp`.
-- Có gì mới / Release notes: thêm GĐ170 – GĐ175. Tổng hợp tính năng AI: bản GĐ175, menu Dữ liệu 14 mục.
+- Có gì mới / Release notes: thêm gói 170 – gói 175. Tổng hợp tính năng AI: gói 175, menu Dữ liệu 14 mục.
 
 # v2.5.1 (09/10/2026): bỏ ghi chú kỹ thuật dành cho lập trình viên khỏi tài liệu PDF
 - Hướng dẫn trực quan: bỏ dòng "Các chức năng có đổi mã VB6 cần Full Compile + Make .exe…" (trang 3), bỏ khung "Sau mỗi gói cập nhật có đổi VB6" (Đóng VB6, Mở lại Sas.vbp, Full Compile) và sửa "Sau Full Compile + Make .exe" thành "Sau khi cài gói cập nhật", bỏ chữ "Python" (trang 33); ảnh `hd-27.webp` làm lại.
@@ -121,10 +121,10 @@ Nguồn: 3 tài liệu bản GĐ169 (09/10/2026) – Tính năng ưu việt củ
 - Ảnh chữ 3D "UNESCO AI" (từ hình mẫu, đã tách nền thành trong suốt, giữ quầng sáng quanh chữ): `apps/web/public/banner/chu-unesco-ai.webp` (663 × 122).
 - Đặt ngay trên dòng "Hiểu việc – nhắc việc kế toán", canh trái theo tiêu đề; rộng tối đa 380px (điện thoại 320px).
 
-# v2.8 (10/10/2026): sửa chữ, bỏ chữ kỹ thuật tiếng Anh, cập nhật theo phần mềm GĐ178 – nhánh `sua-chu-web`
+# v2.8 (10/10/2026): sửa chữ, bỏ chữ kỹ thuật tiếng Anh, cập nhật theo phần mềm gói 178 – nhánh `sua-chu-web`
 - `astro.config.mjs`: luôn dùng https:// cho canonical, og:url, og:image, sitemap.xml, robots.txt (trừ chạy thử localhost).
 - Bỏ chữ kỹ thuật tiếng Anh trong menu, tiêu đề, nội dung (không đụng chân trang): Trung tâm tải về, Hướng dẫn / Kiến thức / Video, Có gì mới, mã xác nhận, tệp, ảnh chụp / PDF dạng ảnh, mô-đun / phân hệ, dịch vụ AI bên ngoài…; Thông tư 133 / 99 ghi đủ số hiệu.
 - Sửa câu giữ chỗ, câu cụt, lỗi chữ: 7 trang Nghiệp vụ, Giải pháp, Sản phẩm UNESCO XI, Tin tức, Kiến thức; số thứ tự 12 mục chi tiết Tính năng ưu việt khớp 16 điểm.
-- GĐ178: Có gì mới thêm GĐ175b – GĐ178 và ngày từng gói; Biểu mẫu 2026 (Tờ khai & BCTC, Hồ sơ thuế); Trợ lý lập định mức (AI Giá thành); FAQ 12 câu; Video "Sắp có" = Bài 09 – 14.
+- gói 178: Có gì mới thêm gói 175b – gói 178 và ngày từng gói; Biểu mẫu 2026 (Tờ khai & BCTC, Hồ sơ thuế); Trợ lý lập định mức (AI Giá thành); FAQ 12 câu; Video "Sắp có" = Bài 09 – 14.
 - Tải về: chỉ "Nhận bộ cài qua điện thoại hoặc Zalo"; bỏ ngày, dung lượng, SHA-256, liên kết tải.
-- Việc cần anh chọn (chân trang, nút demo, khẩu hiệu, mã GĐ, địa chỉ, pháp nhân, giờ làm việc, pháp lý, giá, tên trang AI OCR, nút Xem nghiệp vụ) ghi trong mô tả Pull Request.
+- Việc cần anh chọn (chân trang, nút demo, khẩu hiệu, mã gói , địa chỉ, pháp nhân, giờ làm việc, pháp lý, giá, tên trang AI OCR, nút Xem nghiệp vụ) ghi trong mô tả Pull Request.

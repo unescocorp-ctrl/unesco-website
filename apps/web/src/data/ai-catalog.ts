@@ -1,8 +1,8 @@
 /**
  * TỔNG HỢP TOÀN BỘ TÍNH NĂNG AI TRONG UNESCO XI (UNESCO AI)
  * ------------------------------------------------------------------
- * Nguồn: tài liệu "Tổng hợp toàn bộ tính năng AI" bản GĐ175 (09/10/2026).
- * 65 tính năng trong 11 nhóm; mỗi dòng: tên – mở ở đâu – AI làm gì; isNew = tính năng mới GĐ159 – GĐ168.
+ * Nguồn: tài liệu "Tổng hợp toàn bộ tính năng AI" (09/10/2026).
+ * 65 tính năng trong 11 nhóm; mỗi dòng: tên – mở ở đâu – AI làm gì; isNew = tính năng mới (gói cập nhật từ 07/10/2026).
  * Ghi chú: các mục mới của menu Dữ liệu và Hệ thống hiện KHÔNG DẤU trên máy (ví dụ "Lai theo mat hang / khach hang...").
  */
 export type AiFeature = { t: string; where: string; d: string; isNew?: boolean };

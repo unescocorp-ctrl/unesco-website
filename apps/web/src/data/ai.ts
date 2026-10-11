@@ -1,7 +1,7 @@
 /**
  * NỘI DUNG PHẦN MỀM KẾ TOÁN UNESCO AI (UNESCO XI + AI)
  * ------------------------------------------------------------------
- * Soạn từ lời đọc 8 video hướng dẫn module M01–M08, kịch bản M09–M14 (bản phần mềm GĐ110b, 10/2026)
+ * Soạn từ lời đọc 8 video hướng dẫn module M01–M08, kịch bản M09–M14 (bản phần mềm 10/2026)
  * và tài liệu "Giới thiệu phần mềm kế toán UNESCO AI".
  * Nguyên tắc xuyên suốt: AI chuẩn bị và đề xuất — chứng từ chỉ ghi khi kế toán đồng ý.
  */

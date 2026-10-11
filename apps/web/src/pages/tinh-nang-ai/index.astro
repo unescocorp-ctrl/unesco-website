@@ -6,7 +6,7 @@ import { aiGroups, aiMap, aiRules, aiFeatureCount, aiNewCount } from '../../data
 import { whatsNew } from '../../data/whatsnew';
 import { latest as release } from '../../data/advantages';
 ---
-<ContentLayout title={`Tổng hợp ${aiFeatureCount} tính năng AI trong UNESCO AI`} description={`AI nằm ở đâu trong phần mềm kế toán UNESCO, mỗi tính năng làm gì, mở từ menu / nút nào và ranh giới AI không bao giờ vượt – ${aiFeatureCount} tính năng trong ${aiGroups.length} nhóm.`} eyebrow={`Tài liệu tổng hợp · bản ${release.code}`} display={`${aiFeatureCount} TÍNH NĂNG |AI`} subtitle="AI nằm ở đâu, mỗi tính năng làm gì, mở từ menu / nút nào" pills={[`${aiFeatureCount} tính năng trong ${aiGroups.length} nhóm`, `${aiNewCount} tính năng mới GĐ159 – GĐ168`, '1 nguyên tắc: AI chuẩn bị, người duyệt']}>
+<ContentLayout title={`Tổng hợp ${aiFeatureCount} tính năng AI trong UNESCO AI`} description={`AI nằm ở đâu trong phần mềm kế toán UNESCO, mỗi tính năng làm gì, mở từ menu / nút nào và ranh giới AI không bao giờ vượt – ${aiFeatureCount} tính năng trong ${aiGroups.length} nhóm.`} eyebrow={`Tài liệu tổng hợp · bản ${release.code}`} display={`${aiFeatureCount} TÍNH NĂNG |AI`} subtitle="AI nằm ở đâu, mỗi tính năng làm gì, mở từ menu / nút nào" pills={[`${aiFeatureCount} tính năng trong ${aiGroups.length} nhóm`, `${aiNewCount} tính năng mới`, '1 nguyên tắc: AI chuẩn bị, người duyệt']}>
 
 <section class="section"><div class="container">
   <div class="section-head"><div><span class="eyebrow">Bản đồ AI</span><h2>AI nằm ngay trong các màn hình kế toán đang dùng</h2></div><p>AI không phải phần mềm riêng. Bốn nơi làm việc chính:</p></div>
@@ -31,7 +31,7 @@ import { latest as release } from '../../data/advantages';
 
 <section class="section" id="co-gi-moi"><div class="container">
   <div class="section-head"><div><span class="eyebrow">Phụ lục</span><h2>Có gì mới theo từng gói</h2></div><p>Trên phần mềm: F1 rồi gõ “co gi moi gd…” để xem chi tiết từng gói.</p></div>
-  <ul class="wn-list">{whatsNew.slice(0, 12).map((w) => <li><b><span class="code">{w.code}</span>{w.t}</b><p>{w.d}</p></li>)}</ul>
+  <ul class="wn-list">{whatsNew.slice(0, 12).map((w) => <li><b>{w.t}</b><p>{w.d}</p></li>)}</ul>
   <div class="actions" style="margin-top:10px"><a class="btn btn-secondary" href={url('/release-notes/')}>Toàn bộ lịch sử cập nhật</a><a class="btn btn-primary" href={url('/tinh-nang-uu-viet/')}>16 điểm ưu việt</a></div>
 </div></section>
 </ContentLayout>

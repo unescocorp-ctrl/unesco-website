@@ -1,12 +1,12 @@
 /**
- * CÓ GÌ MỚI THEO TỪNG GÓI CẬP NHẬT (GĐ136 – GĐ178)
- * Nguồn: phụ lục "Có gì mới" của tài liệu Tổng hợp tính năng AI bản GĐ175, lấy từ bộ hướng dẫn Trợ lý AI;
- * GĐ175b – GĐ178 theo tài liệu "Đối chiếu website với UNESCO AI bản GĐ178" (10/10/2026).
+ * CÓ GÌ MỚI THEO TỪNG GÓI CẬP NHẬT
+ * Nguồn: phụ lục "Có gì mới" của tài liệu Tổng hợp tính năng AI (09/10/2026), lấy từ bộ hướng dẫn Trợ lý AI;
+ * Các gói 175b – 178 theo tài liệu "Đối chiếu website với UNESCO AI" (10/10/2026).
  * Thêm gói mới: chèn một dòng lên đầu danh sách. kind: loại thay đổi (Tài liệu / Giao diện / Tính năng).
  */
 export type WhatsNew = { code: string; t: string; d: string; kind?: string };
 
-/** Ngày ghi trên tên gói cập nhật (CAP_NHAT_<ngày>_GD<số>.zip): GĐ136 – 141: 06/10; GĐ142 – 163b: 07/10; GĐ164 – 167: 08/10; GĐ167b trở đi: 09/10/2026. */
+/** Ngày ghi trên tên gói cập nhật (CAP_NHAT_<ngày>_GD<số>.zip): gói 136 – 141: 06/10; gói 142 – 163b: 07/10; gói 164 – 167: 08/10; gói 167b trở đi: 09/10/2026. */
 export function packDate(code: string): string {
   const m = /(\d+)([a-z]?)/i.exec(code);
   if (!m) return '';
@@ -19,50 +19,50 @@ export function packDate(code: string): string {
 }
 
 export const whatsNew: WhatsNew[] = [
-  { code: 'GĐ178', kind: 'Tài liệu', t: 'Hướng dẫn trực quan 34 chức năng, 48 trang', d: 'Hướng dẫn trực quan lên 34 chức năng, 48 trang. Thêm 6 chương cho mô-đun Định mức – Giá thành thông minh: bản đồ mô-đun, Trình tự 7 bước, Trợ lý lập định mức, định mức theo tỷ lệ giá bán, tiêu thức và báo cáo mục tiêu, xử lý đèn vàng đèn đỏ và kiểm cuối tháng.' },
-  { code: 'GĐ177b', kind: 'Tài liệu', t: 'Hướng dẫn trực quan: chỉ dẫn Điểm sẵn sàng khoá sổ', d: 'Hướng dẫn trực quan đổi nhãn bản GĐ177. Mục Điểm sẵn sàng khoá sổ thêm chỉ dẫn cho dòng mở màn hình AI (Kết chuyển cuối kỳ / Báo cáo); giải thích vì sao dòng này mở thẻ Báo cáo khi thẻ Kết chuyển đang ẩn. Bìa có dòng trỏ tới Hướng dẫn theo mô-đun.' },
-  { code: 'GĐ177', kind: 'Tài liệu', t: 'Hướng dẫn theo mô-đun M01 – M14', d: 'Hướng dẫn theo mô-đun M01 – M14: sửa lời đọc M01 – M08 cho đúng tên thẻ và menu thực tế; thêm lời đọc M09 – M14.' },
-  { code: 'GĐ176b', kind: 'Giao diện', t: 'Chữ không còn bị cắt, bị đè', d: 'Sửa chữ bị cắt, bị đè trên màn hình AI và hộp thoại: hộp Sao lưu tự động, Báo cáo chủ doanh nghiệp; hàng thẻ, nút và tiêu đề tự thu chữ theo độ rộng cửa sổ. Ở cửa sổ rất hẹp, một số nút dài trong bảng Xuất báo cáo vẫn có thể bị cắt cuối.' },
-  { code: 'GĐ176', kind: 'Giao diện, tính năng', t: 'Thẻ Hệ thống, báo cáo quản trị có biểu đồ', d: 'Sắp xếp lại tính năng mới. Thêm thẻ Hệ thống ở cuối hàng thẻ màn hình AI (4 nhóm: Dữ liệu và nguồn kỳ trước; Kiểm soát và sao lưu; Nhiều bộ sổ; Phiên làm việc). Báo cáo quản trị mới có biểu đồ: Báo cáo một trang cho chủ doanh nghiệp, Lãi theo mặt hàng / khách hàng / tháng, Tồn kho, Dự báo dòng tiền 4 – 13 tuần, Thuế TNDN dự kiến. Bộ tham số năm đưa vào từng mô-đun Lương, BHXH, Thuế. Thẻ hộ kinh doanh đổi tên thành Sổ kế toán - báo cáo hộ kinh doanh, thêm Sổ TT 152/2025 – 01/CNKD và Sổ + BCTC doanh nghiệp siêu nhỏ TT 58/2026.' },
-  { code: 'GĐ175b', kind: 'Giao diện', t: 'Trợ lý lập định mức: 4 phương pháp, độ tin cậy theo màu', d: 'Trợ lý lập định mức: tên "Trợ lý AI (sổ mới)", 4 phương pháp (Sản phẩm tương tự, Cân bằng khối lượng, Tỷ lệ giá bán, Mẫu ngành), độ tin cậy hiện bằng dòng xanh / vàng / đỏ; tên ngành thay mã viết tắt; Excel kết quả có 4 sheet Đề xuất, Nhóm NVL, Sản phẩm, Căn cứ; thông báo lỗi dễ hiểu hơn.' },
-  { code: 'GĐ175', t: 'Hướng dẫn trực quan đủ GĐ150 – GĐ174', d: 'Hướng dẫn sử dụng trực quan nay có 27 chức năng (thêm 15 chức năng GĐ150 – GĐ158 và GĐ170 – GĐ174): mỗi chức năng một trang có hình màn hình đánh số, các bước, lưu ý.' },
-  { code: 'GĐ174', t: 'Hồ sơ kèm chứng từ và yêu cầu chứng từ khách', d: 'Màn hình AI, thẻ Báo cáo và nhật ký, nhóm Chứng từ kế toán có 2 nút mới: Hồ sơ kèm chứng từ (mỗi hoá đơn / tháng lương một bộ chứng từ, báo thiếu) và Yêu cầu chứng từ khách (thư yêu cầu bổ sung + thư mục nhận tệp).' },
-  { code: 'GĐ173', t: 'Trợ lý lập định mức NVL thông minh (sổ mới)', d: 'Màn hình Định mức tự động có nút Trợ lý lập định mức (sổ mới): công ty mới / sản phẩm mới lập định mức NVL không gõ số – AI đọc hoá đơn mua / bán, tên sản phẩm, mẫu ngành rồi đề xuất, người dùng chọn và ghi.' },
-  { code: 'GĐ172', t: 'Hộ kinh doanh: sổ TT 152/2025 và tờ khai 01/CNKD', d: 'Menu Dữ liệu có mục Hộ kinh doanh: sổ S1a / S2a / S2b-HKD (TT 152/2025) và tờ khai 01/CNKD (TT 50/2026) Excel xem trước + XML vào HTKK, lập từ chứng từ của sổ.' },
-  { code: 'GĐ171', t: 'Bộ sổ và BCTC doanh nghiệp siêu nhỏ TT 58/2026', d: 'Menu Dữ liệu có mục Bộ sổ và BCTC doanh nghiệp siêu nhỏ (TT 58/2026): 9 sổ S1 / S2a / S3a, S2b, S2c, S2d, S3b, S4a – S4d và B01-DNSN, B02-DNSN + XML 58_BCTC vào HTKK, lập từ chứng từ và số dư của sổ.' },
-  { code: 'GĐ170', t: 'Biểu mẫu 2026: mẫu mới HTKK, biến động lao động, R6 R7', d: 'Theo dõi mẫu tờ khai mới trên HTKK, Mẫu số 33 thông báo biến động lao động, soát thời điểm lập / ký hoá đơn, người bán trong danh sách rủi ro; lịch thêm 4 việc. Không đổi mẫu đang xuất.' },
-  { code: 'GĐ169', t: 'Hướng dẫn trực quan, tổng hợp AI, tính năng ưu việt', d: 'Ba tài liệu mới đi kèm phần mềm: hướng dẫn sử dụng trực quan các chức năng GĐ159 – GĐ168, tổng hợp toàn bộ tính năng AI và Tính năng ưu việt của UNESCO AI.' },
-  { code: 'GĐ168', t: 'Nhập toàn bộ dữ liệu HTKK theo MST', d: 'Một lần bấm đọc mọi tờ khai của mã số thuế công ty trên HTKK, tờ khai lưu trữ và hồ sơ thuế, thay cho nhập từng mẫu: số dư, số chuyển kỳ, BCTC năm trước.' },
-  { code: 'GĐ167', t: 'Biểu tượng phần mềm theo hình ngôi sao UNESCO', d: 'Mọi màn hình, tệp UNESCO .exe, lối tắt trên màn hình nền và menu Start, cửa sổ công cụ dùng chung một biểu tượng: ngôi sao 5 cánh có đồng $ ở giữa.' },
-  { code: 'GĐ166', t: '4 màn hình theo ảnh thiết kế', d: 'Tính giá thành / Kết chuyển thành phẩm, Sổ giá thành, Giá thành theo đối tượng (TT133) và Quản lý công việc vẽ lại theo ảnh thiết kế; chức năng từng nút giữ nguyên.' },
-  { code: 'GĐ165', t: 'Màn hình Giá thành theo ảnh thiết kế', d: 'Thẻ Trình tự giá thành tháng 7 bước, thẻ Danh mục theo thứ tự bước, nút Trở về; chức năng từng nút giữ nguyên.' },
-  { code: 'GĐ164', t: 'Thuế TNCN, xem trước khi đưa vào HTKK', d: 'Nhóm Thuế TNCN (05/KK quý, 05/QTT năm, 05-ĐKT-TH, đối chiếu với sổ). Xuất XML HTKK hiện màn hình xem trước, so kỳ trước và kiểm chéo trong kỳ; bấm Đưa vào HTKK mới chép.' },
-  { code: 'GĐ163', t: 'Định mức theo tỷ lệ giá vốn / giá bán', d: 'Khai tỷ lệ giá vốn trên giá bán cho sổ, lô sản xuất hoặc từng mã (AI đề xuất sẵn); lập định mức NVL theo tỷ lệ, chia nhân công / chung theo tỷ lệ và so thực tế với mục tiêu.' },
-  { code: 'GĐ162', t: 'HTKK: tự lấy số liệu kỳ trước', d: 'Xuất 01/GTGT tự lấy [22] và thông tin chung từ tờ khai kỳ trước, không hỏi chọn tệp; lưu đường dẫn tờ khai và BCTC kỳ trước.' },
-  { code: 'GĐ161', t: 'Giá thành: trình tự 7 bước, báo cáo kiểm tra', d: 'Cột Trình tự giá thành tháng 7 bước với đèn màu và nút mở đúng màn hình; báo cáo kiểm tra giá thành so giá bán, kỳ này so kỳ trước.' },
-  { code: 'GĐ160', t: 'Thuế TNDN dự kiến cả năm, báo cáo chủ doanh nghiệp', d: 'Ước tính thuế TNDN cả năm từ sổ kèm kịch bản, mức tạm nộp còn thiếu; một trang A4 tóm tắt tình hình cho chủ doanh nghiệp.' },
-  { code: 'GĐ159', t: 'Lãi theo mặt hàng / khách hàng, tồn kho thông minh', d: 'Lãi gộp và lãi sau phân bổ theo mặt hàng, khách hàng, tháng; tồn kho chậm luân chuyển, cần đặt hàng, NVL sắp thiếu, ABC.' },
-  { code: 'GĐ158', t: 'Chạy hàng loạt các bộ sổ qua đêm', d: 'Rà từng sổ trong thư mục của Bảng điều hành (chỉ xem, không sửa) và lập bảng tổng hợp sáng: đỏ / vàng / xanh, việc cần làm, bất thường số liệu.' },
-  { code: 'GĐ157', t: 'Thẻ Bất thường số liệu', d: 'Chi phí tăng đột biến, giá mua lệch, bán dưới giá vốn, số chứng từ trùng / nhảy, hoá đơn trùng, ghi lùi vào tháng đã khoá, lương dưới tối thiểu vùng, khấu hao bất thường.' },
-  { code: 'GĐ156', t: 'Dự báo dòng tiền, bộ tham số năm', d: 'Dự báo dòng tiền 4 – 13 tuần từ sổ kèm kịch bản; bộ tham số năm dùng chung theo ngày hiệu lực.' },
-  { code: 'GĐ155', t: 'Điểm tin cậy bút toán, nhật ký AI', d: 'Nút “Vì sao?” giải thích căn cứ AI của từng hoá đơn; lọc hoá đơn tin cậy thấp; báo cáo “AI đã làm gì tháng này” (Excel + trang xem trên trình duyệt).' },
-  { code: 'GĐ154', t: 'Bảng điều hành khách hàng', d: 'Một màn hình cho mọi bộ sổ: chứng từ đến tháng nào, hoá đơn / sổ phụ chưa hạch toán, tháng đã khoá, điểm sẵn sàng, rủi ro hoá đơn, hạn gần nhất.' },
-  { code: 'GĐ153', t: 'Soát rủi ro hoá đơn trước kỳ khai', d: 'Trước khi lập 01/GTGT, một nút soát 5 nhóm rủi ro hoá đơn; chỉ đánh dấu.' },
-  { code: 'GĐ152', t: 'Điểm sẵn sàng khoá sổ, sao lưu tự động', d: 'Chấm điểm sẵn sàng khoá sổ (0 – 100) kèm việc còn lại; sao lưu bộ sổ tự động mỗi ngày và trước việc lớn, kiểm tra dữ liệu khi mở.' },
-  { code: 'GĐ151', t: 'Xử lý trả hộ, bù trừ 131/331', d: 'Màn hình Kiểm soát có nút Xử lý: trả hộ, bù trừ 131/331, chốt tài khoản chuẩn; bấm đúp chứng từ mở phiếu.' },
-  { code: 'GĐ150', t: '03/TNDN và XML vào thẳng HTKK', d: 'Tờ khai 03/TNDN và XML HTKK lập thẳng từ sổ theo mẫu hiện hành; màn hình Kiểm soát giao diện mới.' },
-  { code: 'GĐ149', t: 'Gộp mã trùng an toàn, hoàn tác', d: 'Gộp nhóm mã trùng khách hàng / NCC, vật tư: xem trước, sao lưu, gộp một lần, hoàn tác được.' },
-  { code: 'GĐ148', t: 'Quy tắc chuyển hoá đơn AI vào sổ', d: 'AI ghi hoá đơn vào đúng tháng của ngày hoá đơn và chỉ dùng tài khoản đúng màn hình nhập (15x, 511, 711, TK chi phí).' },
-  { code: 'GĐ147', t: 'Thông tư theo bộ sổ, khoá AI 3 chế độ', d: 'Thông tư của bộ sổ quyết định sổ sách, báo cáo, giá thành, tài khoản mặc định; khoá AI Đã kích hoạt / Dùng thử 15 ngày / Chỉ xem.' },
-  { code: 'GĐ146', t: 'Kiểm soát trùng mã, công nợ lệch, trả hộ', d: 'Phát hiện đối tượng / vật tư trùng mã, công nợ sai bên, nghi trả hộ, vật tư âm kho, hạch toán lệch tài khoản; chặn tạo mã trùng từ gốc.' },
-  { code: 'GĐ145', t: 'Lịch bàn công việc', d: 'Quản lý công việc thành lịch bàn: mốc phải nộp từ hôm nay + việc đã xong / còn phải làm; cải thiện đăng nhập trang thuế khi tải hoá đơn.' },
-  { code: 'GĐ144', t: 'Bộ cài mới kèm sổ mẫu TT133 và TT99', d: 'Bộ cài đầy đủ mang 2 sổ mẫu năm 2026 (Thông tư 133/2016 và Thông tư 99/2025).' },
-  { code: 'GĐ143', t: 'Cập nhật tự động, hướng dẫn sử dụng tổng hợp', d: 'Phần mềm tự kiểm tra nguồn cập nhật mỗi ngày; tải, kiểm chữ ký số và cài; Trợ giúp mở hướng dẫn tổng hợp mọi phân hệ.' },
-  { code: 'GĐ142', t: 'Kỳ kê khai tháng / quý, văn bản pháp luật', d: 'Chọn kỳ kê khai thuế GTGT tháng / quý; bảng văn bản pháp luật trong Quản lý công việc.' },
-  { code: 'GĐ141', t: 'Giao diện phân hệ Thành phẩm mới', d: '7 màn hình Giá thành xếp thành các thẻ trắng có biểu tượng và tiêu đề; cửa sổ rộng hơn, không che chữ.' },
-  { code: 'GĐ140', t: 'Trang tổng quan quản trị có biểu đồ', d: 'Thẻ Báo cáo quản trị có Trang tổng quan quản trị: chỉ tiêu + biểu đồ trong trình duyệt.' },
-  { code: 'GĐ139', t: 'Tiêu đề mẫu đúng Thông tư của bộ sổ', d: 'Tiêu đề “Mẫu số …” của sổ, chứng từ, báo cáo theo TT133/2016 hoặc TT99/2025.' },
-  { code: 'GĐ138', t: 'Xem / In về Crystal, sổ phụ gọn', d: 'Xem / In báo cáo trở lại màn hình xem báo cáo Crystal Reports; sửa lỗi lập B09-DN; sổ phụ dàn nút đều.' },
-  { code: 'GĐ137', t: 'Quản lý công việc: lịch thuế, BHXH, lao động', d: 'Lịch việc phải làm theo tháng – quý – năm (thuế, BCTC, BHXH, KPCĐ, báo cáo lao động) kèm số liệu đọc từ sổ.' },
-  { code: 'GĐ136', t: 'Gợi ý từng cột, bấm đúp sửa, tra mã', d: 'Rê chuột lên cột của bảng có chú thích; bấm đúp ô để sửa; khung tra mã hàng; menu AI.' },
+  { code: '178', kind: 'Tài liệu', t: 'Hướng dẫn trực quan 35 chức năng, 49 trang', d: 'Hướng dẫn trực quan lên 35 chức năng, 49 trang. Thêm 7 chương cho mô-đun Định mức – Giá thành thông minh: bản đồ mô-đun, Trình tự 7 bước, Trợ lý lập định mức, định mức theo tỷ lệ giá bán, tiêu thức và báo cáo mục tiêu, xử lý đèn vàng đèn đỏ và kiểm cuối tháng, nhập thành phẩm theo định mức mới.' },
+  { code: '177b', kind: 'Tài liệu', t: 'Hướng dẫn trực quan: chỉ dẫn Điểm sẵn sàng khoá sổ', d: 'Hướng dẫn trực quan đổi nhãn theo bản cập nhật trước đó. Mục Điểm sẵn sàng khoá sổ thêm chỉ dẫn cho dòng mở màn hình AI (Kết chuyển cuối kỳ / Báo cáo); giải thích vì sao dòng này mở thẻ Báo cáo khi thẻ Kết chuyển đang ẩn. Bìa có dòng trỏ tới Hướng dẫn theo mô-đun.' },
+  { code: '177', kind: 'Tài liệu', t: 'Hướng dẫn theo mô-đun M01 – M14', d: 'Hướng dẫn theo mô-đun M01 – M14: sửa lời đọc M01 – M08 cho đúng tên thẻ và menu thực tế; thêm lời đọc M09 – M14.' },
+  { code: '176b', kind: 'Giao diện', t: 'Chữ không còn bị cắt, bị đè', d: 'Sửa chữ bị cắt, bị đè trên màn hình AI và hộp thoại: hộp Sao lưu tự động, Báo cáo chủ doanh nghiệp; hàng thẻ, nút và tiêu đề tự thu chữ theo độ rộng cửa sổ. Ở cửa sổ rất hẹp, một số nút dài trong bảng Xuất báo cáo vẫn có thể bị cắt cuối.' },
+  { code: '176', kind: 'Giao diện, tính năng', t: 'Thẻ Hệ thống, báo cáo quản trị có biểu đồ', d: 'Sắp xếp lại tính năng mới. Thêm thẻ Hệ thống ở cuối hàng thẻ màn hình AI (4 nhóm: Dữ liệu và nguồn kỳ trước; Kiểm soát và sao lưu; Nhiều bộ sổ; Phiên làm việc). Báo cáo quản trị mới có biểu đồ: Báo cáo một trang cho chủ doanh nghiệp, Lãi theo mặt hàng / khách hàng / tháng, Tồn kho, Dự báo dòng tiền 4 – 13 tuần, Thuế TNDN dự kiến. Bộ tham số năm đưa vào từng mô-đun Lương, BHXH, Thuế. Thẻ hộ kinh doanh đổi tên thành Sổ kế toán - báo cáo hộ kinh doanh, thêm Sổ TT 152/2025 – 01/CNKD và Sổ + BCTC doanh nghiệp siêu nhỏ TT 58/2026.' },
+  { code: '175b', kind: 'Giao diện', t: 'Trợ lý lập định mức: 4 phương pháp, độ tin cậy theo màu', d: 'Trợ lý lập định mức: tên "Trợ lý AI (sổ mới)", 4 phương pháp (Sản phẩm tương tự, Cân bằng khối lượng, Tỷ lệ giá bán, Mẫu ngành), độ tin cậy hiện bằng dòng xanh / vàng / đỏ; tên ngành thay mã viết tắt; Excel kết quả có 4 sheet Đề xuất, Nhóm NVL, Sản phẩm, Căn cứ; thông báo lỗi dễ hiểu hơn.' },
+  { code: '175', t: 'Hướng dẫn trực quan đủ 27 chức năng', d: 'Hướng dẫn sử dụng trực quan nay có 27 chức năng (thêm 15 chức năng về kiểm soát và biểu mẫu 2026): mỗi chức năng một trang có hình màn hình đánh số, các bước, lưu ý.' },
+  { code: '174', t: 'Hồ sơ kèm chứng từ và yêu cầu chứng từ khách', d: 'Màn hình AI, thẻ Báo cáo và nhật ký, nhóm Chứng từ kế toán có 2 nút mới: Hồ sơ kèm chứng từ (mỗi hoá đơn / tháng lương một bộ chứng từ, báo thiếu) và Yêu cầu chứng từ khách (thư yêu cầu bổ sung + thư mục nhận tệp).' },
+  { code: '173', t: 'Trợ lý lập định mức NVL thông minh (sổ mới)', d: 'Màn hình Định mức tự động có nút Trợ lý lập định mức (sổ mới): công ty mới / sản phẩm mới lập định mức NVL không gõ số – AI đọc hoá đơn mua / bán, tên sản phẩm, mẫu ngành rồi đề xuất, người dùng chọn và ghi.' },
+  { code: '172', t: 'Hộ kinh doanh: sổ TT 152/2025 và tờ khai 01/CNKD', d: 'Menu Dữ liệu có mục Hộ kinh doanh: sổ S1a / S2a / S2b-HKD (TT 152/2025) và tờ khai 01/CNKD (TT 50/2026) Excel xem trước + XML vào HTKK, lập từ chứng từ của sổ.' },
+  { code: '171', t: 'Bộ sổ và BCTC doanh nghiệp siêu nhỏ TT 58/2026', d: 'Menu Dữ liệu có mục Bộ sổ và BCTC doanh nghiệp siêu nhỏ (TT 58/2026): 9 sổ S1 / S2a / S3a, S2b, S2c, S2d, S3b, S4a – S4d và B01-DNSN, B02-DNSN + XML 58_BCTC vào HTKK, lập từ chứng từ và số dư của sổ.' },
+  { code: '170', t: 'Biểu mẫu 2026: mẫu mới HTKK, biến động lao động, R6 R7', d: 'Theo dõi mẫu tờ khai mới trên HTKK, Mẫu số 33 thông báo biến động lao động, soát thời điểm lập / ký hoá đơn, người bán trong danh sách rủi ro; lịch thêm 4 việc. Không đổi mẫu đang xuất.' },
+  { code: '169', t: 'Hướng dẫn trực quan, tổng hợp AI, tính năng ưu việt', d: 'Ba tài liệu mới đi kèm phần mềm: hướng dẫn sử dụng trực quan các chức năng quản trị, giá thành, thuế và HTKK, tổng hợp toàn bộ tính năng AI và Tính năng ưu việt của UNESCO AI.' },
+  { code: '168', t: 'Nhập toàn bộ dữ liệu HTKK theo MST', d: 'Một lần bấm đọc mọi tờ khai của mã số thuế công ty trên HTKK, tờ khai lưu trữ và hồ sơ thuế, thay cho nhập từng mẫu: số dư, số chuyển kỳ, BCTC năm trước.' },
+  { code: '167', t: 'Biểu tượng phần mềm theo hình ngôi sao UNESCO', d: 'Mọi màn hình, tệp UNESCO .exe, lối tắt trên màn hình nền và menu Start, cửa sổ công cụ dùng chung một biểu tượng: ngôi sao 5 cánh có đồng $ ở giữa.' },
+  { code: '166', t: '4 màn hình theo ảnh thiết kế', d: 'Tính giá thành / Kết chuyển thành phẩm, Sổ giá thành, Giá thành theo đối tượng (TT133) và Quản lý công việc vẽ lại theo ảnh thiết kế; chức năng từng nút giữ nguyên.' },
+  { code: '165', t: 'Màn hình Giá thành theo ảnh thiết kế', d: 'Thẻ Trình tự giá thành tháng 7 bước, thẻ Danh mục theo thứ tự bước, nút Trở về; chức năng từng nút giữ nguyên.' },
+  { code: '164', t: 'Thuế TNCN, xem trước khi đưa vào HTKK', d: 'Nhóm Thuế TNCN (05/KK quý, 05/QTT năm, 05-ĐKT-TH, đối chiếu với sổ). Xuất XML HTKK hiện màn hình xem trước, so kỳ trước và kiểm chéo trong kỳ; bấm Đưa vào HTKK mới chép.' },
+  { code: '163', t: 'Định mức theo tỷ lệ giá vốn / giá bán', d: 'Khai tỷ lệ giá vốn trên giá bán cho sổ, lô sản xuất hoặc từng mã (AI đề xuất sẵn); lập định mức NVL theo tỷ lệ, chia nhân công / chung theo tỷ lệ và so thực tế với mục tiêu.' },
+  { code: '162', t: 'HTKK: tự lấy số liệu kỳ trước', d: 'Xuất 01/GTGT tự lấy [22] và thông tin chung từ tờ khai kỳ trước, không hỏi chọn tệp; lưu đường dẫn tờ khai và BCTC kỳ trước.' },
+  { code: '161', t: 'Giá thành: trình tự 7 bước, báo cáo kiểm tra', d: 'Cột Trình tự giá thành tháng 7 bước với đèn màu và nút mở đúng màn hình; báo cáo kiểm tra giá thành so giá bán, kỳ này so kỳ trước.' },
+  { code: '160', t: 'Thuế TNDN dự kiến cả năm, báo cáo chủ doanh nghiệp', d: 'Ước tính thuế TNDN cả năm từ sổ kèm kịch bản, mức tạm nộp còn thiếu; một trang A4 tóm tắt tình hình cho chủ doanh nghiệp.' },
+  { code: '159', t: 'Lãi theo mặt hàng / khách hàng, tồn kho thông minh', d: 'Lãi gộp và lãi sau phân bổ theo mặt hàng, khách hàng, tháng; tồn kho chậm luân chuyển, cần đặt hàng, NVL sắp thiếu, ABC.' },
+  { code: '158', t: 'Chạy hàng loạt các bộ sổ qua đêm', d: 'Rà từng sổ trong thư mục của Bảng điều hành (chỉ xem, không sửa) và lập bảng tổng hợp sáng: đỏ / vàng / xanh, việc cần làm, bất thường số liệu.' },
+  { code: '157', t: 'Thẻ Bất thường số liệu', d: 'Chi phí tăng đột biến, giá mua lệch, bán dưới giá vốn, số chứng từ trùng / nhảy, hoá đơn trùng, ghi lùi vào tháng đã khoá, lương dưới tối thiểu vùng, khấu hao bất thường.' },
+  { code: '156', t: 'Dự báo dòng tiền, bộ tham số năm', d: 'Dự báo dòng tiền 4 – 13 tuần từ sổ kèm kịch bản; bộ tham số năm dùng chung theo ngày hiệu lực.' },
+  { code: '155', t: 'Điểm tin cậy bút toán, nhật ký AI', d: 'Nút “Vì sao?” giải thích căn cứ AI của từng hoá đơn; lọc hoá đơn tin cậy thấp; báo cáo “AI đã làm gì tháng này” (Excel + trang xem trên trình duyệt).' },
+  { code: '154', t: 'Bảng điều hành khách hàng', d: 'Một màn hình cho mọi bộ sổ: chứng từ đến tháng nào, hoá đơn / sổ phụ chưa hạch toán, tháng đã khoá, điểm sẵn sàng, rủi ro hoá đơn, hạn gần nhất.' },
+  { code: '153', t: 'Soát rủi ro hoá đơn trước kỳ khai', d: 'Trước khi lập 01/GTGT, một nút soát 5 nhóm rủi ro hoá đơn; chỉ đánh dấu.' },
+  { code: '152', t: 'Điểm sẵn sàng khoá sổ, sao lưu tự động', d: 'Chấm điểm sẵn sàng khoá sổ (0 – 100) kèm việc còn lại; sao lưu bộ sổ tự động mỗi ngày và trước việc lớn, kiểm tra dữ liệu khi mở.' },
+  { code: '151', t: 'Xử lý trả hộ, bù trừ 131/331', d: 'Màn hình Kiểm soát có nút Xử lý: trả hộ, bù trừ 131/331, chốt tài khoản chuẩn; bấm đúp chứng từ mở phiếu.' },
+  { code: '150', t: '03/TNDN và XML vào thẳng HTKK', d: 'Tờ khai 03/TNDN và XML HTKK lập thẳng từ sổ theo mẫu hiện hành; màn hình Kiểm soát giao diện mới.' },
+  { code: '149', t: 'Gộp mã trùng an toàn, hoàn tác', d: 'Gộp nhóm mã trùng khách hàng / NCC, vật tư: xem trước, sao lưu, gộp một lần, hoàn tác được.' },
+  { code: '148', t: 'Quy tắc chuyển hoá đơn AI vào sổ', d: 'AI ghi hoá đơn vào đúng tháng của ngày hoá đơn và chỉ dùng tài khoản đúng màn hình nhập (15x, 511, 711, TK chi phí).' },
+  { code: '147', t: 'Thông tư theo bộ sổ, khoá AI 3 chế độ', d: 'Thông tư của bộ sổ quyết định sổ sách, báo cáo, giá thành, tài khoản mặc định; khoá AI Đã kích hoạt / Dùng thử 15 ngày / Chỉ xem.' },
+  { code: '146', t: 'Kiểm soát trùng mã, công nợ lệch, trả hộ', d: 'Phát hiện đối tượng / vật tư trùng mã, công nợ sai bên, nghi trả hộ, vật tư âm kho, hạch toán lệch tài khoản; chặn tạo mã trùng từ gốc.' },
+  { code: '145', t: 'Lịch bàn công việc', d: 'Quản lý công việc thành lịch bàn: mốc phải nộp từ hôm nay + việc đã xong / còn phải làm; cải thiện đăng nhập trang thuế khi tải hoá đơn.' },
+  { code: '144', t: 'Bộ cài mới kèm sổ mẫu TT133 và TT99', d: 'Bộ cài đầy đủ mang 2 sổ mẫu năm 2026 (Thông tư 133/2016 và Thông tư 99/2025).' },
+  { code: '143', t: 'Cập nhật tự động, hướng dẫn sử dụng tổng hợp', d: 'Phần mềm tự kiểm tra nguồn cập nhật mỗi ngày; tải, kiểm chữ ký số và cài; Trợ giúp mở hướng dẫn tổng hợp mọi phân hệ.' },
+  { code: '142', t: 'Kỳ kê khai tháng / quý, văn bản pháp luật', d: 'Chọn kỳ kê khai thuế GTGT tháng / quý; bảng văn bản pháp luật trong Quản lý công việc.' },
+  { code: '141', t: 'Giao diện phân hệ Thành phẩm mới', d: '7 màn hình Giá thành xếp thành các thẻ trắng có biểu tượng và tiêu đề; cửa sổ rộng hơn, không che chữ.' },
+  { code: '140', t: 'Trang tổng quan quản trị có biểu đồ', d: 'Thẻ Báo cáo quản trị có Trang tổng quan quản trị: chỉ tiêu + biểu đồ trong trình duyệt.' },
+  { code: '139', t: 'Tiêu đề mẫu đúng Thông tư của bộ sổ', d: 'Tiêu đề “Mẫu số …” của sổ, chứng từ, báo cáo theo TT133/2016 hoặc TT99/2025.' },
+  { code: '138', t: 'Xem / In về Crystal, sổ phụ gọn', d: 'Xem / In báo cáo trở lại màn hình xem báo cáo Crystal Reports; sửa lỗi lập B09-DN; sổ phụ dàn nút đều.' },
+  { code: '137', t: 'Quản lý công việc: lịch thuế, BHXH, lao động', d: 'Lịch việc phải làm theo tháng – quý – năm (thuế, BCTC, BHXH, KPCĐ, báo cáo lao động) kèm số liệu đọc từ sổ.' },
+  { code: '136', t: 'Gợi ý từng cột, bấm đúp sửa, tra mã', d: 'Rê chuột lên cột của bảng có chú thích; bấm đúp ô để sửa; khung tra mã hàng; menu AI.' },
 ];
