@@ -80,7 +80,7 @@ Nguồn: 3 tài liệu gói 169 (09/10/2026) – Tính năng ưu việt của UN
 - Cập nhật cả chân màn hình chính UNESCO AI (ảnh) và khung liên hệ PDF "Tính năng ưu việt".
 
 # v2.4 (09/10/2026): lịch sử phần mềm UNESCO từ 1999
-- Trang `/ban-quyen/`: 3 giai đoạn pháp nhân – Trung tâm UNESCO Phát triển Công nghệ Thông tin (UCDIT, do Hiệp hội UNESCO thành lập 1999, giải thể 2010) → Công ty Cổ phần Phát triển Phần mềm UNESCO (từ 2011, các thành viên kế thừa và phát triển) → Công ty TNHH Phần mềm UNESCO (hiện nay).
+- Trang `/ban-quyen/`: 3 giai đoạn pháp nhân – Trung tâm UNESCO Phát triển Công nghệ Thông tin (UCDIT, do Hiệp hội UNESCO thành lập 1999, chuyển đổi bởi các thành viên 2010) → Công ty Cổ phần Phát triển Phần mềm UNESCO (từ 2011, các thành viên kế thừa và phát triển) → Công ty TNHH Phần mềm UNESCO (hiện nay).
 - Mục "Phần mềm kế toán UNESCO từ 1999": dòng thời gian 1999 (UCDIT Accounting Software v1.99, Windows 95/NT), 2000 – 2004 (SAS99, SAS04), 2010, 2011 – 2012, UNESCO XI, hiện nay; kèm ảnh màn hình lưu trữ.
 - Ảnh `public/banner/unesco-ucdit-1999.webp`, `unesco-classic-1999.webp`: đã làm mờ tên, địa chỉ, điện thoại, tài khoản ngân hàng, MST của khách hàng và địa chỉ, điện thoại, email cũ của Trung tâm.
 - Banner trang chủ: dải "Kế thừa giao diện quen thuộc" có màn hình Chương trình kế toán UNESCO 1999. Trang Giới thiệu cập nhật nguồn gốc 1999.
