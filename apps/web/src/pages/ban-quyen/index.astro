@@ -31,13 +31,13 @@ const oldRows = [
 <ContentLayout title="Bản quyền & pháp lý UNESCO" description={`Phần mềm kế toán UNESCO ra đời năm 1999. Bản quyền: 4 giấy chứng nhận đăng ký quyền tác giả 2011 – 2012, tác giả ${cr.author}. Pháp nhân trước đây là ${old.legalName}, nay là ${co.legalName} (MST ${co.taxCode}).`} eyebrow="Bản quyền tác giả – pháp nhân – lịch sử sản phẩm" display="BẢN QUYỀN & |PHÁP LÝ" tone="ng" subtitle={`Tác giả phần mềm: ${cr.author} · Pháp nhân hiện nay: ${co.legalName}`} pills={['Ra đời năm 1999', '4 giấy chứng nhận quyền tác giả', `Tác giả: ${cr.author}`]}>
 
 <section class="section"><div class="container">
-  <div class="sec-c"><span class="eyebrow">Pháp nhân & tác giả</span><h2>Từ {og.founded} – <span class="tg">kế thừa và phát triển liên tục</span></h2><p>Phần mềm kế toán UNESCO ra đời năm {og.founded} tại {og.name}, do {og.founder} thành lập. Trung tâm giải thể năm {og.dissolved}; các thành viên kế thừa và phát triển qua {old.legalName} – Giám đốc và tác giả là {cr.author}. Nay pháp nhân chuyển sang {co.legalName}; tác giả phần mềm vẫn là {cr.author}.</p></div>
+  <div class="sec-c"><span class="eyebrow">Pháp nhân & tác giả</span><h2>Từ {og.founded} – <span class="tg">kế thừa và phát triển liên tục</span></h2><p>Phần mềm kế toán UNESCO ra đời năm {og.founded} tại {og.name}, do {og.founder} thành lập. Trung tâm chuyển đổi bởi các thành viên năm {og.dissolved}; các thành viên kế thừa và phát triển qua {old.legalName} – Giám đốc và tác giả là {cr.author}. Nay pháp nhân chuyển sang {co.legalName}; tác giả phần mềm vẫn là {cr.author}.</p></div>
   <div class="entity-flow e3">
     <div class="entity root">
       <span class="when">{og.founded} – {og.dissolved}</span>
       <h3>{og.name}</h3>
       <p class="en">{og.short} Software Center</p>
-      <ul><li>Do <b>{og.founder}</b> thành lập năm {og.founded}</li><li>Ra đời Chương trình kế toán UNESCO</li><li>Giải thể năm {og.dissolved}</li></ul>
+      <ul><li>Do <b>{og.founder}</b> thành lập năm {og.founded}</li><li>Ra đời Chương trình kế toán UNESCO</li><li>Chuyển đổi bởi các thành viên năm {og.dissolved}</li></ul>
     </div>
     <div class="entity-arrow" aria-hidden="true"><Icon name="arrow-right" /></div>
     <div class="entity was">
