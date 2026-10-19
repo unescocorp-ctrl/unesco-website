@@ -1,0 +1,28 @@
+---
+import { url } from '../utils/url';
+import ContentLayout from '../layouts/ContentLayout.astro';
+import { articles, articleDate } from '../data/articles';
+import { contact, zaloHref, mailHref } from '../data/contact';
+/** Hiển thị một bài viết trong data/articles.ts theo slug. */
+interface Props { slug: string }
+const { slug } = Astro.props;
+const a = articles.find((x) => x.slug === slug);
+if (!a) throw new Error(`Không tìm thấy bài viết: ${slug}`);
+const others = articles.filter((x) => x.slug !== slug);
+---
+<ContentLayout title={a.title} description={a.description} eyebrow={`${a.topic} · cập nhật ${articleDate(a.date)}`} pills={[]}>
+<section class="section"><div class="container legal-content article-content">
+  {a.blocks.map((b) =>
+    b.t === 'h2' ? <h2>{b.x}</h2>
+    : b.t === 'lead' ? <p class="article-lead">{b.x}</p>
+    : b.t === 'p' ? <p>{b.x}</p>
+    : b.t === 'ol' ? <ol>{b.items.map((i) => <li>{i}</li>)}</ol>
+    : b.t === 'table' ? <div class="table-wrap"><table class="article-table"><thead><tr>{b.head.map((h) => <th>{h}</th>)}</tr></thead><tbody>{b.rows.map((r) => <tr>{r.map((c, i) => <td data-label={b.head[i]}>{c}</td>)}</tr>)}</tbody></table></div>
+    : b.t === 'formula' ? <p class="article-formula">{b.x}</p>
+    : <p>{b.x} Công ty TNHH Phần mềm UNESCO: kinh doanh và Zalo <a href={zaloHref}>{contact.zalo}</a>; hỗ trợ kỹ thuật {contact.support.lineVi}; email <a href={mailHref}>{contact.email}</a>; website <a href={contact.website}>{contact.websiteLabel}</a>. Địa chỉ: {contact.address}.</p>
+  )}
+  <div class="actions" style="margin-top:30px"><a class="btn btn-primary" href={url('/lien-he/#demo')}>ĐĂNG KÝ XEM DEMO</a><a class="btn btn-secondary" href={url('/lien-he/')}>NHẬN TƯ VẤN</a></div>
+  {others.length > 0 && <div class="article-more"><h3>Bài viết khác</h3>{others.map((o) => <p><a href={url(`/kien-thuc/${o.slug}/`)}>{o.title}</a></p>)}</div>}
+  <p style="margin-top:22px"><a class="link-arrow" href={url('/kien-thuc/')}>Về Trung tâm kiến thức</a></p>
+</div></section>
+</ContentLayout>
