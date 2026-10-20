@@ -1,0 +1,444 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:05.400
+Chào anh chị. Video này hướng dẫn nhập và xử lý giá thành
+
+
+00:00:05.400 --> 00:00:08.862
+theo điện trên phần mềm kế toán UNESCO AI.
+
+
+00:00:08.862 --> 00:00:13.862
+Vào mục Giá thành. Bên trái là Trình tự giá thành tháng, gồm
+
+
+00:00:13.862 --> 00:00:18.862
+bảy bước, làm lần lượt từ trên xuống. Bên phải là Danh mục,
+
+
+00:00:18.862 --> 00:00:20.785
+mở thẳng từng màn hình.
+
+
+00:00:20.785 --> 00:00:25.785
+Chọn tháng cần tính, sau mỗi thay đổi bấm Kiểm lại. Chấm xanh
+
+
+00:00:25.785 --> 00:00:30.785
+là đã xong, chấm cam là đang chờ duyệt, chấm đỏ là còn
+
+
+00:00:30.785 --> 00:00:31.169
+thiếu.
+
+
+00:00:32.700 --> 00:00:37.700
+Bước không, bấm Chọn và chọn Sản xuất hàng loạt, lấy điện làm
+
+
+00:00:37.700 --> 00:00:42.700
+căn cứ sản lượng, ví dụ nhựa ép, thổi. Bấm Đồng ý. Việc
+
+
+00:00:42.700 --> 00:00:46.162
+này chỉ làm một lần cho mỗi bộ sổ.
+
+
+00:00:47.700 --> 00:00:51.162
+Bước một, mở Hồ sơ định mức giá thành.
+
+
+00:00:51.162 --> 00:00:56.162
+Ô Nguyên liệu chính: gõ số hiệu hạt nhựa. Ô Mã điện: chọn
+
+
+00:00:56.162 --> 00:01:00.392
+mã điện, đơn vị tính phải là ki lô oát giờ.
+
+
+00:01:00.392 --> 00:01:05.392
+Ô Lượng nguyên liệu chính trên một ki lô oát giờ là số
+
+
+00:01:05.392 --> 00:01:10.392
+ki lô gam hạt nhựa làm ra từ một ki lô oát giờ
+
+
+00:01:10.392 --> 00:01:15.392
+điện. Đừng nhầm với định mức điện của thành phẩm, là số ki
+
+
+00:01:15.392 --> 00:01:20.392
+lô oát giờ cho một ki lô gam thành phẩm. Ví dụ một
+
+
+00:01:20.392 --> 00:01:25.392
+ki lô gam túi tốn một phẩy không năm ba ki lô oát
+
+
+00:01:25.392 --> 00:01:29.238
+giờ, thì hệ số nhập khoảng không phẩy chín lăm.
+
+
+00:01:29.238 --> 00:01:34.238
+Nhập phần trăm điện không dùng cho sản xuất, chọn Khi lệch với
+
+
+00:01:34.238 --> 00:01:39.238
+điện là Tự chỉnh khi lệch quá ngưỡng, ngưỡng mặc định năm phần
+
+
+00:01:39.238 --> 00:01:40.777
+trăm, rồi bấm Ghi.
+
+
+00:01:42.300 --> 00:01:47.300
+Bấm nút Ngành nhựa để đối chiếu định mức điện theo văn bản
+
+
+00:01:47.300 --> 00:01:52.300
+hợp nhất mười ba năm hai nghìn không trăm hai mươi sáu của
+
+
+00:01:52.300 --> 00:01:53.454
+Bộ Công Thương.
+
+
+00:01:53.454 --> 00:01:58.454
+Chọn dây chuyền mẫu đúng loại sản phẩm của công ty. Công ty
+
+
+00:01:58.454 --> 00:02:03.454
+làm nhiều loại sản phẩm thì chọn dòng cuối và khai tỷ trọng
+
+
+00:02:03.454 --> 00:02:04.992
+sản lượng từng nhóm.
+
+
+00:02:06.500 --> 00:02:11.500
+Phần mềm hiện ngay báo cáo suất tiêu hao điện từng tháng, tức
+
+
+00:02:11.500 --> 00:02:16.115
+số ki lô oát giờ trên một ki lô gam thành phẩm.
+
+
+00:02:16.115 --> 00:02:21.115
+Chọn đúng nhóm Túi nhựa, định mức không phẩy chín lăm, các tháng
+
+
+00:02:21.115 --> 00:02:23.808
+đều đạt và báo số liệu khớp.
+
+
+00:02:23.808 --> 00:02:28.808
+Cùng số liệu nhưng chọn nhầm nhóm Nhựa bao bì, định mức không
+
+
+00:02:28.808 --> 00:02:33.808
+phẩy sáu hai, các tháng báo đỏ, vượt trên ba mươi phần trăm.
+
+
+00:02:33.808 --> 00:02:36.885
+Vì vậy phải chọn đúng nhóm sản phẩm.
+
+
+00:02:36.885 --> 00:02:41.885
+Báo cáo được lưu thành tệp. Đây chỉ là đối chiếu, phần mềm
+
+
+00:02:41.885 --> 00:02:43.038
+không sửa sổ.
+
+
+00:02:44.500 --> 00:02:49.500
+Bước hai, lập định mức nguyên vật liệu cho các mã còn thiếu.
+
+
+00:02:49.500 --> 00:02:54.500
+Có bốn cách: định mức tự động do AI đề xuất, nhập tay
+
+
+00:02:54.500 --> 00:02:59.500
+theo mã, định mức theo tỷ lệ giá bán, và vật liệu phụ,
+
+
+00:02:59.500 --> 00:03:00.269
+bao bì.
+
+
+00:03:00.269 --> 00:03:05.269
+Công ty mới chưa có cơ cấu nguyên liệu thì dùng định mức
+
+
+00:03:05.269 --> 00:03:10.269
+theo tỷ lệ giá bán: khai phần trăm giá vốn cho cả sổ,
+
+
+00:03:10.269 --> 00:03:11.808
+lô hoặc từng mã.
+
+
+00:03:11.808 --> 00:03:16.808
+Quan trọng: mỗi thành phẩm phải có một dòng mã điện trong định
+
+
+00:03:16.808 --> 00:03:21.808
+mức, ghi số ki lô oát giờ cho một đơn vị thành phẩm.
+
+
+00:03:21.808 --> 00:03:26.423
+Thiếu dòng này, phần mềm không tính được điện theo định mức.
+
+
+00:03:27.900 --> 00:03:32.900
+Bước ba, kiểm tra chi phí tháng trên các tài khoản một năm
+
+
+00:03:32.900 --> 00:03:36.746
+bốn một, một năm bốn hai, một năm bốn ba.
+
+
+00:03:36.746 --> 00:03:41.746
+Sổ bật giá thành theo đối tượng theo Thông tư một trăm ba
+
+
+00:03:41.746 --> 00:03:46.746
+mươi ba thì xem tham số tính giá thành và bảng phân bổ
+
+
+00:03:46.746 --> 00:03:48.669
+chi phí cho từng phiếu.
+
+
+00:03:50.200 --> 00:03:55.200
+Bước bốn có hai cách. Cách thứ nhất là làm tay trên màn
+
+
+00:03:55.200 --> 00:04:00.200
+hình Kết chuyển thành phẩm. Bấm Lấy từ NXT để nạp mã và
+
+
+00:04:00.200 --> 00:04:02.508
+sản lượng theo số xuất bán.
+
+
+00:04:02.508 --> 00:04:07.508
+Khung Cân đối AI bên phải chỉ đọc, không ghi sổ. Dòng một
+
+
+00:04:07.508 --> 00:04:12.508
+so sản lượng với bán hàng. Dòng hai so điện theo định mức
+
+
+00:04:12.508 --> 00:04:17.508
+với điện có trong sổ. Ở ví dụ này, điện theo định mức
+
+
+00:04:17.508 --> 00:04:22.508
+là hai mươi bảy nghìn tám trăm mười ki lô oát giờ, trong
+
+
+00:04:22.508 --> 00:04:27.508
+sổ chỉ có hai mươi sáu nghìn bốn trăm chín mươi hai, nên
+
+
+00:04:27.508 --> 00:04:31.354
+báo thiếu điện. Dòng ba kiểm tra nguyên liệu thiếu.
+
+
+00:04:32.900 --> 00:04:37.900
+Khi bấm Ghi mà điện trong sổ khác điện theo định mức, phần
+
+
+00:04:37.900 --> 00:04:40.208
+mềm cho chọn cách xử lý.
+
+
+00:04:40.208 --> 00:04:45.208
+Điện thiếu thì có thể xuất đúng số điện có trong sổ, chia
+
+
+00:04:45.208 --> 00:04:50.208
+theo định mức từng mã; hoặc giảm sản lượng thành phẩm theo điện;
+
+
+00:04:50.208 --> 00:04:54.054
+hoặc xuất theo định mức nhưng sẽ âm kho điện.
+
+
+00:04:54.054 --> 00:04:59.054
+Điện dư thì có thêm hai lựa chọn: đưa phần điện dư vào
+
+
+00:04:59.054 --> 00:05:04.054
+chi phí sản xuất chung của xưởng, hoặc vào chi phí quản lý
+
+
+00:05:04.054 --> 00:05:04.823
+doanh nghiệp.
+
+
+00:05:04.823 --> 00:05:09.823
+Mọi lựa chọn đều được ghi nhật ký. Chọn quay lại nếu muốn
+
+
+00:05:09.823 --> 00:05:11.362
+xem lại số liệu.
+
+
+00:05:12.900 --> 00:05:17.900
+Ghi xong, phần mềm tóm tắt số mã, tổng giá thành, mã có
+
+
+00:05:17.900 --> 00:05:22.900
+giá thành bằng không hoặc cao hơn giá bán, và hỏi có mở
+
+
+00:05:22.900 --> 00:05:25.977
+báo cáo kiểm tra chi tiết. Chọn Yes.
+
+
+00:05:25.977 --> 00:05:30.977
+Báo cáo kiểm tra giá thành cho mở tệp Excel chi tiết hoặc
+
+
+00:05:30.977 --> 00:05:31.746
+trang HTML.
+
+
+00:05:31.746 --> 00:05:36.746
+Tệp Excel gồm các trang: tổng quan, giá thành so giá bán, kỳ
+
+
+00:05:36.746 --> 00:05:40.977
+này so kỳ trước, theo tháng, mục tiêu và cảnh báo.
+
+
+00:05:52.900 --> 00:05:57.900
+Cách thứ hai, được khuyến nghị: ở bước bốn chọn AI cân đối
+
+
+00:05:57.900 --> 00:06:02.900
+cả tháng. Máy giữ định mức, đề xuất sản lượng theo điện, và
+
+
+00:06:02.900 --> 00:06:05.208
+chờ duyệt nếu lệch quá ngưỡng.
+
+
+00:06:05.208 --> 00:06:10.208
+Báo cáo máy giá thành cho biết: số điện mua vào, điện sản
+
+
+00:06:10.208 --> 00:06:15.208
+xuất sau khi trừ văn phòng, nguyên liệu tính theo điện, nguyên liệu
+
+
+00:06:15.208 --> 00:06:20.208
+tính theo sản lượng nhân định mức, hệ số chênh lệch và phần
+
+
+00:06:20.208 --> 00:06:22.515
+trăm lệch, kèm bảng từng mã.
+
+
+00:06:22.515 --> 00:06:27.515
+Nếu báo cáo có dòng cảnh báo hệ số hoặc tồn điện âm,
+
+
+00:06:27.515 --> 00:06:32.515
+hãy sửa hồ sơ định mức trước khi duyệt. Nếu thấy dòng kWh
+
+
+00:06:32.515 --> 00:06:37.515
+trên hoá đơn tải về khác số, hãy kiểm tra lại phiếu nhập
+
+
+00:06:37.515 --> 00:06:37.900
+điện.
+
+
+00:06:39.400 --> 00:06:44.400
+Đóng báo cáo để chọn phương án. Một: nhận sản lượng AI đề
+
+
+00:06:44.400 --> 00:06:49.400
+xuất, khi ghi điện được xuất hết vào giá thành. Hai: giữ sản
+
+
+00:06:49.400 --> 00:06:54.400
+lượng gốc, xuất điện theo định mức. Ba: dừng, quay lại sửa hoá
+
+
+00:06:54.400 --> 00:06:57.477
+đơn điện hoặc định mức. Bốn: để sau.
+
+
+00:07:01.400 --> 00:07:06.400
+Máy hỏi nạp sản lượng đã duyệt vào màn hình Kết chuyển thành
+
+
+00:07:06.400 --> 00:07:11.400
+phẩm. Máy không tự ghi sổ. Chọn Yes, kiểm tra lại lưới sản
+
+
+00:07:11.400 --> 00:07:13.323
+lượng mới, rồi bấm Ghi.
+
+
+00:07:14.800 --> 00:07:19.800
+Sau khi ghi, xem báo cáo chi tiết giá thành sản phẩm hoàn
+
+
+00:07:19.800 --> 00:07:24.800
+thành: số lượng, chi phí nguyên vật liệu, nhân công, sản xuất chung,
+
+
+00:07:24.800 --> 00:07:29.031
+tổng giá thành và giá thành đơn vị của từng mã.
+
+
+00:07:29.031 --> 00:07:34.031
+Mở lại báo cáo kiểm tra để xem mã nào có giá thành
+
+
+00:07:34.031 --> 00:07:36.723
+cao hơn giá bán hoặc lãi mỏng.
+
+
+00:08:04.800 --> 00:08:09.800
+Quay về Trình tự giá thành và bấm Kiểm lại. Bước bốn hiện
+
+
+00:08:09.800 --> 00:08:14.800
+máy AI đã ghi và tồn điện cuối tháng. Bước sáu hiện mã
+
+
+00:08:14.800 --> 00:08:17.492
+có giá thành cao hơn giá bán.
+
+
+00:08:17.492 --> 00:08:22.492
+Nếu tồn điện cuối tháng khác không, nghĩa là điện mua vào chưa
+
+
+00:08:22.492 --> 00:08:27.492
+khớp điện đã xuất. Hãy xem lại phiếu nhập điện, định mức điện
+
+
+00:08:27.492 --> 00:08:32.492
+và hệ số nguyên liệu trên ki lô oát giờ, rồi ghi lại
+
+
+00:08:32.492 --> 00:08:35.569
+phiếu kết chuyển và chọn xuất hết điện.
+
+
+00:08:35.569 --> 00:08:40.569
+Phần mềm chỉ đề xuất, số liệu chỉ vào sổ khi kế toán
+
+
+00:08:40.569 --> 00:08:44.031
+bấm Ghi. Cảm ơn anh chị đã theo dõi.

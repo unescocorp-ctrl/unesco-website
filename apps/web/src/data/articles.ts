@@ -20,6 +20,7 @@
  *   img       hình: src = tên tệp trong public/huong-dan/<slug>/ (không đuôi .webp), w, h, cap = chú thích
  *   note      khung lưu ý
  *   download  nút tải tệp: href, x = chữ trên nút
+ *   video     video tự lưu trên web (public/video/): src .mp4, vtt phụ đề, poster ảnh bìa, cap chú thích
  */
 export type Block =
   | { t: 'h2'; x: string }
@@ -33,7 +34,8 @@ export type Block =
   | { t: 'h3'; x: string }
   | { t: 'img'; src: string; w: number; h: number; cap: string }
   | { t: 'note'; x: string }
-  | { t: 'download'; href: string; x: string };
+  | { t: 'download'; href: string; x: string }
+  | { t: 'video'; src: string; vtt: string; poster: string; cap: string };
 
 export type Article = {
   slug: string;
@@ -56,6 +58,7 @@ export const articles: Article[] = [
     topic: 'Giá thành',
     blocks: [
       { t: 'lead', x: 'Với xưởng ép, thổi nhựa, điện tỷ lệ với lượng hạt nhựa qua máy. UNESCO AI quy số kWh điện sản xuất ra số kg nguyên liệu chính đáng lẽ đã dùng, so với sản lượng thành phẩm theo định mức, rồi đề xuất sản lượng cho khớp điện. Phần mềm không tự ghi sổ: mọi số chỉ vào sổ khi kế toán bấm Ghi trên màn hình Kết chuyển thành phẩm.' },
+      { t: 'video', src: '/video/gia-thanh-theo-dien.mp4', vtt: '/video/gia-thanh-theo-dien.vtt', poster: '/huong-dan/gia-thanh-theo-dien/gtd-01-trinh-tu.webp', cap: 'Video hướng dẫn có lời đọc và phụ đề (8 phút 45 giây), quay trên phần mềm thật. Bấm CC để bật hoặc tắt phụ đề.' },
       { t: 'download', href: '/tai-lieu/huong-dan-gia-thanh-theo-dien-chi-tiet.pdf', x: 'Tải bản PDF (17 trang, 22 hình)' },
       { t: 'p', x: 'Hướng dẫn được làm theo video thao tác thực tế trên phần mềm, bộ sổ mẫu tháng 01/2026: hai thành phẩm TÚI PP (mã T) và CUỘN PP (mã C), nguyên liệu chính HẠT NHỰA (mã PP), mã điện D. Tên công ty, mã số thuế và đường dẫn thư mục trong hình đã được che.' },
       { t: 'table', head: ['Phần', 'Nội dung'], rows: [
@@ -130,6 +133,7 @@ export const articles: Article[] = [
       { t: 'ol', items: [
         'Ở bước 4 bấm Làm bước này, chọn “AI cân đối cả tháng: giữ định mức, đề xuất sản lượng theo điện, chờ duyệt nếu lệch quá ngưỡng”, bấm Đồng ý (Hình 10).',
         'Phần mềm lập báo cáo Máy giá thành (Hình 11): kWh mua vào theo phiếu nhập điện; kWh trên hoá đơn điện tải về; kWh sản xuất (đã trừ văn phòng, không tải); NVL chính tham chiếu theo điện; NVL theo sản lượng gốc × định mức; hệ số và % lệch; bảng từng mã gồm định mức, sản lượng gốc, sản lượng đề xuất và chênh.',
+        'Nếu báo cáo có dòng cảnh báo hệ số hoặc tồn điện âm, sửa Hồ sơ định mức trước khi duyệt. Nếu thấy dòng kWh trên hoá đơn tải về khác số, kiểm tra lại phiếu nhập điện.',
         'Lệch trong ngưỡng: máy nạp thẳng sản lượng. Lệch quá ngưỡng: trạng thái chờ duyệt (chấm cam); đóng báo cáo để chọn phương án.',
       ] },
       { t: 'img', src: 'gtd-10-chon-ai-can-doi', w: 720, h: 460, cap: 'Hình 10. Chọn AI cân đối cả tháng.' },
@@ -182,6 +186,7 @@ export const articles: Article[] = [
       { t: 'img', src: 'gtd-19-bao-cao-kiem-tra', w: 720, h: 530, cap: 'Hình 19. Báo cáo kiểm tra giá thành: mở Excel chi tiết, mở trang HTML hoặc đóng.' },
       { t: 'img', src: 'gtd-20-excel-kiem-tra', w: 1100, h: 740, cap: 'Hình 20. Tệp Excel gồm các sheet TongQuan, GiaThanh_GiaBan, KyNay_KyTruoc, TheoThang, MucTieu, CanhBao.' },
       { t: 'img', src: 'gtd-21-chi-tiet-gia-thanh', w: 1440, h: 420, cap: 'Hình 21. Chi tiết giá thành sản phẩm hoàn thành tháng 1/2026: tổng 718.195.914 (NVL 700.053.595, nhân công 8.310.000, sản xuất chung 9.832.319).' },
+      { t: 'p', x: 'Xem báo cáo Chi tiết giá thành sản phẩm hoàn thành để đọc số lượng, chi phí nguyên vật liệu, nhân công, sản xuất chung, tổng giá thành và giá thành đơn vị của từng mã. Mở lại báo cáo kiểm tra để xem mã nào có giá thành cao hơn giá bán hoặc lãi mỏng. Cuối cùng quay về Trình tự giá thành và bấm Kiểm lại.' },
       { t: 'img', src: 'gtd-22-trinh-tu-ket-qua', w: 710, h: 610, cap: 'Hình 22. Trình tự sau khi ghi: bước 4 “Máy AI: lệch 6,17 %, đã ghi” kèm tồn điện cuối tháng; bước 6 nêu mã có giá thành cao hơn giá bán.' },
       { t: 'note', x: 'Bước 4 báo “Tồn điện cuối tháng” khác 0 (âm hoặc dương) nghĩa là điện mua vào chưa khớp điện đã xuất cho sản xuất. Xem lại phiếu nhập điện, định mức điện, hệ số NVL / kWh, rồi ghi lại phiếu kết chuyển và chọn phương án xuất hết điện (mục D1).' },
 
