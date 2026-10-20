@@ -1038,3 +1038,14 @@ em.new{display:inline-block;font-style:normal;font-family:var(--font-h);font-siz
 .article-more{margin-top:34px;padding-top:18px;border-top:1px solid var(--line)}
 .article-more h3{font-size:1.1rem;margin-bottom:8px}
 @media(max-width:720px){.article-table thead{display:none}.article-table tr{display:block;border-top:1px solid #EAF0ED;padding:8px 0}.article-table td{display:block;border:0;padding:3px 14px}.article-table td:before{content:attr(data-label) ": ";font-weight:600;color:var(--muted)}}
+/* Công cụ tính thử điện trong bài Giá thành theo điện */
+.calc-box{border:1px solid var(--line);border-radius:var(--radius);background:#fff;padding:20px;margin:14px 0 26px}
+.calc-meter{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px}
+.calc-meter label{display:grid;gap:6px;font-weight:600;font-size:.9rem;color:var(--ink)}
+.calc-box input{width:100%;min-width:0;padding:9px 11px;border:1px solid #bac6cf;border-radius:9px;background:#fff}
+.calc-box input:focus{outline:3px solid rgba(30,155,75,.15);border-color:var(--green)}
+.calc-table td{vertical-align:middle}.calc-table td:first-child{font-weight:400}
+.calc-table [data-o]{font-weight:700;color:var(--ink);white-space:nowrap}
+.calc-del{border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 10px;cursor:pointer;color:var(--muted)}
+.calc-result{margin-top:14px;padding:13px 16px;border-radius:10px;background:var(--green-l);color:var(--ink);font-weight:600}
+@media(max-width:720px){.calc-meter{grid-template-columns:1fr}.calc-table [data-o]{white-space:normal}.calc-table td[data-label=""]:before{content:none}}

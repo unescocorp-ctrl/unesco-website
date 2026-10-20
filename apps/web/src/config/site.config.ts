@@ -34,7 +34,7 @@ export const site = {
 
     // Địa chỉ liên hệ đang sử dụng trên tài liệu/giao diện UNESCO.
     contactAddress:
-      '30 Đường số 50, Phường 10, Quận 6, Thành phố Hồ Chí Minh',
+      '30 Đường số 50, Phường Bình Phú, Thành phố Hồ Chí Minh',
 
     // Hỗ trợ: 028 3755 5755 – 3755 4755 ext 103-105 (theo banner 09/10/2026).
     phone: '028 3755 5755',
@@ -63,7 +63,7 @@ export const site = {
     legalNameEn: 'Unesco Software Development Corporation',
     businessRegistration: '0310861633',
     registered: '18/05/2011',
-    address: '30 Đường số 50, Phường 10, Quận 6, TP. Hồ Chí Minh',
+    address: '30 Đường số 50, Phường Bình Phú, TP. Hồ Chí Minh',
     director: 'Ông Nguyễn Đình Thăng'
   },
 
