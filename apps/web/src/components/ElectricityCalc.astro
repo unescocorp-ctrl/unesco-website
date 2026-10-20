@@ -1,25 +1,21 @@
 ---
 /**
- * Công cụ tính thử phân bổ điện theo định mức kWh/ĐVT từng mã thành phẩm.
- * Chỉ minh hoạ cách tính trong bài "Nhập giá thành theo điện"; không lưu, không gửi dữ liệu đi đâu.
- * Cách tính bám theo phương án tháng của phần mềm:
- *   Điện trực tiếp = Tổng công tơ − Ngoài sản xuất − Phụ trợ, không tải
- *   Điện cần của mã = Cần sản xuất × kWh/ĐVT
- *   Đủ điện: mỗi mã nhận đủ phần cần. Thiếu điện: ưu tiên theo thứ tự dòng (dòng trên trước).
- *   Sản lượng làm được theo điện = Điện phân bổ ÷ kWh/ĐVT
+ * Công cụ tính thử hệ số k điện trong bài "Hướng dẫn chi tiết: nhập và xử lý giá thành theo điện".
+ * Chỉ minh hoạ; không lưu, không gửi dữ liệu đi đâu. Cách tính theo hộp "Điện chênh lệch so với định mức":
+ *   Điện theo định mức của mã = Sản lượng × Định mức điện (kWh/ĐVT)
+ *   k = Điện có trong sổ ÷ Tổng điện theo định mức
+ *   Sản lượng theo điện (phương án 2) = Sản lượng × k ; Điện xuất cho mã (phương án 1) = Điện định mức × k
  */
 const rows = [
-  { code: 'A', unit: 'cái', qty: '10.000', rate: '0,012' },
-  { code: 'B', unit: 'kg', qty: '3.000', rate: '0,35' },
+  { code: 'T', unit: 'kg', qty: '24.882', rate: '1,053' },
+  { code: 'C', unit: 'kg', qty: '1.000', rate: '1,61' },
   { code: '', unit: '', qty: '', rate: '' },
 ];
-const head = ['Mã thành phẩm', 'ĐVT', 'Cần sản xuất', 'Định mức điện (kWh/ĐVT)', 'Điện cần (kWh)', 'Điện phân bổ (kWh)', 'Sản lượng làm được theo điện', ''];
+const head = ['Mã thành phẩm', 'ĐVT', 'Sản lượng', 'Định mức điện (kWh/ĐVT)', 'Điện theo định mức (kWh)', 'Điện xuất × k (kWh)', 'Sản lượng theo điện', ''];
 ---
 <div class="calc-box" id="calc-dien">
   <div class="calc-meter">
-    <label>Tổng điện công tơ (kWh)<input inputmode="decimal" data-k="total" value="1.500" /></label>
-    <label>Điện ngoài sản xuất (kWh)<input inputmode="decimal" data-k="non" value="200" /></label>
-    <label>Điện phụ trợ, không tải (kWh)<input inputmode="decimal" data-k="fixed" value="100" /></label>
+    <label>Điện có trong sổ (kWh) – tồn đầu + nhập − xuất khác<input inputmode="decimal" data-k="have" value="26.492" /></label>
   </div>
   <div class="table-wrap"><table class="article-table calc-table">
     <thead><tr>{head.map((h) => <th>{h}</th>)}</tr></thead>
@@ -40,7 +36,7 @@ const head = ['Mã thành phẩm', 'ĐVT', 'Cần sản xuất', 'Định mức 
   </table></div>
   <div class="actions"><button type="button" class="btn btn-secondary" data-add>Thêm dòng</button></div>
   <div class="calc-result" aria-live="polite" data-result>Bật JavaScript để xem kết quả tính.</div>
-  <p class="caption">Số ví dụ là giả định. Khi thiếu điện, công cụ ưu tiên theo thứ tự dòng, dòng trên trước, giống khi bạn xác nhận thứ tự ưu tiên trong phần mềm.</p>
+  <p class="caption">Số mặc định là ví dụ của bộ sổ mẫu. Mã thiếu định mức điện bị bỏ qua, giống khung Cân đối AI báo “chưa có định mức điện – bỏ qua”.</p>
 </div>
 <script is:inline>
 (function () {
@@ -55,54 +51,44 @@ const head = ['Mã thành phẩm', 'ĐVT', 'Cần sản xuất', 'Định mức 
     else if (/^[1-9]\d{0,2}(\.\d{3})+$/.test(s)) s = s.replace(/\./g, '');
     return /^-?\d*\.?\d+$/.test(s) ? Number(s) : NaN;
   }
-  function fmt(n, d) { return n.toLocaleString('vi-VN', { maximumFractionDigits: d || 4 }); }
-  function meter(k) { return num(box.querySelector('[data-k="' + k + '"]').value); }
+  function fmt(n, d) { return n.toLocaleString('vi-VN', { maximumFractionDigits: d == null ? 2 : d }); }
   function calc() {
-    var total = meter('total'), non = meter('non'), fixed = meter('fixed');
-    var trs = Array.prototype.slice.call(body.querySelectorAll('tr'));
-    var items = trs.map(function (tr) {
+    var have = num(box.querySelector('[data-k="have"]').value);
+    var items = Array.prototype.map.call(body.querySelectorAll('tr'), function (tr) {
       var g = function (c) { return tr.querySelector('[data-c="' + c + '"]').value; };
       var o = function (c) { return tr.querySelector('[data-o="' + c + '"]'); };
-      var qty = num(g('qty')), rate = num(g('rate'));
-      var it = { tr: tr, code: g('code').trim(), unit: g('unit').trim(), qty: qty, rate: rate, need: 0, ok: false, o: o };
+      var it = { unit: g('unit').trim(), qty: num(g('qty')), rate: num(g('rate')), ok: false, o: o };
       ['need', 'alloc', 'out'].forEach(function (c) { o(c).textContent = '–'; });
-      if (!it.code && isNaN(qty) && isNaN(rate)) return it;
-      if (isNaN(qty) || qty < 0) { o('need').textContent = 'Nhập số lượng'; return it; }
-      if (isNaN(rate) || rate <= 0) { o('need').textContent = 'Chưa có định mức điện'; return it; }
-      it.need = qty * rate; it.ok = true;
+      if (!g('code').trim() && isNaN(it.qty) && isNaN(it.rate)) return it;
+      if (isNaN(it.qty) || it.qty < 0) { o('need').textContent = 'Nhập sản lượng'; return it; }
+      if (isNaN(it.rate) || it.rate <= 0) { o('need').textContent = 'Chưa có định mức điện – bỏ qua'; return it; }
+      it.need = it.qty * it.rate; it.ok = true;
       o('need').textContent = fmt(it.need);
       return it;
     });
-    if (isNaN(total) || isNaN(non) || isNaN(fixed) || total < 0 || non < 0 || fixed < 0) {
-      out.textContent = 'Nhập đủ ba số công tơ; ô nào không có thì nhập 0.'; return;
-    }
-    var direct = total - non - fixed;
-    if (direct < 0) { out.textContent = 'Điện ngoài sản xuất và phụ trợ vượt tổng điện công tơ.'; return; }
     var used = items.filter(function (i) { return i.ok; });
-    var needSum = used.reduce(function (s, i) { return s + i.need; }, 0);
-    var left = direct;
+    var sum = used.reduce(function (s, i) { return s + i.need; }, 0);
+    if (isNaN(have) || have < 0) { out.textContent = 'Nhập số kWh điện có trong sổ.'; return; }
+    if (!used.length || sum <= 0) { out.textContent = 'Nhập sản lượng và định mức điện cho ít nhất một mã.'; return; }
+    var k = have / sum, diff = have - sum;
     used.forEach(function (i) {
-      var a = Math.min(left, i.need); left -= a;
-      i.o('alloc').textContent = fmt(a);
-      i.o('out').textContent = fmt(a / i.rate, 2) + (i.unit ? ' ' + i.unit : '');
+      i.o('alloc').textContent = fmt(i.need * k);
+      i.o('out').textContent = fmt(i.qty * k) + (i.unit ? ' ' + i.unit : '');
     });
-    var msg = 'Điện trực tiếp sản xuất: ' + fmt(direct) + ' kWh. Tổng điện cần theo định mức: ' + fmt(needSum) + ' kWh. ';
-    if (!used.length) msg += 'Nhập số lượng và định mức điện cho ít nhất một mã.';
-    else if (direct > needSum) msg += 'Còn dư ' + fmt(direct - needSum) + ' kWh chưa phân bổ: kiểm tra lại số công tơ, sản lượng hoặc định mức trước khi duyệt.';
-    else if (direct < needSum) msg += 'Thiếu ' + fmt(needSum - direct) + ' kWh: điện được chia theo thứ tự dòng, các dòng phía dưới chỉ nhận phần còn lại, nên sản lượng làm được theo điện thấp hơn số cần sản xuất.';
-    else msg += 'Điện vừa đủ cho toàn bộ nhu cầu.';
+    var msg = 'Điện theo định mức: ' + fmt(sum) + ' kWh; có trong sổ: ' + fmt(have) + ' kWh; chênh ' + (diff >= 0 ? '+' : '−') + fmt(Math.abs(diff)) + ' kWh; k = ' + fmt(k, 4) + '. ';
+    if (Math.abs(diff) < 0.005) msg += 'Điện khớp định mức, không hiện hộp chọn khi Ghi.';
+    else if (diff < 0) msg += 'Điện THIẾU: phương án 1 xuất đúng số điện có (cột Điện xuất × k); phương án 2 giảm sản lượng theo điện (cột Sản lượng theo điện).';
+    else msg += 'Điện DƯ: phương án 1 xuất hết vào giá thành (× k); phương án 2 tăng sản lượng theo điện; hoặc đưa phần dư vào 1543 / 642.';
     out.textContent = msg;
-  }
-  function addRow() {
-    var tr = body.querySelector('tr').cloneNode(true);
-    Array.prototype.forEach.call(tr.querySelectorAll('input'), function (i) { i.value = ''; });
-    body.appendChild(tr); calc();
   }
   box.addEventListener('input', calc);
   box.addEventListener('click', function (e) {
     var t = e.target;
-    if (t.closest('[data-add]')) addRow();
-    else if (t.closest('[data-del]')) {
+    if (t.closest('[data-add]')) {
+      var tr = body.querySelector('tr').cloneNode(true);
+      Array.prototype.forEach.call(tr.querySelectorAll('input'), function (i) { i.value = ''; });
+      body.appendChild(tr); calc();
+    } else if (t.closest('[data-del]')) {
       if (body.querySelectorAll('tr').length > 1) t.closest('tr').remove();
       else Array.prototype.forEach.call(t.closest('tr').querySelectorAll('input'), function (i) { i.value = ''; });
       calc();
