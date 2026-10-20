@@ -28,7 +28,7 @@ export const contact = {
   },
   zalo: pick(site.company.zalo, '093 3456 567'),
   email: pick(site.company.email, 'unesco.corp@gmail.com'),
-  address: pick(site.company.contactAddress, '30 Đường số 50, Phường 10, Quận 6, TP. Hồ Chí Minh'),
+  address: pick(site.company.contactAddress, '30 Đường số 50, Phường Bình Phú, TP. Hồ Chí Minh'),
   website: 'https://www.unescosoft.com/',
   websiteLabel: 'www.unescosoft.com',
 };
