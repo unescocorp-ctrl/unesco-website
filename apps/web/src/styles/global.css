@@ -1040,7 +1040,7 @@ em.new{display:inline-block;font-style:normal;font-family:var(--font-h);font-siz
 @media(max-width:720px){.article-table thead{display:none}.article-table tr{display:block;border-top:1px solid #EAF0ED;padding:8px 0}.article-table td{display:block;border:0;padding:3px 14px}.article-table td:before{content:attr(data-label) ": ";font-weight:600;color:var(--muted)}}
 /* Công cụ tính thử điện trong bài Giá thành theo điện */
 .calc-box{border:1px solid var(--line);border-radius:var(--radius);background:#fff;padding:20px;margin:14px 0 26px}
-.calc-meter{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px}
+.calc-meter{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-bottom:14px}
 .calc-meter label{display:grid;gap:6px;font-weight:600;font-size:.9rem;color:var(--ink)}
 .calc-box input{width:100%;min-width:0;padding:9px 11px;border:1px solid #bac6cf;border-radius:9px;background:#fff}
 .calc-box input:focus{outline:3px solid rgba(30,155,75,.15);border-color:var(--green)}
@@ -1049,3 +1049,9 @@ em.new{display:inline-block;font-style:normal;font-family:var(--font-h);font-siz
 .calc-del{border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 10px;cursor:pointer;color:var(--muted)}
 .calc-result{margin-top:14px;padding:13px 16px;border-radius:10px;background:var(--green-l);color:var(--ink);font-weight:600}
 @media(max-width:720px){.calc-meter{grid-template-columns:1fr}.calc-table [data-o]{white-space:normal}.calc-table td[data-label=""]:before{content:none}}
+/* Hình, lưu ý trong bài hướng dẫn */
+.article-figure{margin:16px 0 26px}.article-figure img{display:block;width:auto;max-width:100%;height:auto;border:1px solid var(--line);border-radius:10px;box-shadow:0 6px 18px rgba(23,38,58,.08);margin:0 auto}
+.article-figure figcaption{font-size:.88rem;color:var(--muted);margin-top:8px;text-align:center;line-height:1.5}
+.article-content h3{font-size:1.2rem;margin-top:24px}
+.article-note{border-left:4px solid var(--gold);background:#fff8dc;padding:13px 16px;border-radius:10px}
+.article-video video{display:block;width:100%;height:auto;border-radius:10px;background:#000;box-shadow:0 6px 18px rgba(23,38,58,.12)}

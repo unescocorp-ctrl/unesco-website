@@ -16,6 +16,11 @@
  *   formula   công thức (một dòng)
  *   contact   đoạn liên hệ, lấy từ data/contact.ts để luôn đúng số điện thoại hiện hành
  *   calc      công cụ tính thử; x = 'dien' (components/ElectricityCalc.astro)
+ *   h3        tiêu đề mục con
+ *   img       hình: src = tên tệp trong public/huong-dan/<slug>/ (không đuôi .webp), w, h, cap = chú thích
+ *   note      khung lưu ý
+ *   download  nút tải tệp: href, x = chữ trên nút
+ *   video     video tự lưu trên web (public/video/): src .mp4, vtt phụ đề, poster ảnh bìa, cap chú thích
  */
 export type Block =
   | { t: 'h2'; x: string }
@@ -25,7 +30,12 @@ export type Block =
   | { t: 'table'; head: string[]; rows: string[][] }
   | { t: 'formula'; x: string }
   | { t: 'contact'; x: string }
-  | { t: 'calc'; x: 'dien' };
+  | { t: 'calc'; x: 'dien' }
+  | { t: 'h3'; x: string }
+  | { t: 'img'; src: string; w: number; h: number; cap: string }
+  | { t: 'note'; x: string }
+  | { t: 'download'; href: string; x: string }
+  | { t: 'video'; src: string; vtt: string; poster: string; cap: string };
 
 export type Article = {
   slug: string;
@@ -42,89 +52,160 @@ export const articleDate = (iso: string) => `${iso.slice(8, 10)}/${iso.slice(5, 
 export const articles: Article[] = [
   {
     slug: 'gia-thanh-theo-dien',
-    title: 'Nhập giá thành theo điện: khai định mức kWh cho từng mã thành phẩm',
+    title: 'Hướng dẫn chi tiết: nhập và xử lý giá thành theo điện',
     date: '2026-10-20',
-    description: 'Từng bước nhập định mức điện kWh/ĐVT cho từng mã thành phẩm, lập phương án tháng theo điện và ghi Kết chuyển thành phẩm trong UNESCO AI. Có công cụ tính thử.',
+    description: 'Từng màn hình, từng ô cần nhập để tính giá thành sản xuất hàng loạt lấy điện làm căn cứ sản lượng trong UNESCO AI: thiết lập một lần, AI cân đối cả tháng, làm tay trên Kết chuyển thành phẩm, xử lý điện chênh lệch và kiểm tra kết quả. Có 22 hình, tệp PDF và công cụ tính thử.',
     topic: 'Giá thành',
     blocks: [
-      { t: 'lead', x: 'Với loại hình sản xuất hàng loạt theo điện, UNESCO AI dùng lượng điện trực tiếp sản xuất trong tháng để kiểm tra và đề xuất sản lượng thành phẩm. Muốn vậy, mỗi mã thành phẩm cần một định mức điện riêng, tính bằng kWh cho một đơn vị tính (ĐVT) thành phẩm. Bài này hướng dẫn nhập định mức đó và đi hết các bước cho đến khi ghi Kết chuyển thành phẩm.' },
-      { t: 'h2', x: 'Nguyên tắc: mỗi mã một định mức điện' },
-      { t: 'p', x: 'Định mức điện gắn với từng mã thành phẩm và ĐVT của mã đó. Không cộng sản lượng của nhiều mã rồi lấy tổng điện chia đều, vì các mã khác ĐVT và khác mức tiêu hao. Ví dụ với số giả định:' },
-      { t: 'table', head: ['Mã thành phẩm', 'ĐVT', 'Định mức điện'], rows: [
-        ['A', 'cái', '0,012 kWh/cái'],
-        ['B', 'kg', '0,35 kWh/kg'],
+      { t: 'lead', x: 'Với xưởng ép, thổi nhựa, điện tỷ lệ với lượng hạt nhựa qua máy. UNESCO AI quy số kWh điện sản xuất ra số kg nguyên liệu chính đáng lẽ đã dùng, so với sản lượng thành phẩm theo định mức, rồi đề xuất sản lượng cho khớp điện. Phần mềm không tự ghi sổ: mọi số chỉ vào sổ khi kế toán bấm Ghi trên màn hình Kết chuyển thành phẩm.' },
+      { t: 'video', src: '/video/gia-thanh-theo-dien.mp4', vtt: '/video/gia-thanh-theo-dien.vtt', poster: '/huong-dan/gia-thanh-theo-dien/gtd-01-trinh-tu.webp', cap: 'Video hướng dẫn có lời đọc và phụ đề (8 phút 45 giây), quay trên phần mềm thật. Bấm CC để bật hoặc tắt phụ đề.' },
+      { t: 'download', href: '/tai-lieu/huong-dan-gia-thanh-theo-dien-chi-tiet.pdf', x: 'Tải bản PDF (17 trang, 22 hình)' },
+      { t: 'p', x: 'Hướng dẫn được làm theo video thao tác thực tế trên phần mềm, bộ sổ mẫu tháng 01/2026: hai thành phẩm TÚI PP (mã T) và CUỘN PP (mã C), nguyên liệu chính HẠT NHỰA (mã PP), mã điện D. Tên công ty, mã số thuế và đường dẫn thư mục trong hình đã được che.' },
+      { t: 'table', head: ['Phần', 'Nội dung'], rows: [
+        ['A', 'Màn hình Trình tự giá thành tháng – làm từ trên xuống'],
+        ['B', 'Thiết lập một lần: loại hình sản xuất, hồ sơ định mức, ngành nhựa, định mức có dòng điện'],
+        ['C', 'Hằng tháng – cách 1: AI cân đối cả tháng (khuyến nghị)'],
+        ['D', 'Hằng tháng – cách 2: làm tay trên Kết chuyển thành phẩm, xử lý điện chênh lệch'],
+        ['E', 'Kiểm tra kết quả, báo cáo và lỗi hay gặp'],
       ] },
-      { t: 'p', x: 'Cộng 10.000 cái với 3.000 kg thành một con số là sai ngay từ đơn vị. Phần mềm tính điện cho từng mã trước, rồi mới cộng lại:' },
-      { t: 'formula', x: 'Điện theo định mức của một mã = Số lượng × Định mức điện (kWh/ĐVT)' },
-      { t: 'p', x: 'Định mức điện có hiệu lực theo tháng. Khi tính giá thành một tháng, phần mềm lấy định mức điện của tháng gần nhất không sau tháng đó. Mỗi mã chỉ nên có một định mức điện trong cùng một tháng; nếu có hai dòng, phần mềm báo “Có nhiều định mức điện cùng kỳ; cần kiểm tra.”' },
-      { t: 'h2', x: 'Chuẩn bị trước khi nhập' },
+
+      { t: 'h2', x: 'A. Màn hình Trình tự giá thành tháng' },
+      { t: 'p', x: 'Vào Giá thành. Bên trái là Trình tự giá thành tháng gồm 7 bước (0 – 6), làm lần lượt từ trên xuống; bên phải là Danh mục mở thẳng từng màn hình. Mỗi bước có chấm màu: xanh là xong, lam là máy đã ghi, cam là chờ duyệt, đỏ là còn thiếu. Chọn tháng ở đầu màn hình và bấm Kiểm lại sau mỗi thay đổi.' },
+      { t: 'img', src: 'gtd-01-trinh-tu', w: 1920, h: 1020, cap: 'Hình 1. Trình tự giá thành tháng: (1) chọn tháng, (2) Kiểm lại sau mỗi thay đổi, (3) nút Làm bước này của từng bước.' },
+      { t: 'table', head: ['Bước', 'Ý nghĩa', 'Làm khi nào'], rows: [
+        ['0. Loại hình sản xuất', 'Chọn “Sản xuất hàng loạt, lấy điện làm căn cứ sản lượng”', '1 lần'],
+        ['1. Hồ sơ định mức', 'Nguyên liệu chính, mã điện, hệ số NVL / kWh, % điện không dùng cho sản xuất', '1 lần, sửa khi thay đổi'],
+        ['2. Định mức nguyên vật liệu', 'Đủ định mức cho mọi mã thành phẩm, có dòng mã điện', 'Khi có mã mới'],
+        ['3. Chi phí tháng', 'Số dư 1541 / 1542 / 1543 của tháng; phân bổ theo đối tượng', 'Hằng tháng'],
+        ['4. Sản lượng thành phẩm', 'AI cân đối theo điện hoặc làm tay', 'Hằng tháng'],
+        ['5. Tính và ghi giá thành', 'Ghi phiếu kết chuyển thành phẩm', 'Hằng tháng'],
+        ['6. Kiểm tra kết quả', 'Giá thành so giá bán, kỳ này so kỳ trước, so mục tiêu', 'Hằng tháng'],
+      ] },
+
+      { t: 'h2', x: 'B. Thiết lập một lần' },
+      { t: 'h3', x: 'B1. Bước 0 – Loại hình sản xuất' },
+      { t: 'p', x: 'Bấm Chọn… ở bước 0, chọn “Sản xuất hàng loạt, lấy điện làm căn cứ sản lượng (ví dụ nhựa ép, thổi)”, bấm Đồng ý. Loại hình quyết định bước nào cần làm: sổ không dùng điện chọn dòng thứ hai, sản xuất theo đơn hàng chọn dòng thứ ba.' },
+      { t: 'img', src: 'gtd-02-loai-hinh', w: 720, h: 460, cap: 'Hình 2. Chọn loại hình sản xuất lấy điện làm căn cứ sản lượng.' },
+      { t: 'h3', x: 'B2. Bước 1 – Hồ sơ định mức giá thành' },
+      { t: 'p', x: 'Bấm Làm bước này ở bước 1 (hoặc Danh mục › 1. Hồ sơ định mức giá thành), nhập các ô theo bảng dưới rồi bấm Ghi.' },
+      { t: 'img', src: 'gtd-03-ho-so-dinh-muc', w: 830, h: 860, cap: 'Hình 3. Hồ sơ định mức giá thành của bộ sổ. Số trong hình ứng với cột Số ở bảng dưới.' },
+      { t: 'table', head: ['Số', 'Ô', 'Nhập gì'], rows: [
+        ['1', 'Nguyên liệu chính', 'Số hiệu hạt nhựa (PP). Nhiều loại hạt thì cách nhau dấu chấm phẩy (PP;PE). Gõ số hiệu rồi Enter, hoặc bấm … để chọn.'],
+        ['–', 'Mã điện', 'Số hiệu mã điện (D). Mã điện trong danh mục vật tư phải có đơn vị KWH.'],
+        ['2', 'Lượng NVL chính / 1 kWh điện', 'Số kg hạt nhựa dùng hết cho 1 kWh điện sản xuất. Ô Lấy hệ số từ: Tự nhập, hoặc để phần mềm tính từ các tháng trước.'],
+        ['–', 'Tính từ tháng nào', 'Tháng mốc tính hệ số, ví dụ 01/2026 hoặc “3 kỳ gần nhất”.'],
+        ['3', 'Điện không dùng cho SX (%)', 'Văn phòng, kho, chiếu sáng ngoài xưởng, ví dụ 1,5 %.'],
+        ['–', 'Điện máy chạy không tải (%)', 'Máy chạy không ra sản phẩm; để 0 nếu không theo dõi.'],
+        ['4', 'Khi lệch với điện', '1 – Tự chỉnh khi lệch quá ngưỡng (khuyến nghị): lệch quá ngưỡng thì AI đề xuất và chờ duyệt.'],
+        ['–', 'Cho phép lệch NVL (%)', 'Ngưỡng lệch, mặc định 5 %.'],
+        ['–', 'Chia CP chung trong phiếu theo', '0 – Theo chi phí NVL (hoặc theo điện / khối lượng).'],
+        ['–', 'Hao hụt NVL thông thường (%)', 'Tỷ lệ hao hụt bình thường.'],
+        ['5', 'Ngành nhựa', 'Chọn dây chuyền mẫu để đối chiếu định mức điện ngành (mục B3).'],
+        ['6', 'Ghi', 'Lưu hồ sơ.'],
+      ] },
+      { t: 'note', x: 'Phân biệt hai con số. “Lượng NVL chính / 1 kWh” là kg trên kWh. Định mức điện của thành phẩm (mục B4) là kWh trên 1 đơn vị thành phẩm. Ví dụ 1 kg túi tốn 1,053 kWh thì 1 kWh làm ra khoảng 1 ÷ 1,053 ≈ 0,95 kg, hệ số nhập khoảng 0,95 (chưa tính hao hụt). Nhập nhầm hai số này làm sản lượng theo điện lệch.' },
+      { t: 'h3', x: 'B3. Ngành nhựa – đối chiếu định mức điện theo 13/VBHN-BCT năm 2026' },
+      { t: 'p', x: 'Trong Hồ sơ định mức bấm Ngành nhựa, chọn dây chuyền mẫu của công ty. Công ty làm nhiều loại sản phẩm thì chọn dòng cuối “Nhiều nhóm sản phẩm” và khai tỷ trọng kg. Phần mềm hiện ngay báo cáo đối chiếu SEC (kWh trên 1 kg thành phẩm) từng tháng với định mức ngành.' },
+      { t: 'img', src: 'gtd-04-nganh-nhua', w: 720, h: 460, cap: 'Hình 4. Chọn dây chuyền mẫu ngành nhựa.' },
+      { t: 'img', src: 'gtd-05-bao-cao-nganh-nhua-dat', w: 1110, h: 785, cap: 'Hình 5. Chọn “Túi nhựa” (0,95 kWh/kg): các tháng đạt – “Số liệu khớp”.' },
+      { t: 'img', src: 'gtd-06-bao-cao-nganh-nhua-do', w: 1110, h: 785, cap: 'Hình 6. Cùng số liệu nhưng chọn “Nhựa bao bì” (0,62 kWh/kg): báo đỏ vì vượt trên 30 %. Chọn đúng nhóm sản phẩm thì đối chiếu mới có ý nghĩa.' },
+      { t: 'p', x: 'Báo cáo được lưu thành tệp trong thư mục giá thành của bộ sổ (nút Mở thư mục, Mở tệp báo cáo). Đây chỉ là đối chiếu, không sửa sổ.' },
+      { t: 'h3', x: 'B4. Bước 2 – Định mức nguyên vật liệu (có dòng điện)' },
+      { t: 'p', x: 'Bấm Làm bước này ở bước 2 và chọn cách lập định mức cho các mã còn thiếu.' },
+      { t: 'img', src: 'gtd-07-chon-cach-dinh-muc', w: 720, h: 460, cap: 'Hình 7. Bốn cách lập định mức.' },
+      { t: 'table', head: ['Cách', 'Dùng khi'], rows: [
+        ['Định mức tự động (AI đề xuất, kế toán xem rồi ghi)', 'Đã có lịch sử xuất NVL hoặc có sản phẩm tương tự'],
+        ['Định mức NVL theo mã (nhập, sửa tay)', 'Đã biết định mức từng mã'],
+        ['Định mức theo tỷ lệ giá bán (khai % giá vốn cho sổ, lô hoặc mã)', 'Công ty mới, chưa có cơ cấu NVL'],
+        ['Vật liệu phụ, bao bì', 'Định mức theo số thành phẩm hoặc % theo giá trị NVL chính'],
+      ] },
+      { t: 'img', src: 'gtd-08-dinh-muc-ty-le-gia-ban', w: 1285, h: 990, cap: 'Hình 8. Định mức theo tỷ lệ giá bán. Lưới dưới là định mức của mã đang chọn: dòng ĐIỆN (D) 1,053 kWh / kg túi; dòng HẠT NHỰA (PP) 1 kg / kg.' },
+      { t: 'note', x: 'Mỗi thành phẩm phải có một dòng mã điện trong định mức (số kWh cho 1 đơn vị thành phẩm). Thiếu dòng này, phần mềm không tính được điện theo định mức của phiếu và khung Cân đối AI báo “bỏ qua”.' },
+
+      { t: 'h2', x: 'C. Hằng tháng – cách 1: AI cân đối cả tháng (khuyến nghị)' },
+      { t: 'h3', x: 'C1. Chuẩn bị' },
       { t: 'ol', items: [
-        'Chọn loại hình sản xuất “hàng loạt theo điện” ở bước 0 của Trình tự giá thành tháng (Màn hình chính → biểu tượng Giá thành → Trình tự giá thành tháng). Chỉ cần chọn một lần.',
-        'Tạo mã vật tư điện trong danh mục vật tư, đơn vị tính là kWh. Đặt số hiệu là DIEN (hoặc D, KWH, hay một số hiệu bắt đầu bằng DIEN) để phần mềm nhận ra đây là dòng định mức điện.',
-        'Kiểm tra mỗi mã thành phẩm đều có đơn vị tính trong danh mục, vì định mức điện tính theo đơn vị này.',
-        'Hạch toán đủ chi phí tháng vào 1541, 1542, 1543, trong đó tiền điện sản xuất vào 1542 hoặc 1543.',
-        'Chuẩn bị số công tơ của tháng: tổng điện, phần điện ngoài sản xuất (ví dụ điện văn phòng), phần điện phụ trợ và chạy không tải, kèm hoá đơn hoặc bảng chốt công tơ làm căn cứ.',
-        'Đăng nhập bằng tên người dùng của mình, vì phần mềm ghi lại người xác nhận ở từng bước.',
+        'Nhập hoá đơn điện của tháng như phiếu nhập vật tư: mã điện D, số lượng là số kWh trên hoá đơn, tiền là tiền điện.',
+        'Bước 3 – Chi phí tháng: kiểm tra số dư 1541 / 1542 / 1543. Sổ bật giá thành theo đối tượng (TT133) thì xem bảng phân bổ (Hình 9).',
       ] },
-      { t: 'h2', x: 'Mở cửa sổ có cột Định mức điện (kWh/ĐVT)' },
+      { t: 'img', src: 'gtd-09-phan-bo-tt133', w: 1485, h: 990, cap: 'Hình 9. Giá thành theo đối tượng (TT133): tham số tính giá thành và bảng phân bổ chi phí của phiếu NTP01.' },
+      { t: 'h3', x: 'C2. Chạy AI cân đối' },
       { t: 'ol', items: [
-        'Vào Giá thành → Danh mục → 4-5. Kết chuyển thành phẩm. Chọn tháng, kho thành phẩm và kho nguyên liệu.',
-        'Bấm Đọc thành phẩm bán ra. Cửa sổ “Lập phương án giá thành tháng - tất cả thành phẩm” mở ra theo đúng tháng và kho vừa chọn.',
-        'Kiểm tra lại tháng và kho (nút Chọn tháng và kho), rồi bấm Đọc toàn bộ thành phẩm tháng. Lưới liệt kê mọi thành phẩm của tháng, gồm các cột Nhu cầu xuất bán 155/632, Tồn đầu, Tồn cuối mục tiêu, Cần sản xuất, Định mức điện (kWh/ĐVT), Điện phân bổ tháng, Sản lượng đề xuất tháng và Tình trạng phương án tháng.',
-        'Chọn mã ở ô Mã vật tư điện. Phần mềm báo lỗi nếu mã này không có đơn vị tính kWh.',
+        'Ở bước 4 bấm Làm bước này, chọn “AI cân đối cả tháng: giữ định mức, đề xuất sản lượng theo điện, chờ duyệt nếu lệch quá ngưỡng”, bấm Đồng ý (Hình 10).',
+        'Phần mềm lập báo cáo Máy giá thành (Hình 11): kWh mua vào theo phiếu nhập điện; kWh trên hoá đơn điện tải về; kWh sản xuất (đã trừ văn phòng, không tải); NVL chính tham chiếu theo điện; NVL theo sản lượng gốc × định mức; hệ số và % lệch; bảng từng mã gồm định mức, sản lượng gốc, sản lượng đề xuất và chênh.',
+        'Nếu báo cáo có dòng cảnh báo hệ số hoặc tồn điện âm, sửa Hồ sơ định mức trước khi duyệt. Nếu thấy dòng kWh trên hoá đơn tải về khác số, kiểm tra lại phiếu nhập điện.',
+        'Lệch trong ngưỡng: máy nạp thẳng sản lượng. Lệch quá ngưỡng: trạng thái chờ duyệt (chấm cam); đóng báo cáo để chọn phương án.',
       ] },
-      { t: 'p', x: 'Cột Định mức điện (kWh/ĐVT) hiện định mức đang dùng của từng mã. Với mã chưa có, phần mềm nhắc “Chưa có định mức điện; nhấp đúp ô định mức điện để nhập.”' },
-      { t: 'h2', x: 'Nhập kWh/ĐVT cho từng mã' },
-      { t: 'ol', items: [
-        'Nhấp đúp ô Định mức điện (kWh/ĐVT) của dòng thành phẩm cần nhập.',
-        'Phần mềm hỏi “Nhập số thành phẩm làm được từ 1 kWh điện?”. Chọn Có nếu bạn biết năng suất theo điện. Chọn Không nếu muốn tính từ một lần đo, tức bao nhiêu kWh cho bao nhiêu thành phẩm hoặc nguyên vật liệu. Chọn Huỷ để thoát.',
-        'Nếu chọn Không, phần mềm hỏi mã nguyên vật liệu làm cơ sở tính điện. Để trống khi đo điện theo chính thành phẩm; nhập mã nguyên vật liệu khi điện đo theo lượng nguyên vật liệu đưa vào máy và ĐVT khác thành phẩm.',
-        'Cửa sổ “Thông số của dòng thành phẩm đang chọn trong kế hoạch tháng” mở ra. Điền các ô theo bảng dưới, bấm Tính lại và đọc kết quả ở ô Điện cho 1 thành phẩm (kWh).',
-        'Điền các ô bắt buộc còn lại: Tỷ lệ nguyên vật liệu (%), Đánh dấu phế liệu, Tỷ lệ nguyên vật liệu / giá bán (%) (số nguyên), Chứng từ hoặc căn cứ tính và Lý do điều chỉnh. Bấm Xác nhận.',
-        'Làm lần lượt cho từng mã. Cửa sổ này chỉ nhập cho dòng đang chọn; phương án và phân bổ điện vẫn tính cho toàn bộ thành phẩm trong tháng.',
+      { t: 'img', src: 'gtd-10-chon-ai-can-doi', w: 720, h: 460, cap: 'Hình 10. Chọn AI cân đối cả tháng.' },
+      { t: 'img', src: 'gtd-11-may-gia-thanh-cho-duyet', w: 1110, h: 785, cap: 'Hình 11. Máy giá thành chờ duyệt: kWh mua vào 26.492; kWh sản xuất 26.094,62; NVL theo điện 27.477,63 so với theo sản lượng gốc 25.882 → hệ số 1,0617, lệch 6,17 % (ngưỡng 5 %). Mã T 24.882 → 26.415,98; mã C 1.000 → 1.061,65.' },
+      { t: 'formula', x: 'kWh sản xuất = kWh mua vào × (1 − % điện không dùng cho SX − % không tải)   ·   NVL theo điện = kWh sản xuất × Lượng NVL chính / 1 kWh   ·   Hệ số = NVL theo điện ÷ NVL theo sản lượng gốc' },
+      { t: 'note', x: 'Dòng “kWh trên hoá đơn điện tải về (CQT): 0 ← KHÁC SỐ” nghĩa là số kWh trên phiếu nhập điện chưa khớp với hoá đơn điện tải về từ cơ quan thuế. Nên kiểm tra phiếu nhập điện trước khi duyệt.' },
+      { t: 'h3', x: 'C3. Duyệt chênh lệch sản lượng' },
+      { t: 'img', src: 'gtd-12-duyet-chenh-lech', w: 720, h: 460, cap: 'Hình 12. Bốn phương án khi lệch quá ngưỡng.' },
+      { t: 'table', head: ['Phương án', 'Kết quả', 'Khi nào chọn'], rows: [
+        ['Nhận sản lượng AI đề xuất (mỗi mã × hệ số)', 'Sản lượng theo điện; khi ghi, điện xuất hết vào giá thành', 'Hoá đơn điện và định mức đều đúng'],
+        ['Giữ sản lượng gốc, xuất điện theo định mức', 'Phần điện chênh để lại kho, xử lý riêng', 'Sản lượng đếm thực tế đáng tin hơn điện'],
+        ['Dừng: quay lại sửa hoá đơn điện hoặc định mức', 'Không đổi gì', 'Thấy số kWh hoặc định mức sai'],
+        ['Để sau', 'Giữ trạng thái chờ duyệt', 'Chưa đủ thông tin'],
       ] },
-      { t: 'table', head: ['Cách nhập', 'Ô cần điền', 'Phần mềm tính kWh/ĐVT'], rows: [
-        ['Theo năng suất (chọn Có)', 'Số thành phẩm làm được từ 1 kWh điện', '1 ÷ số thành phẩm làm được từ 1 kWh'],
-        ['Theo thành phẩm (chọn Không, để trống mã nguyên vật liệu)', 'Lượng đầu ra để đối chiếu; Điện cho lượng đã nhập (kWh); Cách tính hao hụt chọn Không hao hụt', 'Điện cho lượng đã nhập ÷ lượng đầu ra'],
-        ['Theo nguyên vật liệu (chọn Không, nhập mã nguyên vật liệu)', 'Lượng nguyên vật liệu đầu vào; Lượng đầu ra để đối chiếu; Điện cho lượng đã nhập (kWh); Cách tính hao hụt', '(Điện cho lượng đã nhập ÷ lượng nguyên vật liệu đầu vào) × NVL cần dùng cho 1 thành phẩm'],
+      { t: 'h3', x: 'C4. Nạp vào Kết chuyển thành phẩm và Ghi' },
+      { t: 'p', x: 'Chạy lại bước 4: phần mềm hỏi có nạp sản lượng đã duyệt vào màn hình Kết chuyển thành phẩm không. Bước này chưa ghi sổ. Chọn Yes để nạp, kiểm tra lại lưới rồi bấm Ghi.' },
+      { t: 'img', src: 'gtd-13-nap-vao-ket-chuyen', w: 540, h: 170, cap: 'Hình 13. Xác nhận nạp sản lượng đã duyệt.' },
+      { t: 'img', src: 'gtd-14-ket-chuyen-sau-nap', w: 1375, h: 940, cap: 'Hình 14. Sau khi nạp: (1) sản lượng mới CUỘN PP 1.061,65 và TÚI PP 26.415,98; (3) khung Cân đối AI cập nhật; (2) bấm Ghi.' },
+
+      { t: 'h2', x: 'D. Hằng tháng – cách 2: làm tay trên Kết chuyển thành phẩm' },
+      { t: 'p', x: 'Ở bước 4 chọn “Mở màn hình Kết chuyển thành phẩm (làm tay như cũ)”, hoặc vào Danh mục › 4-5. Kết chuyển thành phẩm. Bấm Lấy từ NXT để nạp mã và sản lượng theo xuất bán, đọc khung Cân đối AI, rồi bấm Ghi.' },
+      { t: 'img', src: 'gtd-15-ket-chuyen-lam-tay', w: 1375, h: 940, cap: 'Hình 15. Kết chuyển thành phẩm: (1) Lấy từ NXT để nạp mã và sản lượng theo xuất bán; (2) khung Cân đối AI; (3) Ghi.' },
+      { t: 'img', src: 'gtd-16-can-doi-ai', w: 620, h: 320, cap: 'Hình 16. Khung Cân đối AI (chỉ đọc, không ghi sổ): (1) sản lượng so với bán, đề xuất GIẢM 4,74 % theo điện; (2) điện theo định mức 27.810,7 so với 26.492 kWh có trong sổ → THIẾU 1.318,7; (3) NVL theo định mức.' },
+      { t: 'table', head: ['Nút', 'Dùng để'], rows: [
+        ['Chọn TP tăng…', 'Chọn mã tăng sản lượng, xem NVL đủ hay thiếu trước khi áp dụng'],
+        ['Chi tiết điện', 'Xem kWh theo định mức của từng mã'],
+        ['Xử lý NVL thiếu…', 'Điều chuyển kho, thay NVL, giảm sản lượng theo NVL thiếu nhất'],
+        ['Ô kWh thực', 'Nhập kWh thực tế khi muốn so với số khác số trong sổ'],
       ] },
-      { t: 'p', x: 'Ví dụ với số giả định: đo được 12 kWh cho 1.000 cái, định mức là 12 ÷ 1.000 = 0,012 kWh/cái. Máy làm được 80 cái từ 1 kWh, định mức là 1 ÷ 80 = 0,0125 kWh/cái.' },
-      { t: 'p', x: 'Bấm Xác nhận chỉ lưu định mức đề xuất cho phương án tháng đang mở; định mức đang dùng của bộ sổ chưa thay đổi. Phần mềm dùng ngay định mức đề xuất để tính thử phương án, và cột Tình trạng phương án tháng cho biết dòng nào đang dùng định mức đề xuất.' },
-      { t: 'h2', x: 'Lưu định mức điện để dùng cho các tháng sau' },
-      { t: 'ol', items: [
-        'Trong cửa sổ phương án, bấm Xuất đề xuất. Phần mềm tạo trong thư mục Excels của chương trình một tệp định mức để nhập theo mẫu 11 cột (tên bắt đầu bằng AI_DE_XUAT_DINH_MUC_IMPORT), kèm bảng đối chiếu và nhật ký kiểm tra tệp. Thông báo ghi rõ định mức đang dùng chưa thay đổi.',
-        'Mở Giá thành → Danh mục → Định mức NVL CTr, SP (định mức nguyên vật liệu cho công trình và sản phẩm), bấm Nhập từ Excel và chọn tệp định mức vừa xuất.',
-        'Đọc bảng tóm tắt (dòng lỗi, dòng cần xem lại, dòng đã có định mức) trước khi đồng ý ghi. Chỉ sau bước này định mức điện mới vào bộ định mức của sổ.',
-        'Từ tháng sau, cột Định mức điện (kWh/ĐVT) hiện sẵn định mức đã ghi; chỉ nhấp đúp để nhập lại khi định mức thay đổi.',
+      { t: 'h3', x: 'D1. Điện chênh lệch so với định mức – chọn cách xử lý khi Ghi' },
+      { t: 'p', x: 'Khi bấm Ghi mà điện có trong sổ (tồn đầu + nhập − xuất khác) khác điện theo định mức của phiếu, phần mềm hiện hộp chọn cách xử lý. Hệ số k = điện có trong sổ ÷ điện theo định mức.' },
+      { t: 'img', src: 'gtd-17-dien-chenh-lech', w: 710, h: 475, cap: 'Hình 17. Ví dụ điện thiếu: có 26.492 kWh, định mức 27.810,75 kWh, chênh −1.318,75 kWh (k = 0,9526).' },
+      { t: 'table', head: ['Số', 'Khi điện DƯ (có > định mức)', 'Khi điện THIẾU (như Hình 17)'], rows: [
+        ['1', 'Xuất hết vào giá thành, chia theo định mức điện từng mã (× k)', 'Xuất đúng số điện có trong sổ (× k)'],
+        ['2', 'Tăng sản lượng thành phẩm theo điện (mã có định mức điện × k), xem lại lưới rồi Ghi', 'Giảm sản lượng thành phẩm theo điện, xem lại lưới rồi Ghi'],
+        ['3', 'Phần dư vào chi phí sản xuất chung xưởng (1543), phân bổ theo tiêu thức chung', '–'],
+        ['4', 'Phần dư vào chi phí quản lý doanh nghiệp (642)', '–'],
+        ['5', 'Xuất theo định mức, để tồn trong kho', 'Xuất theo định mức (tồn điện âm, cần bổ sung hoá đơn)'],
+        ['0', 'Không ghi, quay lại cân đối', 'Không ghi, quay lại cân đối'],
       ] },
-      { t: 'h2', x: 'Lập phương án tháng theo điện' },
-      { t: 'ol', items: [
-        'Với mã vật tư điện đã chọn, bấm Đọc điện trong kỳ. Phần mềm đọc lượng điện đã nhập trong tháng của mã này để đối chiếu; đây là số tham khảo, không tự dùng làm điện sản xuất.',
-        'Nhập ba ô theo công tơ: Tổng điện công tơ (kWh), Điện ngoài sản xuất (kWh) và Điện phụ trợ, không tải (kWh); ô nào không có thì nhập 0. Phần mềm tính ô Điện trực tiếp sản xuất (kWh).',
-        'Bấm Lập phương án tháng. Nhập số công tơ, hoá đơn hoặc bảng phân tách làm căn cứ, rồi xác nhận dùng lượng xuất bán ròng 155/632 trong tháng làm nhu cầu.',
-        'Phần mềm tính điện cần cho từng mã và phân bổ điện trực tiếp. Đủ điện thì mỗi mã nhận đủ phần cần. Thiếu điện thì phần mềm hỏi có phân bổ ưu tiên theo đúng thứ tự các dòng đang hiển thị không; hãy sắp xếp các dòng theo thứ tự ưu tiên trước khi đồng ý.',
-        'Đọc cột Điện phân bổ tháng và Sản lượng đề xuất tháng. Nhấp đúp ô Sản lượng được duyệt của từng dòng để nhập số lượng duyệt kèm chứng từ hoặc lý do.',
-        'Khi mọi dòng đã duyệt, bấm Xem kế hoạch NVL để soát nguyên vật liệu thiếu, rồi bấm Chuyển phương án đã duyệt. Phần mềm tạo bản nháp nhập thành phẩm; bước này chưa ghi dữ liệu.',
-        'Quay lại Kết chuyển thành phẩm, kiểm tra tháng, năm, kho, tài khoản 155 và toàn bộ số lượng, rồi bấm Ghi. Muốn đổi số lượng, quay lại phương án để điều chỉnh và duyệt lại, vì bản nháp không cho sửa số lượng tại màn hình này.',
-      ] },
-      { t: 'formula', x: 'Điện trực tiếp sản xuất = Tổng điện công tơ − Điện ngoài sản xuất − Điện phụ trợ, không tải' },
-      { t: 'formula', x: 'Điện cần của một mã = Cần sản xuất × Định mức điện (kWh/ĐVT)' },
-      { t: 'formula', x: 'Sản lượng làm được theo điện = Điện phân bổ ÷ Định mức điện (kWh/ĐVT)' },
-      { t: 'h2', x: 'Nhiều thành phẩm dùng chung một công tơ' },
-      { t: 'p', x: 'Khi cả xưởng chỉ có một công tơ, điện được chia theo nhu cầu điện của từng mã, tức số lượng nhân định mức điện của mã đó, chứ không chia đều theo tổng số lượng. Vì vậy định mức đúng cho từng mã quan trọng hơn con số tổng.' },
-      { t: 'p', x: 'Sản lượng ước tính theo điện chỉ là bằng chứng độc lập khi có công tơ riêng cho từng máy hoặc dây chuyền, hoặc có cơ sở phân bổ đã được duyệt. Nếu nhu cầu chỉ lấy từ số bán ra, kết quả là phân bổ theo cơ sở bán ra, không phải sản lượng thực tế. Phần mềm cũng ghi rõ “Đã ước tính hoàn thành theo điện; chưa xác nhận sản lượng thực tế.”' },
-      { t: 'h2', x: 'Tính thử trên trang này' },
-      { t: 'p', x: 'Nhập thử số công tơ và định mức kWh/ĐVT cho từng mã để xem điện được phân bổ thế nào. Công cụ chỉ minh hoạ cách tính theo các bước trên, không lưu và không kết nối với dữ liệu kế toán. Dùng dấu phẩy cho số thập phân, ví dụ 0,012.' },
+      { t: 'note', x: 'Phương án 2 chỉ đổi số trên lưới, chưa ghi; bấm Ghi lần nữa. Phương án 3 và 4 lập một chứng từ xuất điện riêng (Nợ 1543 hoặc 642, Có kho điện); khi ghi lại phiếu, chứng từ này tự lập lại, không nhân đôi. Mọi lựa chọn đều được ghi nhật ký.' },
+
+      { t: 'h2', x: 'Tính thử hệ số k trên trang này' },
+      { t: 'p', x: 'Nhập số kWh điện có trong sổ và định mức kWh/ĐVT của từng mã để xem điện theo định mức, hệ số k và sản lượng theo điện (phương án 2 ở bảng trên). Số mặc định lấy theo ví dụ Hình 16 – 17. Công cụ chỉ minh hoạ, không lưu và không kết nối với sổ kế toán. Dùng dấu phẩy cho số thập phân, ví dụ 1,053.' },
       { t: 'calc', x: 'dien' },
-      { t: 'h2', x: 'Kiểm tra cuối tháng và thông báo thường gặp' },
-      { t: 'p', x: 'Mở lại Trình tự giá thành tháng, bấm Kiểm lại và xử lý các bước còn đèn vàng hoặc đỏ. Sau đó đọc Báo cáo kiểm tra giá thành (Giá thành → Danh mục → 6. Báo cáo kiểm tra giá thành). Nếu bước 5 đèn đỏ vì giá thành bằng 0, bổ sung định mức hoặc chi phí rồi ghi lại phiếu Kết chuyển thành phẩm.' },
-      { t: 'table', head: ['Thông báo', 'Cách xử lý'], rows: [
-        ['Hãy chọn mã vật tư điện.', 'Chọn mã ở ô Mã vật tư điện trước khi nhấp đúp ô định mức hoặc bấm Đọc điện trong kỳ.'],
-        ['Đơn vị điện phải là kWh.', 'Sửa đơn vị tính của mã vật tư điện trong danh mục vật tư thành kWh.'],
-        ['Chưa có định mức điện; nhấp đúp ô định mức điện để nhập.', 'Nhập định mức cho mã đó theo mục Nhập kWh/ĐVT cho từng mã.'],
-        ['Có nhiều định mức điện cùng kỳ; cần kiểm tra.', 'Chỉ giữ một dòng định mức điện cho mã đó trong cùng tháng.'],
-        ['Định mức điện phải lớn hơn không.', 'Nhập lại định mức là số dương.'],
-        ['Điện ngoài sản xuất và phụ trợ vượt tổng điện công tơ.', 'Kiểm tra lại ba số công tơ đã nhập.'],
+
+      { t: 'h2', x: 'E. Kiểm tra kết quả' },
+      { t: 'p', x: 'Sau khi Ghi, phần mềm hỏi có mở báo cáo kiểm tra chi tiết (giá thành so giá bán, kỳ này so kỳ trước) không – chọn Yes.' },
+      { t: 'img', src: 'gtd-18-hoi-kiem-tra', w: 820, h: 310, cap: 'Hình 18. Tóm tắt sau khi ghi: số mã, tổng giá thành, mã có giá thành bằng 0 hoặc cao hơn giá bán.' },
+      { t: 'img', src: 'gtd-19-bao-cao-kiem-tra', w: 720, h: 530, cap: 'Hình 19. Báo cáo kiểm tra giá thành: mở Excel chi tiết, mở trang HTML hoặc đóng.' },
+      { t: 'img', src: 'gtd-20-excel-kiem-tra', w: 1100, h: 740, cap: 'Hình 20. Tệp Excel gồm các sheet TongQuan, GiaThanh_GiaBan, KyNay_KyTruoc, TheoThang, MucTieu, CanhBao.' },
+      { t: 'img', src: 'gtd-21-chi-tiet-gia-thanh', w: 1440, h: 420, cap: 'Hình 21. Chi tiết giá thành sản phẩm hoàn thành tháng 1/2026: tổng 718.195.914 (NVL 700.053.595, nhân công 8.310.000, sản xuất chung 9.832.319).' },
+      { t: 'p', x: 'Xem báo cáo Chi tiết giá thành sản phẩm hoàn thành để đọc số lượng, chi phí nguyên vật liệu, nhân công, sản xuất chung, tổng giá thành và giá thành đơn vị của từng mã. Mở lại báo cáo kiểm tra để xem mã nào có giá thành cao hơn giá bán hoặc lãi mỏng. Cuối cùng quay về Trình tự giá thành và bấm Kiểm lại.' },
+      { t: 'img', src: 'gtd-22-trinh-tu-ket-qua', w: 710, h: 610, cap: 'Hình 22. Trình tự sau khi ghi: bước 4 “Máy AI: lệch 6,17 %, đã ghi” kèm tồn điện cuối tháng; bước 6 nêu mã có giá thành cao hơn giá bán.' },
+      { t: 'note', x: 'Bước 4 báo “Tồn điện cuối tháng” khác 0 (âm hoặc dương) nghĩa là điện mua vào chưa khớp điện đã xuất cho sản xuất. Xem lại phiếu nhập điện, định mức điện, hệ số NVL / kWh, rồi ghi lại phiếu kết chuyển và chọn phương án xuất hết điện (mục D1).' },
+
+      { t: 'h2', x: 'Lỗi hay gặp và cách xử lý' },
+      { t: 'table', head: ['Hiện tượng', 'Nguyên nhân thường gặp', 'Xử lý'], rows: [
+        ['Cân đối AI báo “chưa có định mức điện – bỏ qua”', 'Thành phẩm thiếu dòng mã điện trong định mức', 'Thêm dòng mã điện (kWh / 1 đơn vị) ở bước 2'],
+        ['NVL theo điện và theo sản lượng lệch lớn bất thường', 'Hệ số NVL / kWh nhập ngược (kWh/kg thay vì kg/kWh) hoặc sai đơn vị', 'Hệ số là kg hạt cho 1 kWh; dùng “Lấy hệ số từ: tính từ các tháng trước” để đối chiếu'],
+        ['“kWh trên hoá đơn điện tải về: 0 ← KHÁC SỐ”', 'Phiếu nhập điện chưa khớp hoá đơn tải về, hoặc chưa tải hoá đơn điện', 'Kiểm tra số kWh trên phiếu nhập điện'],
+        ['Tồn điện cuối tháng âm', 'Xuất điện theo định mức nhiều hơn điện mua vào', 'Ghi lại phiếu, chọn “xuất đúng số điện có” hoặc giảm sản lượng; bổ sung hoá đơn nếu thiếu'],
+        ['Tồn điện cuối tháng dương', 'Định mức điện thấp, hoặc điện dư không vào giá thành', 'Chọn xuất hết, tăng sản lượng, hoặc đưa phần dư vào 1543 / 642'],
+        ['Ngành nhựa báo đỏ dù xưởng chạy bình thường', 'Chọn sai nhóm sản phẩm (ví dụ túi chọn nhầm bao bì)', 'Bấm lại Ngành nhựa, chọn đúng dây chuyền mẫu'],
+        ['Mã điện không đọc được kWh', 'Đơn vị tính mã điện là KG, hoặc phiếu nhập điện chỉ có tiền', 'Sửa đơn vị thành KWH; nhập số lượng kWh trên phiếu'],
+      ] },
+      { t: 'h2', x: 'Nguyên tắc chung' },
+      { t: 'ol', items: [
+        'Làm từ trên xuống theo Trình tự; sau mỗi thay đổi bấm Kiểm lại.',
+        'Máy giá thành và Cân đối AI chỉ đọc và đề xuất; số vào sổ khi kế toán bấm Ghi.',
+        'Mọi báo cáo được lưu tệp trong thư mục giá thành của bộ sổ để đối chiếu về sau.',
+        'Nên chạy thử trên bản sao sổ trước khi áp dụng cho kỳ thật.',
       ] },
       { t: 'contact', x: 'Cần hướng dẫn trực tiếp trên bộ sổ của doanh nghiệp hoặc muốn xem demo giá thành theo điện, liên hệ' },
     ],
