@@ -24,8 +24,8 @@ const s = (name: string, width: number, height: number, title: string, caption: 
 
 export const shots = {
   // ── Màn hình chính ────────────────────────────────────────────
-  mainScreen: s('man-hinh-chinh-unesco-ai', 1536, 1024, 'UNESCO Accounting System', 'Màn hình chính UNESCO AI',
-    '9 phân hệ kế toán quanh trung tâm Báo cáo – Sổ kế toán; ô UCDIT AI mở màn hình AI.',
+  mainScreen: s('man-hinh-chinh-unesco-ai-v2', 1568, 1003, 'UNESCO Accounting System', 'Màn hình chính UNESCO AI',
+    '9 phân hệ kế toán quanh trung tâm Báo cáo – Sổ kế toán; khung AI AUTO liệt kê 12 bước AI tự động, kèm Quản lý công việc và Bảng điều hành.',
     'Màn hình chính phần mềm kế toán UNESCO AI với 9 phân hệ và khung trợ lý AI'),
 
   // ── Màn hình AI: 8 thẻ nghiệp vụ ──────────────────────────────
