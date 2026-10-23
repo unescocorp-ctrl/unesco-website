@@ -36,6 +36,7 @@ export const mainNav: NavGroup[] = [
   {
     label: 'Tài nguyên', href: '/huong-dan/', items: [
       { label: 'Trung tâm tải về', href: '/download/', icon: 'download' },
+      { label: 'Công cụ Chủ sở hữu hưởng lợi', href: '/tai-ve/', icon: 'shield-check' },
       { label: 'Hướng dẫn / Kiến thức / Video', href: '/huong-dan/', icon: 'book-open' },
       { label: 'Video hướng dẫn', href: '/video/', icon: 'play-circle' },
       { label: 'Kiến thức kế toán', href: '/kien-thuc/', icon: 'lightbulb' },
