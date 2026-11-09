@@ -1,4 +1,5 @@
 ---
+import { softwareSchema } from '../data/seo';
 import { url } from '../utils/url';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import LeadForm from '../components/LeadForm.astro';
@@ -18,7 +19,7 @@ import { kpis } from '../data/advantages';
 const intro = videoBySlug('gioi-thieu-unesco-ai')!;
 const featuredVideos = ['m02-tai-hoa-don', 'm05-so-phu-ngan-hang', 'm07-gia-thanh'].map((s) => videoBySlug(s)!);
 ---
-<BaseLayout title="UNESCO AI – Phần mềm kế toán thông minh cho doanh nghiệp" description="UNESCO AI: phần mềm kế toán tích hợp AI — tải hoá đơn điện tử, ghép mã, đọc sổ phụ ngân hàng, hỗ trợ lập chứng từ, kiểm tra khoá sổ, giá thành, tờ khai và báo cáo tài chính. AI hỗ trợ, kế toán quyết định.">
+<BaseLayout title="UNESCO AI – Phần mềm kế toán thông minh cho doanh nghiệp" schema={softwareSchema} description="UNESCO AI: phần mềm kế toán tích hợp AI — tải hoá đơn điện tử, ghép mã, đọc sổ phụ ngân hàng, hỗ trợ lập chứng từ, kiểm tra khoá sổ, giá thành, tờ khai và báo cáo tài chính. AI hỗ trợ, kế toán quyết định.">
 <HeroBanner />
 
 <section class="section-sm"><div class="container">

@@ -1,4 +1,5 @@
 ---
+import { softwareSchema } from '../../data/seo';
 import { url } from '../../utils/url';
 import ContentLayout from '../../layouts/ContentLayout.astro';
 import { contact, telHref, zaloHref } from '../../data/contact';
@@ -29,7 +30,7 @@ const rows: [string, boolean, boolean][] = [
   ['Trợ lý AI hướng dẫn ngay trên màn hình', false, true],
 ];
 ---
-<ContentLayout title="Bảng giá / Gói sản phẩm UNESCO AI" description="Bảng giá phần mềm kế toán UNESCO: trả phí 1 lần sử dụng mãi mãi, không phí hàng năm. UNESCO XI 6.000.000 đ / MST, UNESCO AI 10.000.000 đ / MST; giá riêng cho dịch vụ kế toán; triển khai miễn phí; nâng cấp 50% giá gói mới." eyebrow="Bảng giá" display="BẢNG GIÁ / |GÓI SẢN PHẨM" tone="ng" subtitle="Lựa chọn gói phù hợp với nhu cầu doanh nghiệp">
+<ContentLayout title="Bảng giá / Gói sản phẩm UNESCO AI" schema={softwareSchema} description="Bảng giá phần mềm kế toán UNESCO: trả phí 1 lần sử dụng mãi mãi, không phí hàng năm. UNESCO XI 6.000.000 đ / MST, UNESCO AI 10.000.000 đ / MST; giá riêng cho dịch vụ kế toán; triển khai miễn phí; nâng cấp 50% giá gói mới." eyebrow="Bảng giá" display="BẢNG GIÁ / |GÓI SẢN PHẨM" tone="ng" subtitle="Lựa chọn gói phù hợp với nhu cầu doanh nghiệp">
 <section class="section"><div class="container">
   <p class="price-gold"><span>Trả phí 1 lần sử dụng mãi mãi – Không phí hàng năm</span></p>
   <div class="plans">{plans.map((p) => (

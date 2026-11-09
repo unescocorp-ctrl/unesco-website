@@ -2,6 +2,6 @@
 import { url } from '../../../utils/url';
 import ContentLayout from '../../../layouts/ContentLayout.astro';
 ---
-<ContentLayout title="Quản lý công nợ" description="Theo dõi phải thu, phải trả và đối chiếu theo đối tượng.">
+<ContentLayout title="Quản lý công nợ phải thu, phải trả" description="Quản lý công nợ trên phần mềm kế toán UNESCO AI: phải thu, phải trả theo từng đối tượng, tuổi nợ, biên bản đối chiếu công nợ kèm mã VietQR.">
 <section class="section"><div class="container"><div class="grid grid-3"><div class="card"><h3>Phải thu</h3><p class="muted">Theo dõi từng khoản khách hàng còn nợ, kèm số dư và chứng từ liên quan.</p></div><div class="card"><h3>Phải trả</h3><p class="muted">Theo dõi các khoản phải trả theo từng nhà cung cấp.</p></div><div class="card"><h3>Đối chiếu</h3><p class="muted">Đối chiếu số dư công nợ với từng khách hàng, nhà cung cấp để phát hiện chênh lệch.</p></div></div><div class="actions" style="margin-top:28px"><a class="btn btn-primary" href={url('/lien-he/#demo')}>ĐĂNG KÝ XEM DEMO</a><a class="btn btn-secondary" href={url('/lien-he/')}>NHẬN TƯ VẤN</a></div></div></section>
 </ContentLayout>

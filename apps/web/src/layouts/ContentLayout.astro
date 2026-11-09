@@ -11,11 +11,11 @@ import type { Shot } from '../data/screenshots';
  * subtitle : dòng tiêu đề phụ đậm dưới tiêu đề lớn.
  * heroShot : ảnh phần mềm thật đặt trong khung trình duyệt bên phải.
  */
-interface Props { title: string; description?: string; eyebrow?: string; heroShot?: Shot; display?: string; tone?: 'gb' | 'ng'; subtitle?: string; pills?: string[] }
-const { title, description, eyebrow = 'UNESCO AI', heroShot, display, tone = 'gb', subtitle, pills = ['AI hỗ trợ – kế toán quyết định', 'Dữ liệu thật trên bộ sổ UNESCO', 'Có nhật ký – có thể hoàn tác'] } = Astro.props;
+interface Props { title: string; description?: string; eyebrow?: string; heroShot?: Shot; display?: string; tone?: 'gb' | 'ng'; subtitle?: string; pills?: string[]; type?: 'website' | 'article'; published?: string; schema?: Record<string, unknown> | Record<string, unknown>[]; crumbs?: [string, string][] }
+const { title, description, eyebrow = 'UNESCO AI', heroShot, display, tone = 'gb', subtitle, pills = ['AI hỗ trợ – kế toán quyết định', 'Dữ liệu thật trên bộ sổ UNESCO', 'Có nhật ký – có thể hoàn tác'], type, published, schema, crumbs } = Astro.props;
 const parts = display ? display.split('|') : [];
 ---
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} type={type} published={published} schema={schema} crumbs={crumbs}>
   <section class="surface"><div class="container breadcrumb"><a href={url('/')}>Trang chủ</a> / {title}</div></section>
   <section class="content-hero"><span class="stripes tr" aria-hidden="true"></span><div class={`container${heroShot ? ' content-hero-grid' : ''}`}><div>
     <span class="eyebrow">{eyebrow}</span>

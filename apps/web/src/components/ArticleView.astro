@@ -10,8 +10,23 @@ const { slug } = Astro.props;
 const a = articles.find((x) => x.slug === slug);
 if (!a) throw new Error(`Không tìm thấy bài viết: ${slug}`);
 const others = articles.filter((x) => x.slug !== slug);
+const firstImg = a.blocks.find((b) => b.t === 'img') as { src: string } | undefined;
+const origin = Astro.site ?? 'https://www.unescosoft.com';
+const articleSchema = {
+  '@type': 'Article',
+  headline: a.title,
+  description: a.description,
+  datePublished: a.date,
+  dateModified: a.date,
+  inLanguage: 'vi-VN',
+  articleSection: a.topic,
+  mainEntityOfPage: new URL(url(`/kien-thuc/${a.slug}/`), origin).toString(),
+  image: new URL(url(firstImg ? `/huong-dan/${a.slug}/${firstImg.src}.webp` : '/og-default.jpg'), origin).toString(),
+  author: { '@type': 'Organization', name: 'Công ty TNHH Phần mềm UNESCO', url: new URL(url('/'), origin).toString() },
+  publisher: { '@id': new URL(url('/'), origin).toString() + '#organization' },
+};
 ---
-<ContentLayout title={a.title} description={a.description} eyebrow={`${a.topic} · cập nhật ${articleDate(a.date)}`} pills={[]}>
+<ContentLayout title={a.title} description={a.description} eyebrow={`${a.topic} · cập nhật ${articleDate(a.date)}`} pills={[]} type="article" published={a.date} schema={articleSchema} crumbs={[['Trang chủ', '/'], ['Kiến thức', '/kien-thuc/'], [a.title, `/kien-thuc/${a.slug}/`]]}>
 <section class="section"><div class="container legal-content article-content">
   {a.blocks.map((b) =>
     b.t === 'h2' ? <h2>{b.x}</h2>

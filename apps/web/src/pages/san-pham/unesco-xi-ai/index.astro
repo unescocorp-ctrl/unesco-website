@@ -1,4 +1,5 @@
 ---
+import { softwareSchema } from '../../../data/seo';
 import { url } from '../../../utils/url';
 import ContentLayout from '../../../layouts/ContentLayout.astro';
 import LeadForm from '../../../components/LeadForm.astro';
@@ -11,7 +12,7 @@ import { videoBySlug } from '../../../data/videos';
 import Icon from '../../../components/Icon.astro';
 import { productPillars } from '../../../data/design';
 ---
-<ContentLayout title="UNESCO AI – Phần mềm kế toán tích hợp AI" description="Nền tảng kế toán UNESCO gồm 9 phân hệ và màn hình AI 8 thẻ: tải hoá đơn điện tử, tự động xử lý, tờ khai hải quan, sổ phụ ngân hàng, bảng lương, kết chuyển cuối kỳ, báo cáo & nhật ký, cổng dịch vụ công." eyebrow="Sản phẩm / UNESCO AI" display="UNESCO |AI" subtitle="AI làm việc ngay trên bộ sổ UNESCO XI – không cần chuyển đổi hệ thống kế toán." heroShot={shots.mainScreen}>
+<ContentLayout title="UNESCO AI – Phần mềm kế toán tích hợp AI" schema={softwareSchema} description="Nền tảng kế toán UNESCO gồm 9 phân hệ và màn hình AI 8 thẻ: tải hoá đơn điện tử, tự động xử lý, tờ khai hải quan, sổ phụ ngân hàng, bảng lương, kết chuyển cuối kỳ, báo cáo & nhật ký, cổng dịch vụ công." eyebrow="Sản phẩm / UNESCO AI" display="UNESCO |AI" subtitle="AI làm việc ngay trên bộ sổ UNESCO XI – không cần chuyển đổi hệ thống kế toán." heroShot={shots.mainScreen}>
 
 <section class="section-sm surface"><div class="container"><div class="num-grid">{productPillars.map((p, i) => <a class={`num-card${p.c === 't' ? ' c-t' : p.c === 'b' ? ' c-b' : p.c === 'y' ? ' c-y' : ''}`} href={url(p.href)}><span class="no">{i + 1}</span><span class="ic"><Icon name={p.icon} /></span><h3>{p.t}</h3><p>Xem chi tiết →</p></a>)}</div>
   <div class="callout" style="margin-top:22px"><span class="ic"><Icon name="star" /></span><div><h3>16 điểm ưu việt · 65 tính năng AI</h3><p>Hoá đơn, sổ phụ, giá thành, thuế – HTKK, khoá sổ và báo cáo cho chủ doanh nghiệp: số liệu đo trên bộ sổ thật, mỗi con số kèm nguồn.</p></div><a class="btn btn-primary" style="margin-left:auto" href={url('/tinh-nang-uu-viet/')}>Tính năng ưu việt</a></div>

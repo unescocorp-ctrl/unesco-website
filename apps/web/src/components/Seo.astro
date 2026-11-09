@@ -1,19 +1,78 @@
 ---
 import { site, isPlaceholder } from '../config/site.config';
 import { absoluteUrl } from '../utils/url';
-interface Props { title:string; description?:string; image?:string; noindex?:boolean; }
-const { title, description=site.description, image='/og-default.jpg', noindex=false } = Astro.props;
+/**
+ * SEO cho mọi trang: title, description, canonical, Open Graph, Twitter và dữ liệu có cấu trúc (JSON-LD).
+ *
+ * type      : 'website' (mặc định) hoặc 'article' cho bài trong Trung tâm kiến thức.
+ * published : ngày đăng/cập nhật dạng YYYY-MM-DD (bài viết).
+ * schema    : thêm khối JSON-LD riêng của trang (FAQPage, Article, SoftwareApplication...).
+ * crumbs    : breadcrumb [[tên, đường dẫn], ...] – mặc định Trang chủ › tiêu đề trang.
+ */
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+  type?: 'website' | 'article';
+  published?: string;
+  schema?: Record<string, unknown> | Record<string, unknown>[];
+  crumbs?: [string, string][];
+}
+const { title, description = site.description, image = '/og-default.jpg', noindex = false, type = 'website', published, schema, crumbs } = Astro.props;
 const origin = Astro.site ?? site.url;
 const canonical = absoluteUrl(Astro.url.pathname, origin);
+const home = absoluteUrl('/', origin);
 const imageUrl = absoluteUrl(image, origin);
 const fullTitle = title.includes('UNESCO') ? title : `${title} | UNESCO AI – Phần mềm kế toán`;
-const orgName = isPlaceholder(site.company.legalName) ? site.name : site.company.legalName;
-const org = { '@context':'https://schema.org','@type':'Organization',name:orgName,url:absoluteUrl('/', origin) };
+const co = site.company;
+const orgName = isPlaceholder(co.legalName) ? site.name : co.legalName;
+const isHome = Astro.url.pathname.replace(/\/+$/, '') === (import.meta.env.BASE_URL || '/').replace(/\/+$/, '');
+
+const orgId = `${home}#organization`;
+const org = {
+  '@type': 'Organization',
+  '@id': orgId,
+  name: orgName,
+  alternateName: [co.legalNameEn, 'UNESCO AI', 'Phần mềm kế toán UNESCO'],
+  url: home,
+  logo: absoluteUrl('/favicon-192.png', origin),
+  email: co.email,
+  telephone: '+84-28-3755-5755',
+  taxID: co.taxCode,
+  foundingDate: '1999',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '30 Đường số 50',
+    addressLocality: 'Phường Bình Phú',
+    addressRegion: 'Thành phố Hồ Chí Minh',
+    addressCountry: 'VN',
+  },
+  contactPoint: [
+    { '@type': 'ContactPoint', contactType: 'sales', telephone: '+84-933-456-567', areaServed: 'VN', availableLanguage: 'Vietnamese' },
+    { '@type': 'ContactPoint', contactType: 'customer support', telephone: '+84-28-3755-5755', areaServed: 'VN', availableLanguage: 'Vietnamese' },
+  ],
+  sameAs: Object.values(site.socials).filter(Boolean),
+};
+const website = { '@type': 'WebSite', '@id': `${home}#website`, url: home, name: 'UNESCO AI – Phần mềm kế toán', inLanguage: 'vi-VN', publisher: { '@id': orgId } };
+
+const trail: [string, string][] = crumbs ?? (isHome ? [] : [['Trang chủ', '/'], [title, Astro.url.pathname]]);
+const breadcrumb = trail.length > 1 ? {
+  '@type': 'BreadcrumbList',
+  itemListElement: trail.map(([name, path], i) => ({ '@type': 'ListItem', position: i + 1, name, item: absoluteUrl(path, origin) })),
+} : null;
+
+const extra = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
+const graph = { '@context': 'https://schema.org', '@graph': [org, website, ...(breadcrumb ? [breadcrumb] : []), ...extra] };
 ---
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
 {!noindex && <link rel="canonical" href={canonical} />}
-<meta name="robots" content={noindex ? 'noindex,nofollow' : 'index,follow,max-image-preview:large'} />
-<meta property="og:type" content="website" /><meta property="og:title" content={fullTitle}/><meta property="og:description" content={description}/><meta property="og:url" content={canonical}/><meta property="og:image" content={imageUrl}/>
+<meta name="robots" content={noindex ? 'noindex,nofollow' : 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1'} />
+<meta property="og:locale" content="vi_VN" />
+<meta property="og:site_name" content="UNESCO AI – Phần mềm kế toán" />
+<meta property="og:type" content={type} /><meta property="og:title" content={fullTitle}/><meta property="og:description" content={description}/><meta property="og:url" content={canonical}/>
+<meta property="og:image" content={imageUrl}/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image:alt" content={fullTitle}/>
+{type === 'article' && published && <meta property="article:published_time" content={`${published}T08:00:00+07:00`} />}
 <meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content={fullTitle}/><meta name="twitter:description" content={description}/><meta name="twitter:image" content={imageUrl}/>
-<script type="application/ld+json" set:html={JSON.stringify(org)}></script>
+<script type="application/ld+json" set:html={JSON.stringify(graph)}></script>
