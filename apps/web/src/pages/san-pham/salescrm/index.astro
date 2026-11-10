@@ -1,0 +1,173 @@
+---
+/**
+ * UNESCO SalesCRM AI – trang sản phẩm.
+ * Ảnh chụp từ bản demo (dữ liệu mẫu) nằm ở public/screenshots/salescrm/. Bản demo một file: public/salescrm/demo/index.html (noindex).
+ */
+import { url } from '../../../utils/url';
+import ContentLayout from '../../../layouts/ContentLayout.astro';
+import Screenshot from '../../../components/Screenshot.astro';
+import LeadForm from '../../../components/LeadForm.astro';
+import Icon from '../../../components/Icon.astro';
+import type { Shot } from '../../../data/screenshots';
+
+const s = (name: string, title: string, caption: string, desc: string, width = 1600, height = 1000): Shot => ({
+  src: `/screenshots/salescrm/${name}.webp`, width, height, title, caption, desc, alt: `${caption} – UNESCO SalesCRM AI`,
+});
+const shots = {
+  overview: s('tong-quan', 'UNESCO SalesCRM AI – Tổng quan', 'Màn hình Tổng quan', 'Chỉ số có % tăng giảm, doanh thu theo tháng, phễu pipeline, lead theo nguồn và trợ lý AI.'),
+  inbox: s('hop-thu', 'SalesCRM – Hộp thư', 'Hộp thư đa kênh', 'Facebook, Zalo, Gmail, chat website về một danh sách; vạch đỏ là khách chờ quá 5 phút, ô dưới là câu trả lời AI gợi ý.'),
+  pipeline: s('pipeline', 'SalesCRM – Pipeline', 'Pipeline có điểm AI', 'Kéo thả để chuyển giai đoạn; thẻ viền đỏ là cơ hội có rủi ro kèm lý do.'),
+  quote: s('bao-gia', 'SalesCRM – Báo giá', 'Báo giá chờ duyệt', 'Chiết khấu vượt hạn mức tự chuyển trưởng phòng, giám đốc duyệt.'),
+  qr: s('hop-dong-qr', 'SalesCRM – Hợp đồng', 'Mã VietQR từng đợt thanh toán', 'Số tiền và nội dung đối soát điền sẵn; gửi khách qua Zalo, Facebook hoặc email.'),
+  bank: s('thu-tien', 'SalesCRM – Thu tiền', 'Đối soát tiền về', 'Tiền về khớp nội dung thì tự gạch nợ; còn lại có gợi ý để kế toán chọn.'),
+  ticket: s('ticket', 'SalesCRM – Ticket', 'Ticket hỗ trợ có SLA', 'Hạn phản hồi và giải quyết theo giờ làm việc; quá hạn hiện đỏ.'),
+  assistant: s('tro-ly-ai', 'Trợ lý AI', 'Trợ lý AI trả lời trên dữ liệu', 'Hỏi bằng tiếng Việt, câu trả lời có nút mở tới từng bản ghi.', 495, 1260),
+  privacy: s('du-lieu-ca-nhan', 'SalesCRM – Dữ liệu cá nhân', 'Trung tâm tuân thủ', 'Việc theo Luật 91/2025/QH15, cảnh báo tổng hợp, yêu cầu của chủ thể dữ liệu và sự cố 72 giờ.'),
+};
+const pains: [string, string, string, string][] = [
+  ['chat', 'Khách chờ quá lâu', 'Hộp thư chung có vạch chờ; quá 5 phút chuyển đỏ. Bot AI trả lời câu hỏi thường gặp cả ngoài giờ.', 'g'],
+  ['file-text', 'Báo giá bị bỏ quên', 'Biết khách đã mở báo giá hay chưa; tự nhắc sau 3 ngày chưa phản hồi và trước khi hết hiệu lực.', 'b'],
+  ['qr-code', 'Công nợ trễ hạn', 'Mỗi đợt thanh toán có mã VietQR; tiền về đúng nội dung là tự gạch nợ.', 't'],
+  ['headset', 'Hỗ trợ không đo được', 'Ticket có hạn xử lý theo giờ làm việc; quá hạn là trưởng nhóm được báo.', 'y'],
+];
+const who: [string, string, string, string][] = [
+  ['users', 'Kế toán dịch vụ', 'Nhiều khách doanh nghiệp, hợp đồng dịch vụ, thu phí theo kỳ, hỗ trợ khách qua Zalo.', 'g'],
+  ['layers', 'Công ty phần mềm, dịch vụ B2B', 'Demo, báo giá theo gói, hợp đồng, triển khai, ticket hỗ trợ có SLA.', 'b'],
+  ['truck', 'Thương mại – phân phối', 'Bảng giá, chiết khấu có cấp duyệt, công nợ theo đợt thanh toán.', 't'],
+  ['lightbulb', 'Đào tạo, tư vấn, lắp đặt', 'Khách hỏi qua mạng xã hội, lịch hẹn, hợp đồng và chăm sóc lâu dài.', 'y'],
+];
+const faqs: [string, string][] = [
+  ['Dữ liệu khách hàng lưu ở đâu?', 'Bản cài tại chỗ lưu trên máy chủ của doanh nghiệp (SQL Server). Doanh nghiệp toàn quyền sao lưu, quản lý và phân quyền truy cập dữ liệu.'],
+  ['Kết nối được những kênh nào?', 'Facebook Page (Messenger), Zalo OA, Gmail và khung chat gắn trên website. Riêng Facebook, để nhận tin từ mọi khách cần ứng dụng được Meta duyệt quyền nhắn tin – đội ngũ UNESCO hướng dẫn hồ sơ.'],
+  ['Có bắt buộc dùng AI không? Dữ liệu có bị gửi đi không?', 'Không bắt buộc – có thể tắt AI. Khi bật, phần mềm che số điện thoại, email, số định danh trước khi gửi nội dung cho AI; AI không tự gửi, duyệt hay xóa dữ liệu.'],
+  ['Nhân viên có thấy khách của nhau không?', 'Mặc định nhân viên kinh doanh chỉ thấy khách mình phụ trách; trưởng phòng, giám đốc thấy toàn bộ. Mọi lần xem hồ sơ khách đều được ghi nhật ký.'],
+  ['Tự gạch nợ hoạt động thế nào?', 'Mỗi đợt thanh toán có nội dung chuyển khoản riêng (ví dụ TT HD20260007 D2) nằm sẵn trong mã VietQR. Khi tiền về qua webhook ngân hàng hoặc file sao kê, nội dung khớp thì phần mềm ghi nhận thu; không khớp thì đưa vào danh sách để kế toán chọn.'],
+  ['Có dùng được trên điện thoại không?', 'Có. Giao diện web tự co giãn trên điện thoại; ứng dụng di động hỗ trợ hộp thư, duyệt báo giá, ticket và thông báo.'],
+  ['Đang quản lý khách bằng Excel thì chuyển sang thế nào?', 'Đội ngũ UNESCO nhập danh sách khách, hợp đồng và công nợ từ Excel khi triển khai, kiểm tra trùng số điện thoại và mã số thuế.'],
+  ['Phần mềm hỗ trợ tuân thủ Luật Bảo vệ dữ liệu cá nhân ra sao?', 'Có thông báo xử lý dữ liệu, ghi bằng chứng đồng ý, xử lý yêu cầu xem/xóa/hạn chế, sổ sự cố 72 giờ, nhật ký truy cập và bộ văn bản mẫu. Văn bản mẫu cần được luật sư của doanh nghiệp rà soát.'],
+];
+const schema = [
+  {
+    '@type': 'SoftwareApplication',
+    name: 'UNESCO SalesCRM AI',
+    applicationCategory: 'BusinessApplication',
+    applicationSubCategory: 'CRM bán hàng và chăm sóc khách hàng',
+    operatingSystem: 'Windows Server, trình duyệt web',
+    inLanguage: 'vi-VN',
+    description: 'Phần mềm CRM bán hàng và chăm sóc khách hàng đa kênh có trợ lý AI: hộp thư Zalo, Facebook, Gmail, chat website; pipeline có điểm AI; báo giá duyệt nhiều cấp; hợp đồng; thu tiền VietQR tự gạch nợ; ticket hỗ trợ có SLA.',
+    image: '/screenshots/salescrm/og-salescrm.jpg',
+    publisher: { '@type': 'Organization', name: 'Công ty TNHH Phần mềm UNESCO' },
+  },
+  { '@type': 'FAQPage', mainEntity: faqs.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
+];
+---
+<ContentLayout
+  title="UNESCO SalesCRM AI – CRM bán hàng, chăm sóc khách hàng đa kênh"
+  display="UNESCO |SALESCRM AI"
+  subtitle="Từ tin nhắn đến hợp đồng và tiền về – một màn hình, có trợ lý AI"
+  description="Khách nhắn Zalo, Facebook, email hay chat trên website – tất cả về một hộp thư. Bot AI trả lời câu hỏi thường gặp, nhân viên báo giá, hợp đồng ký, khách quét VietQR trả tiền và phần mềm tự gạch nợ."
+  eyebrow="Sản phẩm mới · CRM bán hàng"
+  heroShot={shots.overview}
+  pills={['AI chuẩn bị – người quyết định', 'Dữ liệu trên máy chủ doanh nghiệp', 'Tuân thủ Luật 91/2025/QH15']}
+  schema={schema}
+  crumbs={[['Sản phẩm', '/san-pham/unesco-xi-ai/'], ['UNESCO SalesCRM AI', '/san-pham/salescrm/']]}
+>
+  <section class="section"><div class="container">
+    <div class="actions" style="margin-bottom:28px"><a class="btn btn-primary" href={url('/salescrm/demo/index.html')} target="_blank" rel="noopener">XEM DEMO TRỰC TUYẾN</a><a class="btn btn-secondary" href={url('/san-pham/salescrm/#dang-ky')}>ĐĂNG KÝ TƯ VẤN</a></div>
+    <div class="section-head"><div><span class="eyebrow">Vì sao cần SalesCRM</span><h2>Bốn chỗ doanh nghiệp hay mất khách</h2></div><p>Tin nhắn nằm rải rác ở nhiều điện thoại, báo giá gửi đi rồi quên hỏi lại, công nợ theo dõi bằng Excel, hỗ trợ sau bán không ai đo thời gian. SalesCRM gom về một chỗ và nhắc đúng lúc.</p></div>
+    <div class="grid grid-4">{pains.map((m) => <div class={`card top-${m[3]}`}><span class={`ic ${m[3]}`} style="margin-bottom:14px"><Icon name={m[0]} /></span><h3>{m[1]}</h3><p class="muted" style="margin:0">{m[2]}</p></div>)}</div>
+  </div></section>
+
+  <section class="section surface-soft"><div class="container">
+    <div class="section-head"><div><span class="eyebrow">Một luồng liền mạch</span><h2>Từ tin nhắn đầu tiên đến tiền về tài khoản</h2></div><p>Dữ liệu chảy thẳng giữa các bước – không nhập lại. Bước nào AI làm, bước nào người duyệt đều rõ ràng.</p></div>
+    <div class="process-grid">
+      <div class="process-step"><span class="num">01</span><strong>Khách nhắn</strong><small>Zalo, Facebook, email, chat website về một hộp thư; AI trả lời.</small></div>
+      <div class="process-step"><span class="num">02</span><strong>Tạo khách & cơ hội</strong><small>Để lại SĐT là có hồ sơ; hỏi giá là mở cơ hội.</small></div>
+      <div class="process-step"><span class="num">03</span><strong>Chăm sóc</strong><small>Pipeline có điểm AI kèm lý do, nhắc việc tiếp theo.</small></div>
+      <div class="process-step"><span class="num">04</span><strong>Báo giá</strong><small>Vượt hạn mức chiết khấu thì cấp trên duyệt.</small></div>
+      <div class="process-step"><span class="num">05</span><strong>Hợp đồng & VietQR</strong><small>Lịch thanh toán, mã QR từng đợt; kế toán xác nhận.</small></div>
+      <div class="process-step"><span class="num">06</span><strong>Hỗ trợ sau bán</strong><small>Ticket có SLA, bài hướng dẫn cho bot dùng lại.</small></div>
+    </div>
+  </div></section>
+
+  <section class="section"><div class="container split reverse"><div><Screenshot shot={shots.inbox} /></div><div>
+    <span class="eyebrow">Hộp thư đa kênh</span><h2>Mọi tin nhắn về một nơi, không để khách chờ</h2>
+    <p class="lead">Facebook Messenger, Zalo OA, Gmail và khung chat trên website hiện chung một danh sách, xếp theo thời gian khách chờ.</p>
+    <div class="feature-list">
+      <div class="feature-row"><span class="check">✓</span><div><strong>Gợi ý trả lời bằng AI</strong><span>Soạn sẵn từ hội thoại và tài liệu sản phẩm đã duyệt; nhân viên sửa rồi gửi.</span></div></div>
+      <div class="feature-row"><span class="check">✓</span><div><strong>Thao tác ngay trong khung chat</strong><span>Câu mẫu, chuyển người phụ trách, hẹn gọi lại, tạo báo giá, mở ticket.</span></div></div>
+      <div class="feature-row"><span class="check">✓</span><div><strong>Phân bổ tự động</strong><span>Chia cho nhân viên đang trực; bot nhận ca ngoài giờ.</span></div></div>
+    </div>
+  </div></div></section>
+
+  <section class="section surface-soft"><div class="container split"><div>
+    <span class="eyebrow">Pipeline & việc hôm nay</span><h2>Biết cơ hội nào sắp trượt trước khi quá muộn</h2>
+    <p class="lead">Mỗi cơ hội có điểm AI 0–100 và lý do cụ thể: im lâu, chưa có việc tiếp theo, báo giá chưa mở, sắp quá ngày dự kiến chốt.</p>
+    <div class="feature-list">
+      <div class="feature-row"><span class="check">✓</span><div><strong>Việc hôm nay</strong><span>Gom việc từ 7 nguồn – khách chờ, báo giá chờ duyệt, ticket quá hạn… – xếp theo mức khẩn.</span></div></div>
+      <div class="feature-row"><span class="check">✓</span><div><strong>Dự báo có trọng số</strong><span>Giá trị pipeline nhân xác suất từng giai đoạn; tùy chỉnh tên, thứ tự, xác suất.</span></div></div>
+    </div>
+  </div><div><Screenshot shot={shots.pipeline} /></div></div></section>
+
+  <section class="section"><div class="container split reverse"><div><Screenshot shot={shots.quote} /></div><div>
+    <span class="eyebrow">Báo giá – đơn hàng – hợp đồng</span><h2>Báo giá đúng giá, đúng quyền duyệt</h2>
+    <p class="lead">Chọn gói từ bảng giá, nhập chiết khấu; vượt hạn mức thì tự chuyển trưởng phòng, trên 15% thêm giám đốc. Không ai tự duyệt báo giá của mình.</p>
+    <div class="feature-list">
+      <div class="feature-row"><span class="check">✓</span><div><strong>Gửi và theo dõi</strong><span>PDF có logo qua tin nhắn hoặc email; biết khi khách mở lần đầu.</span></div></div>
+      <div class="feature-row"><span class="check">✓</span><div><strong>Lên đơn, lập hợp đồng</strong><span>Từ báo giá khách đồng ý; lịch thanh toán khớp giá trị; điền mẫu hợp đồng Word của công ty.</span></div></div>
+    </div>
+  </div></div></section>
+
+  <section class="section surface-soft"><div class="container split"><div>
+    <span class="eyebrow">Thu tiền VietQR</span><h2>Khách quét mã trả tiền, phần mềm tự gạch nợ</h2>
+    <p class="lead">Mỗi đợt thanh toán có mã VietQR chuẩn NAPAS – mọi ứng dụng ngân hàng quét được, số tiền và nội dung điền sẵn.</p>
+    <div class="feature-list">
+      <div class="feature-row"><span class="check">✓</span><div><strong>Tiền về tự động</strong><span>Qua webhook ngân hàng (SePay) hoặc nhập file sao kê Excel/CSV; không ghi trùng.</span></div></div>
+      <div class="feature-row"><span class="check">✓</span><div><strong>Kế toán chỉ xử lý phần lệch</strong><span>Nội dung khớp mã đợt thì ghi nhận thu ngay; còn lại có gợi ý theo số tiền, tên khách.</span></div></div>
+    </div>
+  </div><div><Screenshot shot={shots.qr} /></div></div></section>
+
+  <section class="section"><div class="container split reverse"><div><Screenshot shot={shots.ticket} /></div><div>
+    <span class="eyebrow">Hỗ trợ sau bán</span><h2>Ticket có hạn xử lý, kiến thức được giữ lại</h2>
+    <p class="lead">Hạn phản hồi và giải quyết theo mức độ, tính theo giờ làm việc. Ticket quá hạn hiện đỏ và báo trưởng nhóm.</p>
+    <div class="feature-list">
+      <div class="feature-row"><span class="check">✓</span><div><strong>Chuyển thành bài hướng dẫn</strong><span>AI soạn nháp từ cách xử lý; duyệt xong bot dùng để trả lời khách lần sau.</span></div></div>
+      <div class="feature-row"><span class="check">✓</span><div><strong>Khách chấm điểm</strong><span>Mỗi ticket giải quyết xong khách được mời đánh giá.</span></div></div>
+    </div>
+  </div></div></section>
+
+  <section class="section surface-soft"><div class="container split"><div>
+    <span class="eyebrow">Trợ lý AI</span><h2>Hỏi bằng tiếng Việt, nhận câu trả lời có số liệu</h2>
+    <p class="lead">"Hôm nay cơ hội nào sắp trượt?", "Công nợ quá hạn bao nhiêu?", "Báo giá nào khách chưa mở?" – trợ lý tóm tắt dữ liệu theo đúng quyền của người hỏi.</p>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+      <div class="card top-b"><h3>AI làm</h3><p class="muted" style="margin:0">Trả lời câu hỏi thường gặp từ nội dung đã duyệt · gợi ý câu trả lời · chấm điểm cơ hội kèm lý do · gợi ý khớp tiền về · soạn nháp bài hướng dẫn.</p></div>
+      <div class="card top-y"><h3>AI không làm</h3><p class="muted" style="margin:0">Không tự gửi báo giá, đổi giá, duyệt chiết khấu · không nêu giá ngoài bảng giá · không tự xóa dữ liệu · không nhận SĐT, email, số định danh dạng gốc.</p></div>
+    </div>
+  </div><div style="max-width:420px;margin:0 auto"><Screenshot shot={shots.assistant} /></div></div></section>
+
+  <section class="section"><div class="container split reverse"><div><Screenshot shot={shots.privacy} /></div><div>
+    <span class="eyebrow">Bảo vệ dữ liệu cá nhân</span><h2>Sẵn sàng cho Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15</h2>
+    <p class="lead">Luật có hiệu lực từ 01/01/2026. SalesCRM có sẵn công cụ để doanh nghiệp thực hiện nghĩa vụ – và cảnh báo thay vì cản trở công việc.</p>
+    <div class="feature-list">
+      <div class="feature-row"><span class="check">✓</span><div><strong>Thông báo và đồng ý</strong><span>Bot gửi thông báo xử lý dữ liệu ở tin nhắn đầu; ghi bằng chứng đồng ý theo từng mục đích; khách nhắn "HỦY NHẬN TIN" là ngừng tin quảng cáo.</span></div></div>
+      <div class="feature-row"><span class="check">✓</span><div><strong>Yêu cầu và sự cố</strong><span>Tiếp nhận yêu cầu xem, sửa, xóa, hạn chế xử lý; sổ sự cố đếm 72 giờ; nhật ký ai xem, xuất, xóa dữ liệu.</span></div></div>
+    </div>
+  </div></div></section>
+
+  <section class="section surface-soft"><div class="container">
+    <div class="section-head"><div><span class="eyebrow">Phù hợp với ai</span><h2>Doanh nghiệp bán hàng có tư vấn, báo giá và chăm sóc sau bán</h2></div><p>Dữ liệu khách hàng nằm trên máy chủ của doanh nghiệp; nhân viên dùng qua trình duyệt trên máy tính hoặc điện thoại, truy cập từ xa bằng tên miền riêng có HTTPS.</p></div>
+    <div class="grid grid-4">{who.map((m) => <div class={`card top-${m[3]}`}><span class={`ic ${m[3]}`} style="margin-bottom:14px"><Icon name={m[0]} /></span><h3>{m[1]}</h3><p class="muted" style="margin:0">{m[2]}</p></div>)}</div>
+    <div class="callout b" style="margin-top:24px"><span class="ic"><Icon name="tag" /></span><div><h3>Báo giá theo quy mô thực tế</h3><p>Giá phụ thuộc số người dùng, số kênh kết nối và hình thức triển khai. Chuẩn bị trước: số nhân viên sẽ dùng, kênh đang nhận khách, quy trình duyệt chiết khấu, dữ liệu cũ cần chuyển.</p></div><a class="btn btn-secondary" style="margin-left:auto" href={url('/san-pham/salescrm/#dang-ky')}>Nhận báo giá</a></div>
+  </div></section>
+
+  <section class="section"><div class="container" style="max-width:920px">
+    <div class="section-head"><div><span class="eyebrow">Câu hỏi thường gặp</span><h2>Giải đáp nhanh</h2></div></div>
+    {faqs.map(([q, a]) => <details class="card" style="margin-bottom:10px"><summary style="cursor:pointer;font-weight:700">{q}</summary><p class="muted" style="margin:10px 0 0">{a}</p></details>)}
+  </div></section>
+
+  <section class="section surface-soft" id="dang-ky"><div class="container split">
+    <div><span class="eyebrow">Đăng ký</span><h2>Xem SalesCRM chạy trên quy trình bán hàng của bạn</h2><p class="lead">Để lại thông tin, bộ phận kinh doanh liên hệ trong giờ làm việc để demo và tư vấn triển khai. Hoặc tự trải nghiệm ngay bản demo có dữ liệu mẫu.</p>
+      <div class="actions"><a class="btn btn-primary" href={url('/salescrm/demo/index.html')} target="_blank" rel="noopener">MỞ BẢN DEMO</a></div></div>
+    <LeadForm kind="salescrm" heading="Đăng ký tư vấn SalesCRM" />
+  </div></section>
+</ContentLayout>
