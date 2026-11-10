@@ -17,8 +17,9 @@ const faqs = [
   ['Cài bản cập nhật có mất tệp cũ không?', 'Không. Mỗi lần cài, gói cập nhật sao lưu các tệp sắp bị thay vào thư mục sao lưu để có thể trả lại bản cũ.'],
   ['Gặp lỗi thì liên hệ ai?', `Gọi bộ phận hỗ trợ: ${contact.support.lineVi}; cho biết ngày cập nhật đang cài và gửi ảnh màn hình lỗi.`],
 ];
+const faqSchema = { '@type': 'FAQPage', mainEntity: faqs.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) };
 ---
-<ContentLayout title="Câu hỏi thường gặp" description="Các câu hỏi về sản phẩm, AI, biểu mẫu 2026, cài đặt, nâng cấp và hỗ trợ."><section class="section"><div class="container">
+<ContentLayout title="Câu hỏi thường gặp về phần mềm kế toán UNESCO AI" description="Giải đáp nhanh về phần mềm kế toán UNESCO AI: AI có tự ghi sổ không, đưa tờ khai vào HTKK, sổ doanh nghiệp siêu nhỏ Thông tư 58/2026, sổ hộ kinh doanh, khoá sổ, soát rủi ro hoá đơn, cài đặt và hỗ trợ." schema={faqSchema}><section class="section"><div class="container">
   <div class="faq">{faqs.map((q) => <details><summary>{q[0]}</summary><p>{q[1]}</p></details>)}</div>
   <div class="grid grid-3" style="margin-top:32px"><a class="card" href={url('/download/')}><h3>Trung tâm tải về</h3><p class="muted">Nhận bộ cài qua điện thoại hoặc Zalo.</p></a><a class="card" href={url('/release-notes/')}><h3>Có gì mới</h3><p class="muted">Theo dõi thay đổi theo từng phiên bản.</p></a><a class="card" href={url('/lien-he/')}><h3>Liên hệ</h3><p class="muted">Gửi nhu cầu tư vấn hoặc hỗ trợ.</p></a></div>
 </div></section></ContentLayout>

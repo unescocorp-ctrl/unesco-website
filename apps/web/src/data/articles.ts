@@ -5,7 +5,7 @@
  * (xem pages/kien-thuc/<slug>/index.astro và components/ArticleView.astro).
  *
  * THÊM BÀI MỚI: thêm một mục vào `articles`, tạo thư mục pages/kien-thuc/<slug>/index.astro
- * (sao chép từ bài có sẵn, đổi slug), thêm đường dẫn vào pages/sitemap.xml.ts.
+ * (sao chép từ bài có sẵn, đổi slug). sitemap.xml tự thêm bài mới kèm ngày cập nhật.
  *
  * Các loại khối nội dung (blocks):
  *   h2        tiêu đề mục
@@ -50,6 +50,65 @@ export type Article = {
 export const articleDate = (iso: string) => `${iso.slice(8, 10)}/${iso.slice(5, 7)}/${iso.slice(0, 4)}`;
 
 export const articles: Article[] = [
+  {
+    slug: 'so-ke-toan-doanh-nghiep-sieu-nho-thong-tu-58',
+    title: 'Sổ kế toán doanh nghiệp siêu nhỏ theo Thông tư 58/2026/TT-BTC: mở sổ nào, lập thế nào',
+    date: '2026-11-09',
+    topic: 'Chế độ kế toán 2026',
+    description: 'Thông tư 58/2026/TT-BTC (hiệu lực 01/7/2026, thay Thông tư 132/2018): doanh nghiệp siêu nhỏ mở sổ S1, S2a – S2d, S3a – S3b hay S4a – S4d theo 4 trường hợp tính thuế; bảng tra nhanh và cách lập sổ, BCTC B01, B02-DNSN tự động trên phần mềm kế toán UNESCO AI.',
+    blocks: [
+      { t: 'lead', x: 'Từ ngày 01/7/2026, doanh nghiệp siêu nhỏ áp dụng chế độ kế toán theo Thông tư 58/2026/TT-BTC thay cho Thông tư 132/2018/TT-BTC. Điểm thay đổi lớn nhất: sổ kế toán phải mở phụ thuộc vào cách doanh nghiệp tính thuế GTGT và thuế TNDN.' },
+      { t: 'h2', x: 'Thông tư 58/2026/TT-BTC: những thông tin cần nhớ' },
+      { t: 'table', head: ['Nội dung', 'Quy định'], rows: [
+        ['Ngày ban hành', '25/5/2026 – Bộ Tài chính'],
+        ['Ngày hiệu lực', '01/7/2026'],
+        ['Thay thế', 'Thông tư 132/2018/TT-BTC'],
+        ['Đối tượng', 'Doanh nghiệp siêu nhỏ; hộ, cá nhân kinh doanh được chọn áp dụng'],
+        ['Cách ghi sổ', 'Ghi thẳng sổ chi tiết, không dùng hệ thống tài khoản kế toán'],
+        ['Báo cáo tài chính', 'B01-DNSN và B02-DNSN, nộp trong 90 ngày kể từ ngày kết thúc năm tài chính'],
+        ['Kế toán trưởng', 'Không bắt buộc bố trí; người được giao làm kế toán ký thay'],
+      ] },
+      { t: 'note', x: 'Hộ, cá nhân kinh doanh đã chọn áp dụng Thông tư 58 phải áp dụng nhất quán trong cả năm tài chính; muốn đổi thì đổi từ đầu năm tài chính sau.' },
+      { t: 'h2', x: 'Bảng tra nhanh: doanh nghiệp siêu nhỏ mở sổ nào?' },
+      { t: 'p', x: 'Thông tư chia doanh nghiệp siêu nhỏ thành 4 trường hợp theo phương pháp tính thuế GTGT và thuế TNDN. Mỗi trường hợp có bộ sổ bắt buộc riêng.' },
+      { t: 'table', head: ['Trường hợp', 'Thuế GTGT', 'Thuế TNDN', 'Sổ bắt buộc'], rows: [
+        ['1', 'Tỷ lệ % trên doanh thu', 'Tỷ lệ % trên doanh thu', 'S1-DNSN'],
+        ['2', 'Tỷ lệ % trên doanh thu', 'Theo thu nhập tính thuế', 'S2a, S2b, S2c, S2d-DNSN'],
+        ['3', 'Phương pháp khấu trừ', 'Tỷ lệ % trên doanh thu', 'S3a, S3b-DNSN'],
+        ['4', 'Phương pháp khấu trừ', 'Theo thu nhập tính thuế', 'S2b, S2c, S2d, S3b-DNSN'],
+      ] },
+      { t: 'h3', x: 'Tên các sổ' },
+      { t: 'ol', items: [
+        'S1-DNSN, S2a-DNSN, S3a-DNSN: Sổ doanh thu bán hàng hoá, dịch vụ (mẫu riêng cho từng trường hợp).',
+        'S2b-DNSN: Sổ chi tiết doanh thu, chi phí.',
+        'S2c-DNSN: Sổ chi tiết vật liệu, dụng cụ, sản phẩm, hàng hoá.',
+        'S2d-DNSN: Sổ chi tiết tiền.',
+        'S3b-DNSN: Sổ theo dõi nghĩa vụ thuế GTGT.',
+      ] },
+      { t: 'h3', x: 'Sổ tự chọn S4a – S4d (mở theo nhu cầu quản lý)' },
+      { t: 'ol', items: [
+        'S4a-DNSN: Sổ chi tiết thanh toán công nợ.',
+        'S4b-DNSN: Sổ tài sản cố định.',
+        'S4c-DNSN: Sổ theo dõi nghĩa vụ thuế khác.',
+        'S4d-DNSN: Sổ theo dõi vốn chủ sở hữu.',
+      ] },
+      { t: 'p', x: 'Chứng từ đi kèm vẫn là các mẫu quen thuộc: Phiếu thu 01-TT, Phiếu chi 02-TT, Phiếu nhập kho 01-VT, Phiếu xuất kho 02-VT.' },
+      { t: 'h2', x: 'Ví dụ: chọn sổ cho một công ty dịch vụ nhỏ' },
+      { t: 'p', x: 'Ví dụ minh hoạ, số liệu giả định. Một công ty tư vấn có 3 nhân viên, khai thuế GTGT theo phương pháp khấu trừ và thuế TNDN theo thu nhập tính thuế. Công ty thuộc trường hợp 4: mở S2b để theo dõi doanh thu – chi phí, S2c nếu có vật tư, hàng hoá, S2d cho tiền mặt và tiền gửi, S3b để theo dõi thuế GTGT. Nếu có công nợ với nhiều khách, nên mở thêm S4a.' },
+      { t: 'h2', x: 'Những lỗi hay gặp khi chuyển sang Thông tư 58' },
+      { t: 'ol', items: [
+        'Giữ nguyên bộ sổ theo Thông tư 132 hoặc Thông tư 133 mà không đối chiếu lại trường hợp tính thuế.',
+        'Đổi phương pháp tính thuế giữa năm nhưng không mở lại bộ sổ tương ứng.',
+        'Số dư đầu kỳ chuyển từ sổ cũ sang không khớp với sổ chi tiết tiền, công nợ, hàng tồn.',
+        'Quên đối chiếu sổ với thông báo thuế khi số thuế do hệ thống của cơ quan thuế xác định từ hoá đơn điện tử.',
+      ] },
+      { t: 'h2', x: 'Lập sổ và BCTC doanh nghiệp siêu nhỏ trên UNESCO AI' },
+      { t: 'p', x: 'Trong phần mềm kế toán UNESCO AI, kế toán chọn trường hợp tính thuế của doanh nghiệp; phần mềm lập sổ S1, S2a – S2d, S3a – S3b và sổ tự chọn S4a – S4d từ chứng từ và số dư đã có, cùng BCTC B01-DNSN, B02-DNSN. Sổ ở chế độ chỉ xem, không sửa trực tiếp, nên luôn khớp với chứng từ gốc.' },
+      { t: 'p', x: 'Kết quả xuất ra Excel hoặc Excel + XML; kế toán xem trước, so với kỳ trước rồi bấm Đưa vào HTKK. Chức năng mở ở menu Dữ liệu hoặc thẻ Sổ kế toán - báo cáo hộ kinh doanh. Với công ty dịch vụ kế toán giữ nhiều khách siêu nhỏ, mỗi bộ sổ được lập theo đúng mã số thuế của khách.' },
+      { t: 'note', x: 'Bài viết tóm tắt để tham khảo, cập nhật ngày 09/11/2026. Khi áp dụng cho trường hợp cụ thể, nên đối chiếu văn bản gốc Thông tư 58/2026/TT-BTC và hướng dẫn của cơ quan thuế quản lý.' },
+      { t: 'contact', x: 'Cần xem thử phần mềm lập sổ doanh nghiệp siêu nhỏ trên bộ sổ mẫu, liên hệ' },
+    ],
+  },
   {
     slug: 'gia-thanh-theo-dien',
     title: 'Hướng dẫn chi tiết: nhập và xử lý giá thành theo điện',

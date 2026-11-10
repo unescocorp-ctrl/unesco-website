@@ -11,6 +11,11 @@ for p in pages.rglob('*.astro'):
  if rel.name=='index.astro': route='/'+'/'.join(rel.parts[:-1])+'/' if rel.parts[:-1] else '/'
  else: route='/'+'/'.join(rel.with_suffix('').parts)+'/'
  routes.add(route.replace('//','/'))
+# trang HTML tĩnh trong public/ (vd public/cshhl/index.html -> /cshhl/) cũng là route hợp lệ
+public=root/'apps/web/public'
+for p in public.rglob('index.html'):
+ parts=p.relative_to(public).parts[:-1]
+ if parts: routes.add('/'+'/'.join(parts)+'/')
 errors=[]
 # import targets
 for p in (root/'apps/web/src').rglob('*.astro'):
@@ -42,7 +47,13 @@ for p in (root/'apps/web/src').rglob('*.ts'):
 # sitemap must list every route
 sm=(pages/'sitemap.xml.ts').read_text(encoding='utf-8')
 listed=set(re.findall(r'"(/[^"]*)"',sm))
-for r in sorted(routes-listed): errors.append(f'Route missing from sitemap: {r}')
+# sitemap tự thêm bài viết từ data/articles.ts (/kien-thuc/<slug>/)
+if 'articles.map' in sm:
+ art=(root/'apps/web/src/data/articles.ts').read_text(encoding='utf-8')
+ listed|={f'/kien-thuc/{s}/' for s in re.findall(r"slug: '([a-z0-9\-]+)'",art)}
+# trang demo tĩnh không cần đưa vào sitemap (noindex)
+static_noindex={r for r in routes if (public/r.strip('/')/'index.html').is_file() and 'noindex' in (public/r.strip('/')/'index.html').read_text(encoding='utf-8',errors='ignore')[:3000]}
+for r in sorted(routes-listed-static_noindex): errors.append(f'Route missing from sitemap: {r}')
 for r in sorted(listed-routes): errors.append(f'Sitemap lists unknown route: {r}')
 # required config
 for f in ['apps/web/package.json','apps/api/UNESCO.Web.sln','database/migrations/001_init.sql','.github/workflows/website-ci.yml']:
