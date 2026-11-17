@@ -74,6 +74,7 @@ export const products: Product[] = [
     points: ['Hồ sơ khách hàng, hợp đồng dịch vụ, phí theo kỳ', 'Lịch hạn nộp tờ khai, giao việc cho từng kế toán', 'Xem tình trạng sổ của mọi khách trên một màn hình'],
     price: 'Tặng kèm UNESCO XII AI', priceNote: 'Dưới 10 khách hàng: miễn phí · trên 10 khách hàng: 1.000.000 đ cho mỗi 10 khách',
     href: '/san-pham/erp-unesco/',
+    media: { img: '/huong-dan/huong-dan-su-dung-erp-unesco/dieu-hanh-ai.webp', alt: 'Màn hình Điều hành AI của ERP_UNESCO', video: '/videos/erp-unesco-huong-dan.mp4' },
   },
   {
     id: 'unesco-tax-online', name: 'UNESCO_TAX_Online', family: 'dich-vu-ke-toan', badge: 'Tặng kèm UNESCO XII AI',

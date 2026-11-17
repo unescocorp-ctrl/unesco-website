@@ -8,8 +8,21 @@
 import { url } from '../../../utils/url';
 import ContentLayout from '../../../layouts/ContentLayout.astro';
 import LeadForm from '../../../components/LeadForm.astro';
+import Screenshot from '../../../components/Screenshot.astro';
+import type { Shot } from '../../../data/screenshots';
 import { products } from '../../../data/products';
 const p = products.find((x) => x.id === 'erp-unesco')!;
+const sh = (name: string, caption: string, desc: string): Shot => ({ src: `/huong-dan/huong-dan-su-dung-erp-unesco/${name}.webp`, width: 1600, height: 1000, title: `ERP_UNESCO – ${caption}`, caption, desc, alt: `${caption} – ERP_UNESCO (dữ liệu mẫu)` });
+const gallery = [
+  sh('dieu-hanh-ai', 'Điều hành AI', 'Đề xuất chờ xem, quy trình liên thông và việc cần xử lý.'),
+  sh('khach-hang-360', 'Hồ sơ khách hàng 360°', 'Yêu cầu bổ sung, tài liệu, hợp đồng, công việc, công nợ.'),
+  sh('hop-dong', 'Hợp đồng dịch vụ', 'Phí đã phát hành, công việc và luồng thu tiền.'),
+  sh('cong-viec-qc', 'Công việc & QC', 'Việc trong kỳ, hạn xử lý, xem trước khi sinh việc.'),
+  sh('cong-no-thu-phi', 'Công nợ & thu phí', 'Phải thu, phiếu thu và phân bổ tiền thu.'),
+  sh('kpi-hoa-hong', 'KPI & hoa hồng', 'Tính theo chính sách và nguồn đã chốt.'),
+  sh('kiem-tra-luong', 'Kiểm tra lương', 'Đủ điều kiện nguồn mới tính lương kỳ.'),
+  sh('bao-cao-doi-chieu', 'Báo cáo đối chiếu', 'Mỗi con số đều có chứng từ nguồn.'),
+];
 
 const pillars: [string, string][] = [
   ['Quản lý dịch vụ kế toán', 'Khách hàng, hợp đồng, công việc hằng tháng, thu phí, công nợ, nhân viên và tiền lương nối với nhau: hợp đồng sinh ra công việc, công việc hoàn thành sinh ra phí, phí sinh ra công nợ và phiếu thu.'],
@@ -54,11 +67,12 @@ const roles: [string, string][] = [
   subtitle="Quản lý toàn diện công ty dịch vụ kế toán – tư vấn thuế"
   description="ERP_UNESCO kết hợp phần mềm kế toán, quản lý dịch vụ kế toán và chăm sóc khách hàng: hồ sơ khách 360°, hợp đồng, quy trình công việc hằng tháng, thu phí – công nợ, điều hành sổ sách, tính lương, báo cáo quản trị. Tặng kèm UNESCO XII AI."
   eyebrow="Sản phẩm · Dịch vụ kế toán"
+  heroShot={gallery[0]}
   pills={['Tặng kèm UNESCO XII AI', 'Hồ sơ khách hàng 360°', 'Quy trình công việc tự sinh mỗi tháng']}
   crumbs={[['Sản phẩm', '/san-pham/'], ['ERP_UNESCO', '/san-pham/erp-unesco/']]}
 >
   <section class="section"><div class="container">
-    <div class="actions" style="margin-bottom:28px"><a class="btn btn-primary" href={url('/san-pham/erp-unesco/#dang-ky')}>ĐĂNG KÝ XEM DEMO</a><a class="btn btn-secondary" href={url('/bang-gia/#dich-vu-ke-toan')}>XEM BẢNG GIÁ</a></div>
+    <div class="actions" style="margin-bottom:28px"><a class="btn btn-primary" href={url('/san-pham/erp-unesco/#dang-ky')}>ĐĂNG KÝ XEM DEMO</a><a class="btn btn-secondary" href={url('/san-pham/erp-unesco/#video')}>XEM VIDEO HƯỚNG DẪN</a><a class="btn btn-secondary" href={url('/kien-thuc/huong-dan-su-dung-erp-unesco/')}>ĐỌC HƯỚNG DẪN</a></div>
     <div class="section-head"><div><span class="eyebrow">Vì sao cần</span><h2>Công ty dịch vụ kế toán không chỉ làm sổ sách</h2></div><p>Mỗi tháng phải nhận chứng từ của hàng trăm khách, làm sổ và kê khai đúng hạn, phát hành phí, thu tiền, nhắc nợ, tính lương theo số khách phụ trách và vẫn phải tìm thêm khách mới.</p></div>
     <p class="lead" style="max-width:900px">Khi mỗi việc nằm một nơi – Excel theo dõi khách, nhóm chat giao việc, sổ tay công nợ, phần mềm kế toán riêng từng khách – người quản lý khó trả lời câu hỏi đơn giản: khách nào chưa nộp chứng từ, tờ khai nào sắp trễ, ai đang quá tải, tháng này còn bao nhiêu phí chưa thu. ERP_UNESCO gom tất cả về một hệ thống.</p>
   </div></section>
@@ -74,11 +88,17 @@ const roles: [string, string][] = [
   </div></section>
 
   <section class="section surface-soft" id="video"><div class="container">
-    <div class="section-head"><div><span class="eyebrow">Hướng dẫn nhanh</span><h2>Dùng ERP_UNESCO trong 9 bước</h2></div><p>Video demo đang được quay theo đúng 9 bước này và sẽ cập nhật tại đây.</p></div>
+    <div class="section-head"><div><span class="eyebrow">Video hướng dẫn</span><h2>Dùng ERP_UNESCO trong 9 bước</h2></div><p>Video 1 phút 15 giây, chú thích in trên hình, dữ liệu mẫu minh hoạ. Xem thêm <a href={url('/kien-thuc/huong-dan-su-dung-erp-unesco/')}>bài hướng dẫn chi tiết</a>.</p></div>
+    <figure class="article-figure article-video" style="margin:0 auto 32px;max-width:1040px"><video controls preload="metadata" playsinline poster={url('/videos/erp-unesco-huong-dan.webp')} width="1280" height="800" style="width:100%;height:auto;border-radius:16px"><source src={url('/videos/erp-unesco-huong-dan.mp4')} type="video/mp4" />Nếu video không phát, hãy <a href={url('/videos/erp-unesco-huong-dan.mp4')}>tải video</a>.</video></figure>
     <div class="process-grid">{steps.map((x, i) => <div class="process-step"><span class="num">{String(i + 1).padStart(2, '0')}</span><strong>{x[0]}</strong><small>{x[1]}</small></div>)}</div>
   </div></section>
 
   <section class="section"><div class="container">
+    <div class="section-head"><div><span class="eyebrow">Hình ảnh</span><h2>Giao diện ERP_UNESCO</h2></div><p>Ảnh chụp với dữ liệu mẫu minh hoạ. Bấm vào ảnh để xem cỡ lớn.</p></div>
+    <div class="grid grid-2">{gallery.slice(1).map((g) => <Screenshot shot={g} />)}</div>
+  </div></section>
+
+  <section class="section surface-soft"><div class="container">
     <div class="section-head"><div><span class="eyebrow">Lợi ích</span><h2>Lợi ích cho từng vị trí</h2></div></div>
     <div class="table-wrap"><table class="article-table"><thead><tr><th>Vị trí</th><th>Lợi ích chính</th></tr></thead><tbody>{roles.map((r) => <tr><td data-label="Vị trí"><b>{r[0]}</b></td><td data-label="Lợi ích chính">{r[1]}</td></tr>)}</tbody></table></div>
     <div class="quote-band" style="margin-top:32px"><div><h2>Giá: {p.price}</h2><p>{p.priceNote}</p></div><div class="actions"><a class="btn btn-primary" href={url('/bang-gia/#dich-vu-ke-toan')}>XEM BẢNG GIÁ</a></div></div>

@@ -23,7 +23,7 @@ export type Video = {
   youtube: string;    // mã video YouTube (không bắt buộc)
 };
 
-export const videoTopics = ['Tổng quan', 'Hoá đơn & chứng từ', 'Hải quan', 'Ngân hàng & công nợ', 'Báo cáo & thuế', 'Giá thành', 'Trợ lý AI', 'Công cụ miễn phí', 'Bán hàng'] as const;
+export const videoTopics = ['Tổng quan', 'Hoá đơn & chứng từ', 'Hải quan', 'Ngân hàng & công nợ', 'Báo cáo & thuế', 'Giá thành', 'Trợ lý AI', 'Công cụ miễn phí', 'Bán hàng', 'Dịch vụ kế toán'] as const;
 export type VideoTopic = (typeof videoTopics)[number];
 
 const v = (slug: string, topic: VideoTopic, title: string, duration: string, desc: string, youtube = ''): Video => ({
@@ -61,6 +61,8 @@ export const videos: Video[] = [
     youtube: '', src: '/video/cshhl-huong-dan.mp4', poster: '/video/cshhl-poster.jpg' },
   v('unesco-sale-huong-dan', 'Bán hàng', 'Hướng dẫn sử dụng UNESCO Sale – phần mềm quản lý bán hàng', '1:39',
     '10 bước: Tổng quan, hàng hóa & kho, nhập dữ liệu, bán hàng tại quầy, chứng từ, công nợ, thẻ kho, sổ sách và dùng trên điện thoại. Phụ đề in trên hình.'),
+  v('erp-unesco-huong-dan', 'Dịch vụ kế toán', 'Hướng dẫn sử dụng ERP_UNESCO – quản lý công ty dịch vụ kế toán', '1:15',
+    '9 bước: Điều hành AI, xem gợi ý, hồ sơ khách hàng 360°, hợp đồng, công việc & QC, công nợ – thu phí, KPI – hoa hồng, kiểm tra lương, báo cáo đối chiếu. Dữ liệu mẫu.'),
 ];
 
 export const videoBySlug = (slug: string) => videos.find((x) => x.slug === slug);
