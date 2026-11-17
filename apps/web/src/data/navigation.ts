@@ -20,6 +20,7 @@ export const mainNav: NavGroup[] = [
       { label: 'Tổng hợp tính năng AI', href: '/tinh-nang-ai/', icon: 'list-checks' },
       { label: 'Tính năng mới 2026', href: '/phan-tich-tinh-nang/', icon: 'sparkles' },
       { label: 'UNESCO SalesCRM AI', href: '/san-pham/salescrm/', icon: 'chat' },
+      { label: 'UNESCO Sale – Quản lý bán hàng', href: '/san-pham/unesco-sale/', icon: 'store' },
     ],
   },
   {
