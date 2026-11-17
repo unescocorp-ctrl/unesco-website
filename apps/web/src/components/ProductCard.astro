@@ -1,0 +1,26 @@
+---
+/** Thẻ một sản phẩm – dữ liệu từ data/products.ts. Dùng ở /san-pham/ và /bang-gia/. */
+import { url } from '../utils/url';
+import { familyOf, type Product } from '../data/products';
+interface Props { p: Product; showService?: boolean }
+const { p, showService = false } = Astro.props;
+const f = familyOf(p.family);
+const cta = p.href ? { t: 'Xem chi tiết', h: p.href } : { t: p.comingSoon ? 'Đăng ký nhận tin' : 'Liên hệ mua', h: '/lien-he/#demo' };
+---
+<article class={`pd-card${p.featured ? ' is-feat' : ''}`} id={p.id} data-family={p.family} style={`--pc:${f.color};--pd:${f.dark};--ps:${f.soft}`}>
+  <div class="pd-top"><span class="pd-fam">{f.label}</span>{p.badge && <span class="pd-badge">{p.badge}</span>}</div>
+  <h3>{p.name}</h3>
+  <p>{p.tagline}</p>
+  {p.points.length > 0 && <ul>{p.points.map((x) => <li>{x}</li>)}</ul>}
+  <div class="pd-price">
+    <span class="muted" style="font-size:.8rem">Giá</span>
+    <b>{p.price}{p.unit && <span style="font-size:.9rem;font-weight:500;color:var(--muted)"> {p.unit}</span>}</b>
+    {p.priceNote && <small>{p.priceNote}</small>}
+    {showService && p.serviceNote && <small><b style="font-size:.85rem;color:var(--ink)">Dịch vụ kế toán:</b> {p.serviceNote}</small>}
+  </div>
+  <div class="actions">
+    <a class="btn btn-primary" href={url(cta.h)}>{cta.t}</a>
+    {p.demo && <a class="btn btn-secondary" href={url(p.demo)} target="_blank" rel="noopener">Xem demo</a>}
+    {p.href && !p.demo && <a class="btn btn-secondary" href={url('/lien-he/#demo')}>Liên hệ</a>}
+  </div>
+</article>

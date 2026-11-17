@@ -1,6 +1,7 @@
 ---
 import { url } from '../utils/url';
 import { mainNav } from '../data/navigation';
+import { families, productsIn } from '../data/products';
 import { contact, telHref } from '../data/contact';
 import Icon from './Icon.astro';
 ---
@@ -12,7 +13,24 @@ import Icon from './Icon.astro';
       <span class="brand-copy"><span>UNESCO <b>AI</b></span><small>PHẦN MỀM KẾ TOÁN DOANH NGHIỆP</small></span>
     </a>
     <nav class="nav-links" aria-label="Điều hướng chính">
-      {mainNav.map((g) => g.items ? (
+      {mainNav.map((g) => g.mega ? (
+        <div class="nav-item has-sub mega-item">
+          <a href={url(g.href)} aria-haspopup="true">{g.label}<span class="caret" aria-hidden="true"></span></a>
+          <div class="sub mega">
+            {families.map((f) => (
+              <div class="mega-col">
+                <span class="sub-h" style={`color:${f.dark}`}>{f.label}</span>
+                {productsIn(f.id).map((p) => <a class="mega-p" href={url(p.href ?? `/san-pham/#${p.id}`)}><span class="mt"><b>{p.name}</b>{p.badge && <em>{p.badge}</em>}</span><small>{p.short}</small></a>)}
+              </div>
+            ))}
+            <div class="mega-col">
+              <span class="sub-h">Tính năng UNESCO AI</span>
+              {(g.items ?? []).slice(1).map((it) => <a href={url(it.href)}><Icon name={it.icon} />{it.label}</a>)}
+            </div>
+            <div class="mega-cta"><b>Chưa biết chọn sản phẩm nào?</b><span>So sánh theo nhu cầu và xem giá từng sản phẩm.</span><a href={url('/san-pham/')}>Xem tất cả sản phẩm →</a><a href={url('/bang-gia/')}>Bảng giá →</a></div>
+          </div>
+        </div>
+      ) : g.items ? (
         <div class="nav-item has-sub">
           <a href={url(g.href)} aria-haspopup="true">{g.label}<span class="caret" aria-hidden="true"></span></a>
           <div class="sub">{g.items.map((it) => <a href={url(it.href)}><Icon name={it.icon} />{it.label}</a>)}</div>
