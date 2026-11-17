@@ -8,6 +8,17 @@ const f = familyOf(p.family);
 const cta = p.href ? { t: 'Xem chi tiết', h: p.href } : { t: p.comingSoon ? 'Đăng ký nhận tin' : 'Liên hệ mua', h: '/lien-he/#demo' };
 ---
 <article class={`pd-card${p.featured ? ' is-feat' : ''}`} id={p.id} data-family={p.family} style={`--pc:${f.color};--pd:${f.dark};--ps:${f.soft}`}>
+  {p.media?.video ? (
+    <button type="button" class="pd-media" data-video={url(p.media.video)} data-title={p.name} aria-label={`Xem video ${p.name}`}>
+      <img src={url(p.media.img)} alt={p.media.alt} loading="lazy" decoding="async" /><span class="pd-play"><i aria-hidden="true">▶</i>Xem video</span>
+    </button>
+  ) : p.media ? (
+    <a class="pd-media" href={url(p.demo ?? p.href ?? '/lien-he/#demo')} target={p.demo ? '_blank' : undefined} rel={p.demo ? 'noopener' : undefined}>
+      <img src={url(p.media.img)} alt={p.media.alt} loading="lazy" decoding="async" /><span class="pd-play"><i aria-hidden="true">↗</i>{p.demo ? 'Mở demo' : 'Xem giao diện'}</span>
+    </a>
+  ) : (
+    <div class="pd-media is-empty"><span>{p.name}</span><small>{p.comingSoon ? 'Sắp ra mắt' : 'Giao diện đang cập nhật'}</small></div>
+  )}
   <div class="pd-top"><span class="pd-fam">{f.label}</span>{p.badge && <span class="pd-badge">{p.badge}</span>}</div>
   <h3>{p.name}</h3>
   <p>{p.tagline}</p>
@@ -21,6 +32,7 @@ const cta = p.href ? { t: 'Xem chi tiết', h: p.href } : { t: p.comingSoon ? '�
   <div class="actions">
     <a class="btn btn-primary" href={url(cta.h)}>{cta.t}</a>
     {p.demo && <a class="btn btn-secondary" href={url(p.demo)} target="_blank" rel="noopener">Xem demo</a>}
-    {p.href && !p.demo && <a class="btn btn-secondary" href={url('/lien-he/#demo')}>Liên hệ</a>}
+    {!p.demo && p.media?.video && <button type="button" class="btn btn-secondary" data-video={url(p.media.video)} data-title={p.name}>Xem video</button>}
+    {p.href && !p.demo && !p.media?.video && <a class="btn btn-secondary" href={url('/lien-he/#demo')}>Liên hệ</a>}
   </div>
 </article>

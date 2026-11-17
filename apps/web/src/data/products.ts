@@ -34,6 +34,8 @@ export type Product = {
   href?: string;
   demo?: string;
   comingSoon?: boolean;
+  /** Ảnh giao diện trên thẻ (trong public/). Có `video` thì bấm ảnh phát video; không có thì bấm ảnh mở demo hoặc trang riêng. */
+  media?: { img: string; alt: string; video?: string };
 };
 
 export const SERVICE_DISCOUNT = 'Trên 10 MST: giảm 30%';
@@ -45,6 +47,7 @@ export const products: Product[] = [
     tagline: 'Thế hệ phần mềm kế toán tiếp theo của UNESCO, tặng kèm ERP_UNESCO, UNESCO_TAX_Online và UNESCO SalesCRM AI.',
     points: ['Tặng kèm ERP_UNESCO', 'Tặng kèm UNESCO_TAX_Online', 'Tặng kèm UNESCO SalesCRM AI'],
     price: '10.000.000 đ', unit: '/ MST', priceNote: 'Trả phí 1 lần · tặng kèm 03 sản phẩm', serviceNote: SERVICE_DISCOUNT,
+    media: { img: '/screenshots/man-hinh-chinh-unesco-ai-v2.webp', alt: 'Màn hình chính phần mềm kế toán UNESCO', video: '/videos/gioi-thieu-unesco-ai.mp4' },
   },
   {
     id: 'unesco-ai', name: 'UNESCO AI', family: 'ke-toan', badge: 'Có AI',
@@ -53,6 +56,7 @@ export const products: Product[] = [
     points: ['AI đề xuất, kế toán duyệt', 'Hoá đơn, sổ phụ ngân hàng, giá thành có AI', 'Báo cáo theo Thông tư 133, 99'],
     price: '7.000.000 đ', unit: '/ MST', priceNote: 'Trả phí 1 lần · dùng thử 15 ngày', serviceNote: SERVICE_DISCOUNT,
     href: '/san-pham/unesco-xi-ai/',
+    media: { img: '/screenshots/ai-tu-dong-xu-ly.webp', alt: 'Màn hình AI Tự động xử lý của UNESCO AI', video: '/videos/m01-tong-quan.mp4' },
   },
   {
     id: 'unesco-xi', name: 'UNESCO XI', family: 'ke-toan', badge: 'Nền tảng',
@@ -61,6 +65,7 @@ export const products: Product[] = [
     points: ['9 phân hệ kế toán', 'Tải hoá đơn điện tử, xuất XML HTKK', 'Kích hoạt AI khi cần, nâng cấp 50%'],
     price: '4.500.000 đ', unit: '/ MST', priceNote: 'Trả phí 1 lần · không phí hàng năm', serviceNote: SERVICE_DISCOUNT,
     href: '/san-pham/unesco-xi/',
+    media: { img: '/screenshots/bc-so-ke-toan.webp', alt: 'Sổ kế toán trong UNESCO XI', video: '/videos/m06-bao-cao-nhat-ky.mp4' },
   },
   {
     id: 'erp-unesco', name: 'ERP_UNESCO', family: 'dich-vu-ke-toan', badge: 'Tặng kèm UNESCO XII AI',
@@ -83,6 +88,7 @@ export const products: Product[] = [
     points: ['Hộp thư đa kênh có AI gợi ý', 'Pipeline, báo giá duyệt nhiều cấp', 'Ticket hỗ trợ có SLA'],
     price: 'Tặng kèm UNESCO XII AI', priceNote: '0 đ khi mua UNESCO XII AI',
     href: '/san-pham/salescrm/', demo: '/salescrm/demo/index.html',
+    media: { img: '/screenshots/salescrm/tong-quan.webp', alt: 'Màn hình tổng quan UNESCO SalesCRM AI' },
   },
   {
     id: 'unesco-sale', name: 'UNESCO SALE', family: 'ban-hang',
@@ -91,6 +97,7 @@ export const products: Product[] = [
     points: ['POS: quét mã vạch, thu tiền, bản nháp', 'Tồn kho, thẻ kho theo kỳ', 'Bán một đơn: tồn kho, công nợ, báo cáo cùng cập nhật'],
     price: '3.000.000 đ', unit: '/ MST (khách hàng)',
     href: '/san-pham/unesco-sale/',
+    media: { img: '/screenshots/unesco-sale/tong-quan.webp', alt: 'Màn hình tổng quan UNESCO SALE', video: '/videos/unesco-sale-huong-dan.mp4' },
   },
   {
     id: 'unesco-security', name: 'UNESCO SECURITY', family: 'chuyen-nganh', badge: 'Sắp ra mắt', comingSoon: true,
