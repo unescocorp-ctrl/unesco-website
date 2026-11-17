@@ -1095,3 +1095,18 @@ em.new{display:inline-block;font-style:normal;font-family:var(--font-h);font-siz
 .pd-panel[hidden]{display:none}
 @media(max-width:1080px){.nav-links .sub.mega{grid-template-columns:repeat(3,minmax(0,1fr))}.sub.mega .mega-cta{grid-column:span 3}}
 .pd-card[hidden]{display:none}
+
+/* Ảnh / video trên thẻ sản phẩm */
+.pd-media{display:block;position:relative;margin:-24px -24px 4px;aspect-ratio:16/9;overflow:hidden;border:0;padding:0;background:var(--ps);border-radius:11px 11px 0 0;cursor:pointer;width:calc(100% + 48px);text-align:left}
+.pd-media img{width:100%;height:100%;object-fit:cover;object-position:left top;display:block;transition:transform .35s ease}
+.pd-media:hover img,.pd-media:focus-visible img{transform:scale(1.04)}
+.pd-play{position:absolute;left:12px;bottom:12px;display:inline-flex;align-items:center;gap:8px;background:rgba(15,23,42,.82);color:#fff;font-weight:700;font-size:.85rem;padding:7px 14px 7px 8px;border-radius:999px}
+.pd-play i{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--pc);font-style:normal;font-size:.75rem}
+.pd-media.is-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:default;background:linear-gradient(135deg,var(--ps),#fff);color:var(--pd)}
+.pd-media.is-empty span{font-family:var(--font-h);font-size:1.35rem;font-weight:800}
+.pd-media.is-empty small{color:var(--muted)}
+.pd-dialog{width:min(960px,94vw);padding:0;border:0;border-radius:14px;background:#0F172A;color:#fff}
+.pd-dialog::backdrop{background:rgba(2,6,23,.72)}
+.pd-dialog-head{display:flex;justify-content:space-between;align-items:center;padding:10px 14px}
+.pd-dialog-x{background:none;border:0;color:#fff;font-size:1.8rem;line-height:1;cursor:pointer}
+.pd-dialog video{display:block;width:100%;max-height:78vh;background:#000}

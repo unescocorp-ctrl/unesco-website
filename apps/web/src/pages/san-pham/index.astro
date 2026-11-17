@@ -3,6 +3,7 @@
 import { url } from '../../utils/url';
 import ContentLayout from '../../layouts/ContentLayout.astro';
 import ProductCard from '../../components/ProductCard.astro';
+import ProductVideoModal from '../../components/ProductVideoModal.astro';
 import { products, families } from '../../data/products';
 const needs: [string, string, string][] = [
   ['Sổ sách, báo cáo thuế đầy đủ, ngân sách vừa phải', 'UNESCO XI', '4.500.000 đ / MST'],
@@ -30,6 +31,7 @@ const needs: [string, string, string][] = [
 </div></section>
 
 <section class="section"><div class="container"><div class="quote-band"><div><h2>Dùng nhiều sản phẩm cùng lúc?</h2><p>Bộ phận kinh doanh tư vấn gói phù hợp cho kế toán, dịch vụ kế toán và bán hàng.</p></div><div class="actions"><a class="btn btn-primary" href={url('/bang-gia/')}>XEM BẢNG GIÁ</a><a class="btn btn-secondary" href={url('/lien-he/#demo')}>NHẬN TƯ VẤN</a></div></div></div></section>
+<ProductVideoModal />
 <script is:inline>
 (function(){
   var chips=document.querySelectorAll('.pd-chip'),cards=document.querySelectorAll('#pdGrid .pd-card');

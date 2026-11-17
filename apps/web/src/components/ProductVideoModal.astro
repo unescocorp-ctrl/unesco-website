@@ -1,0 +1,26 @@
+---
+/** Hộp phát video dùng chung cho thẻ sản phẩm: phần tử nào có data-video="…mp4" khi bấm sẽ mở video tại đây. */
+---
+<dialog class="pd-dialog" id="pdVideo" aria-label="Video sản phẩm">
+  <div class="pd-dialog-head"><b id="pdVideoTitle"></b><button type="button" class="pd-dialog-x" aria-label="Đóng">×</button></div>
+  <video id="pdVideoEl" controls playsinline preload="none"></video>
+</dialog>
+<script is:inline>
+(function(){
+  var d=document.getElementById('pdVideo'),v=document.getElementById('pdVideoEl'),t=document.getElementById('pdVideoTitle');
+  if(!d||!v)return;
+  function close(){v.pause();v.removeAttribute('src');v.load();if(d.open)d.close();}
+  document.addEventListener('click',function(e){
+    var b=e.target.closest&&e.target.closest('[data-video]');
+    if(!b)return;
+    e.preventDefault();
+    t.textContent=b.getAttribute('data-title')||'';
+    v.src=b.getAttribute('data-video');
+    if(d.showModal)d.showModal();else d.setAttribute('open','');
+    var p=v.play();if(p&&p.catch)p.catch(function(){});
+  });
+  d.querySelector('.pd-dialog-x').addEventListener('click',close);
+  d.addEventListener('click',function(e){if(e.target===d)close();});
+  d.addEventListener('close',function(){v.pause();v.removeAttribute('src');});
+})();
+</script>
