@@ -86,10 +86,11 @@ export const products: Product[] = [
   },
   {
     id: 'unesco-sale', name: 'UNESCO SALE', family: 'ban-hang',
-    short: 'Phần mềm bán hàng',
-    tagline: 'Phần mềm bán hàng của UNESCO.',
-    points: [],
+    short: 'Bán tại quầy, tồn kho, công nợ, lợi nhuận',
+    tagline: 'Bán hàng tại quầy, theo dõi tồn kho, công nợ và lợi nhuận mỗi ngày trên máy tính, máy tính bảng hay điện thoại.',
+    points: ['POS: quét mã vạch, thu tiền, bản nháp', 'Tồn kho, thẻ kho theo kỳ', 'Bán một đơn: tồn kho, công nợ, báo cáo cùng cập nhật'],
     price: '3.000.000 đ', unit: '/ MST (khách hàng)',
+    href: '/san-pham/unesco-sale/',
   },
   {
     id: 'unesco-security', name: 'UNESCO SECURITY', family: 'chuyen-nganh', badge: 'Sắp ra mắt', comingSoon: true,

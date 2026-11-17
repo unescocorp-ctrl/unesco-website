@@ -1,0 +1,173 @@
+---
+/**
+ * UNESCO Sale – phần mềm quản lý bán hàng cho hộ kinh doanh – trang sản phẩm.
+ * Ảnh chụp từ bản chạy thử ứng dụng (public/screenshots/unesco-sale/), video hướng dẫn ở public/videos/unesco-sale-huong-dan.mp4
+ * (phụ đề đã in trên hình). Bài hướng dẫn: /kien-thuc/huong-dan-su-dung-unesco-sale/.
+ */
+import { url } from '../../../utils/url';
+import ContentLayout from '../../../layouts/ContentLayout.astro';
+import Screenshot from '../../../components/Screenshot.astro';
+import LeadForm from '../../../components/LeadForm.astro';
+import Icon from '../../../components/Icon.astro';
+import type { Shot } from '../../../data/screenshots';
+
+const s = (name: string, title: string, caption: string, desc: string, width = 1600, height = 1000): Shot => ({
+  src: `/screenshots/unesco-sale/${name}.webp`, width, height, title, caption, desc, alt: `${caption} – UNESCO Sale`,
+});
+const shots = {
+  overview: s('tong-quan', 'UNESCO Sale – Tổng quan', 'Màn hình Tổng quan', 'Doanh thu thuần, lãi gộp, lợi nhuận trước thuế, tiền thực nhận và hiệu quả theo kênh bán.'),
+  pos: s('ban-hang-pos', 'UNESCO Sale – Bán hàng tại quầy', 'Bán hàng tại quầy (POS)', 'Chọn hàng → giỏ hàng → ghi nhận tiền khách trả và hoàn tất đơn.'),
+  products: s('hang-hoa-kho', 'UNESCO Sale – Hàng hóa & kho', 'Hàng hóa & tồn kho', 'Giá bán, tồn tốt, giữ chỗ, khả dụng, hàng hỏng và giá trị tồn từng mặt hàng.'),
+  imports: s('nhap-du-lieu', 'UNESCO Sale – Nhập dữ liệu', 'Nhập danh mục hàng loạt', 'Tải file mẫu, kiểm tra và xem trước rồi mới nhập; lưu lịch sử từng lần chạy.'),
+  debts: s('cong-no', 'UNESCO Sale – Công nợ', 'Công nợ & tiền', 'Phải thu, phải trả, hạn thanh toán, tuổi nợ; thu / trả ngay trên từng dòng.'),
+  books: s('so-sach', 'UNESCO Sale – Sổ khoản mục', 'Sổ khoản mục quản trị', 'Dư đầu kỳ, phát sinh Nợ/Có, dư cuối kỳ; sổ chi tiết mở tới chứng từ nguồn.'),
+  mobile: s('dien-thoai', 'UNESCO Sale trên điện thoại', 'Dùng trên điện thoại', 'Giao diện tự co giãn trên điện thoại và máy tính bảng.', 1000, 1200),
+};
+const pains: [string, string, string, string][] = [
+  ['store', 'Bán xong không biết lãi lỗ', 'Tổng quan cho thấy doanh thu thuần, lãi gộp, lợi nhuận và tiền thực nhận ngay trong ngày, theo từng kênh bán.', 'g'],
+  ['package', 'Không rõ còn bao nhiêu hàng', 'Tồn kho cập nhật theo từng đơn bán, phiếu nhập; hàng chạm ngưỡng hoặc hết hàng được gắn nhãn màu.', 'b'],
+  ['users', 'Công nợ ghi sổ tay, dễ sót', 'Khách trả thiếu tự thành khoản phải thu; danh sách có hạn thanh toán, tuổi nợ và lọc khoản quá hạn.', 't'],
+  ['file-text', 'Sổ sách rời rạc, khó tổng hợp', 'Mỗi đơn bán, phiếu nhập, phiếu thu – chi đều thành chứng từ; tra cứu, in và xuất CSV ở một nơi.', 'y'],
+];
+const faqs: [string, string][] = [
+  ['UNESCO Sale dùng trên thiết bị nào?', 'Dùng qua trình duyệt web trên máy tính, máy tính bảng và điện thoại; giao diện tự co giãn theo màn hình. Có nút “Chữ lớn” để dễ đọc.'],
+  ['Bán hàng tại quầy làm thế nào?', 'Vào POS & bản nháp: gõ tên, SKU hoặc quét mã vạch để chọn hàng, điều chỉnh số lượng và đơn giá trong giỏ, nhập tiền khách trả rồi bấm Hoàn tất bán tại quầy. Thu thiếu thì phần còn lại tự thành khoản phải thu.'],
+  ['Đang có danh mục hàng trên Excel thì nhập vào thế nào?', 'Tải file mẫu ở màn hình Nhập dữ liệu, điền danh mục (tối đa 500 dòng mỗi lần), bấm Kiểm tra & xem trước. Dòng lỗi được chỉ rõ để sửa trước khi nhập thật; mỗi lần nhập đều có lịch sử.'],
+  ['Có xuất được dữ liệu ra Excel không?', 'Có. Hầu hết các danh sách và báo cáo đều in được và xuất ra tệp CSV mở bằng Excel: hàng hóa, chứng từ, công nợ, thẻ kho, sổ khoản mục.'],
+  ['Báo cáo trong UNESCO Sale có thay sổ kế toán được không?', 'Chưa. Báo cáo và sổ sách trong UNESCO Sale là sổ quản trị giúp chủ hộ nắm tình hình kinh doanh; hóa đơn và kế toán trong phần mềm đang ở dạng bản nháp, chưa thay cho sổ kế toán theo mẫu pháp lý hoặc tờ khai thuế.'],
+];
+const schema = [
+  {
+    '@type': 'SoftwareApplication',
+    name: 'UNESCO Sale',
+    applicationCategory: 'BusinessApplication',
+    applicationSubCategory: 'Phần mềm quản lý bán hàng',
+    operatingSystem: 'Trình duyệt web',
+    inLanguage: 'vi-VN',
+    description: 'Phần mềm quản lý bán hàng trên web cho hộ kinh doanh: bán hàng tại quầy (POS), hàng hóa và tồn kho, thẻ kho, nhập danh mục hàng loạt, công nợ phải thu – phải trả, và sổ quản trị.',
+    image: '/screenshots/unesco-sale/og-unesco-sale.jpg',
+    publisher: { '@type': 'Organization', name: 'Công ty TNHH Phần mềm UNESCO' },
+  },
+  {
+    '@type': 'VideoObject',
+    name: 'Hướng dẫn sử dụng UNESCO Sale',
+    description: '10 bước sử dụng UNESCO Sale: Tổng quan, hàng hóa & kho, nhập dữ liệu, bán hàng tại quầy, chứng từ, công nợ, thẻ kho, sổ sách và dùng trên điện thoại.',
+    thumbnailUrl: '/videos/unesco-sale-huong-dan.webp',
+    contentUrl: '/videos/unesco-sale-huong-dan.mp4',
+    uploadDate: '2026-11-17',
+    duration: 'PT1M39S',
+    inLanguage: 'vi-VN',
+  },
+  { '@type': 'FAQPage', mainEntity: faqs.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
+];
+---
+<ContentLayout
+  title="UNESCO Sale – Phần mềm quản lý bán hàng cho hộ kinh doanh"
+  display="UNESCO |SALE"
+  subtitle="Bán hàng, kho, công nợ – gọn trong một trình duyệt"
+  description="Bán hàng tại quầy, theo dõi tồn kho, công nợ và lợi nhuận mỗi ngày trên máy tính, máy tính bảng hay điện thoại. Mọi nghiệp vụ liên thông: bán một đơn là tồn kho, công nợ và báo cáo cùng cập nhật."
+  eyebrow="Sản phẩm mới · Quản lý bán hàng"
+  heroShot={shots.overview}
+  pills={['Bán hàng POS 3 bước', 'Tồn kho & thẻ kho theo kỳ', 'Công nợ phải thu – phải trả']}
+  schema={schema}
+  crumbs={[['Sản phẩm', '/san-pham/unesco-xi-ai/'], ['UNESCO Sale', '/san-pham/unesco-sale/']]}
+>
+  <section class="section"><div class="container">
+    <div class="actions" style="margin-bottom:28px"><a class="btn btn-primary" href={url('/san-pham/unesco-sale/#video')}>XEM VIDEO HƯỚNG DẪN</a><a class="btn btn-secondary" href={url('/san-pham/unesco-sale/#dang-ky')}>ĐĂNG KÝ TƯ VẤN</a></div>
+    <div class="section-head"><div><span class="eyebrow">Vì sao cần UNESCO Sale</span><h2>Bốn câu hỏi chủ cửa hàng gặp mỗi ngày</h2></div><p>Hôm nay bán được bao nhiêu, còn bao nhiêu hàng, ai đang nợ ai, nhân viên đã làm gì. Khi dữ liệu nằm rải rác ở sổ tay, Excel và tin nhắn, trả lời mất cả buổi. UNESCO Sale gom về một chỗ.</p></div>
+    <div class="grid grid-4">{pains.map((m) => <div class={`card top-${m[3]}`}><span class={`ic ${m[3]}`} style="margin-bottom:14px"><Icon name={m[0]} /></span><h3>{m[1]}</h3><p class="muted" style="margin:0">{m[2]}</p></div>)}</div>
+  </div></section>
+
+  <section class="section surface-soft" id="video"><div class="container" style="max-width:1040px">
+    <div class="section-head"><div><span class="eyebrow">Video hướng dẫn</span><h2>Xem cách dùng UNESCO Sale trong 2 phút</h2></div><p>10 bước: Tổng quan, hàng hóa & kho, nhập dữ liệu, bán hàng tại quầy, chứng từ, công nợ, thẻ kho, sổ sách và dùng trên điện thoại.</p></div>
+    <figure class="article-figure article-video" style="margin:0"><video controls preload="metadata" playsinline poster={url('/videos/unesco-sale-huong-dan.webp')} width="1280" height="720" style="width:100%;height:auto;border-radius:16px"><source src={url('/videos/unesco-sale-huong-dan.mp4')} type="video/mp4" />Nếu video không phát, hãy <a href={url('/videos/unesco-sale-huong-dan.mp4')}>tải video</a> để xem trên máy.</video><figcaption>Video 1 phút 39 giây, phụ đề tiếng Việt in trên hình. Xem thêm <a href={url('/kien-thuc/huong-dan-su-dung-unesco-sale/')}>bài hướng dẫn chi tiết</a>.</figcaption></figure>
+  </div></section>
+
+  <section class="section"><div class="container">
+    <div class="section-head"><div><span class="eyebrow">Một luồng liền mạch</span><h2>Từ nhập hàng đến báo cáo cuối ngày</h2></div><p>Dữ liệu chảy thẳng giữa các bước – không nhập lại. Con số nào trên báo cáo cũng mở được tới chứng từ gốc.</p></div>
+    <div class="process-grid">
+      <div class="process-step"><span class="num">01</span><strong>Thiết lập cửa hàng</strong><small>Địa điểm, kho, kênh bán và gian hàng.</small></div>
+      <div class="process-step"><span class="num">02</span><strong>Nhập hàng hóa</strong><small>File mẫu tối đa 500 dòng, có kiểm tra trước.</small></div>
+      <div class="process-step"><span class="num">03</span><strong>Bán tại quầy</strong><small>Chọn hàng hoặc quét mã, thu tiền, hoàn tất.</small></div>
+      <div class="process-step"><span class="num">04</span><strong>Kho tự cập nhật</strong><small>Tồn khả dụng, giữ chỗ, thẻ kho theo kỳ.</small></div>
+      <div class="process-step"><span class="num">05</span><strong>Công nợ & tiền</strong><small>Phải thu, phải trả, tuổi nợ, thu / trả từng dòng.</small></div>
+      <div class="process-step"><span class="num">06</span><strong>Báo cáo</strong><small>Doanh thu, lợi nhuận, sổ quản trị, xuất CSV.</small></div>
+    </div>
+  </div></section>
+
+  <section class="section surface-soft"><div class="container split reverse"><div><Screenshot shot={shots.pos} /></div><div>
+    <span class="eyebrow">Bán hàng tại quầy (POS)</span><h2>Bán một đơn chỉ với 3 bước</h2>
+    <p class="lead">Chọn hàng hoặc quét mã vạch → điều chỉnh giỏ hàng → ghi nhận tiền khách trả và bấm Hoàn tất bán tại quầy.</p>
+    <div class="feature-list">
+      <div class="feature-row"><span class="check">✓</span><div><strong>Thẻ hàng rõ ràng</strong><span>Mỗi mặt hàng hiện giá bán và số lượng còn; hàng hết được làm mờ.</span></div></div>
+      <div class="feature-row"><span class="check">✓</span><div><strong>Thu tiền nhanh</strong><span>Bấm “Thu đủ tổng đơn” để điền sẵn; thu thiếu tự giữ thành khoản phải thu.</span></div></div>
+      <div class="feature-row"><span class="check">✓</span><div><strong>Tìm lại đơn và bản nháp</strong><span>Lọc theo mã, khách, khoảng ngày; in hoặc xuất CSV.</span></div></div>
+    </div>
+  </div></div></section>
+
+  <section class="section"><div class="container split"><div>
+    <span class="eyebrow">Tổng quan</span><h2>Rõ doanh thu, nắm dòng tiền</h2>
+    <p class="lead">Doanh thu thuần, lãi gộp, lợi nhuận trước thuế và tiền thực nhận trong kỳ – lọc theo kênh bán và khoảng ngày.</p>
+    <div class="feature-list">
+      <div class="feature-row"><span class="check">✓</span><div><strong>Hiệu quả theo kênh</strong><span>So sánh bán trực tiếp và gian hàng thương mại điện tử.</span></div></div>
+      <div class="feature-row"><span class="check">✓</span><div><strong>Cần chú ý hôm nay</strong><span>Nhắc mặt hàng chạm ngưỡng tồn và việc cần xử lý.</span></div></div>
+    </div>
+  </div><div><Screenshot shot={shots.overview} /></div></div></section>
+
+  <section class="section surface-soft"><div class="container split reverse"><div><Screenshot shot={shots.products} /></div><div>
+    <span class="eyebrow">Hàng hóa & kho</span><h2>Biết chính xác còn bao nhiêu hàng</h2>
+    <p class="lead">Giá bán, tồn tốt, giữ chỗ, khả dụng, hàng hỏng và giá trị tồn của từng mặt hàng trên một bảng.</p>
+    <div class="feature-list">
+      <div class="feature-row"><span class="check">✓</span><div><strong>Cảnh báo tồn kho</strong><span>Nhãn màu cho hàng chạm ngưỡng hoặc hết hàng.</span></div></div>
+      <div class="feature-row"><span class="check">✓</span><div><strong>Thẻ kho theo kỳ</strong><span>Tồn đầu – nhập – xuất – tồn cuối theo số lượng và giá trị; mở chứng từ gốc từ từng dòng.</span></div></div>
+    </div>
+  </div></div></section>
+
+  <section class="section"><div class="container split"><div>
+    <span class="eyebrow">Nhập dữ liệu</span><h2>Nhập danh mục hàng loạt, có xem trước</h2>
+    <p class="lead">Tải file mẫu, điền tối đa 500 dòng mỗi lần, bấm Kiểm tra & xem trước rồi mới nhập thật.</p>
+    <div class="feature-list">
+      <div class="feature-row"><span class="check">✓</span><div><strong>Chỉ rõ dòng lỗi</strong><span>Sửa trước khi nhập, không làm bẩn danh mục.</span></div></div>
+      <div class="feature-row"><span class="check">✓</span><div><strong>Lịch sử từng lần nhập</strong><span>Mỗi dòng nhập dẫn tới đúng mặt hàng tương ứng.</span></div></div>
+    </div>
+  </div><div><Screenshot shot={shots.imports} /></div></div></section>
+
+  <section class="section surface-soft"><div class="container split reverse"><div><Screenshot shot={shots.debts} /></div><div>
+    <span class="eyebrow">Công nợ & tiền</span><h2>Không bỏ sót khoản phải thu, phải trả</h2>
+    <p class="lead">Phải thu khách hàng, phải trả nhà cung cấp, hạn thanh toán và tuổi nợ trong một danh sách.</p>
+    <div class="feature-list">
+      <div class="feature-row"><span class="check">✓</span><div><strong>Thu / trả ngay trên dòng</strong><span>Phiếu thu, phiếu trả kiểm tra số dư tại lúc xác nhận.</span></div></div>
+      <div class="feature-row"><span class="check">✓</span><div><strong>Lọc khoản quá hạn</strong><span>Xuất công nợ CSV, khóa kỳ quản trị khi đã chốt số.</span></div></div>
+    </div>
+  </div></div></section>
+
+  <section class="section"><div class="container split"><div>
+    <span class="eyebrow">Báo cáo & sổ sách</span><h2>Sổ quản trị theo kỳ, truy về chứng từ gốc</h2>
+    <p class="lead">Sổ khoản mục (dư đầu, phát sinh Nợ/Có, dư cuối) và sổ công nợ theo kỳ cho phải thu (AR), phải trả (AP).</p>
+    <div class="feature-list">
+      <div class="feature-row"><span class="check">✓</span><div><strong>Sổ chi tiết có số dư liên tục</strong><span>Qua các trang, mở chứng từ nguồn từ từng dòng.</span></div></div>
+      <div class="feature-row"><span class="check">✓</span><div><strong>Xuất CSV toàn kỳ</strong><span>Theo khoản mục và kênh bán.</span></div></div>
+    </div>
+    <p class="muted" style="font-size:14px">Đây là sổ quản trị nội bộ, chưa thay cho sổ kế toán theo mẫu pháp lý hoặc tờ khai thuế.</p>
+  </div><div><Screenshot shot={shots.books} /></div></div></section>
+
+  <section class="section"><div class="container split"><div>
+    <span class="eyebrow">Mọi thiết bị</span><h2>Dùng trên điện thoại, chữ lớn dễ đọc</h2>
+    <p class="lead">Giao diện tự co giãn theo màn hình máy tính, máy tính bảng và điện thoại – chỉ cần trình duyệt web.</p>
+    <div class="feature-list">
+      <div class="feature-row"><span class="check">✓</span><div><strong>Chế độ chữ lớn</strong><span>Một nút bấm, dễ đọc cho người lớn tuổi.</span></div></div>
+      <div class="feature-row"><span class="check">✓</span><div><strong>Tìm nhanh</strong><span>Ô tìm kiếm chung (Ctrl K) cho hàng hóa và mã SKU.</span></div></div>
+    </div>
+  </div><div style="max-width:460px;margin:0 auto"><Screenshot shot={shots.mobile} /></div></div></section>
+
+  <section class="section surface-soft"><div class="container" style="max-width:920px">
+    <div class="section-head"><div><span class="eyebrow">Câu hỏi thường gặp</span><h2>Giải đáp nhanh</h2></div></div>
+    {faqs.map(([q, a]) => <details class="card" style="margin-bottom:10px"><summary style="cursor:pointer;font-weight:700">{q}</summary><p class="muted" style="margin:10px 0 0">{a}</p></details>)}
+  </div></section>
+
+  <section class="section" id="dang-ky"><div class="container split">
+    <div><span class="eyebrow">Đăng ký</span><h2>Nhận tư vấn UNESCO Sale cho cửa hàng của bạn</h2><p class="lead">Để lại thông tin, bộ phận kinh doanh liên hệ trong giờ làm việc để giới thiệu phần mềm và tư vấn triển khai. Giá 3.000.000 đ / MST, xem chi tiết tại Bảng giá.</p>
+      <div class="actions"><a class="btn btn-secondary" href={url('/kien-thuc/huong-dan-su-dung-unesco-sale/')}>ĐỌC HƯỚNG DẪN SỬ DỤNG</a></div></div>
+    <LeadForm kind="unesco-sale" heading="Đăng ký tư vấn UNESCO Sale" />
+  </div></section>
+</ContentLayout>

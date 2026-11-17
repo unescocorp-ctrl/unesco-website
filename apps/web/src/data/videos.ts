@@ -23,7 +23,7 @@ export type Video = {
   youtube: string;    // mã video YouTube (không bắt buộc)
 };
 
-export const videoTopics = ['Tổng quan', 'Hoá đơn & chứng từ', 'Hải quan', 'Ngân hàng & công nợ', 'Báo cáo & thuế', 'Giá thành', 'Trợ lý AI', 'Công cụ miễn phí'] as const;
+export const videoTopics = ['Tổng quan', 'Hoá đơn & chứng từ', 'Hải quan', 'Ngân hàng & công nợ', 'Báo cáo & thuế', 'Giá thành', 'Trợ lý AI', 'Công cụ miễn phí', 'Bán hàng'] as const;
 export type VideoTopic = (typeof videoTopics)[number];
 
 const v = (slug: string, topic: VideoTopic, title: string, duration: string, desc: string, youtube = ''): Video => ({
@@ -59,6 +59,8 @@ export const videos: Video[] = [
   { slug: 'cshhl-huong-dan', topic: 'Công cụ miễn phí', title: 'Công cụ Chủ sở hữu hưởng lợi: tra cứu và lập hồ sơ bổ sung', duration: '1:48',
     desc: 'Tra cứu doanh nghiệp chưa kê khai theo Công văn 3164/DNTN-GS, kiểm tra hàng loạt, lập Mẫu số 10, Mẫu số 12. Dùng trực tuyến tại /cshhl/ hoặc tải về tại /tai-ve/.',
     youtube: '', src: '/video/cshhl-huong-dan.mp4', poster: '/video/cshhl-poster.jpg' },
+  v('unesco-sale-huong-dan', 'Bán hàng', 'Hướng dẫn sử dụng UNESCO Sale – phần mềm quản lý bán hàng', '1:39',
+    '10 bước: Tổng quan, hàng hóa & kho, nhập dữ liệu, bán hàng tại quầy, chứng từ, công nợ, thẻ kho, sổ sách và dùng trên điện thoại. Phụ đề in trên hình.'),
 ];
 
 export const videoBySlug = (slug: string) => videos.find((x) => x.slug === slug);
