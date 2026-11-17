@@ -4,13 +4,14 @@
  * icon: tên biểu tượng trong components/Icon.astro.
  */
 export type NavLink = { label: string; href: string; icon: string };
-export type NavGroup = { label: string; href: string; items?: NavLink[] };
+/** mega: true → menu xổ xuống dạng nhiều cột, các cột sản phẩm lấy từ data/products.ts; `items` là cột "Tính năng UNESCO AI" và danh sách trên điện thoại. */
+export type NavGroup = { label: string; href: string; items?: NavLink[]; mega?: boolean };
 
 export const mainNav: NavGroup[] = [
   {
-    label: 'Sản phẩm', href: '/san-pham/unesco-xi-ai/', items: [
+    label: 'Sản phẩm', href: '/san-pham/', mega: true, items: [
+      { label: 'Tất cả sản phẩm', href: '/san-pham/', icon: 'layers' },
       { label: 'Tính năng ưu việt', href: '/tinh-nang-uu-viet/', icon: 'star' },
-      { label: 'UNESCO AI – Tổng quan', href: '/san-pham/unesco-xi-ai/', icon: 'layers' },
       { label: 'AI Hóa đơn', href: '/ai-ke-toan/ai-hoa-don/', icon: 'receipt' },
       { label: 'AI Sổ phụ', href: '/ai-ke-toan/ai-so-phu-ngan-hang/', icon: 'bank' },
       { label: 'AI Giá thành', href: '/ai-ke-toan/ai-gia-thanh/', icon: 'calculator' },
@@ -19,7 +20,6 @@ export const mainNav: NavGroup[] = [
       { label: 'An toàn & kiểm soát AI', href: '/an-toan-kiem-soat-ai/', icon: 'shield-check' },
       { label: 'Tổng hợp tính năng AI', href: '/tinh-nang-ai/', icon: 'list-checks' },
       { label: 'Tính năng mới 2026', href: '/phan-tich-tinh-nang/', icon: 'sparkles' },
-      { label: 'UNESCO SalesCRM AI', href: '/san-pham/salescrm/', icon: 'chat' },
     ],
   },
   {
@@ -37,7 +37,6 @@ export const mainNav: NavGroup[] = [
   {
     label: 'Tài nguyên', href: '/huong-dan/', items: [
       { label: 'Trung tâm tải về', href: '/download/', icon: 'download' },
-      { label: 'Công cụ Chủ sở hữu hưởng lợi', href: '/tai-ve/', icon: 'shield-check' },
       { label: 'Hướng dẫn / Kiến thức / Video', href: '/huong-dan/', icon: 'book-open' },
       { label: 'Video hướng dẫn', href: '/video/', icon: 'play-circle' },
       { label: 'Kiến thức kế toán', href: '/kien-thuc/', icon: 'lightbulb' },

@@ -1,0 +1,40 @@
+---
+/** Trang tổng các sản phẩm UNESCO – đọc từ data/products.ts. */
+import { url } from '../../utils/url';
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import { products, families } from '../../data/products';
+const needs: [string, string, string][] = [
+  ['Sổ sách, báo cáo thuế đầy đủ, ngân sách vừa phải', 'UNESCO XI', '4.500.000 đ / MST'],
+  ['Giảm nhập liệu hoá đơn, sổ phụ, giá thành bằng AI', 'UNESCO AI', '7.000.000 đ / MST'],
+  ['Công ty dịch vụ kế toán: làm sổ cho nhiều khách và điều hành công ty', 'UNESCO XII AI – kèm ERP_UNESCO, UNESCO_TAX_Online', '10.000.000 đ / MST'],
+  ['Khách hàng dịch vụ kế toán tự theo dõi công nợ, hàng hoá, hoá đơn', 'UNESCO_TAX_Online', 'Tặng kèm UNESCO XII AI'],
+  ['Trả lời khách đa kênh, báo giá, hợp đồng, thu tiền', 'UNESCO SalesCRM AI', 'Tặng kèm UNESCO XII AI'],
+  ['Phần mềm bán hàng', 'UNESCO SALE', '3.000.000 đ / MST'],
+  ['Quản lý công ty dịch vụ bảo vệ', 'UNESCO SECURITY (sắp ra mắt)', 'Liên hệ'],
+];
+---
+<ContentLayout title="Sản phẩm UNESCO – Phần mềm kế toán, dịch vụ kế toán, bán hàng" description="Các sản phẩm của Công ty TNHH Phần mềm UNESCO: UNESCO XII AI, UNESCO AI, UNESCO XI, ERP_UNESCO, UNESCO_TAX_Online, UNESCO SalesCRM AI, UNESCO SALE và UNESCO SECURITY. Chọn theo nhu cầu, giá công khai." eyebrow="Sản phẩm UNESCO" display="SẢN PHẨM |UNESCO" subtitle="Phần mềm cho kế toán, dịch vụ kế toán, bán hàng và quản lý chuyên ngành" pills={['Giá công khai', 'Trả phí 1 lần cho phần mềm kế toán', 'Triển khai miễn phí']}>
+<section class="section"><div class="container">
+  <div class="pd-chips" role="group" aria-label="Lọc theo nhóm sản phẩm">
+    <button type="button" class="pd-chip" data-f="all" aria-pressed="true">Tất cả</button>
+    {families.map((f) => <button type="button" class="pd-chip" data-f={f.id} aria-pressed="false">{f.label}</button>)}
+  </div>
+  <div class="pd-grid" id="pdGrid">{products.map((p) => <ProductCard p={p} />)}</div>
+</div></section>
+
+<section class="section surface-soft"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Chọn theo nhu cầu</span><h2>Bạn cần gì, dùng sản phẩm nào</h2></div><p>Mua UNESCO XII AI được tặng kèm ERP_UNESCO, UNESCO_TAX_Online và UNESCO SalesCRM AI.</p></div>
+  <div class="table-wrap"><table class="article-table"><thead><tr><th>Bạn cần</th><th>Sản phẩm phù hợp</th><th>Giá</th></tr></thead>
+  <tbody>{needs.map((r) => <tr><td data-label="Bạn cần">{r[0]}</td><td data-label="Sản phẩm phù hợp"><b>{r[1]}</b></td><td data-label="Giá">{r[2]}</td></tr>)}</tbody></table></div>
+</div></section>
+
+<section class="section"><div class="container"><div class="quote-band"><div><h2>Dùng nhiều sản phẩm cùng lúc?</h2><p>Bộ phận kinh doanh tư vấn gói phù hợp cho kế toán, dịch vụ kế toán và bán hàng.</p></div><div class="actions"><a class="btn btn-primary" href={url('/bang-gia/')}>XEM BẢNG GIÁ</a><a class="btn btn-secondary" href={url('/lien-he/#demo')}>NHẬN TƯ VẤN</a></div></div></div></section>
+<script is:inline>
+(function(){
+  var chips=document.querySelectorAll('.pd-chip'),cards=document.querySelectorAll('#pdGrid .pd-card');
+  function show(f){chips.forEach(function(c){c.setAttribute('aria-pressed',String(c.dataset.f===f));});cards.forEach(function(c){c.hidden=!(f==='all'||c.dataset.family===f);});}
+  chips.forEach(function(c){c.addEventListener('click',function(){show(c.dataset.f);});});
+})();
+</script>
+</ContentLayout>
