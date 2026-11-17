@@ -1,0 +1,91 @@
+---
+/**
+ * ERP_UNESCO – Giải pháp quản lý toàn diện công ty dịch vụ kế toán – trang sản phẩm.
+ * Nội dung theo bài giới thiệu của UNESCO (Claude Docs "Bài giới thiệu: Giải pháp quản lý toàn diện công ty dịch vụ kế toán").
+ * ẢNH / VIDEO: khi có, chép ảnh vào public/screenshots/erp-unesco/<tên>.webp (00_banner…09_bao_cao_luong)
+ * và video vào public/videos/erp-unesco-demo.mp4, rồi thay khối "đang cập nhật" bên dưới.
+ */
+import { url } from '../../../utils/url';
+import ContentLayout from '../../../layouts/ContentLayout.astro';
+import LeadForm from '../../../components/LeadForm.astro';
+import { products } from '../../../data/products';
+const p = products.find((x) => x.id === 'erp-unesco')!;
+
+const pillars: [string, string][] = [
+  ['Quản lý dịch vụ kế toán', 'Khách hàng, hợp đồng, công việc hằng tháng, thu phí, công nợ, nhân viên và tiền lương nối với nhau: hợp đồng sinh ra công việc, công việc hoàn thành sinh ra phí, phí sinh ra công nợ và phiếu thu.'],
+  ['Kết hợp phần mềm kế toán', 'Phân hệ Điều hành sổ sách kết nối với phần mềm kế toán để theo dõi bộ sổ của từng khách: tải hoá đơn điện tử, tự định khoản, ghi sổ, chuyển hoá đơn chưa chắc chắn cho kế toán xem lại, rồi ra báo cáo và tờ khai.'],
+  ['Tìm kiếm, quản lý và chăm sóc khách hàng', 'Theo dõi khách tiềm năng từ lúc tiếp cận đến khi ký hợp đồng, và giữ lịch chăm sóc cho khách đang phục vụ: gia hạn hợp đồng, nhắc phí, hỏi thăm.'],
+];
+const features: [string, string][] = [
+  ['Trang Tổng quan cho người điều hành', 'Mở phần mềm là thấy số khách đang phục vụ, hợp đồng hiệu lực, công nợ phải thu, công việc đang mở và số việc quá hạn. Biểu đồ doanh thu theo kỳ và công nợ theo tuổi nợ cho biết công ty tăng trưởng thế nào và tiền đang nằm ở đâu.'],
+  ['Hồ sơ khách hàng 360°', 'Mỗi khách một hồ sơ: thông tin pháp lý, người liên hệ, hợp đồng và dịch vụ, công việc trong kỳ, công nợ, tài liệu, người phụ trách, nhật ký liên hệ, lịch sử và cảnh báo. Nhân viên mới nhận khách không phải hỏi lại người cũ.'],
+  ['Hợp đồng dịch vụ', 'Chọn khách hàng, chọn dịch vụ trong danh mục, nhập mức phí. Danh sách hợp đồng cho biết thời hạn, phí hằng tháng, trạng thái và nhắc trước hợp đồng sắp hết hạn.'],
+  ['Quy trình công việc hằng tháng', 'Khai báo quy trình một lần, ví dụ 4 bước: giao nhận chứng từ, kế toán xử lý, kế toán trưởng duyệt, lập phiếu thu phí. Mỗi tháng phần mềm tự sinh việc cho từng hợp đồng, gán người phụ trách và hạn xử lý.'],
+  ['Doanh thu – Công nợ – Thu phí', 'Phát hành phí, ghi phiếu thu, phân bổ tiền thu vào từng khoản nợ và đóng kỳ liền mạch. Công nợ theo khách: đã thu, còn phải thu, quá hạn bao nhiêu ngày.'],
+  ['Điều hành sổ sách', 'Mỗi khách một bộ sổ riêng. Theo dõi số hoá đơn đã tải, tỷ lệ tự ghi sổ và danh sách hoá đơn cần kế toán xem lại.'],
+  ['Tìm kiếm và chăm sóc khách hàng', 'Khách tiềm năng theo từng bước: tiềm năng, đã liên hệ, đã gửi báo giá, ký hợp đồng. Lịch chăm sóc nhắc việc cần làm với từng khách trong tuần.'],
+  ['Nhân viên và tính lương', 'Hồ sơ nhân viên, chấm công, nghỉ phép – tăng ca, kỳ lương và bảng lương gắn với KPI và hoa hồng thu phí.'],
+  ['Báo cáo quản trị', 'Báo cáo doanh thu, công nợ, hợp đồng, tiến độ công việc; xuất Excel hoặc PDF. Mỗi mẫu báo cáo được một người lập, một người khác duyệt.'],
+  ['Phân quyền và an toàn dữ liệu', 'Mỗi nhân viên một tài khoản, phân quyền theo chức danh. Mọi thay đổi quan trọng được ghi nhật ký; không lưu mật khẩu trên máy người dùng.'],
+  ['Dùng trên điện thoại', 'Xem việc của mình, duyệt việc, xem công nợ và nhận thông báo khi không ngồi tại văn phòng.'],
+];
+const steps: [string, string][] = [
+  ['Đăng nhập', 'Nhập tên đăng nhập và mật khẩu; phần mềm tự chọn kỳ dữ liệu hiện hành.'],
+  ['Xem Tổng quan', 'Nắm số liệu chính và danh sách việc đến hạn trong tuần.'],
+  ['Mở hồ sơ khách hàng', 'Vào Khách hàng, tìm khách, mở Hồ sơ 360°.'],
+  ['Lập hợp đồng', 'Vào Hợp đồng dịch vụ → Tạo hợp đồng, chọn khách, dịch vụ và mức phí.'],
+  ['Theo dõi công việc', 'Vào Quy trình công việc: xem việc trong kỳ, cập nhật trạng thái, duyệt.'],
+  ['Kiểm tra sổ sách', 'Vào Điều hành sổ sách: tình trạng bộ sổ từng khách, hoá đơn cần xem lại.'],
+  ['Thu phí', 'Vào Doanh thu – Công nợ – Thu phí: phát hành phí, ghi phiếu thu, theo dõi công nợ.'],
+  ['Chăm sóc khách hàng', 'Vào Tìm kiếm – Chăm sóc KH: cập nhật khách tiềm năng, làm theo lịch chăm sóc.'],
+  ['Báo cáo, tính lương', 'Vào Báo cáo để xuất báo cáo quản trị; vào Tính lương để lập bảng lương kỳ.'],
+];
+const roles: [string, string][] = [
+  ['Giám đốc', 'Thấy toàn cảnh khách hàng, doanh thu, công nợ và tiến độ trên một màn hình'],
+  ['Kế toán trưởng', 'Kiểm soát hạn nộp, duyệt công việc và chất lượng sổ sách của từng khách'],
+  ['Kế toán viên', 'Biết rõ việc của mình, hạn xử lý, có đủ hồ sơ khách ở một nơi'],
+  ['Hành chính – thu phí', 'Phát hành phí, ghi phiếu thu, nhắc nợ theo danh sách có sẵn'],
+  ['Kinh doanh', 'Theo dõi khách tiềm năng, báo giá và lịch chăm sóc'],
+];
+---
+<ContentLayout
+  title="ERP_UNESCO – Giải pháp quản lý toàn diện công ty dịch vụ kế toán"
+  display="ERP_|UNESCO"
+  subtitle="Quản lý toàn diện công ty dịch vụ kế toán – tư vấn thuế"
+  description="ERP_UNESCO kết hợp phần mềm kế toán, quản lý dịch vụ kế toán và chăm sóc khách hàng: hồ sơ khách 360°, hợp đồng, quy trình công việc hằng tháng, thu phí – công nợ, điều hành sổ sách, tính lương, báo cáo quản trị. Tặng kèm UNESCO XII AI."
+  eyebrow="Sản phẩm · Dịch vụ kế toán"
+  pills={['Tặng kèm UNESCO XII AI', 'Hồ sơ khách hàng 360°', 'Quy trình công việc tự sinh mỗi tháng']}
+  crumbs={[['Sản phẩm', '/san-pham/'], ['ERP_UNESCO', '/san-pham/erp-unesco/']]}
+>
+  <section class="section"><div class="container">
+    <div class="actions" style="margin-bottom:28px"><a class="btn btn-primary" href={url('/san-pham/erp-unesco/#dang-ky')}>ĐĂNG KÝ XEM DEMO</a><a class="btn btn-secondary" href={url('/bang-gia/#dich-vu-ke-toan')}>XEM BẢNG GIÁ</a></div>
+    <div class="section-head"><div><span class="eyebrow">Vì sao cần</span><h2>Công ty dịch vụ kế toán không chỉ làm sổ sách</h2></div><p>Mỗi tháng phải nhận chứng từ của hàng trăm khách, làm sổ và kê khai đúng hạn, phát hành phí, thu tiền, nhắc nợ, tính lương theo số khách phụ trách và vẫn phải tìm thêm khách mới.</p></div>
+    <p class="lead" style="max-width:900px">Khi mỗi việc nằm một nơi – Excel theo dõi khách, nhóm chat giao việc, sổ tay công nợ, phần mềm kế toán riêng từng khách – người quản lý khó trả lời câu hỏi đơn giản: khách nào chưa nộp chứng từ, tờ khai nào sắp trễ, ai đang quá tải, tháng này còn bao nhiêu phí chưa thu. ERP_UNESCO gom tất cả về một hệ thống.</p>
+  </div></section>
+
+  <section class="section surface-soft"><div class="container">
+    <div class="section-head"><div><span class="eyebrow">Ba trụ cột</span><h2>Một hệ thống cho cả công ty</h2></div></div>
+    <div class="grid grid-3">{pillars.map((x, i) => <div class="card"><span class="eyebrow">0{i + 1}</span><h3>{x[0]}</h3><p class="muted" style="margin:0">{x[1]}</p></div>)}</div>
+  </div></section>
+
+  <section class="section"><div class="container">
+    <div class="section-head"><div><span class="eyebrow">Tính năng</span><h2>Tính năng nổi bật</h2></div></div>
+    <div class="grid grid-3">{features.map((x) => <div class="card"><h3>{x[0]}</h3><p class="muted" style="margin:0">{x[1]}</p></div>)}</div>
+  </div></section>
+
+  <section class="section surface-soft" id="video"><div class="container">
+    <div class="section-head"><div><span class="eyebrow">Hướng dẫn nhanh</span><h2>Dùng ERP_UNESCO trong 9 bước</h2></div><p>Video demo đang được quay theo đúng 9 bước này và sẽ cập nhật tại đây.</p></div>
+    <div class="process-grid">{steps.map((x, i) => <div class="process-step"><span class="num">{String(i + 1).padStart(2, '0')}</span><strong>{x[0]}</strong><small>{x[1]}</small></div>)}</div>
+  </div></section>
+
+  <section class="section"><div class="container">
+    <div class="section-head"><div><span class="eyebrow">Lợi ích</span><h2>Lợi ích cho từng vị trí</h2></div></div>
+    <div class="table-wrap"><table class="article-table"><thead><tr><th>Vị trí</th><th>Lợi ích chính</th></tr></thead><tbody>{roles.map((r) => <tr><td data-label="Vị trí"><b>{r[0]}</b></td><td data-label="Lợi ích chính">{r[1]}</td></tr>)}</tbody></table></div>
+    <div class="quote-band" style="margin-top:32px"><div><h2>Giá: {p.price}</h2><p>{p.priceNote}</p></div><div class="actions"><a class="btn btn-primary" href={url('/bang-gia/#dich-vu-ke-toan')}>XEM BẢNG GIÁ</a></div></div>
+  </div></section>
+
+  <section class="section surface-soft" id="dang-ky"><div class="container split">
+    <div><span class="eyebrow">Dùng thử và tư vấn</span><h2>Xem demo trên dữ liệu mẫu</h2><p class="lead">Liên hệ để được trình bày trực tiếp trên dữ liệu mẫu và tư vấn cách đưa dữ liệu khách hàng, hợp đồng, công nợ hiện có của công ty bạn vào phần mềm.</p></div>
+    <LeadForm kind="erp-unesco" heading="Đăng ký demo ERP_UNESCO" />
+  </div></section>
+</ContentLayout>

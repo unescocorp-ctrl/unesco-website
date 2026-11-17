@@ -47,7 +47,7 @@ export const products: Product[] = [
     tagline: 'Thế hệ phần mềm kế toán tiếp theo của UNESCO, tặng kèm ERP_UNESCO, UNESCO_TAX_Online và UNESCO SalesCRM AI.',
     points: ['Tặng kèm ERP_UNESCO', 'Tặng kèm UNESCO_TAX_Online', 'Tặng kèm UNESCO SalesCRM AI'],
     price: '10.000.000 đ', unit: '/ MST', priceNote: 'Trả phí 1 lần · tặng kèm 03 sản phẩm', serviceNote: SERVICE_DISCOUNT,
-    media: { img: '/screenshots/man-hinh-chinh-unesco-ai-v2.webp', alt: 'Màn hình chính phần mềm kế toán UNESCO', video: '/videos/gioi-thieu-unesco-ai.mp4' },
+    media: { img: '/screenshots/unesco-xii-ai/tong-quan.webp', alt: 'Màn hình Tổng quan điều hành UNESCO XII AI', video: '/videos/gioi-thieu-unesco-ai.mp4' },
   },
   {
     id: 'unesco-ai', name: 'UNESCO AI', family: 'ke-toan', badge: 'Có AI',
@@ -73,6 +73,7 @@ export const products: Product[] = [
     tagline: 'Giải pháp toàn diện quản lý công ty dịch vụ kế toán: khách hàng, hợp đồng, công việc, nhân sự và doanh thu phí.',
     points: ['Hồ sơ khách hàng, hợp đồng dịch vụ, phí theo kỳ', 'Lịch hạn nộp tờ khai, giao việc cho từng kế toán', 'Xem tình trạng sổ của mọi khách trên một màn hình'],
     price: 'Tặng kèm UNESCO XII AI', priceNote: 'Dưới 10 khách hàng: miễn phí · trên 10 khách hàng: 1.000.000 đ cho mỗi 10 khách',
+    href: '/san-pham/erp-unesco/',
   },
   {
     id: 'unesco-tax-online', name: 'UNESCO_TAX_Online', family: 'dich-vu-ke-toan', badge: 'Tặng kèm UNESCO XII AI',
