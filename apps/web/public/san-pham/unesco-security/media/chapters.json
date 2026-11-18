@@ -1,0 +1,68 @@
+[
+  {
+    "id": "01-intro",
+    "title": "Vững từng vị trí.",
+    "start": 0,
+    "duration": 15.84
+  },
+  {
+    "id": "02-login",
+    "title": "01 / Đăng nhập đúng vai trò",
+    "start": 15.84,
+    "duration": 14.24
+  },
+  {
+    "id": "03-people",
+    "title": "02 / Một nơi quản lý hồ sơ",
+    "start": 30.08,
+    "duration": 15.4
+  },
+  {
+    "id": "04-training",
+    "title": "03 / Đào tạo gắn với vị trí",
+    "start": 45.48,
+    "duration": 15.96
+  },
+  {
+    "id": "05-roster",
+    "title": "04 / Nhìn rõ từng suất còn thiếu",
+    "start": 61.44,
+    "duration": 18.12
+  },
+  {
+    "id": "06-employee",
+    "title": "05 / Nhân viên chủ động xác nhận",
+    "start": 79.56,
+    "duration": 18.12
+  },
+  {
+    "id": "07-duty",
+    "title": "06 / Cảnh báo để kiểm tra đúng người",
+    "start": 97.68,
+    "duration": 19.48
+  },
+  {
+    "id": "08-attendance",
+    "title": "07 / Đối soát từ dữ liệu gốc",
+    "start": 117.16000000000001,
+    "duration": 17.28
+  },
+  {
+    "id": "09-payroll",
+    "title": "08 / Công và lương có bước kiểm soát",
+    "start": 134.44,
+    "duration": 17.36
+  },
+  {
+    "id": "10-example",
+    "title": "Ước tính lợi ích bằng giả định rõ ràng",
+    "start": 151.8,
+    "duration": 17.56
+  },
+  {
+    "id": "11-close",
+    "title": "Bắt đầu từ một mục tiêu, một kỳ công.",
+    "start": 169.36,
+    "duration": 18.2
+  }
+]

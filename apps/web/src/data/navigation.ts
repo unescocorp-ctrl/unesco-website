@@ -42,6 +42,7 @@ export const mainNav: NavGroup[] = [
       { label: 'ERP UNESCO kết nối UNESCO XII', href: '/ket-noi-erp-unesco-xii/', icon: 'layers' },
       { label: 'UNESCO XII AI · Dịch vụ kế toán & khách hàng', href: '/unesco-xii-ai/dich-vu-ke-toan/', icon: 'book-open' },
       { label: 'Video hướng dẫn', href: '/video/', icon: 'play-circle' },
+      { label: 'UNESCO Security · Video & tài liệu', href: '/san-pham/unesco-security/tai-lieu/', icon: 'shield-check' },
       { label: 'Kiến thức kế toán', href: '/kien-thuc/', icon: 'lightbulb' },
       { label: 'Có gì mới', href: '/release-notes/', icon: 'history' },
       { label: 'Bản quyền & pháp lý', href: '/ban-quyen/', icon: 'award' },

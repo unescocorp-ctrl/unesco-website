@@ -1,0 +1,166 @@
+1
+00:00:00,150 --> 00:00:02,278
+UNESCO Security Software.
+
+2
+00:00:02,278 --> 00:00:10,194
+Phần mềm quản lý công ty dịch vụ bảo vệ, kết nối
+nhân sự, lịch trực và xác minh tại mục tiêu.
+
+3
+00:00:10,194 --> 00:00:14,790
+Cùng khám phá quy trình làm việc qua dữ liệu minh
+họa.
+
+4
+00:00:15,990 --> 00:00:19,360
+Đăng nhập bằng tài khoản do quản trị viên cấp.
+
+5
+00:00:19,360 --> 00:00:22,290
+Chín vai trò hỗ trợ phân chia công việc.
+
+6
+00:00:22,290 --> 00:00:29,030
+Chỉ huy xem mục tiêu được giao; nhân viên xem lịch,
+chấm công và phiếu lương của chính mình.
+
+7
+00:00:30,230 --> 00:00:35,743
+Từ phân hệ Nhân sự, tra cứu hồ sơ, tuyển dụng và
+điều kiện bố trí.
+
+8
+00:00:35,743 --> 00:00:39,919
+Ví dụ giao diện có chín mươi sáu nhân sự minh họa.
+
+9
+00:00:39,919 --> 00:00:44,430
+Hồ sơ được kiểm tra trước khi đưa người vào lịch
+trực.
+
+10
+00:00:45,630 --> 00:00:49,141
+Theo dõi quy trình nghiệp vụ theo từng phiên bản.
+
+11
+00:00:49,141 --> 00:00:56,163
+Trong ví dụ, mười tám trên hai mươi bốn người đã xác
+nhận đọc, tương đương bảy mươi lăm phần trăm.
+
+12
+00:00:56,163 --> 00:01:00,390
+Kết quả học và bước xác minh chứng nhận được quản lý
+riêng.
+
+13
+00:01:01,590 --> 00:01:08,309
+Ma trận xếp ca cho thấy mười sáu trong mười tám suất
+đã bố trí, còn thiếu hai suất.
+
+14
+00:01:08,309 --> 00:01:15,110
+Trước khi công bố, hệ thống kiểm tra quân số, ca
+trùng và các điều kiện đã cấu hình.
+
+15
+00:01:15,110 --> 00:01:18,510
+Số suất trực không phải số người duy nhất.
+
+16
+00:01:19,710 --> 00:01:25,079
+Nhân viên mở Lịch của tôi, ghi nhận vào ca rồi xác
+nhận đang trực.
+
+17
+00:01:25,079 --> 00:01:27,682
+Vị trí chỉ được lấy khi bấm nút.
+
+18
+00:01:27,682 --> 00:01:33,213
+Nếu không lấy được GPS, nhân viên ghi rõ lý do để
+chỉ huy đối chiếu.
+
+19
+00:01:33,213 --> 00:01:36,630
+Đây là thao tác minh họa trên dữ liệu mẫu.
+
+20
+00:01:37,830 --> 00:01:43,479
+Chỉ huy mở Giám sát ca trực để xem xác nhận, thời
+điểm và sai số vị trí.
+
+21
+00:01:43,479 --> 00:01:47,323
+Ngoài vùng hoặc quá hạn là dấu hiệu cần kiểm tra.
+
+22
+00:01:47,323 --> 00:01:52,109
+Đăng nhập hay có kết nối mạng không chứng minh đang
+làm việc.
+
+23
+00:01:52,109 --> 00:01:56,110
+Kết quả xác minh được ghi riêng, không tự trừ công.
+
+24
+00:01:57,310 --> 00:02:01,460
+Ví dụ một cặp vào ra có năm trăm bốn mươi phút quan
+sát.
+
+25
+00:02:01,460 --> 00:02:08,203
+Hệ thống tách bốn trăm tám mươi phút trong ca và sáu
+mươi phút ngoài kế hoạch cần xác minh.
+
+26
+00:02:08,203 --> 00:02:13,390
+Phần ngoài kế hoạch chưa tự chuyển thành giờ làm
+thêm hoặc tiền lương.
+
+27
+00:02:14,590 --> 00:02:20,303
+Bảng công được tổng hợp, kiểm tra, duyệt và khóa
+trước khi tính lương.
+
+28
+00:02:20,303 --> 00:02:24,792
+Người lập không tự duyệt hồ sơ cần kiểm soát hai
+người.
+
+29
+00:02:24,792 --> 00:02:30,750
+Điều chỉnh sau khóa đi sang kỳ sau, giữ lại lịch sử
+và căn cứ của kỳ gốc.
+
+30
+00:02:31,950 --> 00:02:40,051
+Một giả định để tự đánh giá: một trăm hai mươi bản
+ghi, mỗi bản từ ba phút đối soát xuống bốn mươi lăm
+
+31
+00:02:40,051 --> 00:02:42,671
+giây, sẽ giảm bốn giờ rưỡi xử lý.
+
+32
+00:02:42,671 --> 00:02:48,310
+Đây là phép tính minh họa, chưa phải hiệu quả được
+đo tại doanh nghiệp.
+
+33
+00:02:49,510 --> 00:02:53,124
+Bắt đầu với một mục tiêu và một kỳ công mẫu.
+
+34
+00:02:53,124 --> 00:02:58,133
+Cấp quyền, lập lịch, xác minh rồi đối soát trước khi
+mở rộng.
+
+35
+00:02:58,133 --> 00:03:05,771
+Xem video, tải hướng dẫn và khám phá các tính năng
+ngay trên trang giới thiệu UNESCO Security
+
+36
+00:03:05,771 --> 00:03:06,510
+Software.

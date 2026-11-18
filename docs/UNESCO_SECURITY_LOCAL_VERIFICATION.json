@@ -1,0 +1,128 @@
+{
+  "status": "PASS",
+  "checkedAt": "2026-11-18T16:07:02.678Z",
+  "responsive": [
+    {
+      "route": "/san-pham/unesco-security/",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "route": "/san-pham/unesco-security/huong-dan/",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "route": "/san-pham/unesco-security/bai-gioi-thieu/",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "route": "/san-pham/unesco-security/tai-lieu/",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "route": "/san-pham/unesco-security/",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "route": "/san-pham/unesco-security/huong-dan/",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "route": "/san-pham/unesco-security/bai-gioi-thieu/",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "route": "/san-pham/unesco-security/tai-lieu/",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "route": "/san-pham/unesco-security/",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "route": "/san-pham/unesco-security/huong-dan/",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "route": "/san-pham/unesco-security/bai-gioi-thieu/",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "route": "/san-pham/unesco-security/tai-lieu/",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "route": "/san-pham/unesco-security/",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "route": "/san-pham/unesco-security/huong-dan/",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "route": "/san-pham/unesco-security/bai-gioi-thieu/",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "route": "/san-pham/unesco-security/tai-lieu/",
+      "width": 320,
+      "overflow": false
+    }
+  ],
+  "checks": [
+    "Full demo playback, subtitles, chapter seeking, transcript, keyboard FAQ, arithmetic",
+    "Short video playback, ZIP browser download bytes, internal links, HTTP range 206",
+    "Product and price cards, catalog video modal, guide/video hub links, mobile navigation"
+  ],
+  "errors": [],
+  "links": [
+    "/san-pham/unesco-security/styles.css",
+    "/san-pham/unesco-security/",
+    "/",
+    "/san-pham/unesco-security/huong-dan/",
+    "/san-pham/unesco-security/bai-gioi-thieu/",
+    "/san-pham/unesco-security/tai-lieu/",
+    "/san-pham/unesco-security/tai-lieu/huong-dan-su-dung.pdf",
+    "/san-pham/unesco-security/assets/login.png",
+    "/san-pham/unesco-security/media/unesco-security-demo.mp4",
+    "/san-pham/unesco-security/media/phu-de-vi.vtt",
+    "/san-pham/unesco-security/tai-lieu/loi-dan-video.txt",
+    "/san-pham/unesco-security/assets/roster.png",
+    "/san-pham/unesco-security/assets/duty.png",
+    "/san-pham/unesco-security/tai-lieu/bai-gioi-thieu.md",
+    "/lien-he/",
+    "/san-pham/unesco-security/site.js",
+    "/san-pham/unesco-security/assets/people.png",
+    "/san-pham/unesco-security/assets/employee.png",
+    "/san-pham/unesco-security/assets/payroll.png",
+    "/san-pham/unesco-security/tai-lieu/bo-tai-lieu-unesco.zip",
+    "/san-pham/unesco-security/media/unesco-gioi-thieu-60-giay.mp4",
+    "/san-pham/unesco-security/tai-lieu/bai-gioi-thieu.html",
+    "/san-pham/unesco-security/media/phu-de-vi.srt",
+    "/san-pham/unesco-security/tai-lieu/loi-dan-60-giay.txt"
+  ],
+  "download": {
+    "bytes": 10397504,
+    "sha256": "a300181e7209b158ac9f8a5c405f02f3e3763c7445b2ac943559c66b6c4f4770"
+  },
+  "fullVideo": {
+    "duration": 187.581333,
+    "width": 1920,
+    "height": 1080,
+    "tracks": 1
+  }
+}

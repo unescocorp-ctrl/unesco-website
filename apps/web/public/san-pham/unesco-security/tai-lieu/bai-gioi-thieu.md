@@ -1,0 +1,47 @@
+# UNESCO Security Software: quản lý dịch vụ bảo vệ từ lịch trực đến xác minh tại mục tiêu
+
+Khi nhân viên làm việc tại nhiều mục tiêu và theo nhiều ca, người điều hành cần biết ai được phân công, còn thiếu vị trí nào và căn cứ nào cho thấy ca đang được thực hiện. UNESCO Security Software kết nối các thông tin đó trong một quy trình: hồ sơ nhân sự → bố trí lịch → xác nhận ca → chỉ huy kiểm tra → đối soát công và lương.
+
+> Dữ liệu trong video, ảnh và ví dụ là dữ liệu minh họa. Không phải số liệu khách hàng, hiệu quả thực tế hay cam kết năng lực tải.
+
+## Một quy trình chung cho nhân sự và điều hành
+
+Hồ sơ nhân viên, quá trình tuyển dụng, điều chuyển, đào tạo và lịch trực được tổ chức thành các phân hệ liên quan. Người điều phối có thể tra cứu điều kiện bố trí theo mục tiêu, chốt và khoảng thời gian trước khi phân công. Cách làm này hỗ trợ giảm việc đối chiếu rời rạc giữa danh sách nhân sự và lịch trực.
+
+SOP được quản lý theo phiên bản. Nhân viên mở nội dung và tự xác nhận đã đọc đúng bản; kết quả học không tự cấp chứng nhận. Việc xác minh chứng nhận cần nguồn và người ghi nhận riêng. Đây là cơ sở để người phụ trách kiểm tra đúng hồ sơ khi bố trí ca.
+
+## Nhìn rõ vị trí thiếu trước khi công bố lịch
+
+Trong bộ dữ liệu minh họa, một mục tiêu cần 6 vị trí đồng thời, chia thành 3 ca, tương ứng 18 suất trực. Ma trận có 16 suất đã bố trí, còn 2 suất trống; mức bố trí theo suất là 16 ÷ 18 × 100 = 88,9%. Đây là số suất trong lịch mẫu, không phải số nhân viên có mặt hoặc số nhân viên duy nhất.
+
+Khi công bố lịch, hệ thống kiểm tra quân số cùng các điều kiện đã cấu hình như ca giao nhau, nghỉ đã duyệt, hiệu lực hợp đồng, chứng nhận đã xác minh và SOP bắt buộc. Người điều hành vẫn cần đối chiếu các quy tắc doanh nghiệp chưa cấu hình, đặc biệt khoảng nghỉ, giới hạn giờ và thời gian di chuyển.
+
+## Xác định thực hiện ca bằng tín hiệu và kiểm tra
+
+Nhân viên ghi nhận vào ca rồi chủ động gửi xác nhận đang trực. Khi bấm lấy vị trí, trình duyệt xin quyền GPS; dữ liệu gửi có thời điểm và sai số. Nếu không lấy được vị trí, nhân viên có thể ghi lý do để chỉ huy kiểm tra theo quy trình.
+
+Bảng Giám sát ca trực tách xác nhận của nhân viên khỏi kết quả chỉ huy xác minh. Vị trí ngoài vùng, sát ranh giới, sai số lớn hoặc xác nhận quá hạn là căn cứ để rà soát. Một lần gửi chỉ phản ánh thời điểm đó. Mở ứng dụng, có mạng hay thiếu GPS không đủ để kết luận đang làm, bỏ vị trí hoặc nghỉ làm; hệ thống không tự trừ công/lương từ các tín hiệu này.
+
+## Từ dữ liệu gốc đến bảng công có thể đối chiếu
+
+Biên nhận giữ giờ thiết bị, giờ máy chủ và mã chống gửi trùng. Người có quyền khớp ca, ghi căn cứ và xác minh theo bước riêng. Ví dụ 540 phút quan sát được tách thành 480 phút trong ca và 60 phút ngoài kế hoạch cần xác minh. 60 phút này chưa tự trở thành tiền làm thêm.
+
+Bảng công và bảng lương có bước lập, duyệt, khóa. Các hồ sơ yêu cầu kiểm soát hai người không cho người lập tự duyệt, kể cả quản trị. Điều chỉnh công sau khóa chuyển chênh lệch sang kỳ sau và giữ kỳ gốc, giúp đối chiếu lại số liệu khi cần. Ghi nhận trả lương là nghiệp vụ ghi sổ, không phải thao tác chuyển tiền ngân hàng.
+
+## Số liệu minh họa để hiểu và tự đánh giá
+
+Ví dụ đào tạo có 18/24 người xác nhận SOP, tương đương 75%; còn 6 người cần theo dõi. Con số này đo việc xác nhận đọc, không thay cho năng lực chuyên môn hoặc điều kiện bố trí đầy đủ. Các tên người, mục tiêu và quân số trong hình đều dùng để minh họa.
+
+Có thể lập giả định đánh giá thời gian: 120 bản ghi × 3 phút = 360 phút; nếu bước rà soát còn 0,75 phút/bản ghi thì còn 90 phút, chênh 270 phút, tức 4,5 giờ. Mức giảm giả định là 75%. Đây không phải kết quả đo hoặc cam kết tiết kiệm; cần đo cùng phạm vi, cùng chất lượng kiểm tra tại doanh nghiệp trước khi kết luận hiệu quả.
+
+## Tính năng nổi bật nằm ở khả năng kiểm soát
+
+Chín vai trò cố định giúp phân chia nhiệm vụ giữa quản trị, chỉ huy, nhân sự, điều phối, kế toán lương, người duyệt, quản lý tài sản, kiểm tra viên và nhân viên. Chỉ huy làm việc trong mục tiêu được giao; nhân viên chỉ xem thông tin của mình. Quyền được kiểm tra tại API. Phần mềm cũng có tài sản, đào tạo, sự cố, báo cáo và nhật ký phục vụ đối chiếu.
+
+Trên giao diện web, các danh sách hỗ trợ cập nhật theo chu kỳ và có cảnh báo khi dữ liệu cũ hoặc kết quả ghi chưa rõ. Người dùng kiểm tra kết quả trước khi gửi lại; ứng dụng không tự gửi lại mọi thao tác ghi. Hai cách hiển thị UNESCO nền đen và xanh–trắng đáp ứng nhu cầu trình bày trên máy tính và điện thoại.
+
+## Bắt đầu bằng một kỳ vận hành mẫu
+
+Nên bắt đầu với một mục tiêu, nhóm nhân viên, bộ SOP và kỳ công mẫu. Lần lượt kiểm tra cấp quyền, bố trí ca, vào/ra, xác nhận vị trí, xử lý thiếu tín hiệu, duyệt và khóa công; sau đó đối chiếu số liệu lương với chính sách thực tế trước khi mở rộng.
+
+Bản giới thiệu phản ánh tính năng web hiện có và được kiểm tra cục bộ. AI hiện là hướng dẫn có sẵn; chưa kết nối mô hình AI. GPS nền liên tục, chống giả mạo vị trí, ứng dụng Flutter/offline, CRM/báo giá/hóa đơn/công nợ đầy đủ và triển khai Internet còn trong kế hoạch. Việc triển khai thật cần HTTPS, cấu hình hạ tầng và nghiệm thu tại mục tiêu. Xem video demo và tải hướng dẫn để bắt đầu đánh giá.

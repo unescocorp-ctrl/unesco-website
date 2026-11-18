@@ -1,0 +1,169 @@
+{
+  "date": "2026-11-18",
+  "source": "Verified UNESCO Security promotional bundle; illustrative data",
+  "site": "https://www.unescosoft.com",
+  "prefix": "/san-pham/unesco-security/",
+  "pages": [
+    "/san-pham/unesco-security/",
+    "/san-pham/unesco-security/huong-dan/",
+    "/san-pham/unesco-security/bai-gioi-thieu/",
+    "/san-pham/unesco-security/tai-lieu/"
+  ],
+  "files": [
+    {
+      "path": "/san-pham/unesco-security/assets/be-vietnam-pro-latin-400-normal.woff2",
+      "bytes": 21168,
+      "sha256": "03d1b589cff172e1a670b3573e731d3380bc326f80cf83b0d3504e3188e2e074"
+    },
+    {
+      "path": "/san-pham/unesco-security/assets/be-vietnam-pro-latin-700-normal.woff2",
+      "bytes": 22152,
+      "sha256": "a193dd87699bd2e18ddf72dc271493ea82a23dad9f5c334d9f2a257b1e05fc30"
+    },
+    {
+      "path": "/san-pham/unesco-security/assets/be-vietnam-pro-vietnamese-400-normal.woff2",
+      "bytes": 11532,
+      "sha256": "dc085e2fba3414e5c5bf1e6172f921a9f81c5859946a4ed3d63c1e470d96a9e2"
+    },
+    {
+      "path": "/san-pham/unesco-security/assets/be-vietnam-pro-vietnamese-700-normal.woff2",
+      "bytes": 12468,
+      "sha256": "4f58af2d1c3e28a9ba14c51c82db2751d78344b75bdcb34de24a1031ebe59da6"
+    },
+    {
+      "path": "/san-pham/unesco-security/assets/duty.png",
+      "bytes": 219331,
+      "sha256": "a7c9ca2e911ded5409992d99ca0cc8af6589fc9809ff0a44222f991ff6088775"
+    },
+    {
+      "path": "/san-pham/unesco-security/assets/employee.png",
+      "bytes": 114611,
+      "sha256": "1acdf85793b2063ac751fce33e8686ae7c3ad91765eff4dd9d628e302a818ba7"
+    },
+    {
+      "path": "/san-pham/unesco-security/assets/FONT-LICENSE.txt",
+      "bytes": 6476,
+      "sha256": "0bd4db1cda123af9d91794b0f98324b7d7d81aef0fcaf78c433160153f2c6f25"
+    },
+    {
+      "path": "/san-pham/unesco-security/assets/login.png",
+      "bytes": 972730,
+      "sha256": "497cace1a00af9800504a970a9070679a9d87eb0e73e78c841a4267cb4de72ea"
+    },
+    {
+      "path": "/san-pham/unesco-security/assets/logo.jpg",
+      "bytes": 176243,
+      "sha256": "33ecc7e316d5cd948fa2f5bd839d63245e518a7a55436e4725d902a5e5450c20"
+    },
+    {
+      "path": "/san-pham/unesco-security/assets/payroll.png",
+      "bytes": 181951,
+      "sha256": "70f740706c5499c00af3c13ad678adcc53466d6ccd1e269aee9a36b457a77bd7"
+    },
+    {
+      "path": "/san-pham/unesco-security/assets/people.png",
+      "bytes": 357576,
+      "sha256": "52451d676ea48f1562b4673856fba531601b64502e90805d4909d6cc40218213"
+    },
+    {
+      "path": "/san-pham/unesco-security/assets/roster.png",
+      "bytes": 356114,
+      "sha256": "b741522768f7612fac10eb05e5c5a39b630cd572f27e40d5dfda56981d452fa5"
+    },
+    {
+      "path": "/san-pham/unesco-security/assets/training.png",
+      "bytes": 342712,
+      "sha256": "8cbb0e5d67f7c2485635cbd16292badde1418a971e9e9139ad2c5bc0a8eb0b26"
+    },
+    {
+      "path": "/san-pham/unesco-security/assets/video-poster.jpg",
+      "bytes": 318277,
+      "sha256": "c0526e565dded87db3121e3eab70e5d67241aadf451fce5509f0b839a84c6695"
+    },
+    {
+      "path": "/san-pham/unesco-security/bai-gioi-thieu/index.html",
+      "bytes": 10093,
+      "sha256": "a6d7b6f53a1c7832d326386f09c5622d4161695f4b551a2dbdfcbeb5227ebe83"
+    },
+    {
+      "path": "/san-pham/unesco-security/huong-dan/index.html",
+      "bytes": 14022,
+      "sha256": "dc65435aca33280867a7ad4654a0fa802c55483dd7bd3f87a55c3b27ab5dc3c3"
+    },
+    {
+      "path": "/san-pham/unesco-security/index.html",
+      "bytes": 20540,
+      "sha256": "6016342ca6693a480b97c85b1cdcf1b7c9b1f60832dd9900c0fa6d5624d0ae2e"
+    },
+    {
+      "path": "/san-pham/unesco-security/media/chapters.json",
+      "bytes": 1475,
+      "sha256": "25401da2c1c9971d1235c6369c5abdb5680638d0cbaef3e775340c8403a71e9b"
+    },
+    {
+      "path": "/san-pham/unesco-security/media/phu-de-vi.srt",
+      "bytes": 4340,
+      "sha256": "0c84f74934563ce1bf1d103b67f94314d80a5761c4f58721d2d930fc9d8cf192"
+    },
+    {
+      "path": "/san-pham/unesco-security/media/phu-de-vi.vtt",
+      "bytes": 4215,
+      "sha256": "c8e6f29cdd241fbe604d7046d80eb1f93725c1683c7093ab4b30a6b21f0bae61"
+    },
+    {
+      "path": "/san-pham/unesco-security/media/unesco-gioi-thieu-60-giay.mp4",
+      "bytes": 2359608,
+      "sha256": "bb5e3b85f66e2c12903ffbbad38b43f47b1a2cd0e38dcfd8dac5a42a4d823643"
+    },
+    {
+      "path": "/san-pham/unesco-security/media/unesco-security-demo.mp4",
+      "bytes": 7194979,
+      "sha256": "9b019c667087279ad72f621fddd2b0a379159fc7c630feb49c92236d8aa41b50"
+    },
+    {
+      "path": "/san-pham/unesco-security/site.js",
+      "bytes": 2563,
+      "sha256": "dee9e88690a3fdbf50d167576dcb279759f9465e6ad8b2a03732c2a9cba8219f"
+    },
+    {
+      "path": "/san-pham/unesco-security/styles.css",
+      "bytes": 12296,
+      "sha256": "0ed114d7fb448322bc794b2bb6052322f8492aad80ee4389cd6ab75f143dfaac"
+    },
+    {
+      "path": "/san-pham/unesco-security/tai-lieu/bai-gioi-thieu.html",
+      "bytes": 7055,
+      "sha256": "1e1cd62f3899a52a5c88b32d6ae67dd34c52bdc6496b09180db190f03bce4d02"
+    },
+    {
+      "path": "/san-pham/unesco-security/tai-lieu/bai-gioi-thieu.md",
+      "bytes": 6748,
+      "sha256": "4c541fddb815124c553dd9e4ab0c2d296d423dbebeb3708736bb0fbbab6025b1"
+    },
+    {
+      "path": "/san-pham/unesco-security/tai-lieu/bo-tai-lieu-unesco.zip",
+      "bytes": 10397504,
+      "sha256": "a300181e7209b158ac9f8a5c405f02f3e3763c7445b2ac943559c66b6c4f4770"
+    },
+    {
+      "path": "/san-pham/unesco-security/tai-lieu/huong-dan-su-dung.pdf",
+      "bytes": 2485009,
+      "sha256": "dc8e5393dda3518f84d630d0f6e892ff04d873721cee097a8efca1f69b58d1ba"
+    },
+    {
+      "path": "/san-pham/unesco-security/tai-lieu/loi-dan-60-giay.txt",
+      "bytes": 925,
+      "sha256": "acda316f2e8daa50d6566d1634fcc6984bb7a0b2672478a9f901a1aa1683e8b1"
+    },
+    {
+      "path": "/san-pham/unesco-security/tai-lieu/loi-dan-video.txt",
+      "bytes": 3754,
+      "sha256": "9e22331e13ca1196b958963cffdccc0cf534618470b8071770de43d92b1a6e4f"
+    },
+    {
+      "path": "/san-pham/unesco-security/tai-lieu/index.html",
+      "bytes": 7731,
+      "sha256": "47369a98b064dfde24c255ae1836e40fef9001561dfe9b67adec526c741f5a08"
+    }
+  ]
+}

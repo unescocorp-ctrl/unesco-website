@@ -103,11 +103,13 @@ export const products: Product[] = [
     media: { img: '/screenshots/unesco-sale/tong-quan.webp', alt: 'Màn hình tổng quan UNESCO SALE', video: '/videos/unesco-sale-huong-dan.mp4' },
   },
   {
-    id: 'unesco-security', name: 'UNESCO SECURITY', family: 'chuyen-nganh', badge: 'Sắp ra mắt', comingSoon: true,
+    id: 'unesco-security', name: 'UNESCO SECURITY', family: 'chuyen-nganh', badge: 'Demo và tài liệu',
     short: 'Quản lý công ty dịch vụ bảo vệ',
-    tagline: 'Phần mềm quản lý công ty dịch vụ bảo vệ.',
-    points: [],
-    price: 'Liên hệ', priceNote: 'Đăng ký để nhận thông tin khi ra mắt',
+    tagline: 'Kết nối nhân sự, lịch trực, xác minh tại mục tiêu và đối soát công/lương. Xem quy trình với dữ liệu minh họa.',
+    points: ['Bố trí ca và nhìn rõ suất còn thiếu', 'Xác nhận tại lần gửi; chỉ huy kiểm tra căn cứ', 'Video tiếng Việt, hướng dẫn PDF và bài giới thiệu'],
+    price: 'Liên hệ', priceNote: 'Đánh giá cùng đội vận hành trước khi triển khai',
+    href: '/san-pham/unesco-security/',
+    media: { img: '/san-pham/unesco-security/assets/video-poster.jpg', alt: 'UNESCO Security: giới thiệu quản lý dịch vụ bảo vệ với dữ liệu minh họa', video: '/san-pham/unesco-security/media/unesco-gioi-thieu-60-giay.mp4' },
   },
 ];
 

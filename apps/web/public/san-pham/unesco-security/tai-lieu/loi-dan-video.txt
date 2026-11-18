@@ -1,0 +1,34 @@
+[0:00] Vững từng vị trí.
+UNESCO Security Software. Phần mềm quản lý công ty dịch vụ bảo vệ, kết nối nhân sự, lịch trực và xác minh tại mục tiêu. Cùng khám phá quy trình làm việc qua dữ liệu minh họa.
+
+[0:15] 01 / Đăng nhập đúng vai trò
+Đăng nhập bằng tài khoản do quản trị viên cấp. Chín vai trò hỗ trợ phân chia công việc. Chỉ huy xem mục tiêu được giao; nhân viên xem lịch, chấm công và phiếu lương của chính mình.
+
+[0:30] 02 / Một nơi quản lý hồ sơ
+Từ phân hệ Nhân sự, tra cứu hồ sơ, tuyển dụng và điều kiện bố trí. Ví dụ giao diện có chín mươi sáu nhân sự minh họa. Hồ sơ được kiểm tra trước khi đưa người vào lịch trực.
+
+[0:45] 03 / Đào tạo gắn với vị trí
+Theo dõi quy trình nghiệp vụ theo từng phiên bản. Trong ví dụ, mười tám trên hai mươi bốn người đã xác nhận đọc, tương đương bảy mươi lăm phần trăm. Kết quả học và bước xác minh chứng nhận được quản lý riêng.
+
+[1:01] 04 / Nhìn rõ từng suất còn thiếu
+Ma trận xếp ca cho thấy mười sáu trong mười tám suất đã bố trí, còn thiếu hai suất. Trước khi công bố, hệ thống kiểm tra quân số, ca trùng và các điều kiện đã cấu hình. Số suất trực không phải số người duy nhất.
+
+[1:19] 05 / Nhân viên chủ động xác nhận
+Nhân viên mở Lịch của tôi, ghi nhận vào ca rồi xác nhận đang trực. Vị trí chỉ được lấy khi bấm nút. Nếu không lấy được GPS, nhân viên ghi rõ lý do để chỉ huy đối chiếu. Đây là thao tác minh họa trên dữ liệu mẫu.
+
+[1:37] 06 / Cảnh báo để kiểm tra đúng người
+Chỉ huy mở Giám sát ca trực để xem xác nhận, thời điểm và sai số vị trí. Ngoài vùng hoặc quá hạn là dấu hiệu cần kiểm tra. Đăng nhập hay có kết nối mạng không chứng minh đang làm việc. Kết quả xác minh được ghi riêng, không tự trừ công.
+
+[1:57] 07 / Đối soát từ dữ liệu gốc
+Ví dụ một cặp vào ra có năm trăm bốn mươi phút quan sát. Hệ thống tách bốn trăm tám mươi phút trong ca và sáu mươi phút ngoài kế hoạch cần xác minh. Phần ngoài kế hoạch chưa tự chuyển thành giờ làm thêm hoặc tiền lương.
+
+[2:14] 08 / Công và lương có bước kiểm soát
+Bảng công được tổng hợp, kiểm tra, duyệt và khóa trước khi tính lương. Người lập không tự duyệt hồ sơ cần kiểm soát hai người. Điều chỉnh sau khóa đi sang kỳ sau, giữ lại lịch sử và căn cứ của kỳ gốc.
+
+[2:31] Ước tính lợi ích bằng giả định rõ ràng
+Một giả định để tự đánh giá: một trăm hai mươi bản ghi, mỗi bản từ ba phút đối soát xuống bốn mươi lăm giây, sẽ giảm bốn giờ rưỡi xử lý. Đây là phép tính minh họa, chưa phải hiệu quả được đo tại doanh nghiệp.
+
+[2:49] Bắt đầu từ một mục tiêu, một kỳ công.
+Bắt đầu với một mục tiêu và một kỳ công mẫu. Cấp quyền, lập lịch, xác minh rồi đối soát trước khi mở rộng. Xem video, tải hướng dẫn và khám phá các tính năng ngay trên trang giới thiệu UNESCO Security Software.
+
+Giọng đọc: tổng hợp tiếng Việt (Google Translate TTS). Dữ liệu trong video, ảnh và ví dụ là dữ liệu minh họa. Không phải số liệu khách hàng, hiệu quả thực tế hay cam kết năng lực tải.

@@ -5,3 +5,6 @@
 * text=auto
 *.png binary
 *.zip binary
+# Preserve verified exported media/document bytes, including caption line endings.
+apps/web/public/san-pham/unesco-security/** -text
+apps/web/public/san-pham/unesco-security/tai-lieu/huong-dan-su-dung.pdf binary
