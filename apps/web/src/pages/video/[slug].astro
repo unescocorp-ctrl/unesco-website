@@ -35,7 +35,7 @@ const timeLabel = (seconds: number) => `${Math.floor(seconds / 60)}:${String(Mat
     <div class="actions">
       <a class="btn btn-secondary" href={url(video.src)} download>Tải video MP4</a>
       {video.captions && <a class="btn btn-secondary" href={url(video.captions)} download>Tải phụ đề tiếng Việt</a>}
-      {video.chapters && <a class="btn btn-primary" href={url('/ket-noi-erp-unesco-xii/')}>Lộ trình ERP UNESCO – UNESCO XII</a>}
+      {video.chapters && <a class="btn btn-primary" href={url('/unesco-xii-ai/dich-vu-ke-toan/')}>Lộ trình UNESCO XII AI</a>}
     </div>
     {video.chapters && <section class="transcript" aria-labelledby="transcript-title">
       <h2 id="transcript-title">Nội dung lời đọc & các phần trong video</h2>

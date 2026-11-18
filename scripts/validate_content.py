@@ -9,6 +9,9 @@ public=root/'apps/web/public'
 articles=json.loads((data/'erp-articles.json').read_text(encoding='utf-8'))
 customer_articles=json.loads((data/'xii-customer-articles.json').read_text(encoding='utf-8'))
 videos=json.loads((data/'erp-videos.json').read_text(encoding='utf-8'))
+monthly_articles=json.loads((data/'xii-monthly-articles.json').read_text(encoding='utf-8'))
+articles+=monthly_articles
+videos+=json.loads((data/'xii-monthly-videos.json').read_text(encoding='utf-8'))
 errors=[]
 def check(ok,message):
     if not ok: errors.append(message)
@@ -30,9 +33,13 @@ for a in articles:
     check(len(a['blocks'])>=5,f"Incomplete article: {a['slug']}")
     check(bool(re.fullmatch(r'\d{4}-\d{2}-\d{2}',a['date'])),f"Invalid article date: {a['slug']}")
     for b in a['blocks']:
-        check(b['t'] in ['lead','note','h2','h3','p','ol','table','link','contact'],f"Unknown ERP article block: {b['t']}")
-        if b['t']=='link':
-            check(b['href']=='/ket-noi-erp-unesco-xii/' or b['href'] in {f'/kien-thuc/{s}/' for s in article_slugs},f"Unknown lesson link: {b['href']}")
+        check(b['t'] in ['lead','note','h2','h3','p','ol','table','link','contact','download'],f"Unknown ERP article block: {b['t']}")
+        if b['t'] in ('link','download'):
+            check(b['href'] in ('/ket-noi-erp-unesco-xii/','/unesco-xii-ai/dich-vu-ke-toan/') or (public/b['href'].lstrip('/')).is_file() or b['href'] in {f'/kien-thuc/{s}/' for s in article_slugs},f"Unknown lesson link: {b['href']}")
+
+for a in monthly_articles:
+    check(len(a['blocks'])>=12,f"Incomplete monthly article: {a['slug']}")
+    check(not re.search(r'[A-Za-z]:\\|file:///|absolute_path|sourceEvidenceRefs|S\d{2}\b',json.dumps(a,ensure_ascii=False)),f"Internal evidence exposed: {a['slug']}")
 
 for a in customer_articles:
     check(len(a['blocks'])>=12,f"Incomplete customer article: {a['slug']}")
@@ -75,4 +82,4 @@ for v in videos:
 
 if errors:
     print('[FAIL] content validation\n'+'\n'.join(errors));sys.exit(1)
-print(f'[PASS] {len(articles)} ERP articles, {len(customer_articles)} customer articles, {len(videos)} videos: unique routes, related content, assets, captions and transcripts')
+print(f'[PASS] {len(articles)} ERP/monthly articles, {len(customer_articles)} customer articles, {len(videos)} videos: unique routes, related content, assets, captions and transcripts')

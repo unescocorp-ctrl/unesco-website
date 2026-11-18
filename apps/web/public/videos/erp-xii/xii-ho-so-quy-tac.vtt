@@ -1,0 +1,37 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.083
+Mỗi tháng, khách bàn giao hồ sơ theo bốn nhóm: hóa đơn, sổ phụ, lương và hồ sơ khác. Kế toán
+
+00:00:06.083 --> 00:00:12.166
+kiểm doanh nghiệp, kỳ và số lượng tệp. Nhận được hồ sơ, nhập dữ liệu và ghi sổ là ba mốc cần
+
+00:00:12.166 --> 00:00:13.158
+theo dõi riêng.
+
+00:00:14.158 --> 00:00:19.708
+Trong chức năng Nhận chứng từ khách gửi, chọn Có để đưa tệp hóa đơn phù hợp vào luồng nhập. Chọn
+
+00:00:19.708 --> 00:00:24.970
+Không là đánh dấu đã xem, không phải đã hạch toán. Sổ phụ và lương được xử lý tại chức năng
+
+00:00:24.970 --> 00:00:26.704
+tương ứng, sau khi kiểm nguồn.
+
+00:00:27.704 --> 00:00:33.261
+Mở Quy tắc chi phí theo doanh nghiệp. Kiểm từ khóa, tài khoản và cách gán lô trước khi lưu. Quy
+
+00:00:33.261 --> 00:00:38.760
+tắc đứng trên được xét trước. Khi dùng bộ mẫu, vẫn cần thử trường hợp khớp rõ và trường hợp dễ
+
+00:00:38.760 --> 00:00:40.515
+nhầm theo nghiệp vụ của khách.
+
+00:00:41.515 --> 00:00:47.426
+Với hóa đơn đã phân tích nhưng chưa ghi sổ, dùng Phân tích lại rồi kiểm tài khoản và căn cứ. Đổi
+
+00:00:47.426 --> 00:00:53.091
+quy tắc không tự sửa toàn bộ chứng từ đã ghi. Khi bàn giao, nêu rõ phần đã nhận, đã nhập, đã
+
+00:00:53.091 --> 00:00:54.877
+kiểm và việc còn cần bổ sung.

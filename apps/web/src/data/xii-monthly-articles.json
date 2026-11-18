@@ -1,0 +1,761 @@
+[
+  {
+    "slug": "quy-tac-theo-doanh-nghiep-unesco-xii-ai",
+    "title": "Thiết lập quy tắc riêng theo doanh nghiệp trong UNESCO XII AI",
+    "date": "2026-11-18",
+    "topic": "Dịch vụ kế toán",
+    "description": "Chọn bộ quy tắc, sắp thứ tự ưu tiên và phân tích lại hóa đơn chưa ghi sổ; kiểm tra trước khi dùng cho nhiều khách hàng.",
+    "relatedVideo": "xii-ho-so-quy-tac",
+    "blocks": [
+      {
+        "t": "lead",
+        "x": "Một tên hàng giống nhau có thể được sử dụng khác nhau ở hai doanh nghiệp. Quy tắc giúp kế toán thống nhất cách gợi ý hạch toán cho bộ sổ đang làm; kết quả vẫn cần đối chiếu với chứng từ và mục đích sử dụng thực tế."
+      },
+      {
+        "t": "note",
+        "x": "Dành cho kế toán phụ trách và người quản lý quy tắc. Tên nút, quyền sửa và chức năng sẵn có phụ thuộc phiên bản đang triển khai. Video kèm bài minh họa quy trình bằng sơ đồ."
+      },
+      {
+        "t": "h2",
+        "x": "1. Chuẩn bị trước khi thay đổi"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Mở đúng bộ sổ, doanh nghiệp và năm làm việc. Chọn một số hóa đơn chưa ghi sổ để kiểm tra thử.",
+          "Ghi lại quy tắc hiện tại, từ khóa, thứ tự ưu tiên và người chịu trách nhiệm kiểm kết quả.",
+          "Làm rõ mục đích sử dụng của hàng hóa, dịch vụ với khách hàng nếu chứng từ chưa đủ thông tin. Không dùng tên hàng làm căn cứ duy nhất."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "2. Phân biệt hai nơi thiết lập"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Màn hình",
+          "Dùng khi nào"
+        ],
+        "rows": [
+          [
+            "Quy tắc hạch toán hóa đơn điện tử",
+            "Rà các nhóm thiết lập: mã hàng và đối tác, tài khoản, diễn giải, ghi tự động và AI, loại hình doanh nghiệp, từ khóa, sổ phụ. Bấm Ghi để lưu."
+          ],
+          [
+            "Quy tắc chi phí theo doanh nghiệp",
+            "Thiết lập từ khóa tên hàng, tài khoản hạch toán và cách gán lô; sắp thứ tự những quy tắc có thể cùng khớp."
+          ]
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "3. Thêm và kiểm bộ quy tắc chi phí"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Từ màn hình AI, mở Quy tắc chi phí theo doanh nghiệp. Đọc danh sách hiện có trước khi thêm.",
+          "Nếu dùng Bộ mẫu theo loại hình, chọn mẫu phù hợp rồi Thêm các quy tắc của mẫu. Đọc lại từng quy tắc được thêm; mẫu là điểm khởi đầu cần kiểm.",
+          "Chọn Quy tắc mới hoặc dòng cần sửa. Điền từ khóa tên hàng, tài khoản và cách gán lô phù hợp. Tài khoản phải là tài khoản chi tiết được phép sử dụng.",
+          "Bấm Lưu và xử lý thông báo kiểm tra nếu có. Dùng Lên / Xuống để điều chỉnh ưu tiên: quy tắc đứng trên được xét trước.",
+          "Thử một trường hợp khớp rõ, một trường hợp dễ nhầm và một trường hợp không nên khớp. So sánh tài khoản, đối tượng và diễn giải sau phân tích."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "4. Ví dụ về thứ tự ưu tiên"
+      },
+      {
+        "t": "p",
+        "x": "Ví dụ minh họa: một quy tắc chứa cụm “dịch vụ bảo trì” và một quy tắc rộng hơn chứa “dịch vụ”. Khi cả hai cùng khớp tên hàng, cần đặt quy tắc cụ thể ở vị trí phù hợp rồi phân tích thử. Bài viết không gán sẵn tài khoản vì quyết định hạch toán còn phụ thuộc nghiệp vụ của doanh nghiệp."
+      },
+      {
+        "t": "h2",
+        "x": "5. Quy tắc mới tác động đến dữ liệu nào?"
+      },
+      {
+        "t": "p",
+        "x": "Quy tắc được dùng trong các lần phân tích tiếp theo. Với hóa đơn đã phân tích nhưng chưa ghi sổ, dùng Phân tích lại rồi so sánh kết quả. Đổi quy tắc không có nghĩa là các chứng từ đã ghi được tự sửa đồng loạt."
+      },
+      {
+        "t": "note",
+        "x": "Về mặc định là thao tác đưa thiết lập về giá trị mặc định, không phải nút hoàn tác riêng thay đổi vừa làm. Đọc thông báo và lưu thông tin cấu hình cần giữ trước khi dùng."
+      },
+      {
+        "t": "h2",
+        "x": "6. Kết quả cần bàn giao"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Danh sách quy tắc đã thêm hoặc sửa và lý do thay đổi.",
+          "Mẫu hóa đơn đã kiểm, kết quả trước và sau phân tích lại.",
+          "Các trường hợp còn cần khách hàng giải thích và người phụ trách xử lý.",
+          "Xác nhận của người kiểm trước khi áp dụng rộng cho bộ sổ. Không sao chép máy móc quy tắc sang doanh nghiệp khác."
+        ]
+      },
+      {
+        "t": "link",
+        "href": "/unesco-xii-ai/dich-vu-ke-toan/",
+        "x": "Xem toàn bộ lộ trình UNESCO XII AI cho dịch vụ kế toán và khách hàng"
+      }
+    ]
+  },
+  {
+    "slug": "nhan-chung-tu-khach-gui-unesco-xii-ai",
+    "title": "Nhận chứng từ khách gửi: từ tệp hồ sơ đến dữ liệu chờ kiểm",
+    "date": "2026-11-18",
+    "topic": "Dịch vụ kế toán",
+    "description": "Phân loại hóa đơn, sổ phụ, lương và hồ sơ khác; hiểu các lựa chọn khi nhận tệp và bước kiểm trước khi ghi sổ.",
+    "relatedVideo": "xii-ho-so-quy-tac",
+    "blocks": [
+      {
+        "t": "lead",
+        "x": "Nhận được tệp chưa có nghĩa là đã nhập dữ liệu, và nhập dữ liệu chưa có nghĩa là đã ghi sổ. Tách ba mốc này giúp dịch vụ kế toán trả lời chính xác khách đã gửi gì, phần nào đã xử lý và còn thiếu gì."
+      },
+      {
+        "t": "note",
+        "x": "Khách hàng chuẩn bị và giải thích hồ sơ; kế toán phụ trách thao tác trong bộ sổ. Các bước dưới đây áp dụng khi bản triển khai có chức năng nhận chứng từ khách gửi."
+      },
+      {
+        "t": "h2",
+        "x": "1. Thống nhất cách bàn giao"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Xác nhận doanh nghiệp, kỳ hồ sơ, người gửi và ngày bàn giao. Giữ bản gốc để đối chiếu.",
+          "Tách hồ sơ thành bốn nhóm: hóa đơn, sổ phụ, lương và hồ sơ khác.",
+          "Ghi rõ tệp bổ sung, tệp thay thế và lý do gửi lại. Không chỉ đổi tên tệp rồi coi là chứng từ mới."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "2. Mở chức năng nhận hồ sơ"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Mở Soát hồ sơ chứng từ trong màn hình AI, kiểm lại bộ sổ và kỳ.",
+          "Chọn Nhận chứng từ khách gửi… để xem số lượng tệp, gồm tổng số và số mới trong từng nhóm.",
+          "Đối chiếu số tệp với bảng bàn giao của khách. Nếu thiếu nhóm hoặc sai kỳ, yêu cầu bổ sung trước khi tiếp tục."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "3. Hiểu đúng lựa chọn trong hộp thoại"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Lựa chọn",
+          "Ý nghĩa cần kiểm"
+        ],
+        "rows": [
+          [
+            "Có / Yes",
+            "Đưa XML hoặc ZIP trong nhóm hóa đơn vào luồng nhập hóa đơn có kiểm tra trùng. Sau đó vẫn phải kiểm dữ liệu và trạng thái trước ghi sổ."
+          ],
+          [
+            "Không / No",
+            "Đánh dấu các tệp đã được xem; lần sau có thể không nhắc lại các tệp này. Không đồng nghĩa đã hạch toán."
+          ],
+          [
+            "Hủy / Cancel",
+            "Đóng hộp thoại; có thể mở thư mục để kiểm tra nội dung trước."
+          ]
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "4. Xử lý từng loại tài liệu"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Hồ sơ",
+          "Việc tiếp theo"
+        ],
+        "rows": [
+          [
+            "Hóa đơn XML / ZIP",
+            "Kiểm doanh nghiệp, kỳ, trạng thái hóa đơn, trùng và nội dung phân tích."
+          ],
+          [
+            "Bảng hóa đơn Excel / CSV",
+            "Dùng chức năng nhập bảng tương ứng. Kiểm mẫu và ánh xạ cột trước khi chấp nhận dòng vào luồng AI. Không phải bảng bất kỳ đều nhập đúng ngay."
+          ],
+          [
+            "Sao kê ngân hàng",
+            "Chuyển sang chức năng sổ phụ, chọn tài khoản ngân hàng và kỳ, nhập rồi phân tích."
+          ],
+          [
+            "Lương và hồ sơ khác",
+            "Xử lý tại chức năng nghiệp vụ tương ứng; giữ liên kết đối chiếu với hồ sơ khách gửi."
+          ]
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "5. Khi khách gửi lại hoặc gửi bản thay thế"
+      },
+      {
+        "t": "p",
+        "x": "Giữ thông tin về lần gửi, lý do thay thế và chứng từ liên quan. Với hóa đơn đã có trong hệ thống, đọc trạng thái trùng hoặc thay thế và kiểm chứng từ đã liên kết. Không mặc định XML mới sẽ tự ghi đè chứng từ đã ghi sổ."
+      },
+      {
+        "t": "h2",
+        "x": "6. Bảng kiểm trước khi trả lời khách"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Đã nhận: nhóm hồ sơ, số tệp, kỳ và ngày nhận.",
+          "Đã nhập: số dòng hoặc hóa đơn được chấp nhận, số bị từ chối hoặc cần bổ sung.",
+          "Đã kiểm và ghi: xác minh trên dữ liệu, chứng từ thực tế; không suy ra từ số tệp nhận.",
+          "Còn thiếu: mô tả cụ thể tài liệu, người bổ sung và hạn hẹn."
+        ]
+      },
+      {
+        "t": "download",
+        "href": "/tai-lieu/mau-ban-giao-ho-so-unesco-xii.html",
+        "x": "Mở mẫu bàn giao hồ sơ tháng có thể điền và in"
+      },
+      {
+        "t": "note",
+        "x": "“Đã có ngoài sổ” trong soát hồ sơ chỉ phản ánh hồ sơ đang giữ ngoài dữ liệu sổ. Kế toán vẫn cần xác định có phải nhập hoặc hạch toán bổ sung hay không."
+      },
+      {
+        "t": "link",
+        "href": "/unesco-xii-ai/dich-vu-ke-toan/",
+        "x": "Xem toàn bộ lộ trình UNESCO XII AI cho dịch vụ kế toán và khách hàng"
+      }
+    ]
+  },
+  {
+    "slug": "sao-ke-ngan-hang-unesco-xii-ai",
+    "title": "Xử lý sao kê ngân hàng: phân tích, ghép và kiểm trước ghi sổ",
+    "date": "2026-11-18",
+    "topic": "Dịch vụ kế toán",
+    "description": "Chọn tài khoản ngân hàng, kiểm tiền vào ra, đối tượng và hóa đơn khớp; phân biệt xem trước với điều kiện ghi tự động.",
+    "relatedVideo": "xii-ngan-hang-trang-thai",
+    "blocks": [
+      {
+        "t": "lead",
+        "x": "Sổ phụ giúp kế toán đọc giao dịch ngân hàng, xem gợi ý phân loại và đối chiếu với chứng từ. Một điểm khớp cao chưa đủ để kết luận dòng đã sẵn sàng ghi tự động."
+      },
+      {
+        "t": "note",
+        "x": "Hướng dẫn thao tác và kiểm soát dữ liệu, không ấn định tài khoản hạch toán cho từng nghiệp vụ. Kế toán quyết định dựa trên chứng từ và cấu hình của doanh nghiệp."
+      },
+      {
+        "t": "h2",
+        "x": "1. Chuẩn bị đúng tài khoản và kỳ"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Lấy sao kê đầy đủ kỳ cần làm; xác định tài khoản ngân hàng và doanh nghiệp sở hữu.",
+          "Mở Sổ phụ ngân hàng, chọn Tài khoản NH và khoảng kỳ hoặc Từ – đến.",
+          "Kiểm tài khoản kế toán ngân hàng đã khai báo phù hợp. Nếu có nhiều tài khoản ngân hàng, không bỏ qua bước chọn đúng tài khoản."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "2. Nhập và phân tích"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Bấm Nhập sổ phụ… và kiểm dữ liệu được nhận: ngày, số chứng từ ngân hàng, nội dung, tiền vào và tiền ra.",
+          "Chọn Phân tích để cập nhật nhóm, tài khoản đối ứng, đối tượng, hóa đơn khớp và gợi ý.",
+          "Mở dòng cần kiểm; sửa nhóm, tài khoản hoặc đối tượng theo chứng từ nguồn nếu gợi ý chưa phù hợp."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "3. Đọc từng dòng trước khi lập chứng từ"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Thông tin",
+          "Câu hỏi kiểm tra"
+        ],
+        "rows": [
+          [
+            "Ngày, số CTNH, tiền vào / ra",
+            "Có đúng sao kê, kỳ và chiều tiền không?"
+          ],
+          [
+            "Nhóm, TKĐƯ, mã khách hàng / nhân viên",
+            "Có đúng bản chất giao dịch và đối tượng không?"
+          ],
+          [
+            "Hóa đơn khớp, điểm, gợi ý",
+            "Căn cứ khớp có đủ không? Một khoản có thể liên quan nhiều hóa đơn hoặc cần giải thích thêm."
+          ],
+          [
+            "Trạng thái, chứng từ liên kết",
+            "Dòng đã được xử lý chưa? Có cảnh báo hoặc chứng từ đã ghi cần đối chiếu không?"
+          ]
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "4. Xem trước và ghi tự động khác nhau thế nào?"
+      },
+      {
+        "t": "p",
+        "x": "Chọn dòng sẵn sàng rồi Lập chứng từ (xem trước) để xem từng chứng từ trước khi xác nhận. Đây là bước phù hợp khi cần kiểm trực tiếp tài khoản, đối tượng và số tiền. Ghi tự động có bộ điều kiện riêng của bản triển khai."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Điều kiện trong luồng ghi tự động",
+          "Điểm cần hiểu"
+        ],
+        "rows": [
+          [
+            "Dòng sẵn sàng và đạt ngưỡng điểm cấu hình",
+            "Điểm chỉ là một trong các điều kiện."
+          ],
+          [
+            "Không còn cảnh báo, chưa có chứng từ liên kết",
+            "Dòng có cảnh báo hoặc đã liên kết không được coi là dòng mới để ghi lại."
+          ],
+          [
+            "Nguồn ghép đủ điều kiện",
+            "Luồng tự ghi đang có điều kiện loại dòng có nguồn ghép là AI; không suy từ “AI đề xuất” thành “sẽ tự ghi”."
+          ],
+          [
+            "Đúng tài khoản và phạm vi ngày",
+            "Kiểm bộ lọc, quyền và cấu hình trước khi chạy."
+          ]
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "5. Xử lý ngoại lệ phổ biến"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Không rõ người chuyển tiền: yêu cầu khách giải thích, đối chiếu hợp đồng hoặc chứng từ; không chọn đối tượng chỉ vì tên gần giống.",
+          "Dòng có thể trùng: mở chứng từ liên kết và so ngày, số tiền, nội dung trước khi nhập hoặc ghi lại.",
+          "Chưa có tài khoản ngân hàng phù hợp: hoàn thiện khai báo; chỉ trường hợp đủ điều kiện với đúng một tài khoản đã khai báo mới có thể được tự gán.",
+          "Còn cảnh báo: xử lý nguyên nhân, phân tích hoặc làm mới lại rồi kiểm trạng thái."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "6. Đối chiếu sau xử lý"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Đối chiếu tổng tiền vào, tiền ra và số dư với sao kê đúng kỳ.",
+          "Mở kiểm chứng từ đã tạo và rà các dòng chưa có chứng từ.",
+          "Lập danh sách khoản còn cần khách giải thích, nêu người phụ trách và hạn phản hồi.",
+          "Cập nhật tiến độ sau khi kiểm dữ liệu, không chỉ dựa vào thông báo chạy xong."
+        ]
+      },
+      {
+        "t": "link",
+        "href": "/unesco-xii-ai/dich-vu-ke-toan/",
+        "x": "Xem toàn bộ lộ trình UNESCO XII AI cho dịch vụ kế toán và khách hàng"
+      }
+    ]
+  },
+  {
+    "slug": "doc-trang-thai-xu-ly-unesco-xii-ai",
+    "title": "Đọc trạng thái AI: Cần người, Chờ xác thực và Chưa rõ kết quả ghi",
+    "date": "2026-11-18",
+    "topic": "Dịch vụ kế toán",
+    "description": "Phân biệt đánh giá bộ sổ với kết quả chạy; biết khi nào cần bổ sung dữ liệu, xác thực hoặc đối chiếu chứng từ trước khi chạy lại.",
+    "relatedVideo": "xii-ngan-hang-trang-thai",
+    "blocks": [
+      {
+        "t": "lead",
+        "x": "Trạng thái đánh giá cho biết bộ sổ đang ở đâu; kết quả thực thi cho biết lần chạy vừa rồi xảy ra điều gì. Hai lớp thông tin này cần được đọc cùng lý do và dữ liệu thực tế."
+      },
+      {
+        "t": "h2",
+        "x": "1. Nhận biết hai nhóm trạng thái"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Nhóm",
+          "Ví dụ",
+          "Cách đọc"
+        ],
+        "rows": [
+          [
+            "Đánh giá bộ sổ",
+            "Đã làm, Chưa làm, Cần người, Chờ xác thực, Không phát sinh, Đã khóa",
+            "Đọc lý do của bước trong đúng bộ sổ và kỳ."
+          ],
+          [
+            "Kết quả thực thi",
+            "Xong, Cần người, Bỏ qua, Lỗi, Chưa rõ kết quả ghi, Chưa chạy",
+            "Đọc kết quả của lần chạy và kiểm dữ liệu đã thay đổi."
+          ]
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "2. Khi gặp Cần người"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Mở chi tiết lý do và nhận diện bước bị vướng: nguồn thiếu, mã chưa ghép, cảnh báo hoặc điều kiện nghiệp vụ khác.",
+          "Giao đúng người xử lý. Khách cung cấp thông tin nguồn; kế toán kiểm và sửa dữ liệu trong phạm vi quyền.",
+          "Đối chiếu lại nguồn, đánh giá lại bộ sổ rồi mới tiếp tục các bước phụ thuộc."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "3. Khi gặp Chờ xác thực"
+      },
+      {
+        "t": "p",
+        "x": "Đọc thông báo để biết thao tác xác thực nào đang chờ. Người có quyền hoàn tất yêu cầu trên đúng màn hình; sau đó kiểm kết nối và đánh giá lại. Không sửa cờ trạng thái bằng tay để ép quy trình đi tiếp."
+      },
+      {
+        "t": "h2",
+        "x": "4. Khi gặp Chưa rõ kết quả ghi"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Tạm dừng việc bấm chạy lại bước vừa ghi. Lưu thời điểm, bộ sổ, kỳ và thông báo của lần chạy.",
+          "Kiểm chứng từ thực tế và liên kết nguồn để xác định đã ghi, chưa ghi hoặc chỉ ghi được một phần.",
+          "Đọc nhật ký và đối chiếu số lượng, số tiền, mã chứng từ. Nếu chưa xác định được, chuyển người phụ trách kỹ thuật kèm thông tin đã che dữ liệu nhạy cảm.",
+          "Chỉ tiếp tục sau khi xác định phạm vi còn thiếu. Đánh giá lại trên dữ liệu hiện có và dùng quy trình xử lý phù hợp để tránh ghi trùng."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "“Chưa rõ kết quả ghi” không khẳng định dữ liệu chưa được ghi. Chạy lại ngay có thể làm việc đối chiếu khó hơn. Không tự xóa chứng từ chỉ để làm sạch trạng thái."
+      },
+      {
+        "t": "h2",
+        "x": "5. Vì sao chưa thể chạy tiếp?"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Tình huống",
+          "Việc cần làm"
+        ],
+        "rows": [
+          [
+            "Chưa có kế hoạch đánh giá",
+            "Đánh giá bộ sổ trước khi thực thi."
+          ],
+          [
+            "Đã chuyển bộ sổ hoặc năm",
+            "Đánh giá lại đúng ngữ cảnh; không dùng kế hoạch cũ cho bộ sổ mới."
+          ],
+          [
+            "ERP đang xử lý bộ sổ",
+            "Theo dõi lần xử lý đang chạy, tránh chạy AI đồng thời."
+          ],
+          [
+            "Thiếu quyền ghi bằng AI hoặc chức năng chưa bật",
+            "Người quản trị kiểm quyền và cấu hình theo phạm vi được giao."
+          ],
+          [
+            "Nguồn hóa đơn chưa đủ",
+            "Hoàn thiện dữ liệu đầu vào trước các bước phụ thuộc. Tháng trống chưa chứng minh là không phát sinh."
+          ]
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "6. Cách báo tiến độ cho người quản lý"
+      },
+      {
+        "t": "p",
+        "x": "Dùng một dòng có đủ bốn ý: khách hàng và kỳ; bước đang vướng; lý do; người xử lý và việc tiếp theo. Ví dụ minh họa: “Khách A, tháng cần làm, sổ phụ còn khoản chưa xác định đối tượng; kế toán phụ trách chờ khách gửi nội dung thanh toán rồi kiểm lại.”"
+      },
+      {
+        "t": "h2",
+        "x": "7. Điều kiện kết thúc một việc"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Đã xử lý nguyên nhân gốc và đánh giá lại.",
+          "Đã kiểm chứng từ hoặc dữ liệu đầu ra tương ứng.",
+          "Đã ghi nhận phần còn tồn, nếu có, và người chịu trách nhiệm.",
+          "Người kiểm xác nhận trước khi coi kỳ đã hoàn tất; màu xanh hoặc chữ Xong không thay bước đối chiếu."
+        ]
+      },
+      {
+        "t": "link",
+        "href": "/unesco-xii-ai/dich-vu-ke-toan/",
+        "x": "Xem toàn bộ lộ trình UNESCO XII AI cho dịch vụ kế toán và khách hàng"
+      }
+    ]
+  },
+  {
+    "slug": "ra-soat-nhieu-bo-so-qua-dem-unesco-xii-ai",
+    "title": "Rà soát nhiều bộ sổ qua đêm: đọc bảng tổng hợp và giao việc",
+    "date": "2026-11-18",
+    "topic": "Dịch vụ kế toán",
+    "description": "Thiết lập phạm vi rà soát, mở kết quả HTML hoặc CSV và phân công ngoại lệ; hiểu rõ chức năng đọc dữ liệu và giới hạn của lịch chạy.",
+    "relatedVideo": "xii-ra-soat-nhat-ky",
+    "blocks": [
+      {
+        "t": "lead",
+        "x": "Rà soát hàng loạt giúp dịch vụ kế toán có một bảng tổng hợp để chọn bộ sổ cần xử lý trước. Chức năng qua đêm này đọc dữ liệu để lập kết quả rà soát; không tự đăng nhập cổng hóa đơn, tải hồ sơ hay ghi sổ thay người dùng."
+      },
+      {
+        "t": "h2",
+        "x": "1. Chuẩn bị danh sách bộ sổ"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Mở chức năng Chạy hàng loạt các bộ sổ (qua đêm), chọn Danh sách bộ sổ…",
+          "Kiểm đường dẫn, khả năng truy cập, năm và danh sách khách thuộc phạm vi cần rà.",
+          "Thống nhất người đọc kết quả vào ca làm tiếp theo; bảng tổng hợp chỉ có ích khi ngoại lệ được giao xử lý."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "2. Chạy thử trong phạm vi nhỏ"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chọn Chạy trong chương trình hoặc Chạy ngay (chạy nền) theo nhu cầu và điều kiện bản cài.",
+          "Dùng một số bộ sổ đã biết tình trạng để đối chiếu kết quả trước khi mở rộng danh sách.",
+          "Chờ kết quả, kiểm thời gian chạy, bộ sổ thành công, bị bỏ qua và lỗi truy cập. Không kết luận mọi bộ sổ đã được rà chỉ vì tiến trình kết thúc."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "3. Đọc bảng tổng hợp"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Nơi xem",
+          "Cách sử dụng"
+        ],
+        "rows": [
+          [
+            "Mở bảng tổng hợp (HTML)",
+            "Đọc kết quả trong trình duyệt, kiểm ngữ cảnh và bộ sổ cần chú ý."
+          ],
+          [
+            "Mở bảng tổng hợp (Excel CSV)",
+            "Lọc, phân nhóm và lập danh sách công việc nội bộ."
+          ],
+          [
+            "Nhật ký / thông báo chạy",
+            "Xác định bộ sổ không đọc được, bị bỏ qua hoặc vượt thời gian xử lý."
+          ]
+        ]
+      },
+      {
+        "t": "p",
+        "x": "Đối chiếu số bộ sổ dự kiến với số được xử lý. Đọc cả những bộ sổ năm cũ bị bỏ qua, lỗi và thời điểm tạo bảng. Một bảng cũ không phản ánh các chứng từ vừa nhập sau thời điểm rà soát."
+      },
+      {
+        "t": "h2",
+        "x": "4. Khi cần hẹn giờ"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Sau khi chạy thử ổn, chọn giờ theo định dạng HH:MM, chế độ lặp và giới hạn phút mỗi bộ sổ phù hợp.",
+          "Bấm Hẹn giờ… và đọc xác nhận trong chương trình. Kiểm máy chạy, quyền truy cập dữ liệu và điều kiện vận hành của lịch trên máy đó.",
+          "Theo dõi lần chạy đầu theo lịch. Khi cần ngừng, dùng Hủy hẹn giờ và kiểm thông báo kết quả."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Đọc bài hoặc xem video không tạo lịch chạy. Lịch chỉ được thiết lập bằng thao tác và xác nhận trong phần mềm trên máy được giao nhiệm vụ."
+      },
+      {
+        "t": "h2",
+        "x": "5. Chuyển kết quả thành việc cần làm"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Kết quả rà",
+          "Việc giao tiếp theo"
+        ],
+        "rows": [
+          [
+            "Thiếu hồ sơ / dữ liệu nguồn",
+            "Kế toán liệt kê tài liệu; khách bổ sung; nhận và kiểm lại."
+          ],
+          [
+            "Có ngoại lệ nghiệp vụ",
+            "Giao kế toán phụ trách đọc lý do và đối chiếu chứng từ."
+          ],
+          [
+            "Không truy cập được bộ sổ",
+            "Kiểm đường dẫn, máy và quyền; chạy rà lại sau khi khắc phục."
+          ],
+          [
+            "Chưa thấy vấn đề trong bảng tổng hợp",
+            "Vẫn đối chiếu nguồn và báo cáo theo phạm vi kiểm của người chịu trách nhiệm."
+          ]
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "6. Phân biệt với xử lý tự động"
+      },
+      {
+        "t": "p",
+        "x": "Rà soát hàng loạt là bước đọc và tổng hợp. Giao việc qua ERP hoặc chạy xử lý AI trong một bộ sổ là luồng khác, có phạm vi, quyền ghi và điều kiện riêng. Không coi việc hẹn giờ rà soát là đã bật tự động làm toàn bộ sổ kế toán."
+      },
+      {
+        "t": "h2",
+        "x": "7. Bảng kiểm buổi sáng"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Đúng ngày giờ báo cáo và đủ danh sách bộ sổ dự kiến.",
+          "Đã tách bộ sổ lỗi, bị bỏ qua và có việc cần người.",
+          "Mỗi ngoại lệ có người xử lý, thông tin nguồn và hạn kiểm lại.",
+          "Kết quả sau xử lý được cập nhật từ dữ liệu mới trước khi bàn giao hoặc khóa kỳ."
+        ]
+      },
+      {
+        "t": "link",
+        "href": "/unesco-xii-ai/dich-vu-ke-toan/",
+        "x": "Xem toàn bộ lộ trình UNESCO XII AI cho dịch vụ kế toán và khách hàng"
+      }
+    ]
+  },
+  {
+    "slug": "nhat-ky-ai-doi-chieu-ket-qua-unesco-xii-ai",
+    "title": "Nhật ký AI: xem đã làm gì và đối chiếu kết quả trong tháng",
+    "date": "2026-11-18",
+    "topic": "Dịch vụ kế toán",
+    "description": "Lập nhật ký Excel hoặc HTML, đọc hóa đơn và chứng từ liên quan; kiểm kết quả thực tế và xử lý khi nhật ký chưa đủ thông tin.",
+    "relatedVideo": "xii-ra-soat-nhat-ky",
+    "blocks": [
+      {
+        "t": "lead",
+        "x": "Nhật ký giúp trả lời AI đã xử lý gì, lúc nào và có căn cứ nào để đối chiếu. Kết luận hoàn tất vẫn cần dựa vào chứng từ, dữ liệu nguồn và báo cáo của đúng bộ sổ."
+      },
+      {
+        "t": "h2",
+        "x": "1. Lập nhật ký tháng"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Mở AI đã làm gì tháng này, kiểm doanh nghiệp, tháng và năm.",
+          "Bấm Lập nhật ký và chờ hoàn tất; tránh khởi động nhiều lần lập cùng lúc.",
+          "Trong hộp thoại kết quả, chọn Có để mở Excel, Không để mở HTML hoặc Hủy để đóng. Đây là báo cáo đọc dữ liệu, không phải lệnh ghi sổ."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "2. Đọc các nhóm thông tin"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Nhóm",
+          "Dùng để đối chiếu"
+        ],
+        "rows": [
+          [
+            "Tổng quan",
+            "Số lượng, mức tin cậy, nguồn ghép và hoạt động trong phạm vi báo cáo."
+          ],
+          [
+            "Hóa đơn",
+            "Điểm, nguồn, căn cứ và chứng từ liên quan; chọn mẫu cần kiểm kỹ."
+          ],
+          [
+            "Nhật ký",
+            "Thời điểm, loại thao tác, nội dung và mã liên quan khi có."
+          ],
+          [
+            "Mã ghép đã học / gộp mã",
+            "Kiểm cách dữ liệu danh mục được ghép hoặc gộp."
+          ],
+          [
+            "Sổ phụ, chống trùng và rủi ro",
+            "Tìm trường hợp cần mở nguồn để kiểm thêm."
+          ]
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "3. Đối chiếu một thao tác đến dữ liệu thật"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Tìm thời điểm và nội dung thao tác trong đúng tháng. Ghi lại mã chứng từ hoặc mã liên quan nếu có.",
+          "Mở nguồn và chứng từ tương ứng trong UNESCO XII. So doanh nghiệp, kỳ, đối tượng, tài khoản và số tiền.",
+          "Đối chiếu trạng thái của bước xử lý với kết quả thực tế, nhất là khi lần chạy báo lỗi hoặc chưa rõ kết quả ghi.",
+          "Ghi kết luận kiểm: đã khớp, cần bổ sung căn cứ hoặc cần người xử lý tiếp."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "4. Ví dụ bàn giao giữa hai kế toán"
+      },
+      {
+        "t": "p",
+        "x": "Kế toán nhận bàn giao không chỉ nhận câu “AI đã chạy xong”. Hồ sơ bàn giao nên có kỳ, thời điểm chạy, phần đã kiểm, chứng từ mẫu đã đối chiếu và danh sách ngoại lệ. Khi cần tra lần chạy, thông tin như bộ sổ, máy, người thao tác và phạm vi kỳ giúp tìm đúng ngữ cảnh."
+      },
+      {
+        "t": "h2",
+        "x": "5. Khi nhật ký thiếu hoặc không thấy dòng cần tìm"
+      },
+      {
+        "t": "p",
+        "x": "Kiểm lại bộ sổ, tháng năm và thời điểm lập báo cáo. Việc ghi nhật ký có thể gặp lỗi, nên không thấy một dòng không chứng minh thao tác chưa từng diễn ra. Đối chiếu trực tiếp dữ liệu và thông báo của lần chạy; chuyển người phụ trách kỹ thuật nếu vẫn chưa xác định được."
+      },
+      {
+        "t": "note",
+        "x": "Nhật ký không phải nút hoàn tác chung. Không khôi phục hoặc xóa chứng từ chỉ dựa vào một dòng nhật ký. Khôi phục dữ liệu cần đúng bản sao lưu, phiên bản và quy trình do người có trách nhiệm thực hiện."
+      },
+      {
+        "t": "h2",
+        "x": "6. Chia sẻ kết quả cho khách hàng"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chọn phần báo cáo phù hợp với nội dung bàn giao; nêu kỳ và ngày chốt dữ liệu.",
+          "Giải thích phần còn tồn bằng ngôn ngữ nghiệp vụ: hồ sơ còn thiếu, khoản cần xác nhận và ngày hẹn.",
+          "Kiểm thông tin doanh nghiệp, nhân sự và dữ liệu nội bộ trước khi gửi; chỉ gửi cho người nhận được hai bên thống nhất.",
+          "Lưu kết luận của người kiểm cùng báo cáo, thay vì coi file xuất ra là bằng chứng đủ để khóa kỳ."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "7. Kết quả mong đợi"
+      },
+      {
+        "t": "p",
+        "x": "Người quản lý biết phần đã được kiểm và phần còn tồn; kế toán tiếp nhận tìm được nguồn của từng vấn đề; khách hàng biết cần bổ sung gì. Nhật ký hỗ trợ quá trình đó bằng dấu vết để tra cứu, còn trách nhiệm xác nhận kết quả thuộc người được giao kiểm."
+      },
+      {
+        "t": "link",
+        "href": "/unesco-xii-ai/dich-vu-ke-toan/",
+        "x": "Xem toàn bộ lộ trình UNESCO XII AI cho dịch vụ kế toán và khách hàng"
+      }
+    ]
+  }
+]
