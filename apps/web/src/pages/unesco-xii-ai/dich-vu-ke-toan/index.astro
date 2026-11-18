@@ -6,7 +6,7 @@ import { videoBySlug } from '../../../data/videos';
 import { xiiRoles, xiiLessons, xiiVideoSlugs, xiiFeatures, xiiGuide, xiiHandover } from '../../../data/xii-series';
 const videos = xiiVideoSlugs.map((slug) => videoBySlug(slug)!);
 ---
-<ContentLayout title="UNESCO XII AI cho dịch vụ kế toán và khách hàng" display="PHỐI HỢP RÕ RÀNG. |LÀM SỔ CÓ KIỂM SOÁT." subtitle="UNESCO XII AI × ERP UNESCO" description="Chuyên mục UNESCO XII AI: 10 bài theo vai trò, tính năng hỗ trợ dịch vụ kế toán, 3 video minh họa, cẩm nang PDF và mẫu bàn giao hồ sơ cho khách hàng." eyebrow="Chuyên mục · Dịch vụ kế toán & khách hàng" pills={['10 bài hướng dẫn', '3 video minh họa', 'Cẩm nang PDF 16 trang']}>
+<ContentLayout title="UNESCO XII AI cho dịch vụ kế toán và khách hàng" display="PHỐI HỢP RÕ RÀNG. |LÀM SỔ CÓ KIỂM SOÁT." subtitle="UNESCO XII AI × ERP UNESCO" description={`Chuyên mục UNESCO XII AI: ${xiiLessons.length} bài theo vai trò, tính năng hỗ trợ dịch vụ kế toán, ${videos.length} video minh họa, cẩm nang PDF và mẫu bàn giao hồ sơ cho khách hàng.`} eyebrow="Chuyên mục · Dịch vụ kế toán & khách hàng" pills={[`${xiiLessons.length} bài hướng dẫn`, `${videos.length} video minh họa`, 'Cẩm nang PDF 16 trang']}>
   <section class="section-sm"><div class="container">
     <nav class="actions" aria-label="Nội dung chuyên mục"><a class="btn btn-primary" href="#bai-viet">Chọn bài theo công việc</a><a class="btn btn-secondary" href="#tinh-nang">Tính năng nổi bật</a><a class="btn btn-secondary" href="#video">Video</a><a class="btn btn-secondary" href="#tai-lieu">Tài liệu & biểu mẫu</a></nav>
   </div></section>
@@ -23,12 +23,13 @@ const videos = xiiVideoSlugs.map((slug) => videoBySlug(slug)!);
     <div class="grid grid-3">{xiiFeatures.map((f) => <a class="card" href={url(`/kien-thuc/${f.lesson}/`)}><p class="feature-product">{f.product}</p><h3>{f.title}</h3><p>{f.text}</p><strong class="link-arrow">Xem cách ứng dụng</strong></a>)}</div>
   </div></section>
   <section class="section" id="bai-viet"><div class="container" data-xii-library>
-    <div class="section-head"><div><span class="eyebrow">Đọc và thực hành</span><h2>10 bài theo công việc</h2></div><p>Chọn vai trò hoặc tìm nội dung đang cần. Thời gian đọc là ước tính.</p></div>
+    <div class="section-head"><div><span class="eyebrow">Đọc và thực hành</span><h2>{xiiLessons.length} bài theo công việc</h2></div><p>Chọn vai trò hoặc tìm nội dung đang cần. Thời gian đọc là ước tính.</p></div>
     <div class="library-filters" hidden data-library-controls>
       <fieldset><legend>Bạn đang phụ trách phần nào?</legend><div class="role-options">{xiiRoles.map((role) => <button type="button" class="role-filter" data-role={role.id} aria-pressed={role.id === 'all' ? 'true' : 'false'}>{role.label}</button>)}</div></fieldset>
-      <label class="search-label" for="xii-search">Tìm bài viết<input id="xii-search" type="search" placeholder="Ví dụ: hồ sơ, gói khách, khóa kỳ" autocomplete="off" /></label>
+      <label class="search-label" for="xii-search">Tìm bài viết<input id="xii-search" type="search" placeholder="Ví dụ: sao kê, quy tắc, nhật ký" autocomplete="off" /></label>
       <button type="button" class="reset-filter" data-clear-filter>Xóa bộ lọc</button>
     </div>
+    <p class="notice"><strong>Mới · Xử lý hằng tháng:</strong> Bài 11–16 bổ sung quy tắc doanh nghiệp, nhận chứng từ, sao kê ngân hàng, trạng thái xử lý, rà soát qua đêm và nhật ký AI. Ba video mới nằm đầu phần <a href="#video">Video minh họa</a>.</p>
     <p class="caption" role="status" aria-live="polite" data-result-count>Hiển thị {xiiLessons.length} bài viết.</p>
     <div class="grid grid-3 lesson-grid">{xiiLessons.map(({article: a, roles, stage, minutes, number}) => <article class="card lesson-card" data-lesson data-roles={roles.join(' ')} data-search={`${a.title} ${a.description} ${stage}`}>
       <div class="lesson-meta"><span>{String(number).padStart(2, '0')} / {stage}</span><span>~{minutes} phút</span></div><h3><a href={url(`/kien-thuc/${a.slug}/`)}>{a.title}</a></h3><p>{a.description}</p><p class="caption">{roles.map((id) => xiiRoles.find((r) => r.id === id)!.label).join(' · ')}</p><a class="link-arrow" href={url(`/kien-thuc/${a.slug}/`)}>Đọc bài hướng dẫn</a>
@@ -36,7 +37,7 @@ const videos = xiiVideoSlugs.map((slug) => videoBySlug(slug)!);
     <p class="notice" data-empty-results hidden>Chưa có bài phù hợp. Hãy thử từ khóa ngắn hơn hoặc chọn “Tất cả”.</p>
   </div></section>
   <section class="section surface-soft" id="video"><div class="container">
-    <div class="section-head"><div><span class="eyebrow">Xem quy trình</span><h2>3 video có lời đọc và phụ đề</h2></div><p>Video dùng sơ đồ minh họa để giải thích kết nối, giao việc và kiểm tra. Có mốc nội dung và bản lời đọc; chưa phải video quay thao tác trực tiếp trên bản cài.</p></div>
+    <div class="section-head"><div><span class="eyebrow">Xem quy trình</span><h2>{videos.length} video có lời đọc và phụ đề</h2></div><p>Video dùng sơ đồ minh họa để giải thích kết nối, nhận hồ sơ, quy tắc doanh nghiệp, ngân hàng, rà soát và kiểm tra. Có mốc nội dung và bản lời đọc; chưa phải video quay thao tác trực tiếp trên bản cài.</p></div>
     <div class="video-grid">{videos.map((video) => <VideoCard video={video} />)}</div>
   </div></section>
   <section class="section" id="tai-lieu"><div class="container">

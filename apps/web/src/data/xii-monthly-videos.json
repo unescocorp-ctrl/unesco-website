@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "xii-ho-so-quy-tac",
+    "title": "Nhận hồ sơ và thiết lập quy tắc theo doanh nghiệp",
+    "topic": "Dịch vụ kế toán",
+    "duration": "0:56",
+    "durationSeconds": 55.962484,
+    "desc": "Minh họa bốn bước: phân loại hồ sơ, hiểu trạng thái nhận tệp, đặt quy tắc và kiểm lại hóa đơn trước ghi sổ. Có lời đọc, phụ đề và bài hướng dẫn chi tiết.",
+    "src": "/videos/erp-xii/xii-ho-so-quy-tac.mp4",
+    "poster": "/videos/erp-xii/xii-ho-so-quy-tac.webp",
+    "captions": "/videos/erp-xii/xii-ho-so-quy-tac.vtt",
+    "youtube": "",
+    "uploadDate": "2026-11-18T14:10:28.471Z",
+    "kind": "Minh họa quy trình · Lời đọc tổng hợp",
+    "articleSlugs": [
+      "quy-tac-theo-doanh-nghiep-unesco-xii-ai",
+      "nhan-chung-tu-khach-gui-unesco-xii-ai"
+    ],
+    "chapters": [
+      {
+        "title": "Bắt đầu từ đúng hồ sơ",
+        "start": 0,
+        "text": "Mỗi tháng, khách bàn giao hồ sơ theo bốn nhóm: hóa đơn, sổ phụ, lương và hồ sơ khác. Kế toán kiểm doanh nghiệp, kỳ và số lượng tệp. Nhận được hồ sơ, nhập dữ liệu và ghi sổ là ba mốc cần theo dõi riêng."
+      },
+      {
+        "title": "Đọc kỹ lựa chọn nhận tệp",
+        "start": 14.158,
+        "text": "Trong chức năng Nhận chứng từ khách gửi, chọn Có để đưa tệp hóa đơn phù hợp vào luồng nhập. Chọn Không là đánh dấu đã xem, không phải đã hạch toán. Sổ phụ và lương được xử lý tại chức năng tương ứng, sau khi kiểm nguồn."
+      },
+      {
+        "title": "Đặt quy tắc cho đúng bộ sổ",
+        "start": 27.704,
+        "text": "Mở Quy tắc chi phí theo doanh nghiệp. Kiểm từ khóa, tài khoản và cách gán lô trước khi lưu. Quy tắc đứng trên được xét trước. Khi dùng bộ mẫu, vẫn cần thử trường hợp khớp rõ và trường hợp dễ nhầm theo nghiệp vụ của khách."
+      },
+      {
+        "title": "Phân tích lại rồi kiểm kết quả",
+        "start": 41.515,
+        "text": "Với hóa đơn đã phân tích nhưng chưa ghi sổ, dùng Phân tích lại rồi kiểm tài khoản và căn cứ. Đổi quy tắc không tự sửa toàn bộ chứng từ đã ghi. Khi bàn giao, nêu rõ phần đã nhận, đã nhập, đã kiểm và việc còn cần bổ sung."
+      }
+    ]
+  },
+  {
+    "slug": "xii-ngan-hang-trang-thai",
+    "title": "Sao kê ngân hàng và trạng thái cần xử lý",
+    "topic": "Dịch vụ kế toán",
+    "duration": "0:57",
+    "durationSeconds": 57.360189,
+    "desc": "Minh họa cách kiểm sao kê, hiểu điều kiện ghi tự động và xử lý trạng thái Cần người hoặc Chưa rõ kết quả ghi. Kèm phụ đề và hai bài thực hành.",
+    "src": "/videos/erp-xii/xii-ngan-hang-trang-thai.mp4",
+    "poster": "/videos/erp-xii/xii-ngan-hang-trang-thai.webp",
+    "captions": "/videos/erp-xii/xii-ngan-hang-trang-thai.vtt",
+    "youtube": "",
+    "uploadDate": "2026-11-18T14:10:33.569Z",
+    "kind": "Minh họa quy trình · Lời đọc tổng hợp",
+    "articleSlugs": [
+      "sao-ke-ngan-hang-unesco-xii-ai",
+      "doc-trang-thai-xu-ly-unesco-xii-ai"
+    ],
+    "chapters": [
+      {
+        "title": "Nhập đúng sao kê, đúng kỳ",
+        "start": 0,
+        "text": "Trước khi nhập sổ phụ, chọn đúng tài khoản ngân hàng và kỳ làm việc. Sau khi nhập, so ngày, nội dung, số chứng từ và chiều tiền với sao kê. Bấm Phân tích rồi kiểm nhóm, tài khoản đối ứng, đối tượng và hóa đơn được ghép."
+      },
+      {
+        "title": "Điểm cao chưa đủ để tự ghi",
+        "start": 14.498,
+        "text": "Lập chứng từ xem trước giúp kiểm từng chứng từ trước xác nhận. Ghi tự động cần dòng sẵn sàng, đạt ngưỡng, không có cảnh báo và chưa có chứng từ liên kết. Luồng này còn loại dòng có nguồn ghép là AI. Điểm cao không thay được các điều kiện khác."
+      },
+      {
+        "title": "Đọc lý do trước khi tiếp tục",
+        "start": 28.878,
+        "text": "Cần người hoặc Chờ xác thực yêu cầu đọc lý do và giải quyết đúng bước đang vướng. Phân biệt trạng thái đánh giá bộ sổ với kết quả của một lần chạy. Sau khi bổ sung dữ liệu hoặc hoàn tất xác thực, đánh giá lại trước khi tiếp tục."
+      },
+      {
+        "title": "Chưa rõ kết quả ghi: kiểm trước",
+        "start": 41.994,
+        "text": "Khi báo Chưa rõ kết quả ghi, đừng bấm chạy lại ngay. Ghi lại bộ sổ, kỳ và thời điểm, rồi đối chiếu chứng từ, nguồn và nhật ký. Chưa rõ không có nghĩa là chưa ghi. Chỉ tiếp tục sau khi xác định được phần dữ liệu còn cần xử lý."
+      }
+    ]
+  },
+  {
+    "slug": "xii-ra-soat-nhat-ky",
+    "title": "Rà soát nhiều bộ sổ và đối chiếu nhật ký AI",
+    "topic": "Dịch vụ kế toán",
+    "duration": "0:58",
+    "durationSeconds": 58.406938,
+    "desc": "Minh họa quy trình đọc bảng tổng hợp qua đêm, phân công ngoại lệ và tra nhật ký tháng để đối chiếu chứng từ. Có lời đọc, phụ đề và mốc nội dung.",
+    "src": "/videos/erp-xii/xii-ra-soat-nhat-ky.mp4",
+    "poster": "/videos/erp-xii/xii-ra-soat-nhat-ky.webp",
+    "captions": "/videos/erp-xii/xii-ra-soat-nhat-ky.vtt",
+    "youtube": "",
+    "uploadDate": "2026-11-18T14:10:38.904Z",
+    "kind": "Minh họa quy trình · Lời đọc tổng hợp",
+    "articleSlugs": [
+      "ra-soat-nhieu-bo-so-qua-dem-unesco-xii-ai",
+      "nhat-ky-ai-doi-chieu-ket-qua-unesco-xii-ai"
+    ],
+    "chapters": [
+      {
+        "title": "Rà soát để biết việc cần làm",
+        "start": 0,
+        "text": "Rà soát qua đêm đọc dữ liệu nhiều bộ sổ để lập bảng tổng hợp. Chức năng này không tự đăng nhập cổng hóa đơn, tải hồ sơ hay ghi sổ. Kiểm danh sách, năm và đường dẫn rồi chạy thử, chú ý cả bộ sổ lỗi hoặc bị bỏ qua."
+      },
+      {
+        "title": "Từ bảng tổng hợp đến giao việc",
+        "start": 13.879,
+        "text": "Mở bảng tổng hợp dạng HTML hoặc CSV. Kiểm thời điểm tạo và số bộ sổ đã rà so với dự kiến. Mỗi ngoại lệ cần người phụ trách và hạn kiểm lại. Lịch chạy chỉ được tạo khi người dùng thao tác Hẹn giờ và xác nhận trong phần mềm."
+      },
+      {
+        "title": "Lập nhật ký đúng tháng",
+        "start": 29.241,
+        "text": "Mở AI đã làm gì tháng này, chọn đúng kỳ rồi Lập nhật ký. Báo cáo Excel hoặc HTML giúp xem tổng quan, hóa đơn, nguồn ghép và chứng từ liên quan. Đây là báo cáo đọc dữ liệu, không phải lệnh ghi thêm chứng từ vào sổ."
+      },
+      {
+        "title": "Đối chiếu rồi mới xác nhận",
+        "start": 43.778,
+        "text": "Dùng nhật ký để tìm chứng từ rồi kiểm kỳ, đối tượng và số tiền trên dữ liệu thật. Không thấy dòng nhật ký chưa chứng minh thao tác chưa xảy ra. Nhật ký cũng không phải nút hoàn tác chung. Người kiểm cần ghi rõ phần đã khớp và phần còn tồn."
+      }
+    ]
+  }
+]
