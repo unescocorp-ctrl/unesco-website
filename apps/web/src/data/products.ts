@@ -34,7 +34,7 @@ export type Product = {
   href?: string;
   demo?: string;
   comingSoon?: boolean;
-  /** Ảnh giao diện trên thẻ (trong public/). Có `video` thì bấm ảnh phát video; không có thì bấm ảnh mở demo hoặc trang riêng. */
+  /** Ảnh giao diện trên thẻ (trong public/). Có `video` thì bấm ảnh phát video; có demo/trang riêng thì mở liên kết; còn lại hiển thị ảnh tĩnh. */
   media?: { img: string; alt: string; video?: string };
 };
 
@@ -47,7 +47,7 @@ export const products: Product[] = [
     tagline: 'Thế hệ phần mềm kế toán tiếp theo của UNESCO, tặng kèm ERP_UNESCO, UNESCO_TAX_Online và UNESCO SalesCRM AI.',
     points: ['Tặng kèm ERP_UNESCO', 'Tặng kèm UNESCO_TAX_Online', 'Tặng kèm UNESCO SalesCRM AI'],
     price: '10.000.000 đ', unit: '/ MST', priceNote: 'Trả phí 1 lần · tặng kèm 03 sản phẩm', serviceNote: SERVICE_DISCOUNT,
-    media: { img: '/screenshots/unesco-xii-ai/tong-quan.webp', alt: 'Màn hình Tổng quan điều hành UNESCO XII AI', video: '/videos/gioi-thieu-unesco-ai.mp4' },
+    media: { img: '/screenshots/unesco-xii-ai/tong-quan.webp', alt: 'Màn hình Tổng quan điều hành UNESCO XII AI' },
   },
   {
     id: 'unesco-ai', name: 'UNESCO AI', family: 'ke-toan', badge: 'Có AI',

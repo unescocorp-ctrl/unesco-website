@@ -12,10 +12,14 @@ const cta = p.href ? { t: 'Xem chi tiết', h: p.href } : { t: p.comingSoon ? '�
     <button type="button" class="pd-media" data-video={url(p.media.video)} data-title={p.name} aria-label={`Xem video ${p.name}`}>
       <img src={url(p.media.img)} alt={p.media.alt} loading="lazy" decoding="async" /><span class="pd-play"><i aria-hidden="true">▶</i>Xem video</span>
     </button>
-  ) : p.media ? (
+  ) : p.media && (p.demo || p.href) ? (
     <a class="pd-media" href={url(p.demo ?? p.href ?? '/lien-he/#demo')} target={p.demo ? '_blank' : undefined} rel={p.demo ? 'noopener' : undefined}>
       <img src={url(p.media.img)} alt={p.media.alt} loading="lazy" decoding="async" /><span class="pd-play"><i aria-hidden="true">↗</i>{p.demo ? 'Mở demo' : 'Xem giao diện'}</span>
     </a>
+  ) : p.media ? (
+    <div class="pd-media is-static">
+      <img src={url(p.media.img)} alt={p.media.alt} loading="lazy" decoding="async" />
+    </div>
   ) : (
     <div class="pd-media is-empty"><span>{p.name}</span><small>{p.comingSoon ? 'Sắp ra mắt' : 'Giao diện đang cập nhật'}</small></div>
   )}
