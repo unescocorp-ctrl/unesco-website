@@ -4,8 +4,8 @@
  * Mỗi bài là một mục trong mảng `articles`. Trang hiển thị: /kien-thuc/<slug>/
  * (xem pages/kien-thuc/<slug>/index.astro và components/ArticleView.astro).
  *
- * THÊM BÀI MỚI: thêm một mục vào `articles`, tạo thư mục pages/kien-thuc/<slug>/index.astro
- * (sao chép từ bài có sẵn, đổi slug). sitemap.xml tự thêm bài mới kèm ngày cập nhật.
+ * THÊM BÀI MỚI: thêm dữ liệu vào `articles` hoặc erp-articles.json.
+ * pages/kien-thuc/[slug].astro và sitemap tự sinh URL; chạy kiểm tra trước khi xuất bản.
  *
  * Các loại khối nội dung (blocks):
  *   h2        tiêu đề mục
@@ -22,7 +22,10 @@
  *   download  nút tải tệp: href, x = chữ trên nút
  *   video     video tự lưu trên web (public/video/): src .mp4, vtt phụ đề, poster ảnh bìa, cap chú thích
  */
+import erpArticles from './erp-articles.json';
+
 export type Block =
+  | { t: 'link'; href: string; x: string }
   | { t: 'h2'; x: string }
   | { t: 'lead'; x: string }
   | { t: 'p'; x: string }
@@ -42,23 +45,27 @@ export type Article = {
   title: string;
   /** Ngày cập nhật, dạng YYYY-MM-DD. */
   date: string;
+  updated?: string;
   description: string;
   topic: string;
   blocks: Block[];
+  relatedVideo?: string;
 };
 
 export const articleDate = (iso: string) => `${iso.slice(8, 10)}/${iso.slice(5, 7)}/${iso.slice(0, 4)}`;
 
 export const articles: Article[] = [
+  ...(erpArticles as Article[]),
   {
     slug: 'huong-dan-su-dung-erp-unesco',
+    updated: '2026-11-18',
     title: 'Hướng dẫn sử dụng ERP_UNESCO: quản lý toàn diện công ty dịch vụ kế toán',
     date: '2026-11-17',
     topic: 'Dịch vụ kế toán',
     description: 'Giới thiệu và hướng dẫn từng bước ERP_UNESCO cho công ty dịch vụ kế toán: Điều hành AI, hồ sơ khách hàng 360°, hợp đồng dịch vụ, công việc & kiểm soát chất lượng, công nợ – thu phí, KPI – hoa hồng, kiểm tra lương và báo cáo đối chiếu. Có video 9 bước.',
     blocks: [
       { t: 'lead', x: 'Công ty dịch vụ kế toán mỗi tháng phải nhận chứng từ của nhiều khách, làm sổ và kê khai đúng hạn, phát hành phí, thu tiền, nhắc nợ và tính lương theo số khách phụ trách. ERP_UNESCO nối các việc đó thành một luồng: khách hàng → hợp đồng → công việc → phí → thu tiền → phân bổ, kèm trợ lý AI chỉ ra việc cần làm tiếp.' },
-      { t: 'video', src: '/videos/erp-unesco-huong-dan.mp4', vtt: '', poster: '/videos/erp-unesco-huong-dan.webp', cap: 'Video hướng dẫn 9 bước (1 phút 15 giây), chú thích in trên hình. Dữ liệu trong video là dữ liệu mẫu minh hoạ.' },
+      { t: 'video', src: '/videos/erp-unesco-huong-dan.mp4', vtt: '', poster: '/videos/erp-unesco-huong-dan.webp', cap: 'Video giới thiệu 9 màn hình (1 phút 15 giây), không có lời đọc, chú thích in trên hình. Đây là giao diện mô phỏng với dữ liệu mẫu; phần AI chưa kết nối mô hình hoặc dữ liệu ERP thật.' },
       { t: 'h2', x: '1. Điều hành AI: việc cần làm hôm nay' },
       { t: 'p', x: 'Màn hình đầu tiên cho thấy số đề xuất đang chờ, quy trình liên thông của khách hàng đang theo dõi (khách hàng, hợp đồng, công việc, phí – phải thu, thu tiền, phân bổ) và danh sách việc cần xử lý. Chọn khách hàng và kỳ làm việc ở thanh phía trên; mọi màn hình sau giữ nguyên ngữ cảnh này.' },
       { t: 'img', src: 'dieu-hanh-ai', w: 1600, h: 1000, cap: 'Hình 1. Điều hành AI: đề xuất chờ xem, quy trình liên thông và việc cần xử lý.' },
@@ -67,7 +74,7 @@ export const articles: Article[] = [
         'Ở danh sách Việc cần bạn xử lý, bấm Xem gợi ý trên dòng cần làm.',
         'Đọc phần Căn cứ từ dữ liệu đang xem và Bản xem trước đề xuất.',
         'Bấm Mở nguồn để đến đúng màn hình liên quan nếu cần kiểm tra thêm.',
-        'Tích ô đã xem căn cứ rồi mới bấm Xác nhận. AI không tự ghi dữ liệu; người dùng luôn là người quyết định.',
+        'Tích ô đã xem căn cứ rồi mới bấm Xác nhận. Trong giao diện mô phỏng này, AI chỉ minh họa đề xuất và không ghi dữ liệu ERP thật. Khả năng tự ghi của UNESCO XII phụ thuộc cấu hình và bước xử lý khi triển khai.',
       ] },
       { t: 'h2', x: '3. Hồ sơ khách hàng 360°' },
       { t: 'p', x: 'Mỗi khách hàng có một hồ sơ duy nhất: thông tin pháp lý (mã số thuế được che bớt), người phụ trách, hồ sơ cần bổ sung, tài liệu đã nhận, hợp đồng, công việc và công nợ. Nhân viên mới nhận khách không phải hỏi lại người cũ.' },

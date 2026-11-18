@@ -5,8 +5,17 @@ root=Path(__file__).resolve().parents[1]
 pages=root/'apps/web/src/pages'
 # route map
 routes={'/'}
+data=root/'apps/web/src/data'
+article_slugs=set(re.findall(r"slug: '([a-z0-9\-]+)'", (data/'articles.ts').read_text(encoding='utf-8')))
+article_slugs|={a['slug'] for a in json.loads((data/'erp-articles.json').read_text(encoding='utf-8'))}
+video_source=(data/'videos.ts').read_text(encoding='utf-8')
+video_slugs=set(re.findall(r"(?:\bv\(|slug: )'([a-z0-9\-]+)'",video_source))
+video_slugs|={v['slug'] for v in json.loads((data/'erp-videos.json').read_text(encoding='utf-8'))}
+routes|={f'/kien-thuc/{s}/' for s in article_slugs}
+routes|={f'/video/{s}/' for s in video_slugs}
 for p in pages.rglob('*.astro'):
  rel=p.relative_to(pages)
+ if '[' in str(rel): continue  # getStaticPaths routes are expanded from content above
  if rel.name=='404.astro': continue
  if rel.name=='index.astro': route='/'+'/'.join(rel.parts[:-1])+'/' if rel.parts[:-1] else '/'
  else: route='/'+'/'.join(rel.with_suffix('').parts)+'/'
@@ -49,8 +58,9 @@ sm=(pages/'sitemap.xml.ts').read_text(encoding='utf-8')
 listed=set(re.findall(r'"(/[^"]*)"',sm))
 # sitemap tự thêm bài viết từ data/articles.ts (/kien-thuc/<slug>/)
 if 'articles.map' in sm:
- art=(root/'apps/web/src/data/articles.ts').read_text(encoding='utf-8')
- listed|={f'/kien-thuc/{s}/' for s in re.findall(r"slug: '([a-z0-9\-]+)'",art)}
+ listed|={f'/kien-thuc/{s}/' for s in article_slugs}
+if 'videos.map' in sm:
+ listed|={f'/video/{s}/' for s in video_slugs}
 # trang demo tĩnh không cần đưa vào sitemap (noindex)
 static_noindex={r for r in routes if (public/r.strip('/')/'index.html').is_file() and 'noindex' in (public/r.strip('/')/'index.html').read_text(encoding='utf-8',errors='ignore')[:3000]}
 for r in sorted(routes-listed-static_noindex): errors.append(f'Route missing from sitemap: {r}')

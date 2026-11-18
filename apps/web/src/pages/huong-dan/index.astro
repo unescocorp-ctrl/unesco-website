@@ -1,4 +1,5 @@
 ---
+import ErpIntegration from "../../components/ErpIntegration.astro";
 import { url } from '../../utils/url';
 import ContentLayout from '../../layouts/ContentLayout.astro';
 import VideoCard from '../../components/VideoCard.astro';
@@ -41,6 +42,7 @@ const know = [
   <div class="video-grid">{center.map((c) => <div><p class="sub-line" style="margin:0 0 10px">{c.label}</p><VideoCard video={c.v} /></div>)}</div>
   <div class="actions" style="margin-top:26px"><a class="btn btn-primary" href={url('/video/')}><Icon name="play-circle" />Tất cả video</a></div>
 </div></section>
+<ErpIntegration compact={true} />
 
 <section class="section-sm" id="gia-thanh-theo-dien"><div class="container"><div class="notice"><strong>Mới · Giá thành theo điện:</strong> video có lời đọc và phụ đề, hướng dẫn chi tiết từng màn hình kèm 22 hình – thiết lập một lần, AI cân đối cả tháng, xử lý điện chênh lệch và kiểm tra kết quả. <a href={url('/kien-thuc/gia-thanh-theo-dien/')}><strong>Đọc hướng dẫn →</strong></a> · <a href={url('/tai-lieu/huong-dan-gia-thanh-theo-dien-chi-tiet.pdf')} target="_blank" rel="noopener"><strong>Tải PDF</strong></a></div></div></section>
 

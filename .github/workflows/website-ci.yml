@@ -1,10 +1,10 @@
 name: website-ci
 on:
   pull_request:
-    paths: ['apps/web/**', '.github/workflows/website-ci.yml']
+    paths: ['apps/web/**', 'scripts/validate_*.py', '.github/workflows/website-ci.yml', '.github/workflows/deploy-github-pages.yml']
   push:
     branches: [develop]
-    paths: ['apps/web/**', '.github/workflows/website-ci.yml']
+    paths: ['apps/web/**', 'scripts/validate_*.py', '.github/workflows/website-ci.yml']
   workflow_dispatch:
 jobs:
   build:
@@ -18,13 +18,18 @@ jobs:
         with:
           node-version: '22'
           package-manager-cache: false
-      - run: npm install --no-audit --no-fund
+      - run: npm ci --no-audit --no-fund
       - name: Validate source (routes, links, sitemap)
         working-directory: .
-        run: python3 scripts/validate_source.py
+        run: |
+          python3 scripts/validate_source.py
+          python3 scripts/validate_content.py
       - run: npm run check
       - name: Build (mô phỏng GitHub Pages project site)
         env:
           PUBLIC_SITE_URL: https://example.github.io
           BASE_PATH: /${{ github.event.repository.name }}
         run: npm run build
+      - name: Validate generated pages and assets
+        working-directory: .
+        run: python3 scripts/validate_build.py

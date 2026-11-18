@@ -1,0 +1,24 @@
+---
+import { url } from '../../utils/url';
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import ErpIntegration from '../../components/ErpIntegration.astro';
+import VideoCard from '../../components/VideoCard.astro';
+import { articles } from '../../data/articles';
+import { videos } from '../../data/videos';
+const lessons = articles.filter((a) => a.relatedVideo);
+const series = videos.filter((v) => v.chapters);
+const roles = [
+  ['Người quản lý', 'Xem bộ sổ còn việc, phân công theo khách hàng và kỳ, theo dõi kết quả từng bước.'],
+  ['Kế toán phụ trách', 'Nhận diện hồ sơ thiếu, xử lý mục Cần người và đối chiếu chứng từ trong UNESCO XII.'],
+  ['Kế toán trưởng', 'Kiểm tra tiến độ cùng dữ liệu nguồn, rà soát báo cáo và điều kiện khóa kỳ.'],
+];
+---
+<ContentLayout title="ERP UNESCO kết nối UNESCO XII cho công ty dịch vụ kế toán" display="ĐIỀU HÀNH DỊCH VỤ. |KẾT NỐI TỪNG BỘ SỔ." subtitle="ERP UNESCO × UNESCO XII" description="Một lộ trình từ chuẩn bị kết nối, giao việc theo kỳ đến kiểm tra sổ sách. Dành cho công ty dịch vụ kế toán muốn quản lý công việc và kết quả trong cùng quy trình." eyebrow="Chuyên đề · ERP UNESCO / ERP Ánh Mai" pills={['6 bài hướng dẫn', '3 video có lời đọc & phụ đề', 'Quy trình có người kiểm tra']}>
+  <section class="section-sm"><div class="container"><div class="actions"><a class="btn btn-primary" href="#lo-trinh">Bắt đầu từ bài 1</a><a class="btn btn-secondary" href="#video">Xem bộ video</a><a class="btn btn-secondary" href={url('/san-pham/erp-unesco/#dang-ky')}>Đăng ký demo</a></div></div></section>
+  <ErpIntegration />
+  <section class="section"><div class="container"><div class="section-head"><div><span class="eyebrow">Điểm nổi bật</span><h2>Mỗi người thấy phần việc cần làm</h2></div><p>ERP quản lý hoạt động công ty dịch vụ kế toán; UNESCO XII xử lý nghiệp vụ trong bộ sổ của từng khách hàng.</p></div><div class="grid grid-3">{roles.map(([title, text]) => <div class="card"><h3>{title}</h3><p>{text}</p></div>)}</div></div></section>
+  <section class="section surface-soft" id="lo-trinh"><div class="container"><div class="section-head"><div><span class="eyebrow">Học theo công việc</span><h2>6 bài từ bắt đầu đến kiểm tra kỳ</h2></div><p>Đọc theo thứ tự hoặc mở ngay nội dung bạn đang cần. Hướng dẫn áp dụng theo phiên bản đã triển khai và phạm vi được cấp quyền.</p></div><div class="grid grid-3">{lessons.map((a, i) => <a class="card lesson" href={url(`/kien-thuc/${a.slug}/`)}><span class="lesson-number">{String(i + 1).padStart(2, '0')}</span><h3>{a.title}</h3><p class="muted">{a.description}</p><strong class="link-arrow">Đọc hướng dẫn</strong></a>)}</div></div></section>
+  <section class="section" id="video"><div class="container"><div class="section-head"><div><span class="eyebrow">Xem và thực hành theo bài viết</span><h2>3 video minh họa quy trình</h2></div><p>Có lời đọc tổng hợp, phụ đề tiếng Việt, các mốc nội dung và bản lời đọc. Các sơ đồ giúp hiểu quy trình; đây không phải bản quay thao tác trên dữ liệu khách hàng.</p></div><div class="video-grid">{series.map((video) => <VideoCard video={video} />)}</div></div></section>
+  <section class="section surface-soft"><div class="container split"><div><span class="eyebrow">Trước khi bắt đầu</span><h2>Chuẩn bị cho buổi demo</h2><ol class="prepare-list"><li>Số khách hàng và bộ sổ cần quản lý.</li><li>Phiên bản UNESCO XII đang sử dụng.</li><li>Vai trò người giao việc, người xử lý và người kiểm tra.</li><li>Một kỳ mẫu cùng các bước muốn xem: hóa đơn, ngân hàng, theo dõi hoặc khóa kỳ.</li></ol><p>Buổi demo dùng dữ liệu mẫu. Cấu hình kết nối và quyền thao tác sẽ được kiểm tra theo môi trường triển khai.</p><a class="btn btn-primary" href={url('/san-pham/erp-unesco/#dang-ky')}>Đăng ký demo ERP UNESCO</a></div><div class="card"><h2>Những điều cần hiểu đúng</h2><h3>AI có tự ghi sổ không?</h3><p>Khả năng tự ghi phụ thuộc bước xử lý, cấu hình và điều kiện kiểm soát của bản triển khai. Phần chưa đủ điều kiện cần kế toán xử lý.</p><h3>Ma trận xanh là khóa kỳ được ngay?</h3><p>Cần đọc lý do và đối chiếu hồ sơ, chứng từ, báo cáo trước khi người có quyền khóa kỳ.</p><h3>Chạy xong lệnh là thu được phí?</h3><p>Kết quả xử lý sổ và phát hành, thu phí dịch vụ là hai luồng riêng. Cần theo dõi trạng thái của từng luồng.</p></div></div></section>
+</ContentLayout>
+<style>.lesson{display:flex;flex-direction:column}.lesson-number{font-size:2rem;font-weight:900;color:#157f46;margin-bottom:12px}.lesson .link-arrow{margin-top:auto}.prepare-list{padding-left:22px;line-height:1.9}</style>

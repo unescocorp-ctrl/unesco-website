@@ -7,11 +7,12 @@ import { contact, telHref } from '../../data/contact';
 const intro = videoBySlug('gioi-thieu-unesco-ai')!;
 const rest = videos.filter((v) => v.slug !== intro.slug);
 ---
-<ContentLayout title="Video phần mềm kế toán UNESCO AI" description="Video giới thiệu và bộ video hướng dẫn từng mô-đun của phần mềm kế toán UNESCO AI: tải hoá đơn điện tử, danh sách hoá đơn, tự động xử lý, sổ phụ ngân hàng, báo cáo & nhật ký, giá thành, trợ lý AI." eyebrow="Hướng dẫn / Kiến thức / Video" display="TRUNG TÂM |VIDEO" subtitle="Video quay trực tiếp trên phần mềm UNESCO AI">
+<ContentLayout title="Video phần mềm kế toán UNESCO AI" description="Video giới thiệu và bộ video hướng dẫn từng mô-đun của phần mềm kế toán UNESCO AI: tải hoá đơn điện tử, danh sách hoá đơn, tự động xử lý, sổ phụ ngân hàng, báo cáo & nhật ký, giá thành, trợ lý AI." eyebrow="Hướng dẫn / Kiến thức / Video" display="TRUNG TÂM |VIDEO" subtitle="Video thao tác và minh họa quy trình UNESCO" pills={['Hướng dẫn theo chủ đề', 'Có trang xem riêng', 'Bộ video ERP – UNESCO XII']}>
 <section class="section"><div class="container">
+  <div class="notice" style="margin-bottom:28px"><strong>Mới · ERP UNESCO kết nối UNESCO XII:</strong> 3 video minh họa có lời đọc, phụ đề và nội dung theo mốc thời gian. <a href={url('/ket-noi-erp-unesco-xii/#video')}>Xem lộ trình kết nối →</a></div>
   <div class="split video-split">
     <div><VideoCard video={intro} large={true} /></div>
-    <div><span class="eyebrow">Bắt đầu từ đây</span><h2>Giới thiệu UNESCO AI trong {intro.duration}</h2><p class="lead">{intro.desc}</p><p class="muted">Sau đó xem từng mô-đun theo đúng việc bạn cần làm. Mỗi video có lời đọc và chữ chú thích từng bước.</p>
+    <div><span class="eyebrow">Bắt đầu từ đây</span><h2>Giới thiệu UNESCO AI trong {intro.duration}</h2><p class="lead">{intro.desc}</p><p class="muted">Sau đó xem từng mô-đun theo đúng việc bạn cần làm. Thông tin lời đọc, phụ đề hoặc dữ liệu minh họa được ghi trong mô tả từng video.</p>
       <div class="pill-row">{videoTopics.map((t) => <a class="pill" href={`#${topicSlug(t)}`}>{t}</a>)}</div>
     </div>
   </div>
@@ -26,21 +27,4 @@ const rest = videos.filter((v) => v.slug !== intro.slug);
   })}
 </div></section>
 <section class="section surface-soft"><div class="container"><div class="quote-band"><div><h2>Muốn được hướng dẫn trực tiếp?</h2><p>Bộ phận hỗ trợ sử dụng: {contact.support.lineVi}.</p></div><div class="actions"><a class="btn btn-primary" href={telHref(contact.support.phone)}>GỌI HỖ TRỢ</a><a class="btn btn-secondary" href={url('/ho-tro/')}>GỬI YÊU CẦU</a></div></div></div></section>
-<script is:inline>
-  document.querySelectorAll('button.video-thumb[data-yt]').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var f = document.createElement('iframe');
-      f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(btn.getAttribute('data-yt')) + '?autoplay=1&rel=0';
-      f.title = btn.getAttribute('aria-label') || 'Video';
-      f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-      f.allowFullscreen = true;
-      var box = document.createElement('div'); box.className = 'video-thumb'; box.appendChild(f);
-      btn.replaceWith(box);
-    });
-  });
-  // Chỉ phát một video tại một thời điểm
-  document.addEventListener('play', function (e) {
-    document.querySelectorAll('video').forEach(function (v) { if (v !== e.target) v.pause(); });
-  }, true);
-</script>
 </ContentLayout>

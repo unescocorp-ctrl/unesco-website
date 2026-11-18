@@ -53,6 +53,15 @@ jobs:
             npm install --no-audit --no-fund
           fi
 
+      - name: Validate content and source
+        working-directory: .
+        run: |
+          python3 scripts/validate_source.py
+          python3 scripts/validate_content.py
+
+      - name: Check Astro and TypeScript
+        run: npm run check
+
       - name: Build website
         env:
           PUBLIC_SITE_URL: ${{ steps.pages.outputs.origin }}
@@ -61,6 +70,10 @@ jobs:
         run: |
           echo "Site: $PUBLIC_SITE_URL  Base: ${BASE_PATH:-/}"
           npm run build
+
+      - name: Validate generated pages and assets
+        working-directory: .
+        run: python3 scripts/validate_build.py
 
       - name: Kiểm tra placeholder (chỉ cảnh báo, không chặn deploy)
         working-directory: .

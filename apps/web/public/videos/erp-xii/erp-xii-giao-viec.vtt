@@ -1,0 +1,49 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.306
+Bắt đầu trong phân hệ Điều hành sổ sách.
+
+00:00:02.306 --> 00:00:06.456
+Chọn bộ sổ thuộc phạm vi phụ trách, xác nhận khách hàng và kỳ cần xử lý.
+
+00:00:06.456 --> 00:00:08.992
+Đọc tình trạng hiện tại trước khi chọn bước.
+
+00:00:08.992 --> 00:00:12.105
+Không gửi hàng loạt khi chưa biết bộ sổ đang thiếu gì.
+
+00:00:13.105 --> 00:00:14.857
+Chạy kiểm tra trước khi gửi.
+
+00:00:14.857 --> 00:00:17.985
+Đọc các cảnh báo về quyền, kết nối, kỳ và dữ liệu.
+
+00:00:17.985 --> 00:00:21.615
+Khi đã đủ điều kiện, kiểm tra lại phạm vi rồi gửi một lần.
+
+00:00:21.615 --> 00:00:27.497
+Nếu lệnh chờ lâu, xem trạng thái máy xử lý và thông báo, tránh gửi thêm nhiều lệnh trùng việc.
+
+00:00:28.497 --> 00:00:32.499
+Mục Cần người cho biết phần hệ thống chưa đủ điều kiện tự xử lý.
+
+00:00:32.499 --> 00:00:34.750
+Xem bộ sổ, kỳ, bước và lý do cụ thể.
+
+00:00:34.750 --> 00:00:38.689
+Bổ sung hồ sơ hoặc điều chỉnh tại đúng nơi theo quyền được cấp.
+
+00:00:38.689 --> 00:00:41.378
+Không bấm xác nhận chỉ để làm mất cảnh báo.
+
+00:00:42.378 --> 00:00:45.742
+Sau khi xử lý, chạy lại kiểm tra hoặc bước phù hợp.
+
+00:00:45.742 --> 00:00:50.689
+Đối chiếu chứng từ và số liệu trong UNESCO mười hai với kết quả trả về ERP.
+
+00:00:50.689 --> 00:00:53.658
+Người có quyền chỉ xác nhận khi đã có căn cứ.
+
+00:00:53.658 --> 00:00:57.615
+Xem hai bài hướng dẫn kèm video để thực hiện theo từng bước.
