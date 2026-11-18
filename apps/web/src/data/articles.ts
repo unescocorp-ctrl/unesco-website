@@ -23,6 +23,7 @@
  *   video     video tự lưu trên web (public/video/): src .mp4, vtt phụ đề, poster ảnh bìa, cap chú thích
  */
 import erpArticles from './erp-articles.json';
+import customerArticles from './xii-customer-articles.json';
 
 export type Block =
   | { t: 'link'; href: string; x: string }
@@ -55,6 +56,7 @@ export type Article = {
 export const articleDate = (iso: string) => `${iso.slice(8, 10)}/${iso.slice(5, 7)}/${iso.slice(0, 4)}`;
 
 export const articles: Article[] = [
+  ...(customerArticles as Article[]),
   ...(erpArticles as Article[]),
   {
     slug: 'huong-dan-su-dung-erp-unesco',
