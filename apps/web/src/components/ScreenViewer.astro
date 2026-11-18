@@ -1,5 +1,9 @@
-<dialog class="screen-viewer" aria-labelledby="screen-title" aria-describedby="screen-help">
-  <div class="viewer-toolbar"><strong id="screen-title">Ảnh màn hình UNESCO XII</strong><div><button type="button" data-screen-zoom aria-pressed="false">Xem 100%</button><a data-screen-original target="_blank" rel="noopener">Mở tệp ảnh ↗</a><button type="button" data-screen-close autofocus>Đóng ✕</button></div></div>
+---
+interface Props { title?: string }
+const { title = 'Ảnh màn hình UNESCO XII' } = Astro.props;
+---
+<dialog class="screen-viewer" aria-labelledby="screen-title" aria-describedby="screen-help" data-default-title={title}>
+  <div class="viewer-toolbar"><strong id="screen-title">{title}</strong><div><button type="button" data-screen-zoom aria-pressed="false">Xem 100%</button><a data-screen-original target="_blank" rel="noopener">Mở tệp ảnh ↗</a><button type="button" data-screen-close autofocus>Đóng ✕</button></div></div>
   <p id="screen-help">Ảnh chụp thật đã che thông tin riêng. Ở chế độ 100%, cuộn để xem các vùng trên ảnh.</p>
   <div class="viewer-viewport" tabindex="0" role="region" aria-label="Ảnh phóng to, có thể cuộn"><img data-screen-image alt="" /></div>
   <p data-screen-caption aria-live="polite"></p>
@@ -17,6 +21,7 @@ if (viewer && typeof viewer.showModal === 'function') {
     if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
     event.preventDefault(); opener = link; fit();
     photo.src = link.href; photo.alt = link.dataset.caption!;
+    viewer.querySelector<HTMLElement>('#screen-title')!.textContent = link.dataset.screenTitle ? `Ảnh màn hình ${link.dataset.screenTitle}` : viewer.dataset.defaultTitle!;
     viewer.querySelector<HTMLAnchorElement>('[data-screen-original]')!.href = link.href;
     viewer.querySelector<HTMLElement>('[data-screen-caption]')!.textContent = link.dataset.caption!;
     previousOverflow = document.body.style.overflow; document.body.style.overflow = 'hidden';
