@@ -1,0 +1,32 @@
+<dialog class="screen-viewer" aria-labelledby="screen-title" aria-describedby="screen-help">
+  <div class="viewer-toolbar"><strong id="screen-title">Ảnh màn hình UNESCO XII</strong><div><button type="button" data-screen-zoom aria-pressed="false">Xem 100%</button><a data-screen-original target="_blank" rel="noopener">Mở tệp ảnh ↗</a><button type="button" data-screen-close autofocus>Đóng ✕</button></div></div>
+  <p id="screen-help">Ảnh chụp thật đã che thông tin riêng. Ở chế độ 100%, cuộn để xem các vùng trên ảnh.</p>
+  <div class="viewer-viewport" tabindex="0" role="region" aria-label="Ảnh phóng to, có thể cuộn"><img data-screen-image alt="" /></div>
+  <p data-screen-caption aria-live="polite"></p>
+</dialog>
+<script>
+const viewer = document.querySelector<HTMLDialogElement>('.screen-viewer');
+if (viewer && typeof viewer.showModal === 'function') {
+  const photo = viewer.querySelector<HTMLImageElement>('[data-screen-image]')!;
+  const zoom = viewer.querySelector<HTMLButtonElement>('[data-screen-zoom]')!;
+  const viewport = viewer.querySelector<HTMLElement>('.viewer-viewport')!;
+  let opener: HTMLAnchorElement | null = null;
+  let previousOverflow = '';
+  function fit() { viewport.classList.remove('actual-size'); zoom.setAttribute('aria-pressed','false'); zoom.textContent = 'Xem 100%'; }
+  document.querySelectorAll<HTMLAnchorElement>('[data-screen-link]').forEach((link) => link.addEventListener('click', (event) => {
+    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault(); opener = link; fit();
+    photo.src = link.href; photo.alt = link.dataset.caption!;
+    viewer.querySelector<HTMLAnchorElement>('[data-screen-original]')!.href = link.href;
+    viewer.querySelector<HTMLElement>('[data-screen-caption]')!.textContent = link.dataset.caption!;
+    previousOverflow = document.body.style.overflow; document.body.style.overflow = 'hidden';
+    viewer.showModal(); viewport.scrollTo(0,0);
+  }));
+  zoom.addEventListener('click', () => { const actual = viewport.classList.toggle('actual-size'); zoom.setAttribute('aria-pressed', String(actual)); zoom.textContent = actual ? 'Vừa khung' : 'Xem 100%'; });
+  viewer.querySelector('[data-screen-close]')!.addEventListener('click', () => viewer.close());
+  viewer.addEventListener('close', () => { document.body.style.overflow = previousOverflow; opener?.focus({preventScroll:true}); });
+}
+</script>
+<style>
+.screen-viewer{width:min(1600px,96vw);max-width:96vw;max-height:94dvh;padding:18px;border:1px solid #b8d2c6;border-radius:16px;color:#173b2b;background:#f8fcfa;box-shadow:0 20px 80px #0006}.screen-viewer::backdrop{background:#071b20dc}.viewer-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px}.viewer-toolbar>div{display:flex;gap:8px;flex-wrap:wrap}.viewer-toolbar button,.viewer-toolbar a{font:inherit;font-size:.9rem;color:#125e31;border:1px solid #94b5a3;border-radius:8px;background:white;padding:9px 12px;cursor:pointer;text-decoration:none}.viewer-toolbar button:focus-visible,.viewer-toolbar a:focus-visible,.viewer-viewport:focus-visible{outline:3px solid #1679a8;outline-offset:2px}.viewer-viewport{overflow:auto;max-height:65dvh;background:#dde8e2;border:1px solid #c2d2c9}.viewer-viewport img{display:block;max-width:100%;height:auto;margin:0 auto}.viewer-viewport.actual-size img{width:auto;max-width:none;max-height:none;margin:0}.screen-viewer p{margin:12px 0;font-size:.88rem;line-height:1.5}.screen-viewer [data-screen-caption]{margin-bottom:0}@media(max-width:650px){.screen-viewer{padding:12px}.viewer-toolbar{align-items:flex-start;flex-direction:column}.viewer-toolbar button,.viewer-toolbar a{padding:8px 10px}.viewer-viewport{max-height:58dvh}}
+</style>

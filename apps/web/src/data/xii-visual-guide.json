@@ -1,0 +1,368 @@
+[
+  {
+    "id": "A",
+    "slug": "huong-dan-unesco-xii-bat-dau",
+    "title": "Bắt đầu với UNESCO XII AI",
+    "description": "Vào màn hình AI, nhận biết thanh chức năng và danh mục «Tất cả chức năng AI».",
+    "roles": [
+      "manager",
+      "accountant"
+    ],
+    "minutes": 9,
+    "items": [
+      {
+        "anchor": "man-hinh-00",
+        "title": "Màn hình chính UNESCO XII",
+        "image": "/huong-dan/unesco-xii-real/00_man_hinh_chinh-thumb.webp",
+        "path": "Sau khi đăng nhập sổ"
+      },
+      {
+        "anchor": "man-hinh-01",
+        "title": "AI Work – Tự động xử lý hoá đơn",
+        "image": "/huong-dan/unesco-xii-real/01_tu_dong_xu_ly-thumb.webp",
+        "path": "UNESCO XII AI → thẻ «Tự động xử lý»"
+      },
+      {
+        "anchor": "man-hinh-09",
+        "title": "Danh mục «Tất cả chức năng AI»",
+        "image": "/huong-dan/unesco-xii-real/09_tat_ca_chuc_nang_ai-thumb.webp",
+        "path": "UNESCO XII AI → nút «☰ Tất cả chức năng AI»"
+      }
+    ]
+  },
+  {
+    "id": "B",
+    "slug": "huong-dan-unesco-xii-hoa-don-chung-tu",
+    "title": "Hoá đơn điện tử & chứng từ",
+    "description": "Từ hoá đơn mua vào / bán ra đến chứng từ trong sổ.",
+    "roles": [
+      "accountant"
+    ],
+    "minutes": 18,
+    "items": [
+      {
+        "anchor": "man-hinh-02",
+        "title": "Danh sách hoá đơn",
+        "image": "/huong-dan/unesco-xii-real/02_hoa_don-thumb.webp",
+        "path": "UNESCO XII AI → thẻ «Hoá đơn»"
+      },
+      {
+        "anchor": "man-hinh-24",
+        "title": "Nhập bảng kê hoá đơn Excel",
+        "image": "/huong-dan/unesco-xii-real/24_nhap_bang_ke_excel-thumb.webp",
+        "path": "Tất cả chức năng AI → Màn hình AI → Nhập hoá đơn từ bảng kê Excel…"
+      },
+      {
+        "anchor": "man-hinh-25",
+        "title": "Hải quan – tờ khai nhập khẩu",
+        "image": "/huong-dan/unesco-xii-real/25_hai_quan_to_khai-thumb.webp",
+        "path": "UNESCO XII AI → thẻ «Hải quan» (hoặc Màn hình AI → Hải quan)"
+      },
+      {
+        "anchor": "man-hinh-30",
+        "title": "Mua hàng không hoá đơn (thu mua)",
+        "image": "/huong-dan/unesco-xii-real/30_mua_hang_khong_hoa_don-thumb.webp",
+        "path": "Màn hình AI → Mua hàng không hoá đơn…"
+      },
+      {
+        "anchor": "man-hinh-32",
+        "title": "Quy tắc hạch toán hoá đơn điện tử",
+        "image": "/huong-dan/unesco-xii-real/32_quy_tac_hach_toan_hddt-thumb.webp",
+        "path": "Màn hình AI → Quy tắc hạch toán hoá đơn điện tử…"
+      },
+      {
+        "anchor": "man-hinh-36",
+        "title": "Đăng ký loại hình doanh nghiệp",
+        "image": "/huong-dan/unesco-xii-real/36_dang_ky_loai_hinh_dn-thumb.webp",
+        "path": "Màn hình AI → Đăng ký loại hình doanh nghiệp…"
+      }
+    ]
+  },
+  {
+    "id": "C",
+    "slug": "huong-dan-unesco-xii-ngan-hang",
+    "title": "Ngân hàng",
+    "description": "Sổ phụ, sao kê và quy tắc ghép thu chi.",
+    "roles": [
+      "accountant"
+    ],
+    "minutes": 6,
+    "items": [
+      {
+        "anchor": "man-hinh-10",
+        "title": "Sổ phụ ngân hàng",
+        "image": "/huong-dan/unesco-xii-real/10_so_phu_ngan_hang_rieng-thumb.webp",
+        "path": "UNESCO XII AI → thẻ «Sổ phụ NH» (hoặc Tất cả chức năng AI → AI – Sổ phụ ngân hàng…)"
+      },
+      {
+        "anchor": "man-hinh-33",
+        "title": "Quy tắc sổ phụ ngân hàng",
+        "image": "/huong-dan/unesco-xii-real/33_quy_tac_so_phu-thumb.webp",
+        "path": "Màn hình AI → Quy tắc sổ phụ ngân hàng…"
+      }
+    ]
+  },
+  {
+    "id": "D",
+    "slug": "huong-dan-unesco-xii-luong-bhxh",
+    "title": "Lương & BHXH",
+    "description": "Bảng lương, bảo hiểm xã hội, thuế TNCN.",
+    "roles": [
+      "accountant"
+    ],
+    "minutes": 6,
+    "items": [
+      {
+        "anchor": "man-hinh-11",
+        "title": "AI – Lương & BHXH",
+        "image": "/huong-dan/unesco-xii-real/11_luong_bhxh_rieng-thumb.webp",
+        "path": "UNESCO XII AI → thẻ «Lương & BHXH»"
+      },
+      {
+        "anchor": "man-hinh-26",
+        "title": "Bảng lương AI",
+        "image": "/huong-dan/unesco-xii-real/26_bang_luong_ai-thumb.webp",
+        "path": "Màn hình AI → Bảng lương AI…"
+      }
+    ]
+  },
+  {
+    "id": "E",
+    "slug": "huong-dan-unesco-xii-bao-cao-thue",
+    "title": "Báo cáo, thuế & cổng dịch vụ công",
+    "description": "Tờ khai HTKK, BCTC, cổng thuế, hồ sơ ký số.",
+    "roles": [
+      "manager",
+      "accountant"
+    ],
+    "minutes": 12,
+    "items": [
+      {
+        "anchor": "man-hinh-12",
+        "title": "Báo cáo & thuế (HTKK)",
+        "image": "/huong-dan/unesco-xii-real/12_bao_cao_thue_htkk-thumb.webp",
+        "path": "UNESCO XII AI → thẻ «Báo cáo & thuế»"
+      },
+      {
+        "anchor": "man-hinh-13",
+        "title": "Cổng thuế (dịch vụ công)",
+        "image": "/huong-dan/unesco-xii-real/13_cong_dich_vu_cong-thumb.webp",
+        "path": "UNESCO XII AI → thẻ «Cổng thuế»"
+      },
+      {
+        "anchor": "man-hinh-27",
+        "title": "Hồ sơ ký số và nộp Cổng DVC",
+        "image": "/huong-dan/unesco-xii-real/27_ho_so_ky_so_nop_dvc-thumb.webp",
+        "path": "Màn hình AI → Hồ sơ ký số và nộp Cổng DVC…"
+      },
+      {
+        "anchor": "man-hinh-31",
+        "title": "Cuối năm – BCTC & quyết toán thuế",
+        "image": "/huong-dan/unesco-xii-real/31_cuoi_nam-thumb.webp",
+        "path": "Màn hình AI → Cuối năm (báo cáo, tờ khai năm)…"
+      }
+    ]
+  },
+  {
+    "id": "F",
+    "slug": "huong-dan-unesco-xii-kiem-soat-quan-tri",
+    "title": "Kiểm soát & quản trị",
+    "description": "Soát lỗi số liệu, bảng điều hành, báo cáo cho chủ doanh nghiệp.",
+    "roles": [
+      "manager",
+      "accountant"
+    ],
+    "minutes": 12,
+    "items": [
+      {
+        "anchor": "man-hinh-14",
+        "title": "Kiểm soát công nợ và vật tư",
+        "image": "/huong-dan/unesco-xii-real/14_kiem_soat_cong_no_vat_tu-thumb.webp",
+        "path": "Tất cả chức năng AI → AI – Kiểm soát công nợ, vật tư…"
+      },
+      {
+        "anchor": "man-hinh-15",
+        "title": "Bảng điều hành các công ty",
+        "image": "/huong-dan/unesco-xii-real/15_bang_dieu_hanh_khach_hang-thumb.webp",
+        "path": "Tất cả chức năng AI → AI – Bảng điều hành khách hàng…"
+      },
+      {
+        "anchor": "man-hinh-16",
+        "title": "Báo cáo quản trị cho chủ doanh nghiệp",
+        "image": "/huong-dan/unesco-xii-real/16_quan_tri_chu_doanh_nghiep-thumb.webp",
+        "path": "Tất cả chức năng AI → AI – Quản trị (báo cáo chủ doanh nghiệp)…"
+      },
+      {
+        "anchor": "man-hinh-08",
+        "title": "Hệ thống AI – các lần ghi sổ & nhật ký",
+        "image": "/huong-dan/unesco-xii-real/08_he_thong_ai-thumb.webp",
+        "path": "UNESCO XII AI → thẻ «Hệ thống»"
+      }
+    ]
+  },
+  {
+    "id": "G",
+    "slug": "huong-dan-unesco-xii-dieu-phoi-cong-viec",
+    "title": "Điều phối & công việc",
+    "description": "AI làm theo quy trình cả tháng / cả kỳ, lịch công việc.",
+    "roles": [
+      "manager",
+      "accountant"
+    ],
+    "minutes": 12,
+    "items": [
+      {
+        "anchor": "man-hinh-18",
+        "title": "Các bước AI tự động (12 bước của tháng)",
+        "image": "/huong-dan/unesco-xii-real/18_cac_buoc_ai_12_buoc-thumb.webp",
+        "path": "Tất cả chức năng AI → Các bước AI tự động…"
+      },
+      {
+        "anchor": "man-hinh-19",
+        "title": "AI_AUTO – Điều phối tự động cả kỳ",
+        "image": "/huong-dan/unesco-xii-real/19_ai_auto_dieu_phoi-thumb.webp",
+        "path": "UNESCO XII AI → nút «AI_AUTO»"
+      },
+      {
+        "anchor": "man-hinh-20",
+        "title": "Quản lý công việc",
+        "image": "/huong-dan/unesco-xii-real/20_quan_ly_cong_viec-thumb.webp",
+        "path": "Tất cả chức năng AI → Quản lý công việc…"
+      },
+      {
+        "anchor": "man-hinh-21",
+        "title": "Lịch công việc theo tháng",
+        "image": "/huong-dan/unesco-xii-real/21_lich_cong_viec-thumb.webp",
+        "path": "Tất cả chức năng AI → Lịch công việc theo tháng (lịch bàn)…"
+      }
+    ]
+  },
+  {
+    "id": "H",
+    "slug": "huong-dan-unesco-xii-gia-thanh-san-xuat",
+    "title": "Giá thành sản xuất AI",
+    "description": "Định mức, phân bổ, trình tự giá thành và kết chuyển thành phẩm.",
+    "roles": [
+      "accountant"
+    ],
+    "minutes": 24,
+    "items": [
+      {
+        "anchor": "man-hinh-37",
+        "title": "Phương án giá thành tháng",
+        "image": "/huong-dan/unesco-xii-real/37_gt_phuong_an_thang-thumb.webp",
+        "path": "Tất cả chức năng AI → Giá thành AI… → Phương án giá thành tháng (AI)…"
+      },
+      {
+        "anchor": "man-hinh-38",
+        "title": "Trình tự giá thành 7 bước",
+        "image": "/huong-dan/unesco-xii-real/38_gt_trinh_tu_7_buoc-thumb.webp",
+        "path": "Giá thành AI… → Trình tự giá thành 7 bước…"
+      },
+      {
+        "anchor": "man-hinh-39",
+        "title": "Phân bổ & giá thành theo đối tượng",
+        "image": "/huong-dan/unesco-xii-real/39_gt_phan_bo_doi_tuong-thumb.webp",
+        "path": "Giá thành AI… → Phân bổ & giá thành theo đối tượng…"
+      },
+      {
+        "anchor": "man-hinh-40",
+        "title": "Điều chỉnh 632 cuối kỳ",
+        "image": "/huong-dan/unesco-xii-real/40_gt_dieu_chinh_632-thumb.webp",
+        "path": "Giá thành AI… → Điều chỉnh 632 cuối kỳ…"
+      },
+      {
+        "anchor": "man-hinh-41",
+        "title": "Cân đối AI – kết chuyển thành phẩm",
+        "image": "/huong-dan/unesco-xii-real/41_gt_can_doi_ai-thumb.webp",
+        "path": "Giá thành AI… → Cân đối AI (kết chuyển thành phẩm)…"
+      },
+      {
+        "anchor": "man-hinh-42",
+        "title": "Hồ sơ định mức giá thành",
+        "image": "/huong-dan/unesco-xii-real/42_gt_tham_so-thumb.webp",
+        "path": "Giá thành AI… → Tham số giá thành…"
+      },
+      {
+        "anchor": "man-hinh-43",
+        "title": "Định mức tự động cho sản phẩm",
+        "image": "/huong-dan/unesco-xii-real/43_gt_dinh_muc_tu_dong-thumb.webp",
+        "path": "Giá thành AI… → Định mức tự động…"
+      },
+      {
+        "anchor": "man-hinh-44",
+        "title": "Kiểm tra định mức",
+        "image": "/huong-dan/unesco-xii-real/44_gt_kiem_tra_dinh_muc-thumb.webp",
+        "path": "Giá thành AI… → Kiểm tra định mức (theo tháng, chỉ đọc sổ)…"
+      }
+    ]
+  },
+  {
+    "id": "I",
+    "slug": "huong-dan-unesco-xii-ho-so-khach-quy-tac",
+    "title": "Hồ sơ khách & quy tắc riêng",
+    "description": "Trao đổi chứng từ với khách và quy tắc theo từng doanh nghiệp.",
+    "roles": [
+      "accountant",
+      "customer"
+    ],
+    "minutes": 12,
+    "items": [
+      {
+        "anchor": "man-hinh-28",
+        "title": "Hồ sơ kèm chứng từ",
+        "image": "/huong-dan/unesco-xii-real/28_ho_so_kem_chung_tu-thumb.webp",
+        "path": "Màn hình AI → Hồ sơ kèm chứng từ…"
+      },
+      {
+        "anchor": "man-hinh-29",
+        "title": "Công cụ khách (gói .ukx có chữ ký)",
+        "image": "/huong-dan/unesco-xii-real/29_cong_khach-thumb.webp",
+        "path": "Màn hình AI → Cổng khách (gói chứng từ)…"
+      },
+      {
+        "anchor": "man-hinh-34",
+        "title": "Quy tắc chi phí theo doanh nghiệp",
+        "image": "/huong-dan/unesco-xii-real/34_quy_tac_chi_phi-thumb.webp",
+        "path": "Màn hình AI → Quy tắc chi phí theo doanh nghiệp…"
+      },
+      {
+        "anchor": "man-hinh-35",
+        "title": "Quy tắc hạch toán theo màn hình nhập",
+        "image": "/huong-dan/unesco-xii-real/35_quy_tac_man_hinh_nhap-thumb.webp",
+        "path": "Màn hình AI → Quy tắc hạch toán theo màn hình nhập…"
+      }
+    ]
+  },
+  {
+    "id": "J",
+    "slug": "huong-dan-unesco-xii-tro-ly-cap-nhat",
+    "title": "Trợ lý, cập nhật & kích hoạt",
+    "description": "Hỏi AI, cập nhật phần mềm, chế độ sử dụng AI.",
+    "roles": [
+      "manager",
+      "accountant"
+    ],
+    "minutes": 9,
+    "items": [
+      {
+        "anchor": "man-hinh-17",
+        "title": "Trợ lý AI – hướng dẫn và hỏi đáp (F1)",
+        "image": "/huong-dan/unesco-xii-real/17_tro_ly_ai_f1-thumb.webp",
+        "path": "Phím F1 trên mọi màn hình, hoặc Tất cả chức năng AI → Trợ lý AI…"
+      },
+      {
+        "anchor": "man-hinh-22",
+        "title": "Cập nhật phần mềm tự động",
+        "image": "/huong-dan/unesco-xii-real/22_cap_nhat_phan_mem-thumb.webp",
+        "path": "Tất cả chức năng AI → Cập nhật phần mềm tự động…"
+      },
+      {
+        "anchor": "man-hinh-23",
+        "title": "Kích hoạt AI – chế độ sử dụng",
+        "image": "/huong-dan/unesco-xii-real/23_kich_hoat_ai-thumb.webp",
+        "path": "Tất cả chức năng AI → Kích hoạt AI…"
+      }
+    ]
+  }
+]

@@ -8,6 +8,8 @@ data=root/'apps/web/src/data'
 public=root/'apps/web/public'
 articles=json.loads((data/'erp-articles.json').read_text(encoding='utf-8'))
 customer_articles=json.loads((data/'xii-customer-articles.json').read_text(encoding='utf-8'))
+visual_articles=json.loads((data/'xii-visual-articles.json').read_text(encoding='utf-8'))
+visual_guide=json.loads((data/'xii-visual-guide.json').read_text(encoding='utf-8'))
 videos=json.loads((data/'erp-videos.json').read_text(encoding='utf-8'))
 monthly_articles=json.loads((data/'xii-monthly-articles.json').read_text(encoding='utf-8'))
 articles+=monthly_articles
@@ -20,7 +22,7 @@ def seconds(value):
 
 legacy_articles=re.findall(r"slug: '([a-z0-9\-]+)'",(data/'articles.ts').read_text(encoding='utf-8'))
 legacy_videos=re.findall(r"(?:\bv\(|slug: )'([a-z0-9\-]+)'",(data/'videos.ts').read_text(encoding='utf-8'))
-for label,items,legacy in [('article',articles+customer_articles,legacy_articles),('video',videos,legacy_videos)]:
+for label,items,legacy in [('article',articles+customer_articles+visual_articles,legacy_articles),('video',videos,legacy_videos)]:
     slugs=[x['slug'] for x in items]+legacy
     check(len(slugs)==len(set(slugs)),f'Duplicate {label} slugs')
     for item in items:
@@ -53,6 +55,33 @@ for a in customer_articles:
     text=json.dumps(a,ensure_ascii=False)
     check(not re.search(r'[A-Za-z]:\\|file:///|absolute_path|sourceEvidenceRefs|S\d{2}\b',text),f"Internal evidence exposed: {a['slug']}")
 
+visual_slugs={a['slug'] for a in visual_articles}
+check(visual_slugs=={g['slug'] for g in visual_guide},'Visual guide/article mismatch')
+screen_assets=set()
+for a in visual_articles:
+    check(a.get('visualGuide') and not a.get('relatedVideo'),f"Invalid visual guide: {a['slug']}")
+    check(not re.search(r'[A-Za-z]:[\\/]|file:///|absolute_path|sourceEvidenceRefs',json.dumps(a,ensure_ascii=False)),f"Internal evidence exposed: {a['slug']}")
+    anchors=[b['id'] for b in a['blocks'] if b['t']=='h2' and b.get('id')]
+    check(len(anchors)==len(set(anchors)),f"Duplicate anchors: {a['slug']}")
+    group=next((g for g in visual_guide if g['slug']==a['slug']),None)
+    if group:
+        check(set(anchors)=={i['anchor'] for i in group['items']},f"Missing function anchor: {a['slug']}")
+        for item in group['items']:
+            check((public/item['image'].lstrip('/')).is_file(),f"Missing guide preview: {item['anchor']}")
+    for b in a['blocks']:
+        check(b['t'] in ['lead','note','h2','h3','p','ol','screen','link'],f"Unknown visual block: {b['t']}")
+        if b['t']=='screen':
+            check(b['w']>0 and b['h']>0 and bool(b['cap']),f"Incomplete screenshot: {a['slug']}")
+            for key in ('src','thumb'):
+                value=b[key];asset=public/value.lstrip('/')
+                check(value.startswith('/huong-dan/unesco-xii-real/') and '..' not in value and value.endswith('.webp'),f'Unexpected screenshot path: {value}')
+                check(asset.is_file() and asset.stat().st_size>0,f'Missing screenshot: {value}')
+                screen_assets.add(value)
+        elif b['t']=='link':
+            check(b['href'] in ('/unesco-xii-ai/huong-dan/','/unesco-xii-ai/dich-vu-ke-toan/'),f"Unknown guide link: {b['href']}")
+public_screens={'/huong-dan/unesco-xii-real/'+p.name for p in (public/'huong-dan/unesco-xii-real').iterdir() if p.is_file()}
+check(public_screens==screen_assets,'Unexpected or missing published screenshot asset')
+
 for v in videos:
     name=v['slug'];duration=v['durationSeconds']
     check(duration>0,f'Invalid duration: {name}')
@@ -82,4 +111,4 @@ for v in videos:
 
 if errors:
     print('[FAIL] content validation\n'+'\n'.join(errors));sys.exit(1)
-print(f'[PASS] {len(articles)} ERP/monthly articles, {len(customer_articles)} customer articles, {len(videos)} videos: unique routes, related content, assets, captions and transcripts')
+print(f'[PASS] {len(articles)} ERP/monthly articles, {len(customer_articles)} customer articles, {len(visual_articles)} visual articles, {len(screen_assets)} screenshot assets, {len(videos)} videos: routes, related content, assets, captions and transcripts')

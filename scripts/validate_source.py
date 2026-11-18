@@ -10,6 +10,7 @@ article_slugs=set(re.findall(r"slug: '([a-z0-9\-]+)'", (data/'articles.ts').read
 article_slugs|={a['slug'] for a in json.loads((data/'erp-articles.json').read_text(encoding='utf-8'))}
 article_slugs|={a['slug'] for a in json.loads((data/'xii-customer-articles.json').read_text(encoding='utf-8'))}
 article_slugs|={a['slug'] for a in json.loads((data/'xii-monthly-articles.json').read_text(encoding='utf-8'))}
+article_slugs|={a['slug'] for a in json.loads((data/'xii-visual-articles.json').read_text(encoding='utf-8'))}
 video_source=(data/'videos.ts').read_text(encoding='utf-8')
 video_slugs=set(re.findall(r"(?:\bv\(|slug: )'([a-z0-9\-]+)'",video_source))
 video_slugs|={v['slug'] for v in json.loads((data/'erp-videos.json').read_text(encoding='utf-8'))}

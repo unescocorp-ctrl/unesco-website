@@ -6,6 +6,7 @@ import { contact, zaloHref, mailHref } from '../data/contact';
 import { videoBySlug } from '../data/videos';
 import VideoCard from './VideoCard.astro';
 import ElectricityCalc from './ElectricityCalc.astro';
+import ScreenViewer from './ScreenViewer.astro';
 /** Hiển thị một bài viết trong data/articles.ts theo slug. */
 interface Props { slug: string }
 const { slug } = Astro.props;
@@ -14,6 +15,8 @@ if (!a) throw new Error(`Không tìm thấy bài viết: ${slug}`);
 const others = articles.filter((x) => x.slug !== slug);
 const relatedVideo = a.relatedVideo ? videoBySlug(a.relatedVideo) : undefined;
 const firstImg = a.blocks.find((b) => b.t === 'img') as { src: string } | undefined;
+const firstScreen = a.blocks.find((b) => b.t === 'screen');
+const sections = a.blocks.filter((b) => b.t === 'h2' && b.id);
 const origin = Astro.site ?? 'https://www.unescosoft.com';
 const articleSchema = {
   '@type': 'Article',
@@ -24,15 +27,16 @@ const articleSchema = {
   inLanguage: 'vi-VN',
   articleSection: a.topic,
   mainEntityOfPage: new URL(url(`/kien-thuc/${a.slug}/`), origin).toString(),
-  image: new URL(url(firstImg ? `/huong-dan/${a.slug}/${firstImg.src}.webp` : '/og-default.jpg'), origin).toString(),
+  image: new URL(url(firstScreen?.t === 'screen' ? firstScreen.src : firstImg ? `/huong-dan/${a.slug}/${firstImg.src}.webp` : '/og-default.jpg'), origin).toString(),
   author: { '@type': 'Organization', name: 'Công ty TNHH Phần mềm UNESCO', url: new URL(url('/'), origin).toString() },
   publisher: { '@id': new URL(url('/'), origin).toString() + '#organization' },
 };
 ---
 <ContentLayout title={a.title} description={a.description} eyebrow={`${a.topic} · cập nhật ${articleDate(a.updated ?? a.date)}`} pills={[]} type="article" published={a.date} schema={articleSchema} crumbs={[['Trang chủ', '/'], ['Kiến thức', '/kien-thuc/'], [a.title, `/kien-thuc/${a.slug}/`]]}>
-<section class="section"><div class="container legal-content article-content">
+<section class="section"><div class:list={['container legal-content article-content', {'visual-article': a.visualGuide}]}>
+  {a.visualGuide && <nav class="guide-toc" aria-label="Mục lục bài hướng dẫn"><a href={url('/unesco-xii-ai/huong-dan/')}>← Bộ hướng dẫn UNESCO XII bằng ảnh thật</a><h2>Trong bài này</h2><ol>{sections.map((b) => b.t === 'h2' && <li><a href={`#${b.id}`}>{b.x}</a></li>)}</ol><p>Bấm ảnh để mở lớn; chọn 100% để đọc rõ chữ trên màn hình.</p></nav>}
   {a.blocks.map((b) =>
-    b.t === 'h2' ? <h2>{b.x}</h2>
+    b.t === 'h2' ? <h2 id={b.id}>{b.x}</h2>
     : b.t === 'lead' ? <p class="article-lead">{b.x}</p>
     : b.t === 'p' ? <p>{b.x}</p>
     : b.t === 'ol' ? <ol>{b.items.map((i) => <li>{i}</li>)}</ol>
@@ -41,6 +45,7 @@ const articleSchema = {
     : b.t === 'calc' ? <ElectricityCalc />
     : b.t === 'h3' ? <h3>{b.x}</h3>
     : b.t === 'img' ? <figure class="article-figure"><a href={url(`/huong-dan/${a.slug}/${b.src}.webp`)} target="_blank" rel="noopener"><img src={url(`/huong-dan/${a.slug}/${b.src}.webp`)} width={b.w} height={b.h} alt={b.cap} loading="lazy" decoding="async" /></a><figcaption>{b.cap}</figcaption></figure>
+    : b.t === 'screen' ? <figure class="article-figure real-screen"><a href={url(b.src)} target="_blank" rel="noopener" data-screen-link data-caption={b.cap} aria-label={`Mở ảnh lớn: ${b.cap}`}><img src={url(b.thumb)} width={b.w} height={b.h} alt={b.cap} loading="lazy" decoding="async" /><span class="screen-open">Mở ảnh lớn ↗</span></a><figcaption>{b.cap}</figcaption></figure>
     : b.t === 'video' ? <figure class="article-figure article-video"><video controls preload="metadata" playsinline poster={url(b.poster)} width="1920" height="1020"><source src={url(b.src)} type="video/mp4" />{b.vtt && <track kind="captions" src={url(b.vtt)} srclang="vi" label="Tiếng Việt" default />}</video><figcaption>{b.cap}</figcaption></figure>
     : b.t === 'note' ? <p class="article-note">{b.x}</p>
     : b.t === 'link' ? <p><a class="link-arrow" href={url(b.href)}>{b.x}</a></p>
@@ -52,4 +57,8 @@ const articleSchema = {
   {others.length > 0 && <div class="article-more"><h3>Bài viết khác</h3>{others.map((o) => <p><a href={url(`/kien-thuc/${o.slug}/`)}>{o.title}</a></p>)}</div>}
   <p style="margin-top:22px"><a class="link-arrow" href={url('/kien-thuc/')}>Về Trung tâm kiến thức</a></p>
 </div></section>
+{a.visualGuide && <ScreenViewer />}
 </ContentLayout>
+<style>
+.visual-article{max-width:1100px}.visual-article>h2[id]{scroll-margin-top:110px;border-top:1px solid #cfe4d9;padding-top:28px;margin-top:48px}.guide-toc{padding:24px;background:#f0f8f4;border:1px solid #cfe4d9;border-radius:16px;margin-bottom:36px}.guide-toc h2{margin-top:18px}.guide-toc ol{padding-left:24px}.guide-toc p{font-size:.9rem;margin-bottom:0}.real-screen{margin:28px 0}.real-screen a{position:relative;display:block;border:1px solid #bdd3c7;border-radius:12px;overflow:hidden;background:#f0f5f3}.real-screen img{display:block;width:100%;height:auto}.screen-open{display:block;padding:10px 16px;background:#eaf5ef;color:#125e31;text-align:right;font-weight:700}.real-screen a:focus-visible{outline:3px solid #1679a8;outline-offset:4px}.real-screen figcaption{font-size:.92rem;color:#40584d;line-height:1.6;padding-top:10px}@media(max-width:600px){.guide-toc{padding:18px}.visual-article>h2[id]{font-size:1.45rem}}
+</style>

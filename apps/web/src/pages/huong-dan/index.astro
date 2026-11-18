@@ -37,6 +37,7 @@ const know = [
 ---
 <ContentLayout title="Trung tâm hướng dẫn – Hướng dẫn UNESCO AI" description="Trung tâm hướng dẫn phần mềm kế toán UNESCO AI: video từng mô-đun quay trên phần mềm thật, hướng dẫn trực quan, kiến thức kế toán, câu hỏi thường gặp, lịch sử cập nhật và kênh hỗ trợ trực tiếp." eyebrow="Trung tâm trợ giúp" display="HƯỚNG DẪN · KIẾN THỨC |· VIDEO" subtitle="Học từng thao tác theo đúng việc bạn cần làm">
 
+<section class="section-sm"><div class="container"><div class="quote-band"><div><span class="eyebrow">UNESCO XII AI · Ảnh phần mềm thật</span><h2>10 bài, 40 chức năng, 45 ảnh mở lớn</h2><p>Đọc hướng dẫn thao tác hóa đơn, ngân hàng, lương, báo cáo, giá thành và hồ sơ khách. Mỗi mục có đường mở, các bước và kết quả cần kiểm.</p></div><a class="btn btn-primary" href={url('/unesco-xii-ai/huong-dan/')}>Xem hướng dẫn UNESCO XII</a></div></div></section>
 <section class="section"><div class="container">
   <nav class="topic-bar" aria-label="Chủ đề hướng dẫn">{topics.map((t, i) => <a class={i === 0 ? 'on' : ''} href={url(t[2])}><Icon name={t[0]} />{t[1]}</a>)}</nav>
   <div class="video-grid">{center.map((c) => <div><p class="sub-line" style="margin:0 0 10px">{c.label}</p><VideoCard video={c.v} /></div>)}</div>
@@ -47,7 +48,7 @@ const know = [
 <section class="section-sm" id="gia-thanh-theo-dien"><div class="container"><div class="notice"><strong>Mới · Giá thành theo điện:</strong> video có lời đọc và phụ đề, hướng dẫn chi tiết từng màn hình kèm 22 hình – thiết lập một lần, AI cân đối cả tháng, xử lý điện chênh lệch và kiểm tra kết quả. <a href={url('/kien-thuc/gia-thanh-theo-dien/')}><strong>Đọc hướng dẫn →</strong></a> · <a href={url('/tai-lieu/huong-dan-gia-thanh-theo-dien-chi-tiet.pdf')} target="_blank" rel="noopener"><strong>Tải PDF</strong></a></div></div></section>
 
 <section class="section surface-soft" id="truc-quan"><div class="container">
-  <p class="notice"><strong>UNESCO XI + AI:</strong> bộ hướng dẫn trực quan dưới đây dành cho UNESCO XI + AI. Với UNESCO XII AI, <a href={url('/unesco-xii-ai/dich-vu-ke-toan/#tai-lieu')}>mở chuyên mục và cẩm nang phối hợp dịch vụ kế toán – khách hàng</a>.</p>
+  <p class="notice"><strong>UNESCO XI + AI:</strong> bộ hướng dẫn trực quan dưới đây dành cho UNESCO XI + AI. Với UNESCO XII AI, <a href={url('/unesco-xii-ai/huong-dan/')}>mở bộ hướng dẫn bằng 45 ảnh chụp thật</a>.</p>
   <div class="section-head"><div><span class="eyebrow">Hướng dẫn trực quan · cập nhật {guideRelease.date}</span><h2>{guide.length} chức năng mới: mở ở đâu, bấm nút nào</h2></div><p>Mỗi chức năng một trang có hình màn hình đánh số, các bước và lưu ý. Các báo cáo mới chỉ xem sổ, không sửa; ghi sổ hoặc chép vào HTKK chỉ khi kế toán bấm Ghi, Đồng ý, Đưa vào HTKK. Ở bất kỳ màn hình nào, bấm F1 để Trợ lý AI mở đúng mục hướng dẫn.</p></div>
   <h3>Dùng vào lúc nào trong năm</h3>
   <div class="when6" style="margin:12px 0 26px">{whenToUse.map((w) => <div><b>{w.t}</b><small>{w.d}</small></div>)}</div>

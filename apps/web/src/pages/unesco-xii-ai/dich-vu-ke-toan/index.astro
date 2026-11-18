@@ -29,7 +29,7 @@ const videos = xiiVideoSlugs.map((slug) => videoBySlug(slug)!);
       <label class="search-label" for="xii-search">Tìm bài viết<input id="xii-search" type="search" placeholder="Ví dụ: sao kê, quy tắc, nhật ký" autocomplete="off" /></label>
       <button type="button" class="reset-filter" data-clear-filter>Xóa bộ lọc</button>
     </div>
-    <p class="notice"><strong>Mới · Xử lý hằng tháng:</strong> Bài 11–16 bổ sung quy tắc doanh nghiệp, nhận chứng từ, sao kê ngân hàng, trạng thái xử lý, rà soát qua đêm và nhật ký AI. Ba video mới nằm đầu phần <a href="#video">Video minh họa</a>.</p>
+    <p class="notice"><strong>Mới · 45 ảnh chụp thật UNESCO XII:</strong> 10 bài chi tiết hướng dẫn 40 chức năng, có đường mở, ảnh phóng to, các bước và bảng kiểm kết quả. <a href={url('/unesco-xii-ai/huong-dan/')}><strong>Mở mục lục hướng dẫn trực quan →</strong></a></p>
     <p class="caption" role="status" aria-live="polite" data-result-count>Hiển thị {xiiLessons.length} bài viết.</p>
     <div class="grid grid-3 lesson-grid">{xiiLessons.map(({article: a, roles, stage, minutes, number}) => <article class="card lesson-card" data-lesson data-roles={roles.join(' ')} data-search={`${a.title} ${a.description} ${stage}`}>
       <div class="lesson-meta"><span>{String(number).padStart(2, '0')} / {stage}</span><span>~{minutes} phút</span></div><h3><a href={url(`/kien-thuc/${a.slug}/`)}>{a.title}</a></h3><p>{a.description}</p><p class="caption">{roles.map((id) => xiiRoles.find((r) => r.id === id)!.label).join(' · ')}</p><a class="link-arrow" href={url(`/kien-thuc/${a.slug}/`)}>Đọc bài hướng dẫn</a>
