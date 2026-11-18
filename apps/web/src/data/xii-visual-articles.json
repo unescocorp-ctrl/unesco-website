@@ -1,0 +1,2617 @@
+[
+  {
+    "slug": "huong-dan-unesco-xii-bat-dau",
+    "title": "Bắt đầu với UNESCO XII AI: màn hình chính, AI Work và menu chức năng",
+    "date": "2026-11-18",
+    "topic": "Hướng dẫn UNESCO XII",
+    "description": "Vào màn hình AI, nhận biết thanh chức năng và danh mục «Tất cả chức năng AI». Hướng dẫn bằng ảnh chụp thật, đường mở màn hình, các bước thao tác và bảng kiểm kết quả.",
+    "visualGuide": true,
+    "blocks": [
+      {
+        "t": "lead",
+        "x": "Nhận biết đúng nơi làm việc trước khi nhập dữ liệu. Bài này giúp bạn mở màn hình AI, đọc bốn ô trạng thái và tìm chức năng cần dùng từ menu tổng."
+      },
+      {
+        "t": "note",
+        "x": "Ảnh chụp thật UNESCO XII trong bộ hướng dẫn ngày 18/11/2026. Thông tin doanh nghiệp, cá nhân và máy đã được che. Một số ảnh đang ở trạng thái chưa có dữ liệu; giao diện và quyền có thể khác theo bản triển khai."
+      },
+      {
+        "t": "h2",
+        "x": "Chuẩn bị trước khi thao tác"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chuẩn bị bộ sổ và năm tài chính cần làm.",
+          "Xác định người được phép phân tích, người được ghi và người kiểm kết quả.",
+          "Kiểm phiên bản, quyền sử dụng và bản sao lưu theo quy trình của đơn vị."
+        ]
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-00",
+        "x": "Màn hình chính UNESCO XII"
+      },
+      {
+        "t": "p",
+        "x": "Màn hình chính gồm các module kế toán quanh khối «Sổ sách báo cáo» (Ngân hàng, Tiền mặt, Công nợ, Bán hàng, Kho, Giá thành sản xuất…), bên phải là khung Quản lý công việc và khung AI Assistant."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: Sau khi đăng nhập sổ"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/00_man_hinh_chinh.webp",
+        "thumb": "/huong-dan/unesco-xii-real/00_man_hinh_chinh-thumb.webp",
+        "w": 1920,
+        "h": 953,
+        "cap": "Màn hình chính UNESCO XII — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Các phân hệ kế toán nằm quanh Sổ sách báo cáo; khung Quản lý công việc và AI Assistant ở bên phải."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Bấm nút «UNESCO XII AI» trên thanh menu để vào màn hình AI.",
+          "Khung «Quản lý công việc» báo «Quá hạn» và «7 ngày tới»; bấm «Mở Quản lý công việc» để xem chi tiết.",
+          "Bấm ô «Hỏi AI ...» trong khung AI Assistant để hỏi Trợ lý AI."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Màn hình đang mở đúng bộ sổ và năm tài chính.",
+          "Mở được màn hình AI hoặc đúng phân hệ cần làm."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Không suy ra đã hoàn tất một kỳ chỉ từ trạng thái sẵn sàng trên màn hình chính."
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-01",
+        "x": "AI Work – Tự động xử lý hoá đơn"
+      },
+      {
+        "t": "p",
+        "x": "Bàn làm việc chính của AI: bốn ô đếm hoá đơn (Chờ duyệt, Chưa phân tích, Không xử lý, Cần xem lại), Bước 1 tạo mã hàng/đối tác còn thiếu, Bước 2 hoá đơn sẵn sàng lập chứng từ, và khung «Thiết lập» để tải, nhập và phân tích hoá đơn."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: UNESCO XII AI → thẻ «Tự động xử lý»"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/01_tu_dong_xu_ly.webp",
+        "thumb": "/huong-dan/unesco-xii-real/01_tu_dong_xu_ly-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "AI Work – Tự động xử lý hoá đơn — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Bên trái có bốn ô đếm và hai bước tạo mã/lập chứng từ; bên phải là Thiết lập và các lựa chọn nhập, tải, phân tích."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Trong khung «Thiết lập», chọn «Từ ngày» – «đến ngày» hoặc «Cả năm».",
+          "Bấm «Tải hoá đơn từ Cơ quan Thuế…», «Nhập hoá đơn từ thư mục XML / ZIP…» hoặc «Nhập bảng kê HĐ Excel…».",
+          "Bước 1: bấm «Tạo mã tự động» cho mặt hàng và nhà cung cấp chưa có mã.",
+          "Bước 2: bấm «Xác nhận & xem trước» để duyệt chứng từ AI đề xuất.",
+          "Có thể hẹn giờ tải hằng ngày: tick «Hẹn giờ tải lúc», chọn giờ rồi bấm «Lưu hẹn giờ»."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Kỳ đã chọn phù hợp với nguồn hóa đơn.",
+          "Các hóa đơn cần xem lại và mã còn thiếu đã được rà trước khi xác nhận."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Ô tự ghi và hẹn giờ là cấu hình có tác động riêng. Đọc điều kiện của bản triển khai trước khi bật. Nếu được hỏi bổ sung bảng AI, kiểm bản sao lưu và người có quyền trước khi xác nhận."
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-09",
+        "x": "Danh mục «Tất cả chức năng AI»"
+      },
+      {
+        "t": "p",
+        "x": "Menu tổng gom mọi màn hình AI: các màn hình AI chính (Hoá đơn, Sổ phụ, Lương BHXH, Báo cáo thuế, Cổng thuế, Kiểm soát, Bảng điều hành, Quản trị), Trợ lý, Các bước AI, AI_AUTO, Quản lý công việc, Cập nhật, Kích hoạt và các menu con Màn hình AI, Giá thành AI, Hệ thống AI, Dữ liệu AI, Trợ lý trợ giúp, Demo."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: UNESCO XII AI → nút «☰ Tất cả chức năng AI»"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/09_tat_ca_chuc_nang_ai.webp",
+        "thumb": "/huong-dan/unesco-xii-real/09_tat_ca_chuc_nang_ai-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Danh mục «Tất cả chức năng AI» — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Menu xổ xuống bên phải liệt kê màn hình chính và các nhóm có menu con."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Bấm «Tất cả chức năng AI» ở góc trên bên phải.",
+          "Rê chuột vào mục có dấu ► (ví dụ «Màn hình AI», «Giá thành AI...») để mở menu con.",
+          "Bấm tên màn hình cần mở."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Tên mục mở phù hợp công việc, không nhầm giữa AI Work và AI_AUTO.",
+          "Nếu không thấy mục, kiểm phiên bản và quyền trước khi yêu cầu hỗ trợ."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "Kết thúc và bàn giao"
+      },
+      {
+        "t": "p",
+        "x": "Ghi lại kỳ đã làm, dữ liệu đã kiểm, phần còn cần bổ sung và người xử lý tiếp. Khi có kết quả ghi chưa rõ, đối chiếu chứng từ và nhật ký trước khi chạy lại."
+      },
+      {
+        "t": "link",
+        "href": "/unesco-xii-ai/huong-dan/",
+        "x": "Về mục lục hướng dẫn UNESCO XII bằng ảnh thật"
+      },
+      {
+        "t": "link",
+        "href": "/unesco-xii-ai/dich-vu-ke-toan/",
+        "x": "Xem lộ trình phối hợp dịch vụ kế toán và khách hàng"
+      }
+    ]
+  },
+  {
+    "slug": "huong-dan-unesco-xii-hoa-don-chung-tu",
+    "title": "Hóa đơn và chứng từ UNESCO XII AI: hướng dẫn bằng ảnh thật",
+    "date": "2026-11-18",
+    "topic": "Hướng dẫn UNESCO XII",
+    "description": "Từ hoá đơn mua vào / bán ra đến chứng từ trong sổ. Hướng dẫn bằng ảnh chụp thật, đường mở màn hình, các bước thao tác và bảng kiểm kết quả.",
+    "visualGuide": true,
+    "blocks": [
+      {
+        "t": "lead",
+        "x": "Theo dõi hóa đơn từ nguồn XML hoặc bảng kê, kiểm mã hàng và đối tác rồi mới lập chứng từ. Quy tắc doanh nghiệp và màn hình nhập giúp giữ kết quả nhất quán."
+      },
+      {
+        "t": "note",
+        "x": "Ảnh chụp thật UNESCO XII trong bộ hướng dẫn ngày 18/11/2026. Thông tin doanh nghiệp, cá nhân và máy đã được che. Một số ảnh đang ở trạng thái chưa có dữ liệu; giao diện và quyền có thể khác theo bản triển khai."
+      },
+      {
+        "t": "h2",
+        "x": "Chuẩn bị trước khi thao tác"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chuẩn bị hóa đơn hoặc bảng kê đúng doanh nghiệp, đúng kỳ.",
+          "Kiểm danh mục hàng, đối tác, loại hình và tài khoản đã khai báo.",
+          "Phân biệt dữ liệu chờ kiểm với chứng từ đã ghi trong sổ."
+        ]
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-02",
+        "x": "Danh sách hoá đơn"
+      },
+      {
+        "t": "p",
+        "x": "Lưới mọi hoá đơn đã tải trong kỳ với trạng thái, ký hiệu, số HĐ, đối tác, MST, tiền chưa thuế, thuế, chứng từ đã lập và độ tin cậy; lưới dưới là các dòng hàng của hoá đơn đang chọn kèm mã VT AI đã ghép."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: UNESCO XII AI → thẻ «Hoá đơn»"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/02_hoa_don.webp",
+        "thumb": "/huong-dan/unesco-xii-real/02_hoa_don-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Danh sách hoá đơn — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Lưới trên dành cho hóa đơn; lưới dưới dành cho dòng hàng của hóa đơn đang chọn. Trong ảnh lưới chưa có dữ liệu."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chọn kỳ hoặc khoảng ngày và trạng thái rồi bấm Làm mới.",
+          "Chọn hóa đơn, mở Xem hóa đơn gốc và kiểm dòng hàng, mã vật tư, đối tác, tiền và thuế.",
+          "Sau khi kiểm, chọn Lập chứng từ HĐ này hoặc tích phạm vi cần làm rồi Lập chứng từ HĐ đã chọn.",
+          "Đối chiếu chứng từ sau ghi; dùng sửa hoặc hủy chỉ khi đã xác định rõ phạm vi cần sửa."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "So hóa đơn gốc với ngày, đối tác, tiền, thuế và trạng thái trong danh sách.",
+          "Sau xác nhận, mở chứng từ liên quan để kiểm tài khoản và số tiền."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Hủy chứng từ là thao tác riêng làm thay đổi dữ liệu. Chỉ dùng sau khi xác định chứng từ, quyền và ảnh hưởng; không dùng để xóa cảnh báo chưa hiểu nguyên nhân."
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-24",
+        "x": "Nhập bảng kê hoá đơn Excel"
+      },
+      {
+        "t": "p",
+        "x": "Đưa bảng kê hoá đơn Excel/CSV vào danh sách AI: phần mềm nhận dạng cột trong tệp và ghi nhớ mẫu bảng kê đã học để dùng lại; khi tải được XML thật, dòng bảng kê chưa lập chứng từ sẽ được thay bằng XML."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: Tất cả chức năng AI → Màn hình AI → Nhập hoá đơn từ bảng kê Excel…"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/24_nhap_bang_ke_excel.webp",
+        "thumb": "/huong-dan/unesco-xii-real/24_nhap_bang_ke_excel-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Nhập bảng kê hoá đơn Excel — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Phần Nhận dạng cột ở trên, Mẫu bảng kê AI đã học ở dưới. Tên tệp đã được che."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chọn «MUA VÀO» hoặc «BÁN RA».",
+          "Bấm «Chọn tệp...» để chọn tệp bảng kê; xem lưới «Nhận dạng cột».",
+          "Bấm «Nhận dạng và đưa vào danh sách AI...».",
+          "Xem/sửa mẫu đã học bằng «Mở mẫu đã học (mau_excel_hd.json)»."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chọn đúng mua vào/bán ra và ánh xạ các cột bắt buộc.",
+          "Kiểm số dòng được nhận và dòng bị từ chối trước khi tiếp tục phân tích."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Bảng kê đã được lập chứng từ hoặc duyệt không được hiểu là sẽ tự bị XML ghi đè. Kiểm trạng thái và chứng từ liên kết khi có XML thật."
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-25",
+        "x": "Hải quan – tờ khai nhập khẩu"
+      },
+      {
+        "t": "p",
+        "x": "Đọc tệp Excel tờ khai hải quan nhập khẩu (VNACCS / ECUS), ghép mã vật tư cho từng dòng hàng, tính thuế NK, TTĐB, GTGT và gắn chi phí nhập hàng (Nợ TK 1562) để tính giá vốn hàng nhập khẩu."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: UNESCO XII AI → thẻ «Hải quan» (hoặc Màn hình AI → Hải quan)"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/25_hai_quan_to_khai.webp",
+        "thumb": "/huong-dan/unesco-xii-real/25_hai_quan_to_khai-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Hải quan – tờ khai nhập khẩu — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/05_hai_quan.webp",
+        "thumb": "/huong-dan/unesco-xii-real/05_hai_quan-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Hải quan – tờ khai nhập khẩu — vị trí trong AI Work."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Phần trên là tờ khai và dòng hàng; phần dưới dành cho chi phí nhập hàng và phân bổ."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Bấm «Chọn tệp tờ khai Excel...».",
+          "«Chọn nhà cung cấp...», rồi «Chọn mã vật tư...» cho từng dòng, hoặc «Dùng mã gợi ý (mọi dòng)» / «Tạo mã mới cho dòng chọn».",
+          "Bấm «Ghi tờ khai vào phần mềm» sau khi kiểm tra.",
+          "Ở phần chi phí nhập hàng, dùng «Làm mới chi phí» và «Xuất Excel phân tích phân bổ»."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Nhà cung cấp, mã vật tư, lượng, giá và thuế phải khớp hồ sơ nguồn.",
+          "Kiểm tờ khai và chi phí liên quan sau ghi, tránh nhập lại hồ sơ đã có."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Gợi ý mã và kết quả phân bổ cần kế toán kiểm. Không coi việc đọc được tệp là đã xác nhận đúng toàn bộ tờ khai."
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-30",
+        "x": "Mua hàng không hoá đơn (thu mua)"
+      },
+      {
+        "t": "p",
+        "x": "Màn hình hỗ trợ lập kế hoạch thu mua, chọn người bán và mặt hàng, kiểm giá, xuất bảng kê và ghi phiếu nhập từ dữ liệu đã được người phụ trách xác nhận."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: Màn hình AI → Mua hàng không hoá đơn…"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/30_mua_hang_khong_hoa_don.webp",
+        "thumb": "/huong-dan/unesco-xii-real/30_mua_hang_khong_hoa_don-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Mua hàng không hoá đơn (thu mua) — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Chọn người bán ở bên trái, mặt hàng bên phải, kiểm kế hoạch ở dưới rồi mới dùng các nút ghi. Dữ liệu người bán đã che."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chọn khoảng ngày, rà các tham số và bấm Nạp mặt hàng.",
+          "Chọn người bán có hồ sơ thực tế, tích mặt hàng tương ứng rồi Lưu mặt hàng đã tích.",
+          "Chọn cách tính giá và kiểm căn cứ trước Cập nhật giá.",
+          "Bấm Lập kế hoạch, đối chiếu từng dòng với nghiệp vụ thực; xuất bảng kê để kiểm rồi mới ghi phiếu nhập theo phạm vi đã duyệt."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Người bán, hàng mua, số lượng, ngày và giá phản ánh nghiệp vụ có thực.",
+          "Đối chiếu bảng kê và phiếu nhập với chứng từ nguồn trước bàn giao."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Chức năng phân bổ không thay bằng chứng mua thực tế. Giá trị trần trong ảnh là tham số của phần mềm; bài hướng dẫn không xác nhận đó là ngưỡng pháp lý áp dụng cho mọi trường hợp."
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-32",
+        "x": "Quy tắc hạch toán hoá đơn điện tử"
+      },
+      {
+        "t": "p",
+        "x": "Nơi đặt quy tắc AI dùng khi hạch toán hoá đơn, chia theo các thẻ Mã hàng & đối tác, Tài khoản, Diễn giải, Ghi tự động & AI, Loại hình DN, Từ khoá, Sổ phụ (ví dụ cách lấy mã hàng, kiểu mã VT mới, thanh toán mặc định, nhóm NCC/KH)."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: Màn hình AI → Quy tắc hạch toán hoá đơn điện tử…"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/32_quy_tac_hach_toan_hddt.webp",
+        "thumb": "/huong-dan/unesco-xii-real/32_quy_tac_hach_toan_hddt-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Quy tắc hạch toán hoá đơn điện tử — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Các thẻ quy tắc ở phía trên; trong ảnh đang mở phần Mã hàng & đối tác."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chọn thẻ cần sửa (ví dụ «Mã hàng & đối tác», «Tài khoản»).",
+          "Sửa các ô / danh sách chọn, rồi bấm «Ghi» («Về mặc định» để trả lại giá trị gốc).",
+          "Mở thêm «Quy tắc chi phí theo doanh nghiệp...» hoặc «Theo màn hình nhập...» nếu cần.",
+          "Bấm «Phân tích lại» ở thẻ Tự động xử lý để áp dụng quy tắc mới."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Lưu đúng nhóm thiết lập cần thay đổi.",
+          "Phân tích thử hóa đơn chưa ghi để so kết quả trước và sau."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Về mặc định trả thiết lập về giá trị mặc định; không phải hoàn tác riêng thay đổi vừa làm."
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-36",
+        "x": "Đăng ký loại hình doanh nghiệp"
+      },
+      {
+        "t": "p",
+        "x": "Khai báo doanh nghiệp là Thương mại, Sản xuất - Xây dựng hay Dịch vụ để AI đặt tài khoản MUA VÀO và BÁN RA mặc định khi hạch toán hoá đơn; chưa khai loại hình thì màn hình AI chưa cho tải / phân tích hoá đơn."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: Màn hình AI → Đăng ký loại hình doanh nghiệp…"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/36_dang_ky_loai_hinh_dn.webp",
+        "thumb": "/huong-dan/unesco-xii-real/36_dang_ky_loai_hinh_dn-thumb.webp",
+        "w": 1920,
+        "h": 930,
+        "cap": "Đăng ký loại hình doanh nghiệp — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Hộp thoại có ba lựa chọn loại hình và dòng giải thích tài khoản; nút Xác nhận ở phía dưới."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chọn «Thương mại (mặc định)», «Sản xuất - Xây dựng» hoặc «Dịch vụ».",
+          "Đọc dòng giải thích tài khoản ngay dưới mỗi lựa chọn; với Dịch vụ chọn thêm «TK dịch vụ mua vào».",
+          "Bấm «Xác nhận» (hoặc «Để sau»)."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chọn đúng hoạt động của doanh nghiệp và đọc tài khoản mặc định.",
+          "Kiểm lại quy tắc chi tiết với nghiệp vụ thực tế sau khai báo."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Loại hình là đầu vào cho gợi ý mặc định; không thay quyết định kế toán cho từng chứng từ."
+      },
+      {
+        "t": "h2",
+        "x": "Kết thúc và bàn giao"
+      },
+      {
+        "t": "p",
+        "x": "Ghi lại kỳ đã làm, dữ liệu đã kiểm, phần còn cần bổ sung và người xử lý tiếp. Khi có kết quả ghi chưa rõ, đối chiếu chứng từ và nhật ký trước khi chạy lại."
+      },
+      {
+        "t": "link",
+        "href": "/unesco-xii-ai/huong-dan/",
+        "x": "Về mục lục hướng dẫn UNESCO XII bằng ảnh thật"
+      },
+      {
+        "t": "link",
+        "href": "/unesco-xii-ai/dich-vu-ke-toan/",
+        "x": "Xem lộ trình phối hợp dịch vụ kế toán và khách hàng"
+      }
+    ]
+  },
+  {
+    "slug": "huong-dan-unesco-xii-ngan-hang",
+    "title": "Sổ phụ ngân hàng UNESCO XII AI: nhập, phân tích và kiểm chứng từ",
+    "date": "2026-11-18",
+    "topic": "Hướng dẫn UNESCO XII",
+    "description": "Sổ phụ, sao kê và quy tắc ghép thu chi. Hướng dẫn bằng ảnh chụp thật, đường mở màn hình, các bước thao tác và bảng kiểm kết quả.",
+    "visualGuide": true,
+    "blocks": [
+      {
+        "t": "lead",
+        "x": "Màn hình sổ phụ nối từng dòng sao kê với gợi ý nhóm, đối tượng và tài khoản. Kế toán cần kiểm các gợi ý, cảnh báo và chứng từ liên kết trước khi xác nhận."
+      },
+      {
+        "t": "note",
+        "x": "Ảnh chụp thật UNESCO XII trong bộ hướng dẫn ngày 18/11/2026. Thông tin doanh nghiệp, cá nhân và máy đã được che. Một số ảnh đang ở trạng thái chưa có dữ liệu; giao diện và quyền có thể khác theo bản triển khai."
+      },
+      {
+        "t": "h2",
+        "x": "Chuẩn bị trước khi thao tác"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chuẩn bị sao kê đầy đủ và tài khoản ngân hàng của doanh nghiệp.",
+          "Xác định khoảng ngày cần nhập và phần đã có trong sổ.",
+          "Chuẩn bị giải thích cho các khoản thu chi chưa rõ nội dung."
+        ]
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-10",
+        "x": "Sổ phụ ngân hàng"
+      },
+      {
+        "t": "p",
+        "x": "Nhập sổ phụ / sao kê ngân hàng, AI phân tích từng dòng, ghép với khách hàng, nhà cung cấp, nhân viên, hoá đơn và chấm điểm, rồi đề xuất chứng từ thu chi; khung «Sửa dòng đang chọn» cho sửa nhóm, TK đối ứng, mã đối tượng."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: UNESCO XII AI → thẻ «Sổ phụ NH» (hoặc Tất cả chức năng AI → AI – Sổ phụ ngân hàng…)"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/10_so_phu_ngan_hang_rieng.webp",
+        "thumb": "/huong-dan/unesco-xii-real/10_so_phu_ngan_hang_rieng-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Sổ phụ ngân hàng — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/03_so_phu_ngan_hang.webp",
+        "thumb": "/huong-dan/unesco-xii-real/03_so_phu_ngan_hang-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Sổ phụ ngân hàng — vị trí trong AI Work."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Thanh lệnh ở trên, lưới sao kê ở giữa, khung Sửa dòng đang chọn ở dưới."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chọn tài khoản ngân hàng, kỳ hoặc khoảng ngày rồi bấm Làm mới.",
+          "Bấm Nhập sổ phụ để đọc tệp sao kê; kiểm số dòng và phần đã có trước khi phân tích.",
+          "Bấm Phân tích, đọc Điểm, Gợi ý và cảnh báo; đối chiếu nhóm, tài khoản, đối tượng rồi sửa dòng cần thiết.",
+          "Chọn dòng sẵn sàng và mở Lập chứng từ (xem trước). Kiểm phạm vi, tài khoản và số tiền trước xác nhận; chỉ dùng Ghi tự động khi đủ điều kiện của cấu hình đang triển khai."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "So ngày, tiền vào/ra, nhóm, tài khoản và đối tượng của từng dòng cần kiểm.",
+          "Sau ghi, đối chiếu chứng từ liên kết và tổng tiền với sao kê."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Điểm cao chưa đủ để tự ghi: còn trạng thái, cảnh báo, nguồn ghép, liên kết chứng từ, quyền và cấu hình. Dòng ghép bởi AI có thể chưa đủ điều kiện của luồng tự ghi."
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-33",
+        "x": "Quy tắc sổ phụ ngân hàng"
+      },
+      {
+        "t": "p",
+        "x": "Đặt tài khoản mặc định (tiền mặt, ngân hàng, phí NH, lãi tiền gửi, lương, BHXH, thuế…), chế độ ghi và ngưỡng điểm, cùng bảng từ khoá nội dung giao dịch → nhóm / TK đối ứng mà AI dùng khi phân tích sổ phụ."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: Màn hình AI → Quy tắc sổ phụ ngân hàng…"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/33_quy_tac_so_phu.webp",
+        "thumb": "/huong-dan/unesco-xii-real/33_quy_tac_so_phu-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Quy tắc sổ phụ ngân hàng — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Tài khoản mặc định và ngưỡng ở trên; bảng từ khóa, chiều và tài khoản đối ứng ở dưới."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Kiểm tra các ô tài khoản mặc định và «Chế độ ghi, ngưỡng» («Tự động ghi khi điểm ≥», «Xác nhận hàng loạt khi điểm ≥»).",
+          "Nhập «Từ khoá», «Chiều», «Nhóm», «TK ĐƯ», «Ưu tiên» rồi bấm «Thêm / sửa» (hoặc «Xoá»).",
+          "Bấm «Ghi» để lưu («Nạp lại từ điển R15» hoặc «Về mặc định» để khôi phục)."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Quy tắc đúng chiều thu/chi và phù hợp tài khoản của doanh nghiệp.",
+          "Phân tích thử trường hợp khớp rõ và trường hợp dễ nhầm."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Không sao chép toàn bộ tài khoản hoặc ngưỡng từ ảnh sang bộ sổ khác. Kiểm cấu hình thực tế trước khi ghi."
+      },
+      {
+        "t": "h2",
+        "x": "Kết thúc và bàn giao"
+      },
+      {
+        "t": "p",
+        "x": "Ghi lại kỳ đã làm, dữ liệu đã kiểm, phần còn cần bổ sung và người xử lý tiếp. Khi có kết quả ghi chưa rõ, đối chiếu chứng từ và nhật ký trước khi chạy lại."
+      },
+      {
+        "t": "link",
+        "href": "/unesco-xii-ai/huong-dan/",
+        "x": "Về mục lục hướng dẫn UNESCO XII bằng ảnh thật"
+      },
+      {
+        "t": "link",
+        "href": "/unesco-xii-ai/dich-vu-ke-toan/",
+        "x": "Xem lộ trình phối hợp dịch vụ kế toán và khách hàng"
+      }
+    ]
+  },
+  {
+    "slug": "huong-dan-unesco-xii-luong-bhxh",
+    "title": "Lương và BHXH trong UNESCO XII AI: nhập nhân viên, bảng lương và đối chiếu",
+    "date": "2026-11-18",
+    "topic": "Hướng dẫn UNESCO XII",
+    "description": "Bảng lương, bảo hiểm xã hội, thuế TNCN. Hướng dẫn bằng ảnh chụp thật, đường mở màn hình, các bước thao tác và bảng kiểm kết quả.",
+    "visualGuide": true,
+    "blocks": [
+      {
+        "t": "lead",
+        "x": "Tách việc chuẩn bị danh sách nhân viên, nhập bảng lương và lập chứng từ. Chỉ khi ghép đúng người và đối chiếu các khoản thu nhập, bảo hiểm, thuế và thực lĩnh mới tiếp tục ghi."
+      },
+      {
+        "t": "note",
+        "x": "Ảnh chụp thật UNESCO XII trong bộ hướng dẫn ngày 18/11/2026. Thông tin doanh nghiệp, cá nhân và máy đã được che. Một số ảnh đang ở trạng thái chưa có dữ liệu; giao diện và quyền có thể khác theo bản triển khai."
+      },
+      {
+        "t": "h2",
+        "x": "Chuẩn bị trước khi thao tác"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chuẩn bị danh sách nhân viên và mã đang dùng trong sổ.",
+          "Xác nhận kỳ lương và bảng lương đã được đơn vị kiểm.",
+          "Giữ hồ sơ nguồn để giải thích khoản chênh lệch; giới hạn người được xem dữ liệu lương."
+        ]
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-11",
+        "x": "AI – Lương & BHXH"
+      },
+      {
+        "t": "p",
+        "x": "Tập hợp các chức năng BHXH, danh sách nhân viên và lương/thuế TNCN. Chọn đúng nhóm việc để mở chức năng nhập, đối chiếu hoặc lập hồ sơ tương ứng."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: UNESCO XII AI → thẻ «Lương & BHXH»"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/11_luong_bhxh_rieng.webp",
+        "thumb": "/huong-dan/unesco-xii-real/11_luong_bhxh_rieng-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "AI – Lương & BHXH — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/04_luong_bhxh.webp",
+        "thumb": "/huong-dan/unesco-xii-real/04_luong_bhxh-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "AI – Lương & BHXH — vị trí trong AI Work."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Các nút được chia theo BHXH, danh sách nhân viên và lương/thuế TNCN."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Bảo hiểm xã hội: «Kết nối BHXH...», «Tài khoản BHXH (mã mới 2026)...», «Đối chiếu BHXH...», «Hồ sơ NV từ DS BHXH...».",
+          "Danh sách nhân viên: «Mẫu Excel DS nhân viên» → «Nhập DS nhân viên...»; chọn «Bộ phận» rồi «Xuất Excel DS nhân viên».",
+          "Lương thuế TNCN: «Lương tiền mặt nhiều lần...» và «ĐK thuế NLĐ 05-ĐKT-TH...»."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Danh sách nhân viên đã nhận đúng mã và bộ phận.",
+          "Kết quả đối chiếu được so lại với hồ sơ của kỳ."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Thông tin tài khoản BHXH và dữ liệu nhân viên chỉ trao đổi với người được giao. Tên nút trên ảnh phản ánh phiên bản chụp."
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-26",
+        "x": "Bảng lương AI"
+      },
+      {
+        "t": "p",
+        "x": "Nhập bảng lương Excel của khách, ghép từng dòng với mã nhân viên, đối chiếu tổng thu nhập, BH người LĐ, thuế TNCN, tạm ứng, thực lĩnh rồi lập chứng từ lương."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: Màn hình AI → Bảng lương AI…"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/26_bang_luong_ai.webp",
+        "thumb": "/huong-dan/unesco-xii-real/26_bang_luong_ai-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Bảng lương AI — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Kỳ lương ở đầu màn hình; phía dưới là nút nhập, ghép nhân viên, đối chiếu và lập chứng từ."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chọn «Kỳ lương», bấm «Nhập bảng lương...».",
+          "Kiểm tra cột «Mã NV»; dùng «Chọn nhân viên cho dòng...» hoặc «Tạo NV còn thiếu» cho dòng chưa ghép.",
+          "Bấm «Lập chứng từ lương» («Huỷ chứng từ lương» / «Huỷ lần nhập kỳ này» nếu cần làm lại).",
+          "Có thể «Xuất Excel đối chiếu lương» hoặc «Đối chiếu BHXH...»."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Không còn dòng ghép nhầm hoặc chưa xác định nhân viên.",
+          "Tổng thu nhập, các khoản khấu trừ và thực lĩnh khớp bảng đã duyệt."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Hủy chứng từ lương và hủy lần nhập là hai thao tác khác nhau. Đọc phạm vi và kiểm dữ liệu trước khi xác nhận."
+      },
+      {
+        "t": "h2",
+        "x": "Kết thúc và bàn giao"
+      },
+      {
+        "t": "p",
+        "x": "Ghi lại kỳ đã làm, dữ liệu đã kiểm, phần còn cần bổ sung và người xử lý tiếp. Khi có kết quả ghi chưa rõ, đối chiếu chứng từ và nhật ký trước khi chạy lại."
+      },
+      {
+        "t": "link",
+        "href": "/unesco-xii-ai/huong-dan/",
+        "x": "Về mục lục hướng dẫn UNESCO XII bằng ảnh thật"
+      },
+      {
+        "t": "link",
+        "href": "/unesco-xii-ai/dich-vu-ke-toan/",
+        "x": "Xem lộ trình phối hợp dịch vụ kế toán và khách hàng"
+      }
+    ]
+  },
+  {
+    "slug": "huong-dan-unesco-xii-bao-cao-thue",
+    "title": "Báo cáo, HTKK và hồ sơ nộp thuế UNESCO XII AI: xem và kiểm từng bước",
+    "date": "2026-11-18",
+    "topic": "Hướng dẫn UNESCO XII",
+    "description": "Tờ khai HTKK, BCTC, cổng thuế, hồ sơ ký số. Hướng dẫn bằng ảnh chụp thật, đường mở màn hình, các bước thao tác và bảng kiểm kết quả.",
+    "visualGuide": true,
+    "blocks": [
+      {
+        "t": "lead",
+        "x": "Xuất báo cáo, kiểm XML và đóng gói hồ sơ là những bước riêng. Người phụ trách vẫn cần kiểm nội dung, thực hiện ký nộp trên cổng và lưu kết quả tiếp nhận."
+      },
+      {
+        "t": "note",
+        "x": "Ảnh chụp thật UNESCO XII trong bộ hướng dẫn ngày 18/11/2026. Thông tin doanh nghiệp, cá nhân và máy đã được che. Một số ảnh đang ở trạng thái chưa có dữ liệu; giao diện và quyền có thể khác theo bản triển khai."
+      },
+      {
+        "t": "h2",
+        "x": "Chuẩn bị trước khi thao tác"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chốt phạm vi tháng, quý hoặc năm cần lập báo cáo.",
+          "Kiểm số liệu nguồn, kỳ trước và mẫu biểu phù hợp với bản đang dùng.",
+          "Chuẩn bị tài khoản, phương tiện ký số và người được giao nộp; không chia sẻ thông tin đăng nhập trong hồ sơ hướng dẫn."
+        ]
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-12",
+        "x": "Báo cáo & thuế (HTKK)"
+      },
+      {
+        "t": "p",
+        "x": "Xuất tờ khai thuế và BCTC sang HTKK theo kỳ tháng / quý, chia ba nhóm: Hằng tháng / quý (01/GTGT, xem trước, đưa vào HTKK), Thiết lập năm (nguồn kỳ trước, số liệu năm trước, mẫu và đường dẫn HTKK) và BCTC / XML HTKK."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: UNESCO XII AI → thẻ «Báo cáo & thuế»"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/12_bao_cao_thue_htkk.webp",
+        "thumb": "/huong-dan/unesco-xii-real/12_bao_cao_thue_htkk-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Báo cáo & thuế (HTKK) — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/06_bao_cao_thue.webp",
+        "thumb": "/huong-dan/unesco-xii-real/06_bao_cao_thue-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Báo cáo & thuế (HTKK) — vị trí trong AI Work."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Ba cột chức năng là Hằng tháng/quý, Thiết lập năm và BCTC/XML HTKK."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chọn kỳ tháng/quý cần xuất.",
+          "Mở Xuất 01/GTGT, kiểm Xem trước HTKK và dùng Kiểm tra khớp HĐ với sổ khi cần; chỉ đưa dữ liệu vào HTKK sau kiểm.",
+          "Với BCTC, kiểm thiết lập năm, khung và XML báo cáo trước khi sử dụng.",
+          "Mở HTKK để kiểm dữ liệu; việc ký nộp được người phụ trách thực hiện trên cổng phù hợp. Lưu tệp và thông báo kết quả của lần nộp."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Kỳ và dữ liệu năm trước đúng trước khi xuất.",
+          "Mở kết quả trong công cụ phù hợp, xử lý lỗi trước khi lập hồ sơ nộp."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Xuất XML hoặc đưa vào HTKK chưa phải đã ký nộp và được tiếp nhận. Người phụ trách kiểm mẫu biểu, ký nộp trên cổng và lưu thông báo kết quả."
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-13",
+        "x": "Cổng thuế (dịch vụ công)"
+      },
+      {
+        "t": "p",
+        "x": "Tải về thông báo thuế, giấy nộp tiền, hồ sơ và nghĩa vụ thuế mà tài khoản của doanh nghiệp xem được trên Cổng dịch vụ công Thuế sau khi người dùng tự đăng nhập; đối chiếu với sổ phụ và xuất Excel."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: UNESCO XII AI → thẻ «Cổng thuế»"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/13_cong_dich_vu_cong.webp",
+        "thumb": "/huong-dan/unesco-xii-real/13_cong_dich_vu_cong-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Cổng thuế (dịch vụ công) — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/07_cong_thue.webp",
+        "thumb": "/huong-dan/unesco-xii-real/07_cong_thue-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Cổng thuế (dịch vụ công) — vị trí trong AI Work."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Chọn khoảng ngày và nhóm, mở cổng đăng nhập, tải dữ liệu rồi đối chiếu sổ phụ."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chọn «Từ ngày» – «đến ngày», «Nhóm» rồi bấm «Làm mới».",
+          "Bấm «Mở cổng & đăng nhập» (người dùng tự gõ mật khẩu, mã xác nhận).",
+          "Bấm «Tải dữ liệu» hoặc «Lấy bảng đang mở trên cổng».",
+          "Bấm «Khớp sổ phụ» / «Xuất Excel» để đối chiếu; «Hạn nộp & đối chiếu tờ khai...» để xem hạn nộp."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Phạm vi dữ liệu tải về đúng tài khoản doanh nghiệp và khoảng ngày.",
+          "Đối chiếu số tiền, kỳ và chứng từ trước khi sử dụng kết quả khớp."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Người dùng tự đăng nhập và xác thực. Đừng gửi mật khẩu, mã xác thực hoặc PIN token vào nội dung hỏi AI."
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-27",
+        "x": "Hồ sơ ký số và nộp Cổng DVC"
+      },
+      {
+        "t": "p",
+        "x": "Kiểm tra các tệp XML tờ khai thuế (GTGT, TNDN, TNCN) và BCTC đã xuất (kỳ, hạn nộp, trạng thái, lỗi cần sửa) rồi đóng gói thành thư mục hồ sơ để người dùng tự ký số và nộp trên Cổng Dịch vụ công."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: Màn hình AI → Hồ sơ ký số và nộp Cổng DVC…"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/27_ho_so_ky_so_nop_dvc.webp",
+        "thumb": "/huong-dan/unesco-xii-real/27_ho_so_ky_so_nop_dvc-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Hồ sơ ký số và nộp Cổng DVC — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Ảnh đang có một hồ sơ báo Có lỗi. Cột trạng thái và vùng chi tiết bên dưới là nơi cần kiểm; số liệu riêng đã che."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chọn nguồn: «Mới xuất», «Chọn tệp...» hoặc «Thư mục...»; bấm «Kiểm tra lại».",
+          "Chọn tờ khai, đọc phần chi tiết kiểm tra (dòng [!] là lỗi cần sửa).",
+          "Bấm «Đóng gói hồ sơ nộp», «Xem phiếu hiển thị», «Mở thư mục hồ sơ».",
+          "Bấm «Mở Cổng DVC thuế» rồi tự đăng nhập, cắm USB token, ký và nộp."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Các dòng lỗi đã được xử lý và kiểm lại.",
+          "Sau nộp, giữ thông báo tiếp nhận và đối chiếu đúng kỳ, tệp đã gửi."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Không mặc định chọn Vẫn đóng gói cả tờ khai có lỗi. Đóng gói chỉ tạo hồ sơ để người dùng ký nộp; không sửa nội dung XML và không chứng minh cổng đã nhận."
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-31",
+        "x": "Cuối năm – BCTC & quyết toán thuế"
+      },
+      {
+        "t": "p",
+        "x": "Xuất một lần bộ BCTC năm (B01, B02, B03, F01, B09) và các tờ khai quyết toán (03/TNDN, 05/QTT-TNCN, đăng ký thuế…) ra Excel và/hoặc XML HTKK vào một thư mục mới; số liệu chỉ đọc từ sổ."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: Màn hình AI → Cuối năm (báo cáo, tờ khai năm)…"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/31_cuoi_nam.webp",
+        "thumb": "/huong-dan/unesco-xii-real/31_cuoi_nam-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Cuối năm – BCTC & quyết toán thuế — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Danh sách báo cáo cần xuất ở bên trái; kiểu xuất ở trên và thư mục gốc ở dưới."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chọn «Kỳ từ» – «đến» và kiểu xuất (Excel + XML HTKK / Chỉ Excel / Chỉ XML HTKK).",
+          "Tích các báo cáo cần lập.",
+          "Chọn «Thư mục gốc» bằng «Chọn...», bấm «Lập».",
+          "Bấm «Mở thư mục» để xem kết quả."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Đúng năm, danh sách báo cáo và nơi lưu kết quả.",
+          "Mở từng tệp, kiểm dữ liệu và phần được đánh dấu bản nháp."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Ảnh ghi B03 là DRAFT. Không coi mọi biểu trong bộ xuất là bản hoàn chỉnh đủ điều kiện nộp; kiểm trạng thái và mẫu theo bản triển khai."
+      },
+      {
+        "t": "h2",
+        "x": "Kết thúc và bàn giao"
+      },
+      {
+        "t": "p",
+        "x": "Ghi lại kỳ đã làm, dữ liệu đã kiểm, phần còn cần bổ sung và người xử lý tiếp. Khi có kết quả ghi chưa rõ, đối chiếu chứng từ và nhật ký trước khi chạy lại."
+      },
+      {
+        "t": "link",
+        "href": "/unesco-xii-ai/huong-dan/",
+        "x": "Về mục lục hướng dẫn UNESCO XII bằng ảnh thật"
+      },
+      {
+        "t": "link",
+        "href": "/unesco-xii-ai/dich-vu-ke-toan/",
+        "x": "Xem lộ trình phối hợp dịch vụ kế toán và khách hàng"
+      }
+    ]
+  },
+  {
+    "slug": "huong-dan-unesco-xii-kiem-soat-quan-tri",
+    "title": "Kiểm soát và quản trị UNESCO XII AI: công nợ, nhiều bộ sổ và nhật ký",
+    "date": "2026-11-18",
+    "topic": "Hướng dẫn UNESCO XII",
+    "description": "Soát lỗi số liệu, bảng điều hành, báo cáo cho chủ doanh nghiệp. Hướng dẫn bằng ảnh chụp thật, đường mở màn hình, các bước thao tác và bảng kiểm kết quả.",
+    "visualGuide": true,
+    "blocks": [
+      {
+        "t": "lead",
+        "x": "Người quản lý cần biết bộ sổ nào còn vướng và căn cứ nào cần kiểm. Các màn hình trong bài giúp đọc cảnh báo, mở đúng sổ và chuyển số liệu thành thông tin bàn giao."
+      },
+      {
+        "t": "note",
+        "x": "Ảnh chụp thật UNESCO XII trong bộ hướng dẫn ngày 18/11/2026. Thông tin doanh nghiệp, cá nhân và máy đã được che. Một số ảnh đang ở trạng thái chưa có dữ liệu; giao diện và quyền có thể khác theo bản triển khai."
+      },
+      {
+        "t": "h2",
+        "x": "Chuẩn bị trước khi thao tác"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Xác nhận bộ sổ hoặc danh sách khách hàng thuộc phạm vi phụ trách.",
+          "Chọn kỳ và thời điểm dữ liệu cần kiểm.",
+          "Phân công người xử lý ngoại lệ, người duyệt thay đổi danh mục và người kiểm báo cáo."
+        ]
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-14",
+        "x": "Kiểm soát công nợ và vật tư"
+      },
+      {
+        "t": "p",
+        "x": "Rà đối tượng trùng mã, công nợ lệch/trả hộ, vật tư trùng/âm kho, tài khoản chưa nhất quán và bất thường. Màn hình hỗ trợ đọc đề xuất; thay đổi danh mục là bước riêng cần xem trước và xác nhận."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: Tất cả chức năng AI → AI – Kiểm soát công nợ, vật tư…"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/14_kiem_soat_cong_no_vat_tu.webp",
+        "thumb": "/huong-dan/unesco-xii-real/14_kiem_soat_cong_no_vat_tu-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Kiểm soát công nợ và vật tư — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Chọn nhóm cảnh báo ở trên, đọc đề xuất và chi tiết ở dưới. Các mã, tên và số dư riêng đã che."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chọn nhóm cảnh báo cần xem.",
+          "Chọn một dòng/nhóm, đọc chi tiết và đối chiếu hồ sơ nguồn.",
+          "Nếu xác định cần gộp, mở Gộp mã, kiểm mã giữ và phạm vi xem trước rồi xác nhận theo quyền và sao lưu.",
+          "Nếu cảnh báo phù hợp thực tế, ghi nhận căn cứ trước khi đánh dấu Không phải lỗi. Làm mới và đối chiếu kết quả."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Mở nguồn để xác định hai mã có thực sự cùng một đối tượng hay không.",
+          "Sau thay đổi, đối chiếu tổng số liệu và ghi lại phạm vi đã xử lý."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Gộp mã làm thay đổi dữ liệu. Kiểm mã giữ, phạm vi xem trước và sao lưu; chỉ dùng hoàn tác theo đúng lô/chức năng được hỗ trợ, không coi đây là hoàn tác mọi thao tác."
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-15",
+        "x": "Bảng điều hành các công ty"
+      },
+      {
+        "t": "p",
+        "x": "Bảng tổng hợp cho văn phòng dịch vụ kế toán: mỗi bộ sổ một dòng, phân mức đỏ / vàng / xanh, với chứng từ đến tháng, HĐĐT đến, HĐ chưa hạch toán, HĐ xem lại, sổ phụ đến…."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: Tất cả chức năng AI → AI – Bảng điều hành khách hàng…"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/15_bang_dieu_hanh_khach_hang.webp",
+        "thumb": "/huong-dan/unesco-xii-real/15_bang_dieu_hanh_khach_hang-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Bảng điều hành các công ty — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Bốn mức tổng hợp ở trên và danh sách bộ sổ ở giữa. Ảnh đang hiện lời nhắc khi chưa có danh sách."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Lần đầu: chọn «Yes» để thêm bộ sổ đang mở và các bộ sổ khác vào danh sách (hoặc «Danh sách bộ sổ...»).",
+          "Bấm «Làm mới» để đọc lại tình trạng; lọc bằng «Tìm công ty / MST».",
+          "Chọn một dòng → «Mở bộ sổ»; «Trang HTML» để xem bản báo cáo."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Danh sách đủ các bộ sổ được giao và đường dẫn truy cập được.",
+          "Đọc thời điểm làm mới, lỗi và bộ sổ bị bỏ qua trước khi giao việc."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Ảnh chưa có dòng kết quả; đây là hướng dẫn nhận biết giao diện. Màu xanh không thay kiểm chứng từ và báo cáo."
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-16",
+        "x": "Báo cáo quản trị cho chủ doanh nghiệp"
+      },
+      {
+        "t": "p",
+        "x": "Các báo cáo chỉ đọc sổ, mang tính ước tính: trang tổng quan quản trị, thuế TNDN dự kiến cả năm, báo cáo chủ DN 1 trang, dự báo dòng tiền 4-13 tuần, lãi theo mặt hàng / khách hàng, tồn kho thông minh."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: Tất cả chức năng AI → AI – Quản trị (báo cáo chủ doanh nghiệp)…"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/16_quan_tri_chu_doanh_nghiep.webp",
+        "thumb": "/huong-dan/unesco-xii-real/16_quan_tri_chu_doanh_nghiep-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Báo cáo quản trị cho chủ doanh nghiệp — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Chọn khoảng tháng và loại báo cáo ở bên trái; phần kết quả hiển thị bên phải."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chọn «Từ tháng» – «đến» rồi bấm «Lập trang tổng quan».",
+          "Bấm báo cáo cần xem: «Thuế TNDN dự kiến cả năm», «Báo cáo chủ DN (1 trang)», «Lập dự báo dòng tiền», «Lãi theo mặt hàng / khách hàng».",
+          "Bấm «Mở trang HTML» hoặc «Mở tệp kết quả» để gửi chủ doanh nghiệp."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Kỳ và thời điểm số liệu đúng nội dung muốn trao đổi.",
+          "Nêu rõ phần ước tính, dữ liệu thiếu và căn cứ khi bàn giao cho chủ doanh nghiệp."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Dự báo hoặc thuế dự kiến là thông tin quản trị cần kiểm đầu vào; không phải xác nhận số phải nộp."
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-08",
+        "x": "Hệ thống AI – các lần ghi sổ & nhật ký"
+      },
+      {
+        "t": "p",
+        "x": "Danh sách các lần (lô) AI đã ghi sổ và nhật ký 30 ngày gần nhất, cùng các nút Điểm sẵn sàng khoá sổ, Soát rủi ro, Sao lưu, Chạy hàng loạt, Bảng điều hành, Cập nhật phần mềm, Xuất nhật ký."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: UNESCO XII AI → thẻ «Hệ thống»"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/08_he_thong_ai.webp",
+        "thumb": "/huong-dan/unesco-xii-real/08_he_thong_ai-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Hệ thống AI – các lần ghi sổ & nhật ký — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Lưới Các lần ghi sổ ở trên, Nhật ký 30 ngày gần nhất ở dưới; thanh nút có kiểm tra, sao lưu và tổng hợp."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Mở thẻ Hệ thống, đọc danh sách lần ghi và nhật ký đúng phạm vi.",
+          "Dùng AI đã làm gì tháng này để mở tổng hợp; đối chiếu với chứng từ thực tế.",
+          "Mở Điểm sẵn sàng khóa sổ hoặc Soát rủi ro để kiểm điều kiện trước bàn giao.",
+          "Khi có lỗi, dùng Kiểm tra bộ công cụ AI và đọc nhật ký; chuyển thông tin phù hợp cho người phụ trách hỗ trợ."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Tra đúng lần chạy và đối chiếu chứng từ liên quan.",
+          "Đọc phần lỗi hoặc chưa rõ kết quả ghi trước khi chạy lại."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Hủy lần ghi đã chọn chỉ dùng khi hiểu phạm vi của lô. Sao lưu hoặc xuất nhật ký không tự hoàn tác chứng từ."
+      },
+      {
+        "t": "h2",
+        "x": "Kết thúc và bàn giao"
+      },
+      {
+        "t": "p",
+        "x": "Ghi lại kỳ đã làm, dữ liệu đã kiểm, phần còn cần bổ sung và người xử lý tiếp. Khi có kết quả ghi chưa rõ, đối chiếu chứng từ và nhật ký trước khi chạy lại."
+      },
+      {
+        "t": "link",
+        "href": "/unesco-xii-ai/huong-dan/",
+        "x": "Về mục lục hướng dẫn UNESCO XII bằng ảnh thật"
+      },
+      {
+        "t": "link",
+        "href": "/unesco-xii-ai/dich-vu-ke-toan/",
+        "x": "Xem lộ trình phối hợp dịch vụ kế toán và khách hàng"
+      }
+    ]
+  },
+  {
+    "slug": "huong-dan-unesco-xii-dieu-phoi-cong-viec",
+    "title": "Điều phối AI_AUTO và quản lý công việc trong UNESCO XII AI",
+    "date": "2026-11-18",
+    "topic": "Hướng dẫn UNESCO XII",
+    "description": "AI làm theo quy trình cả tháng / cả kỳ, lịch công việc. Hướng dẫn bằng ảnh chụp thật, đường mở màn hình, các bước thao tác và bảng kiểm kết quả.",
+    "visualGuide": true,
+    "blocks": [
+      {
+        "t": "lead",
+        "x": "Lộ trình 12 bước, bộ điều phối cả kỳ và lịch công việc có mục đích khác nhau. Dùng lộ trình để hiểu việc cần làm, đánh giá trước khi chạy, rồi đọc kết quả và xử lý phần cần người."
+      },
+      {
+        "t": "note",
+        "x": "Ảnh chụp thật UNESCO XII trong bộ hướng dẫn ngày 18/11/2026. Thông tin doanh nghiệp, cá nhân và máy đã được che. Một số ảnh đang ở trạng thái chưa có dữ liệu; giao diện và quyền có thể khác theo bản triển khai."
+      },
+      {
+        "t": "h2",
+        "x": "Chuẩn bị trước khi thao tác"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chọn đúng bộ sổ, năm và khoảng tháng.",
+          "Hoàn thiện hồ sơ đầu vào và điều kiện quyền trước khi thực thi.",
+          "Kiểm có tác vụ ERP hoặc AI khác đang xử lý cùng bộ sổ hay không."
+        ]
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-18",
+        "x": "Các bước AI tự động (12 bước của tháng)"
+      },
+      {
+        "t": "p",
+        "x": "12 bước của tháng từ tải hoá đơn điện tử đến tờ khai thuế, báo cáo. Mỗi bước hiện «AI sẽ làm tự động», «Người dùng cần làm» và «Lưu ý»; danh sách bước bên trái kèm trạng thái."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: Tất cả chức năng AI → Các bước AI tự động…"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/18_cac_buoc_ai_12_buoc.webp",
+        "thumb": "/huong-dan/unesco-xii-real/18_cac_buoc_ai_12_buoc-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Các bước AI tự động (12 bước của tháng) — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Danh sách bước ở bên trái, ba cột giải thích vai trò ở bên phải, nút thực hiện ở dưới."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chọn tháng ở góc trên bên phải.",
+          "Chọn bước, đọc ba phần AI sẽ làm tự động, Người dùng cần làm và Lưu ý.",
+          "Dùng AI làm tự động bước này hoặc Mở màn hình theo điều kiện và quyền của bước.",
+          "Kiểm dữ liệu đầu ra rồi mới đánh dấu đã xong. Khi cần xử lý cả kỳ, mở AI_AUTO và rà soát lại phạm vi."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Đọc cả AI sẽ làm tự động và Người dùng cần làm.",
+          "Kiểm dữ liệu đầu ra của bước trước khi đánh dấu đã xong."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "12 bước hướng dẫn không đồng nghĩa với số nhóm thực thi của bộ điều phối. Đánh dấu xong không chứng minh nghiệp vụ đã được kiểm."
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-19",
+        "x": "AI_AUTO – Điều phối tự động cả kỳ"
+      },
+      {
+        "t": "p",
+        "x": "AI rà soát số liệu, kế toán kiểm tra kế hoạch, rồi thực hiện và duyệt kết quả cho cả kỳ: việc cũ (làm nốt phần còn thiếu) hoặc việc mới (kỳ kế toán mới); mỗi bước hiện việc đã làm, còn thiếu và cần xác nhận."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: UNESCO XII AI → nút «AI_AUTO»"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/19_ai_auto_dieu_phoi.webp",
+        "thumb": "/huong-dan/unesco-xii-real/19_ai_auto_dieu_phoi-thumb.webp",
+        "w": 1920,
+        "h": 930,
+        "cap": "AI_AUTO – Điều phối tự động cả kỳ — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Ba vùng đầu là Công việc, Thời gian/kỳ tài chính và Chính sách cần xác nhận; kế hoạch và nhật ký nằm dưới."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chọn Việc cũ hoặc Việc mới, xác nhận bộ sổ và năm đang mở.",
+          "Chọn từ tháng đến tháng; rà các chính sách về khóa sổ, giá xuất kho và kỳ GTGT.",
+          "Bấm RÀ SOÁT SỐ LIỆU, đọc kế hoạch và xử lý điều kiện còn thiếu trước khi tiếp tục.",
+          "Khi phạm vi và kế hoạch đã được kiểm, thực hiện theo quyền được cấp; theo dõi nhật ký, kết quả và các dòng Cần người.",
+          "Đối chiếu chứng từ và báo cáo đầu ra trước DUYỆT XUẤT BÁO CÁO & SỔ."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Bộ sổ, năm và khoảng tháng trùng với lần rà soát.",
+          "Đối chiếu kết quả thực thi, các dòng Cần người và phần chưa rõ kết quả ghi."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Đọc kế hoạch trước khi thực hiện. Tháng trống chưa chứng minh không phát sinh; không chạy lại ngay một bước đang báo chưa rõ kết quả ghi."
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-20",
+        "x": "Quản lý công việc"
+      },
+      {
+        "t": "p",
+        "x": "Lịch thuế, BHXH, báo cáo của năm: số việc quá hạn và 7 ngày tới, lịch tháng bên trái, danh sách việc với hạn, kỳ, nơi nộp, trạng thái bên phải, và phần Văn bản pháp luật, biểu mẫu ở dưới."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: Tất cả chức năng AI → Quản lý công việc…"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/20_quan_ly_cong_viec.webp",
+        "thumb": "/huong-dan/unesco-xii-real/20_quan_ly_cong_viec-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Quản lý công việc — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Lịch tháng ở trái, việc và trạng thái ở phải; phía dưới là danh sách văn bản/biểu mẫu."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chọn «Lọc», nhóm hoặc gõ «Tìm», bấm «Làm mới (đọc lại sổ)».",
+          "Xem lịch tháng bên trái và danh sách việc bên phải; dùng «Thêm việc riêng», «Đã xong các việc cũ...» khi cần.",
+          "Mở «Lịch tháng (lịch bàn)...» hoặc «Bảng điều hành công việc...».",
+          "Ở phần «Văn bản pháp luật, biểu mẫu», bấm «Xem chi tiết» hoặc «Đã xem hết»."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Mỗi việc có kỳ, người phụ trách và kết quả xử lý rõ ràng.",
+          "Việc được đánh dấu xong có hồ sơ hoặc căn cứ tương ứng."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Mốc trên ảnh là dữ liệu của thời điểm chụp. Kiểm thời hạn áp dụng thực tế và thông báo chính thức của từng hồ sơ; không dùng ảnh như lịch pháp lý hiện hành."
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-21",
+        "x": "Lịch công việc theo tháng"
+      },
+      {
+        "t": "p",
+        "x": "Lịch bàn: các báo cáo và mốc thời gian phải nộp, tô màu theo chú thích Còn hạn nộp, Đã xong, Ngày nghỉ; khung AI hỗ trợ tóm tắt việc quá hạn, sắp đến hạn. Màn hình chỉ xem."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: Tất cả chức năng AI → Lịch công việc theo tháng (lịch bàn)…"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/21_lich_cong_viec.webp",
+        "thumb": "/huong-dan/unesco-xii-real/21_lich_cong_viec-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Lịch công việc theo tháng — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Màu ngày theo chú thích ở trái; danh sách mốc và trạng thái nằm dưới lịch."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chọn kiểu «Xem» và nhóm, bấm «Làm mới (đọc lại sổ)».",
+          "Dùng hai nút mũi tên cạnh tên tháng hoặc «Hôm nay» để đổi tháng; bấm vào ngày để lọc.",
+          "Bảng dưới liệt kê hạn, việc, kỳ, nơi nộp, trạng thái; bấm «Mở Quản lý công việc» để đánh dấu hoặc ghi chú."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Đúng tháng và bộ lọc nhóm việc.",
+          "Mở Quản lý công việc khi cần ghi chú hoặc cập nhật trạng thái."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Đây là màn hình xem lịch. Màu ngày hoặc tóm tắt không thay thông báo tiếp nhận/nộp thực tế."
+      },
+      {
+        "t": "h2",
+        "x": "Kết thúc và bàn giao"
+      },
+      {
+        "t": "p",
+        "x": "Ghi lại kỳ đã làm, dữ liệu đã kiểm, phần còn cần bổ sung và người xử lý tiếp. Khi có kết quả ghi chưa rõ, đối chiếu chứng từ và nhật ký trước khi chạy lại."
+      },
+      {
+        "t": "link",
+        "href": "/unesco-xii-ai/huong-dan/",
+        "x": "Về mục lục hướng dẫn UNESCO XII bằng ảnh thật"
+      },
+      {
+        "t": "link",
+        "href": "/unesco-xii-ai/dich-vu-ke-toan/",
+        "x": "Xem lộ trình phối hợp dịch vụ kế toán và khách hàng"
+      }
+    ]
+  },
+  {
+    "slug": "huong-dan-unesco-xii-gia-thanh-san-xuat",
+    "title": "Giá thành sản xuất UNESCO XII AI: tám màn hình từ tham số đến kiểm kết quả",
+    "date": "2026-11-18",
+    "topic": "Hướng dẫn UNESCO XII",
+    "description": "Định mức, phân bổ, trình tự giá thành và kết chuyển thành phẩm. Hướng dẫn bằng ảnh chụp thật, đường mở màn hình, các bước thao tác và bảng kiểm kết quả.",
+    "visualGuide": true,
+    "blocks": [
+      {
+        "t": "lead",
+        "x": "Bắt đầu từ loại hình, định mức và dữ liệu sản xuất thực tế. Sau đó kiểm phương án tháng, phân bổ theo đối tượng, kết chuyển và những điều chỉnh cần người xác nhận."
+      },
+      {
+        "t": "note",
+        "x": "Ảnh chụp thật UNESCO XII trong bộ hướng dẫn ngày 18/11/2026. Thông tin doanh nghiệp, cá nhân và máy đã được che. Một số ảnh đang ở trạng thái chưa có dữ liệu; giao diện và quyền có thể khác theo bản triển khai."
+      },
+      {
+        "t": "h2",
+        "x": "Chuẩn bị trước khi thao tác"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chuẩn bị tháng, kho nguyên vật liệu, kho thành phẩm và đối tượng giá thành.",
+          "Đối chiếu sản lượng, xuất nguyên vật liệu, điện và chi phí thực tế.",
+          "Thống nhất phương pháp, tham số và người kiểm trước các bước ghi giá thành."
+        ]
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-37",
+        "x": "Phương án giá thành tháng"
+      },
+      {
+        "t": "p",
+        "x": "AI lập phương án giá thành tháng cho tất cả thành phẩm theo quy trình 5 bước (đọc dữ liệu, phân bổ điện/NVL, lập phương án, duyệt, chuyển phương án), kèm mục «Việc cần làm» và khung Tổng hợp nhanh."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: Tất cả chức năng AI → Giá thành AI… → Phương án giá thành tháng (AI)…"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/37_gt_phuong_an_thang.webp",
+        "thumb": "/huong-dan/unesco-xii-real/37_gt_phuong_an_thang-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Phương án giá thành tháng — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Chọn tháng và kho ở trên; Việc cần làm ở giữa; quy trình năm bước và Tổng hợp nhanh ở bên phải."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chọn «Tháng», «Kho thành phẩm», «Kho NVL» rồi bấm «Chọn tháng và kho».",
+          "Bấm «Đọc toàn bộ thành phẩm tháng»; xử lý từng dòng «VIỆC CẦN LÀM» (bấm «Bấm để xử lý»).",
+          "Bấm «Lập phương án tháng», «Duyệt dòng đang chọn», rồi «Chuyển phương án đã duyệt»."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Có dữ liệu sản lượng, chi phí và nguyên vật liệu đúng phạm vi.",
+          "Các dòng phương án đã được đối chiếu trước khi duyệt và chuyển."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Ảnh đang báo Chưa có dữ liệu và còn việc cần làm. Không coi Lập phương án hoặc Chuyển phương án là đã hoàn tất ghi giá thành."
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-38",
+        "x": "Trình tự giá thành 7 bước"
+      },
+      {
+        "t": "p",
+        "x": "Kiểm tra 7 bước giá thành theo thứ tự: loại hình sản xuất, hồ sơ định mức, định mức NVL, chi phí tháng, sản lượng thành phẩm, tính và ghi giá thành, kiểm tra kết quả; mỗi bước tô màu xanh (xong), vàng (cần xem), đỏ (thiếu), xám (không áp dụng)."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: Giá thành AI… → Trình tự giá thành 7 bước…"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/38_gt_trinh_tu_7_buoc.webp",
+        "thumb": "/huong-dan/unesco-xii-real/38_gt_trinh_tu_7_buoc-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Trình tự giá thành 7 bước — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Danh sách kiểm theo thứ tự và nút Làm bước này giúp mở chỗ đang thiếu."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chọn «Tháng» rồi bấm «Kiểm lại».",
+          "Bước 0 chưa chọn loại hình thì bấm «Chọn...».",
+          "Làm lần lượt từ trên xuống: bấm «Làm bước này» ở bước còn vàng / đỏ."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Đã chọn loại hình và hoàn thiện dữ liệu đầu vào.",
+          "Kiểm lại trạng thái và dữ liệu thực tế sau mỗi bước."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Làm theo điều kiện của từng bước; không bỏ qua cảnh báo chỉ để đổi màu danh sách."
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-39",
+        "x": "Phân bổ & giá thành theo đối tượng"
+      },
+      {
+        "t": "p",
+        "x": "Xem chi phí nguyên vật liệu, nhân công, sản xuất chung, dở dang và các phần cần kiểm theo từng đối tượng. Kế toán rà căn cứ trước khi lưu tham số hoặc chuyển sang điều chỉnh cuối kỳ."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: Giá thành AI… → Phân bổ & giá thành theo đối tượng…"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/39_gt_phan_bo_doi_tuong.webp",
+        "thumb": "/huong-dan/unesco-xii-real/39_gt_phan_bo_doi_tuong-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Phân bổ & giá thành theo đối tượng — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Lưới chi phí theo đối tượng và các ô số lượng hỏng, tỷ lệ dở dang nằm trên cùng màn hình."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chọn tháng rồi bấm Tính lại.",
+          "Chọn dòng, đối chiếu căn cứ số lượng hỏng và tỷ lệ dở dang trước khi nhập và Lưu dòng.",
+          "Mở Hồ sơ giá thành khi cần kiểm tham số. Nếu có phần cần điều chỉnh, mở Điều chỉnh 632 cuối kỳ để xem chi tiết và kiểm trước khi quyết định ghi."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Đúng đối tượng và căn cứ cho lượng hỏng, dở dang.",
+          "Tổng phân bổ được đối chiếu với chi phí nguồn của kỳ."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Tham số ảnh hưởng kết quả giá thành. Người phụ trách cần kiểm bản chất và căn cứ trước khi lưu hoặc lập điều chỉnh."
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-40",
+        "x": "Điều chỉnh 632 cuối kỳ"
+      },
+      {
+        "t": "p",
+        "x": "Màn hình tập hợp phần điều chỉnh cuối kỳ theo đối tượng, với các cột vượt mức, công suất, sản phẩm hỏng và số còn lại. Người phụ trách kiểm căn cứ trước khi dùng chức năng ghi; lưới dưới theo dõi các lô đã ghi hoặc bỏ qua."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: Giá thành AI… → Điều chỉnh 632 cuối kỳ…"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/40_gt_dieu_chinh_632.webp",
+        "thumb": "/huong-dan/unesco-xii-real/40_gt_dieu_chinh_632-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Điều chỉnh 632 cuối kỳ — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Lưới trên là phần cần xem theo đối tượng; lưới dưới theo dõi lô đã ghi hoặc bỏ qua."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chọn kỳ cần đối chiếu.",
+          "Đọc từng dòng, kiểm các cột và số còn lại với hồ sơ giá thành, chứng từ đã có.",
+          "Nếu nội dung đã được người phụ trách xác nhận, bấm Ghi điều chỉnh và kiểm chứng từ tạo ra; nếu bỏ qua kỳ, lưu lý do.",
+          "Dùng Chép thuyết minh B09 khi cần, rồi kiểm nội dung trước đưa vào báo cáo."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Số điều chỉnh được đối chiếu với phần đã ghi và số còn lại.",
+          "Mở kiểm chứng từ sau ghi, lưu lý do nếu bỏ qua."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Không bấm Ghi điều chỉnh lặp lại khi chưa kiểm lô đã có. Hủy lô đã ghi cần xác định phạm vi và người có quyền."
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-41",
+        "x": "Cân đối AI – kết chuyển thành phẩm"
+      },
+      {
+        "t": "p",
+        "x": "Cân đối điện và NVL theo sản lượng thành phẩm trước khi kết chuyển (chỉ đọc, không ghi sổ); số lượng mới chỉ đổi trên lưới Kết chuyển, phải bấm Ghi ở màn hình đó mới vào sổ."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: Giá thành AI… → Cân đối AI (kết chuyển thành phẩm)…"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/41_gt_can_doi_ai.webp",
+        "thumb": "/huong-dan/unesco-xii-real/41_gt_can_doi_ai-thumb.webp",
+        "w": 1920,
+        "h": 930,
+        "cap": "Cân đối AI – kết chuyển thành phẩm — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Hộp Cân đối AI có ô kWh thực tế, Chọn TP tăng, Chi tiết điện, Xử lý NVL thiếu và Tính lại."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Nhập «kWh thực tế», bấm «Chọn TP tăng...».",
+          "Xem «Chi tiết điện», xử lý thiếu bằng «Xử lý NVL thiếu...», rồi «Tính lại».",
+          "Tick «Chặn Ghi khi còn NVL thiếu» nếu muốn được hỏi trước khi ghi."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Số điện và nguyên vật liệu dựa trên hồ sơ thực tế.",
+          "Kiểm lưới Kết chuyển sau khi áp dụng phương án."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Màn hình này không trực tiếp ghi sổ. Số lượng thay đổi trên lưới Kết chuyển; việc Ghi được thực hiện ở màn hình đó sau kiểm tra."
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-42",
+        "x": "Hồ sơ định mức giá thành"
+      },
+      {
+        "t": "p",
+        "x": "Hồ sơ định mức giá thành của bộ sổ đang mở: loại hình sản xuất, phương pháp tính giá thành, cách đánh giá dở dang, chế độ tự động; chia các thẻ Loại hình, Điện & NVL chính, Phân bổ chi phí, Chính sách Ghi."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: Giá thành AI… → Tham số giá thành…"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/42_gt_tham_so.webp",
+        "thumb": "/huong-dan/unesco-xii-real/42_gt_tham_so-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Hồ sơ định mức giá thành — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Bốn thẻ là Loại hình, Điện & NVL chính, Phân bổ chi phí và Chính sách Ghi."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Thẻ «1. Loại hình»: chọn «Loại hình sản xuất», «Phương pháp tính giá thành», «Cách đánh giá dở dang», «Chế độ tự động».",
+          "Lần lượt kiểm tra «2. Điện & NVL chính», «3. Phân bổ chi phí», «4. Chính sách Ghi».",
+          "Bấm «Ghi» để lưu; có thể «Xuất hồ sơ...» / «Nhập hồ sơ...» hoặc «Chuyển đổi sổ cũ...»."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Phương pháp và cách đánh giá dở dang phù hợp cách doanh nghiệp đang làm.",
+          "Lưu và kiểm lại hồ sơ trước khi dùng cho phương án tháng."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Nhập hồ sơ hoặc Chuyển đổi sổ cũ là thao tác riêng cần kiểm tương thích và sao lưu; không làm chỉ để bỏ qua dữ liệu đang thiếu."
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-43",
+        "x": "Định mức tự động cho sản phẩm"
+      },
+      {
+        "t": "p",
+        "x": "Liệt kê sản phẩm thiếu định mức và để AI đề xuất định mức NVL, từ sản phẩm tương tự (suy hệ số từ tên) hoặc từ thực tế xuất kho trong khoảng tháng chọn."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: Giá thành AI… → Định mức tự động…"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/43_gt_dinh_muc_tu_dong.webp",
+        "thumb": "/huong-dan/unesco-xii-real/43_gt_dinh_muc_tu_dong-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Định mức tự động cho sản phẩm — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Danh sách sản phẩm cần định mức ở trái, nguồn gợi ý và nguyên vật liệu ở phải."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chọn «Tháng», bấm «Liệt kê thiếu định mức».",
+          "Chọn phương án: «Từ sản phẩm tương tự» (mã nền, hệ số, «Suy hệ số từ tên») hoặc «Từ thực tế xuất kho».",
+          "Bấm «AI tự lập cho mã đang chọn» hoặc «AI lập tất cả».",
+          "Kiểm tra «Danh sách nguyên vật liệu (NVL)», rồi bấm «Ghi vào định mức»."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Nguồn sản phẩm tương tự hoặc xuất kho thực tế có căn cứ.",
+          "Kiểm lượng, đơn vị và mã NVL trước Ghi vào định mức."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Suy hệ số từ tên là gợi ý, không phải xác nhận định mức kỹ thuật của sản phẩm."
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-44",
+        "x": "Kiểm tra định mức"
+      },
+      {
+        "t": "p",
+        "x": "Hộp chọn tháng để kiểm tra định mức; chỉ đọc sổ, không sửa số liệu."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: Giá thành AI… → Kiểm tra định mức (theo tháng, chỉ đọc sổ)…"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/44_gt_kiem_tra_dinh_muc.webp",
+        "thumb": "/huong-dan/unesco-xii-real/44_gt_kiem_tra_dinh_muc-thumb.webp",
+        "w": 1920,
+        "h": 930,
+        "cap": "Kiểm tra định mức — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Hộp thoại chọn tháng có Đồng ý và Hủy; dòng hướng dẫn ghi rõ chỉ đọc sổ."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chọn tháng cần kiểm tra trong danh sách.",
+          "Bấm «Đồng ý» (hoặc «Huỷ»)."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Đúng tháng cần kiểm.",
+          "Đọc báo cáo kết quả, giao xử lý mục thiếu thay vì sửa trực tiếp trong hộp chọn tháng."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "Kết thúc và bàn giao"
+      },
+      {
+        "t": "p",
+        "x": "Ghi lại kỳ đã làm, dữ liệu đã kiểm, phần còn cần bổ sung và người xử lý tiếp. Khi có kết quả ghi chưa rõ, đối chiếu chứng từ và nhật ký trước khi chạy lại."
+      },
+      {
+        "t": "link",
+        "href": "/unesco-xii-ai/huong-dan/",
+        "x": "Về mục lục hướng dẫn UNESCO XII bằng ảnh thật"
+      },
+      {
+        "t": "link",
+        "href": "/unesco-xii-ai/dich-vu-ke-toan/",
+        "x": "Xem lộ trình phối hợp dịch vụ kế toán và khách hàng"
+      }
+    ]
+  },
+  {
+    "slug": "huong-dan-unesco-xii-ho-so-khach-quy-tac",
+    "title": "Hồ sơ khách hàng và quy tắc doanh nghiệp trong UNESCO XII AI",
+    "date": "2026-11-18",
+    "topic": "Hướng dẫn UNESCO XII",
+    "description": "Trao đổi chứng từ với khách và quy tắc theo từng doanh nghiệp. Hướng dẫn bằng ảnh chụp thật, đường mở màn hình, các bước thao tác và bảng kiểm kết quả.",
+    "visualGuide": true,
+    "blocks": [
+      {
+        "t": "lead",
+        "x": "Dịch vụ kế toán dùng hồ sơ kèm chứng từ và gói .ukx để trao đổi có căn cứ với khách. Quy tắc riêng hỗ trợ phân tích nhất quán nhưng vẫn phải kiểm trước khi chuyển dữ liệu vào sổ."
+      },
+      {
+        "t": "note",
+        "x": "Ảnh chụp thật UNESCO XII trong bộ hướng dẫn ngày 18/11/2026. Thông tin doanh nghiệp, cá nhân và máy đã được che. Một số ảnh đang ở trạng thái chưa có dữ liệu; giao diện và quyền có thể khác theo bản triển khai."
+      },
+      {
+        "t": "h2",
+        "x": "Chuẩn bị trước khi thao tác"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Thống nhất khách hàng, kỳ và người bàn giao hồ sơ.",
+          "Xác định ngày chốt dữ liệu khi xuất gói cho công cụ khách.",
+          "Ghi lại thay đổi quy tắc và những hóa đơn cần phân tích lại."
+        ]
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-28",
+        "x": "Hồ sơ kèm chứng từ"
+      },
+      {
+        "t": "p",
+        "x": "Soát các nghiệp vụ trong kỳ còn thiếu chứng từ kèm theo, lập thư yêu cầu khách bổ sung và đánh dấu chứng từ đã có ngoài sổ (bản giấy / tệp); phần mềm chỉ ghi dấu, không sửa sổ."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: Màn hình AI → Hồ sơ kèm chứng từ…"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/28_ho_so_kem_chung_tu.webp",
+        "thumb": "/huong-dan/unesco-xii-real/28_ho_so_kem_chung_tu-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Hồ sơ kèm chứng từ — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Lưới nghiệp vụ ở trên, danh sách tài liệu cần kèm ở dưới; các nút thư yêu cầu và nhận tệp nằm cuối màn hình."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chọn «Kỳ từ ngày» – «đến ngày», bấm «Soát hồ sơ chứng từ».",
+          "Chọn nghiệp vụ, tích các chứng từ đã có rồi bấm «Đánh dấu ĐÃ CÓ NGOÀI SỔ các mục đã tích».",
+          "Gửi khách bằng «Mở thư yêu cầu (HTML)» hoặc «Mở thư yêu cầu (Zalo / TXT)»; nhận lại bằng «Nhận chứng từ khách gửi...»."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Đối chiếu tài liệu đang giữ trước khi đánh dấu đã có.",
+          "Danh sách bổ sung nêu rõ khách, kỳ, tài liệu, người gửi và ngày hẹn."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Đã có ngoài sổ là dấu kiểm hồ sơ, không chứng minh đã hạch toán. Nhận tệp, nhập dữ liệu và ghi sổ là các mốc riêng."
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-29",
+        "x": "Công cụ khách (gói .ukx có chữ ký)"
+      },
+      {
+        "t": "p",
+        "x": "Trao đổi gói .ukx có chữ ký giữa văn phòng kế toán và khách: xuất gói số liệu chốt đến ngày cho khách (GOI_DI), nạp gói khách gửi về (GOI_VE) hoặc trả lại phiếu; phiếu khách gửi chỉ vào danh sách AI, kế toán bấm Ghi mới vào sổ."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: Màn hình AI → Cổng khách (gói chứng từ)…"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/29_cong_khach.webp",
+        "thumb": "/huong-dan/unesco-xii-real/29_cong_khach-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Công cụ khách (gói .ukx có chữ ký) — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Ngày chốt và xuất gói ở trên; phần chọn gói khách gửi về và trả phiếu ở dưới."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Xuất gói: nhập «Số liệu chốt đến ngày», mật khẩu công cụ khách (nếu cần) rồi bấm «Xuất gói»; «Mở thư mục gói» để lấy tệp.",
+          "Nạp gói khách gửi về: bấm «Chọn gói và nạp...».",
+          "Trả phiếu cho khách sửa: bấm «Trả lại một phiếu...»."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Ngày chốt, đúng khách và công cụ nhận gói tương thích.",
+          "Phiếu nạp về được kiểm trong danh sách AI trước khi ghi."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Chữ ký của gói kiểm soát trao đổi theo chức năng, không thay chữ ký số nộp thuế. Giữ mật khẩu gói theo cách hai bên thống nhất."
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-34",
+        "x": "Quy tắc chi phí theo doanh nghiệp"
+      },
+      {
+        "t": "p",
+        "x": "Bộ quy tắc riêng của từng doanh nghiệp: từ khoá tên hàng (và TK AI đề xuất) → hạch toán vào tài khoản nào, cách gán lô; quy tắc nằm trên được ưu tiên, áp dụng từ lần phân tích hoá đơn tiếp theo."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: Màn hình AI → Quy tắc chi phí theo doanh nghiệp…"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/34_quy_tac_chi_phi.webp",
+        "thumb": "/huong-dan/unesco-xii-real/34_quy_tac_chi_phi-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Quy tắc chi phí theo doanh nghiệp — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Bộ mẫu ở đầu, danh sách quy tắc ở giữa, ô sửa và nút Lưu/Lên/Xuống ở dưới."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Có thể chọn «Bộ mẫu theo loại hình» rồi bấm «Thêm các quy tắc của mẫu».",
+          "Bấm «Quy tắc mới», nhập «Từ khoá tên hàng», «Hạch toán vào TK», «Cách gán lô».",
+          "Bấm «Lưu»; dùng «Lên» / «Xuống» để đổi thứ tự ưu tiên, «Xoá» để bỏ.",
+          "Với hoá đơn đã phân tích, bấm Phân tích lại để áp dụng."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Quy tắc trên được ưu tiên đúng ý định.",
+          "Phân tích lại mẫu hóa đơn chưa ghi rồi kiểm trước khi áp dụng rộng."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Đổi quy tắc không tự sửa toàn bộ chứng từ đã ghi. Tránh từ khóa quá rộng làm khớp nhầm."
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-35",
+        "x": "Quy tắc hạch toán theo màn hình nhập"
+      },
+      {
+        "t": "p",
+        "x": "Quy tắc chuyển hoá đơn từ AI vào sổ theo màn hình nhập (Nhập vật tư, Bán hàng, Chứng từ chi phí…): AI chỉ chuyển khi tài khoản đúng lớp TK cho phép của màn hình và đúng tháng hoá đơn, sai thì chuyển Cần xem lại."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: Màn hình AI → Quy tắc hạch toán theo màn hình nhập…"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/35_quy_tac_man_hinh_nhap.webp",
+        "thumb": "/huong-dan/unesco-xii-real/35_quy_tac_man_hinh_nhap-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Quy tắc hạch toán theo màn hình nhập — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Phần giải thích và bảng lớp tài khoản nằm giữa; tùy chọn kiểm trước lập chứng từ và nút Ghi ở dưới."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Đọc các quy tắc 1–5 và bảng «Màn hình – Vai trò – Lớp TK cho phép».",
+          "Bật / tắt «Kiểm tra tài khoản theo màn hình nhập trước khi lập chứng từ» và tuỳ chọn cộng phí dịch vụ vào giá nhập.",
+          "Bấm «Ghi», rồi «Làm mới hoá đơn Cần xem lại» để áp dụng."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Quy tắc phù hợp màn hình nhập và kỳ hóa đơn.",
+          "Sau Làm mới hóa đơn Cần xem lại, kiểm lại lý do và dữ liệu từng trường hợp."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Không tắt kiểm tra chỉ để ép hóa đơn đi tiếp; xử lý nguyên nhân tài khoản hoặc tháng chưa phù hợp."
+      },
+      {
+        "t": "h2",
+        "x": "Kết thúc và bàn giao"
+      },
+      {
+        "t": "p",
+        "x": "Ghi lại kỳ đã làm, dữ liệu đã kiểm, phần còn cần bổ sung và người xử lý tiếp. Khi có kết quả ghi chưa rõ, đối chiếu chứng từ và nhật ký trước khi chạy lại."
+      },
+      {
+        "t": "link",
+        "href": "/unesco-xii-ai/huong-dan/",
+        "x": "Về mục lục hướng dẫn UNESCO XII bằng ảnh thật"
+      },
+      {
+        "t": "link",
+        "href": "/unesco-xii-ai/dich-vu-ke-toan/",
+        "x": "Xem lộ trình phối hợp dịch vụ kế toán và khách hàng"
+      }
+    ]
+  },
+  {
+    "slug": "huong-dan-unesco-xii-tro-ly-cap-nhat",
+    "title": "Trợ lý F1, cập nhật và kích hoạt UNESCO XII AI: hướng dẫn trực quan",
+    "date": "2026-11-18",
+    "topic": "Hướng dẫn UNESCO XII",
+    "description": "Hỏi AI, cập nhật phần mềm, chế độ sử dụng AI. Hướng dẫn bằng ảnh chụp thật, đường mở màn hình, các bước thao tác và bảng kiểm kết quả.",
+    "visualGuide": true,
+    "blocks": [
+      {
+        "t": "lead",
+        "x": "Dùng trợ lý để hiểu màn hình đang làm, kiểm gói cập nhật trước cài đặt và đọc trạng thái sử dụng AI trên đúng máy. Các ảnh giúp nhận biết vị trí thao tác; thông tin nhận diện máy đã được che."
+      },
+      {
+        "t": "note",
+        "x": "Ảnh chụp thật UNESCO XII trong bộ hướng dẫn ngày 18/11/2026. Thông tin doanh nghiệp, cá nhân và máy đã được che. Một số ảnh đang ở trạng thái chưa có dữ liệu; giao diện và quyền có thể khác theo bản triển khai."
+      },
+      {
+        "t": "h2",
+        "x": "Chuẩn bị trước khi thao tác"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Ghi phiên bản và màn hình đang cần hỗ trợ.",
+          "Hoàn tất công việc đang mở trước khi cập nhật phần mềm.",
+          "Chỉ gửi mã yêu cầu qua kênh hỗ trợ đã xác nhận; không đăng mã máy hoặc mã kích hoạt công khai."
+        ]
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-17",
+        "x": "Trợ lý AI – hướng dẫn và hỏi đáp (F1)"
+      },
+      {
+        "t": "p",
+        "x": "Danh mục hướng dẫn tính năng bên trái (lọc theo Màn hình, có ô Tìm), nội dung bên phải; ô hỏi Trợ lý AI phía dưới. Trợ lý chỉ đọc và giải thích, không ghi sổ."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: Phím F1 trên mọi màn hình, hoặc Tất cả chức năng AI → Trợ lý AI…"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/17_tro_ly_ai_f1.webp",
+        "thumb": "/huong-dan/unesco-xii-real/17_tro_ly_ai_f1-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Trợ lý AI – hướng dẫn và hỏi đáp (F1) — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Danh mục hướng dẫn và ô lọc ở trái; nội dung và ô hỏi trợ lý ở phải/dưới."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chọn «Màn hình», gõ ô «Tìm» rồi bấm «Tìm», hoặc chọn mục trong danh sách.",
+          "Gõ câu hỏi vào ô «Hỏi Trợ lý AI» rồi bấm «Hỏi» (hoặc Enter).",
+          "Tick «Rê chuột lên nút là hiện hướng dẫn (gợi ý)»; dùng «? Bấm vào nút cần hỏi (Shift+F1)» để hỏi về một nút."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chọn đúng màn hình hoặc nút muốn hỏi.",
+          "Đối chiếu hướng dẫn với dữ liệu thực tế trước khi tự thao tác."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Trợ lý giải thích, không xác nhận nghiệp vụ thay kế toán. Không gửi mật khẩu, mã kích hoạt hoặc dữ liệu riêng không cần thiết vào câu hỏi."
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-22",
+        "x": "Cập nhật phần mềm tự động"
+      },
+      {
+        "t": "p",
+        "x": "Màn hình kiểm phiên bản, tải và kiểm gói cập nhật, cài chương trình và theo dõi nhật ký. Nâng cấp CSDL AI là một nút riêng cần kiểm điều kiện trước khi thực hiện."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: Tất cả chức năng AI → Cập nhật phần mềm tự động…"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/22_cap_nhat_phan_mem.webp",
+        "thumb": "/huong-dan/unesco-xii-real/22_cap_nhat_phan_mem-thumb.webp",
+        "w": 1920,
+        "h": 988,
+        "cap": "Cập nhật phần mềm tự động — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Thanh nút dưới có kiểm tra, tải, kiểm gói, cài đặt, nâng cấp CSDL và nhật ký cập nhật."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "(Tuỳ chọn) nhập «Kênh riêng của bộ sổ» rồi «Lưu kênh»; tick «Tự kiểm tra mỗi ngày (chạy ngầm)».",
+          "Bấm «Kiểm tra cập nhật», hoặc «Cập nhật ngay (kiểm, tải, cài)».",
+          "Hoặc làm từng bước: «Tải về» → «Kiểm tra gói đã tải» → «Cài đặt» → «Nâng cấp CSDL (bước AI)».",
+          "Xem «Nhật ký cập nhật»."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Gói được kiểm tra hợp lệ trước cài.",
+          "Mở lại phần mềm, kiểm phiên bản, bộ sổ và chức năng cần dùng sau cập nhật."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Phân biệt cập nhật tệp chương trình với nâng cấp CSDL AI. Hoàn tất công việc đang mở và bảo đảm sao lưu trước thao tác thay đổi cấu trúc; dùng kênh cập nhật đã xác nhận."
+      },
+      {
+        "t": "h2",
+        "id": "man-hinh-23",
+        "x": "Kích hoạt AI – chế độ sử dụng"
+      },
+      {
+        "t": "p",
+        "x": "Xem chế độ sử dụng AI trên máy, mã yêu cầu và trạng thái kích hoạt. Liên hệ nhà cung cấp theo kênh đã xác nhận khi cần cấp hoặc gia hạn mã."
+      },
+      {
+        "t": "note",
+        "x": "Mở tại: Tất cả chức năng AI → Kích hoạt AI…"
+      },
+      {
+        "t": "screen",
+        "src": "/huong-dan/unesco-xii-real/23_kich_hoat_ai.webp",
+        "thumb": "/huong-dan/unesco-xii-real/23_kich_hoat_ai-thumb.webp",
+        "w": 1920,
+        "h": 930,
+        "cap": "Kích hoạt AI – chế độ sử dụng — ảnh giao diện thật, đã che thông tin riêng."
+      },
+      {
+        "t": "p",
+        "x": "Nhìn trên ảnh: Hộp chế độ có vùng thông tin máy, ô mã kích hoạt và các lựa chọn sử dụng. Vùng nhận diện và mã đã che."
+      },
+      {
+        "t": "h3",
+        "x": "Các bước thực hiện"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Mở Kích hoạt AI và đọc trạng thái hiện tại.",
+          "Khi cần hỗ trợ cấp mã, dùng Chép mã yêu cầu và gửi riêng cho nhà cung cấp qua kênh đã xác nhận.",
+          "Nhập mã được cấp cho đúng máy và kiểm thông báo kết quả.",
+          "Nếu chọn chế độ dùng thử hoặc chỉ xem, đọc giới hạn hiển thị của bản đang dùng."
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "Kiểm tra kết quả"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Mã yêu cầu thuộc đúng máy cần hỗ trợ.",
+          "Sau kích hoạt, đọc chế độ và quyền hiện tại trên máy."
+        ]
+      },
+      {
+        "t": "note",
+        "x": "Các chế độ và giới hạn phụ thuộc bản triển khai, thông tin cấp phép và quyền. Các nút Quản trị viên dành cho người được phân quyền; không dùng để thay quy trình cấp phép."
+      },
+      {
+        "t": "h2",
+        "x": "Kết thúc và bàn giao"
+      },
+      {
+        "t": "p",
+        "x": "Ghi lại kỳ đã làm, dữ liệu đã kiểm, phần còn cần bổ sung và người xử lý tiếp. Khi có kết quả ghi chưa rõ, đối chiếu chứng từ và nhật ký trước khi chạy lại."
+      },
+      {
+        "t": "link",
+        "href": "/unesco-xii-ai/huong-dan/",
+        "x": "Về mục lục hướng dẫn UNESCO XII bằng ảnh thật"
+      },
+      {
+        "t": "link",
+        "href": "/unesco-xii-ai/dich-vu-ke-toan/",
+        "x": "Xem lộ trình phối hợp dịch vụ kế toán và khách hàng"
+      }
+    ]
+  }
+]

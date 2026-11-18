@@ -1,4 +1,5 @@
 import { articles } from './articles';
+import visualGuide from './xii-visual-guide.json';
 
 export const xiiHub = '/unesco-xii-ai/dich-vu-ke-toan/';
 export const xiiGuide = '/tai-lieu/cam-nang-phoi-hop-dvkt-khach-hang-unesco-xii-ai.pdf';
@@ -26,6 +27,7 @@ const lessonRefs = [
   { slug: 'doc-trang-thai-xu-ly-unesco-xii-ai', roles: ['manager', 'accountant'], stage: 'Đọc trạng thái', minutes: 6 },
   { slug: 'ra-soat-nhieu-bo-so-qua-dem-unesco-xii-ai', roles: ['manager', 'accountant'], stage: 'Rà soát nhiều bộ sổ', minutes: 6 },
   { slug: 'nhat-ky-ai-doi-chieu-ket-qua-unesco-xii-ai', roles: ['manager', 'accountant'], stage: 'Nhật ký và bàn giao', minutes: 6 },
+  ...visualGuide.map(({slug,roles,minutes}) => ({slug,roles,minutes,stage:'Hướng dẫn bằng ảnh thật'})),
 ];
 export const xiiLessons = lessonRefs.map((ref, index) => {
   const article = articles.find((a) => a.slug === ref.slug);

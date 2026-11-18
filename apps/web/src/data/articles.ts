@@ -25,10 +25,11 @@
 import erpArticles from './erp-articles.json';
 import customerArticles from './xii-customer-articles.json';
 import monthlyArticles from './xii-monthly-articles.json';
+import visualArticles from './xii-visual-articles.json';
 
 export type Block =
   | { t: 'link'; href: string; x: string }
-  | { t: 'h2'; x: string }
+  | { t: 'h2'; x: string; id?: string }
   | { t: 'lead'; x: string }
   | { t: 'p'; x: string }
   | { t: 'ol'; items: string[] }
@@ -38,6 +39,7 @@ export type Block =
   | { t: 'calc'; x: 'dien' }
   | { t: 'h3'; x: string }
   | { t: 'img'; src: string; w: number; h: number; cap: string }
+  | { t: 'screen'; src: string; thumb: string; w: number; h: number; cap: string }
   | { t: 'note'; x: string }
   | { t: 'download'; href: string; x: string }
   | { t: 'video'; src: string; vtt: string; poster: string; cap: string };
@@ -52,11 +54,13 @@ export type Article = {
   topic: string;
   blocks: Block[];
   relatedVideo?: string;
+  visualGuide?: boolean;
 };
 
 export const articleDate = (iso: string) => `${iso.slice(8, 10)}/${iso.slice(5, 7)}/${iso.slice(0, 4)}`;
 
 export const articles: Article[] = [
+  ...(visualArticles as Article[]),
   ...(monthlyArticles as Article[]),
   ...(customerArticles as Article[]),
   ...(erpArticles as Article[]),
