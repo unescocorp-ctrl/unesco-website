@@ -1,4 +1,5 @@
 ---
+import ErpIntegration from "../../../components/ErpIntegration.astro";
 /**
  * ERP_UNESCO – Giải pháp quản lý toàn diện công ty dịch vụ kế toán – trang sản phẩm.
  * Nội dung theo bài giới thiệu của UNESCO (Claude Docs "Bài giới thiệu: Giải pháp quản lý toàn diện công ty dịch vụ kế toán").
@@ -25,7 +26,7 @@ const gallery = [
 ];
 
 const pillars: [string, string][] = [
-  ['Quản lý dịch vụ kế toán', 'Khách hàng, hợp đồng, công việc hằng tháng, thu phí, công nợ, nhân viên và tiền lương nối với nhau: hợp đồng sinh ra công việc, công việc hoàn thành sinh ra phí, phí sinh ra công nợ và phiếu thu.'],
+  ['Quản lý dịch vụ kế toán', 'Khách hàng, hợp đồng, công việc hằng tháng, thu phí, công nợ, nhân viên và tiền lương nối với nhau: theo dõi công việc theo hợp đồng, phát hành phí và phân bổ tiền thu. Kết quả xử lý sổ của khách hàng được kiểm tra riêng với luồng phí dịch vụ.'],
   ['Kết hợp phần mềm kế toán', 'Phân hệ Điều hành sổ sách kết nối với phần mềm kế toán để theo dõi bộ sổ của từng khách: tải hoá đơn điện tử, tự định khoản, ghi sổ, chuyển hoá đơn chưa chắc chắn cho kế toán xem lại, rồi ra báo cáo và tờ khai.'],
   ['Tìm kiếm, quản lý và chăm sóc khách hàng', 'Theo dõi khách tiềm năng từ lúc tiếp cận đến khi ký hợp đồng, và giữ lịch chăm sóc cho khách đang phục vụ: gia hạn hợp đồng, nhắc phí, hỏi thăm.'],
 ];
@@ -39,8 +40,8 @@ const features: [string, string][] = [
   ['Tìm kiếm và chăm sóc khách hàng', 'Khách tiềm năng theo từng bước: tiềm năng, đã liên hệ, đã gửi báo giá, ký hợp đồng. Lịch chăm sóc nhắc việc cần làm với từng khách trong tuần.'],
   ['Nhân viên và tính lương', 'Hồ sơ nhân viên, chấm công, nghỉ phép – tăng ca, kỳ lương và bảng lương gắn với KPI và hoa hồng thu phí.'],
   ['Báo cáo quản trị', 'Báo cáo doanh thu, công nợ, hợp đồng, tiến độ công việc; xuất Excel hoặc PDF. Mỗi mẫu báo cáo được một người lập, một người khác duyệt.'],
-  ['Phân quyền và an toàn dữ liệu', 'Mỗi nhân viên một tài khoản, phân quyền theo chức danh. Mọi thay đổi quan trọng được ghi nhật ký; không lưu mật khẩu trên máy người dùng.'],
-  ['Dùng trên điện thoại', 'Xem việc của mình, duyệt việc, xem công nợ và nhận thông báo khi không ngồi tại văn phòng.'],
+  ['Phân quyền và an toàn dữ liệu', 'Mỗi nhân viên dùng tài khoản được cấp quyền theo vai trò và phạm vi phụ trách. Cần kiểm tra quyền xem, thực hiện và xác nhận khi triển khai kết nối.'],
+  ['Dùng trên điện thoại', 'Xem tình trạng công việc, công nợ và sổ sách theo quyền truy cập. Khả năng thao tác tùy phiên bản được triển khai.'],
 ];
 const steps: [string, string][] = [
   ['Đăng nhập', 'Nhập tên đăng nhập và mật khẩu; phần mềm tự chọn kỳ dữ liệu hiện hành.'],
@@ -76,6 +77,7 @@ const roles: [string, string][] = [
     <div class="section-head"><div><span class="eyebrow">Vì sao cần</span><h2>Công ty dịch vụ kế toán không chỉ làm sổ sách</h2></div><p>Mỗi tháng phải nhận chứng từ của hàng trăm khách, làm sổ và kê khai đúng hạn, phát hành phí, thu tiền, nhắc nợ, tính lương theo số khách phụ trách và vẫn phải tìm thêm khách mới.</p></div>
     <p class="lead" style="max-width:900px">Khi mỗi việc nằm một nơi – Excel theo dõi khách, nhóm chat giao việc, sổ tay công nợ, phần mềm kế toán riêng từng khách – người quản lý khó trả lời câu hỏi đơn giản: khách nào chưa nộp chứng từ, tờ khai nào sắp trễ, ai đang quá tải, tháng này còn bao nhiêu phí chưa thu. ERP_UNESCO gom tất cả về một hệ thống.</p>
   </div></section>
+<ErpIntegration />
 
   <section class="section surface-soft"><div class="container">
     <div class="section-head"><div><span class="eyebrow">Ba trụ cột</span><h2>Một hệ thống cho cả công ty</h2></div></div>
@@ -88,13 +90,13 @@ const roles: [string, string][] = [
   </div></section>
 
   <section class="section surface-soft" id="video"><div class="container">
-    <div class="section-head"><div><span class="eyebrow">Video hướng dẫn</span><h2>Dùng ERP_UNESCO trong 9 bước</h2></div><p>Video 1 phút 15 giây, chú thích in trên hình, dữ liệu mẫu minh hoạ. Xem thêm <a href={url('/kien-thuc/huong-dan-su-dung-erp-unesco/')}>bài hướng dẫn chi tiết</a>.</p></div>
+    <div class="section-head"><div><span class="eyebrow">Video hướng dẫn</span><h2>Giới thiệu 9 màn hình ERP UNESCO</h2></div><p>Video 1 phút 15 giây, không có lời đọc, chú thích in trên hình. Giao diện mô phỏng và dữ liệu mẫu; phần AI trong giao diện này chưa kết nối mô hình AI hoặc dữ liệu ERP thật. Xem thêm <a href={url('/kien-thuc/huong-dan-su-dung-erp-unesco/')}>bài hướng dẫn chi tiết</a>.</p></div>
     <figure class="article-figure article-video" style="margin:0 auto 32px;max-width:1040px"><video controls preload="metadata" playsinline poster={url('/videos/erp-unesco-huong-dan.webp')} width="1280" height="800" style="width:100%;height:auto;border-radius:16px"><source src={url('/videos/erp-unesco-huong-dan.mp4')} type="video/mp4" />Nếu video không phát, hãy <a href={url('/videos/erp-unesco-huong-dan.mp4')}>tải video</a>.</video></figure>
     <div class="process-grid">{steps.map((x, i) => <div class="process-step"><span class="num">{String(i + 1).padStart(2, '0')}</span><strong>{x[0]}</strong><small>{x[1]}</small></div>)}</div>
   </div></section>
 
   <section class="section"><div class="container">
-    <div class="section-head"><div><span class="eyebrow">Hình ảnh</span><h2>Giao diện ERP_UNESCO</h2></div><p>Ảnh chụp với dữ liệu mẫu minh hoạ. Bấm vào ảnh để xem cỡ lớn.</p></div>
+    <div class="section-head"><div><span class="eyebrow">Hình ảnh</span><h2>Giao diện ERP_UNESCO</h2></div><p>Ảnh giao diện mô phỏng với dữ liệu mẫu. Phần trợ lý AI trên hình chưa kết nối mô hình hoặc dữ liệu ERP thật. Bấm vào ảnh để xem cỡ lớn.</p></div>
     <div class="grid grid-2">{gallery.slice(1).map((g) => <Screenshot shot={g} />)}</div>
   </div></section>
 

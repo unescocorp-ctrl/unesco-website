@@ -1,4 +1,5 @@
 ---
+import ErpIntegration from "../components/ErpIntegration.astro";
 import { softwareSchema } from '../data/seo';
 import { url } from '../utils/url';
 import BaseLayout from '../layouts/BaseLayout.astro';
@@ -21,6 +22,7 @@ const featuredVideos = ['m02-tai-hoa-don', 'm05-so-phu-ngan-hang', 'm07-gia-than
 ---
 <BaseLayout title="UNESCO AI – Phần mềm kế toán thông minh cho doanh nghiệp" schema={softwareSchema} description="UNESCO AI: phần mềm kế toán tích hợp AI — tải hoá đơn điện tử, ghép mã, đọc sổ phụ ngân hàng, hỗ trợ lập chứng từ, kiểm tra khoá sổ, giá thành, tờ khai và báo cáo tài chính. AI hỗ trợ, kế toán quyết định.">
 <HeroBanner />
+<ErpIntegration compact={true} />
 
 <section class="section-sm"><div class="container">
   <div class="feat5">{heroValues.map((v) => <div class="card"><span class={`ic ring ${v.c}`}><Icon name={v.icon} /></span><h3>{v.t}</h3><p>{v.d}</p></div>)}</div>

@@ -12,7 +12,15 @@
  *   Cách 2 (YouTube): đăng video lên YouTube, dán mã video vào ô youtube: 'AbCdEf12345'.
  *           Khi có mã YouTube, website phát bằng YouTube thay cho tệp mp4.
  */
+import erpVideos from './erp-videos.json';
+
 export type Video = {
+  captions?: string;
+  uploadDate?: string;
+  durationSeconds?: number;
+  kind?: string;
+  articleSlugs?: string[];
+  chapters?: { title: string; start: number; text: string }[];
   slug: string;
   title: string;
   topic: VideoTopic;
@@ -31,6 +39,7 @@ const v = (slug: string, topic: VideoTopic, title: string, duration: string, des
 });
 
 export const videos: Video[] = [
+  ...(erpVideos as Video[]),
   v('gioi-thieu-unesco-ai', 'Tổng quan', 'Giới thiệu phần mềm kế toán UNESCO AI', '9:10',
     'Toàn cảnh UNESCO AI: màn hình chính, màn hình AI 8 thẻ, tải hoá đơn, sổ phụ ngân hàng, báo cáo thuế và giá thành.'),
   v('m01-tong-quan', 'Tổng quan', 'Bài 01 · Tổng quan phần mềm và màn hình AI', '3:17',
@@ -53,7 +62,7 @@ export const videos: Video[] = [
     'Định mức NVL, định mức tự động bằng AI, kết chuyển thành phẩm với Cân đối AI, giá thành theo đối tượng.'),
   v('m08-tro-ly-ai', 'Trợ lý AI', 'Bài 08 · Trợ lý AI ngay trên màn hình', '2:43',
     'Việc nên làm tiếp, giải thích từng nút khi rê chuột và hỏi đáp bằng tiếng Việt.'),
-  { slug: 'gia-thanh-theo-dien', topic: 'Giá thành', title: 'Giá thành theo điện: nhập và xử lý từng bước', duration: '8:45',
+  { slug: 'gia-thanh-theo-dien', captions: '/video/gia-thanh-theo-dien.vtt', topic: 'Giá thành', title: 'Giá thành theo điện: nhập và xử lý từng bước', duration: '8:45',
     desc: 'Có lời đọc và phụ đề: hồ sơ định mức, đối chiếu ngành nhựa, AI cân đối cả tháng, xử lý điện chênh lệch và kiểm tra kết quả.',
     youtube: '', src: '/video/gia-thanh-theo-dien.mp4', poster: '/huong-dan/gia-thanh-theo-dien/gtd-01-trinh-tu.webp' },
   { slug: 'cshhl-huong-dan', topic: 'Công cụ miễn phí', title: 'Công cụ Chủ sở hữu hưởng lợi: tra cứu và lập hồ sơ bổ sung', duration: '1:48',
@@ -61,8 +70,8 @@ export const videos: Video[] = [
     youtube: '', src: '/video/cshhl-huong-dan.mp4', poster: '/video/cshhl-poster.jpg' },
   v('unesco-sale-huong-dan', 'Bán hàng', 'Hướng dẫn sử dụng UNESCO Sale – phần mềm quản lý bán hàng', '1:39',
     '10 bước: Tổng quan, hàng hóa & kho, nhập dữ liệu, bán hàng tại quầy, chứng từ, công nợ, thẻ kho, sổ sách và dùng trên điện thoại. Phụ đề in trên hình.'),
-  v('erp-unesco-huong-dan', 'Dịch vụ kế toán', 'Hướng dẫn sử dụng ERP_UNESCO – quản lý công ty dịch vụ kế toán', '1:15',
-    '9 bước: Điều hành AI, xem gợi ý, hồ sơ khách hàng 360°, hợp đồng, công việc & QC, công nợ – thu phí, KPI – hoa hồng, kiểm tra lương, báo cáo đối chiếu. Dữ liệu mẫu.'),
+  v('erp-unesco-huong-dan', 'Dịch vụ kế toán', 'Giới thiệu giao diện ERP UNESCO – quản lý công ty dịch vụ kế toán', '1:15',
+    'Giới thiệu 9 màn hình bằng giao diện mô phỏng và dữ liệu mẫu. Video không có lời đọc, chú thích in trên hình; phần AI trong giao diện này chưa kết nối mô hình AI hoặc dữ liệu ERP thật.'),
 ];
 
 export const videoBySlug = (slug: string) => videos.find((x) => x.slug === slug);

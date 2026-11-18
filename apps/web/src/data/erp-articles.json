@@ -1,0 +1,512 @@
+[
+  {
+    "slug": "ket-noi-unesco-xii-erp-unesco",
+    "title": "UNESCO XII kết nối ERP UNESCO: điều hành công ty dịch vụ kế toán từ công việc đến bộ sổ",
+    "date": "2026-11-18",
+    "description": "Tìm hiểu cách ERP UNESCO điều hành khách hàng, giao việc và theo dõi kết quả từ từng bộ sổ UNESCO XII cho công ty dịch vụ kế toán.",
+    "topic": "Dịch vụ kế toán",
+    "blocks": [
+      {
+        "t": "lead",
+        "x": "Công ty dịch vụ kế toán phải theo dõi nhiều khách hàng, nhiều kỳ và nhiều nguồn chứng từ cùng lúc. UNESCO XII kết nối ERP UNESCO giúp nối phần điều hành công việc với phần xử lý sổ kế toán, để người quản lý thấy việc cần làm và kế toán biết bước tiếp theo."
+      },
+      {
+        "t": "h2",
+        "x": "Một hệ thống điều hành, từng bộ sổ được theo dõi riêng"
+      },
+      {
+        "t": "p",
+        "x": "ERP UNESCO, còn được biết đến trong hệ thống triển khai là ERP Ánh Mai, phục vụ quản lý hoạt động của công ty dịch vụ kế toán: khách hàng, hợp đồng, công việc, thu phí và nhân sự. UNESCO XII phụ trách nghiệp vụ kế toán trong bộ sổ của từng doanh nghiệp khách hàng."
+      },
+      {
+        "t": "p",
+        "x": "Khi được cấu hình kết nối, hai phần mềm phối hợp qua phân hệ Điều hành sổ sách. Người phụ trách chọn khách hàng, bộ sổ và kỳ cần xử lý, kiểm tra tình trạng, giao việc và theo dõi kết quả. Mỗi khách vẫn có bộ sổ và phạm vi truy cập riêng."
+      },
+      {
+        "t": "h2",
+        "x": "Biết sổ nào còn việc trước khi bắt đầu xử lý"
+      },
+      {
+        "t": "p",
+        "x": "Thay vì mở từng bộ sổ để hỏi đã làm đến đâu, người quản lý có thể xem tình trạng từ bảng điều hành và ma trận tháng. Các mục theo dõi gồm hóa đơn chưa hạch toán, sổ phụ còn việc, khấu hao, phân bổ, lương, giá xuất kho, kết chuyển và khóa kỳ."
+      },
+      {
+        "t": "p",
+        "x": "Mỗi cảnh báo cần được đọc cùng lý do và dữ liệu nguồn. Tháng không phát sinh, tháng thiếu hồ sơ và tháng có lỗi cần xử lý là những tình huống khác nhau. Từ mục còn vướng, kế toán xác định phần nào hệ thống có thể làm và phần nào cần bổ sung thông tin."
+      },
+      {
+        "t": "h2",
+        "x": "Giao việc theo khách hàng và kỳ kế toán"
+      },
+      {
+        "t": "p",
+        "x": "Người có quyền chọn bộ sổ, kỳ và các bước cần thực hiện. Chức năng kiểm tra trước khi gửi giúp nhận biết điều kiện còn thiếu hoặc bộ sổ đang được sử dụng. Sau khi tạo lệnh, ERP theo dõi trạng thái xử lý để người quản lý không phải hỏi lại từng người về tiến độ."
+      },
+      {
+        "t": "p",
+        "x": "Phần ghi sổ được chuyển cho thành phần xử lý của UNESCO XII. Các bước được thực hiện theo cấu hình, quyền và điều kiện của bộ sổ; hệ thống không coi mọi yêu cầu đều đủ điều kiện để chạy. Cách kết nối cụ thể phụ thuộc phiên bản và phương án triển khai."
+      },
+      {
+        "t": "h2",
+        "x": "Tự động hóa có điều kiện, kế toán giữ vai trò kiểm soát"
+      },
+      {
+        "t": "p",
+        "x": "Với chế độ và quy tắc phù hợp, những nghiệp vụ đủ điều kiện có thể được xử lý theo luồng tự động. Phần thiếu chứng từ, chưa rõ đối tượng, chưa đạt ngưỡng hoặc vướng điều kiện nghiệp vụ được trả lại để người phụ trách xem xét."
+      },
+      {
+        "t": "p",
+        "x": "Thông báo Cần người là một đầu việc cụ thể: kế toán đọc lý do, mở nguồn liên quan, bổ sung hoặc điều chỉnh dữ liệu rồi kiểm tra lại. Cách làm này giúp dành thời gian của kế toán cho những trường hợp cần chuyên môn thay vì coi tự động hóa là bỏ qua bước kiểm tra."
+      },
+      {
+        "t": "h2",
+        "x": "Xem kết quả và đối chiếu đến chứng từ"
+      },
+      {
+        "t": "p",
+        "x": "ERP có các đường xem tổng quan sổ, cân đối phát sinh, chứng từ và sổ chi tiết của UNESCO XII theo quyền. Người quản lý theo dõi được kết quả từng bước; kế toán mở dữ liệu liên quan để kiểm tra trước khi hoàn tất kỳ."
+      },
+      {
+        "t": "p",
+        "x": "Trạng thái hoàn thành của lệnh không thay thế việc rà soát nghiệp vụ và duyệt kết quả. Trước khi khóa kỳ, người phụ trách cần kiểm các việc tồn, số liệu đối chiếu và điều kiện khóa theo quy trình của đơn vị."
+      },
+      {
+        "t": "h2",
+        "x": "Quản lý dịch vụ đi cùng quản lý sổ sách"
+      },
+      {
+        "t": "p",
+        "x": "Bên cạnh điều hành bộ sổ, ERP UNESCO tổ chức khách hàng, hợp đồng, công việc dịch vụ, khoản phải thu và tiền thu. Điều này giúp chủ công ty nhìn cả tiến độ thực hiện lẫn tình hình thu phí trong cùng hoạt động quản lý."
+      },
+      {
+        "t": "p",
+        "x": "Cần phân biệt tiền phí mà công ty dịch vụ thu từ khách với công nợ mua bán của chính khách hàng trong UNESCO XII. Hai loại số liệu phục vụ hai mục đích khác nhau và không nên cộng chung hoặc hiểu là đồng bộ thay thế cho nhau."
+      },
+      {
+        "t": "h2",
+        "x": "Lợi ích cho từng người sử dụng"
+      },
+      {
+        "t": "p",
+        "x": "Giám đốc theo dõi khách hàng và công việc còn vướng. Kế toán trưởng ưu tiên các sổ cần kiểm, giao việc và duyệt kết quả. Kế toán viên biết lý do cần xử lý và nơi mở dữ liệu. Bộ phận thu phí theo dõi khoản phải thu của công ty dịch vụ theo hợp đồng và chứng từ thu."
+      },
+      {
+        "t": "p",
+        "x": "Các màn theo dõi trên điện thoại hỗ trợ người quản lý xem tình hình theo quyền được cấp. Phạm vi thao tác phụ thuộc màn hình và phiên bản, vì vậy cần xem đúng hướng dẫn của bản đang triển khai."
+      },
+      {
+        "t": "h2",
+        "x": "Bắt đầu bằng một quy trình mẫu"
+      },
+      {
+        "t": "p",
+        "x": "Một buổi demo nên đi hết một kỳ của một khách hàng mẫu: ghép sổ, kiểm tình trạng, giao lệnh, xem kết quả, xử lý một tình huống cần người và kiểm lại trước khi khóa. Sau đó mới mở rộng theo số khách, nhân sự và quy trình của công ty."
+      },
+      {
+        "t": "p",
+        "x": "Đăng ký demo giải pháp UNESCO XII kết nối ERP UNESCO để xem quy trình trên dữ liệu mẫu và xác định phương án phù hợp với đội ngũ của bạn."
+      },
+      {
+        "t": "link",
+        "href": "/ket-noi-erp-unesco-xii/",
+        "x": "Bắt đầu lộ trình: bài viết, video và các bước triển khai"
+      }
+    ],
+    "relatedVideo": "erp-xii-tong-quan"
+  },
+  {
+    "slug": "chuan-bi-ket-noi-erp-unesco-xii",
+    "title": "Chuẩn bị kết nối ERP UNESCO với bộ sổ UNESCO XII",
+    "date": "2026-11-18",
+    "description": "Chuẩn bị đúng khách hàng, bộ sổ, tài khoản và máy xử lý để việc giao lệnh từ ERP đi đúng nơi, đúng kỳ.",
+    "topic": "Dịch vụ kế toán",
+    "blocks": [
+      {
+        "t": "lead",
+        "x": "Chuẩn bị đúng khách hàng, bộ sổ, tài khoản và máy xử lý để việc giao lệnh từ ERP đi đúng nơi, đúng kỳ."
+      },
+      {
+        "t": "note",
+        "x": "Hướng dẫn dùng với bản ERP UNESCO (ERP Ánh Mai) đã được cấu hình kết nối UNESCO XII. Tên màn hình và khả năng thao tác có thể khác theo phiên bản và quyền được cấp."
+      },
+      {
+        "t": "h2",
+        "x": "1. Ghép đúng khách hàng với bộ sổ"
+      },
+      {
+        "t": "p",
+        "x": "Hồ sơ khách hàng trên ERP và bộ sổ kế toán trong UNESCO XII là hai đối tượng cần được liên kết. Không chọn bộ sổ chỉ vì tên gần giống. Người triển khai cần kiểm tra thông tin nhận diện doanh nghiệp và nơi lưu dữ liệu."
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chọn một khách hàng và một kỳ thử có phạm vi rõ ràng.",
+          "Đối chiếu thông tin doanh nghiệp với bộ sổ UNESCO XII dự kiến kết nối.",
+          "Ghi nhận người phụ trách, người kiểm tra và phạm vi được phép xem hoặc xử lý."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "2. Kiểm tra điều kiện máy xử lý"
+      },
+      {
+        "t": "p",
+        "x": "ERP cần kết nối được với dịch vụ xử lý UNESCO XII đúng phiên bản. Việc chỉ mở được giao diện ERP chưa chứng minh rằng máy xử lý đã sẵn sàng nhận lệnh."
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Nhờ bộ phận triển khai kiểm tra dịch vụ kết nối và trạng thái máy xử lý.",
+          "Kiểm tra khả năng truy cập bộ sổ bằng tài khoản dịch vụ được cấp.",
+          "Xác nhận bộ sổ không bị chiếm dụng và kỳ được chọn cho phép thực hiện bước dự kiến."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "3. Sao lưu và thử trên dữ liệu phù hợp"
+      },
+      {
+        "t": "p",
+        "x": "Lần chạy đầu nên dùng bộ sổ mẫu hoặc bản sao đã được cho phép. Chỉ chuyển sang dữ liệu vận hành khi đã đối chiếu kết quả và thống nhất cách xử lý sự cố."
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Tạo bản sao lưu và xác định cách khôi phục trước thao tác ghi dữ liệu.",
+          "Chạy kiểm tra trước khi gửi lệnh, xử lý các điều kiện còn thiếu.",
+          "Thử một bước có phạm vi nhỏ; kiểm tra cả trạng thái trên ERP và dữ liệu ở UNESCO XII."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "4. Xác nhận sẵn sàng"
+      },
+      {
+        "t": "p",
+        "x": "Kết quả cần bàn giao là danh sách kết nối đã đối chiếu, quyền truy cập đã thử và một lần chạy có kết quả kiểm tra được. Ngưỡng tự động ghi sổ là cấu hình vận hành; nó không phải tỷ lệ chính xác được cam kết của AI."
+      },
+      {
+        "t": "link",
+        "href": "/ket-noi-erp-unesco-xii/",
+        "x": "Xem toàn bộ lộ trình ERP UNESCO kết nối UNESCO XII"
+      }
+    ],
+    "relatedVideo": "erp-xii-tong-quan"
+  },
+  {
+    "slug": "giao-viec-theo-ky-erp-unesco",
+    "title": "Giao việc theo khách hàng và kỳ trên ERP UNESCO",
+    "date": "2026-11-18",
+    "description": "Tạo lệnh xử lý sổ sách theo đúng khách hàng, kỳ kế toán và nhóm bước cần thực hiện, sau đó theo dõi đến kết quả.",
+    "topic": "Dịch vụ kế toán",
+    "blocks": [
+      {
+        "t": "lead",
+        "x": "Tạo lệnh xử lý sổ sách theo đúng khách hàng, kỳ kế toán và nhóm bước cần thực hiện, sau đó theo dõi đến kết quả."
+      },
+      {
+        "t": "note",
+        "x": "Hướng dẫn dùng với bản ERP UNESCO (ERP Ánh Mai) đã được cấu hình kết nối UNESCO XII. Tên màn hình và khả năng thao tác có thể khác theo phiên bản và quyền được cấp."
+      },
+      {
+        "t": "h2",
+        "x": "1. Xác định việc cần làm"
+      },
+      {
+        "t": "p",
+        "x": "Trong phân hệ Điều hành sổ sách, bắt đầu từ bộ sổ thuộc phạm vi phụ trách. Đọc tình trạng hiện tại trước khi chọn bước xử lý. Một kỳ chưa đủ hồ sơ sẽ có cách xử lý khác với kỳ đã có dữ liệu nhưng chưa hạch toán."
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chọn đúng khách hàng và bộ sổ đã liên kết.",
+          "Chọn tháng, năm hoặc kỳ được màn hình hỗ trợ.",
+          "Xem các mục còn thiếu và chọn những bước thực sự cần chạy."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "2. Kiểm tra trước khi gửi"
+      },
+      {
+        "t": "p",
+        "x": "Bước kiểm tra trước khi gửi giúp phát hiện điều kiện chưa đáp ứng như máy xử lý chưa sẵn sàng, dữ liệu chưa đủ hoặc kỳ không cho phép ghi. Người không có quyền thực hiện cần chuyển yêu cầu cho người phụ trách."
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Đọc từng cảnh báo, không chỉ nhìn trạng thái tổng.",
+          "Kiểm tra lại bộ sổ, kỳ, các bước và phạm vi dữ liệu.",
+          "Gửi lệnh một lần rồi theo dõi lệnh vừa tạo."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "3. Theo dõi lệnh và từng bước"
+      },
+      {
+        "t": "p",
+        "x": "Trạng thái đã nhận lệnh chưa đồng nghĩa đã ghi xong dữ liệu. Cần xem tiến độ, kết quả của từng bước và thông báo trả về. Khi chờ lâu, kiểm tra trạng thái kết nối trước khi gửi thêm."
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Phân biệt lệnh chờ, đang xử lý, đã kết thúc và mục cần người xử lý.",
+          "Ghi nhận bước dừng và lý do nếu lệnh chưa hoàn thành.",
+          "Đối chiếu dữ liệu sau xử lý trong UNESCO XII trước khi kết luận công việc đã xong."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "4. Kết thúc có kiểm tra"
+      },
+      {
+        "t": "p",
+        "x": "Kết quả xử lý sổ của khách hàng và phí dịch vụ phải thu của công ty kế toán là hai luồng riêng. Việc một lệnh chạy thành công không tự chứng minh phí dịch vụ đã được phát hành hoặc tiền đã được thu."
+      },
+      {
+        "t": "link",
+        "href": "/ket-noi-erp-unesco-xii/",
+        "x": "Xem toàn bộ lộ trình ERP UNESCO kết nối UNESCO XII"
+      }
+    ],
+    "relatedVideo": "erp-xii-giao-viec"
+  },
+  {
+    "slug": "ma-tran-thang-unesco-xii",
+    "title": "Đọc ma trận tháng để biết bộ sổ còn việc gì",
+    "date": "2026-11-18",
+    "description": "Dùng ma trận tháng như danh sách kiểm tra có dữ liệu nguồn: xác định phần còn thiếu, hiểu lý do và chọn bước xử lý tiếp theo.",
+    "topic": "Dịch vụ kế toán",
+    "blocks": [
+      {
+        "t": "lead",
+        "x": "Dùng ma trận tháng như danh sách kiểm tra có dữ liệu nguồn: xác định phần còn thiếu, hiểu lý do và chọn bước xử lý tiếp theo."
+      },
+      {
+        "t": "note",
+        "x": "Hướng dẫn dùng với bản ERP UNESCO (ERP Ánh Mai) đã được cấu hình kết nối UNESCO XII. Tên màn hình và khả năng thao tác có thể khác theo phiên bản và quyền được cấp."
+      },
+      {
+        "t": "h2",
+        "x": "1. Bắt đầu từ bộ sổ và năm"
+      },
+      {
+        "t": "p",
+        "x": "Ma trận tháng tổng hợp tình trạng các nhóm việc theo thời gian. Chọn đúng bộ sổ và năm trước khi so sánh giữa các tháng. Kiểm tra thời điểm cập nhật để tránh dùng kết quả cũ."
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Đối chiếu khách hàng và bộ sổ đang xem.",
+          "Xác nhận năm và tháng cần kiểm tra.",
+          "Làm mới dữ liệu sau khi một lệnh hoặc một thao tác kế toán đã hoàn tất."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "2. Đọc lý do sau màu trạng thái"
+      },
+      {
+        "t": "p",
+        "x": "Các mục theo dõi có thể gồm hóa đơn, ngân hàng, khấu hao, phân bổ, lương, giá xuất kho, kết chuyển và khóa kỳ. Màu là tín hiệu điều hướng; lý do và chứng từ nguồn mới giúp xác định phải làm gì."
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Phân biệt không phát sinh với còn thiếu hồ sơ hoặc lỗi xử lý.",
+          "Mở mục còn vướng để xem số lượng, lý do và dữ liệu liên quan.",
+          "Giao lại phần cần xử lý cho đúng người, đúng kỳ."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "3. Đối chiếu sau xử lý"
+      },
+      {
+        "t": "p",
+        "x": "Sau khi bổ sung hồ sơ hoặc chạy lại bước phù hợp, làm mới ma trận và kiểm tra chứng từ, số dư hoặc báo cáo tương ứng. Không chỉ đổi trạng thái để hoàn tất danh sách."
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Đối chiếu kết quả với dữ liệu gốc.",
+          "Lưu thông tin xử lý và người kiểm tra.",
+          "Chỉ chuyển sang khóa kỳ theo quy trình đã thống nhất."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "4. Tránh hiểu sai"
+      },
+      {
+        "t": "p",
+        "x": "Một tháng hiển thị màu xanh không thay thế việc kiểm tra nghiệp vụ, xác nhận đủ hồ sơ hoặc phê duyệt của người có thẩm quyền. Ma trận hỗ trợ tìm việc; kế toán chịu trách nhiệm đối chiếu kết quả."
+      },
+      {
+        "t": "link",
+        "href": "/ket-noi-erp-unesco-xii/",
+        "x": "Xem toàn bộ lộ trình ERP UNESCO kết nối UNESCO XII"
+      }
+    ],
+    "relatedVideo": "erp-xii-kiem-tra"
+  },
+  {
+    "slug": "xu-ly-can-nguoi-erp-unesco",
+    "title": "Xử lý mục “Cần người” trong quy trình ERP UNESCO – UNESCO XII",
+    "date": "2026-11-18",
+    "description": "Khi hệ thống chưa đủ điều kiện tự xử lý, mục Cần người giúp chuyển đúng phần việc cho kế toán và giữ lại lý do cần kiểm tra.",
+    "topic": "Dịch vụ kế toán",
+    "blocks": [
+      {
+        "t": "lead",
+        "x": "Khi hệ thống chưa đủ điều kiện tự xử lý, mục Cần người giúp chuyển đúng phần việc cho kế toán và giữ lại lý do cần kiểm tra."
+      },
+      {
+        "t": "note",
+        "x": "Hướng dẫn dùng với bản ERP UNESCO (ERP Ánh Mai) đã được cấu hình kết nối UNESCO XII. Tên màn hình và khả năng thao tác có thể khác theo phiên bản và quyền được cấp."
+      },
+      {
+        "t": "h2",
+        "x": "1. Đọc tình huống cụ thể"
+      },
+      {
+        "t": "p",
+        "x": "Cần người có thể xuất hiện khi thiếu hồ sơ, thiếu thiết lập, dữ liệu chưa rõ hoặc bước nghiệp vụ cần quyết định của kế toán. Đây không phải chỉ dẫn để bỏ qua kiểm soát."
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Xác định bộ sổ, kỳ, bước xử lý và nội dung thông báo.",
+          "Mở dữ liệu nguồn có liên quan, đối chiếu với chứng từ nhận từ khách hàng.",
+          "Phân loại phần cần bổ sung hồ sơ, phần cần sửa thiết lập và phần cần quyết định nghiệp vụ."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "2. Sửa tại đúng nơi"
+      },
+      {
+        "t": "p",
+        "x": "Bổ sung hồ sơ hay điều chỉnh dữ liệu trong phần mềm nghiệp vụ theo quyền được cấp. Nếu có ảnh hưởng đến kỳ đã chốt hoặc dữ liệu đã ghi, cần thực hiện theo quy trình kiểm tra và sao lưu của đơn vị."
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Bổ sung thông tin còn thiếu và kiểm tra tính nhất quán.",
+          "Nhờ người có thẩm quyền xử lý nếu vượt phạm vi được giao.",
+          "Ghi rõ nội dung đã xử lý để người kiểm tra hiểu được thay đổi."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "3. Kiểm tra lại trước khi xác nhận"
+      },
+      {
+        "t": "p",
+        "x": "Xác nhận đã xử lý chỉ có ý nghĩa sau khi điều kiện thực tế được đáp ứng. Một lần bấm xác nhận không thay thế việc sửa dữ liệu và không chứng minh chứng từ đã được hạch toán đúng."
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Chạy lại kiểm tra hoặc bước phù hợp theo hướng dẫn của phiên bản đang dùng.",
+          "Đối chiếu chứng từ và kết quả trả về từ UNESCO XII.",
+          "Chỉ xác nhận khi đã có căn cứ và đúng quyền."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "4. Khi cần hỗ trợ"
+      },
+      {
+        "t": "p",
+        "x": "Gửi cho bộ phận hỗ trợ phiên bản phần mềm, mã lệnh nếu có, kỳ xử lý và nội dung lỗi đã che dữ liệu nhạy cảm. Không gửi mật khẩu, khóa truy cập hay toàn bộ bộ sổ qua kênh công khai."
+      },
+      {
+        "t": "link",
+        "href": "/ket-noi-erp-unesco-xii/",
+        "x": "Xem toàn bộ lộ trình ERP UNESCO kết nối UNESCO XII"
+      }
+    ],
+    "relatedVideo": "erp-xii-giao-viec"
+  },
+  {
+    "slug": "kiem-tra-khoa-ky-unesco-xii",
+    "title": "Kiểm tra trước khi khóa kỳ UNESCO XII từ quy trình điều hành ERP",
+    "date": "2026-11-18",
+    "description": "Hoàn tất đối chiếu hồ sơ, chứng từ và báo cáo trước khi người có thẩm quyền khóa kỳ kế toán.",
+    "topic": "Dịch vụ kế toán",
+    "blocks": [
+      {
+        "t": "lead",
+        "x": "Hoàn tất đối chiếu hồ sơ, chứng từ và báo cáo trước khi người có thẩm quyền khóa kỳ kế toán."
+      },
+      {
+        "t": "note",
+        "x": "Hướng dẫn dùng với bản ERP UNESCO (ERP Ánh Mai) đã được cấu hình kết nối UNESCO XII. Tên màn hình và khả năng thao tác có thể khác theo phiên bản và quyền được cấp."
+      },
+      {
+        "t": "h2",
+        "x": "1. Kiểm tra đủ đầu vào"
+      },
+      {
+        "t": "p",
+        "x": "Trước khi khóa, người phụ trách cần xác nhận hồ sơ nhận từ khách hàng, các nghiệp vụ trong kỳ và những phần còn chờ xử lý. Danh sách kiểm tra cần phù hợp với doanh nghiệp và dịch vụ đã nhận."
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Đối chiếu hóa đơn, sao kê và chứng từ bổ sung trong kỳ.",
+          "Xử lý hoặc ghi nhận rõ các mục Cần người còn tồn.",
+          "Kiểm tra các bước khấu hao, phân bổ, lương, giá xuất kho và kết chuyển nếu có phát sinh."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "2. Đối chiếu kết quả nghiệp vụ"
+      },
+      {
+        "t": "p",
+        "x": "Mở báo cáo và dữ liệu chi tiết trong UNESCO XII để kiểm tra tính nhất quán. Trạng thái hoàn thành trên bảng điều hành chỉ là một nguồn thông tin hỗ trợ."
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Đối chiếu chứng từ với số liệu tổng hợp tương ứng.",
+          "Kiểm tra số dư, công nợ, kho và các báo cáo liên quan theo nghiệp vụ.",
+          "Ghi nhận người lập, người kiểm tra và các vấn đề đã xử lý."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "3. Sao lưu, phê duyệt và khóa"
+      },
+      {
+        "t": "p",
+        "x": "Chỉ người có thẩm quyền thực hiện khóa kỳ sau khi đã hoàn tất các kiểm tra cần thiết. Cần xác nhận chính xác bộ sổ, kỳ và quy trình khôi phục trước thao tác."
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Tạo hoặc kiểm tra bản sao lưu theo quy trình đơn vị.",
+          "Xác nhận người phê duyệt và đúng kỳ cần khóa.",
+          "Kiểm tra trạng thái sau khóa; lưu kết quả bàn giao."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "4. Quản lý thay đổi sau khóa"
+      },
+      {
+        "t": "p",
+        "x": "Nếu phát hiện sai sót, chuyển cho người có thẩm quyền xử lý theo quy trình mở kỳ và điều chỉnh. Không dùng màu trạng thái trên ma trận làm căn cứ duy nhất để mở hoặc khóa kỳ."
+      },
+      {
+        "t": "link",
+        "href": "/ket-noi-erp-unesco-xii/",
+        "x": "Xem toàn bộ lộ trình ERP UNESCO kết nối UNESCO XII"
+      }
+    ],
+    "relatedVideo": "erp-xii-kiem-tra"
+  }
+]

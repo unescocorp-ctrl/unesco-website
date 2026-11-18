@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import VideoPlayer from '../../components/VideoPlayer.astro';
+import { videos } from '../../data/videos';
+import { articles } from '../../data/articles';
+import { url, absoluteUrl } from '../../utils/url';
+export function getStaticPaths() {
+  return videos.map((video) => ({ params: { slug: video.slug }, props: { video } }));
+}
+const { video } = Astro.props;
+const origin = Astro.site ?? 'https://www.unescosoft.com';
+const pagePath = `/video/${video.slug}/`;
+const schema = video.uploadDate && video.durationSeconds ? {
+  '@type': 'VideoObject', name: video.title, description: video.desc,
+  thumbnailUrl: [absoluteUrl(video.poster, origin)], uploadDate: video.uploadDate,
+  duration: `PT${Math.ceil(video.durationSeconds)}S`, contentUrl: absoluteUrl(video.src, origin),
+  url: absoluteUrl(pagePath, origin), inLanguage: 'vi-VN',
+  transcript: video.chapters?.map((c) => c.text).join('\n'),
+  hasPart: video.chapters?.map((c, i, list) => ({
+    '@type': 'Clip', name: c.title, startOffset: c.start, endOffset: list[i + 1]?.start ?? video.durationSeconds,
+    url: `${absoluteUrl(pagePath, origin)}?t=${c.start}`,
+  })),
+} : undefined;
+const related = articles.filter((a) => video.articleSlugs?.includes(a.slug));
+const series = videos.filter((v) => v.chapters && v.slug !== video.slug);
+const timeLabel = (seconds: number) => `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`;
+---
+<BaseLayout title={video.title} description={video.desc} image={video.poster} schema={schema} crumbs={[['Trang chủ', '/'], ['Video', '/video/'], [video.title, pagePath]]}>
+  <section class="section watch"><div class="container">
+    <nav class="breadcrumb" aria-label="Đường dẫn"><a href={url('/')}>Trang chủ</a> / <a href={url('/video/')}>Video</a></nav>
+    <p class="eyebrow">{video.topic} · {video.duration}</p>
+    <h1>{video.title}</h1><p class="lead">{video.desc}</p>
+    <div class="watch-player"><VideoPlayer video={video} eager={true} /></div>
+    {video.kind && <p class="caption">{video.kind}. Nội dung áp dụng theo phiên bản đã triển khai và quyền được cấp.</p>}
+    <div class="actions">
+      <a class="btn btn-secondary" href={url(video.src)} download>Tải video MP4</a>
+      {video.captions && <a class="btn btn-secondary" href={url(video.captions)} download>Tải phụ đề tiếng Việt</a>}
+      {video.chapters && <a class="btn btn-primary" href={url('/ket-noi-erp-unesco-xii/')}>Lộ trình ERP UNESCO – UNESCO XII</a>}
+    </div>
+    {video.chapters && <section class="transcript" aria-labelledby="transcript-title">
+      <h2 id="transcript-title">Nội dung lời đọc & các phần trong video</h2>
+      <p>Bấm mốc thời gian để chuyển đến phần cần xem. Có thể bật/tắt phụ đề trong trình phát.</p>
+      <ol>{video.chapters.map((c) => <li><h3><button type="button" data-seek={c.start} aria-label={`Xem từ ${timeLabel(c.start)}: ${c.title}`}>{timeLabel(c.start)}</button> {c.title}</h3><p>{c.text}</p></li>)}</ol>
+    </section>}
+    {related.length > 0 && <section class="watch-related"><h2>Đọc hướng dẫn chi tiết</h2><div class="grid grid-2">{related.map((a) => <a class="card" href={url(`/kien-thuc/${a.slug}/`)}><h3>{a.title}</h3><p>{a.description}</p><strong class="link-arrow">Đọc bài</strong></a>)}</div></section>}
+    {video.chapters && <section class="watch-related"><h2>Video tiếp theo trong lộ trình</h2>{series.map((v) => <p><a class="link-arrow" href={url(`/video/${v.slug}/`)}>{v.title} · {v.duration}</a></p>)}</section>}
+    <div class="actions" style="margin-top:32px"><a class="btn btn-primary" href={url('/san-pham/erp-unesco/#dang-ky')}>Đăng ký demo ERP UNESCO</a><a class="btn btn-secondary" href={url('/video/')}>Tất cả video</a></div>
+  </div></section>
+</BaseLayout>
+<style>
+  .watch{padding-top:22px}.watch>.container{max-width:1080px}.watch h1{font-size:clamp(1.75rem,4vw,2.6rem);line-height:1.22;margin:12px 0}.watch .lead{font-size:1.08rem;margin:0 0 22px}.watch-player{border-radius:18px;overflow:hidden;background:#123b52}.watch .actions{margin-top:20px}.transcript,.watch-related{margin-top:42px}.transcript ol{list-style:none;padding:0}.transcript li{padding:18px 0;border-bottom:1px solid #d8e6de}.transcript h3{font-size:1.12rem;line-height:1.6}.transcript button{font:inherit;color:#075d3a;background:#e9f5ef;border:1px solid #b6d6c5;border-radius:8px;padding:5px 10px;cursor:pointer}.transcript button:hover{background:#d6edde}.transcript button:focus-visible{outline:3px solid #1377b8;outline-offset:3px}.transcript p{line-height:1.8}
+</style>
+<script>
+  const player = document.querySelector<HTMLVideoElement>('.watch-player video');
+  function seek(seconds: number) {
+    if (!player || !Number.isFinite(seconds) || seconds < 0) return;
+    const apply = () => { player.currentTime = Math.min(seconds, Math.max(0, player.duration - 0.1)); };
+    if (player.readyState >= 1) apply(); else player.addEventListener('loadedmetadata', apply, { once: true });
+  }
+  const start = new URLSearchParams(window.location.search).get('t');
+  if (start !== null) seek(Number(start));
+  document.querySelectorAll<HTMLButtonElement>('[data-seek]').forEach((button) => button.addEventListener('click', () => {
+    seek(Number(button.dataset.seek)); player?.scrollIntoView({ behavior: 'smooth', block: 'center' }); player?.play().catch(() => {});
+  }));
+</script>

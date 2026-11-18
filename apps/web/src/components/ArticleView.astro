@@ -3,6 +3,8 @@ import { url } from '../utils/url';
 import ContentLayout from '../layouts/ContentLayout.astro';
 import { articles, articleDate } from '../data/articles';
 import { contact, zaloHref, mailHref } from '../data/contact';
+import { videoBySlug } from '../data/videos';
+import VideoCard from './VideoCard.astro';
 import ElectricityCalc from './ElectricityCalc.astro';
 /** Hiển thị một bài viết trong data/articles.ts theo slug. */
 interface Props { slug: string }
@@ -10,6 +12,7 @@ const { slug } = Astro.props;
 const a = articles.find((x) => x.slug === slug);
 if (!a) throw new Error(`Không tìm thấy bài viết: ${slug}`);
 const others = articles.filter((x) => x.slug !== slug);
+const relatedVideo = a.relatedVideo ? videoBySlug(a.relatedVideo) : undefined;
 const firstImg = a.blocks.find((b) => b.t === 'img') as { src: string } | undefined;
 const origin = Astro.site ?? 'https://www.unescosoft.com';
 const articleSchema = {
@@ -17,7 +20,7 @@ const articleSchema = {
   headline: a.title,
   description: a.description,
   datePublished: a.date,
-  dateModified: a.date,
+  dateModified: a.updated ?? a.date,
   inLanguage: 'vi-VN',
   articleSection: a.topic,
   mainEntityOfPage: new URL(url(`/kien-thuc/${a.slug}/`), origin).toString(),
@@ -26,7 +29,7 @@ const articleSchema = {
   publisher: { '@id': new URL(url('/'), origin).toString() + '#organization' },
 };
 ---
-<ContentLayout title={a.title} description={a.description} eyebrow={`${a.topic} · cập nhật ${articleDate(a.date)}`} pills={[]} type="article" published={a.date} schema={articleSchema} crumbs={[['Trang chủ', '/'], ['Kiến thức', '/kien-thuc/'], [a.title, `/kien-thuc/${a.slug}/`]]}>
+<ContentLayout title={a.title} description={a.description} eyebrow={`${a.topic} · cập nhật ${articleDate(a.updated ?? a.date)}`} pills={[]} type="article" published={a.date} schema={articleSchema} crumbs={[['Trang chủ', '/'], ['Kiến thức', '/kien-thuc/'], [a.title, `/kien-thuc/${a.slug}/`]]}>
 <section class="section"><div class="container legal-content article-content">
   {a.blocks.map((b) =>
     b.t === 'h2' ? <h2>{b.x}</h2>
@@ -40,9 +43,11 @@ const articleSchema = {
     : b.t === 'img' ? <figure class="article-figure"><a href={url(`/huong-dan/${a.slug}/${b.src}.webp`)} target="_blank" rel="noopener"><img src={url(`/huong-dan/${a.slug}/${b.src}.webp`)} width={b.w} height={b.h} alt={b.cap} loading="lazy" decoding="async" /></a><figcaption>{b.cap}</figcaption></figure>
     : b.t === 'video' ? <figure class="article-figure article-video"><video controls preload="metadata" playsinline poster={url(b.poster)} width="1920" height="1020"><source src={url(b.src)} type="video/mp4" />{b.vtt && <track kind="captions" src={url(b.vtt)} srclang="vi" label="Tiếng Việt" default />}</video><figcaption>{b.cap}</figcaption></figure>
     : b.t === 'note' ? <p class="article-note">{b.x}</p>
+    : b.t === 'link' ? <p><a class="link-arrow" href={url(b.href)}>{b.x}</a></p>
     : b.t === 'download' ? <p><a class="btn btn-primary" href={url(b.href)} target="_blank" rel="noopener">{b.x}</a></p>
     : <p>{b.x} Công ty TNHH Phần mềm UNESCO: kinh doanh và Zalo <a href={zaloHref}>{contact.zalo}</a>; hỗ trợ kỹ thuật {contact.support.lineVi}; email <a href={mailHref}>{contact.email}</a>; website <a href={contact.website}>{contact.websiteLabel}</a>. Địa chỉ: {contact.address}.</p>
   )}
+  {relatedVideo && <aside class="article-more"><h2>Video cùng chủ đề</h2><VideoCard video={relatedVideo} /></aside>}
   <div class="actions" style="margin-top:30px"><a class="btn btn-primary" href={url('/lien-he/#demo')}>ĐĂNG KÝ XEM DEMO</a><a class="btn btn-secondary" href={url('/lien-he/')}>NHẬN TƯ VẤN</a></div>
   {others.length > 0 && <div class="article-more"><h3>Bài viết khác</h3>{others.map((o) => <p><a href={url(`/kien-thuc/${o.slug}/`)}>{o.title}</a></p>)}</div>}
   <p style="margin-top:22px"><a class="link-arrow" href={url('/kien-thuc/')}>Về Trung tâm kiến thức</a></p>

@@ -38,6 +38,7 @@ export const mainNav: NavGroup[] = [
     label: 'Tài nguyên', href: '/huong-dan/', items: [
       { label: 'Trung tâm tải về', href: '/download/', icon: 'download' },
       { label: 'Hướng dẫn / Kiến thức / Video', href: '/huong-dan/', icon: 'book-open' },
+      { label: 'ERP UNESCO kết nối UNESCO XII', href: '/ket-noi-erp-unesco-xii/', icon: 'layers' },
       { label: 'Video hướng dẫn', href: '/video/', icon: 'play-circle' },
       { label: 'Kiến thức kế toán', href: '/kien-thuc/', icon: 'lightbulb' },
       { label: 'Có gì mới', href: '/release-notes/', icon: 'history' },

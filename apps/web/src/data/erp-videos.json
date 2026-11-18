@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "erp-xii-tong-quan",
+    "title": "ERP UNESCO kết nối UNESCO XII: bắt đầu từ đâu?",
+    "topic": "Dịch vụ kế toán",
+    "duration": "0:59",
+    "durationSeconds": 58.676938,
+    "desc": "Phân biệt vai trò ERP và UNESCO XII, chuẩn bị kết nối và theo dõi một kỳ kế toán. Video minh họa quy trình, có lời đọc và phụ đề.",
+    "src": "/videos/erp-xii/erp-xii-tong-quan.mp4",
+    "poster": "/videos/erp-xii/erp-xii-tong-quan.webp",
+    "captions": "/videos/erp-xii/erp-xii-tong-quan.vtt",
+    "youtube": "",
+    "uploadDate": "2026-11-18T11:49:11.715Z",
+    "kind": "Minh họa quy trình · Lời đọc tổng hợp",
+    "articleSlugs": [
+      "ket-noi-unesco-xii-erp-unesco",
+      "chuan-bi-ket-noi-erp-unesco-xii"
+    ],
+    "chapters": [
+      {
+        "title": "Một quy trình, hai vai trò",
+        "start": 0,
+        "text": "ERP UNESCO, còn được biết đến là ERP Ánh Mai, điều hành công ty dịch vụ kế toán. UNESCO mười hai xử lý nghiệp vụ trong bộ sổ của từng khách hàng. Video này minh họa quy trình kết nối; thao tác cụ thể phụ thuộc phiên bản đã triển khai."
+      },
+      {
+        "title": "Chuẩn bị đúng trước khi giao việc",
+        "start": 16.137,
+        "text": "Trước tiên, ghép đúng khách hàng với bộ sổ, kiểm tra quyền truy cập và trạng thái máy xử lý. Sao lưu dữ liệu trước thao tác ghi. Lần chạy đầu nên dùng bộ sổ mẫu hoặc bản sao đã được cho phép, rồi đối chiếu kết quả."
+      },
+      {
+        "title": "Từ giao việc đến kết quả",
+        "start": 29.957,
+        "text": "Trong Điều hành sổ sách, chọn khách hàng, kỳ và các bước cần thực hiện. Chạy kiểm tra trước khi gửi lệnh. Sau đó theo dõi từng bước và mở dữ liệu kết quả. Khi chưa đủ điều kiện, kế toán xử lý phần cần người rồi kiểm tra lại."
+      },
+      {
+        "title": "Hai luồng cần theo dõi riêng",
+        "start": 44.367,
+        "text": "Sổ kế toán của khách hàng và công nợ phí dịch vụ của công ty kế toán là hai luồng riêng. Một lệnh xử lý thành công không chứng minh phí đã được phát hành hoặc tiền đã thu. Xem bài chuẩn bị kết nối và toàn bộ lộ trình trên website UNESCO."
+      }
+    ]
+  },
+  {
+    "slug": "erp-xii-giao-viec",
+    "title": "Giao việc theo kỳ và xử lý mục Cần người",
+    "topic": "Dịch vụ kế toán",
+    "duration": "0:59",
+    "durationSeconds": 58.712403,
+    "desc": "Bốn bước chọn bộ sổ, kiểm tra điều kiện, theo dõi lệnh và xử lý phần cần kế toán. Video minh họa quy trình, có lời đọc và phụ đề.",
+    "src": "/videos/erp-xii/erp-xii-giao-viec.mp4",
+    "poster": "/videos/erp-xii/erp-xii-giao-viec.webp",
+    "captions": "/videos/erp-xii/erp-xii-giao-viec.vtt",
+    "youtube": "",
+    "uploadDate": "2026-11-18T11:49:16.931Z",
+    "kind": "Minh họa quy trình · Lời đọc tổng hợp",
+    "articleSlugs": [
+      "giao-viec-theo-ky-erp-unesco",
+      "xu-ly-can-nguoi-erp-unesco"
+    ],
+    "chapters": [
+      {
+        "title": "Chọn đúng việc cần chạy",
+        "start": 0,
+        "text": "Bắt đầu trong phân hệ Điều hành sổ sách. Chọn bộ sổ thuộc phạm vi phụ trách, xác nhận khách hàng và kỳ cần xử lý. Đọc tình trạng hiện tại trước khi chọn bước. Không gửi hàng loạt khi chưa biết bộ sổ đang thiếu gì."
+      },
+      {
+        "title": "Kiểm tra trước, rồi gửi lệnh",
+        "start": 13.105,
+        "text": "Chạy kiểm tra trước khi gửi. Đọc các cảnh báo về quyền, kết nối, kỳ và dữ liệu. Khi đã đủ điều kiện, kiểm tra lại phạm vi rồi gửi một lần. Nếu lệnh chờ lâu, xem trạng thái máy xử lý và thông báo, tránh gửi thêm nhiều lệnh trùng việc."
+      },
+      {
+        "title": "Cần người: đọc lý do, xử lý nguồn",
+        "start": 28.497,
+        "text": "Mục Cần người cho biết phần hệ thống chưa đủ điều kiện tự xử lý. Xem bộ sổ, kỳ, bước và lý do cụ thể. Bổ sung hồ sơ hoặc điều chỉnh tại đúng nơi theo quyền được cấp. Không bấm xác nhận chỉ để làm mất cảnh báo."
+      },
+      {
+        "title": "Kết thúc bằng đối chiếu",
+        "start": 42.378,
+        "text": "Sau khi xử lý, chạy lại kiểm tra hoặc bước phù hợp. Đối chiếu chứng từ và số liệu trong UNESCO mười hai với kết quả trả về ERP. Người có quyền chỉ xác nhận khi đã có căn cứ. Xem hai bài hướng dẫn kèm video để thực hiện theo từng bước."
+      }
+    ]
+  },
+  {
+    "slug": "erp-xii-kiem-tra",
+    "title": "Đọc ma trận tháng và kiểm tra trước khóa kỳ",
+    "topic": "Dịch vụ kế toán",
+    "duration": "0:59",
+    "durationSeconds": 59.370063,
+    "desc": "Hiểu trạng thái theo tháng, đối chiếu dữ liệu nguồn và kiểm tra trước khi khóa kỳ. Video minh họa quy trình, có lời đọc và phụ đề.",
+    "src": "/videos/erp-xii/erp-xii-kiem-tra.mp4",
+    "poster": "/videos/erp-xii/erp-xii-kiem-tra.webp",
+    "captions": "/videos/erp-xii/erp-xii-kiem-tra.vtt",
+    "youtube": "",
+    "uploadDate": "2026-11-18T11:49:22.784Z",
+    "kind": "Minh họa quy trình · Lời đọc tổng hợp",
+    "articleSlugs": [
+      "ma-tran-thang-unesco-xii",
+      "kiem-tra-khoa-ky-unesco-xii"
+    ],
+    "chapters": [
+      {
+        "title": "Nhìn toàn kỳ, tìm phần còn thiếu",
+        "start": 0,
+        "text": "Ma trận tháng giúp tìm các nhóm việc còn thiếu trong bộ sổ. Trước khi đọc kết quả, chọn đúng khách hàng, bộ sổ và năm. Kiểm tra thời điểm cập nhật và làm mới dữ liệu sau khi thao tác kế toán hoặc lệnh xử lý đã hoàn tất."
+      },
+      {
+        "title": "Đọc lý do sau màu trạng thái",
+        "start": 13.699,
+        "text": "Không chỉ nhìn màu. Một tháng không phát sinh khác với tháng thiếu hồ sơ hoặc có lỗi. Mở mục còn vướng, đọc lý do và dữ liệu nguồn, rồi chuyển đúng người xử lý. Màu xanh không phải kết luận rằng toàn bộ nghiệp vụ đã chính xác."
+      },
+      {
+        "title": "Đối chiếu trước khi chốt",
+        "start": 27.706,
+        "text": "Trước khi chốt kỳ, xác nhận đủ hồ sơ và xử lý phần còn vướng. Đối chiếu chứng từ với số liệu tổng hợp, kiểm tra số dư, công nợ, kho và báo cáo liên quan. Ghi nhận người lập, người kiểm tra và những vấn đề đã giải quyết."
+      },
+      {
+        "title": "Khóa kỳ có kiểm soát",
+        "start": 42.271,
+        "text": "Chỉ người có thẩm quyền khóa kỳ sau khi hoàn tất kiểm tra và sao lưu. Xác nhận đúng bộ sổ, đúng kỳ trước thao tác, rồi kiểm tra trạng thái sau khóa. Nếu phát hiện sai sót, thực hiện quy trình điều chỉnh của đơn vị. Đọc bài chi tiết kèm video để chuẩn bị danh sách kiểm tra."
+      }
+    ]
+  }
+]

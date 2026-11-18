@@ -4,7 +4,7 @@
  * Ảnh chụp từ bản chạy thử ứng dụng (public/screenshots/unesco-sale/), video hướng dẫn ở public/videos/unesco-sale-huong-dan.mp4
  * (phụ đề đã in trên hình). Bài hướng dẫn: /kien-thuc/huong-dan-su-dung-unesco-sale/.
  */
-import { url } from '../../../utils/url';
+import { url, absoluteUrl } from '../../../utils/url';
 import ContentLayout from '../../../layouts/ContentLayout.astro';
 import Screenshot from '../../../components/Screenshot.astro';
 import LeadForm from '../../../components/LeadForm.astro';
@@ -52,8 +52,8 @@ const schema = [
     '@type': 'VideoObject',
     name: 'Hướng dẫn sử dụng UNESCO Sale',
     description: '10 bước sử dụng UNESCO Sale: Tổng quan, hàng hóa & kho, nhập dữ liệu, bán hàng tại quầy, chứng từ, công nợ, thẻ kho, sổ sách và dùng trên điện thoại.',
-    thumbnailUrl: '/videos/unesco-sale-huong-dan.webp',
-    contentUrl: '/videos/unesco-sale-huong-dan.mp4',
+    thumbnailUrl: absoluteUrl('/videos/unesco-sale-huong-dan.webp', Astro.site ?? 'https://www.unescosoft.com'),
+    contentUrl: absoluteUrl('/videos/unesco-sale-huong-dan.mp4', Astro.site ?? 'https://www.unescosoft.com'),
     uploadDate: '2026-11-17',
     duration: 'PT1M39S',
     inLanguage: 'vi-VN',

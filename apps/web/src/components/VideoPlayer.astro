@@ -1,0 +1,35 @@
+---
+import { url } from '../utils/url';
+import type { Video } from '../data/videos';
+interface Props { video: Video; eager?: boolean }
+const { video, eager = false } = Astro.props;
+const id = video.youtube.trim();
+---
+{id ? (
+  <button class="video-thumb" type="button" data-yt={id} aria-label={`Phát video: ${video.title}`}>
+    <img src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`} alt="" loading={eager ? 'eager' : 'lazy'} width="480" height="360" />
+    <span class="play" aria-hidden="true">▶</span><span class="dur">{video.duration}</span>
+  </button>
+) : (
+  <div class="video-thumb is-video">
+    <video controls preload={eager ? 'metadata' : 'none'} playsinline poster={url(video.poster)} width="1280" height="720" aria-label={video.title}>
+      <source src={url(video.src)} type="video/mp4" />
+      {video.captions && <track kind="captions" src={url(video.captions)} srclang="vi" label="Tiếng Việt" default />}
+      Nếu video không phát, hãy <a href={url(video.src)}>tải video</a> để xem trên máy.
+    </video>
+  </div>
+)}
+<script>
+  document.querySelectorAll<HTMLButtonElement>('button.video-thumb[data-yt]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const frame = document.createElement('iframe');
+      frame.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(btn.dataset.yt ?? '')}?autoplay=1&rel=0`;
+      frame.title = btn.getAttribute('aria-label') ?? 'Video';
+      frame.allow = 'autoplay; encrypted-media; picture-in-picture'; frame.allowFullscreen = true;
+      const box = document.createElement('div'); box.className = 'video-thumb'; box.appendChild(frame); btn.replaceWith(box);
+    });
+  });
+  document.addEventListener('play', (event) => {
+    document.querySelectorAll('video').forEach((video) => { if (video !== event.target) video.pause(); });
+  }, true);
+</script>
