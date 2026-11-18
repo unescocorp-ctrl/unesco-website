@@ -3,6 +3,7 @@ import { softwareSchema } from '../../data/seo';
 import ContentLayout from '../../layouts/ContentLayout.astro';
 import ProductCard from '../../components/ProductCard.astro';
 import ProductVideoModal from '../../components/ProductVideoModal.astro';
+import ScreenViewer from '../../components/ScreenViewer.astro';
 import { contact, telHref, zaloHref } from '../../data/contact';
 import { products, families, productsIn } from '../../data/products';
 /** Giá lấy từ data/products.ts (bảng giá 17/11/2026). MST = mã số thuế (mỗi công ty / bộ sổ một MST). */
@@ -19,7 +20,7 @@ const rows: [string, boolean, boolean][] = [
   ['Trợ lý AI hướng dẫn ngay trên màn hình', false, true],
 ];
 ---
-<ContentLayout title="Bảng giá sản phẩm UNESCO" schema={softwareSchema} description="Bảng giá các sản phẩm UNESCO: UNESCO XII AI 10.000.000 đ / MST tặng kèm ERP_UNESCO, UNESCO_TAX_Online, UNESCO SalesCRM AI; UNESCO AI 7.000.000 đ / MST; UNESCO XI 4.500.000 đ / MST; UNESCO SALE 3.000.000 đ. Trả phí 1 lần, triển khai miễn phí, dịch vụ kế toán trên 10 MST giảm 30%." eyebrow="Bảng giá" display="BẢNG GIÁ / |SẢN PHẨM" tone="ng" subtitle="Giá từng sản phẩm, công khai và dễ so sánh">
+<ContentLayout title="Bảng giá sản phẩm UNESCO" schema={softwareSchema} description="Bảng giá các sản phẩm UNESCO: UNESCO XII AI 10.000.000 đ / MST tặng kèm ERP_UNESCO, UNESCO_TAX_Online, UNESCO SalesCRM AI; UNESCO XI + AI 7.000.000 đ / MST; UNESCO XI 4.500.000 đ / MST; UNESCO SALE 3.000.000 đ. Trả phí 1 lần, triển khai miễn phí, dịch vụ kế toán trên 10 MST giảm 30%." eyebrow="Bảng giá" display="BẢNG GIÁ / |SẢN PHẨM" tone="ng" subtitle="Giá từng sản phẩm, công khai và dễ so sánh">
 <section class="section"><div class="container">
   <p class="price-gold"><span>Phần mềm kế toán: trả phí 1 lần sử dụng mãi mãi – Không phí hàng năm</span></p>
   <div class="pd-tabs" role="tablist" aria-label="Chọn nhóm sản phẩm">
@@ -49,14 +50,15 @@ const rows: [string, boolean, boolean][] = [
 
 <section class="section surface-soft"><div class="container split"><div><span class="eyebrow">Mã kích hoạt AI</span><h2>Một mã cho mọi tính năng AI</h2><p class="lead">Gói AI được cấp bằng mã kích hoạt theo mã số thuế. Phần kế toán dùng bình thường khi chưa có mã.</p></div><div class="card"><ul class="checks"><li><b>Thời hạn:</b> vĩnh viễn khi mua bản quyền (trả phí 1 lần); phần mềm cũng cấp được mã 1, 3, 6 tháng, 1, 2 năm</li><li><b>Số công ty:</b> tính theo mã số thuế của bộ sổ</li><li><b>Số trang:</b> mỗi trang ảnh chụp hoặc PDF dạng ảnh chuyển sang Excel trừ vào số trang của mã; tệp Excel và CSV không tính; nạp thêm thì số trang cộng dồn</li><li><b>Ba chế độ:</b> đã kích hoạt / dùng thử 15 ngày / chỉ xem; mã yêu cầu riêng từng máy</li><li><b>Mã có thời hạn:</b> còn 7 ngày phần mềm nhắc gia hạn</li></ul></div></div></section>
 
-<section class="section surface"><div class="container"><div class="section-head"><div><span class="eyebrow">So sánh</span><h2>UNESCO XI và UNESCO AI</h2></div><p>AI làm việc trên chính bộ sổ UNESCO, nên doanh nghiệp đang dùng UNESCO XI có thể kích hoạt AI khi cần.</p></div>
-  <div class="table-wrap"><table class="compare"><thead><tr><th>Chức năng</th><th class="c">UNESCO XI</th><th class="c">UNESCO AI</th></tr></thead><tbody>{rows.map((r) => <tr><td>{r[0]}</td><td class={r[1] ? 'y' : 'n'}>{r[1] ? '✓' : '—'}</td><td class={r[2] ? 'y' : 'n'}>{r[2] ? '✓' : '—'}</td></tr>)}</tbody></table></div>
+<section class="section surface"><div class="container"><div class="section-head"><div><span class="eyebrow">So sánh</span><h2>UNESCO XI và UNESCO XI + AI</h2></div><p>AI làm việc trên chính bộ sổ UNESCO, nên doanh nghiệp đang dùng UNESCO XI có thể kích hoạt AI khi cần.</p></div>
+  <div class="table-wrap"><table class="compare"><thead><tr><th>Chức năng</th><th class="c">UNESCO XI</th><th class="c">UNESCO XI + AI</th></tr></thead><tbody>{rows.map((r) => <tr><td>{r[0]}</td><td class={r[1] ? 'y' : 'n'}>{r[1] ? '✓' : '—'}</td><td class={r[2] ? 'y' : 'n'}>{r[2] ? '✓' : '—'}</td></tr>)}</tbody></table></div>
 </div></section>
 
 <section class="section surface-soft"><div class="container"><div class="section-head"><div><span class="eyebrow">Trước khi báo giá</span><h2>4 thông tin giúp xác định đúng gói</h2></div><p>Chuẩn bị trước các thông tin này, bộ phận kinh doanh sẽ báo giá nhanh và chính xác hơn.</p></div><div class="grid grid-4"><div class="card"><h3>Loại hình</h3><p class="muted">Thương mại, dịch vụ, sản xuất, xây dựng, hộ kinh doanh hoặc kế toán dịch vụ.</p></div><div class="card"><h3>Số công ty</h3><p class="muted">Số bộ sổ (mã số thuế) cần quản lý và số máy sử dụng.</p></div><div class="card"><h3>Khối lượng AI</h3><p class="muted">Số hoá đơn mỗi tháng, ngân hàng đang dùng, sao kê dạng tệp hay ảnh chụp.</p></div><div class="card"><h3>Dữ liệu hiện có</h3><p class="muted">Phần mềm đang dùng và nhu cầu chuyển số dư đầu kỳ.</p></div></div></div></section>
 
 <section class="section"><div class="container"><div class="quote-band"><div><h2>Liên hệ để nhận báo giá phù hợp</h2><p>{contact.sales.label}: {contact.sales.mobile} · Email: {contact.email}</p></div><div class="actions"><a class="btn btn-primary" href={telHref(contact.sales.mobile)}>GỌI {contact.sales.mobile}</a><a class="btn btn-secondary" href={zaloHref} target="_blank" rel="noopener">NHẮN ZALO</a></div></div></div></section>
 <ProductVideoModal />
+<ScreenViewer title="Ảnh màn hình sản phẩm UNESCO" />
 <script is:inline>
 (function(){
   var tabs=document.querySelectorAll('.pd-tab');

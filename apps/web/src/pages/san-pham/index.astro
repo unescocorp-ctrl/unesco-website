@@ -4,10 +4,11 @@ import { url } from '../../utils/url';
 import ContentLayout from '../../layouts/ContentLayout.astro';
 import ProductCard from '../../components/ProductCard.astro';
 import ProductVideoModal from '../../components/ProductVideoModal.astro';
+import ScreenViewer from '../../components/ScreenViewer.astro';
 import { products, families } from '../../data/products';
 const needs: [string, string, string][] = [
   ['Sổ sách, báo cáo thuế đầy đủ, ngân sách vừa phải', 'UNESCO XI', '4.500.000 đ / MST'],
-  ['Giảm nhập liệu hoá đơn, sổ phụ, giá thành bằng AI', 'UNESCO AI', '7.000.000 đ / MST'],
+  ['Giảm nhập liệu hoá đơn, sổ phụ, giá thành bằng AI', 'UNESCO XI + AI', '7.000.000 đ / MST'],
   ['Công ty dịch vụ kế toán: làm sổ cho nhiều khách và điều hành công ty', 'UNESCO XII AI – kèm ERP_UNESCO, UNESCO_TAX_Online', '10.000.000 đ / MST'],
   ['Khách hàng dịch vụ kế toán tự theo dõi công nợ, hàng hoá, hoá đơn', 'UNESCO_TAX_Online', 'Tặng kèm UNESCO XII AI'],
   ['Trả lời khách đa kênh, báo giá, hợp đồng, thu tiền', 'UNESCO SalesCRM AI', 'Tặng kèm UNESCO XII AI'],
@@ -15,7 +16,7 @@ const needs: [string, string, string][] = [
   ['Quản lý công ty dịch vụ bảo vệ', 'UNESCO SECURITY (sắp ra mắt)', 'Liên hệ'],
 ];
 ---
-<ContentLayout title="Sản phẩm UNESCO – Phần mềm kế toán, dịch vụ kế toán, bán hàng" description="Các sản phẩm của Công ty TNHH Phần mềm UNESCO: UNESCO XII AI, UNESCO AI, UNESCO XI, ERP_UNESCO, UNESCO_TAX_Online, UNESCO SalesCRM AI, UNESCO SALE và UNESCO SECURITY. Chọn theo nhu cầu, giá công khai." eyebrow="Sản phẩm UNESCO" display="SẢN PHẨM |UNESCO" subtitle="Phần mềm cho kế toán, dịch vụ kế toán, bán hàng và quản lý chuyên ngành" pills={['Giá công khai', 'Trả phí 1 lần cho phần mềm kế toán', 'Triển khai miễn phí']}>
+<ContentLayout title="Sản phẩm UNESCO – Phần mềm kế toán, dịch vụ kế toán, bán hàng" description="Các sản phẩm của Công ty TNHH Phần mềm UNESCO: UNESCO XII AI, UNESCO XI + AI, UNESCO XI, ERP_UNESCO, UNESCO_TAX_Online, UNESCO SalesCRM AI, UNESCO SALE và UNESCO SECURITY. Chọn theo nhu cầu, giá công khai." eyebrow="Sản phẩm UNESCO" display="SẢN PHẨM |UNESCO" subtitle="Phần mềm cho kế toán, dịch vụ kế toán, bán hàng và quản lý chuyên ngành" pills={['Giá công khai', 'Trả phí 1 lần cho phần mềm kế toán', 'Triển khai miễn phí']}>
 <section class="section"><div class="container">
   <div class="pd-chips" role="group" aria-label="Lọc theo nhóm sản phẩm">
     <button type="button" class="pd-chip" data-f="all" aria-pressed="true">Tất cả</button>
@@ -32,6 +33,7 @@ const needs: [string, string, string][] = [
 
 <section class="section"><div class="container"><div class="quote-band"><div><h2>Dùng nhiều sản phẩm cùng lúc?</h2><p>Bộ phận kinh doanh tư vấn gói phù hợp cho kế toán, dịch vụ kế toán và bán hàng.</p></div><div class="actions"><a class="btn btn-primary" href={url('/bang-gia/')}>XEM BẢNG GIÁ</a><a class="btn btn-secondary" href={url('/lien-he/#demo')}>NHẬN TƯ VẤN</a></div></div></div></section>
 <ProductVideoModal />
+<ScreenViewer title="Ảnh màn hình sản phẩm UNESCO" />
 <script is:inline>
 (function(){
   var chips=document.querySelectorAll('.pd-chip'),cards=document.querySelectorAll('#pdGrid .pd-card');

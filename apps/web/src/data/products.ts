@@ -6,6 +6,7 @@
  * THÊM SẢN PHẨM: thêm một mục vào `products`, chọn `family` có sẵn; có trang riêng thì điền `href`.
  * Giá theo bảng giá ngày 17/11/2026. MST = mã số thuế (mỗi công ty / bộ sổ một MST).
  */
+import { productScreens } from './product-screens';
 export type FamilyId = 'ke-toan' | 'dich-vu-ke-toan' | 'ban-hang' | 'chuyen-nganh';
 
 export const families: { id: FamilyId; label: string; color: string; dark: string; soft: string; icon: string }[] = [
@@ -34,8 +35,8 @@ export type Product = {
   href?: string;
   demo?: string;
   comingSoon?: boolean;
-  /** Ảnh giao diện trên thẻ (trong public/). Có `video` thì bấm ảnh phát video; có demo/trang riêng thì mở liên kết; còn lại hiển thị ảnh tĩnh. */
-  media?: { img: string; alt: string; video?: string };
+  /** Có full thì bấm xem ảnh lớn; video vẫn có nút riêng. Các ảnh khác giữ hành vi video/demo/trang sản phẩm. */
+  media?: { img: string; alt: string; video?: string; full?: string; width?: number; height?: number };
 };
 
 export const SERVICE_DISCOUNT = 'Trên 10 MST: giảm 30%';
@@ -47,16 +48,16 @@ export const products: Product[] = [
     tagline: 'Thế hệ phần mềm kế toán tiếp theo của UNESCO, tặng kèm ERP_UNESCO, UNESCO_TAX_Online và UNESCO SalesCRM AI.',
     points: ['Tặng kèm ERP_UNESCO', 'Tặng kèm UNESCO_TAX_Online', 'Tặng kèm UNESCO SalesCRM AI'],
     price: '10.000.000 đ', unit: '/ MST', priceNote: 'Trả phí 1 lần · tặng kèm 03 sản phẩm', serviceNote: SERVICE_DISCOUNT,
-    media: { img: '/screenshots/unesco-xii-ai/tong-quan.webp', alt: 'Màn hình Tổng quan điều hành UNESCO XII AI' },
+    media: { img: productScreens.xiiAi.thumb, full: productScreens.xiiAi.src, alt: productScreens.xiiAi.alt, width: productScreens.xiiAi.width, height: productScreens.xiiAi.height },
   },
   {
-    id: 'unesco-ai', name: 'UNESCO AI', family: 'ke-toan', badge: 'Có AI',
+    id: 'unesco-ai', name: 'UNESCO XI + AI', family: 'ke-toan', badge: 'Có AI',
     short: 'Kế toán 9 phân hệ + màn hình AI',
     tagline: 'Kế toán 9 phân hệ cộng màn hình AI: tải hoá đơn, đọc sổ phụ, giá thành, kiểm tra trước khoá sổ.',
     points: ['AI đề xuất, kế toán duyệt', 'Hoá đơn, sổ phụ ngân hàng, giá thành có AI', 'Báo cáo theo Thông tư 133, 99'],
     price: '7.000.000 đ', unit: '/ MST', priceNote: 'Trả phí 1 lần · dùng thử 15 ngày', serviceNote: SERVICE_DISCOUNT,
     href: '/san-pham/unesco-xi-ai/',
-    media: { img: '/screenshots/ai-tu-dong-xu-ly.webp', alt: 'Màn hình AI Tự động xử lý của UNESCO AI', video: '/videos/m01-tong-quan.mp4' },
+    media: { img: productScreens.xiAi.thumb, full: productScreens.xiAi.src, alt: productScreens.xiAi.alt, width: productScreens.xiAi.width, height: productScreens.xiAi.height, video: '/videos/m01-tong-quan.mp4' },
   },
   {
     id: 'unesco-xi', name: 'UNESCO XI', family: 'ke-toan', badge: 'Nền tảng',
@@ -65,7 +66,7 @@ export const products: Product[] = [
     points: ['9 phân hệ kế toán', 'Tải hoá đơn điện tử, xuất XML HTKK', 'Kích hoạt AI khi cần, nâng cấp 50%'],
     price: '4.500.000 đ', unit: '/ MST', priceNote: 'Trả phí 1 lần · không phí hàng năm', serviceNote: SERVICE_DISCOUNT,
     href: '/san-pham/unesco-xi/',
-    media: { img: '/screenshots/bc-so-ke-toan.webp', alt: 'Sổ kế toán trong UNESCO XI', video: '/videos/m06-bao-cao-nhat-ky.mp4' },
+    media: { img: productScreens.xi.thumb, full: productScreens.xi.src, alt: productScreens.xi.alt, width: productScreens.xi.width, height: productScreens.xi.height },
   },
   {
     id: 'erp-unesco', name: 'ERP_UNESCO', family: 'dich-vu-ke-toan', badge: 'Tặng kèm UNESCO XII AI',

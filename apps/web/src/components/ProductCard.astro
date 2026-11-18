@@ -8,7 +8,11 @@ const f = familyOf(p.family);
 const cta = p.href ? { t: 'Xem chi tiết', h: p.href } : { t: p.comingSoon ? 'Đăng ký nhận tin' : 'Liên hệ mua', h: '/lien-he/#demo' };
 ---
 <article class={`pd-card${p.featured ? ' is-feat' : ''}`} id={p.id} data-family={p.family} style={`--pc:${f.color};--pd:${f.dark};--ps:${f.soft}`}>
-  {p.media?.video ? (
+  {p.media?.full ? (
+    <a class="pd-media is-screenshot" href={url(p.media.full)} target="_blank" rel="noopener" data-screen-link data-screen-title={p.name} data-caption={`${p.media.alt}. Ảnh thật đã che thông tin riêng.`} aria-label={`Xem ảnh lớn ${p.name}`}>
+      <img src={url(p.media.img)} width={p.media.width} height={p.media.height} alt={p.media.alt} loading="lazy" decoding="async" /><span class="pd-image-label">Xem ảnh lớn ↗</span>
+    </a>
+  ) : p.media?.video ? (
     <button type="button" class="pd-media" data-video={url(p.media.video)} data-title={p.name} aria-label={`Xem video ${p.name}`}>
       <img src={url(p.media.img)} alt={p.media.alt} loading="lazy" decoding="async" /><span class="pd-play"><i aria-hidden="true">▶</i>Xem video</span>
     </button>
@@ -40,3 +44,6 @@ const cta = p.href ? { t: 'Xem chi tiết', h: p.href } : { t: p.comingSoon ? '�
     {p.href && !p.demo && !p.media?.video && <a class="btn btn-secondary" href={url('/lien-he/#demo')}>Liên hệ</a>}
   </div>
 </article>
+<style>
+.pd-media.is-screenshot{aspect-ratio:auto;overflow:visible;cursor:zoom-in}.pd-media.is-screenshot img{aspect-ratio:16/10;object-fit:contain;object-position:center;height:auto;background:#eef5f2;border-radius:11px 11px 0 0}.pd-media.is-screenshot:hover img,.pd-media.is-screenshot:focus-visible img{transform:none}.pd-image-label{display:block;padding:9px 14px;text-align:right;background:#e8f5ec;color:#125e31;font-size:.82rem;font-weight:700}.pd-media.is-screenshot:focus-visible{outline:3px solid #1679a8;outline-offset:3px}
+</style>

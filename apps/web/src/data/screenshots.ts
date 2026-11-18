@@ -8,6 +8,7 @@
  *
  * MUỐN ĐỔI ẢNH: chép ảnh mới (.webp, .png hoặc .jpg) vào public/screenshots/ rồi sửa `src`, `width`, `height` bên dưới.
  */
+import { productScreens } from './product-screens';
 export type Shot = {
   src: string;       // đường dẫn tệp, ví dụ '/screenshots/ai-tu-dong-xu-ly.webp'
   width: number;
@@ -24,9 +25,8 @@ const s = (name: string, width: number, height: number, title: string, caption: 
 
 export const shots = {
   // ── Màn hình chính ────────────────────────────────────────────
-  mainScreen: s('man-hinh-chinh-unesco-ai-v2', 1568, 1003, 'UNESCO Accounting System', 'Màn hình chính UNESCO AI',
-    '9 phân hệ kế toán quanh trung tâm Báo cáo – Sổ kế toán; khung AI AUTO liệt kê 12 bước AI tự động, kèm Quản lý công việc và Bảng điều hành.',
-    'Màn hình chính phần mềm kế toán UNESCO AI với 9 phân hệ và khung trợ lý AI'),
+  mainScreen: productScreens.xiAi,
+  xiClassic: productScreens.xi,
 
   // ── Màn hình AI: 8 thẻ nghiệp vụ ──────────────────────────────
   autoProcess: s('ai-tu-dong-xu-ly', 1600, 841, 'UNESCO AI – Tự động xử lý', 'Thẻ Tự động xử lý',
