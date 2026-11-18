@@ -1,0 +1,462 @@
+[
+  {
+    "slug": "chuan-bi-ho-so-thang-unesco-xii-ai",
+    "title": "Khách hàng cần chuẩn bị gì để dịch vụ kế toán xử lý hồ sơ tháng rõ ràng?",
+    "date": "2026-11-18",
+    "description": "Bốn nhóm hồ sơ, bảng kê bàn giao và cách phản hồi phần còn thiếu để khách hàng và kế toán phối hợp rõ ràng theo từng tháng.",
+    "topic": "UNESCO XII AI · Phối hợp khách hàng",
+    "blocks": [
+      {
+        "t": "lead",
+        "x": "Bốn nhóm hồ sơ, bảng kê bàn giao và cách phản hồi phần còn thiếu để khách hàng và kế toán phối hợp rõ ràng theo từng tháng."
+      },
+      {
+        "t": "note",
+        "x": "Dành cho khách hàng và kế toán nhận hồ sơ. Hướng dẫn UNESCO XII AI; tên nút và chức năng áp dụng theo phiên bản và quyền trên bản cài đang dùng."
+      },
+      {
+        "t": "h2",
+        "x": "Mục tiêu của một lần bàn giao"
+      },
+      {
+        "t": "p",
+        "x": "Một bộ hồ sơ dễ nhận không chỉ là nhiều tệp được gửi cùng lúc. Người nhận cần biết tệp thuộc doanh nghiệp nào, kỳ nào, nhóm nào, ai xác nhận và phần nào còn thiếu. Khi hai bên thống nhất cách bàn giao, kế toán giảm thời gian hỏi lại; khách biết rõ việc mình còn phải bổ sung. Mức giảm thời gian thực tế cần được đo tại từng đơn vị."
+      },
+      {
+        "t": "h2",
+        "x": "Chuẩn bị bốn nhóm hồ sơ"
+      },
+      {
+        "t": "p",
+        "x": "Chia hồ sơ thành hóa đơn, sao kê ngân hàng, lương và hồ sơ khác. Đây cũng là bốn nhóm tiếp nhận có trong luồng hồ sơ của UNESCO XII. Với hóa đơn, giữ tệp nguồn được cung cấp; khi có XML, gửi kèm thay vì chỉ gửi ảnh chụp. Với sao kê, nêu rõ tài khoản và khoảng ngày của tệp. Với lương, gửi bảng đã được người có trách nhiệm xác nhận. Hợp đồng, biên bản, chứng từ thanh toán và tài liệu giải trình được ghi rõ vào nhóm hồ sơ khác."
+      },
+      {
+        "t": "h3",
+        "x": "Bảng bàn giao tối thiểu"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Nhóm",
+          "Khách chuẩn bị",
+          "Kế toán kiểm"
+        ],
+        "rows": [
+          [
+            "Hóa đơn",
+            "Tệp nguồn, XML khi có, ghi kỳ của hồ sơ.",
+            "Đúng doanh nghiệp, kỳ, số lượng và khả năng đọc tệp."
+          ],
+          [
+            "Sao kê",
+            "Tài khoản và khoảng ngày của từng tệp.",
+            "Phạm vi ngày, số tệp và giao dịch cần làm rõ."
+          ],
+          [
+            "Lương",
+            "Bảng đã được người phụ trách xác nhận.",
+            "Kỳ lương và thông tin cần bổ sung."
+          ],
+          [
+            "Khác",
+            "Hợp đồng, biên bản, chứng từ thanh toán.",
+            "Gắn hồ sơ với nghiệp vụ đang xử lý."
+          ]
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "Gửi một bảng kê bàn giao cùng tệp"
+      },
+      {
+        "t": "p",
+        "x": "Mỗi dòng nên có tên hồ sơ, khoảng thời gian, số tệp, tình trạng, người gửi và ghi chú. Tên tệp có thể theo mẫu DEMO_A_2026-10_SAO-KE_01.xlsx; đây là quy ước gợi ý, không phải định dạng bắt buộc của phần mềm. Nếu một mục không phát sinh, ghi rõ và để người phụ trách kiểm lại. Không tự xem “chưa gửi” là “không phát sinh”. Nếu cần bổ sung, ghi người thực hiện và thời điểm dự kiến."
+      },
+      {
+        "t": "h2",
+        "x": "Kế toán tiếp nhận thế nào?"
+      },
+      {
+        "t": "p",
+        "x": "Kế toán kiểm doanh nghiệp và kỳ, đối chiếu bảng kê với số tệp, rồi đưa hồ sơ vào đúng khu vực nhận. Màn Hồ sơ kèm chứng từ có nút Nhận chứng từ khách gửi…; nhánh nhận hóa đơn XML/ZIP đưa tệp vào công cụ hóa đơn. Sao kê và bảng lương cần được xử lý bằng chức năng tương ứng. Có tệp trong thư mục không chứng minh dữ liệu đã được đọc đúng hoặc chứng từ đã được ghi vào sổ."
+      },
+      {
+        "t": "h2",
+        "x": "Khi nhận yêu cầu bổ sung"
+      },
+      {
+        "t": "p",
+        "x": "Đọc số chứng từ hoặc nội dung được hỏi, kiểm xem tài liệu đang ở đâu, rồi phản hồi bằng đúng dòng trong bảng yêu cầu. Nếu đã có bản giấy, nói rõ vị trí để kế toán kiểm. Nếu cần sửa thông tin, nêu thay đổi và giữ mối liên hệ với lần gửi trước. Phần mềm có thể giúp lập danh sách và thư yêu cầu; việc gửi thư theo kênh hai bên thống nhất vẫn do người phụ trách thực hiện."
+      },
+      {
+        "t": "h2",
+        "x": "Kết quả cần đạt"
+      },
+      {
+        "t": "p",
+        "x": "Cuối lần bàn giao, hai bên có cùng một danh sách: đã nhận gì, còn thiếu gì, ai bổ sung, dự kiến khi nào và ai sẽ kiểm. Tải cẩm nang phối hợp kèm theo để dùng bảng bàn giao mẫu. Tài liệu này hướng dẫn cách phối hợp; thao tác trên bản cài thực tế cần được kiểm đúng phiên bản và quyền của người sử dụng."
+      },
+      {
+        "t": "download",
+        "href": "/tai-lieu/cam-nang-phoi-hop-dvkt-khach-hang-unesco-xii-ai.pdf",
+        "x": "Mở cẩm nang phối hợp UNESCO XII AI · PDF 16 trang"
+      },
+      {
+        "t": "link",
+        "href": "/tai-lieu/mau-ban-giao-ho-so-unesco-xii.html",
+        "x": "Điền và in mẫu bàn giao hồ sơ tháng"
+      },
+      {
+        "t": "link",
+        "href": "/unesco-xii-ai/dich-vu-ke-toan/",
+        "x": "Về chuyên mục UNESCO XII AI cho dịch vụ kế toán và khách hàng"
+      }
+    ]
+  },
+  {
+    "slug": "soat-ho-so-yeu-cau-khach-bo-sung-unesco-xii-ai",
+    "title": "Soát hồ sơ còn thiếu và lập thư yêu cầu khách bổ sung trong UNESCO XII AI",
+    "date": "2026-11-18",
+    "description": "Chọn kỳ, soát hồ sơ, xác nhận tài liệu đã có ngoài sổ, lập thư yêu cầu và kiểm lại khi khách gửi bổ sung.",
+    "topic": "UNESCO XII AI · Phối hợp khách hàng",
+    "blocks": [
+      {
+        "t": "lead",
+        "x": "Chọn kỳ, soát hồ sơ, xác nhận tài liệu đã có ngoài sổ, lập thư yêu cầu và kiểm lại khi khách gửi bổ sung."
+      },
+      {
+        "t": "note",
+        "x": "Dành cho kế toán viên, người kiểm soát và đầu mối khách hàng. Hướng dẫn UNESCO XII AI; tên nút và chức năng áp dụng theo phiên bản và quyền trên bản cài đang dùng."
+      },
+      {
+        "t": "h2",
+        "x": "Bắt đầu từ một kỳ cụ thể"
+      },
+      {
+        "t": "p",
+        "x": "Khi xử lý hồ sơ của nhiều khách, yêu cầu chung như “gửi bổ sung chứng từ” dễ gây hỏi lại. Mục tiêu của màn Hồ sơ kèm chứng từ - yêu cầu chứng từ khách là gắn việc bổ sung với nghiệp vụ, kỳ và danh sách hồ sơ đang thiếu. Trước khi thao tác, kiểm đúng bộ sổ và khoảng ngày; không lấy danh sách của tháng trước để yêu cầu khách gửi lại toàn bộ."
+      },
+      {
+        "t": "h2",
+        "x": "Bước 1: Soát và đọc chi tiết"
+      },
+      {
+        "t": "p",
+        "x": "Mở Hồ sơ kèm chứng từ từ danh mục chức năng AI của bản đang dùng. Chọn Kỳ từ ngày và đến ngày, bấm Soát hồ sơ chứng từ. Đọc từng dòng nghiệp vụ và các cột Kết luận, Thiếu, Chờ phát sinh, Tự khai. Dùng Mở chứng từ khi cần đối chiếu với chứng từ trong sổ. Một kết luận của công cụ là điểm bắt đầu kiểm tra, không thay thế việc xem tài liệu nguồn."
+      },
+      {
+        "t": "h3",
+        "x": "Phân biệt ba kết quả"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Kết quả trên màn hình",
+          "Ý nghĩa",
+          "Bước tiếp theo"
+        ],
+        "rows": [
+          [
+            "Đã có ngoài sổ",
+            "Người dùng xác nhận đã kiểm tài liệu ngoài sổ.",
+            "Soát lại và đọc danh sách mới."
+          ],
+          [
+            "Đã mở thư yêu cầu",
+            "Nội dung đã được tạo để kiểm tra.",
+            "Người phụ trách kiểm và gửi cho đúng đầu mối."
+          ],
+          [
+            "Đã nhận tệp",
+            "Tệp đã có ở khu vực tiếp nhận.",
+            "Đọc, đối chiếu và xử lý bằng chức năng tương ứng."
+          ]
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "Bước 2: Xác nhận tài liệu đã có"
+      },
+      {
+        "t": "p",
+        "x": "Nếu tài liệu đã nằm trong hồ sơ giấy hoặc tệp của đơn vị, người phụ trách kiểm tài liệu trước, tích đúng mục rồi bấm Đánh dấu ĐÃ CÓ NGOÀI SỔ các mục đã tích. Nhãn này có nghĩa phần mềm ghi nhận xác nhận của người dùng về hồ sơ ngoài sổ. Nó không phải thao tác ghi chứng từ kế toán và cũng không tự chứng minh tài liệu đã đáp ứng mọi yêu cầu nghiệp vụ. Soát lại để đọc danh sách mới."
+      },
+      {
+        "t": "h2",
+        "x": "Bước 3: Lập thư và gửi đúng người"
+      },
+      {
+        "t": "p",
+        "x": "Dùng Mở thư yêu cầu (HTML) hoặc Mở thư yêu cầu (Zalo / TXT) để xem nội dung đã lập. Kiểm doanh nghiệp, kỳ, từng hồ sơ cần bổ sung, người nhận và thời điểm phản hồi trước khi gửi. Tên nút Zalo / TXT chỉ dạng nội dung dễ gửi; các nút này không tự gửi tin nhắn. Không ghi rằng khách đã được thông báo nếu mới chỉ mở tệp thư."
+      },
+      {
+        "t": "h2",
+        "x": "Bước 4: Nhận lại và khép vòng"
+      },
+      {
+        "t": "p",
+        "x": "Khi khách gửi thêm, bấm Nhận chứng từ khách gửi… để kiểm nhóm tệp mới. Nhánh đọc XML/ZIP hóa đơn chạy công cụ nhập tương ứng; các nhóm khác cần xử lý theo đúng nghiệp vụ. Sau khi kiểm tài liệu, cập nhật xác nhận và soát lại. Nếu hồ sơ chưa giải quyết được vấn đề, ghi rõ lý do còn tồn thay vì chỉ đổi trạng thái cho hết cảnh báo."
+      },
+      {
+        "t": "h2",
+        "x": "Một tình huống minh họa"
+      },
+      {
+        "t": "p",
+        "x": "Doanh nghiệp DEMO_A có một chứng từ thiếu hồ sơ thanh toán và một mục đã có bản giấy. Kế toán kiểm bản giấy rồi đánh dấu đúng mục, xuất thư chỉ còn nội dung cần bổ sung, nhận tệp khách gửi và soát lại. Đây là tình huống học tập, không phải kết quả trên dữ liệu khách thực tế. Sau lần soát lại, ghi rõ mục đã đủ và mục còn cần khách bổ sung."
+      },
+      {
+        "t": "download",
+        "href": "/tai-lieu/cam-nang-phoi-hop-dvkt-khach-hang-unesco-xii-ai.pdf",
+        "x": "Mở cẩm nang phối hợp UNESCO XII AI · PDF 16 trang"
+      },
+      {
+        "t": "link",
+        "href": "/tai-lieu/mau-ban-giao-ho-so-unesco-xii.html",
+        "x": "Điền và in mẫu bàn giao hồ sơ tháng"
+      },
+      {
+        "t": "link",
+        "href": "/unesco-xii-ai/dich-vu-ke-toan/",
+        "x": "Về chuyên mục UNESCO XII AI cho dịch vụ kế toán và khách hàng"
+      }
+    ]
+  },
+  {
+    "slug": "cong-cu-khach-goi-ukx-unesco-xii-ai",
+    "title": "Công cụ khách .ukx: trao đổi số liệu và phiếu với dịch vụ kế toán",
+    "date": "2026-11-18",
+    "description": "Hiểu vòng trao đổi GOI_DI và GOI_VE, ngày chốt số liệu, bước kiểm gói và cách phản hồi phiếu cần sửa.",
+    "topic": "UNESCO XII AI · Phối hợp khách hàng",
+    "blocks": [
+      {
+        "t": "lead",
+        "x": "Hiểu vòng trao đổi GOI_DI và GOI_VE, ngày chốt số liệu, bước kiểm gói và cách phản hồi phiếu cần sửa."
+      },
+      {
+        "t": "note",
+        "x": "Dành cho kế toán văn phòng và khách hàng dùng công cụ tương thích. Hướng dẫn UNESCO XII AI; tên nút và chức năng áp dụng theo phiên bản và quyền trên bản cài đang dùng."
+      },
+      {
+        "t": "h2",
+        "x": "Một vòng trao đổi có điểm kiểm"
+      },
+      {
+        "t": "p",
+        "x": "Công cụ khách của UNESCO XII cho phép văn phòng xuất gói số liệu theo ngày chốt, nhận gói phiếu khách gửi về và ghi lý do trả lại phiếu. Gói đi được nhận biết bằng GOI_DI; gói khách gửi về bằng GOI_VE, cùng đuôi .ukx. Hãy kiểm công cụ hai phía tương thích trước triển khai. Đây là luồng trao đổi gói tệp; không nên hiểu là một tài khoản khách hàng đã có sẵn trên website công khai."
+      },
+      {
+        "t": "h2",
+        "x": "Văn phòng xuất gói"
+      },
+      {
+        "t": "p",
+        "x": "Mở Công cụ khách - trao đổi gói .ukx có chữ ký. Kiểm đúng bộ sổ, nhập Số liệu chốt đến ngày và kiểm thông tin trước khi bấm Xuất gói. Dùng Mở thư mục gói để lấy tệp chuyển qua kênh đã thống nhất. Giải thích cho khách số liệu chỉ phản ánh ngày chốt và phạm vi được xuất; gửi gói không làm dữ liệu của khách tự cập nhật liên tục. Với mật khẩu công cụ, thực hiện theo quy trình bàn giao đã thống nhất và không đưa vào video."
+      },
+      {
+        "t": "h3",
+        "x": "Một vòng trao đổi có sáu bước"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Bước",
+          "Ai thực hiện",
+          "Đầu ra cần kiểm"
+        ],
+        "rows": [
+          [
+            "1. Xuất GOI_DI",
+            "Văn phòng",
+            "Đúng doanh nghiệp và ngày chốt."
+          ],
+          [
+            "2. Nhận gói",
+            "Khách",
+            "Công cụ tương thích và đúng gói được bàn giao."
+          ],
+          [
+            "3. Gửi GOI_VE",
+            "Khách",
+            "Phiếu gửi theo công cụ đã được hướng dẫn."
+          ],
+          [
+            "4. Kiểm và nạp",
+            "Văn phòng",
+            "Gói hợp lệ, thông báo phiếu mới rõ ràng."
+          ],
+          [
+            "5. Kiểm nghiệp vụ",
+            "Kế toán",
+            "Phiếu trong danh sách AI được kiểm trước ghi sổ."
+          ],
+          [
+            "6. Phản hồi",
+            "Hai bên",
+            "Lý do trả phiếu được gửi trong gói tiếp theo."
+          ]
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "Nhận phiếu khách gửi về"
+      },
+      {
+        "t": "p",
+        "x": "Bấm Chọn gói và nạp… rồi chọn đúng GOI_VE. Hệ thống có kiểm chữ ký, mã số thuế, số thứ tự và các tệp trong gói. Đọc thông báo và phần tóm tắt; nếu có phiếu mới, xác nhận để đưa vào danh sách AI. Nếu không có phiếu mới hoặc gói không hợp lệ, dừng ở thông báo và đối chiếu với người gửi. Không cố sửa nội dung gói bằng công cụ nén tệp để vượt qua kiểm tra."
+      },
+      {
+        "t": "h2",
+        "x": "Nạp gói chưa phải ghi sổ"
+      },
+      {
+        "t": "p",
+        "x": "Phiếu nhận về được đưa vào danh sách AI để ghép mã và định khoản. Kế toán còn phải kiểm dữ liệu, tài khoản và chứng từ theo chế độ đang dùng. Không thông báo “đã hạch toán” cho khách chỉ vì hộp nạp gói báo thành công. Khi có chế độ tự động ghi ở những chức năng khác, điều kiện và quyền của chế độ đó cần được xác nhận riêng trước vận hành."
+      },
+      {
+        "t": "h2",
+        "x": "Trả lại phiếu và phản hồi"
+      },
+      {
+        "t": "p",
+        "x": "Nếu phiếu cần khách sửa, chọn Trả lại một phiếu…, nhập số phiếu và lý do cụ thể. Nội dung phản hồi được đưa vào gói xuất tiếp theo. Vì vậy cần có một lần xuất/gửi gói mới để khách nhận phản hồi. Ghi “thiếu mã hàng của dòng 2” hoặc “cần làm rõ nội dung thanh toán” giúp khách xử lý tốt hơn câu “phiếu sai”. Sau khi nhận lại, kế toán tiếp tục kiểm trạng thái và chứng từ liên quan."
+      },
+      {
+        "t": "h2",
+        "x": "Hiểu đúng chữ ký của gói"
+      },
+      {
+        "t": "p",
+        "x": "Chữ ký và hàm băm được dùng để kiểm tính toàn vẹn của gói. Gói có chữ ký kiểm tra toàn vẹn; chữ ký không đồng nghĩa mã hóa nội dung, không gọi đây là mã hóa dữ liệu đầu cuối. Ở lần thiết lập đầu, cần xác nhận đúng văn phòng và máy khách theo quy trình hỗ trợ. Chỉ chia sẻ gói qua kênh phù hợp với dữ liệu của doanh nghiệp. Cẩm nang đi kèm có sơ đồ, các nút phía văn phòng và bảng đối chiếu trạng thái; các bước phía khách thực hiện theo hướng dẫn của bộ cài tương thích được bàn giao."
+      },
+      {
+        "t": "download",
+        "href": "/tai-lieu/cam-nang-phoi-hop-dvkt-khach-hang-unesco-xii-ai.pdf",
+        "x": "Mở cẩm nang phối hợp UNESCO XII AI · PDF 16 trang"
+      },
+      {
+        "t": "link",
+        "href": "/tai-lieu/mau-ban-giao-ho-so-unesco-xii.html",
+        "x": "Điền và in mẫu bàn giao hồ sơ tháng"
+      },
+      {
+        "t": "link",
+        "href": "/unesco-xii-ai/dich-vu-ke-toan/",
+        "x": "Về chuyên mục UNESCO XII AI cho dịch vụ kế toán và khách hàng"
+      }
+    ]
+  },
+  {
+    "slug": "doc-bao-cao-chu-doanh-nghiep-unesco-xii-ai",
+    "title": "Báo cáo một trang: khách hàng cần đọc gì và hỏi kế toán điều gì?",
+    "date": "2026-11-18",
+    "description": "Kiểm ngày chốt, đọc kết quả kinh doanh, tiền, công nợ và các giả định trước khi trao đổi báo cáo với kế toán.",
+    "topic": "UNESCO XII AI · Phối hợp khách hàng",
+    "blocks": [
+      {
+        "t": "lead",
+        "x": "Kiểm ngày chốt, đọc kết quả kinh doanh, tiền, công nợ và các giả định trước khi trao đổi báo cáo với kế toán."
+      },
+      {
+        "t": "note",
+        "x": "Dành cho chủ doanh nghiệp, đầu mối khách hàng và kế toán trưởng. Hướng dẫn UNESCO XII AI; tên nút và chức năng áp dụng theo phiên bản và quyền trên bản cài đang dùng."
+      },
+      {
+        "t": "h2",
+        "x": "Báo cáo để bắt đầu cuộc trao đổi"
+      },
+      {
+        "t": "p",
+        "x": "Với chủ doanh nghiệp, bộ sổ nhiều trang khó giúp trả lời nhanh tình hình tháng này. UNESCO XII có nhóm báo cáo quản trị cho chủ doanh nghiệp, gồm báo cáo một trang và các phân tích liên quan. Giá trị nằm ở việc giúp hai bên nói cùng một kỳ, cùng một nguồn số liệu và cùng một danh sách vấn đề cần giải quyết. Báo cáo ngắn vẫn cần được kế toán kiểm trước khi gửi."
+      },
+      {
+        "t": "h2",
+        "x": "Kiểm ngày và phạm vi trước con số"
+      },
+      {
+        "t": "p",
+        "x": "Đọc doanh nghiệp, kỳ báo cáo, ngày dữ liệu được chốt và phần chưa xử lý hết. Nếu hồ sơ mới được gửi sau ngày chốt, hỏi khi nào sẽ có bản cập nhật. Không so trực tiếp báo cáo cả quý với báo cáo một tháng, hoặc coi dữ liệu gói khách đã nhận tuần trước là số liệu mới nhất. Khi nhận bản thay thế, lưu dấu phiên bản để tránh hai người trao đổi trên hai bản khác nhau."
+      },
+      {
+        "t": "h3",
+        "x": "Năm câu hỏi khi nhận báo cáo"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Cần đọc",
+          "Câu hỏi nên trao đổi"
+        ],
+        "rows": [
+          [
+            "Kỳ và ngày chốt",
+            "Bản này đến ngày nào, có hồ sơ nào chưa xử lý?"
+          ],
+          [
+            "Doanh thu và tiền",
+            "Khoản nào đã ghi nhận nhưng chưa thu tiền?"
+          ],
+          [
+            "Công nợ",
+            "Đối tượng nào cần đối chiếu hoặc làm rõ chứng từ?"
+          ],
+          [
+            "Tồn kho",
+            "Dữ liệu nhập, xuất và kiểm kê đã đủ chưa?"
+          ],
+          [
+            "Dự báo",
+            "Giả định thu, chi nào đang được dùng?"
+          ]
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "Phân biệt kết quả kinh doanh với tiền"
+      },
+      {
+        "t": "p",
+        "x": "Doanh thu và lợi nhuận không đồng nghĩa tiền đã thu vào tài khoản. Một doanh nghiệp có thể có doanh thu nhưng khách chưa thanh toán; có thể đã trả tiền trước khi chi phí được phản ánh hết theo kỳ. Hãy hỏi kế toán các khoản phải thu, phải trả đáng chú ý và những khoản tiền cần chuẩn bị. Bài viết này hướng dẫn cách đọc và đặt câu hỏi, không đưa quyết định tài chính thay cho doanh nghiệp."
+      },
+      {
+        "t": "h2",
+        "x": "Đọc công nợ và tồn kho cùng người phụ trách"
+      },
+      {
+        "t": "p",
+        "x": "Với công nợ, xác định đối tượng, thời điểm đối chiếu và chứng từ còn cần làm rõ. Với tồn kho, hỏi xem dữ liệu nhập/xuất và kiểm kê đã đủ chưa; hàng chậm luân chuyển hay giá vốn thiếu cần được kiểm lại. Nếu báo cáo có phân tích lãi theo mặt hàng hoặc khách, xem cơ sở chi phí phân bổ trước khi dùng để đánh giá một khách hay một sản phẩm."
+      },
+      {
+        "t": "h2",
+        "x": "Dự báo là một kịch bản"
+      },
+      {
+        "t": "p",
+        "x": "Nhóm báo cáo quản trị có dự báo dòng tiền và các phân tích ước tính. Kế toán cần nêu giả định thu, chi, ngày chốt và dữ liệu chưa có. Khách có thể bổ sung lịch thu tiền hoặc kế hoạch chi để hai bên xem lại. Một con số dự báo không phải cam kết chắc chắn sẽ xảy ra; không dùng bản dự báo để thay chứng từ hoặc số đã ghi trong sổ."
+      },
+      {
+        "t": "h2",
+        "x": "Kết thúc bằng ba việc cụ thể"
+      },
+      {
+        "t": "p",
+        "x": "Sau cuộc trao đổi, ghi ba nhóm việc: khách cần bổ sung hồ sơ gì; kế toán cần đối chiếu hoặc cập nhật gì; chủ doanh nghiệp cần xem xét quyết định nào với thông tin đã có. Mỗi việc có người phụ trách và ngày hẹn. Kế toán tạo báo cáo từ màn Quản trị, mở tệp kết quả hoặc HTML, kiểm rồi gửi qua kênh hai bên thống nhất. Không coi nút mở báo cáo là đã tự gửi hoặc khách đã đọc."
+      },
+      {
+        "t": "download",
+        "href": "/tai-lieu/cam-nang-phoi-hop-dvkt-khach-hang-unesco-xii-ai.pdf",
+        "x": "Mở cẩm nang phối hợp UNESCO XII AI · PDF 16 trang"
+      },
+      {
+        "t": "link",
+        "href": "/tai-lieu/mau-ban-giao-ho-so-unesco-xii.html",
+        "x": "Điền và in mẫu bàn giao hồ sơ tháng"
+      },
+      {
+        "t": "link",
+        "href": "/unesco-xii-ai/dich-vu-ke-toan/",
+        "x": "Về chuyên mục UNESCO XII AI cho dịch vụ kế toán và khách hàng"
+      }
+    ]
+  }
+]

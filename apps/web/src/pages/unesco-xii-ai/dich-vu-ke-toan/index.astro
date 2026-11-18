@@ -1,0 +1,84 @@
+---
+import ContentLayout from '../../../layouts/ContentLayout.astro';
+import VideoCard from '../../../components/VideoCard.astro';
+import { url } from '../../../utils/url';
+import { videoBySlug } from '../../../data/videos';
+import { xiiRoles, xiiLessons, xiiVideoSlugs, xiiFeatures, xiiGuide, xiiHandover } from '../../../data/xii-series';
+const videos = xiiVideoSlugs.map((slug) => videoBySlug(slug)!);
+---
+<ContentLayout title="UNESCO XII AI cho dịch vụ kế toán và khách hàng" display="PHỐI HỢP RÕ RÀNG. |LÀM SỔ CÓ KIỂM SOÁT." subtitle="UNESCO XII AI × ERP UNESCO" description="Chuyên mục UNESCO XII AI: 10 bài theo vai trò, tính năng hỗ trợ dịch vụ kế toán, 3 video minh họa, cẩm nang PDF và mẫu bàn giao hồ sơ cho khách hàng." eyebrow="Chuyên mục · Dịch vụ kế toán & khách hàng" pills={['10 bài hướng dẫn', '3 video minh họa', 'Cẩm nang PDF 16 trang']}>
+  <section class="section-sm"><div class="container">
+    <nav class="actions" aria-label="Nội dung chuyên mục"><a class="btn btn-primary" href="#bai-viet">Chọn bài theo công việc</a><a class="btn btn-secondary" href="#tinh-nang">Tính năng nổi bật</a><a class="btn btn-secondary" href="#video">Video</a><a class="btn btn-secondary" href="#tai-lieu">Tài liệu & biểu mẫu</a></nav>
+  </div></section>
+  <section class="section"><div class="container">
+    <div class="section-head"><div><span class="eyebrow">Bắt đầu từ vai trò của bạn</span><h2>Từ hồ sơ khách gửi đến kết quả được kiểm</h2></div><p>ERP UNESCO điều hành công ty dịch vụ kế toán. UNESCO XII AI xử lý bộ sổ từng khách. Khách hàng phối hợp hồ sơ và nhận kết quả theo quy trình hai bên thống nhất.</p></div>
+    <div class="grid grid-3 role-paths">
+      <a class="card" href="#bai-viet" data-role-shortcut="manager"><span class="role-label">CHỦ DỊCH VỤ / QUẢN LÝ</span><h3>Nắm tiến độ và người phụ trách</h3><p>Chuẩn bị kết nối → giao việc → ma trận tháng → kiểm tra kỳ.</p><strong class="link-arrow">Xem lộ trình quản lý</strong></a>
+      <a class="card" href="#bai-viet" data-role-shortcut="accountant"><span class="role-label">KẾ TOÁN PHỤ TRÁCH</span><h3>Nhận hồ sơ và xử lý phần còn vướng</h3><p>Tiếp nhận → soát thiếu → xử lý ngoại lệ → kiểm kết quả.</p><strong class="link-arrow">Xem lộ trình kế toán</strong></a>
+      <a class="card" href="#bai-viet" data-role-shortcut="customer"><span class="role-label">KHÁCH HÀNG DỊCH VỤ</span><h3>Biết cần gửi gì và nhận gì</h3><p>Chuẩn bị hồ sơ → phản hồi bổ sung → trao đổi dữ liệu → đọc báo cáo.</p><strong class="link-arrow">Xem lộ trình khách hàng</strong></a>
+    </div>
+  </div></section>
+  <section class="section surface-soft" id="tinh-nang"><div class="container">
+    <div class="section-head"><div><span class="eyebrow">Tính năng và cách ứng dụng</span><h2>Sáu việc hỗ trợ phối hợp mỗi tháng</h2></div><p>Mỗi mục đi thẳng đến bài giải thích cách dùng và kết quả cần kiểm. Chức năng phụ thuộc phiên bản, cấu hình kết nối và quyền được cấp.</p></div>
+    <div class="grid grid-3">{xiiFeatures.map((f) => <a class="card" href={url(`/kien-thuc/${f.lesson}/`)}><p class="feature-product">{f.product}</p><h3>{f.title}</h3><p>{f.text}</p><strong class="link-arrow">Xem cách ứng dụng</strong></a>)}</div>
+  </div></section>
+  <section class="section" id="bai-viet"><div class="container" data-xii-library>
+    <div class="section-head"><div><span class="eyebrow">Đọc và thực hành</span><h2>10 bài theo công việc</h2></div><p>Chọn vai trò hoặc tìm nội dung đang cần. Thời gian đọc là ước tính.</p></div>
+    <div class="library-filters" hidden data-library-controls>
+      <fieldset><legend>Bạn đang phụ trách phần nào?</legend><div class="role-options">{xiiRoles.map((role) => <button type="button" class="role-filter" data-role={role.id} aria-pressed={role.id === 'all' ? 'true' : 'false'}>{role.label}</button>)}</div></fieldset>
+      <label class="search-label" for="xii-search">Tìm bài viết<input id="xii-search" type="search" placeholder="Ví dụ: hồ sơ, gói khách, khóa kỳ" autocomplete="off" /></label>
+      <button type="button" class="reset-filter" data-clear-filter>Xóa bộ lọc</button>
+    </div>
+    <p class="caption" role="status" aria-live="polite" data-result-count>Hiển thị {xiiLessons.length} bài viết.</p>
+    <div class="grid grid-3 lesson-grid">{xiiLessons.map(({article: a, roles, stage, minutes, number}) => <article class="card lesson-card" data-lesson data-roles={roles.join(' ')} data-search={`${a.title} ${a.description} ${stage}`}>
+      <div class="lesson-meta"><span>{String(number).padStart(2, '0')} / {stage}</span><span>~{minutes} phút</span></div><h3><a href={url(`/kien-thuc/${a.slug}/`)}>{a.title}</a></h3><p>{a.description}</p><p class="caption">{roles.map((id) => xiiRoles.find((r) => r.id === id)!.label).join(' · ')}</p><a class="link-arrow" href={url(`/kien-thuc/${a.slug}/`)}>Đọc bài hướng dẫn</a>
+    </article>)}</div>
+    <p class="notice" data-empty-results hidden>Chưa có bài phù hợp. Hãy thử từ khóa ngắn hơn hoặc chọn “Tất cả”.</p>
+  </div></section>
+  <section class="section surface-soft" id="video"><div class="container">
+    <div class="section-head"><div><span class="eyebrow">Xem quy trình</span><h2>3 video có lời đọc và phụ đề</h2></div><p>Video dùng sơ đồ minh họa để giải thích kết nối, giao việc và kiểm tra. Có mốc nội dung và bản lời đọc; chưa phải video quay thao tác trực tiếp trên bản cài.</p></div>
+    <div class="video-grid">{videos.map((video) => <VideoCard video={video} />)}</div>
+  </div></section>
+  <section class="section" id="tai-lieu"><div class="container">
+    <div class="section-head"><div><span class="eyebrow">Dùng ngay trong buổi bàn giao</span><h2>Cẩm nang và mẫu hồ sơ UNESCO XII AI</h2></div><p>Tài liệu riêng cho XII AI, cập nhật 18/11/2026. Cẩm nang dùng sơ đồ minh họa, có chỉ dẫn trang theo vai trò.</p></div>
+    <div class="grid grid-2 resource-grid">
+      <div class="card"><span class="resource-format">PDF · 16 TRANG · 125 KB</span><h3>Cẩm nang phối hợp dịch vụ kế toán và khách hàng</h3><p>Bốn nhóm hồ sơ, soát thiếu, gói .ukx, trao đổi báo cáo và bảng kiểm trước khi bàn giao.</p><div class="actions"><a class="btn btn-primary" href={url(xiiGuide)} target="_blank" rel="noopener">Mở cẩm nang PDF</a><a class="btn btn-secondary" href={url(xiiGuide)} download>Tải về</a></div></div>
+      <div class="card"><span class="resource-format">MẪU CÓ THỂ ĐIỀN VÀ IN</span><h3>Bàn giao hồ sơ tháng</h3><p>Ghi rõ đã nhận gì, còn thiếu gì, ai bổ sung và ngày hẹn. Điền trên trình duyệt rồi in hoặc lưu PDF.</p><div class="actions"><a class="btn btn-primary" href={url(xiiHandover)} target="_blank" rel="noopener">Mở mẫu bàn giao</a><a class="btn btn-secondary" href={url(xiiHandover)} download>Tải mẫu HTML</a></div></div>
+    </div>
+    <p class="caption" style="margin-top:20px">Đang sử dụng UNESCO XI + AI? <a href={url('/huong-dan/#truc-quan')}>Mở bộ hướng dẫn đúng sản phẩm</a>.</p>
+  </div></section>
+  <section class="section surface-soft"><div class="container"><div class="quote-band"><div><h2>Xem luồng phù hợp với đơn vị của bạn</h2><p>Chuẩn bị số khách hàng, phiên bản đang dùng và một kỳ dữ liệu mẫu để trao đổi.</p></div><div class="actions"><a class="btn btn-primary" href={url('/san-pham/erp-unesco/#dang-ky')}>Đăng ký demo</a><a class="btn btn-secondary" href={url('/ket-noi-erp-unesco-xii/')}>Chi tiết kết nối ERP</a></div></div></div></section>
+</ContentLayout>
+<script>
+const library = document.querySelector<HTMLElement>('[data-xii-library]');
+if (library) {
+  const controls = library.querySelector<HTMLElement>('[data-library-controls]')!;
+  const input = library.querySelector<HTMLInputElement>('#xii-search')!;
+  const buttons = [...library.querySelectorAll<HTMLButtonElement>('[data-role]')];
+  const cards = [...library.querySelectorAll<HTMLElement>('[data-lesson]')];
+  const count = library.querySelector<HTMLElement>('[data-result-count]')!;
+  const empty = library.querySelector<HTMLElement>('[data-empty-results]')!;
+  let role = 'all';
+  const normalize = (text: string) => text.toLocaleLowerCase('vi').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd');
+  function filter() {
+    const words = normalize(input.value.trim()).split(/\s+/).filter(Boolean);
+    let visible = 0;
+    for (const card of cards) {
+      const matches = (role === 'all' || card.dataset.roles!.split(' ').includes(role)) && words.every((word) => normalize(card.dataset.search!).includes(word));
+      card.hidden = !matches;
+      if (matches) visible++;
+    }
+    buttons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.role === role)));
+    count.textContent = `Hiển thị ${visible} / ${cards.length} bài viết.`;
+    empty.hidden = visible !== 0;
+  }
+  controls.hidden = false;
+  buttons.forEach((button) => button.addEventListener('click', () => { role = button.dataset.role!; filter(); }));
+  input.addEventListener('input', filter);
+  library.querySelector('[data-clear-filter]')!.addEventListener('click', () => { role = 'all'; input.value = ''; filter(); input.focus(); });
+  document.querySelectorAll<HTMLAnchorElement>('[data-role-shortcut]').forEach((link) => link.addEventListener('click', () => { role = link.dataset.roleShortcut!; input.value = ''; filter(); }));
+}
+</script>
+<style>
+.role-label,.feature-product,.resource-format{font-size:.76rem;font-weight:800;letter-spacing:.035em;color:#157a39}.role-paths .card{border-top:4px solid #1e9b4b}.role-paths .card:nth-child(3){border-top-color:#1679a8}.role-paths .link-arrow{display:block;margin-top:20px}.library-filters{padding:24px;border:1px solid #cfe4d9;border-radius:14px;background:#f2f8f5;display:flex;align-items:flex-end;gap:18px;flex-wrap:wrap}.library-filters[hidden],.lesson-card[hidden],[data-empty-results][hidden]{display:none}.library-filters fieldset{padding:0;margin:0;border:0;flex:1 1 100%}.library-filters legend{font-weight:700;margin-bottom:10px}.role-options{display:flex;gap:8px;flex-wrap:wrap}.role-filter{padding:10px 16px;border:1px solid #9bb5a8;border-radius:24px;color:#183d2d;background:white;font:inherit;font-size:.9rem;cursor:pointer}.role-filter[aria-pressed=true]{background:#157a39;color:white;border-color:#157a39}.search-label{display:grid;gap:6px;font-weight:700;flex:1 1 320px}.search-label input{font:inherit;font-weight:400;min-width:0;width:100%;padding:12px;border:1px solid #91ada0;border-radius:8px;background:white}.reset-filter{font:inherit;padding:12px 16px;border-radius:8px;border:1px solid #91ada0;background:white;cursor:pointer;color:#183d2d}.lesson-card{display:flex;flex-direction:column}.lesson-card h3 a{color:inherit;text-decoration:none}.lesson-card h3 a:hover{text-decoration:underline}.lesson-card>.link-arrow{margin-top:auto}.lesson-meta{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.75rem;color:#426354;font-weight:700;margin-bottom:16px}.resource-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.resource-format{display:block;margin-bottom:18px}.role-filter:focus-visible,.reset-filter:focus-visible,input:focus-visible{outline:3px solid #1679a8;outline-offset:3px}@media(max-width:700px){.resource-grid{grid-template-columns:1fr}.library-filters{padding:18px}.search-label{flex-basis:100%}.role-filter{padding:10px 12px}}
+</style>
