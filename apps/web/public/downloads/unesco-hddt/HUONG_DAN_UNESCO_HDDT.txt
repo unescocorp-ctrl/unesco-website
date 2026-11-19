@@ -1,0 +1,44 @@
+﻿UNESCO HĐĐT ĐỘC LẬP 0.1.2 — MIỄN PHÍ
+Ngày phát hành trên website: 20/11/2026
+Website: https://www.unescosoft.com/san-pham/unesco-hddt/
+
+BẮT ĐẦU
+1. Giải nén toàn bộ ZIP vào một thư mục có quyền ghi.
+2. Mở UNESCO_HDDT_DocLap.exe; giữ nguyên thư mục _internal bên cạnh.
+   Bản hiện tại đã kiểm tra trên Windows 11 64-bit. Không cần cài Python.
+3. Nhập MST và mật khẩu trong ứng dụng. Bấm Lấy CAPTCHA, tự nhập mã, rồi Đăng nhập.
+4. Chọn kỳ, chiều mua/bán và loại hóa đơn, bấm Đồng bộ danh sách.
+5. Chọn thư mục lưu, chọn PDF nếu cần, rồi Tải / tiếp tục phần thiếu.
+6. Dùng Xuất XML cho UNESCO để tạo ZIP; giải nén và dùng chức năng Nhập XML
+   sẵn có trong UNESCO XII. Đối chiếu số lượng, MST và số tiền trước khi ghi sổ.
+
+TÌM VÀ TIẾP TỤC
+- Tìm theo số HĐ, ký hiệu, MST hoặc tên đối tác; có thể gõ không dấu.
+- Có chọn dòng: tải/xuất các dòng đó. Không chọn: xử lý toàn bộ bảng đang hiển thị.
+- Xóa tìm kiếm và chọn Tất cả tệp nếu muốn xem lại toàn bộ danh sách trong kỳ.
+- Nhấp đúp một dòng để xem chi tiết. Màn hình nhỏ có thanh cuộn ở hai vùng thao tác.
+- Tạm dừng giữ phần đã tải. Lần mở sau đăng nhập lại, chọn cùng kỳ, đọc danh sách
+  đã lưu hoặc đồng bộ lại, rồi tải tiếp. Tệp hợp lệ được bỏ qua.
+- Ứng dụng nhớ thư mục, kỳ và bộ lọc; không lưu tài khoản/mật khẩu/phiên đăng nhập.
+- Khi nâng cấp: đóng bản cũ, giải nén bản mới vào thư mục riêng. Không xóa XML/PDF
+  đã tải hoặc dữ liệu tiến độ trong %LOCALAPPDATA%\UNESCO\UNESCO HDDT Doc Lap.
+
+PHẠM VI BẢN THỬ NGHIỆM
+- Miễn phí tải và sử dụng bản hiện tại. Không cần mua UNESCO XII để dùng công cụ tải.
+- Cần Internet và tài khoản cổng thuế hợp lệ. Website không có biểu mẫu nhận mật khẩu thuế.
+- Bản này có 62 kiểm thử tự động với dữ liệu tổng hợp; EXE đã kiểm tra mở/đóng trên Windows.
+- Chưa nghiệm thu đăng nhập/tải XML, PDF bằng tài khoản thuế thật hoặc nhập vào bộ sổ thật.
+  Hãy thử kỳ nhỏ và đối chiếu kết quả trước khi dùng chính thức.
+- Nếu cổng từ chối kết nối (ví dụ HTTP 403), ứng dụng báo lỗi và dừng; không mở trình duyệt.
+- PDF chỉ tải khi cổng cung cấp. XML được kiểm tra cấu trúc, nhận diện và hash;
+  đây không phải xác minh chữ ký số. Công cụ không tự ghi sổ kế toán.
+- EXE hiện chưa có chữ ký số nhà phát hành. Có tệp SHA-256 trên website để đối chiếu gói tải.
+- Cơ chế kết nối có thể cần cập nhật khi cổng thuế thay đổi. Windows khác và hiệu năng
+  trên lô dữ liệu lớn chưa được xác nhận.
+
+HỖ TRỢ UNESCO
+Công ty TNHH Phần mềm UNESCO
+Website: https://www.unescosoft.com
+Email: unesco.corp@gmail.com
+Điện thoại: 028 3755 5755 | 093 3456 567
+Khi báo lỗi, gửi mã lỗi và phiên bản; không gửi mật khẩu, CAPTCHA hoặc phiên đăng nhập.

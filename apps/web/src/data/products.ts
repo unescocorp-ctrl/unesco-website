@@ -7,6 +7,7 @@
  * Giá theo bảng giá ngày 17/11/2026. MST = mã số thuế (mỗi công ty / bộ sổ một MST).
  */
 import { productScreens } from './product-screens';
+import { hddtRelease } from './hddt';
 export type FamilyId = 'ke-toan' | 'dich-vu-ke-toan' | 'ban-hang' | 'chuyen-nganh';
 
 export const families: { id: FamilyId; label: string; color: string; dark: string; soft: string; icon: string }[] = [
@@ -33,6 +34,7 @@ export type Product = {
   featured?: boolean;
   /** Trang giới thiệu riêng (để trống nếu chưa có trang). */
   href?: string;
+  download?: string;
   demo?: string;
   comingSoon?: boolean;
   /** Có full thì bấm xem ảnh lớn; video vẫn có nút riêng. Các ảnh khác giữ hành vi video/demo/trang sản phẩm. */
@@ -67,6 +69,15 @@ export const products: Product[] = [
     price: '4.500.000 đ', unit: '/ MST', priceNote: 'Trả phí 1 lần · không phí hàng năm', serviceNote: SERVICE_DISCOUNT,
     href: '/san-pham/unesco-xi/',
     media: { img: productScreens.xi.thumb, full: productScreens.xi.src, alt: productScreens.xi.alt, width: productScreens.xi.width, height: productScreens.xi.height },
+  },
+  {
+    id: 'unesco-hddt', name: 'UNESCO HĐĐT', family: 'ke-toan', badge: 'Miễn phí',
+    short: 'Tải XML/PDF về máy · bản Windows độc lập',
+    tagline: 'Tải, lưu và tìm hóa đơn trong ứng dụng Windows riêng; tiếp tục phần thiếu và xuất XML cho UNESCO XII.',
+    points: ['Đăng nhập và nhập CAPTCHA trong ứng dụng', 'Tìm không dấu, lọc tệp còn thiếu', 'Bản thử nghiệm; cần đối chiếu với dữ liệu thực tế'],
+    price: hddtRelease.priceLabel, priceNote: `0 đ · bản thử nghiệm ${hddtRelease.version} · Windows 11 64-bit`,
+    href: hddtRelease.pagePath, download: hddtRelease.downloadPath,
+    media: { img: hddtRelease.imagePath, alt: 'Giao diện UNESCO HĐĐT với dữ liệu hóa đơn minh họa' },
   },
   {
     id: 'erp-unesco', name: 'ERP_UNESCO', family: 'dich-vu-ke-toan', badge: 'Tặng kèm UNESCO XII AI',

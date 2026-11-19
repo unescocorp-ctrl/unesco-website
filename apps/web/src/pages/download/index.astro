@@ -4,6 +4,7 @@ import ContentLayout from '../../layouts/ContentLayout.astro';
 import { currentRelease as r } from '../../data/releases';
 import { contact, telHref, zaloHref } from '../../data/contact';
 import Icon from '../../components/Icon.astro';
+import HddtDownloadCard from '../../components/HddtDownloadCard.astro';
 const steps = [
   ['Nhận bộ cài', 'Nhận bộ cài qua điện thoại hoặc Zalo, kèm thông tin bản quyền và hướng dẫn cài đặt.', ''],
   ['Cài bộ phông chữ', 'Cài bộ phông chữ .Vn đi kèm để màn hình và báo cáo hiển thị đúng tiếng Việt.', ''],
@@ -13,7 +14,8 @@ const steps = [
   ['Báo cáo & tờ khai', 'Kiểm tra khoá sổ, lập báo cáo tài chính, xuất XML 01/GTGT, BCTC sang HTKK.', '/video/#bao-cao-thue'],
 ];
 ---
-<ContentLayout title="Trung tâm tải về – Phần mềm UNESCO AI" description="Nhận bộ cài phần mềm kế toán UNESCO AI qua điện thoại hoặc Zalo; yêu cầu hệ thống, lịch sử thay đổi và các bước bắt đầu sử dụng." eyebrow="Tải về" display="TRUNG TÂM |TẢI VỀ" subtitle="Nhận bộ cài qua điện thoại hoặc Zalo">
+<ContentLayout title="Trung tâm tải về – Phần mềm UNESCO AI" description="Tải miễn phí UNESCO HĐĐT cho Windows. Nhận bộ cài phần mềm kế toán UNESCO AI qua điện thoại hoặc Zalo; xem hướng dẫn và yêu cầu hệ thống." eyebrow="Tải về" display="TRUNG TÂM |TẢI VỀ" subtitle="Tải tiện ích miễn phí · Nhận bộ cài kế toán qua điện thoại hoặc Zalo">
+<section class="section"><div class="container"><HddtDownloadCard /></div></section>
 <section class="section"><div class="container">
   <div class="dl">
     <div class="dl-side"><div><span class="ic ring g"><Icon name="monitor" /></span>Phiên bản</div><div><span class="ic ring b"><Icon name="phone" /></span>Nhận bộ cài qua điện thoại / Zalo</div><div><span class="ic ring y"><Icon name="file-text" /></span>Lịch sử thay đổi</div></div>
@@ -25,7 +27,7 @@ const steps = [
       <div class="actions" style="margin-top:18px"><a class="btn btn-primary btn-lg" href={telHref(contact.sales.mobile)}><Icon name="phone" />Gọi {contact.sales.mobile}</a><a class="btn btn-secondary btn-lg" href={zaloHref} target="_blank" rel="noopener"><Icon name="chat" />Nhắn Zalo</a><a class="btn btn-secondary btn-lg" href={url('/release-notes/')}><Icon name="file-text" />Xem thay đổi</a></div>
     </div></div>
   </div>
-  <div class="callout b" style="margin-top:26px"><span class="ic"><Icon name="monitor-check" /></span><div><h3>Nhận bộ cài qua điện thoại hoặc Zalo</h3><p>Website không đăng bộ cài. Gọi hoặc nhắn Zalo bộ phận kinh doanh để nhận bộ cài chính thức, kèm hướng dẫn cài đặt và mã kích hoạt; xem lịch sử thay đổi trước khi nâng cấp.</p><p style="margin-top:8px;color:var(--red);font-family:var(--font-h);font-weight:700;display:flex;gap:8px;align-items:center"><Icon name="alert" size={20} />Không cài bộ cài từ nguồn khác – chỉ cài bộ cài do UNESCO gửi.</p></div></div>
+  <div class="callout b" style="margin-top:26px"><span class="ic"><Icon name="monitor-check" /></span><div><h3>Nhận bộ cài qua điện thoại hoặc Zalo</h3><p>Bộ cài phần mềm kế toán UNESCO AI được cung cấp qua bộ phận kinh doanh. Tiện ích UNESCO HĐĐT độc lập có thể tải miễn phí ở trên. Gọi hoặc nhắn Zalo bộ phận kinh doanh để nhận bộ cài chính thức, kèm hướng dẫn cài đặt và mã kích hoạt; xem lịch sử thay đổi trước khi nâng cấp.</p><p style="margin-top:8px;color:var(--red);font-family:var(--font-h);font-weight:700;display:flex;gap:8px;align-items:center"><Icon name="alert" size={20} />Không cài bộ cài từ nguồn khác – chỉ cài bộ cài do UNESCO gửi.</p></div></div>
   <div class="grid grid-2" style="margin-top:26px">
     <a class="card" href={telHref(contact.sales.mobile)}><span class="ic g" style="margin-bottom:12px"><Icon name="phone" /></span><h3>Điện thoại</h3><p class="muted" style="margin:0">{contact.sales.mobile}</p></a>
     <a class="card" href={zaloHref} target="_blank" rel="noopener"><span class="ic b" style="margin-bottom:12px"><Icon name="chat" /></span><h3>Zalo</h3><p class="muted" style="margin:0">{contact.zalo}</p></a>
@@ -43,6 +45,6 @@ const steps = [
 
 <section class="section"><div class="container"><div class="section-head"><div><span class="eyebrow">Bắt đầu sử dụng</span><h2>6 bước từ cài đặt đến báo cáo đầu tiên</h2></div><p>Các bước có video hướng dẫn được gắn liên kết bên dưới.</p></div>
   <ol class="steps5 steps3">{steps.map((s) => <li><b>{s[0]}</b><small>{s[1]}</small>{s[2] && <small><a href={url(s[2])} style="color:var(--green);font-weight:700">Xem video →</a></small>}</li>)}</ol>
-  <div class="notice" style="margin-top:24px"><strong>Bộ cài không đăng trên website:</strong> nhận bộ cài qua điện thoại hoặc Zalo để được gửi đúng bản và hướng dẫn cài đặt.</div>
+  <div class="notice" style="margin-top:24px"><strong>Với bộ cài phần mềm kế toán UNESCO AI:</strong> nhận bộ cài qua điện thoại hoặc Zalo để được gửi đúng bản và hướng dẫn cài đặt.</div>
 </div></section>
 </ContentLayout>

@@ -11,6 +11,7 @@ export const mainNav: NavGroup[] = [
   {
     label: 'Sản phẩm', href: '/san-pham/', mega: true, items: [
       { label: 'Tất cả sản phẩm', href: '/san-pham/', icon: 'layers' },
+      { label: 'UNESCO HĐĐT · Miễn phí', href: '/san-pham/unesco-hddt/', icon: 'download' },
       { label: 'Tính năng ưu việt', href: '/tinh-nang-uu-viet/', icon: 'star' },
       { label: 'AI Hóa đơn', href: '/ai-ke-toan/ai-hoa-don/', icon: 'receipt' },
       { label: 'AI Sổ phụ', href: '/ai-ke-toan/ai-so-phu-ngan-hang/', icon: 'bank' },
@@ -37,6 +38,7 @@ export const mainNav: NavGroup[] = [
   {
     label: 'Tài nguyên', href: '/huong-dan/', items: [
       { label: 'Trung tâm tải về', href: '/download/', icon: 'download' },
+      { label: 'UNESCO HĐĐT · Tải miễn phí', href: '/san-pham/unesco-hddt/', icon: 'file-xml' },
       { label: 'Hướng dẫn / Kiến thức / Video', href: '/huong-dan/', icon: 'book-open' },
       { label: 'UNESCO XII · Hướng dẫn bằng ảnh thật', href: '/unesco-xii-ai/huong-dan/', icon: 'book-open' },
       { label: 'ERP UNESCO kết nối UNESCO XII', href: '/ket-noi-erp-unesco-xii/', icon: 'layers' },

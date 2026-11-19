@@ -8,7 +8,7 @@ export const currentRelease: Release = {
   releaseDate: 'Nhận bộ cài qua điện thoại hoặc Zalo',
   architecture: 'Phần mềm 32-bit, chạy được trên Windows 64-bit',
   os: 'Windows 10/11',
-  // Không đăng bộ cài lên website (quyết định 10/10/2026): không điền dung lượng, mã kiểm tra hay liên kết tải.
+  // Không đăng bộ cài kế toán UNESCO AI lên website (quyết định 10/10/2026): không điền dung lượng, mã kiểm tra hay liên kết tải.
   // Trang Tải về chỉ ghi "Nhận bộ cài qua điện thoại hoặc Zalo".
   size: '',
   sha256: '',
@@ -20,6 +20,6 @@ export const currentRelease: Release = {
     '65 tính năng AI trong 11 nhóm (báo cáo cho chủ doanh nghiệp, giá thành 7 bước, thuế TNCN, nhập toàn bộ HTKK theo MST…).',
     'Nền tảng kế toán UNESCO XI: 9 phân hệ, sổ sách – báo cáo theo Thông tư 133/2016/TT-BTC hoặc Thông tư 99/2025/TT-BTC (chọn theo bộ sổ), bộ cài kèm sổ mẫu năm 2026.',
     'Khoá AI 3 chế độ: đã kích hoạt / dùng thử / chỉ xem; phần kế toán dùng bình thường khi chưa kích hoạt.',
-    'Nhận bộ cài qua điện thoại hoặc Zalo; bộ cài không đăng trên website.'
+    'Nhận bộ cài qua điện thoại hoặc Zalo; bộ cài kế toán UNESCO AI không đăng trên website. Tiện ích UNESCO HĐĐT độc lập có mục tải miễn phí riêng.'
   ]
 };

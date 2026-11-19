@@ -1,0 +1,11 @@
+---
+import { url } from '../utils/url';
+import { hddtRelease as r } from '../data/hddt';
+---
+<aside class="hddt-promo" aria-label="UNESCO HĐĐT miễn phí">
+  <div><span class="hddt-label">TIỆN ÍCH MỚI · BẢN THỬ NGHIỆM</span><h2>UNESCO HĐĐT <span>Miễn phí</span></h2><p>Tải hóa đơn XML/PDF về máy, tìm nhanh và tiếp tục phần còn thiếu. Bản Windows độc lập {r.version}.</p></div>
+  <div class="hddt-promo-actions"><a class="btn" href={url(r.pagePath)}>Xem và tải miễn phí</a><small>0 đ · Windows 11 64-bit</small></div>
+</aside>
+<style>
+.hddt-promo{display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:2rem;border:1px solid #178d93;border-radius:20px;background:linear-gradient(115deg,#063c3e,#061a46 65%,#09245d);color:#e7f5ff}.hddt-label{color:#8df0ba;font-size:.8rem;font-weight:700;letter-spacing:.08em}.hddt-promo h2{color:#fff;font-size:1.8rem;margin:.5rem 0}.hddt-promo h2 span{display:inline-block;color:#83f4ad;font-size:1.1rem;margin-left:.65rem}.hddt-promo p{color:#bed7e7;margin:0;max-width:44rem}.hddt-promo-actions{flex:none;text-align:center}.hddt-promo .btn{background:#9cf2bd;color:#07332d;border-color:#9cf2bd;font-weight:800}.hddt-promo .btn:hover{background:#c0ffda}.hddt-promo small{display:block;margin-top:.6rem;color:#c2d9e7;font-size:.875rem}@media(max-width:700px){.hddt-promo{align-items:flex-start;flex-direction:column;padding:1.5rem;gap:1rem}.hddt-promo-actions{text-align:left}}
+</style>

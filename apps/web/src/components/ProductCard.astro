@@ -5,7 +5,7 @@ import { familyOf, type Product } from '../data/products';
 interface Props { p: Product; showService?: boolean }
 const { p, showService = false } = Astro.props;
 const f = familyOf(p.family);
-const cta = p.href ? { t: 'Xem chi tiết', h: p.href } : { t: p.comingSoon ? 'Đăng ký nhận tin' : 'Liên hệ mua', h: '/lien-he/#demo' };
+const cta = p.download ? { t: 'Tải miễn phí', h: p.download } : p.href ? { t: 'Xem chi tiết', h: p.href } : { t: p.comingSoon ? 'Đăng ký nhận tin' : 'Liên hệ mua', h: '/lien-he/#demo' };
 ---
 <article class={`pd-card${p.featured ? ' is-feat' : ''}`} id={p.id} data-family={p.family} style={`--pc:${f.color};--pd:${f.dark};--ps:${f.soft}`}>
   {p.media?.full ? (
@@ -38,10 +38,11 @@ const cta = p.href ? { t: 'Xem chi tiết', h: p.href } : { t: p.comingSoon ? '�
     {showService && p.serviceNote && <small><b style="font-size:.85rem;color:var(--ink)">Dịch vụ kế toán:</b> {p.serviceNote}</small>}
   </div>
   <div class="actions">
-    <a class="btn btn-primary" href={url(cta.h)}>{cta.t}</a>
+    <a class="btn btn-primary" href={url(cta.h)} download={p.download ? true : undefined}>{cta.t}</a>
+    {p.download && p.href && <a class="btn btn-secondary" href={url(p.href)}>Hướng dẫn &amp; chi tiết</a>}
     {p.demo && <a class="btn btn-secondary" href={url(p.demo)} target="_blank" rel="noopener">Xem demo</a>}
     {!p.demo && p.media?.video && <button type="button" class="btn btn-secondary" data-video={url(p.media.video)} data-title={p.name}>Xem video</button>}
-    {p.href && !p.demo && !p.media?.video && <a class="btn btn-secondary" href={url('/lien-he/#demo')}>Liên hệ</a>}
+    {p.href && !p.download && !p.demo && !p.media?.video && <a class="btn btn-secondary" href={url('/lien-he/#demo')}>Liên hệ</a>}
   </div>
 </article>
 <style>
