@@ -5,6 +5,7 @@ root=Path(__file__).resolve().parents[1]
 pages=root/'apps/web/src/pages'
 # route map
 routes={'/'}
+astro_noindex=set()
 data=root/'apps/web/src/data'
 article_slugs=set(re.findall(r"slug: '([a-z0-9\-]+)'", (data/'articles.ts').read_text(encoding='utf-8')))
 article_slugs|={a['slug'] for a in json.loads((data/'erp-articles.json').read_text(encoding='utf-8'))}
@@ -17,6 +18,9 @@ video_slugs|={v['slug'] for v in json.loads((data/'erp-videos.json').read_text(e
 video_slugs|={v['slug'] for v in json.loads((data/'xii-monthly-videos.json').read_text(encoding='utf-8'))}
 routes|={f'/kien-thuc/{s}/' for s in article_slugs}
 routes|={f'/video/{s}/' for s in video_slugs}
+security_dir=root/'apps/web/public/san-pham/unesco-security/content'
+security_slugs={json.loads(p.read_text(encoding='utf-8'))['slug'] for p in security_dir.glob('*.json')}
+routes|={f'/san-pham/unesco-security/bai-viet/{s}/' for s in security_slugs}
 for p in pages.rglob('*.astro'):
  rel=p.relative_to(pages)
  if '[' in str(rel): continue  # getStaticPaths routes are expanded from content above
@@ -24,6 +28,7 @@ for p in pages.rglob('*.astro'):
  if rel.name=='index.astro': route='/'+'/'.join(rel.parts[:-1])+'/' if rel.parts[:-1] else '/'
  else: route='/'+'/'.join(rel.with_suffix('').parts)+'/'
  routes.add(route.replace('//','/'))
+ if re.search(r'<(?:BaseLayout|ContentLayout|SecurityLayout)\b[^>]*\snoindex(?:\s|>)',p.read_text(encoding='utf-8')): astro_noindex.add(route.replace('//','/'))
 # trang HTML tĩnh trong public/ (vd public/cshhl/index.html -> /cshhl/) cũng là route hợp lệ
 public=root/'apps/web/public'
 for p in public.rglob('index.html'):
@@ -65,9 +70,11 @@ if 'articles.map' in sm:
  listed|={f'/kien-thuc/{s}/' for s in article_slugs}
 if 'videos.map' in sm:
  listed|={f'/video/{s}/' for s in video_slugs}
+if 'securityArticles.map' in sm:
+ listed|={f'/san-pham/unesco-security/bai-viet/{s}/' for s in security_slugs}
 # trang demo tĩnh không cần đưa vào sitemap (noindex)
 static_noindex={r for r in routes if (public/r.strip('/')/'index.html').is_file() and 'noindex' in (public/r.strip('/')/'index.html').read_text(encoding='utf-8',errors='ignore')[:3000]}
-for r in sorted(routes-listed-static_noindex): errors.append(f'Route missing from sitemap: {r}')
+for r in sorted(routes-listed-static_noindex-astro_noindex): errors.append(f'Route missing from sitemap: {r}')
 for r in sorted(listed-routes): errors.append(f'Sitemap lists unknown route: {r}')
 # required config
 for f in ['apps/web/package.json','apps/api/UNESCO.Web.sln','database/migrations/001_init.sql','.github/workflows/website-ci.yml']:

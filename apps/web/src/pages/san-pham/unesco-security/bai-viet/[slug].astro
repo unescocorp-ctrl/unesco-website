@@ -1,0 +1,9 @@
+---
+import SecurityLayout from '../../../../layouts/SecurityLayout.astro';
+import {securityArticles} from '../../../../data/security-articles';
+import {url} from '../../../../utils/url';
+export function getStaticPaths(){return securityArticles.map(article=>({params:{slug:article.slug},props:{article}}));}
+const {article:a}=Astro.props;
+const blocks=a.body.split(/\n\s*\n/).filter(Boolean);
+---
+<SecurityLayout title={a.title} description={a.summary}><article class="sc-reading" data-source-hash={a.sourceHash}><a class="sc-link" href={url('/san-pham/unesco-security/bai-viet/')}>Tất cả bài viết</a><header><span class="sc-eyebrow">{a.category}</span><h1>{a.title}</h1><p class="sc-byline">{a.author} · {new Date(a.publishedAt).toLocaleDateString('vi-VN',{timeZone:'Asia/Ho_Chi_Minh'})} · Khoảng {Math.max(1,Math.ceil(a.body.split(/\s+/).length/180))} phút đọc</p><p class="sc-lead">{a.summary}</p></header><div class="sc-copy">{blocks.map((block:string)=>block.startsWith('## ')?<h2>{block.slice(3)}</h2>:block.split('\n').every((x:string)=>x.startsWith('- '))?<ul>{block.split('\n').map((line:string)=><li>{line.slice(2)}</li>)}</ul>:<p>{block}</p>)}</div><aside class="sc-reading-cta"><h2>Xem quy trình trên phần mềm</h2><p>Thử thao tác với dữ liệu minh họa trước khi trao đổi triển khai cùng đội ngũ UNESCO.</p><a class="sc-button" href={url('/san-pham/unesco-security/demo/')}>Mở demo trực tiếp</a></aside></article></SecurityLayout>
