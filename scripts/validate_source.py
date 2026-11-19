@@ -28,7 +28,8 @@ for p in pages.rglob('*.astro'):
  if rel.name=='index.astro': route='/'+'/'.join(rel.parts[:-1])+'/' if rel.parts[:-1] else '/'
  else: route='/'+'/'.join(rel.with_suffix('').parts)+'/'
  routes.add(route.replace('//','/'))
- if re.search(r'<(?:BaseLayout|ContentLayout|SecurityLayout)\b[^>]*\snoindex(?:\s|>)',p.read_text(encoding='utf-8')): astro_noindex.add(route.replace('//','/'))
+ text=p.read_text(encoding='utf-8')
+ if re.search(r'<(?:BaseLayout|ContentLayout|SecurityLayout)\b[^>]*\snoindex(?:\s|>)',text) or re.search(r'<meta\s+name="robots"\s+content="noindex(?:,|")',text): astro_noindex.add(route.replace('//','/'))
 # trang HTML tĩnh trong public/ (vd public/cshhl/index.html -> /cshhl/) cũng là route hợp lệ
 public=root/'apps/web/public'
 for p in public.rglob('index.html'):

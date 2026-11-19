@@ -1,0 +1,8 @@
+{
+  "sharedInterface": "DarkWorkspace + WorkforceWorkspace + ArticlesPage",
+  "script": "assets/demo-C3SrS0Nl.js",
+  "source": "web/src/demo/main.tsx",
+  "styles": [
+    "assets/demo-Db0wl366.css"
+  ]
+}
