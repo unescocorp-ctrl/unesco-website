@@ -1,17 +1,17 @@
 {
     "loai":  "unesco_cap_nhat",
     "san_pham":  "UNESCO_XII",
-    "ten":  "GD212",
-    "goi":  "GD212",
+    "ten":  "GD213",
+    "goi":  "GD213",
     "ngay":  "19/11/2026",
-    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261119_GD212.zip",
-    "sha256":  "2bf7000a65d8e70a485c2e90c68e8e0f143ae614cd026d85f8893a53c60498db",
-    "kich_thuoc":  46909750,
+    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261119_GD213.zip",
+    "sha256":  "8e81fdbed83e292f27cf87cf030e0ec71b53a85a5d0d249ce570280de09864aa",
+    "kich_thuoc":  46909792,
     "co_exe":  true,
     "bat_buoc":  false,
     "exe":  "Unesco.NET.exe",
     "ghi_chu":  [
-                    "Chon so van mo duoc khi may khong ghi duoc thu muc chuong trinh (tai khoan Windows thuong),Nhan dang ky chep tu UNESCO XI (Cach = 0)"
+                    "Tu cap nhat qua internet: them nguon https://www.unescosoft.com/cap-nhat-xii/ (may ngoai mang van tu nhan ban moi)"
                 ],
     "so_tep":  1234,
     "tep_trong_goi":  [
@@ -107,8 +107,8 @@
                           },
                           {
                               "duong_dan":  "AIHoaDon/cap_nhat_kenh.txt",
-                              "kich_thuoc":  31,
-                              "sha256":  "96026c7b81b99a2d072f1d9914a6b9be621553dcacb8027508c4fdaf8d5ce1f3"
+                              "kich_thuoc":  73,
+                              "sha256":  "0bab0e824bb6d083ffeef4ebe1eec2a31c8ec41b0efb08a2f427a4d5f7ab338d"
                           },
                           {
                               "duong_dan":  "AIHoaDon/cap_nhat_khoa_cong_khai.txt",
@@ -3613,7 +3613,7 @@
                           {
                               "duong_dan":  "AIHoaDon/phien_ban_goi.txt",
                               "kich_thuoc":  117,
-                              "sha256":  "93516ea4d6efd50b0ac336d6b6e7fb7110ed2fccd39d973d409da12d62cdde66"
+                              "sha256":  "609866949788b516925feeb519059c6fe2cbff12b5770cd23c367bd465cd958b"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py",
