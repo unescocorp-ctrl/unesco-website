@@ -1,5 +1,6 @@
 {
   "extends": "astro/tsconfigs/strict",
+  "exclude": ["node_modules", "dist", "public/san-pham/unesco-security/demo-app"],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": { "@/*": ["src/*"] }

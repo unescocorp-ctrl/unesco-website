@@ -50,3 +50,14 @@ Run `BUILD_ALL.cmd`.
 
 ## Source status
 V1.1 is a design/content checkpoint. Production remains gated until official company identity, domain, copyright evidence, approved pricing and verified installer metadata are supplied.
+
+
+## UNESCO Security: demo dùng chung giao diện sản phẩm (20/11/2026)
+
+- `/san-pham/unesco-security/demo/` mở trực tiếp Trung tâm điều hành, không yêu cầu đăng nhập.
+- Link màn hình: `#dashboard`, `#employees`, `#roster`, `#duty`, `#articles`, `#accounts`; đổi màn hình có cập nhật URL, tải lại vẫn giữ màn hình.
+- Bundle được dựng từ `web/src/demo/main.tsx` trong workspace SECURUTI; dùng chung `DarkWorkspace`, `WorkforceWorkspace`, `ArticlesPage` với phần mềm vận hành. Không sửa trực tiếp các file JS/CSS đã minify.
+- Chạy `deploy/Build-PublicDemo.ps1` tại workspace SECURUTI để cập nhật `apps/web/public/san-pham/unesco-security/demo-app/` và manifest `apps/web/src/data/security-demo.json`, sau đó chạy check/build website như thường lệ.
+- Bộ demo chứa dữ liệu minh họa công khai. Soạn bài/lưu nháp/tải TXT dùng trình duyệt, không đăng bài thật; các màn hình nghiệp vụ dùng dữ liệu tham chiếu và không gọi API vận hành. CSP đặt `connect-src 'none'` để giữ ranh giới này.
+- Nội dung cũ của demo viết bài được đọc từ khóa trình duyệt cũ khi chưa có thư viện mới. Trang demo giữ `noindex`; các trang giới thiệu/bài viết vẫn dùng giao diện website.
+- Kiểm tra tại workspace SECURUTI: `npx playwright test --config playwright.demo.config.ts` trong thư mục web. Đặt `DEMO_BASE_URL` để kiểm tra URL public sau khi GitHub Pages hoàn tất.
