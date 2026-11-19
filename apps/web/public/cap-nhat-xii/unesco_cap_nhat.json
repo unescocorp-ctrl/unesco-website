@@ -1,17 +1,17 @@
 {
     "loai":  "unesco_cap_nhat",
     "san_pham":  "UNESCO_XII",
-    "ten":  "GD213",
-    "goi":  "GD213",
+    "ten":  "GD214",
+    "goi":  "GD214",
     "ngay":  "19/11/2026",
-    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261119_GD213.zip",
-    "sha256":  "8e81fdbed83e292f27cf87cf030e0ec71b53a85a5d0d249ce570280de09864aa",
-    "kich_thuoc":  46909792,
+    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261119_GD214.zip",
+    "sha256":  "fe8992f013d83c742f6a3620c7d6fb7214da32bbfc8880a0407c1d7f2ca43667",
+    "kich_thuoc":  46909802,
     "co_exe":  true,
     "bat_buoc":  false,
     "exe":  "Unesco.NET.exe",
     "ghi_chu":  [
-                    "Tu cap nhat qua internet: them nguon https://www.unescosoft.com/cap-nhat-xii/ (may ngoai mang van tu nhan ban moi)"
+                    "AI: so da duoc quan tri danh dau kich hoat thi may bi dat chi xem AI van dung duoc (nut khong con bi khoa)"
                 ],
     "so_tep":  1234,
     "tep_trong_goi":  [
@@ -3613,7 +3613,7 @@
                           {
                               "duong_dan":  "AIHoaDon/phien_ban_goi.txt",
                               "kich_thuoc":  117,
-                              "sha256":  "609866949788b516925feeb519059c6fe2cbff12b5770cd23c367bd465cd958b"
+                              "sha256":  "ac026a4aee3b62e1e598ce956f81076c34792c3b4b502a7725a354740b593ebe"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py",
@@ -6173,7 +6173,7 @@
                           {
                               "duong_dan":  "Unesco.NET.exe",
                               "kich_thuoc":  33725952,
-                              "sha256":  "a1c8e6aaf437d55bb947d29ae6b0aab84de3936004b9969b226d58d8e1da3ac3"
+                              "sha256":  "142af103a4209f67e5a7efeb20105694d79097da35f8e3500b23fa5882222887"
                           },
                           {
                               "duong_dan":  "UnescoConnect.dll",
