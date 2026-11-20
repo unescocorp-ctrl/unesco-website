@@ -1,9 +1,24 @@
 {
  "loai": "lich_su_cap_nhat_xii",
  "san_pham": "UNESCO_XII",
- "lap_luc": "2026-11-20 16:31",
+ "lap_luc": "2026-11-20 16:49",
  "ghi_chu_muc_luc": "Mục lục không ký. Gói có da_ky = true: nội dung lấy từ tệp mô tả đã ký <goi>.json (máy khách kiểm lại chữ ký).",
  "goi": [
+  {
+   "goi": "GD219",
+   "ngay": "20/11/2026",
+   "luc": "2026-11-20 16:49",
+   "ghi_chu": [
+    "AI hoa don: them nut Xoa HD da chon - xoa han hoa don tai thua chua lap chung tu khoi danh sach, co luu ban truoc khi xoa (hoa don da co chung tu thi Huy chung tu truoc; muon chan nhap lai thi dung Bo qua)"
+   ],
+   "so_tep": 1237,
+   "kich_thuoc": 47149542,
+   "co_exe": true,
+   "exe_sha256": "aa128ad202b4432c7833f9740874e15d5a510fc79805ee79be049cd3105bd637",
+   "tep": "GD219.json",
+   "nguon": "kenh",
+   "da_ky": true
+  },
   {
    "goi": "GD218",
    "ngay": "20/11/2026",

@@ -1,17 +1,17 @@
 {
     "loai":  "unesco_cap_nhat",
     "san_pham":  "UNESCO_XII",
-    "ten":  "GD218",
-    "goi":  "GD218",
+    "ten":  "GD219",
+    "goi":  "GD219",
     "ngay":  "20/11/2026",
-    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261120_GD218.zip",
-    "sha256":  "41212b7343efa20b78cf47ac5ad69e07c929c367501772631d28a8a5cd1887d9",
-    "kich_thuoc":  47148731,
+    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261120_GD219.zip",
+    "sha256":  "dca62fb3ea69e075bdc6290802438eb203dcc501d7b4e90f1a2533a136964b15",
+    "kich_thuoc":  47149542,
     "co_exe":  true,
     "bat_buoc":  false,
     "exe":  "Unesco.NET.exe",
     "ghi_chu":  [
-                    "AI hoa don ban ra: doanh nghiep dich vu (khach san...) co ma dich vu chua tung ton kho thi ghi doanh thu dich vu 5113, khong con bi chan - tich hoa don roi bam Phan tich lai HD | Bien ban ban giao: xuat kem duoc Bang ke mua vao - ban ra va Tam tinh TNDN; To khai GTGT mo man Bao cao va thue (HTKK) dung thang de lap"
+                    "AI hoa don: them nut Xoa HD da chon - xoa han hoa don tai thua chua lap chung tu khoi danh sach, co luu ban truoc khi xoa (hoa don da co chung tu thi Huy chung tu truoc; muon chan nhap lai thi dung Bo qua)"
                 ],
     "so_tep":  1237,
     "tep_trong_goi":  [
@@ -3618,7 +3618,7 @@
                           {
                               "duong_dan":  "AIHoaDon/phien_ban_goi.txt",
                               "kich_thuoc":  117,
-                              "sha256":  "c51765b845ba7d38aa792c953a83f53ef2fcf25c49733cb81612796f0eb8884b"
+                              "sha256":  "4b732e08dcb1dd487c84611b521403f10f686bd144b958a7d7443f0097a4ff83"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py",
@@ -6187,8 +6187,8 @@
                           },
                           {
                               "duong_dan":  "Unesco.NET.exe",
-                              "kich_thuoc":  33866752,
-                              "sha256":  "7519d46617bedaa67a215ea35718bf12a5fd9119ac92f620e7a4b71ce207370a"
+                              "kich_thuoc":  33870336,
+                              "sha256":  "aa128ad202b4432c7833f9740874e15d5a510fc79805ee79be049cd3105bd637"
                           },
                           {
                               "duong_dan":  "UnescoConnect.dll",
