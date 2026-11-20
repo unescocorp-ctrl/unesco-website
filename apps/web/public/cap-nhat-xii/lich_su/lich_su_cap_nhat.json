@@ -1,9 +1,25 @@
 {
  "loai": "lich_su_cap_nhat_xii",
  "san_pham": "UNESCO_XII",
- "lap_luc": "2026-11-20 16:06",
+ "lap_luc": "2026-11-20 16:31",
  "ghi_chu_muc_luc": "Mục lục không ký. Gói có da_ky = true: nội dung lấy từ tệp mô tả đã ký <goi>.json (máy khách kiểm lại chữ ký).",
  "goi": [
+  {
+   "goi": "GD218",
+   "ngay": "20/11/2026",
+   "luc": "2026-11-20 16:31",
+   "ghi_chu": [
+    "AI hoa don ban ra: doanh nghiep dich vu (khach san...) co ma dich vu chua tung ton kho thi ghi doanh thu dich vu 5113, khong con bi chan - tich hoa don roi bam Phan tich lai HD",
+    "Bien ban ban giao: xuat kem duoc Bang ke mua vao - ban ra va Tam tinh TNDN; To khai GTGT mo man Bao cao va thue (HTKK) dung thang de lap"
+   ],
+   "so_tep": 1237,
+   "kich_thuoc": 47148731,
+   "co_exe": true,
+   "exe_sha256": "7519d46617bedaa67a215ea35718bf12a5fd9119ac92f620e7a4b71ce207370a",
+   "tep": "GD218.json",
+   "nguon": "kenh",
+   "da_ky": true
+  },
   {
    "goi": "GD217",
    "ngay": "20/11/2026",

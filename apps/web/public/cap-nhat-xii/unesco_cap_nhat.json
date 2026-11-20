@@ -1,17 +1,17 @@
 {
     "loai":  "unesco_cap_nhat",
     "san_pham":  "UNESCO_XII",
-    "ten":  "GD217",
-    "goi":  "GD217",
+    "ten":  "GD218",
+    "goi":  "GD218",
     "ngay":  "20/11/2026",
-    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261120_GD217.zip",
-    "sha256":  "85aebc38eeb84d475ccd966f14a3115767f317728a22f7e39d73d375c524db80",
-    "kich_thuoc":  47148114,
+    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261120_GD218.zip",
+    "sha256":  "41212b7343efa20b78cf47ac5ad69e07c929c367501772631d28a8a5cd1887d9",
+    "kich_thuoc":  47148731,
     "co_exe":  true,
     "bat_buoc":  false,
     "exe":  "Unesco.NET.exe",
     "ghi_chu":  [
-                    "Bien ban ban giao khach hang moi: lay so lieu tu so, xuat Word theo mau, cot In de bo dong, chon kem To khai GTGT / Tam tinh TNDN / Nhap xuat ton / Bang ke mua vao - ban ra / Ket qua kinh doanh (Bao cao - Bien ban ban giao) | Bang can doi phat sinh tren luoi: so du cong no 131, 331 hien hai ben nhu ban in | Xuat Excel bang ke mua vao: cot thue suat hien dung 5 / 8 / 10 | Tra cuu thue: sua loi cho 45 giay khong lay duoc anh ma xac nhan | Dang nhap: nam lam viec | Canh bao tren cung man hinh khi may chu sap ngat ket noi ban dem (con 2 phut, 1 phut 30, 1 phut, 30 giay)"
+                    "AI hoa don ban ra: doanh nghiep dich vu (khach san...) co ma dich vu chua tung ton kho thi ghi doanh thu dich vu 5113, khong con bi chan - tich hoa don roi bam Phan tich lai HD | Bien ban ban giao: xuat kem duoc Bang ke mua vao - ban ra va Tam tinh TNDN; To khai GTGT mo man Bao cao va thue (HTKK) dung thang de lap"
                 ],
     "so_tep":  1237,
     "tep_trong_goi":  [
@@ -3618,7 +3618,7 @@
                           {
                               "duong_dan":  "AIHoaDon/phien_ban_goi.txt",
                               "kich_thuoc":  117,
-                              "sha256":  "9c92c53f96b29e34f6b9aa601640f3fa9410dee5257fafa3c7e57613bf4b8cb5"
+                              "sha256":  "c51765b845ba7d38aa792c953a83f53ef2fcf25c49733cb81612796f0eb8884b"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py",
@@ -6187,8 +6187,8 @@
                           },
                           {
                               "duong_dan":  "Unesco.NET.exe",
-                              "kich_thuoc":  33863680,
-                              "sha256":  "bc2e0b372d11102f39552ca35a5c99f9c8aea96f650318af89bb3912cfc08195"
+                              "kich_thuoc":  33866752,
+                              "sha256":  "7519d46617bedaa67a215ea35718bf12a5fd9119ac92f620e7a4b71ce207370a"
                           },
                           {
                               "duong_dan":  "UnescoConnect.dll",
