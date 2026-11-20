@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import HddtDemo from '../../../../components/HddtDemo.astro';
+import {url} from '../../../../utils/url';
+---
+<BaseLayout title="Demo UNESCO HĐĐT – Dùng thử trên web" description="Thử giao diện nền trắng UNESCO HĐĐT: đồng bộ danh sách mẫu, tìm hóa đơn, mô phỏng tải XML/PDF và xuất CSV mẫu. Không cần tài khoản thuế.">
+ <div class="demo-page"><div class="container"><nav><a href={url('/san-pham/unesco-hddt/')}>UNESCO HĐĐT</a> / Demo trên web</nav><div class="demo-heading"><div><span class="eyebrow">Trải nghiệm miễn phí</span><h1>Thử trước, tải sau.</h1><p>Demo dùng dữ liệu mẫu, không kết nối cổng thuế và không nhận mật khẩu thuế.</p></div><a class="btn btn-primary" href={url('/san-pham/unesco-hddt/#dang-ky-tai')}>Đăng ký tải bản Windows</a></div><HddtDemo/></div></div>
+</BaseLayout>
+<style>.demo-page{background:#fff;padding:1.5rem 0 3rem}.demo-page nav{font-size:.9rem;color:#516c60}.demo-heading{display:flex;align-items:center;justify-content:space-between;gap:2rem;margin:2rem 0}.demo-heading h1{font-size:clamp(2rem,4vw,3.2rem);margin:.4rem 0}.demo-heading p{color:#4a6458;max-width:45rem}.demo-heading .btn{flex:none}@media(max-width:760px){.demo-heading{align-items:flex-start;flex-direction:column;gap:1rem}}</style>

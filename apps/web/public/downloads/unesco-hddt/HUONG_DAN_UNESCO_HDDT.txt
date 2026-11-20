@@ -1,8 +1,10 @@
-﻿UNESCO HĐĐT ĐỘC LẬP 0.1.2 — MIỄN PHÍ
+﻿UNESCO HĐĐT ĐỘC LẬP 0.1.3 — MIỄN PHÍ
+Giao diện nền trắng, điểm nhấn xanh UNESCO.
 Ngày phát hành trên website: 20/11/2026
 Website: https://www.unescosoft.com/san-pham/unesco-hddt/
 
 BẮT ĐẦU
+0. Đăng ký email và số điện thoại trên website để nhận lượt tải miễn phí.
 1. Giải nén toàn bộ ZIP vào một thư mục có quyền ghi.
 2. Mở UNESCO_HDDT_DocLap.exe; giữ nguyên thư mục _internal bên cạnh.
    Bản hiện tại đã kiểm tra trên Windows 11 64-bit. Không cần cài Python.

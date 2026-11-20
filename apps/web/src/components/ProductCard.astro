@@ -5,7 +5,7 @@ import { familyOf, type Product } from '../data/products';
 interface Props { p: Product; showService?: boolean }
 const { p, showService = false } = Astro.props;
 const f = familyOf(p.family);
-const cta = p.download ? { t: 'Tải miễn phí', h: p.download } : p.href ? { t: 'Xem chi tiết', h: p.href } : { t: p.comingSoon ? 'Đăng ký nhận tin' : 'Liên hệ mua', h: '/lien-he/#demo' };
+const cta = p.download ? { t: 'Đăng ký tải miễn phí', h: p.download } : p.href ? { t: 'Xem chi tiết', h: p.href } : { t: p.comingSoon ? 'Đăng ký nhận tin' : 'Liên hệ mua', h: '/lien-he/#demo' };
 ---
 <article class={`pd-card${p.featured ? ' is-feat' : ''}`} id={p.id} data-family={p.family} style={`--pc:${f.color};--pd:${f.dark};--ps:${f.soft}`}>
   {p.media?.full ? (

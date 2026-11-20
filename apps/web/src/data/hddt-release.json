@@ -1,14 +1,14 @@
 {
-  "version": "0.1.2",
+  "version": "0.1.3",
   "publishedDate": "20/11/2026",
   "price": 0,
   "priceLabel": "Miễn phí",
-  "filename": "UNESCO_HDDT_0_1_2_Windows_x64.zip",
-  "downloadPath": "/downloads/unesco-hddt/UNESCO_HDDT_0_1_2_Windows_x64.zip",
-  "sha256": "6bb7bbabb9caacdf0f7fc193f54f53de8acaf0c13a2f64ca7c7645fa0b381f11",
-  "bytes": 41898594,
+  "filename": "UNESCO_HDDT_0_1_3_Windows_x64.zip",
+  "downloadPath": "/san-pham/unesco-hddt/#dang-ky-tai",
+  "sha256": "ac9644dbc7e900029ffe00447d7626c70a91dfb6e5f41df0e80a9421a5e32c16",
+  "bytes": 41898837,
   "sizeLabel": "40.0 MB",
   "guidePath": "/downloads/unesco-hddt/HUONG_DAN_UNESCO_HDDT.txt",
-  "imagePath": "/screenshots/unesco-hddt/giao-dien.png",
+  "imagePath": "/screenshots/unesco-hddt/giao-dien-trang.png",
   "pagePath": "/san-pham/unesco-hddt/"
 }

@@ -76,7 +76,7 @@ export const products: Product[] = [
     tagline: 'Tải, lưu và tìm hóa đơn trong ứng dụng Windows riêng; tiếp tục phần thiếu và xuất XML cho UNESCO XII.',
     points: ['Đăng nhập và nhập CAPTCHA trong ứng dụng', 'Tìm không dấu, lọc tệp còn thiếu', 'Bản thử nghiệm; cần đối chiếu với dữ liệu thực tế'],
     price: hddtRelease.priceLabel, priceNote: `0 đ · bản thử nghiệm ${hddtRelease.version} · Windows 11 64-bit`,
-    href: hddtRelease.pagePath, download: hddtRelease.downloadPath,
+    href: hddtRelease.pagePath, download: hddtRelease.downloadPath, demo: hddtRelease.pagePath+'demo/',
     media: { img: hddtRelease.imagePath, alt: 'Giao diện UNESCO HĐĐT với dữ liệu hóa đơn minh họa' },
   },
   {

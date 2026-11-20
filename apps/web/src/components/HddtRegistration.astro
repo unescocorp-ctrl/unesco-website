@@ -1,0 +1,55 @@
+---
+import { url } from '../utils/url';
+import { hddtRelease as r } from '../data/hddt';
+---
+<section id="dang-ky-tai" class="register-section section">
+ <div class="container register-grid">
+  <div><span class="eyebrow">Miễn phí · 0 đ</span><h2>Đăng ký để tải<br/>UNESCO HĐĐT</h2><p>Nhập email và số điện thoại để nhận lượt tải bản Windows {r.version}. Không cần thanh toán.</p><ul><li>Giao diện nền trắng, logo và thông tin UNESCO.</li><li>Lượt tải dùng một lần, có hiệu lực 15 phút.</li><li>Giải nén toàn bộ ZIP rồi mở UNESCO_HDDT_DocLap.exe.</li></ul><p class="privacy-note">UNESCO dùng thông tin để ghi nhận đăng ký, cấp lượt tải và hỗ trợ phần mềm. Không yêu cầu mật khẩu cổng thuế. Liên hệ unesco.corp@gmail.com nếu cần cập nhật hoặc xóa thông tin.</p></div>
+  <div class="register-card">
+   <form id="hddt-registration" data-endpoint="https://unesco-hddt-download.anhmaitax.chatgpt.site">
+    <div class="field"><label for="hddt-email">Email <span aria-hidden="true">*</span></label><input id="hddt-email" name="email" type="email" autocomplete="email" maxlength="254" required placeholder="ban@congty.vn"/></div>
+    <div class="field"><label for="hddt-phone">Số điện thoại <span aria-hidden="true">*</span></label><input id="hddt-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="30" required placeholder="0912 345 678" aria-describedby="hddt-phone-help"/><small id="hddt-phone-help">Số Việt Nam hoặc số quốc tế bắt đầu bằng dấu +.</small></div>
+    <div class="trap" aria-hidden="true"><label for="hddt-website">Website</label><input id="hddt-website" name="website" tabindex="-1" autocomplete="off"/></div>
+    <label class="consent"><input name="consent" type="checkbox" required/><span>Tôi đồng ý để UNESCO lưu email, số điện thoại nhằm xử lý đăng ký tải và hỗ trợ theo <a href={url('/legal/data-protection/')} target="_blank" rel="noopener">Chính sách bảo vệ dữ liệu</a>.</span></label>
+    <button class="btn btn-primary" type="submit">Đăng ký và nhận lượt tải miễn phí</button>
+    <p class="form-status" role="status" aria-live="polite"></p>
+   </form>
+   <div id="hddt-download-ready" hidden tabindex="-1"><h3>Đăng ký đã được lưu</h3><p>Bấm nút dưới đây để tải bản Windows. Lượt tải có hiệu lực 15 phút và dùng một lần.</p><a class="btn btn-primary" id="hddt-authorized-download" rel="noreferrer">Tải UNESCO HĐĐT {r.version}</a><p class="reference"></p><button class="btn btn-secondary" id="hddt-register-again" type="button">Đăng ký lượt tải khác</button></div>
+   <noscript>Cần bật JavaScript để gửi đăng ký và nhận lượt tải. Liên hệ UNESCO nếu cần hỗ trợ.</noscript>
+  </div>
+ </div>
+</section>
+<script>
+ const form=document.querySelector<HTMLFormElement>('#hddt-registration');
+ if(form){
+  const phone=form.querySelector<HTMLInputElement>('[name=phone]')!;
+  phone.addEventListener('input',()=>phone.setCustomValidity(''));
+  const status=form.querySelector<HTMLElement>('.form-status')!;
+  const submit=form.querySelector<HTMLButtonElement>('button[type=submit]')!;
+  const ready=document.querySelector<HTMLElement>('#hddt-download-ready')!;
+  const link=document.querySelector<HTMLAnchorElement>('#hddt-authorized-download')!;
+  document.querySelector('#hddt-register-again')?.addEventListener('click',()=>{ready.hidden=true;link.removeAttribute('href');form.hidden=false;status.textContent='';form.querySelector<HTMLInputElement>('input')?.focus();});
+  form.addEventListener('submit',async event=>{
+   event.preventDefault();
+   const normalized=phone.value.trim().replace(/[\s().-]/g,'');
+   if(!/^(?:0[235789][0-9]{8,9}|\+[1-9][0-9]{7,14})$/.test(normalized)){phone.setCustomValidity('Vui lòng nhập số điện thoại hợp lệ.');phone.reportValidity();return;}
+   if(!form.reportValidity())return;
+   submit.disabled=true;status.textContent='Đang lưu đăng ký…';
+   const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),20000);
+   try{
+    const data=new FormData(form),endpoint=form.dataset.endpoint!;
+    const res=await fetch(endpoint+'/register',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:String(data.get('email')).trim(),phone:normalized,consent:data.get('consent')==='on',website:data.get('website')||''}),signal:controller.signal});
+    const body=await res.json();
+    if(!res.ok)throw new Error(body.message||'Chưa lưu được đăng ký. Vui lòng thử lại.');
+    const target=new URL(body.downloadUrl);
+    if(target.origin!==endpoint || target.pathname!=='/download' || !/^[a-f0-9]{64}$/.test(target.searchParams.get('token')||''))throw new Error('Chưa nhận được lượt tải hợp lệ. Vui lòng thử lại.');
+    link.href=target.href;ready.querySelector<HTMLElement>('.reference')!.textContent='Mã đăng ký: '+String(body.registrationId);
+    form.reset();form.hidden=true;ready.hidden=false;ready.focus();
+   }catch(error){status.textContent=error instanceof Error && error.name!=='AbortError'?error.message:'Kết nối quá thời gian. Vui lòng thử lại.';}
+   finally{clearTimeout(timer);submit.disabled=false;}
+  });
+ }
+</script>
+<style>
+.register-section{background:#f5faf7;scroll-margin-top:110px}.register-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}.register-grid h2{font-size:2.4rem}.register-grid p,.register-grid li{color:#486255;line-height:1.8}.register-grid ul{padding-left:1.2rem}.privacy-note{font-size:.9rem}.register-card{background:white;border:1px solid #c6dfd1;border-radius:18px;padding:2rem;box-shadow:0 14px 40px #143d2410}.field{margin-bottom:1.3rem}.field label{display:block;font-weight:700;margin-bottom:.5rem}.field input{width:100%;min-height:48px;background:white;border:1px solid #9dbbaa;border-radius:8px;padding:.7rem;font:inherit;color:#163c2b}.field small{font-size:.875rem;color:#52695d}.consent{display:flex;gap:.7rem;align-items:flex-start;margin:1.2rem 0;font-size:.9rem;line-height:1.7}.consent input{flex:none;width:20px;height:20px;margin-top:.2rem;accent-color:#087a4e}.consent a{color:#07693e;text-decoration:underline}.register-card .btn{width:100%;white-space:normal}.register-card .btn:disabled{opacity:.65;cursor:wait}.form-status{margin-bottom:0;min-height:1.5rem}.reference{font-size:.8rem;overflow-wrap:anywhere}.trap{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}[hidden]{display:none!important}@media(max-width:760px){.register-grid{grid-template-columns:1fr;gap:1.5rem}.register-card{padding:1.4rem}.register-grid h2{font-size:2rem}}
+</style>
