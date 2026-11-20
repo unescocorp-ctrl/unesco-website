@@ -1,19 +1,19 @@
 {
     "loai":  "unesco_cap_nhat",
     "san_pham":  "UNESCO_XII",
-    "ten":  "GD216",
-    "goi":  "GD216",
+    "ten":  "GD217",
+    "goi":  "GD217",
     "ngay":  "20/11/2026",
-    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261120_GD216.zip",
-    "sha256":  "13177ef7fed0267b8749ee60c70707a8395cdea9e5a0244d62371436ebaee3b5",
-    "kich_thuoc":  46997057,
+    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261120_GD217.zip",
+    "sha256":  "85aebc38eeb84d475ccd966f14a3115767f317728a22f7e39d73d375c524db80",
+    "kich_thuoc":  47148114,
     "co_exe":  true,
     "bat_buoc":  false,
     "exe":  "Unesco.NET.exe",
     "ghi_chu":  [
-                    "Bang ke ban ra: hoa don 8% ve dung muc thue 10%, xuat Excel lay ca hoa don 8% | Khach hang: ghi duoc MST 12 so cua ho kinh doanh, nut Tra cuu thue canh o MS Thue, doi chieu va dien lai ten, dia chi | Ten hang hoa nhap duoc 255 ky tu | Hoa don AI lap hien mot dong trong Danh sach chung tu | Mo nhieu so cung luc: He thong - Mo them so khac (Ctrl+Shift+N) | Tram ERP mo duoc ben canh UNESCO XII dang lam viec tren cung may | Thue TNCN 2026: mien tien lam them gio tu 01/7/2026 va ke rieng thu nhap duoc mien; 05/KK tu quy 3/2026 theo mau TT89; 05/QTT 2026 tam lap theo mau TT80 khi HTKK chua co mau TT89 | Phu cap 2026 va canh bao khi nhap phu cap | Chung tu mo toan man hinh, phan dau gon, luoi dai hon; bam dup ha dong de doi ma thi o Ma so mo / khoa dung theo tai khoan cua dong do | Bao cao luy ke nhap xuat ton: hien canh bao am hang | Xuat Excel bao cao: bo chu Trang n va chan trang lap, so can phai, so am trong ngoac | The Hoa don AI: nut Kiem tra HD bi huy / thay the va Chon / bo chon tat ca | Bo cuc the tren cac man hinh AI | Cap nhat nhanh va Tro giup - Lich su cap nhat"
+                    "Bien ban ban giao khach hang moi: lay so lieu tu so, xuat Word theo mau, cot In de bo dong, chon kem To khai GTGT / Tam tinh TNDN / Nhap xuat ton / Bang ke mua vao - ban ra / Ket qua kinh doanh (Bao cao - Bien ban ban giao) | Bang can doi phat sinh tren luoi: so du cong no 131, 331 hien hai ben nhu ban in | Xuat Excel bang ke mua vao: cot thue suat hien dung 5 / 8 / 10 | Tra cuu thue: sua loi cho 45 giay khong lay duoc anh ma xac nhan | Dang nhap: nam lam viec | Canh bao tren cung man hinh khi may chu sap ngat ket noi ban dem (con 2 phut, 1 phut 30, 1 phut, 30 giay)"
                 ],
-    "so_tep":  1236,
+    "so_tep":  1237,
     "tep_trong_goi":  [
                           {
                               "duong_dan":  "AIHoaDon/ai_auto_dieu_phoi.py",
@@ -3618,7 +3618,7 @@
                           {
                               "duong_dan":  "AIHoaDon/phien_ban_goi.txt",
                               "kich_thuoc":  117,
-                              "sha256":  "95d56b3e2797ca2b2a0d2a82306786a550e86ccc7686b57d67f41755fb90def8"
+                              "sha256":  "9c92c53f96b29e34f6b9aa601640f3fa9410dee5257fafa3c7e57613bf4b8cb5"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py",
@@ -4012,8 +4012,8 @@
                           },
                           {
                               "duong_dan":  "AIHoaDon/tra_cuu_mst.py",
-                              "kich_thuoc":  32438,
-                              "sha256":  "e7b9fc873a25e82d4b5bf50f7e237f2455844cb394be8363e4264f225d54ce41"
+                              "kich_thuoc":  32835,
+                              "sha256":  "2d0471cd14fc203aafa9937f62e3e53ba03fdd0e4b8d3a404789edb6e0d37276"
                           },
                           {
                               "duong_dan":  "AIHoaDon/tra_loi_hang_doi.py",
@@ -4554,6 +4554,11 @@
                               "duong_dan":  "Reports/BCTHTC_TTT99.xls",
                               "kich_thuoc":  68608,
                               "sha256":  "b22ed54bf504488a3b35d4ebcf88a5748014cc63e1717d6c3a54524452242756"
+                          },
+                          {
+                              "duong_dan":  "Reports/BIEN_BAN_BAN_GIAO_MAU.docx",
+                              "kich_thuoc":  132297,
+                              "sha256":  "cc83057c82188937e3072819faa4ba3a2614ef6843364f9a3e976247fea69cd9"
                           },
                           {
                               "duong_dan":  "Reports/BIENDONG.rpt",
@@ -6182,8 +6187,8 @@
                           },
                           {
                               "duong_dan":  "Unesco.NET.exe",
-                              "kich_thuoc":  33823232,
-                              "sha256":  "f1c8c60e77de862a75249d8e86caae00482ead988c5dfc8801b566eafaef93db"
+                              "kich_thuoc":  33863680,
+                              "sha256":  "bc2e0b372d11102f39552ca35a5c99f9c8aea96f650318af89bb3912cfc08195"
                           },
                           {
                               "duong_dan":  "UnescoConnect.dll",

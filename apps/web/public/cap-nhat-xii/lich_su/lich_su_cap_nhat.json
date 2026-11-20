@@ -1,9 +1,29 @@
 {
  "loai": "lich_su_cap_nhat_xii",
  "san_pham": "UNESCO_XII",
- "lap_luc": "2026-11-20 13:46",
+ "lap_luc": "2026-11-20 16:06",
  "ghi_chu_muc_luc": "Mục lục không ký. Gói có da_ky = true: nội dung lấy từ tệp mô tả đã ký <goi>.json (máy khách kiểm lại chữ ký).",
  "goi": [
+  {
+   "goi": "GD217",
+   "ngay": "20/11/2026",
+   "luc": "2026-11-20 16:06",
+   "ghi_chu": [
+    "Bien ban ban giao khach hang moi: lay so lieu tu so, xuat Word theo mau, cot In de bo dong, chon kem To khai GTGT / Tam tinh TNDN / Nhap xuat ton / Bang ke mua vao - ban ra / Ket qua kinh doanh (Bao cao - Bien ban ban giao)",
+    "Bang can doi phat sinh tren luoi: so du cong no 131, 331 hien hai ben nhu ban in",
+    "Xuat Excel bang ke mua vao: cot thue suat hien dung 5 / 8 / 10",
+    "Tra cuu thue: sua loi cho 45 giay khong lay duoc anh ma xac nhan",
+    "Dang nhap: nam lam viec",
+    "Canh bao tren cung man hinh khi may chu sap ngat ket noi ban dem (con 2 phut, 1 phut 30, 1 phut, 30 giay)"
+   ],
+   "so_tep": 1237,
+   "kich_thuoc": 47148114,
+   "co_exe": true,
+   "exe_sha256": "bc2e0b372d11102f39552ca35a5c99f9c8aea96f650318af89bb3912cfc08195",
+   "tep": "GD217.json",
+   "nguon": "kenh",
+   "da_ky": true
+  },
   {
    "goi": "GD216",
    "ngay": "20/11/2026",
