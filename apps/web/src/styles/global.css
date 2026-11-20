@@ -962,6 +962,7 @@ em.new{display:inline-block;font-style:normal;font-family:var(--font-h);font-siz
 .brand-copy>span{white-space:nowrap}
 @media(max-width:760px){.hx-title{font-size:max(26px,6.2cqw)}.hx-cta{gap:8px}.hx-btn{flex:1 1 100%;white-space:nowrap;font-size:14px;padding:0 14px}}
 @media(max-width:480px){.nav-cta .btn-demo .i{display:none}.nav-cta .btn{padding:0 12px;font-size:.9rem}.topbar .tb-contact+.sep{display:none}}
+@media(max-width:380px){.header .nav{gap:8px}.header .brand{gap:6px}.header .brand-logo{width:32px;height:32px}.header .brand-copy>span{font-size:1.05rem}.header .nav-cta{gap:6px}.header .nav-cta .btn{padding:0 8px;font-size:.8rem}.header .menu-btn{padding:7px 10px}.form-grid,.field{min-width:0}.field input,.field textarea,.field select{width:100%;min-width:0}}
 /* v2.6: bảng giá */
 .price-gold{margin:0 0 26px;text-align:center;font-family:"Be Vietnam Pro","Inter",var(--font-h),sans-serif;font-weight:900;font-size:clamp(20px,2.6vw,40px);line-height:1.12;letter-spacing:-.02em;text-transform:uppercase}
 .price-gold span{background:linear-gradient(180deg,#FFF8BD 0%,#FFD74F 27%,#FFB91E 52%,#8D4A00 82%,#FFD75C 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:1px rgba(115,57,0,.35);filter:drop-shadow(0 2px 0 #7A4000) drop-shadow(0 4px 6px rgba(155,93,0,.25))}

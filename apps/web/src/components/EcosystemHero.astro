@@ -1,0 +1,39 @@
+---
+import { url } from '../utils/url';
+import { productScreens } from '../data/product-screens';
+import { homeCompanions } from '../data/home';
+import Icon from './Icon.astro';
+---
+<section class="home-hero" aria-labelledby="home-title">
+  <div class="home-hero-orbit" aria-hidden="true"></div>
+  <div class="home-container home-hero-grid">
+    <div class="home-hero-copy">
+      <p class="home-kicker"><span class="home-status-dot"></span>UNESCO AI · Hệ sinh thái phần mềm</p>
+      <h1 id="home-title">Quy trình <br />vận hành <br /><span>toàn diện.</span></h1>
+      <p class="home-hero-audience">Cho công ty dịch vụ kế toán</p>
+      <p class="home-hero-description">Từ tìm kiếm khách hàng đến thực hiện, quản lý, chăm sóc và tuân thủ. <strong>AI hỗ trợ kiểm soát toàn diện</strong> cho công ty và hộ kinh doanh.</p>
+      <div class="home-actions">
+        <a class="home-button home-button-primary" href="#tu-van">Khám phá cùng chuyên gia<Icon name="chevron-right" /></a>
+        <a class="home-button home-button-video" href="#video-gioi-thieu"><span><Icon name="play" /></span>Xem phần mềm</a>
+      </div>
+      <div class="home-offer"><span class="home-offer-number" aria-hidden="true">1<span>+</span>5</span><div><strong>Mua 1, tặng kèm 5 sản phẩm</strong><span><Icon name="check-circle" />Sử dụng vĩnh viễn</span></div></div>
+    </div>
+    <div class="home-hero-stage">
+      <div class="home-stage-heading"><span class="home-stage-symbol"><Icon name="network" /></span><div>MỘT HỆ SINH THÁI<strong>Kết nối mọi bước vận hành</strong></div><span class="home-stage-ai">AI</span></div>
+      <div class="home-stage-content">
+        <div class="home-main-product">
+          <div class="home-window-bar"><span class="home-window-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>UNESCO XII AI</span><Icon name="lock" /></div>
+          <a class="home-screen-link" href={url('/unesco-xii-ai/huong-dan/')} aria-label="Khám phá phần mềm UNESCO XII AI"><img src={url(productScreens.xiiAi.thumb)} width={productScreens.xiiAi.width} height={productScreens.xiiAi.height} alt={productScreens.xiiAi.alt} fetchpriority="high" /></a>
+          <div class="home-main-product-caption"><span><Icon name="cpu" />Kế toán thông minh</span><a href={url('/unesco-xii-ai/huong-dan/')}>Khám phá<Icon name="chevron-right" /></a></div>
+        </div>
+        <aside class="home-companions" aria-labelledby="home-companions-title">
+          <h2 id="home-companions-title">Phần mềm đi kèm</h2>
+          <ul>{homeCompanions.map(({ product, icon, tone, role }) => <li><a class={`home-companion home-tone-${tone}`} href={url(product.href ?? `/san-pham/#${product.id}`)}><span class="home-product-icon"><Icon name={icon} /></span><span><strong>{product.name}</strong><small>{role}</small></span><Icon name="chevron-right" class="home-companion-arrow" /></a></li>)}</ul>
+        </aside>
+      </div>
+      <div class="home-stage-footer"><span><Icon name="shield-check" />AI hỗ trợ. Kế toán làm chủ.</span><span class="home-stage-line" aria-hidden="true"></span><span><Icon name="building" />Công ty</span><span><Icon name="store" />Hộ kinh doanh</span></div>
+      <div class="home-stage-float" aria-hidden="true"><Icon name="sparkles" /><span>Thông minh hơn.<br /><strong>Chủ động hơn.</strong></span></div>
+    </div>
+  </div>
+  <div class="home-container home-hero-bottom"><span>Một hành trình. Năm bước kết nối.</span><a href="#quy-trinh">Khám phá cách vận hành<span aria-hidden="true">↓</span></a></div>
+</section>
