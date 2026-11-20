@@ -27,7 +27,7 @@ import Icon from './Icon.astro';
           <div class="home-main-product-caption"><span><Icon name="cpu" />Kế toán thông minh</span><a href={url('/unesco-xii-ai/huong-dan/')}>Khám phá<Icon name="chevron-right" /></a></div>
         </div>
         <aside class="home-companions" aria-labelledby="home-companions-title">
-          <h2 id="home-companions-title">Phần mềm đi kèm</h2>
+          <h2 id="home-companions-title">{homeCompanions.length} phần mềm đi kèm</h2>
           <ul>{homeCompanions.map(({ product, icon, tone, role }) => <li><a class={`home-companion home-tone-${tone}`} href={url(product.href ?? `/san-pham/#${product.id}`)}><span class="home-product-icon"><Icon name={icon} /></span><span><strong>{product.name}</strong><small>{role}</small></span><Icon name="chevron-right" class="home-companion-arrow" /></a></li>)}</ul>
         </aside>
       </div>

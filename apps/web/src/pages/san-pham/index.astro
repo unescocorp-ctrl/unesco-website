@@ -10,14 +10,14 @@ const needs: [string, string, string][] = [
   ['Tải và lưu XML/PDF bằng công cụ Windows độc lập', 'UNESCO HĐĐT – bản thử nghiệm', 'Miễn phí · 0 đ'],
   ['Sổ sách, báo cáo thuế đầy đủ, ngân sách vừa phải', 'UNESCO XI', '4.500.000 đ / MST'],
   ['Giảm nhập liệu hoá đơn, sổ phụ, giá thành bằng AI', 'UNESCO XI + AI', '7.000.000 đ / MST'],
-  ['Công ty dịch vụ kế toán: làm sổ cho nhiều khách và điều hành công ty', 'UNESCO XII AI – kèm ERP_UNESCO, UNESCO_TAX_Online', '10.000.000 đ / MST'],
+  ['Công ty dịch vụ kế toán: làm sổ cho nhiều khách và điều hành công ty', 'UNESCO XII AI – tặng kèm 5 sản phẩm', '10.000.000 đ / MST'],
   ['Khách hàng dịch vụ kế toán tự theo dõi công nợ, hàng hoá, hoá đơn', 'UNESCO_TAX_Online', 'Tặng kèm UNESCO XII AI'],
   ['Trả lời khách đa kênh, báo giá, hợp đồng, thu tiền', 'UNESCO SalesCRM AI', 'Tặng kèm UNESCO XII AI'],
-  ['Phần mềm bán hàng', 'UNESCO SALE', '3.000.000 đ / MST'],
+  ['Phần mềm bán hàng', 'UNESCO SALE', 'Mua riêng: 3.000.000 đ / MST · Tặng kèm UNESCO XII AI'],
   ['Quản lý công ty dịch vụ bảo vệ', 'UNESCO SECURITY – có video demo và tài liệu', 'Liên hệ'],
 ];
 ---
-<ContentLayout title="Sản phẩm UNESCO – Phần mềm kế toán, dịch vụ kế toán, bán hàng" description="Các sản phẩm của Công ty TNHH Phần mềm UNESCO: UNESCO XII AI, UNESCO XI + AI, UNESCO XI, ERP_UNESCO, UNESCO_TAX_Online, UNESCO SalesCRM AI, UNESCO SALE và UNESCO SECURITY. Chọn theo nhu cầu, giá công khai." eyebrow="Sản phẩm UNESCO" display="SẢN PHẨM |UNESCO" subtitle="Phần mềm cho kế toán, dịch vụ kế toán, bán hàng và quản lý chuyên ngành" pills={['Giá công khai', 'Trả phí 1 lần cho phần mềm kế toán', 'Triển khai miễn phí']}>
+<ContentLayout title="Sản phẩm UNESCO – Phần mềm kế toán, dịch vụ kế toán, bán hàng" description="Các sản phẩm của Công ty TNHH Phần mềm UNESCO: UNESCO XII AI, UNESCO XI + AI, UNESCO XI, ERP_UNESCO, UNESCO_TAX_Online, UNESCO SalesCRM AI, UNESCO HĐĐT, UNESCO SALE và UNESCO SECURITY. Chọn theo nhu cầu, giá công khai." eyebrow="Sản phẩm UNESCO" display="SẢN PHẨM |UNESCO" subtitle="Phần mềm cho kế toán, dịch vụ kế toán, bán hàng và quản lý chuyên ngành" pills={['Giá công khai', 'Trả phí 1 lần cho phần mềm kế toán', 'Triển khai miễn phí']}>
 <section class="section"><div class="container">
   <div class="pd-chips" role="group" aria-label="Lọc theo nhóm sản phẩm">
     <button type="button" class="pd-chip" data-f="all" aria-pressed="true">Tất cả</button>
@@ -27,7 +27,7 @@ const needs: [string, string, string][] = [
 </div></section>
 
 <section class="section surface-soft"><div class="container">
-  <div class="section-head"><div><span class="eyebrow">Chọn theo nhu cầu</span><h2>Bạn cần gì, dùng sản phẩm nào</h2></div><p>Mua UNESCO XII AI được tặng kèm ERP_UNESCO, UNESCO_TAX_Online và UNESCO SalesCRM AI.</p></div>
+  <div class="section-head"><div><span class="eyebrow">Chọn theo nhu cầu</span><h2>Bạn cần gì, dùng sản phẩm nào</h2></div><p>Mua UNESCO XII AI được tặng kèm 5 sản phẩm sử dụng vĩnh viễn: ERP_UNESCO, UNESCO_TAX_Online, UNESCO SalesCRM AI, UNESCO HĐĐT và UNESCO SALE.</p></div>
   <div class="table-wrap"><table class="article-table"><thead><tr><th>Bạn cần</th><th>Sản phẩm phù hợp</th><th>Giá</th></tr></thead>
   <tbody>{needs.map((r) => <tr><td data-label="Bạn cần">{r[0]}</td><td data-label="Sản phẩm phù hợp"><b>{r[1]}</b></td><td data-label="Giá">{r[2]}</td></tr>)}</tbody></table></div>
 </div></section>

@@ -2,11 +2,12 @@ import { products } from './products';
 import { productScreens } from './product-screens';
 import { shots } from './screenshots';
 
-// Hai sản phẩm còn lại của ưu đãi 1+5 chờ chủ sản phẩm cung cấp.
 export const homeCompanions = [
-  { id: 'salescrm', icon: 'users', tone: 'green', role: 'Tìm kiếm & chăm sóc khách hàng' },
-  { id: 'erp-unesco', icon: 'bar-chart', tone: 'blue', role: 'Điều hành công ty dịch vụ kế toán' },
-  { id: 'unesco-tax-online', icon: 'file-check', tone: 'teal', role: 'Công nợ, hàng hoá & hoá đơn' },
+  { id: 'salescrm', icon: 'users', tone: 'green', role: 'Tìm kiếm & chăm sóc khách hàng', description: 'Theo dõi cơ hội, báo giá, hợp đồng và hỗ trợ sau bán.' },
+  { id: 'erp-unesco', icon: 'bar-chart', tone: 'blue', role: 'Điều hành công ty dịch vụ kế toán', description: 'Nắm khách hàng, công việc, nhân sự và tiến độ.' },
+  { id: 'unesco-tax-online', icon: 'file-check', tone: 'teal', role: 'Công nợ, hàng hoá & hoá đơn', description: 'Hỗ trợ khách hàng dịch vụ kế toán theo dõi dữ liệu kinh doanh.' },
+  { id: 'unesco-hddt', icon: 'download', tone: 'violet', role: 'Tải & lưu hoá đơn điện tử', description: 'Lưu XML/PDF về máy, tìm hoá đơn và tiếp tục tải phần còn thiếu.' },
+  { id: 'unesco-sale', icon: 'store', tone: 'amber', role: 'Bán hàng, tồn kho & công nợ', description: 'Bán hàng tại quầy và theo dõi hoạt động kinh doanh trên máy tính, máy tính bảng, điện thoại.' },
 ].map((item) => ({ ...item, product: products.find((product) => product.id === item.id)! }));
 
 export const homeWorkflow = [
@@ -48,6 +49,7 @@ export const homeWorkflow = [
 ];
 
 export const homeFaqs = [
+  { question: 'Mua UNESCO XII AI được tặng kèm những sản phẩm nào?', answer: `Bộ 5 sản phẩm đi kèm gồm ${homeCompanions.map(({ product }) => product.name).join(', ')}. Mua 1, tặng kèm 5 sản phẩm sử dụng vĩnh viễn. Xem thông tin từng sản phẩm và chính sách triển khai tại trang Bảng giá.` },
   { question: 'UNESCO phù hợp với công ty dịch vụ kế toán như thế nào?', answer: 'Bạn có thể kết hợp phần mềm kế toán để xử lý bộ sổ, ERP_UNESCO để quản lý khách hàng và công việc, SalesCRM AI để theo dõi cơ hội và chăm sóc khách hàng. Bộ phận tư vấn sẽ hướng dẫn lựa chọn theo quy mô và quy trình thực tế của bạn.' },
   { question: 'AI có thay quyền quyết định của kế toán không?', answer: 'AI hỗ trợ đọc dữ liệu, đối chiếu và đề xuất. Kế toán vẫn kiểm tra, xác nhận và chịu trách nhiệm về quyết định nghiệp vụ. Các tuỳ chọn xử lý tự động được quản lý theo chức năng và cấu hình của phần mềm.' },
   { question: 'Có thể xem phần mềm trước khi lựa chọn không?', answer: 'Có. Bạn có thể xem video, ảnh giao diện và tài liệu ngay trên website, hoặc đăng ký buổi demo để được giới thiệu theo nhu cầu của công ty.' },

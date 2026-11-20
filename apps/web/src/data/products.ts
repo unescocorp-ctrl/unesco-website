@@ -46,10 +46,10 @@ export const SERVICE_DISCOUNT = 'Trên 10 MST: giảm 30%';
 export const products: Product[] = [
   {
     id: 'unesco-xii-ai', name: 'UNESCO XII AI', family: 'ke-toan', badge: 'Khuyên dùng', featured: true,
-    short: 'Thế hệ kế toán tiếp theo, tặng kèm 03 sản phẩm',
-    tagline: 'Thế hệ phần mềm kế toán tiếp theo của UNESCO, tặng kèm ERP_UNESCO, UNESCO_TAX_Online và UNESCO SalesCRM AI.',
-    points: ['Tặng kèm ERP_UNESCO', 'Tặng kèm UNESCO_TAX_Online', 'Tặng kèm UNESCO SalesCRM AI'],
-    price: '10.000.000 đ', unit: '/ MST', priceNote: 'Trả phí 1 lần · tặng kèm 03 sản phẩm', serviceNote: SERVICE_DISCOUNT,
+    short: 'Thế hệ kế toán tiếp theo, tặng kèm 5 sản phẩm',
+    tagline: 'Thế hệ phần mềm kế toán tiếp theo của UNESCO, tặng kèm ERP_UNESCO, UNESCO_TAX_Online, UNESCO SalesCRM AI, UNESCO HĐĐT và UNESCO SALE.',
+    points: ['Tặng kèm ERP_UNESCO', 'Tặng kèm UNESCO_TAX_Online', 'Tặng kèm UNESCO SalesCRM AI', 'Tặng kèm UNESCO HĐĐT', 'Tặng kèm UNESCO SALE'],
+    price: '10.000.000 đ', unit: '/ MST', priceNote: 'Trả phí 1 lần · tặng kèm 5 sản phẩm sử dụng vĩnh viễn', serviceNote: SERVICE_DISCOUNT,
     media: { img: productScreens.xiiAi.thumb, full: productScreens.xiiAi.src, alt: productScreens.xiiAi.alt, width: productScreens.xiiAi.width, height: productScreens.xiiAi.height },
   },
   {
@@ -105,11 +105,11 @@ export const products: Product[] = [
     media: { img: '/screenshots/salescrm/tong-quan.webp', alt: 'Màn hình tổng quan UNESCO SalesCRM AI' },
   },
   {
-    id: 'unesco-sale', name: 'UNESCO SALE', family: 'ban-hang',
+    id: 'unesco-sale', name: 'UNESCO SALE', family: 'ban-hang', badge: 'Tặng kèm UNESCO XII AI',
     short: 'Bán tại quầy, tồn kho, công nợ, lợi nhuận',
     tagline: 'Bán hàng tại quầy, theo dõi tồn kho, công nợ và lợi nhuận mỗi ngày trên máy tính, máy tính bảng hay điện thoại.',
     points: ['POS: quét mã vạch, thu tiền, bản nháp', 'Tồn kho, thẻ kho theo kỳ', 'Bán một đơn: tồn kho, công nợ, báo cáo cùng cập nhật'],
-    price: '3.000.000 đ', unit: '/ MST (khách hàng)',
+    price: '3.000.000 đ', unit: '/ MST (khách hàng)', priceNote: 'Giá mua riêng · Tặng kèm khi mua UNESCO XII AI',
     href: '/san-pham/unesco-sale/',
     media: { img: '/screenshots/unesco-sale/tong-quan.webp', alt: 'Màn hình tổng quan UNESCO SALE', video: '/videos/unesco-sale-huong-dan.mp4' },
   },
