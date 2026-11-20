@@ -4,7 +4,7 @@ import { hddtRelease as r } from '../data/hddt';
 ---
 <section id="dang-ky-tai" class="register-section section">
  <div class="container register-grid">
-  <div><span class="eyebrow">Miễn phí · 0 đ</span><h2>Đăng ký để tải<br/>UNESCO HĐĐT</h2><p>Nhập email và số điện thoại để nhận lượt tải bản Windows {r.version}. Không cần thanh toán.</p><ul><li>Giao diện nền trắng, logo và thông tin UNESCO.</li><li>Lượt tải dùng một lần, có hiệu lực 15 phút.</li><li>Giải nén toàn bộ ZIP rồi mở UNESCO_HDDT_DocLap.exe.</li></ul><p class="privacy-note">UNESCO dùng thông tin để ghi nhận đăng ký, cấp lượt tải và hỗ trợ phần mềm. Không yêu cầu mật khẩu cổng thuế. Liên hệ unesco.corp@gmail.com nếu cần cập nhật hoặc xóa thông tin.</p></div>
+  <div><span class="eyebrow">Miễn phí · 0 đ</span><h2>Đăng ký để tải<br/>UNESCO HĐĐT</h2><p>Nhập email và số điện thoại để nhận lượt tải bản Windows {r.version}. Không cần thanh toán.</p><ul><li>Giao diện nền trắng, logo và thông tin UNESCO.</li><li>Lượt tải có hiệu lực 15 phút, hỗ trợ tải lại khi mạng gián đoạn.</li><li>Giải nén toàn bộ ZIP rồi mở UNESCO_HDDT_DocLap.exe.</li></ul><p class="privacy-note">UNESCO dùng thông tin để ghi nhận đăng ký, cấp lượt tải và hỗ trợ phần mềm. Không yêu cầu mật khẩu cổng thuế. Liên hệ unesco.corp@gmail.com nếu cần cập nhật hoặc xóa thông tin.</p></div>
   <div class="register-card">
    <form id="hddt-registration" data-endpoint="https://unesco-hddt-download.anhmaitax.chatgpt.site">
     <div class="field"><label for="hddt-email">Email <span aria-hidden="true">*</span></label><input id="hddt-email" name="email" type="email" autocomplete="email" maxlength="254" required placeholder="ban@congty.vn"/></div>
@@ -14,7 +14,7 @@ import { hddtRelease as r } from '../data/hddt';
     <button class="btn btn-primary" type="submit">Đăng ký và nhận lượt tải miễn phí</button>
     <p class="form-status" role="status" aria-live="polite"></p>
    </form>
-   <div id="hddt-download-ready" hidden tabindex="-1"><h3>Đăng ký đã được lưu</h3><p>Bấm nút dưới đây để tải bản Windows. Lượt tải có hiệu lực 15 phút và dùng một lần.</p><a class="btn btn-primary" id="hddt-authorized-download" rel="noreferrer">Tải UNESCO HĐĐT {r.version}</a><p class="reference"></p><button class="btn btn-secondary" id="hddt-register-again" type="button">Đăng ký lượt tải khác</button></div>
+   <div id="hddt-download-ready" hidden tabindex="-1"><h3>Đăng ký đã được lưu</h3><p>Bấm nút dưới đây để tải bản Windows. Lượt tải có hiệu lực 15 phút. Có thể bấm lại nếu tải bị gián đoạn.</p><a class="btn btn-primary" id="hddt-authorized-download" rel="noreferrer">Tải UNESCO HĐĐT {r.version}</a><p class="reference"></p><button class="btn btn-secondary" id="hddt-register-again" type="button">Đăng ký lượt tải khác</button></div>
    <noscript>Cần bật JavaScript để gửi đăng ký và nhận lượt tải. Liên hệ UNESCO nếu cần hỗ trợ.</noscript>
   </div>
  </div>
