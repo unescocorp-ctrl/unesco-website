@@ -1,0 +1,116 @@
+{
+ "loai": "lich_su_cap_nhat_xii",
+ "san_pham": "UNESCO_XII",
+ "lap_luc": "2026-11-20 13:46",
+ "ghi_chu_muc_luc": "Mục lục không ký. Gói có da_ky = true: nội dung lấy từ tệp mô tả đã ký <goi>.json (máy khách kiểm lại chữ ký).",
+ "goi": [
+  {
+   "goi": "GD216",
+   "ngay": "20/11/2026",
+   "luc": "2026-11-20 13:46",
+   "ghi_chu": [
+    "Bang ke ban ra: hoa don 8% ve dung muc thue 10%, xuat Excel lay ca hoa don 8%",
+    "Khach hang: ghi duoc MST 12 so cua ho kinh doanh, nut Tra cuu thue canh o MS Thue, doi chieu va dien lai ten, dia chi",
+    "Ten hang hoa nhap duoc 255 ky tu",
+    "Hoa don AI lap hien mot dong trong Danh sach chung tu",
+    "Mo nhieu so cung luc: He thong - Mo them so khac (Ctrl+Shift+N)",
+    "Tram ERP mo duoc ben canh UNESCO XII dang lam viec tren cung may",
+    "Thue TNCN 2026: mien tien lam them gio tu 01/7/2026 va ke rieng thu nhap duoc mien; 05/KK tu quy 3/2026 theo mau TT89; 05/QTT 2026 tam lap theo mau TT80 khi HTKK chua co mau TT89",
+    "Phu cap 2026 va canh bao khi nhap phu cap",
+    "Chung tu mo toan man hinh, phan dau gon, luoi dai hon; bam dup ha dong de doi ma thi o Ma so mo / khoa dung theo tai khoan cua dong do",
+    "Bao cao luy ke nhap xuat ton: hien canh bao am hang",
+    "Xuat Excel bao cao: bo chu Trang n va chan trang lap, so can phai, so am trong ngoac",
+    "The Hoa don AI: nut Kiem tra HD bi huy / thay the va Chon / bo chon tat ca",
+    "Bo cuc the tren cac man hinh AI",
+    "Cap nhat nhanh va Tro giup - Lich su cap nhat"
+   ],
+   "so_tep": 1236,
+   "kich_thuoc": 46997057,
+   "co_exe": true,
+   "exe_sha256": "f1c8c60e77de862a75249d8e86caae00482ead988c5dfc8801b566eafaef93db",
+   "tep": "GD216.json",
+   "nguon": "kenh",
+   "da_ky": true
+  },
+  {
+   "goi": "GD215",
+   "ngay": "19/11/2026",
+   "luc": "2026-11-19 15:07",
+   "ghi_chu": [
+    "Nhap tai san moi: chon Loai/Nhom thi tu dien Tai khoan (het bao thieu tai khoan tai san)",
+    "Ten hang hoa nhap duoc 150 ky tu (truoc la 50)"
+   ],
+   "so_tep": 1234,
+   "kich_thuoc": 46924918,
+   "co_exe": true,
+   "exe_sha256": "74fddc61c17bcab070201be09382791b78f60b4d51da9110d2f08c5d5267d944",
+   "tep": "GD215.json",
+   "nguon": "kenh",
+   "da_ky": true
+  },
+  {
+   "goi": "GD214",
+   "ngay": "19/11/2026",
+   "luc": "2026-11-19 12:34",
+   "ghi_chu": [
+    "AI: so da duoc quan tri danh dau kich hoat thi may bi dat chi xem AI van dung duoc (nut khong con bi khoa)"
+   ],
+   "so_tep": 1234,
+   "kich_thuoc": 46909802,
+   "co_exe": true,
+   "exe_sha256": "142af103a4209f67e5a7efeb20105694d79097da35f8e3500b23fa5882222887",
+   "tep": "GD214.json",
+   "nguon": "khoi_phuc_git",
+   "da_ky": true
+  },
+  {
+   "goi": "GD213",
+   "ngay": "19/11/2026",
+   "luc": "2026-11-19 08:37",
+   "ghi_chu": [
+    "Thêm kênh cập nhật qua internet https://www.unescosoft.com/cap-nhat-xii/ (tệp kênh 2 dòng: mạng LAN rồi web)",
+    "Cùng chương trình với GĐ212"
+   ],
+   "so_tep": null,
+   "kich_thuoc": null,
+   "co_exe": null,
+   "exe_sha256": "",
+   "tep": "",
+   "nguon": "ghi_nho",
+   "da_ky": false
+  },
+  {
+   "goi": "GD212",
+   "ngay": "19/11/2026",
+   "luc": "2026-11-19 08:06",
+   "ghi_chu": [
+    "Chon so van mo duoc khi may khong ghi duoc thu muc chuong trinh (tai khoan Windows thuong)",
+    "Nhan dang ky chep tu UNESCO XI (Cach = 0)"
+   ],
+   "so_tep": 1234,
+   "kich_thuoc": 46909750,
+   "co_exe": true,
+   "exe_sha256": "a1c8e6aaf437d55bb947d29ae6b0aab84de3936004b9969b226d58d8e1da3ac3",
+   "tep": "GD212.json",
+   "nguon": "khoi_phuc_tam",
+   "da_ky": true
+  },
+  {
+   "goi": "GD211",
+   "ngay": "18/11/2026",
+   "luc": "2026-11-18 17:06",
+   "ghi_chu": [
+    "Phu cap 2026: danh muc co co BHXH/TNCN, muc tran co ngay hieu luc; tang ca mien TNCN phan chenh lech",
+    "Sua loi sao luu khi cai bang AI tu may nhan vien; bat AI cho moi tai khoan (BAT_AI.txt)",
+    "Man hinh chinh: Lao dong - BHXH; Cong cu Dung cu - Chi phi tra truoc. HDLD Word mau 2026"
+   ],
+   "so_tep": 1233,
+   "kich_thuoc": 46857041,
+   "co_exe": true,
+   "exe_sha256": "d2966900d2f2cfc4edf1dabee45fd6f4f7466883dc77e4d9d8dcb31614c6b484",
+   "tep": "GD211.json",
+   "nguon": "khoi_phuc_chua_ky",
+   "da_ky": false
+  }
+ ]
+}

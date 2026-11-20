@@ -1,19 +1,19 @@
 {
     "loai":  "unesco_cap_nhat",
     "san_pham":  "UNESCO_XII",
-    "ten":  "GD215",
-    "goi":  "GD215",
-    "ngay":  "19/11/2026",
-    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261119_GD215.zip",
-    "sha256":  "e81c045e2a76809f9d10b0526f3fd585920e60528a83114c5f48f41dc5120386",
-    "kich_thuoc":  46924918,
+    "ten":  "GD216",
+    "goi":  "GD216",
+    "ngay":  "20/11/2026",
+    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261120_GD216.zip",
+    "sha256":  "13177ef7fed0267b8749ee60c70707a8395cdea9e5a0244d62371436ebaee3b5",
+    "kich_thuoc":  46997057,
     "co_exe":  true,
     "bat_buoc":  false,
     "exe":  "Unesco.NET.exe",
     "ghi_chu":  [
-                    "Nhap tai san moi: chon Loai/Nhom thi tu dien Tai khoan (het bao thieu tai khoan tai san),Ten hang hoa nhap duoc 150 ky tu (truoc la 50)"
+                    "Bang ke ban ra: hoa don 8% ve dung muc thue 10%, xuat Excel lay ca hoa don 8% | Khach hang: ghi duoc MST 12 so cua ho kinh doanh, nut Tra cuu thue canh o MS Thue, doi chieu va dien lai ten, dia chi | Ten hang hoa nhap duoc 255 ky tu | Hoa don AI lap hien mot dong trong Danh sach chung tu | Mo nhieu so cung luc: He thong - Mo them so khac (Ctrl+Shift+N) | Tram ERP mo duoc ben canh UNESCO XII dang lam viec tren cung may | Thue TNCN 2026: mien tien lam them gio tu 01/7/2026 va ke rieng thu nhap duoc mien; 05/KK tu quy 3/2026 theo mau TT89; 05/QTT 2026 tam lap theo mau TT80 khi HTKK chua co mau TT89 | Phu cap 2026 va canh bao khi nhap phu cap | Chung tu mo toan man hinh, phan dau gon, luoi dai hon; bam dup ha dong de doi ma thi o Ma so mo / khoa dung theo tai khoan cua dong do | Bao cao luy ke nhap xuat ton: hien canh bao am hang | Xuat Excel bao cao: bo chu Trang n va chan trang lap, so can phai, so am trong ngoac | The Hoa don AI: nut Kiem tra HD bi huy / thay the va Chon / bo chon tat ca | Bo cuc the tren cac man hinh AI | Cap nhat nhanh va Tro giup - Lich su cap nhat"
                 ],
-    "so_tep":  1234,
+    "so_tep":  1236,
     "tep_trong_goi":  [
                           {
                               "duong_dan":  "AIHoaDon/ai_auto_dieu_phoi.py",
@@ -3532,6 +3532,11 @@
                           },
                           {
                               "duong_dan":  "AIHoaDon/kk_tncn.py",
+                              "kich_thuoc":  37006,
+                              "sha256":  "5f8504ea74bee155df45af7aecb567a1602daf2a0658e040198e34c4c7008f9d"
+                          },
+                          {
+                              "duong_dan":  "AIHoaDon/kk_tncn.py.cu_truoc_TNCN_P0_20261119",
                               "kich_thuoc":  28572,
                               "sha256":  "d7067c03acb3d00a3659e40c4f6619ca605379e4ccc14ed270950a857859bddc"
                           },
@@ -3613,10 +3618,15 @@
                           {
                               "duong_dan":  "AIHoaDon/phien_ban_goi.txt",
                               "kich_thuoc":  117,
-                              "sha256":  "9444601eae0e09944ef97e083f9e53f8c34441191f8d6909e048b0afaeb657df"
+                              "sha256":  "95d56b3e2797ca2b2a0d2a82306786a550e86ccc7686b57d67f41755fb90def8"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py",
+                              "kich_thuoc":  152356,
+                              "sha256":  "2678ddab447d6c7809dad0f3ffb477d8fc203db3d5c4d69ddff34086507b347f"
+                          },
+                          {
+                              "duong_dan":  "AIHoaDon/qtt_tncn.py.cu_truoc_TNCN_P0_20261119",
                               "kich_thuoc":  109033,
                               "sha256":  "9005737ca6cd22ff876a3df9b59aa7c1471d3de3708448bd174ae91dec82cbad"
                           },
@@ -4002,8 +4012,8 @@
                           },
                           {
                               "duong_dan":  "AIHoaDon/tra_cuu_mst.py",
-                              "kich_thuoc":  29908,
-                              "sha256":  "6d5409466195b1a68baa1733662a9852377766d93ed68df3e00fe5e617bffd8f"
+                              "kich_thuoc":  32438,
+                              "sha256":  "e7b9fc873a25e82d4b5bf50f7e237f2455844cb394be8363e4264f225d54ce41"
                           },
                           {
                               "duong_dan":  "AIHoaDon/tra_loi_hang_doi.py",
@@ -6172,8 +6182,8 @@
                           },
                           {
                               "duong_dan":  "Unesco.NET.exe",
-                              "kich_thuoc":  33762304,
-                              "sha256":  "74fddc61c17bcab070201be09382791b78f60b4d51da9110d2f08c5d5267d944"
+                              "kich_thuoc":  33823232,
+                              "sha256":  "f1c8c60e77de862a75249d8e86caae00482ead988c5dfc8801b566eafaef93db"
                           },
                           {
                               "duong_dan":  "UnescoConnect.dll",
