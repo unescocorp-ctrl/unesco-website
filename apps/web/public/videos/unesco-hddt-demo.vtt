@@ -1,0 +1,154 @@
+WEBVTT
+
+00:00:00.250 --> 00:00:00.971
+Chào anh chị.
+
+00:00:00.971 --> 00:00:05.793
+Đây là UNESCO hóa đơn điện tử độc lập, bản thử nghiệm miễn phí với giao diện nền trắng.
+
+00:00:05.793 --> 00:00:12.612
+Video được dựng từ ảnh chụp giao diện thực tế, cập nhật ngày hai mươi tháng mười một năm hai nghìn không trăm hai mươi sáu.
+
+00:00:13.650 --> 00:00:16.445
+Từ trang sản phẩm, chọn Dùng thử demo trên web.
+
+00:00:16.445 --> 00:00:20.726
+Màn hình cho phép làm quen với quy trình xử lý hóa đơn bằng dữ liệu mẫu.
+
+00:00:20.726 --> 00:00:24.115
+Demo không kết nối cổng thuế và không nhận mật khẩu thuế.
+
+00:00:25.117 --> 00:00:28.886
+Chọn khoảng ngày và chiều hóa đơn, rồi bấm Đồng bộ mẫu.
+
+00:00:28.886 --> 00:00:32.656
+Trong ví dụ này, bảng có sáu hóa đơn mua vào và bán ra.
+
+00:00:32.656 --> 00:00:37.316
+Các ô thống kê giúp theo dõi số hóa đơn, XML, PDF và phần còn thiếu.
+
+00:00:38.317 --> 00:00:40.066
+Gõ từ khóa vào ô tìm hóa đơn.
+
+00:00:40.066 --> 00:00:43.624
+Chẳng hạn, nhập đại việt không dấu để tìm đối tác Đại Việt.
+
+00:00:43.624 --> 00:00:48.691
+Có thể tìm theo số hóa đơn, tên đối tác hoặc mã số thuế trong dữ liệu đang hiển thị.
+
+00:00:49.717 --> 00:00:51.788
+Bấm vào số hóa đơn để mở chi tiết.
+
+00:00:51.788 --> 00:00:55.503
+Kiểm tra ngày lập, đối tác, số tiền thanh toán và trạng thái.
+
+00:00:55.503 --> 00:01:00.254
+Đây là thông tin minh họa trong demo, không phải hóa đơn thật dùng để kê khai.
+
+00:01:01.317 --> 00:01:04.613
+Chọn các dòng cần xử lý rồi bấm Mô phỏng tải XML, PDF.
+
+00:01:04.613 --> 00:01:08.093
+Hai hóa đơn được chọn chuyển sang trạng thái Đã mô phỏng.
+
+00:01:08.093 --> 00:01:11.023
+Những dòng chưa chọn vẫn giữ trạng thái Chưa có.
+
+00:01:11.023 --> 00:01:13.709
+Thao tác này không tải hóa đơn từ cổng thuế.
+
+00:01:14.717 --> 00:01:17.808
+Bấm Xuất CSV mẫu để lấy danh sách các dòng đã chọn.
+
+00:01:17.808 --> 00:01:20.840
+Nếu chưa chọn dòng, demo xử lý bảng đang hiển thị.
+
+00:01:20.840 --> 00:01:25.689
+Tệp mẫu giúp thử cách đối chiếu danh sách, không dùng để hạch toán hoặc kê khai.
+
+00:01:26.717 --> 00:01:31.535
+Để tải phần mềm Windows, quay lại trang sản phẩm và điền email cùng số điện thoại.
+
+00:01:31.535 --> 00:01:35.236
+Đọc nội dung đồng ý liên hệ, đánh dấu xác nhận rồi gửi đăng ký.
+
+00:01:35.236 --> 00:01:38.116
+Thông tin xuất hiện trong video là thông tin thử.
+
+00:01:39.117 --> 00:01:42.443
+Website đã nhận đăng ký và hiển thị Chờ UNESCO duyệt.
+
+00:01:42.443 --> 00:01:44.514
+Lúc này chưa có nút tải phần mềm.
+
+00:01:44.514 --> 00:01:47.778
+Hãy lưu liên kết theo dõi riêng để kiểm tra kết quả.
+
+00:01:47.778 --> 00:01:51.292
+Chỉ khi quản trị UNESCO xác nhận, quyền tải mới được mở.
+
+00:01:52.317 --> 00:01:55.745
+Trang quản trị yêu cầu đăng nhập bằng tài khoản chủ được cấu hình.
+
+00:01:55.745 --> 00:01:57.459
+Khách đăng ký không thể tự duyệt.
+
+00:01:57.459 --> 00:02:03.380
+Các cảnh tiếp theo được thực hiện trên bản chạy thử cùng mã nguồn, với dữ liệu mẫu, để minh họa thao tác quản trị.
+
+00:02:04.383 --> 00:02:09.738
+Trong danh sách Chờ duyệt, quản trị xem email, số điện thoại, thời điểm đăng ký và mã yêu cầu.
+
+00:02:09.738 --> 00:02:14.694
+Sau khi kiểm tra thông tin liên hệ, chọn Duyệt cho tải đối với yêu cầu được chấp thuận.
+
+00:02:15.717 --> 00:02:18.574
+Hệ thống mở hộp xác nhận, hiển thị lại người đăng ký.
+
+00:02:18.574 --> 00:02:21.970
+Quản trị bấm Xác nhận duyệt để cấp quyền, hoặc Hủy để quay lại.
+
+00:02:21.970 --> 00:02:25.582
+Đây là bước xác nhận bắt buộc trước khi khách có thể nhận lượt tải.
+
+00:02:26.583 --> 00:02:30.748
+Khi yêu cầu đã được duyệt, trang theo dõi hiển thị nút Nhận lượt tải miễn phí.
+
+00:02:30.748 --> 00:02:35.926
+Khách có thể bấm Kiểm tra lại để cập nhật ngay, rồi nhận lượt tải dành cho bản Windows hiện hành.
+
+00:02:36.983 --> 00:02:40.995
+Nút tải UNESCO hóa đơn điện tử chỉ hiện sau khi hệ thống cấp lượt tải.
+
+00:02:40.995 --> 00:02:45.121
+Lượt tải có hiệu lực mười lăm phút và hỗ trợ tải lại nếu mạng gián đoạn.
+
+00:02:45.121 --> 00:02:48.273
+Cảnh này minh họa việc cấp quyền, chưa tải gói cài đặt.
+
+00:02:49.317 --> 00:02:51.808
+Nếu cần, quản trị có thể thu hồi quyền tải.
+
+00:02:51.808 --> 00:02:55.690
+Trang theo dõi chuyển sang trạng thái Từ chối và không còn nút tải.
+
+00:02:55.690 --> 00:02:58.819
+Quyết định thu hồi cũng chặn lượt tải đã cấp trước đó.
+
+00:02:59.850 --> 00:03:03.368
+Đây là ảnh giao diện Windows phiên bản không chấm một chấm ba.
+
+00:03:03.368 --> 00:03:09.099
+Ứng dụng có vùng đăng nhập riêng, lựa chọn kỳ, thư mục lưu và chức năng xuất XML cho UNESCO mười hai.
+
+00:03:09.099 --> 00:03:12.844
+Việc đăng nhập và tải bằng tài khoản thuế thật vẫn cần nghiệm thu.
+
+00:03:13.850 --> 00:03:20.065
+Mời anh chị mở trang UNESCO hóa đơn điện tử trên unescosoft chấm com để xem video và dùng thử demo.
+
+00:03:20.065 --> 00:03:25.213
+Muốn tải bản Windows, hãy đăng ký email, số điện thoại và chờ chủ UNESCO xác nhận.
+
+00:03:25.213 --> 00:03:30.801
+Phần mềm độc lập hiện có giá miễn phí, không đồng nghĩa mọi sản phẩm UNESCO đều miễn phí.

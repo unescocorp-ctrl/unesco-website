@@ -1,0 +1,101 @@
+{
+  "slug": "unesco-hddt-demo",
+  "title": "UNESCO HĐĐT: dùng thử, đăng ký và duyệt tải miễn phí",
+  "topic": "Công cụ miễn phí",
+  "duration": "3:32",
+  "durationSeconds": 211.6,
+  "desc": "Video có lời đọc tiếng Việt, dựng từ ảnh giao diện thực tế: thử demo hóa đơn, đăng ký email và số điện thoại, chờ chủ UNESCO duyệt rồi nhận lượt tải. Cảnh quản trị dùng bản chạy thử cùng mã nguồn và dữ liệu mẫu.",
+  "src": "/videos/unesco-hddt-demo.mp4",
+  "poster": "/videos/unesco-hddt-demo.webp",
+  "captions": "/videos/unesco-hddt-demo.vtt",
+  "youtube": "",
+  "uploadDate": "2026-11-20T12:33:13+07:00",
+  "kind": "Ảnh chụp giao diện thực tế ngày 20/11/2026; giọng tổng hợp Microsoft An. Cảnh quản trị dùng bản chạy thử và dữ liệu mẫu. Chưa nghiệm thu tài khoản thuế thật",
+  "chapters": [
+    {
+      "title": "UNESCO HĐĐT - Miễn phí 0 đ",
+      "start": 0,
+      "text": "Chào anh chị. Đây là UNESCO hóa đơn điện tử độc lập, bản thử nghiệm miễn phí với giao diện nền trắng. Video được dựng từ ảnh chụp giao diện thực tế, cập nhật ngày hai mươi tháng mười một năm hai nghìn không trăm hai mươi sáu."
+    },
+    {
+      "title": "01. Mở demo trên web",
+      "start": 13.4,
+      "text": "Từ trang sản phẩm, chọn Dùng thử demo trên web. Màn hình cho phép làm quen với quy trình xử lý hóa đơn bằng dữ liệu mẫu. Demo không kết nối cổng thuế và không nhận mật khẩu thuế."
+    },
+    {
+      "title": "02. Đồng bộ danh sách mẫu",
+      "start": 24.867,
+      "text": "Chọn khoảng ngày và chiều hóa đơn, rồi bấm Đồng bộ mẫu. Trong ví dụ này, bảng có sáu hóa đơn mua vào và bán ra. Các ô thống kê giúp theo dõi số hóa đơn, XML, PDF và phần còn thiếu."
+    },
+    {
+      "title": "03. Tìm hóa đơn nhanh",
+      "start": 38.067,
+      "text": "Gõ từ khóa vào ô tìm hóa đơn. Chẳng hạn, nhập đại việt không dấu để tìm đối tác Đại Việt. Có thể tìm theo số hóa đơn, tên đối tác hoặc mã số thuế trong dữ liệu đang hiển thị."
+    },
+    {
+      "title": "04. Xem chi tiết trước khi chọn",
+      "start": 49.467,
+      "text": "Bấm vào số hóa đơn để mở chi tiết. Kiểm tra ngày lập, đối tác, số tiền thanh toán và trạng thái. Đây là thông tin minh họa trong demo, không phải hóa đơn thật dùng để kê khai."
+    },
+    {
+      "title": "05. Chọn dòng và mô phỏng tải",
+      "start": 61.067,
+      "text": "Chọn các dòng cần xử lý rồi bấm Mô phỏng tải XML, PDF. Hai hóa đơn được chọn chuyển sang trạng thái Đã mô phỏng. Những dòng chưa chọn vẫn giữ trạng thái Chưa có. Thao tác này không tải hóa đơn từ cổng thuế."
+    },
+    {
+      "title": "06. Xuất danh sách để đối chiếu",
+      "start": 74.467,
+      "text": "Bấm Xuất CSV mẫu để lấy danh sách các dòng đã chọn. Nếu chưa chọn dòng, demo xử lý bảng đang hiển thị. Tệp mẫu giúp thử cách đối chiếu danh sách, không dùng để hạch toán hoặc kê khai."
+    },
+    {
+      "title": "07. Đăng ký tải bản Windows",
+      "start": 86.467,
+      "text": "Để tải phần mềm Windows, quay lại trang sản phẩm và điền email cùng số điện thoại. Đọc nội dung đồng ý liên hệ, đánh dấu xác nhận rồi gửi đăng ký. Thông tin xuất hiện trong video là thông tin thử."
+    },
+    {
+      "title": "08. Theo dõi và chờ UNESCO duyệt",
+      "start": 98.867,
+      "text": "Website đã nhận đăng ký và hiển thị Chờ UNESCO duyệt. Lúc này chưa có nút tải phần mềm. Hãy lưu liên kết theo dõi riêng để kiểm tra kết quả. Chỉ khi quản trị UNESCO xác nhận, quyền tải mới được mở."
+    },
+    {
+      "title": "09. Lối vào của quản trị UNESCO",
+      "start": 112.067,
+      "text": "Trang quản trị yêu cầu đăng nhập bằng tài khoản chủ được cấu hình. Khách đăng ký không thể tự duyệt. Các cảnh tiếp theo được thực hiện trên bản chạy thử cùng mã nguồn, với dữ liệu mẫu, để minh họa thao tác quản trị."
+    },
+    {
+      "title": "10. Kiểm tra yêu cầu chờ duyệt",
+      "start": 124.133,
+      "text": "Trong danh sách Chờ duyệt, quản trị xem email, số điện thoại, thời điểm đăng ký và mã yêu cầu. Sau khi kiểm tra thông tin liên hệ, chọn Duyệt cho tải đối với yêu cầu được chấp thuận."
+    },
+    {
+      "title": "11. Anh xác nhận thì mới được tải",
+      "start": 135.467,
+      "text": "Hệ thống mở hộp xác nhận, hiển thị lại người đăng ký. Quản trị bấm Xác nhận duyệt để cấp quyền, hoặc Hủy để quay lại. Đây là bước xác nhận bắt buộc trước khi khách có thể nhận lượt tải."
+    },
+    {
+      "title": "12. Khách kiểm tra kết quả duyệt",
+      "start": 146.333,
+      "text": "Khi yêu cầu đã được duyệt, trang theo dõi hiển thị nút Nhận lượt tải miễn phí. Khách có thể bấm Kiểm tra lại để cập nhật ngay, rồi nhận lượt tải dành cho bản Windows hiện hành."
+    },
+    {
+      "title": "13. Lượt tải được cấp sau phê duyệt",
+      "start": 156.733,
+      "text": "Nút tải UNESCO hóa đơn điện tử chỉ hiện sau khi hệ thống cấp lượt tải. Lượt tải có hiệu lực mười lăm phút và hỗ trợ tải lại nếu mạng gián đoạn. Cảnh này minh họa việc cấp quyền, chưa tải gói cài đặt."
+    },
+    {
+      "title": "14. Thu hồi quyền khi cần",
+      "start": 169.067,
+      "text": "Nếu cần, quản trị có thể thu hồi quyền tải. Trang theo dõi chuyển sang trạng thái Từ chối và không còn nút tải. Quyết định thu hồi cũng chặn lượt tải đã cấp trước đó."
+    },
+    {
+      "title": "15. Giao diện ứng dụng Windows",
+      "start": 179.6,
+      "text": "Đây là ảnh giao diện Windows phiên bản không chấm một chấm ba. Ứng dụng có vùng đăng nhập riêng, lựa chọn kỳ, thư mục lưu và chức năng xuất XML cho UNESCO mười hai. Việc đăng nhập và tải bằng tài khoản thuế thật vẫn cần nghiệm thu."
+    },
+    {
+      "title": "Dùng thử trên web - Đăng ký tải miễn phí",
+      "start": 193.6,
+      "text": "Mời anh chị mở trang UNESCO hóa đơn điện tử trên unescosoft chấm com để xem video và dùng thử demo. Muốn tải bản Windows, hãy đăng ký email, số điện thoại và chờ chủ UNESCO xác nhận. Phần mềm độc lập hiện có giá miễn phí, không đồng nghĩa mọi sản phẩm UNESCO đều miễn phí."
+    }
+  ]
+}

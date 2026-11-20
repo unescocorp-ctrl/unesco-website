@@ -14,6 +14,7 @@
  */
 import erpVideos from './erp-videos.json';
 import monthlyVideos from './xii-monthly-videos.json';
+import hddtVideo from './hddt-video.json';
 
 export type Video = {
   captions?: string;
@@ -40,6 +41,7 @@ const v = (slug: string, topic: VideoTopic, title: string, duration: string, des
 });
 
 export const videos: Video[] = [
+  { ...hddtVideo, slug: 'unesco-hddt-demo', topic: 'Công cụ miễn phí' },
   ...(monthlyVideos as Video[]),
   ...(erpVideos as Video[]),
   v('gioi-thieu-unesco-ai', 'Tổng quan', 'Giới thiệu phần mềm kế toán UNESCO AI', '9:10',
