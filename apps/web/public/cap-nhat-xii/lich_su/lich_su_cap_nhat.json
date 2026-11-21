@@ -1,9 +1,24 @@
 {
  "loai": "lich_su_cap_nhat_xii",
  "san_pham": "UNESCO_XII",
- "lap_luc": "2026-11-21 07:11",
+ "lap_luc": "2026-11-21 09:14",
  "ghi_chu_muc_luc": "Mục lục không ký. Gói có da_ky = true: nội dung lấy từ tệp mô tả đã ký <goi>.json (máy khách kiểm lại chữ ký).",
  "goi": [
+  {
+   "goi": "GD222",
+   "ngay": "21/11/2026",
+   "luc": "2026-11-21 09:14",
+   "ghi_chu": [
+    "Sua: nhap tang TSCD bao thieu doi tuong su dung; ngay hien ngay/thang/nam tren luoi, tieu de bao cao, Excel, phieu in; noi rong cot so hoa don va ngay o bang ke, so chi tiet cong no, phieu thu chi, the kho, lich su gia"
+   ],
+   "so_tep": 1237,
+   "kich_thuoc": 47156701,
+   "co_exe": true,
+   "exe_sha256": "134d2a4703f49200bdad5e29f821757eba6d0dac764b976a29206a53a8c0de97",
+   "tep": "GD222.json",
+   "nguon": "kenh",
+   "da_ky": true
+  },
   {
    "goi": "GD221",
    "ngay": "21/11/2026",
