@@ -21,9 +21,9 @@ const rows: [string, boolean, boolean][] = [
   ['Trợ lý AI hướng dẫn ngay trên màn hình', false, true],
 ];
 ---
-<ContentLayout title="Bảng giá sản phẩm UNESCO" schema={[softwareSchema, hddtSoftwareSchema]} description="Bảng giá UNESCO HĐĐT miễn phí và các sản phẩm UNESCO: UNESCO XII AI 10.000.000 đ / MST tặng kèm 5 sản phẩm: ERP_UNESCO, UNESCO_TAX_Online, UNESCO SalesCRM AI, UNESCO HĐĐT, UNESCO SALE; UNESCO XI + AI 7.000.000 đ / MST; UNESCO XI 4.500.000 đ / MST; UNESCO SALE mua riêng 3.000.000 đ. Trả phí 1 lần, triển khai miễn phí, dịch vụ kế toán trên 10 MST giảm 30%." eyebrow="Bảng giá" display="BẢNG GIÁ / |SẢN PHẨM" tone="ng" subtitle="Giá từng sản phẩm, công khai và dễ so sánh">
+<ContentLayout title="Bảng giá sản phẩm UNESCO" schema={[softwareSchema, hddtSoftwareSchema]} description="Bảng giá UNESCO HĐĐT miễn phí và các sản phẩm UNESCO: UNESCO XII AI 10.000.000 đ / MST tặng kèm 5 sản phẩm: ERP_UNESCO, UNESCO_TAX_Online, UNESCO SalesCRM AI, UNESCO HĐĐT, UNESCO SALE; UNESCO XI + AI 7.000.000 đ / MST; UNESCO XI 4.500.000 đ / MST; UNESCO SALE mua riêng 3.000.000 đ. Trả phí 1 lần, triển khai miễn phí, dịch vụ kế toán trên 10 MST giảm 30%." eyebrow="Bảng giá" display="BẢNG GIÁ / |SẢN PHẨM" tone="ng" subtitle="Giá từng sản phẩm, công khai và dễ so sánh" pills={['Trả phí 1 lần – không phí hàng năm', 'Triển khai miễn phí', 'Dịch vụ kế toán trên 10 MST giảm 30%']}>
 <section class="section"><div class="container">
-  <p class="price-gold"><span>Phần mềm kế toán: trả phí 1 lần sử dụng mãi mãi – Không phí hàng năm</span></p>
+  <p class="price-gold"><span><b>Phần mềm kế toán:</b> trả phí 1 lần, sử dụng mãi mãi – không phí hàng năm</span></p>
   <div class="pd-tabs" role="tablist" aria-label="Chọn nhóm sản phẩm">
     {families.map((f, i) => <button type="button" class="pd-tab" role="tab" id={`tab-${f.id}`} aria-controls={`panel-${f.id}`} aria-selected={i === 0 ? 'true' : 'false'}>{f.label}</button>)}
     <button type="button" class="pd-tab" role="tab" id="tab-chinh-sach" aria-controls="panel-chinh-sach" aria-selected="false">Dịch vụ &amp; chính sách</button>

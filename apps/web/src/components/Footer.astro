@@ -3,10 +3,14 @@ import { url } from '../utils/url';
 import { site } from '../config/site.config';
 import { contact, telHref, mailHref, zaloHref } from '../data/contact';
 import Icon from './Icon.astro';
+import { products } from '../data/products';
 const y = new Date().getFullYear();
 const safe = (v: string) => (!v.includes('{{') ? v : '');
 const cols = [
   { h: 'Sản phẩm', icon: 'box', cls: 'f-g', links: [
+    ...products.map((x) => [x.name, x.href ?? `/san-pham/#${x.id}`] as [string, string]), ['Tất cả sản phẩm', '/san-pham/'],
+  ] },
+  { h: 'Tính năng', icon: 'sparkles', cls: 'f-g', links: [
     ['AI Hóa đơn', '/ai-ke-toan/ai-hoa-don/'], ['AI Sổ phụ', '/ai-ke-toan/ai-so-phu-ngan-hang/'], ['AI Giá thành', '/ai-ke-toan/ai-gia-thanh/'],
     ['Hồ sơ Thuế', '/ho-so-thue/'], ['Tờ khai & BCTC', '/to-khai-bctc/'], ['Tổng quan nền tảng', '/san-pham/unesco-xi-ai/'], ['Tính năng ưu việt', '/tinh-nang-uu-viet/'], ['Tổng hợp tính năng AI', '/tinh-nang-ai/'], ['Tính năng mới 2026', '/phan-tich-tinh-nang/'],
   ] },
