@@ -1,17 +1,17 @@
 {
     "loai":  "unesco_cap_nhat",
     "san_pham":  "UNESCO_XII",
-    "ten":  "GD220",
-    "goi":  "GD220",
+    "ten":  "GD221",
+    "goi":  "GD221",
     "ngay":  "21/11/2026",
-    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261121_GD220.zip",
-    "sha256":  "4506079fe1391c1fac6d6f8c9d0fe185783ac8635323f24b373f5493829b0eba",
-    "kich_thuoc":  47156047,
+    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261121_GD221.zip",
+    "sha256":  "7f28b7a694f029415c317491bdf9608201cdf6df52827309a3e93234763e9dff",
+    "kich_thuoc":  47156459,
     "co_exe":  true,
     "bat_buoc":  false,
     "exe":  "Unesco.NET.exe",
     "ghi_chu":  [
-                    "Sao luu tu dong 18:00 tru chu nhat + the theo doi trong He thong \u003e Sao luu du lieu; nhac ke toan chot so thang, thang da khoa duoc may chu luu rieng vinh vien; mat khau trong thi nguoi dung tu dat lan dang nhap dau (toi thieu 6 ky tu), nut Xoa mat khau (tu dat lai)"
+                    "Man dang nhap: danh sach Chon chi hien nhan vien ERP dang hoat dong va Administrator (an ten cu thoi XI); ten khac van go tay dang nhap duoc"
                 ],
     "so_tep":  1237,
     "tep_trong_goi":  [
@@ -3618,7 +3618,7 @@
                           {
                               "duong_dan":  "AIHoaDon/phien_ban_goi.txt",
                               "kich_thuoc":  117,
-                              "sha256":  "b54b3bbf6bed3acfb513371955f52fc4e4a91b5458e8edbc726c8e0e7459d1c5"
+                              "sha256":  "b0f4b22335b5369e6c920848d86edd0e41289c33af25a99d7b45a17071766a2a"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py",
@@ -6187,8 +6187,8 @@
                           },
                           {
                               "duong_dan":  "Unesco.NET.exe",
-                              "kich_thuoc":  33900032,
-                              "sha256":  "6dd18253aa96410a7d775bd2559b01a2d6a158b9cfa1a899c5568be4dd71c510"
+                              "kich_thuoc":  33903104,
+                              "sha256":  "d79ce8f98a67024524b371370da313ffa6de3bd6af1358b11295faafece5fe01"
                           },
                           {
                               "duong_dan":  "UnescoConnect.dll",
