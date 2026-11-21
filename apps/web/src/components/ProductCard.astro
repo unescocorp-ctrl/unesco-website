@@ -10,7 +10,7 @@ const cta = p.download ? { t: 'Đăng ký tải miễn phí', h: p.download } : 
 <article class={`pd-card${p.featured ? ' is-feat' : ''}`} id={p.id} data-family={p.family} style={`--pc:${f.color};--pd:${f.dark};--ps:${f.soft}`}>
   {p.media?.full ? (
     <a class="pd-media is-screenshot" href={url(p.media.full)} target="_blank" rel="noopener" data-screen-link data-screen-title={p.name} data-caption={`${p.media.alt}. Ảnh thật đã che thông tin riêng.`} aria-label={`Xem ảnh lớn ${p.name}`}>
-      <img src={url(p.media.img)} width={p.media.width} height={p.media.height} alt={p.media.alt} loading="lazy" decoding="async" /><span class="pd-image-label">Xem ảnh lớn ↗</span>
+      <img src={url(p.media.img)} width={p.media.width} height={p.media.height} alt={p.media.alt} loading="lazy" decoding="async" /><span class="pd-play"><i aria-hidden="true">⤢</i>Xem ảnh lớn</span>
     </a>
   ) : p.media?.video ? (
     <button type="button" class="pd-media" data-video={url(p.media.video)} data-title={p.name} aria-label={`Xem video ${p.name}`}>
@@ -39,12 +39,13 @@ const cta = p.download ? { t: 'Đăng ký tải miễn phí', h: p.download } : 
   </div>
   <div class="actions">
     <a class="btn btn-primary" href={url(cta.h)} download={p.download ? true : undefined}>{cta.t}</a>
-    {p.download && p.href && <a class="btn btn-secondary" href={url(p.href)}>Hướng dẫn &amp; chi tiết</a>}
-    {p.demo && <a class="btn btn-secondary" href={url(p.demo)} target="_blank" rel="noopener">Xem demo</a>}
-    {!p.demo && p.media?.video && <button type="button" class="btn btn-secondary" data-video={url(p.media.video)} data-title={p.name}>Xem video</button>}
-    {p.href && !p.download && !p.demo && !p.media?.video && <a class="btn btn-secondary" href={url('/lien-he/#demo')}>Liên hệ</a>}
+    {p.demo ? <a class="btn btn-secondary" href={url(p.demo)} target="_blank" rel="noopener">Xem demo</a>
+      : p.media?.video ? <button type="button" class="btn btn-secondary" data-video={url(p.media.video)} data-title={p.name}>Xem video</button>
+      : p.href && !p.download ? <a class="btn btn-secondary" href={url('/lien-he/#demo')}>Liên hệ</a> : null}
   </div>
+  {p.download && p.href && <a class="pd-more" href={url(p.href)}>Hướng dẫn &amp; chi tiết →</a>}
 </article>
 <style>
-.pd-media.is-screenshot{aspect-ratio:auto;overflow:visible;cursor:zoom-in}.pd-media.is-screenshot img{aspect-ratio:16/10;object-fit:contain;object-position:center;height:auto;background:#eef5f2;border-radius:11px 11px 0 0}.pd-media.is-screenshot:hover img,.pd-media.is-screenshot:focus-visible img{transform:none}.pd-image-label{display:block;padding:9px 14px;text-align:right;background:#e8f5ec;color:#125e31;font-size:.82rem;font-weight:700}.pd-media.is-screenshot:focus-visible{outline:3px solid #1679a8;outline-offset:3px}
+.pd-media.is-screenshot{cursor:zoom-in}.pd-media.is-screenshot img{object-fit:cover;object-position:left top;background:#eef5f2}.pd-media.is-screenshot:hover img,.pd-media.is-screenshot:focus-visible img{transform:none}.pd-media.is-screenshot:focus-visible{outline:3px solid #1679a8;outline-offset:3px}
+.pd-more{align-self:flex-start;font-weight:700;font-size:.9rem;color:var(--pd);text-decoration:none;margin-top:-4px}.pd-more:hover{text-decoration:underline}
 </style>

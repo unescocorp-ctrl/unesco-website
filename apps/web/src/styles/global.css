@@ -1112,3 +1112,29 @@ a.pd-media:hover img,button.pd-media:hover img,.pd-media:focus-visible img{trans
 .pd-dialog-head{display:flex;justify-content:space-between;align-items:center;padding:10px 14px}
 .pd-dialog-x{background:none;border:0;color:#fff;font-size:1.8rem;line-height:1;cursor:pointer}
 .pd-dialog video{display:block;width:100%;max-height:78vh;background:#000}
+
+/* ===== Chuẩn hoá giao diện thương mại (21/11/2026) ===== */
+/* Thanh trên cùng: cùng kiểu trang chủ trên mọi trang, gọn 1 dòng trên điện thoại */
+.topbar{background:#f0f6ef;color:#5c7864;font-size:12px;font-weight:500;padding:6px 16px;border-bottom:1px solid #e1eade;flex-wrap:nowrap;white-space:nowrap;overflow:hidden}
+.topbar a{color:#2f7147}.topbar .more{color:#2f7147}
+.topbar .i{width:14px;height:14px}
+@media(max-width:480px){.topbar{font-size:11px;gap:6px;padding:6px 10px}.topbar .sep{margin:0 4px}.topbar .i{margin-right:3px}}
+/* Ô nhập liệu không tràn khung trên điện thoại */
+.form-grid>*,.field{min-width:0}
+.field input:not([type=checkbox]):not([type=radio]),.field textarea,.field select{width:100%;min-width:0;box-sizing:border-box}
+.field label:has(input[type=checkbox]){display:block;position:relative;padding-left:30px;font-weight:500;line-height:1.5}
+.field label input[type=checkbox]{position:absolute;left:0;top:2px;width:18px;height:18px;margin:0;accent-color:var(--green)}
+/* Băng thông điệp bảng giá: gọn, rõ, không hiệu ứng chữ nổi */
+.price-gold{margin:0 0 26px;text-align:center;font:500 clamp(15px,1.6vw,19px)/1.5 var(--font);text-transform:none;letter-spacing:0}
+.price-gold span{display:inline-block;background:#FFF7E0;color:#7A4A00;border:1px solid #F5D78A;border-radius:999px;padding:10px 22px;-webkit-text-stroke:0;filter:none;-webkit-background-clip:border-box;background-clip:border-box}
+.price-gold b{color:#9A5B00}
+@media(max-width:620px){.price-gold span{border-radius:14px;padding:10px 14px}}
+/* Tab nhóm sản phẩm: cuộn ngang trên điện thoại */
+@media(max-width:720px){.pd-tabs{display:flex;flex-wrap:nowrap;overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch;scrollbar-width:none}.pd-tabs::-webkit-scrollbar{display:none}.pd-tab{flex:0 0 auto;white-space:nowrap}}
+/* Thẻ sản phẩm: ảnh cùng tỉ lệ, nút luôn nằm đáy thẻ */
+.pd-media{aspect-ratio:16/10}
+.pd-card .actions{margin-top:auto;display:flex;flex-wrap:wrap;gap:10px}
+.pd-card .actions .btn{flex:1 1 auto;justify-content:center;text-align:center}
+/* Chân trang 6 cột (thêm cột Sản phẩm) */
+@media(min-width:1101px){.footer-grid{grid-template-columns:1.4fr repeat(5,1fr);gap:24px}}
+@media(max-width:620px){.footer-bottom{padding-bottom:70px}}

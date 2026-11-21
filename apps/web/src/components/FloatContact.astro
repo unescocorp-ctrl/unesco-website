@@ -1,0 +1,23 @@
+---
+/** Nút liên hệ nổi (Zalo + gọi kinh doanh) – hiện trên mọi trang, chuẩn web thương mại. */
+import { contact, telHref, zaloHref } from '../data/contact';
+---
+<div class="float-contact" aria-label="Liên hệ nhanh">
+  <a class="fc-btn fc-zalo" href={zaloHref} target="_blank" rel="noopener" aria-label={`Nhắn Zalo ${contact.sales.mobile}`}><span class="fc-ic" aria-hidden="true">Zalo</span><span class="fc-tip">Nhắn Zalo</span></a>
+  <a class="fc-btn fc-call" href={telHref(contact.sales.mobile)} aria-label={`Gọi kinh doanh ${contact.sales.mobile}`}><svg class="fc-ic" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg><span class="fc-tip">{contact.sales.mobile}</span></a>
+</div>
+<style>
+.float-contact{position:fixed;right:18px;bottom:18px;z-index:40;display:flex;flex-direction:column;gap:10px}
+.fc-btn{position:relative;display:grid;place-items:center;width:52px;height:52px;border-radius:50%;color:#fff;text-decoration:none;box-shadow:0 8px 22px rgba(15,23,42,.22);transition:transform .2s}
+.fc-btn:hover,.fc-btn:focus-visible{transform:translateY(-2px)}
+.fc-zalo{background:#0068FF}.fc-call{background:#1E9B4B}
+.fc-zalo .fc-ic{font:800 13px/1 Arial,sans-serif;letter-spacing:-.02em}
+.fc-call .fc-ic{width:24px;height:24px}
+.fc-call::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #1E9B4B;animation:fc-ring 2s ease-out infinite}
+@keyframes fc-ring{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.55);opacity:0}}
+.fc-tip{position:absolute;right:62px;white-space:nowrap;background:#0f172a;color:#fff;font-size:13px;font-weight:600;padding:6px 10px;border-radius:8px;opacity:0;pointer-events:none;transition:opacity .2s}
+.fc-btn:hover .fc-tip,.fc-btn:focus-visible .fc-tip{opacity:1}
+@media(max-width:620px){.float-contact{right:12px;bottom:12px}.fc-btn{width:46px;height:46px}}
+@media(prefers-reduced-motion:reduce){.fc-call::after{animation:none}}
+@media print{.float-contact{display:none}}
+</style>
