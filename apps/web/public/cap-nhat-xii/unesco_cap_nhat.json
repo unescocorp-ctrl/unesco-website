@@ -1,17 +1,17 @@
 {
     "loai":  "unesco_cap_nhat",
     "san_pham":  "UNESCO_XII",
-    "ten":  "GD223",
-    "goi":  "GD223",
+    "ten":  "GD224",
+    "goi":  "GD224",
     "ngay":  "21/11/2026",
-    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261121_GD223.zip",
-    "sha256":  "4774d87b57aff9cf9478c7d6cb1e824635417e9a401b0d5864dca9a94f5e8c55",
-    "kich_thuoc":  47156856,
+    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261121_GD224.zip",
+    "sha256":  "3f32204ea3f3f33e2712f7935e9dfd7131eab9123edeeeb1f65898c5fd132142",
+    "kich_thuoc":  47182205,
     "co_exe":  true,
     "bat_buoc":  false,
     "exe":  "Unesco.NET.exe",
     "ghi_chu":  [
-                    "Bao cao: Bang ke doanh thu theo \u003e Hoa don - xem doanh thu, gia von tung hoa don ban ra (so HD, ngay, khach, tung mat hang, gia ban, gia von, canh bao lech)"
+                    "Nhap Excel tong hop theo XI (bang ke mua vao/ban ra, so phu 6 ngan hang, xuat thang); o dang nhap to mau, Tab bo qua o khong dung; tim bo so khi dang nhap; doi hang loat 111/131; hop bao chep duoc chu; ton kho so 0 hien -; Excel bo dong dau trang, so am do; luoi chung tu khong to dong trong"
                 ],
     "so_tep":  1237,
     "tep_trong_goi":  [
@@ -3618,7 +3618,7 @@
                           {
                               "duong_dan":  "AIHoaDon/phien_ban_goi.txt",
                               "kich_thuoc":  117,
-                              "sha256":  "2e84c0d5de09404e635f7cbd70bb2afe1f8c0917fac29d8ff869717e5c6d87f4"
+                              "sha256":  "d528cf705f83151d3a68776c64c497e3e73933e3a7e02db55e1328d45ec381be"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py",
@@ -6187,8 +6187,8 @@
                           },
                           {
                               "duong_dan":  "Unesco.NET.exe",
-                              "kich_thuoc":  33904640,
-                              "sha256":  "c8a95574f9222abc9277d4dd96b91cb5c932fa0fa4967e285fa2f1da6b39dcfb"
+                              "kich_thuoc":  33961472,
+                              "sha256":  "b5c803141e1012e81f6b407d448286f56d4500b464ddc5760e7c2e127d1bf996"
                           },
                           {
                               "duong_dan":  "UnescoConnect.dll",
