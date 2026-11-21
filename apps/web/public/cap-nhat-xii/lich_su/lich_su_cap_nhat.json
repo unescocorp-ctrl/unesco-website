@@ -1,9 +1,24 @@
 {
  "loai": "lich_su_cap_nhat_xii",
  "san_pham": "UNESCO_XII",
- "lap_luc": "2026-11-21 12:55",
+ "lap_luc": "2026-11-21 15:49",
  "ghi_chu_muc_luc": "Mục lục không ký. Gói có da_ky = true: nội dung lấy từ tệp mô tả đã ký <goi>.json (máy khách kiểm lại chữ ký).",
  "goi": [
+  {
+   "goi": "GD225",
+   "ngay": "21/11/2026",
+   "luc": "2026-11-21 15:49",
+   "ghi_chu": [
+    "Sua loi khong ghi duoc ket chuyen thanh pham o so 2026 (GT362-SQL207); doi ma vat tu xong danh sach tu nap lai, nhan dung chung tu khi trung so hieu; nhap Excel tong hop nhan mau so phu 36 ngan hang; ke toan vien dung duoc Ket chuyen so lieu, Chung tu ket chuyen, Kiem tra nhap xuat ton, Kiem tra he thong tai khoan"
+   ],
+   "so_tep": 1237,
+   "kich_thuoc": 47183559,
+   "co_exe": true,
+   "exe_sha256": "04fe8476668eafa6f83285f2b38c50015eb718f326b112d123ecdf191699406c",
+   "tep": "GD225.json",
+   "nguon": "kenh",
+   "da_ky": true
+  },
   {
    "goi": "GD224",
    "ngay": "21/11/2026",
