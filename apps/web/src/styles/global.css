@@ -1138,3 +1138,6 @@ a.pd-media:hover img,button.pd-media:hover img,.pd-media:focus-visible img{trans
 /* Chân trang 6 cột (thêm cột Sản phẩm) */
 @media(min-width:1101px){.footer-grid{grid-template-columns:1.4fr repeat(5,1fr);gap:24px}}
 @media(max-width:620px){.footer-bottom{padding-bottom:70px}}
+/* Cùng bề rộng nội dung với trang chủ trên màn hình lớn */
+@media(min-width:1300px){.container{width:min(1360px,calc(100% - 64px))}}
+@media(min-width:1700px){.container{width:min(1560px,90%)}}
