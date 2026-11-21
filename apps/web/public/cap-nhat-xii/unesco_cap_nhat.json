@@ -1,17 +1,17 @@
 {
     "loai":  "unesco_cap_nhat",
     "san_pham":  "UNESCO_XII",
-    "ten":  "GD225",
-    "goi":  "GD225",
+    "ten":  "GD226",
+    "goi":  "GD226",
     "ngay":  "21/11/2026",
-    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261121_GD225.zip",
-    "sha256":  "0434cf468051003e6cfb0100ac794e060c2636acb9e36adbcf9100ad1af6e69e",
-    "kich_thuoc":  47183559,
+    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261121_GD226.zip",
+    "sha256":  "7381ceb38e8d4d71dc501b918ee261a7a29b607fe5c31bd10428cf0ccf24afc9",
+    "kich_thuoc":  47186058,
     "co_exe":  true,
     "bat_buoc":  false,
     "exe":  "Unesco.NET.exe",
     "ghi_chu":  [
-                    "Sua loi khong ghi duoc ket chuyen thanh pham o so 2026 (GT362-SQL207); doi ma vat tu xong danh sach tu nap lai, nhan dung chung tu khi trung so hieu; nhap Excel tong hop nhan mau so phu 36 ngan hang; ke toan vien dung duoc Ket chuyen so lieu, Chung tu ket chuyen, Kiem tra nhap xuat ton, Kiem tra he thong tai khoan"
+                    "Ke toan vien sua, xoa duoc chung tu o thang chua khoa so (truoc chi quan tri hoac nguoi nhap); ghi nhat ky moi lan xoa chung tu; xuat Excel bao cao bo dong chuyen trang va tieu de cot lap lai, ten hang khong lech, so am do; chung tu day tu Excel ghi dien giai Nhap hang - nha cung cap, Ban hang - khach hang"
                 ],
     "so_tep":  1237,
     "tep_trong_goi":  [
@@ -3618,7 +3618,7 @@
                           {
                               "duong_dan":  "AIHoaDon/phien_ban_goi.txt",
                               "kich_thuoc":  117,
-                              "sha256":  "42796a0c693835a1375caf63e6ed37cd8c4b970b988e46da4082d1508cb16d46"
+                              "sha256":  "a3ec85b9a5e4c4a5e489462385f58a9ce8561e60ce3e114198d5be25c81d1842"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py",
@@ -6187,8 +6187,8 @@
                           },
                           {
                               "duong_dan":  "Unesco.NET.exe",
-                              "kich_thuoc":  33967104,
-                              "sha256":  "04fe8476668eafa6f83285f2b38c50015eb718f326b112d123ecdf191699406c"
+                              "kich_thuoc":  33972224,
+                              "sha256":  "feee9b603639383e5ce2f3bc8fc034090dc3844157b0d1f65b8a2a09d024c806"
                           },
                           {
                               "duong_dan":  "UnescoConnect.dll",

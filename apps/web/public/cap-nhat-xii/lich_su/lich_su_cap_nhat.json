@@ -1,9 +1,24 @@
 {
  "loai": "lich_su_cap_nhat_xii",
  "san_pham": "UNESCO_XII",
- "lap_luc": "2026-11-21 15:49",
+ "lap_luc": "2026-11-21 16:42",
  "ghi_chu_muc_luc": "Mục lục không ký. Gói có da_ky = true: nội dung lấy từ tệp mô tả đã ký <goi>.json (máy khách kiểm lại chữ ký).",
  "goi": [
+  {
+   "goi": "GD226",
+   "ngay": "21/11/2026",
+   "luc": "2026-11-21 16:42",
+   "ghi_chu": [
+    "Ke toan vien sua, xoa duoc chung tu o thang chua khoa so (truoc chi quan tri hoac nguoi nhap); ghi nhat ky moi lan xoa chung tu; xuat Excel bao cao bo dong chuyen trang va tieu de cot lap lai, ten hang khong lech, so am do; chung tu day tu Excel ghi dien giai Nhap hang - nha cung cap, Ban hang - khach hang"
+   ],
+   "so_tep": 1237,
+   "kich_thuoc": 47186058,
+   "co_exe": true,
+   "exe_sha256": "feee9b603639383e5ce2f3bc8fc034090dc3844157b0d1f65b8a2a09d024c806",
+   "tep": "GD226.json",
+   "nguon": "kenh",
+   "da_ky": true
+  },
   {
    "goi": "GD225",
    "ngay": "21/11/2026",
