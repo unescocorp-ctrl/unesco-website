@@ -1,39 +1,223 @@
 ---
+/**
+ * Màn hình đầu trang chủ: sơ đồ "Quy trình vận hành toàn diện" dựng bằng HTML/CSS (không dùng ảnh).
+ * Bốn màn hình thu nhỏ là liên kết: bấm vào mở trang của sản phẩm đó.
+ * ĐỔI NỘI DUNG: sửa mảng `cards`, `steps`, `benefits` bên dưới. Màn hình thu nhỏ là hình minh hoạ, không phải số liệu thật.
+ */
 import { url } from '../utils/url';
-import { productScreens } from '../data/product-screens';
-import { homeCompanions } from '../data/home';
 import Icon from './Icon.astro';
+
+type Card = {
+  id: string; name: string; icon: string; tone: 'green' | 'blue' | 'core' | 'teal'; href: string;
+  badge?: string; points: string[]; next?: string;
+  mock: { brand: string; title: string; menu: string[]; kind: 'list' | 'stats' | 'ai' | 'docs'; items: string[] };
+};
+const cards: Card[] = [
+  { id: 'salescrm', name: 'UNESCO SalesCRM AI', icon: 'users', tone: 'green', href: '/san-pham/salescrm/',
+    points: ['Tìm kiếm khách hàng', 'Báo giá', 'Ký kết hợp đồng', 'Chăm sóc khách hàng'], next: 'Khởi tạo khách hàng & hợp đồng',
+    mock: { brand: 'SalesCRM AI', title: 'Danh sách khách hàng', menu: ['Khách hàng', 'Cơ hội', 'Báo giá', 'Hợp đồng', 'CSKH'], kind: 'list', items: ['Tiềm năng', 'Báo giá', 'Hợp đồng', 'Chăm sóc'] } },
+  { id: 'erp-unesco', name: 'ERP_UNESCO', icon: 'bar-chart', tone: 'blue', href: '/san-pham/erp-unesco/',
+    points: ['Quản lý vận hành công việc', 'Quản lý số liệu kế toán', 'Nhân viên làm việc', 'Tiến độ công việc', 'Tính lương nhân viên kế toán', 'Quản lý khách hàng'], next: 'Phân công & chuyển dữ liệu kế toán',
+    mock: { brand: 'ERP_UNESCO', title: 'Tổng quan vận hành', menu: ['Tổng quan', 'Công việc', 'Kế toán', 'Nhân sự', 'Khách hàng'], kind: 'stats', items: ['Công việc', 'Nhân viên'] } },
+  { id: 'unesco-xii-ai', name: 'UNESCO XII AI', icon: 'cpu', tone: 'core', href: '/unesco-xii-ai/huong-dan/', badge: 'Nền tảng kế toán trung tâm',
+    points: ['Xử lý công việc kế toán', 'Hạch toán & đối chiếu', 'Lập và nộp báo cáo', 'AI hỗ trợ kiểm tra dữ liệu'], next: 'Kết quả kê khai & dữ liệu thuế',
+    mock: { brand: 'XII AI', title: 'Xử lý kế toán bằng AI', menu: ['Hạch toán', 'Đối chiếu', 'Báo cáo', 'Kiểm tra AI', 'Dữ liệu'], kind: 'ai', items: ['Tự động kiểm tra', 'Đối chiếu số liệu', 'Gợi ý xử lý', 'Cảnh báo sai lệch'] } },
+  { id: 'unesco-tax-online', name: 'UNESCO_TAX_Online', icon: 'file-check', tone: 'teal', href: '/san-pham/#unesco-tax-online',
+    points: ['Khai thuế trực tuyến', 'Theo dõi nghĩa vụ thuế', 'Tổng hợp tờ khai', 'Lưu trữ dữ liệu thuế'],
+    mock: { brand: 'TAX Online', title: 'Khai thuế trực tuyến', menu: ['Khai thuế', 'Nghĩa vụ thuế', 'Tờ khai', 'Lưu trữ', 'Báo cáo'], kind: 'docs', items: ['Tờ khai GTGT', 'Tờ khai TNDN', 'Tờ khai TNCN'] } },
+];
+const steps = ['Tìm kiếm & ký hợp đồng', 'Quản lý vận hành ERP', 'Xử lý kế toán bằng AI', 'Khai thuế và theo dõi online'];
+const benefits: [string, string][] = [['settings', 'Tự động hóa'], ['layers', 'Minh bạch tiến độ'], ['shield-check', 'Kiểm soát chất lượng'], ['bar-chart', 'Hỗ trợ ra quyết định'], ['database', 'Truy xuất dữ liệu']];
 ---
-<section class="home-hero" aria-labelledby="home-title">
-  <div class="home-hero-orbit" aria-hidden="true"></div>
-  <div class="home-container home-hero-grid">
-    <div class="home-hero-copy">
-      <p class="home-kicker"><span class="home-status-dot"></span>UNESCO AI · Hệ sinh thái phần mềm</p>
-      <h1 id="home-title">Quy trình <br />vận hành <br /><span>toàn diện.</span></h1>
-      <p class="home-hero-audience">Cho công ty dịch vụ kế toán</p>
-      <p class="home-hero-description">Từ tìm kiếm khách hàng đến thực hiện, quản lý, chăm sóc và tuân thủ. <strong>AI hỗ trợ kiểm soát toàn diện</strong> cho công ty và hộ kinh doanh.</p>
-      <div class="home-actions">
-        <a class="home-button home-button-primary" href="#tu-van">Khám phá cùng chuyên gia<Icon name="chevron-right" /></a>
-        <a class="home-button home-button-video" href="#video-gioi-thieu"><span><Icon name="play" /></span>Xem phần mềm</a>
-      </div>
-      <div class="home-offer"><span class="home-offer-number" aria-hidden="true">1<span>+</span>5</span><div><strong>Mua 1, tặng kèm 5 sản phẩm</strong><span><Icon name="check-circle" />Sử dụng vĩnh viễn</span></div></div>
-    </div>
-    <div class="home-hero-stage">
-      <div class="home-stage-heading"><span class="home-stage-symbol"><Icon name="network" /></span><div>MỘT HỆ SINH THÁI<strong>Kết nối mọi bước vận hành</strong></div><span class="home-stage-ai">AI</span></div>
-      <div class="home-stage-content">
-        <div class="home-main-product">
-          <div class="home-window-bar"><span class="home-window-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>UNESCO XII AI</span><Icon name="lock" /></div>
-          <a class="home-screen-link" href={url('/unesco-xii-ai/huong-dan/')} aria-label="Khám phá phần mềm UNESCO XII AI"><img src={url(productScreens.xiiAi.thumb)} width={productScreens.xiiAi.width} height={productScreens.xiiAi.height} alt={productScreens.xiiAi.alt} fetchpriority="high" /></a>
-          <div class="home-main-product-caption"><span><Icon name="cpu" />Kế toán thông minh</span><a href={url('/unesco-xii-ai/huong-dan/')}>Khám phá<Icon name="chevron-right" /></a></div>
-        </div>
-        <aside class="home-companions" aria-labelledby="home-companions-title">
-          <h2 id="home-companions-title">{homeCompanions.length} phần mềm đi kèm</h2>
-          <ul>{homeCompanions.map(({ product, icon, tone, role }) => <li><a class={`home-companion home-tone-${tone}`} href={url(product.href ?? `/san-pham/#${product.id}`)}><span class="home-product-icon"><Icon name={icon} /></span><span><strong>{product.name}</strong><small>{role}</small></span><Icon name="chevron-right" class="home-companion-arrow" /></a></li>)}</ul>
-        </aside>
-      </div>
-      <div class="home-stage-footer"><span><Icon name="shield-check" />AI hỗ trợ. Kế toán làm chủ.</span><span class="home-stage-line" aria-hidden="true"></span><span><Icon name="building" />Công ty</span><span><Icon name="store" />Hộ kinh doanh</span></div>
-      <div class="home-stage-float" aria-hidden="true"><Icon name="sparkles" /><span>Thông minh hơn.<br /><strong>Chủ động hơn.</strong></span></div>
+<section class="eco-hero" aria-labelledby="home-title">
+  <div class="eco-head">
+    <div class="home-container">
+      <p class="eco-kicker"><span></span>UNESCO AI · Hệ sinh thái phần mềm</p>
+      <h1 id="home-title">Quy trình vận hành <em>toàn diện</em></h1>
+      <p class="eco-sub">Công ty Dịch vụ Kế toán <i aria-hidden="true">–</i> <b>Hệ sinh thái phần mềm UNESCO</b></p>
+      <ul class="eco-tags"><li>Kế toán</li><li>Thuế</li><li>Điều hành dịch vụ</li><li>Bán hàng</li><li>Chăm sóc khách hàng</li></ul>
     </div>
   </div>
-  <div class="home-container home-hero-bottom"><span>Một hành trình. Năm bước kết nối.</span><a href="#quy-trinh">Khám phá cách vận hành<span aria-hidden="true">↓</span></a></div>
+
+  <div class="home-container eco-body">
+    <ol class="eco-cards">
+      {cards.map((c, i) => (
+        <li class={`eco-card eco-${c.tone}`}>
+          <div class="eco-card-head"><span class="eco-ic"><Icon name={c.icon} /></span><div><h2><a href={url(c.href)}>{c.name}</a></h2>{c.badge && <span class="eco-badge">{c.badge}</span>}</div></div>
+          <a class="eco-screen" href={url(c.href)} aria-label={`Mở trang ${c.name}`}>
+            <span class="eco-win" aria-hidden="true">
+              <span class="eco-side"><b>{c.mock.brand}</b>{c.mock.menu.map((m, k) => <span class={k === 0 ? 'on' : ''}>{m}</span>)}</span>
+              <span class="eco-main">
+                <span class="eco-main-t">{c.mock.title}</span>
+                {c.mock.kind === 'list' && c.mock.items.map((t, k) => <span class="eco-row"><i class="eco-av"></i><i class="eco-bar"></i><em class={`t${k}`}>{t}</em></span>)}
+                {c.mock.kind === 'stats' && <>
+                  <span class="eco-stats"><span><b>128</b>{c.mock.items[0]}</span><span><b>24</b>{c.mock.items[1]}</span></span>
+                  <span class="eco-chart"><span class="eco-cols"><i style="height:30%"></i><i style="height:45%"></i><i style="height:58%"></i><i style="height:72%"></i><i style="height:88%"></i></span><span class="eco-ring">85%</span></span>
+                </>}
+                {c.mock.kind === 'ai' && <span class="eco-ai"><span class="eco-chip">AI</span><span class="eco-checks">{c.mock.items.map((t) => <span>{t}</span>)}</span></span>}
+                {c.mock.kind === 'docs' && c.mock.items.map((t) => <span class="eco-row eco-doc"><i class="eco-file"></i><span>{t}</span><em>Đã nộp</em></span>)}
+              </span>
+            </span>
+            <span class="eco-open">Xem {c.name} <span aria-hidden="true">→</span></span>
+          </a>
+          <ul class="eco-points">{c.points.map((p) => <li>{p}</li>)}</ul>
+          {c.next && <span class="eco-next"><span>{c.next}</span><i aria-hidden="true"></i></span>}
+        </li>
+      ))}
+    </ol>
+
+    <div class="eco-flow">
+      <strong><span aria-hidden="true">»</span>Luồng vận hành</strong>
+      <ol>{steps.map((s, i) => <li><b>{i + 1}.</b>{s}</li>)}</ol>
+    </div>
+
+    <div class="eco-benefits">
+      <strong><Icon name="star" />Lợi ích nổi bật của hệ sinh thái UNESCO</strong>
+      <ul>{benefits.map((b) => <li><span><Icon name={b[0]} /></span>{b[1]}</li>)}</ul>
+    </div>
+
+    <div class="eco-cta">
+      <div class="eco-offer"><span aria-hidden="true">1<i>+</i>5</span><div><strong>Mua 1, tặng kèm 5 sản phẩm</strong><small>Sử dụng vĩnh viễn</small></div></div>
+      <div class="eco-actions">
+        <a class="home-button home-button-primary" href="#tu-van">Khám phá cùng chuyên gia<Icon name="chevron-right" /></a>
+        <a class="home-button home-button-outline" href="#video-gioi-thieu"><Icon name="play" />Xem phần mềm</a>
+      </div>
+    </div>
+    <p class="eco-note">Sơ đồ mô hình hỗ trợ – liên thông cần xác minh theo phiên bản. Màn hình thu nhỏ là hình minh hoạ.</p>
+  </div>
 </section>
+
+<style>
+.eco-hero{background:linear-gradient(180deg,#f3faf4 0,#fbfcf8 60%,#fff);padding-bottom:34px;overflow:hidden}
+/* ---- Tiêu đề ---- */
+.eco-head{position:relative;isolation:isolate;text-align:center;color:#fff;padding:46px 0 74px;background:radial-gradient(ellipse at 50% 120%,#19b06a 0,transparent 58%),linear-gradient(120deg,#072f24 0,#0a5a3c 48%,#087e4b 100%)}
+.eco-head:before{content:"";position:absolute;inset:0;z-index:-1;background-image:radial-gradient(#c5f47733 1px,transparent 1px);background-size:24px 24px;mask-image:linear-gradient(180deg,#000,transparent 85%)}
+.eco-head:after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:linear-gradient(90deg,#c5f477,#35d08a 50%,#c5f477)}
+.eco-kicker{display:inline-flex;align-items:center;gap:9px;margin:0 0 16px;padding:6px 14px;border:1px solid #ffffff3d;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#d9f7e6;line-height:1.5}
+.eco-kicker span{width:7px;height:7px;border-radius:50%;background:#c5f477;box-shadow:0 0 0 4px #c5f47738}
+.eco-head h1{margin:0;font-family:"Be Vietnam Pro","Roboto",Arial,sans-serif;font-size:clamp(33px,6.4vw,88px);line-height:1.08;font-weight:900;letter-spacing:-.03em;text-transform:uppercase;color:#fff;text-shadow:0 3px 0 #05291f,0 14px 34px #00000059}
+.eco-head h1 em{display:block;font-style:normal;background:linear-gradient(180deg,#eaffb9 10%,#c5f477 55%,#7fdc5a);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(0 3px 0 #05291f) drop-shadow(0 10px 22px #0000004d)}
+.eco-sub{display:inline-block;margin:20px 0 0;padding:10px 26px;border-radius:14px;background:#ffffff17;border:1px solid #ffffff38;backdrop-filter:blur(4px);font-size:clamp(17px,2.35vw,31px);line-height:1.35;font-weight:700;letter-spacing:-.02em;color:#fff}
+.eco-sub b{font-weight:800;color:#c5f477}
+.eco-sub i{font-style:normal;opacity:.6;margin:0 4px}
+.eco-tags{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 0;margin:18px 0 0;padding:0;font-size:clamp(12px,1.25vw,16px);font-weight:500;color:#dff5e8}
+.eco-tags li+li:before{content:"•";margin:0 12px;color:#c5f477}
+/* ---- Thẻ sản phẩm ---- */
+.eco-body{position:relative;width:min(1360px,calc(100% - 48px))}
+.eco-cards{list-style:none;margin:-44px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 78px;align-items:stretch}
+.eco-card{--c:#1e9b4b;--cd:#0f6b33;--cs:#e8f5ec;position:relative;display:flex;flex-direction:column;gap:14px;padding:20px 18px 20px;background:#fff;border:1px solid #dce9e3;border-left:5px solid var(--c);border-radius:18px;box-shadow:0 18px 44px #18654b1a}
+.eco-blue{--c:#1c62c6;--cd:#154d9f;--cs:#e8f0fb}
+.eco-teal{--c:#0e9384;--cd:#0b6f65;--cs:#e3f6f3}
+.eco-core{--c:#c5f477;--cd:#c5f477;--cs:#ffffff1f;background:linear-gradient(160deg,#0a5a3c,#073527);border-color:#35d08a;border-left-color:#c5f477;color:#fff;box-shadow:0 0 0 4px #35d08a33,0 24px 54px #0a5a3c59;transform:translateY(-10px)}
+.eco-card-head{display:flex;align-items:center;gap:10px;min-height:52px}.eco-card-head>div{min-width:0}
+.eco-ic{flex:0 0 auto;display:grid;place-items:center;width:46px;height:46px;border-radius:12px;background:var(--c);color:#fff}
+.eco-core .eco-ic{color:#073527}
+.eco-ic :global(.i){width:24px;height:24px}
+.eco-card h2{margin:0;font-family:"Be Vietnam Pro","Roboto",Arial,sans-serif;font-size:clamp(15px,1.2vw,17.5px);line-height:1.2;font-weight:800;letter-spacing:-.03em;overflow-wrap:break-word}
+.eco-card h2 a{color:#103c36;text-decoration:none}
+.eco-core h2 a{color:#fff}
+.eco-badge{display:inline-block;margin-top:5px;padding:3px 9px;border-radius:999px;background:#c5f477;color:#073527;font-size:8.5px;font-weight:800;letter-spacing:.02em;text-transform:uppercase;line-height:1.5;white-space:nowrap}
+/* màn hình thu nhỏ */
+.eco-screen{display:block;text-decoration:none;border-radius:12px;border:1px solid #d5e4dc;background:#fff;overflow:hidden;box-shadow:0 6px 18px #18654b14;transition:transform .2s,box-shadow .2s}
+.eco-core .eco-screen{border-color:#35d08a}
+.eco-screen:hover,.eco-screen:focus-visible{transform:translateY(-3px);box-shadow:0 14px 30px #18654b33}
+.eco-screen:focus-visible{outline:3px solid #c5f477;outline-offset:2px}
+.eco-win{display:grid;grid-template-columns:38% 1fr;min-height:150px;font-size:9px;line-height:1.3;color:#35504a}
+.eco-side{display:flex;flex-direction:column;gap:3px;padding:8px 6px;background:#0d3f33;color:#cfe6dc}
+.eco-side b{font-size:9px;color:#fff;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.eco-side span{padding:4px 6px;border-radius:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.eco-side .on{background:var(--c);color:#fff;font-weight:700}
+.eco-core .eco-side .on{background:#35d08a;color:#062a1f}
+.eco-main{display:flex;flex-direction:column;gap:6px;padding:8px;background:#f6faf8;min-width:0}
+.eco-main-t{font-weight:800;font-size:9.5px;color:#103c36}
+.eco-row{display:flex;align-items:center;gap:5px;padding:4px 5px;background:#fff;border:1px solid #e3ece7;border-radius:5px}
+.eco-av{flex:0 0 auto;width:9px;height:9px;border-radius:50%;background:var(--c);opacity:.75}
+.eco-bar{flex:1;height:4px;border-radius:2px;background:#d9e4de}
+.eco-row em{flex:0 0 auto;font-style:normal;font-weight:700;font-size:7.5px;padding:2px 5px;border-radius:999px;background:#e3f0ff;color:#1c62c6}
+.eco-row em.t1{background:#fff1cc;color:#8a5a00}.eco-row em.t2{background:#dcf5e4;color:#0f6b33}.eco-row em.t3{background:#ece6fb;color:#4e3699}
+.eco-doc span{flex:1;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.eco-doc em{background:#dcf5e4;color:#0f6b33}
+.eco-file{flex:0 0 auto;width:8px;height:10px;border:1.5px solid var(--c);border-radius:2px}
+.eco-stats{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.eco-stats>span{display:flex;flex-direction:column;padding:4px 6px;background:#fff;border:1px solid #e3ece7;border-radius:5px;font-size:7.5px}
+.eco-stats b{font-size:13px;color:#103c36;line-height:1.2}
+.eco-chart{display:flex;align-items:flex-end;justify-content:space-between;gap:8px;flex:1}
+.eco-cols{display:flex;align-items:flex-end;gap:3px;height:44px;flex:1}
+.eco-cols i{flex:1;border-radius:2px 2px 0 0;background:linear-gradient(180deg,#35d08a,#1e9b4b)}
+.eco-ring{flex:0 0 auto;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:radial-gradient(#fff 56%,transparent 57%),conic-gradient(#1e9b4b 85%,#dbe7e1 0);font-weight:800;font-size:9px;color:#103c36}
+.eco-ai{display:flex;align-items:center;gap:7px;flex:1;padding:5px;border-radius:7px;background:linear-gradient(135deg,#e2fbef,#d3f1ff)}
+.eco-chip{flex:0 0 auto;display:grid;place-items:center;width:32px;height:32px;border-radius:8px;background:#0a5a3c;color:#c5f477;font-weight:900;font-size:12px;box-shadow:0 0 0 3px #35d08a55,0 0 16px #35d08a99}
+.eco-checks{display:flex;flex-direction:column;gap:4px;min-width:0;font-weight:600;font-size:7.5px}
+.eco-checks span{display:flex;align-items:center;gap:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.eco-checks span:before{content:"✓";flex:0 0 auto;display:grid;place-items:center;width:10px;height:10px;border-radius:50%;background:#1e9b4b;color:#fff;font-size:7px}
+.eco-open{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-top:1px solid #e3ece7;background:var(--cs);color:var(--cd);font-size:12px;font-weight:700;line-height:1.4}
+.eco-core .eco-open{background:#0a5a3c;color:#c5f477;border-top-color:#35d08a66}
+.eco-points{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:14.5px;line-height:1.45;color:#22473f}
+.eco-core .eco-points{color:#eafaf1}
+.eco-points li{position:relative;padding-left:18px}
+.eco-points li:before{content:"";position:absolute;left:2px;top:.52em;width:8px;height:8px;border-radius:50%;background:var(--c)}
+/* mũi tên nối giữa các thẻ */
+.eco-next{position:absolute;left:100%;top:150px;width:78px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;font-size:11px;line-height:1.3;font-weight:700;color:#0f6b33;pointer-events:none}
+.eco-core .eco-next{top:160px}
+.eco-next span{padding:0 4px}
+.eco-next i{position:relative;margin-top:6px;width:46px;height:5px;border-radius:3px;background:#1e9b4b}
+.eco-next i:after{content:"";position:absolute;right:-7px;top:50%;width:14px;height:14px;border-top:5px solid #1e9b4b;border-right:5px solid #1e9b4b;border-radius:2px;transform:translateY(-50%) rotate(45deg)}
+/* ---- Luồng vận hành / lợi ích ---- */
+.eco-flow,.eco-benefits{display:flex;align-items:center;gap:18px;margin-top:22px}
+.eco-flow>strong,.eco-benefits>strong{flex:0 0 auto;display:flex;align-items:center;gap:10px;padding:13px 30px 13px 18px;background:linear-gradient(120deg,#073527,#087e4b);color:#fff;font-size:16px;line-height:1.3;font-weight:800;border-radius:12px;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 50%,calc(100% - 16px) 100%,0 100%)}
+.eco-flow>strong span{color:#c5f477;font-size:22px;line-height:1}
+.eco-benefits>strong{max-width:250px}
+.eco-benefits>strong :global(.i){flex:0 0 auto;width:26px;height:26px;color:#c5f477}
+.eco-flow ol{flex:1;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:34px}
+.eco-flow li{position:relative;display:flex;align-items:center;gap:8px;padding:12px 14px;background:#fff;border:1px solid #dce9e3;border-radius:12px;box-shadow:0 4px 14px #18654b0f;font-size:14.5px;line-height:1.35;font-weight:700;color:#103c36}
+.eco-flow li b{color:#1e9b4b;font-weight:900}
+.eco-flow li+li:before{content:"→";position:absolute;left:-27px;top:50%;transform:translateY(-50%);color:#1e9b4b;font-size:20px;font-weight:700}
+.eco-benefits{padding:6px 14px 6px 6px;background:#fff;border:1px solid #dce9e3;border-radius:16px;box-shadow:0 6px 20px #18654b12}
+.eco-benefits ul{flex:1;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}
+.eco-benefits li{display:flex;align-items:center;gap:10px;padding:6px 12px;font-size:14px;line-height:1.3;font-weight:700;color:#103c36}
+.eco-benefits li+li{border-left:1px solid #dce9e3}
+.eco-benefits li span{flex:0 0 auto;display:grid;place-items:center;width:38px;height:38px;border-radius:10px;background:#e8f5ec;color:#1e9b4b}
+.eco-benefits li span :global(.i){width:21px;height:21px}
+/* ---- Kêu gọi hành động ---- */
+.eco-cta{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:26px}
+.eco-offer{display:flex;align-items:center;gap:14px}
+.eco-offer>span{font-size:38px;line-height:1;font-weight:900;letter-spacing:-.04em;color:#087e4b}
+.eco-offer>span i{font-style:normal;font-size:.6em;color:#8dc63f;margin:0 2px}
+.eco-offer strong{display:block;font-size:15px;line-height:1.4;color:#103c36}
+.eco-offer small{font-size:12px;color:#617770}
+.eco-actions{display:flex;gap:12px;flex-wrap:wrap}
+.eco-note{margin:18px 0 0;text-align:center;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:#7c9086}
+/* ---- Co giãn ---- */
+@media(max-width:1180px){
+  .eco-card h2{font-size:19px}
+  .eco-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:54px 78px}
+  .eco-core{transform:none}
+  .eco-card:nth-child(2) .eco-next{left:auto;right:calc(100% + 0px);top:auto;bottom:-46px;width:auto;flex-direction:row;right:auto;left:20px}
+  .eco-card:nth-child(2) .eco-next i{transform:rotate(90deg);width:26px}
+  .eco-flow,.eco-benefits{flex-direction:column;align-items:stretch}
+  .eco-flow>strong,.eco-benefits>strong{align-self:flex-start;max-width:none}
+  .eco-flow ol{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .eco-flow li+li:before{display:none}
+  .eco-benefits{padding:6px}
+  .eco-benefits ul{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px 0}
+  .eco-benefits li:nth-child(4){border-left:0}
+}
+@media(max-width:720px){
+  .eco-head{padding:34px 0 62px}
+  .eco-sub{padding:9px 14px;border-radius:12px}
+  .eco-sub i{display:none}.eco-sub b{display:block}
+  .eco-tags li+li:before{margin:0 7px}
+  .eco-body{width:calc(100% - 32px)}
+  .eco-cards{grid-template-columns:1fr;gap:58px}
+  .eco-next,.eco-card:nth-child(2) .eco-next,.eco-core .eco-next{left:0;right:0;top:auto;bottom:-50px;width:auto;flex-direction:row;justify-content:center;gap:16px;font-size:12px}
+  .eco-next i,.eco-card:nth-child(2) .eco-next i{transform:rotate(90deg);width:24px}
+  .eco-win{font-size:10px;min-height:160px}
+  .eco-flow ol{grid-template-columns:1fr}
+  .eco-benefits ul{grid-template-columns:1fr 1fr}
+  .eco-benefits li,.eco-benefits li+li{border-left:0;padding:6px}
+  .eco-cta{flex-direction:column;align-items:stretch}
+  .eco-actions :global(.home-button){flex:1;justify-content:center}
+  .eco-flow>strong,.eco-benefits>strong{font-size:15px}
+}
+@media(prefers-reduced-motion:reduce){.eco-screen{transition:none}}
+</style>
