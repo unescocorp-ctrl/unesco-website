@@ -1,17 +1,17 @@
 {
     "loai":  "unesco_cap_nhat",
     "san_pham":  "UNESCO_XII",
-    "ten":  "GD221",
-    "goi":  "GD221",
+    "ten":  "GD223",
+    "goi":  "GD223",
     "ngay":  "21/11/2026",
-    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261121_GD221.zip",
-    "sha256":  "7f28b7a694f029415c317491bdf9608201cdf6df52827309a3e93234763e9dff",
-    "kich_thuoc":  47156459,
+    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261121_GD223.zip",
+    "sha256":  "4774d87b57aff9cf9478c7d6cb1e824635417e9a401b0d5864dca9a94f5e8c55",
+    "kich_thuoc":  47156856,
     "co_exe":  true,
     "bat_buoc":  false,
     "exe":  "Unesco.NET.exe",
     "ghi_chu":  [
-                    "Man dang nhap: danh sach Chon chi hien nhan vien ERP dang hoat dong va Administrator (an ten cu thoi XI); ten khac van go tay dang nhap duoc"
+                    "Bao cao: Bang ke doanh thu theo \u003e Hoa don - xem doanh thu, gia von tung hoa don ban ra (so HD, ngay, khach, tung mat hang, gia ban, gia von, canh bao lech)"
                 ],
     "so_tep":  1237,
     "tep_trong_goi":  [
@@ -3618,7 +3618,7 @@
                           {
                               "duong_dan":  "AIHoaDon/phien_ban_goi.txt",
                               "kich_thuoc":  117,
-                              "sha256":  "b0f4b22335b5369e6c920848d86edd0e41289c33af25a99d7b45a17071766a2a"
+                              "sha256":  "2e84c0d5de09404e635f7cbd70bb2afe1f8c0917fac29d8ff869717e5c6d87f4"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py",
@@ -6187,8 +6187,8 @@
                           },
                           {
                               "duong_dan":  "Unesco.NET.exe",
-                              "kich_thuoc":  33903104,
-                              "sha256":  "d79ce8f98a67024524b371370da313ffa6de3bd6af1358b11295faafece5fe01"
+                              "kich_thuoc":  33904640,
+                              "sha256":  "c8a95574f9222abc9277d4dd96b91cb5c932fa0fa4967e285fa2f1da6b39dcfb"
                           },
                           {
                               "duong_dan":  "UnescoConnect.dll",
