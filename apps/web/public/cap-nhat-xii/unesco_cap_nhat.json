@@ -1,17 +1,17 @@
 {
     "loai":  "unesco_cap_nhat",
     "san_pham":  "UNESCO_XII",
-    "ten":  "GD228",
-    "goi":  "GD228",
-    "ngay":  "22/11/2026",
-    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261122_GD228.zip",
-    "sha256":  "1bc20b3e8f3c90d7cf79a504ba465785cbe7bf72c2211c2df2400c9925cf033c",
-    "kich_thuoc":  47281052,
+    "ten":  "GD229",
+    "goi":  "GD229",
+    "ngay":  "23/11/2026",
+    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261123_GD229.zip",
+    "sha256":  "0d4999d56bfa7da025e2adfda6d79246b5d20c50b2fce1aec906e9eecdbf93a3",
+    "kich_thuoc":  47322252,
     "co_exe":  true,
     "bat_buoc":  false,
     "exe":  "Unesco.NET.exe",
     "ghi_chu":  [
-                    "Ra soat XI-XII: sua cac man phu, bao cao, luong, BHXH theo luat, hoa don, ton kho,Khoa ca man phu (chi Quan tri), ten dang nhap Thieu/ketoan/ndthang,Esc tuy chon trich luong = Tro ve; doi khach hang lay ten moi"
+                    "Ra soat XI-XII man AI / hoa don dien tu: xac nhan VT chon san ma co san, gop ma nhu XI, kiem cong ty khi nhap so phu / bang luong | So hoa thue THUE (52 so), don o ... / 1-1-1980, ghi lai khoa tim vat tu theo ten Unicode - tu chay mot lan khi mo so, sao luu truoc | BCTC tu sua cong thuc truoc khi in (ca in rieng B02); LCTT trong XML BCTC; chan XML khi mau khong phai B01a | Man Chung tu chi phi: phim Tab chi qua o can nhap (che do Tong)"
                 ],
     "so_tep":  1241,
     "tep_trong_goi":  [
@@ -3618,7 +3618,7 @@
                           {
                               "duong_dan":  "AIHoaDon/phien_ban_goi.txt",
                               "kich_thuoc":  117,
-                              "sha256":  "293fa4f3106b7f9effd46ac6c7849c6a7420795094cf0fbdcb3ea66a450aab73"
+                              "sha256":  "4a811b057907e9d4f0cc093bf56d01ad8421403f6d0fa3710b2f71fa5b13e8fa"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py",
@@ -6207,8 +6207,8 @@
                           },
                           {
                               "duong_dan":  "Unesco.NET.exe",
-                              "kich_thuoc":  34207232,
-                              "sha256":  "98e29a52e320d5a8c68784a41b475d6c69faf453420f2e2436575c61f65b0e6f"
+                              "kich_thuoc":  34330112,
+                              "sha256":  "ac7c304bac21f4d75f247a35efc07936a24e997965fd8c13144f024e49c38328"
                           },
                           {
                               "duong_dan":  "UnescoConnect.dll",
