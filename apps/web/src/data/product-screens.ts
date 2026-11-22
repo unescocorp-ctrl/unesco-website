@@ -5,7 +5,7 @@ export const productScreens = {
   xiiAi: {
     src: '/screenshots/products/unesco-xii-ai-main.webp',
     thumb: '/screenshots/products/unesco-xii-ai-main-thumb.webp',
-    width: 1920, height: 953,
+    width: 1918, height: 968,
     title: 'UNESCO XII AI',
     alt: 'Màn hình chính UNESCO XII AI với Sổ sách báo cáo ở giữa, các phân hệ kế toán và AI Assistant bên phải',
     caption: 'Màn hình chính UNESCO XII AI',
@@ -14,7 +14,7 @@ export const productScreens = {
   xiAi: {
     src: '/screenshots/products/unesco-xi-ai-main.webp',
     thumb: '/screenshots/products/unesco-xi-ai-main-thumb.webp',
-    width: 1468, height: 937,
+    width: 1200, height: 766,
     title: 'UNESCO XI + AI',
     alt: 'Màn hình chính UNESCO XI + AI nền xanh đậm, nút AI_AUTO, trợ lý AI và các phân hệ quanh Báo cáo – Sổ kế toán',
     caption: 'Màn hình chính UNESCO XI + AI',
