@@ -1,17 +1,17 @@
 {
     "loai":  "unesco_cap_nhat",
     "san_pham":  "UNESCO_XII",
-    "ten":  "GD229",
-    "goi":  "GD229",
+    "ten":  "GD230",
+    "goi":  "GD230",
     "ngay":  "23/11/2026",
-    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261123_GD229.zip",
-    "sha256":  "0d4999d56bfa7da025e2adfda6d79246b5d20c50b2fce1aec906e9eecdbf93a3",
-    "kich_thuoc":  47322252,
+    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261123_GD230.zip",
+    "sha256":  "e01f181d7b105c7bbb8beb72adacef7f802b8c6f1ffec7fb5e69718ecfaf2a7e",
+    "kich_thuoc":  47322627,
     "co_exe":  true,
     "bat_buoc":  false,
     "exe":  "Unesco.NET.exe",
     "ghi_chu":  [
-                    "Ra soat XI-XII man AI / hoa don dien tu: xac nhan VT chon san ma co san, gop ma nhu XI, kiem cong ty khi nhap so phu / bang luong | So hoa thue THUE (52 so), don o ... / 1-1-1980, ghi lai khoa tim vat tu theo ten Unicode - tu chay mot lan khi mo so, sao luu truoc | BCTC tu sua cong thuc truoc khi in (ca in rieng B02); LCTT trong XML BCTC; chan XML khi mau khong phai B01a | Man Chung tu chi phi: phim Tab chi qua o can nhap (che do Tong)"
+                    "Chuyen nam: so du 4212 chuyen sang 4211,Phan bo chi phi: chan khi tong tieu thuc = 0,Bang ke dau vao khong tu xoa hoa don Co 33312; Excel CDPS nhu XI o man Bao cao"
                 ],
     "so_tep":  1241,
     "tep_trong_goi":  [
@@ -3618,7 +3618,7 @@
                           {
                               "duong_dan":  "AIHoaDon/phien_ban_goi.txt",
                               "kich_thuoc":  117,
-                              "sha256":  "4a811b057907e9d4f0cc093bf56d01ad8421403f6d0fa3710b2f71fa5b13e8fa"
+                              "sha256":  "74a98cb1039aafa798429a4e5266c99db8c4bc5db235e89dc04961fbedf7ae2f"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py",
@@ -6207,8 +6207,8 @@
                           },
                           {
                               "duong_dan":  "Unesco.NET.exe",
-                              "kich_thuoc":  34330112,
-                              "sha256":  "ac7c304bac21f4d75f247a35efc07936a24e997965fd8c13144f024e49c38328"
+                              "kich_thuoc":  34331648,
+                              "sha256":  "2e7e1fd0e59ded822912aecd1641c060ae80ddd342a92fa33a55ce13a7332651"
                           },
                           {
                               "duong_dan":  "UnescoConnect.dll",
