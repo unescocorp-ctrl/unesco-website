@@ -50,7 +50,7 @@ export const products: Product[] = [
     tagline: 'Thế hệ phần mềm kế toán tiếp theo của UNESCO, tặng kèm ERP_UNESCO, UNESCO_TAX_Online, UNESCO SalesCRM AI, UNESCO HĐĐT và UNESCO SALE.',
     points: ['Tặng kèm ERP_UNESCO', 'Tặng kèm UNESCO_TAX_Online', 'Tặng kèm UNESCO SalesCRM AI', 'Tặng kèm UNESCO HĐĐT', 'Tặng kèm UNESCO SALE'],
     price: '10.000.000 đ', unit: '/ MST', priceNote: 'Trả phí 1 lần · tặng kèm 5 sản phẩm sử dụng vĩnh viễn', serviceNote: SERVICE_DISCOUNT,
-    media: { img: productScreens.xiiAi.thumb, full: productScreens.xiiAi.src, alt: productScreens.xiiAi.alt, width: productScreens.xiiAi.width, height: productScreens.xiiAi.height },
+    media: { img: productScreens.xiiAi.thumb, full: productScreens.xiiAi.src, alt: productScreens.xiiAi.alt, width: productScreens.xiiAi.width, height: productScreens.xiiAi.height, video: '/videos/unesco-xii-ai-gioi-thieu.mp4' },
   },
   {
     id: 'unesco-ai', name: 'UNESCO XI + AI', family: 'ke-toan', badge: 'Có AI',

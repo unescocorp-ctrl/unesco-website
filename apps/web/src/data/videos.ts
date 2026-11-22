@@ -74,6 +74,8 @@ export const videos: Video[] = [
     youtube: '', src: '/video/cshhl-huong-dan.mp4', poster: '/video/cshhl-poster.jpg' },
   v('unesco-sale-huong-dan', 'Bán hàng', 'Hướng dẫn sử dụng UNESCO Sale – phần mềm quản lý bán hàng', '1:39',
     '10 bước: Tổng quan, hàng hóa & kho, nhập dữ liệu, bán hàng tại quầy, chứng từ, công nợ, thẻ kho, sổ sách và dùng trên điện thoại. Phụ đề in trên hình.'),
+  v('unesco-xii-ai-gioi-thieu', 'Tổng quan', 'Giới thiệu phần mềm kế toán UNESCO XII AI', '2:20',
+    'Quay trực tiếp trên phần mềm: màn hình Tổng quan, màn hình chính Sổ sách báo cáo với AI Assistant, AI tự động điều phối kế toán, giá thành có AI, tờ khai hải quan, sổ phụ và nhật ký. Dữ liệu là bộ sổ của chính UNESCO.'),
   v('erp-unesco-huong-dan', 'Dịch vụ kế toán', 'Giới thiệu giao diện ERP UNESCO – quản lý công ty dịch vụ kế toán', '1:15',
     'Giới thiệu 9 màn hình bằng giao diện mô phỏng và dữ liệu mẫu. Video không có lời đọc, chú thích in trên hình; phần AI trong giao diện này chưa kết nối mô hình AI hoặc dữ liệu ERP thật.'),
 ];
