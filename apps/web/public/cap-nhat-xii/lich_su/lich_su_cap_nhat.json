@@ -1,9 +1,26 @@
 {
  "loai": "lich_su_cap_nhat_xii",
  "san_pham": "UNESCO_XII",
- "lap_luc": "2026-11-21 17:34",
+ "lap_luc": "2026-11-22 17:48",
  "ghi_chu_muc_luc": "Mục lục không ký. Gói có da_ky = true: nội dung lấy từ tệp mô tả đã ký <goi>.json (máy khách kiểm lại chữ ký).",
  "goi": [
+  {
+   "goi": "GD228",
+   "ngay": "22/11/2026",
+   "luc": "2026-11-22 17:48",
+   "ghi_chu": [
+    "Ra soat XI-XII: sua cac man phu, bao cao, luong, BHXH theo luat, hoa don, ton kho",
+    "Khoa ca man phu (chi Quan tri), ten dang nhap Thieu/ketoan/ndthang",
+    "Esc tuy chon trich luong = Tro ve; doi khach hang lay ten moi"
+   ],
+   "so_tep": 1241,
+   "kich_thuoc": 47281052,
+   "co_exe": true,
+   "exe_sha256": "98e29a52e320d5a8c68784a41b475d6c69faf453420f2e2436575c61f65b0e6f",
+   "tep": "GD228.json",
+   "nguon": "kenh",
+   "da_ky": true
+  },
   {
    "goi": "GD227",
    "ngay": "21/11/2026",

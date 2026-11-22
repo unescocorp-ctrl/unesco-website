@@ -1,19 +1,19 @@
 {
     "loai":  "unesco_cap_nhat",
     "san_pham":  "UNESCO_XII",
-    "ten":  "GD227",
-    "goi":  "GD227",
-    "ngay":  "21/11/2026",
-    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261121_GD227.zip",
-    "sha256":  "2fa94f9f2ca1db6cd24aab49adcc25c4ff5ba2f8012553bfe4ec935439c157e2",
-    "kich_thuoc":  47186374,
+    "ten":  "GD228",
+    "goi":  "GD228",
+    "ngay":  "22/11/2026",
+    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261122_GD228.zip",
+    "sha256":  "1bc20b3e8f3c90d7cf79a504ba465785cbe7bf72c2211c2df2400c9925cf033c",
+    "kich_thuoc":  47281052,
     "co_exe":  true,
     "bat_buoc":  false,
     "exe":  "Unesco.NET.exe",
     "ghi_chu":  [
-                    "Ke toan duoc ghi, sua, xoa, in moi chung tu (chi thang khoa so moi chan); luon chan chung tu lech No/Co o moi so; sua theo XI man chung tu: kiem thieu so phat sinh, 1111 la tien mat, giam gia No 511, menu theo quyen da cap, khoa thang khi mo phieu moi; o So hieu to khai man gia von hang nhap khau"
+                    "Ra soat XI-XII: sua cac man phu, bao cao, luong, BHXH theo luat, hoa don, ton kho,Khoa ca man phu (chi Quan tri), ten dang nhap Thieu/ketoan/ndthang,Esc tuy chon trich luong = Tro ve; doi khach hang lay ten moi"
                 ],
-    "so_tep":  1237,
+    "so_tep":  1241,
     "tep_trong_goi":  [
                           {
                               "duong_dan":  "AIHoaDon/ai_auto_dieu_phoi.py",
@@ -3618,7 +3618,7 @@
                           {
                               "duong_dan":  "AIHoaDon/phien_ban_goi.txt",
                               "kich_thuoc":  117,
-                              "sha256":  "2dcacc3ac9c0081774d4863b3986c94392694181788975fd9a9752fa642ec6d5"
+                              "sha256":  "293fa4f3106b7f9effd46ac6c7849c6a7420795094cf0fbdcb3ea66a450aab73"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py",
@@ -5421,6 +5421,11 @@
                               "sha256":  "1ff7496962254a4d545e5f60214276b7939d58c74117df346488a6972b679ff8"
                           },
                           {
+                              "duong_dan":  "Reports/PhieuChi.xls",
+                              "kich_thuoc":  18944,
+                              "sha256":  "c7f84b0f26954299a1de76012e3c656cc52be45f3f0323651b9d1cc2f49dcf8a"
+                          },
+                          {
                               "duong_dan":  "Reports/phieuchi1.rpt",
                               "kich_thuoc":  14336,
                               "sha256":  "0f9fcc700374c27b8695a8d35137fdad587e9ab2d2de2b7c37aca8e25b0489dd"
@@ -5454,6 +5459,11 @@
                               "duong_dan":  "Reports/phieun12.rpt",
                               "kich_thuoc":  13824,
                               "sha256":  "630eb52ccd632b35eb77a16ca777a92285f3a223d799abef80734a2465bc163a"
+                          },
+                          {
+                              "duong_dan":  "Reports/PhieuNhap.xls",
+                              "kich_thuoc":  20992,
+                              "sha256":  "97ddf2e650a0125f5a412ba3719f43d6f8dcd2ea62e8b6e86b98487b601ea6fb"
                           },
                           {
                               "duong_dan":  "Reports/phieunx.rpt",
@@ -5496,6 +5506,11 @@
                               "sha256":  "56fbc3225fa7384237b12f390185b7a2e1eecb392f071e21edcb18d5823d31f5"
                           },
                           {
+                              "duong_dan":  "Reports/PhieuThu.xls",
+                              "kich_thuoc":  18944,
+                              "sha256":  "f6554665ceefded85df2b95cc8cafd9ffa16bad37482cc66d678baa50b40cfbe"
+                          },
+                          {
                               "duong_dan":  "Reports/phieuthu1.rpt",
                               "kich_thuoc":  14848,
                               "sha256":  "ad8d26de40aee55cefe009186b213764115b5356493866e75be2d606a922920c"
@@ -5509,6 +5524,11 @@
                               "duong_dan":  "Reports/phieux.rpt",
                               "kich_thuoc":  15872,
                               "sha256":  "29f6bc6eb3959927a729e0fdba043e76644529864714dd2e61b198f5bf1935f1"
+                          },
+                          {
+                              "duong_dan":  "Reports/PhieuXuat.xls",
+                              "kich_thuoc":  20992,
+                              "sha256":  "84c9296fcb06ade7b221e24fedf8e5651d7b10eff3738401f64486340d90b5aa"
                           },
                           {
                               "duong_dan":  "Reports/Phuluc.rpt",
@@ -5577,8 +5597,8 @@
                           },
                           {
                               "duong_dan":  "Reports/QTTNDN.XLS",
-                              "kich_thuoc":  611328,
-                              "sha256":  "72827a5db7c8aba87981b56ee723fd3b902c65124dbecf5d90f899fe806534a2"
+                              "kich_thuoc":  604672,
+                              "sha256":  "f6265cffe5d1623637ab1329feeeca01798c900f5cb4622bfafde689cdf468bf"
                           },
                           {
                               "duong_dan":  "Reports/QTV.RPT",
@@ -6187,8 +6207,8 @@
                           },
                           {
                               "duong_dan":  "Unesco.NET.exe",
-                              "kich_thuoc":  33972736,
-                              "sha256":  "5686de6b45e944ea4099c92020359329052f5a2323290077103b9f118c1dabf4"
+                              "kich_thuoc":  34207232,
+                              "sha256":  "98e29a52e320d5a8c68784a41b475d6c69faf453420f2e2436575c61f65b0e6f"
                           },
                           {
                               "duong_dan":  "UnescoConnect.dll",
