@@ -3,6 +3,19 @@ import HddtDownloadCard from '../components/HddtDownloadCard.astro';
 import '../styles/home.css';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroBanner from '../components/HeroBanner.astro';
+import ClassicHero from '../components/ClassicHero.astro';
+import ErpIntegration from '../components/ErpIntegration.astro';
+import Screenshot from '../components/Screenshot.astro';
+import VideoCard from '../components/VideoCard.astro';
+import Evidence from '../components/Evidence.astro';
+import AiDoDont from '../components/AiDoDont.astro';
+import MonthFlow from '../components/MonthFlow.astro';
+import AdvantageGrid from '../components/AdvantageGrid.astro';
+import { aiTabs, invoiceDownload, costAi } from '../data/ai';
+import { videos } from '../data/videos';
+import { heroValues, industries } from '../data/design';
+import { kpis } from '../data/advantages';
+
 import HomeWorkflow from '../components/HomeWorkflow.astro';
 import LeadForm from '../components/LeadForm.astro';
 import Icon from '../components/Icon.astro';
@@ -14,6 +27,7 @@ import { shots } from '../data/screenshots';
 import { videoBySlug } from '../data/videos';
 import { contact, telHref, zaloHref } from '../data/contact';
 const intro = videoBySlug('gioi-thieu-unesco-ai')!;
+const featuredVideos = ['m02-tai-hoa-don', 'm05-so-phu-ngan-hang', 'm07-gia-thanh'].map((s) => videoBySlug(s)!);
 const capabilities = [
   { icon: 'file-check', title: 'Hoá đơn & chứng từ', text: 'Thu thập hoá đơn, ghép mã và hỗ trợ lập chứng từ.', href: '/ai-ke-toan/ai-hoa-don/' },
   { icon: 'bank', title: 'Ngân hàng & công nợ', text: 'Đọc sao kê, đối chiếu giao dịch, theo dõi công nợ.', href: '/ai-ke-toan/ai-so-phu-ngan-hang/' },
@@ -24,6 +38,84 @@ const capabilities = [
 <div class="home-page">
   <a class="home-skip" href="#quy-trinh">Chuyển đến nội dung chính</a>
   <HeroBanner />
+</div>
+
+<!-- ===== Giao diện trang chủ cũ (bản trước 20/11/2026) ===== -->
+<ClassicHero />
+<ErpIntegration compact={true} />
+
+<section class="section-sm"><div class="container">
+  <div class="feat5">{heroValues.map((v) => <div class="card"><span class={`ic ring ${v.c}`}><Icon name={v.icon} /></span><h3>{v.t}</h3><p>{v.d}</p></div>)}</div>
+</div></section>
+
+<section class="section-sm surface"><div class="container">
+  <div class="kpi4">{kpis.map((k) => <div class={`k c-${k.c}`}><span class={`ic ${k.c}`}><Icon name={k.icon} /></span><b>{k.v}</b><small>{k.d}</small></div>)}</div>
+</div></section>
+
+<section class="section surface" id="video-gioi-thieu"><div class="container split video-split">
+  <div><VideoCard video={intro} large={true} /></div>
+  <div><span class="eyebrow">Xem UNESCO AI hoạt động</span><h2 class="bar-title">Toàn cảnh phần mềm trong {intro.duration}</h2><p class="lead">Quay trực tiếp trên phần mềm: từ màn hình chính đến màn hình AI, tải hoá đơn, đọc sổ phụ, xuất tờ khai và tính giá thành.</p>
+    <ul class="checks"><li>Màn hình chính 9 phân hệ và ô UCDIT AI</li><li>Tải hoá đơn hàng loạt, AI tạo mã và lập chứng từ</li><li>Sổ phụ ngân hàng, công nợ kèm mã VietQR</li><li>Báo cáo thuế, kiểm tra khoá sổ, giá thành có AI</li></ul>
+    <div class="actions" style="margin-top:22px"><a class="btn btn-primary" href={url('/video/')}><Icon name="play-circle" />{videos.length - 1} video hướng dẫn</a><a class="btn btn-secondary" href={url('/huong-dan/')}>Trung tâm hướng dẫn</a></div>
+  </div>
+</div></section>
+
+<section class="section"><div class="container">
+  <div class="sec-c"><span class="eyebrow">Quy trình mỗi tháng</span><h2>Một tháng kế toán với <span class="tg">AI UNESCO</span></h2><p class="sub-line"><span class="tb">AI</span> đồng hành – <span class="tg">Kế toán</span> quyết định – Dữ liệu minh bạch trong <span class="tb">UNESCO AI</span></p></div>
+  <MonthFlow />
+</div></section>
+
+<section class="section surface"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Tính năng ưu việt · cập nhật 09/10/2026</span><h2 class="display"><span class="tg">16 điểm</span> <span class="tb">ưu việt</span></h2><p class="sub-line" style="margin:0">Mười điểm nền tảng và sáu điểm mới <em class="new" style="margin:0">Mới</em></p></div><p>Hoá đơn, sổ phụ, giá thành, thuế, khoá sổ và báo cáo cho chủ doanh nghiệp – nhanh như tự động, nhưng mọi con số vẫn đi qua đúng sổ kế toán và luôn có người duyệt.</p></div>
+  <AdvantageGrid base="/tinh-nang-uu-viet/" />
+  <div class="actions" style="margin-top:24px"><a class="btn btn-primary" href={url('/tinh-nang-uu-viet/')}>Xem chi tiết 16 điểm ưu việt</a><a class="btn btn-secondary" href={url('/tinh-nang-ai/')}>Tổng hợp tính năng AI</a><a class="btn btn-secondary" href={url('/phan-tich-tinh-nang/')}>Tính năng mới 2026</a></div>
+</div></section>
+
+<section class="section surface-soft"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Màn hình AI</span><h2>8 thẻ nghiệp vụ trên một màn hình</h2></div><p>Mở từ ô AI trên màn hình chính UNESCO. Mỗi thẻ xử lý một nhóm việc tốn thời gian nhất của kế toán.</p></div>
+  <div class="ai-tabs">{aiTabs.map((t) => <a class="ai-tab" href={url(`/san-pham/unesco-xi-ai/#${t.key}`)}><span class="ai-tab-n">{t.n}</span><span class="ai-tab-icon"><Icon name={t.ic} /></span><b>{t.title}</b><small>{t.lead}</small></a>)}</div>
+</div></section>
+
+<section class="section"><div class="container split reverse"><div><Screenshot shot={shots.bulkDownload} /></div><div><span class="eyebrow">AI Hoá đơn</span><h2>Từ hoá đơn điện tử đến chứng từ kế toán – giảm nhập lại dữ liệu</h2><p class="lead">Chọn MUA VÀO hoặc BÁN RA, chọn kỳ rồi bấm Tải. Hoá đơn tự vào màn hình AI và được phân tích ngay.</p>
+  <div class="feature-list">{invoiceDownload.slice(0, 4).map((f) => <div class="feature-row"><span class="check"><Icon name="check" size={18} /></span><div><strong>{f.t}</strong><span>{f.d}</span></div></div>)}</div>
+  <div class="actions"><a class="btn btn-primary" href={url('/ai-ke-toan/ai-hoa-don/')}>Xem AI Hoá đơn</a><a class="btn btn-secondary" href={url('/video/#video-m02-tai-hoa-don')}><Icon name="play-circle" />Video</a></div></div></div></section>
+
+<section class="section surface"><div class="container split"><div><Screenshot shot={shots.bank} /></div><div><span class="eyebrow">AI Sổ phụ</span><h2>Chuẩn hoá nội dung ngân hàng trước khi lập chứng từ</h2><p class="lead">Mỗi giao dịch được xếp nhóm nghiệp vụ, tìm đối tác và tài khoản đối ứng. Dòng chắc chắn sẵn sàng lập phiếu; dòng còn nghi ngờ chờ kế toán xác nhận.</p>
+  <div class="feature-list"><div class="feature-row"><span class="check"><Icon name="file-text" size={18} /></span><div><strong>Excel, CSV, PDF, ảnh chụp</strong><span>Đọc tệp sao kê của các ngân hàng phổ biến; ảnh chụp và PDF dạng ảnh được chuyển sang Excel tô màu để kiểm tra.</span></div></div><div class="feature-row"><span class="check"><Icon name="shield-check" size={18} /></span><div><strong>Đúng công ty, không trùng</strong><span>Đối chiếu số tài khoản, chủ tài khoản với công ty đang mở; nhập lại tệp cũ không tạo dòng trùng.</span></div></div><div class="feature-row"><span class="check"><Icon name="qr-code" size={18} /></span><div><strong>Công nợ kèm mã VietQR</strong><span>Thông báo công nợ cho từng khách, khách quét mã chuyển đúng số tiền; sổ phụ về là AI tự khớp.</span></div></div></div>
+  <div class="actions"><a class="btn btn-primary" href={url('/ai-ke-toan/ai-so-phu-ngan-hang/')}>Xem AI Sổ phụ</a><a class="btn btn-secondary" href={url('/video/#video-m05-so-phu-ngan-hang')}><Icon name="play-circle" />Video</a></div></div></div></section>
+
+<section class="section"><div class="container split reverse"><div><Screenshot shot={shots.reports} /></div><div><span class="eyebrow">Tờ khai & BCTC</span><h2>Soát trước khi xuất – phát hiện lệch trước khi nộp</h2><p class="lead">Thẻ Báo cáo & nhật ký gom toàn bộ việc cuối kỳ, kèm nhật ký những gì AI đã làm. Phần mềm không ký, không nộp thay.</p>
+  <div class="feature-list"><div class="feature-row"><span class="check"><Icon name="file-xml" size={18} /></span><div><strong>01/GTGT sang HTKK</strong><span>Xem trước từng chỉ tiêu, cảnh báo lệch với sổ kế toán, xuất tệp XML để nhập vào HTKK.</span></div></div><div class="feature-row"><span class="check"><Icon name="bar-chart" size={18} /></span><div><strong>BCTC & quyết toán</strong><span>B01, B02, B03, B09, 03/TNDN; xuất một lần cả bộ báo cáo năm.</span></div></div><div class="feature-row"><span class="check"><Icon name="list-checks" size={18} /></span><div><strong>Kiểm tra khoá sổ</strong><span>Hơn 20 phép kiểm tra: tiền âm, tồn kho âm, chưa kết chuyển, chưa trích khấu hao…</span></div></div></div>
+  <div class="actions"><a class="btn btn-primary" href={url('/to-khai-bctc/')}>Xem Tờ khai & BCTC</a><a class="btn btn-secondary" href={url('/video/#video-m06-bao-cao-nhat-ky')}><Icon name="play-circle" />Video</a></div></div></div></section>
+
+<section class="section surface"><div class="container split"><div><Screenshot shot={shots.costBalance} /></div><div><span class="eyebrow">AI Giá thành</span><h2>AI lập phương án giá thành – số liệu vẫn phải có căn cứ</h2><p class="lead">Trước khi ghi phiếu kết chuyển, khung Cân đối AI kiểm ba điều. Dòng đỏ là chỗ cần xử lý trước khi ghi.</p>
+  <div class="feature-list">{costAi.checks.map((c, i) => <div class="feature-row"><span class="check">{`0${i + 1}`}</span><div><strong>{c.t}</strong><span>{c.d}</span></div></div>)}</div>
+  <div class="actions"><a class="btn btn-primary" href={url('/ai-ke-toan/ai-gia-thanh/')}>Xem AI Giá thành</a><a class="btn btn-secondary" href={url('/video/#video-m07-gia-thanh')}><Icon name="play-circle" />Video</a></div></div></div></section>
+
+<section class="section"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Số liệu minh chứng</span><h2 class="display"><span class="tg">Số liệu</span> <span class="tb">đo thực tế</span></h2><p class="sub-line" style="margin:0;font-weight:500">Số liệu đo trên bộ sổ, hồ sơ thật – mỗi con số kèm nguồn</p></div><p><a class="tg" href={url('/tinh-nang-uu-viet/#nguon')}><strong>Bảng nguồn số liệu →</strong></a></p></div>
+  <Evidence />
+</div></section>
+
+<section class="section surface-soft"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Ứng dụng AI trong kế toán</span><h2 class="display"><span class="tg">An toàn &</span> <span class="tb">kiểm soát AI</span></h2></div><p>Mọi lần tải, nhập, phân tích, xuất tệp đều được ghi nhật ký; mỗi lần AI lập chứng từ là một lô có thể huỷ.</p></div>
+  <AiDoDont />
+  <div class="actions" style="margin-top:22px"><a class="btn btn-secondary" href={url('/an-toan-kiem-soat-ai/')}>Xem nguyên tắc an toàn AI</a></div>
+</div></section>
+
+<section class="section"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Một nền tảng, nhiều bối cảnh</span><h2 class="display"><span class="tn">Giải pháp </span><span class="tg">theo ngành</span></h2></div><p>Chọn mô hình gần nhất để xem quy trình, báo cáo và phân hệ cần dùng.</p></div>
+  <div class="ind-grid">{industries.slice(0, 6).map((s) => <a class={`ind c-${s.c}`} href={url(s.href)}><span class={`ic ${s.c}`}><Icon name={s.icon} /></span><div><h3>{s.t}</h3><p>{s.d}</p></div></a>)}</div>
+  <div class="actions" style="margin-top:22px"><a class="btn btn-secondary" href={url('/giai-phap/')}>Tất cả giải pháp</a></div>
+</div></section>
+
+<section class="section surface"><div class="container"><div class="section-head"><div><span class="eyebrow">Hướng dẫn / Kiến thức / Video</span><h2>Học từng thao tác qua video ngắn</h2></div><p>Bộ video hướng dẫn từng mô-đun của màn hình AI, có lời đọc và chữ chú thích.</p></div>
+  <div class="video-grid">{featuredVideos.map((v) => <VideoCard video={v} />)}</div>
+  <div class="actions" style="margin-top:26px"><a class="btn btn-secondary" href={url('/video/')}>Xem tất cả video</a></div>
+</div></section>
+
+<!-- ===== Sản phẩm mới nối tiếp ===== -->
+<div class="home-page">
 
   <section class="home-proof" aria-label="Nền tảng UNESCO">
     <div class="home-container home-proof-grid">
@@ -70,4 +162,17 @@ const capabilities = [
 
   <section class="home-section home-contact" id="tu-van" aria-labelledby="home-contact-title"><div class="home-container home-contact-grid"><div class="home-contact-copy"><p class="home-kicker">Cùng UNESCO bắt đầu</p><h2 id="home-contact-title">Nâng tầm vận hành.<br /><span>Sẵn sàng hôm nay.</span></h2><p>Kể cho chúng tôi về đội ngũ và quy trình của bạn. UNESCO sẽ cùng bạn tìm giải pháp phù hợp.</p><ul><li><Icon name="check-circle" />Tư vấn theo nhu cầu thực tế</li><li><Icon name="check-circle" />Giới thiệu phần mềm và quy trình</li><li><Icon name="check-circle" />Hướng dẫn lựa chọn và triển khai</li></ul><a class="home-contact-phone" href={telHref(contact.sales.mobile)}><span><Icon name="phone" /></span><span>Trao đổi trực tiếp<strong>{contact.sales.mobile}</strong></span><Icon name="chevron-right" /></a><a class="home-text-link" href={zaloHref} target="_blank" rel="noopener">Kết nối với UNESCO qua Zalo ↗</a></div><div class="home-contact-form"><LeadForm kind="demo" heading="Đăng ký tư vấn & xem demo" /></div></div></section>
 </div>
+<script is:inline>
+  document.querySelectorAll('button.video-thumb[data-yt]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(btn.getAttribute('data-yt')) + '?autoplay=1&rel=0';
+      f.title = btn.getAttribute('aria-label') || 'Video';
+      f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      f.allowFullscreen = true;
+      var box = document.createElement('div'); box.className = 'video-thumb'; box.appendChild(f);
+      btn.replaceWith(box);
+    });
+  });
+</script>
 </BaseLayout>
