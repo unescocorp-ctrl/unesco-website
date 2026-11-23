@@ -1,17 +1,17 @@
 {
     "loai":  "unesco_cap_nhat",
     "san_pham":  "UNESCO_XII",
-    "ten":  "GD232",
-    "goi":  "GD232",
+    "ten":  "GD233",
+    "goi":  "GD233",
     "ngay":  "23/11/2026",
-    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261123_GD232.zip",
-    "sha256":  "98a456a1ea2bbe638384cb43e16a18f78953bef9d72989c3c4344413316f557f",
-    "kich_thuoc":  47329921,
+    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261123_GD233.zip",
+    "sha256":  "6c0adeb4a833b1dddca30696023974531b9f8eea1bbea8f7805575362d63fed4",
+    "kich_thuoc":  47330758,
     "co_exe":  true,
     "bat_buoc":  false,
     "exe":  "Unesco.NET.exe",
     "ghi_chu":  [
-                    "So du dau ky: chi chan ke toan khi so da khoa so (truoc bi chan o moi so vi tuy chon Cong no theo hoa don)"
+                    "Man chung tu: Tab tu ma so sang so luong bam 1 lan,Xoa duoc dong trong phieu da ghi (luoi chung tu)"
                 ],
     "so_tep":  1241,
     "tep_trong_goi":  [
@@ -3618,7 +3618,7 @@
                           {
                               "duong_dan":  "AIHoaDon/phien_ban_goi.txt",
                               "kich_thuoc":  117,
-                              "sha256":  "2df2f612d30308222ea4231eb84936118d95e159ec548022cba355ef6b0fb6eb"
+                              "sha256":  "b5a1bd1b9cec950359949dbda7c2f8879e76d96a1d53e22d99eb1bbc4b694a2d"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py",
@@ -6207,8 +6207,8 @@
                           },
                           {
                               "duong_dan":  "Unesco.NET.exe",
-                              "kich_thuoc":  34346496,
-                              "sha256":  "32b79758f163da9135784d209e2de2d944f138136d5732897af77139dbe12fdd"
+                              "kich_thuoc":  34348544,
+                              "sha256":  "f74537ab83d54371dad3671ada5633d45d70eaeeb1aae7fdbfa85b7b1cfad69c"
                           },
                           {
                               "duong_dan":  "UnescoConnect.dll",
