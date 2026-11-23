@@ -1,17 +1,17 @@
 {
     "loai":  "unesco_cap_nhat",
     "san_pham":  "UNESCO_XII",
-    "ten":  "GD231",
-    "goi":  "GD231",
+    "ten":  "GD232",
+    "goi":  "GD232",
     "ngay":  "23/11/2026",
-    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261123_GD231.zip",
-    "sha256":  "104102a3823c57369c9255823baf7c02b7025f92e498751ecb28b1f7f63ed4bf",
-    "kich_thuoc":  47329927,
+    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261123_GD232.zip",
+    "sha256":  "98a456a1ea2bbe638384cb43e16a18f78953bef9d72989c3c4344413316f557f",
+    "kich_thuoc":  47329921,
     "co_exe":  true,
     "bat_buoc":  false,
     "exe":  "Unesco.NET.exe",
     "ghi_chu":  [
-                    "Chung tu: go cot Co khong con bao Chi ghi phat sinh no hoac co,Nut Quen mat khau o man Dang nhap (Administrator cap lai),AI khong doc lai hoa don thang da khoa so / da ket chuyen; sua man nhap khau (to khai, chi phi 1562/2423)"
+                    "So du dau ky: chi chan ke toan khi so da khoa so (truoc bi chan o moi so vi tuy chon Cong no theo hoa don)"
                 ],
     "so_tep":  1241,
     "tep_trong_goi":  [
@@ -3618,7 +3618,7 @@
                           {
                               "duong_dan":  "AIHoaDon/phien_ban_goi.txt",
                               "kich_thuoc":  117,
-                              "sha256":  "db20378c10a755b1be1cf06b1c4f23cb0b36894ec055711641d77cd09158b65d"
+                              "sha256":  "2df2f612d30308222ea4231eb84936118d95e159ec548022cba355ef6b0fb6eb"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py",
@@ -6207,8 +6207,8 @@
                           },
                           {
                               "duong_dan":  "Unesco.NET.exe",
-                              "kich_thuoc":  34347008,
-                              "sha256":  "164ae4723943057b10be06a3ad3a2818f4e282d151e25c507af6c379e7e8bf0f"
+                              "kich_thuoc":  34346496,
+                              "sha256":  "32b79758f163da9135784d209e2de2d944f138136d5732897af77139dbe12fdd"
                           },
                           {
                               "duong_dan":  "UnescoConnect.dll",
