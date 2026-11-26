@@ -1,17 +1,17 @@
 {
     "loai":  "unesco_cap_nhat",
     "san_pham":  "UNESCO_XII",
-    "ten":  "GD244",
-    "goi":  "GD244",
+    "ten":  "GD245",
+    "goi":  "GD245",
     "ngay":  "27/11/2026",
-    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261127_GD244.zip",
-    "sha256":  "82b6590a62dee57c0cedf90ac6ddadf8f85bf81364c1c619e5c3789dde479d5b",
-    "kich_thuoc":  47429460,
+    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261127_GD245.zip",
+    "sha256":  "a1d98385467e589586a8943f27011f8c063af14e954b4bfa02c887bf7872fb79",
+    "kich_thuoc":  47432058,
     "co_exe":  true,
     "bat_buoc":  false,
     "exe":  "Unesco.NET.exe",
     "ghi_chu":  [
-                    "GD244 27/11: Ma tran tinh trang thang: o HD thieu dau khong con tinh hoa don ban le khong MST co ten nguoi mua + tien (dong bo voi chot tai hoa don GD243)"
+                    "GD245 27/11: Xoa chung tu thi hoa don AI ve lai cho lap chung tu (giu duyet, ghep ma); hoa don nap tu tep khong con bi coi nham la da co chung tu; tram ERP ghi duoc thang da ket chuyen khi lenh co ket chuyen lai (thang khoa so van chan)"
                 ],
     "so_tep":  1241,
     "tep_trong_goi":  [
@@ -3618,7 +3618,7 @@
                           {
                               "duong_dan":  "AIHoaDon/phien_ban_goi.txt",
                               "kich_thuoc":  117,
-                              "sha256":  "c9caf41d21ba5eb19b2470b18b2574106419ca591022d2857c961fee0d915c63"
+                              "sha256":  "e28d2d0400dad37d860b95efe5e523b64e129cc93956aabb252efbd8f10739c3"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py",
@@ -6207,8 +6207,8 @@
                           },
                           {
                               "duong_dan":  "Unesco.NET.exe",
-                              "kich_thuoc":  34587648,
-                              "sha256":  "4e7e79e7d85543f81a92e927612849be8bd7a2ff9d2139152ff58bcf463ce754"
+                              "kich_thuoc":  34593792,
+                              "sha256":  "6b770f24f6130244f1cdfc61e5b93be0b0711caba8718231a7f52fa365b3be82"
                           },
                           {
                               "duong_dan":  "UnescoConnect.dll",
