@@ -1,17 +1,17 @@
 {
     "loai":  "unesco_cap_nhat",
     "san_pham":  "UNESCO_XII",
-    "ten":  "GD242",
-    "goi":  "GD242",
+    "ten":  "GD243",
+    "goi":  "GD243",
     "ngay":  "26/11/2026",
-    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261126_GD242.zip",
-    "sha256":  "bb5c8670a7befcf4e9af40dbd8e98e5c198545d0240677917730de847c473121",
-    "kich_thuoc":  47428632,
+    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261126_GD243.zip",
+    "sha256":  "25c142b63611866e3e87ac35025d55317f5904b157608c4272c350d1992b158f",
+    "kich_thuoc":  47429033,
     "co_exe":  true,
     "bat_buoc":  false,
     "exe":  "Unesco.NET.exe",
     "ghi_chu":  [
-                    "GD242 26/11: Kiem trung hoa don cua nam khac o so nam do (cung MST); nhap tay trung so: khac ky hieu thi ghi luon, cung ky hieu hoac khong ky hieu thi hoi, trung hoan toan thi chan"
+                    "GD243 26/11: Hoa don ban le khong MST (co ten nguoi mua + tien) khong con bi xep thieu dau HD, khong chan chuoi thang; tram noi ERP cho XII dang nhap roi gui lai lenh"
                 ],
     "so_tep":  1241,
     "tep_trong_goi":  [
@@ -3618,7 +3618,7 @@
                           {
                               "duong_dan":  "AIHoaDon/phien_ban_goi.txt",
                               "kich_thuoc":  117,
-                              "sha256":  "15b146a75933f7453d047842514e015c2adc6b9d75ae5a758426cd8b98058edf"
+                              "sha256":  "b913e3dc5447c58218e1716b1d32a762829015a79dc259908c13b0c4e50ee0ba"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py",
@@ -4062,8 +4062,8 @@
                           },
                           {
                               "duong_dan":  "AIHoaDon/xii_erp_tram.py",
-                              "kich_thuoc":  20125,
-                              "sha256":  "4f9e6bae8785b23fd95b1b273596d8b407a181a4236a172fd3c18469426f4832"
+                              "kich_thuoc":  21529,
+                              "sha256":  "3e884a8a72ee7c99b5f50681b214daeae0ab9a096f5d79a42a40cf160689984b"
                           },
                           {
                               "duong_dan":  "AIHoaDon/xii_erp_viec.py",
@@ -6208,7 +6208,7 @@
                           {
                               "duong_dan":  "Unesco.NET.exe",
                               "kich_thuoc":  34586624,
-                              "sha256":  "0d33234616df6b92d21203c2280dc3ad7af41d16f3d9d8cc1b339eae131ec051"
+                              "sha256":  "76e4993bf156542512f51af4e8cea9f4f88bab2a95859c77aa2c4c70760f307e"
                           },
                           {
                               "duong_dan":  "UnescoConnect.dll",
