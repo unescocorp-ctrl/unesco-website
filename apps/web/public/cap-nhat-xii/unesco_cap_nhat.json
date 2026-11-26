@@ -1,17 +1,17 @@
 {
     "loai":  "unesco_cap_nhat",
     "san_pham":  "UNESCO_XII",
-    "ten":  "GD233",
-    "goi":  "GD233",
-    "ngay":  "23/11/2026",
-    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261123_GD233.zip",
-    "sha256":  "6c0adeb4a833b1dddca30696023974531b9f8eea1bbea8f7805575362d63fed4",
-    "kich_thuoc":  47330758,
+    "ten":  "GD234",
+    "goi":  "GD234",
+    "ngay":  "26/11/2026",
+    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261126_GD234.zip",
+    "sha256":  "61f9e032a37968d2f05d86bb2ceda8b2f870d8ffd0271fcb6aba7fd93dd5e1ef",
+    "kich_thuoc":  47345659,
     "co_exe":  true,
     "bat_buoc":  false,
     "exe":  "Unesco.NET.exe",
     "ghi_chu":  [
-                    "Man chung tu: Tab tu ma so sang so luong bam 1 lan,Xoa duoc dong trong phieu da ghi (luoi chung tu)"
+                    "Go tai khoan (112, 1121...) bang He thong tai khoan dung dung cho; may tinh tinh duoc ty le %; tim khach / vat tu theo ten khong dau,Nhap Excel tong hop: tu ghep / tao ma hang, chan nhap nham chieu, khong ghi trung, so phu gom theo so giao dich va ghi bang ke khi co 133,Bang doanh thu - gia von theo hoa don lay gia von da ghi so; Tab TK - Ma - So luong - Gia - Thanh tien o ca hai man chung tu"
                 ],
     "so_tep":  1241,
     "tep_trong_goi":  [
@@ -3618,7 +3618,7 @@
                           {
                               "duong_dan":  "AIHoaDon/phien_ban_goi.txt",
                               "kich_thuoc":  117,
-                              "sha256":  "b5a1bd1b9cec950359949dbda7c2f8879e76d96a1d53e22d99eb1bbc4b694a2d"
+                              "sha256":  "f18d28e4defa699ad56f3be3969b41d69f245e3f0d25e84bdf220bb8acca36d2"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py",
@@ -3997,8 +3997,8 @@
                           },
                           {
                               "duong_dan":  "AIHoaDon/tool_tai_hoa_don_unesco.py",
-                              "kich_thuoc":  517664,
-                              "sha256":  "e6f31989ea8401dc663d893e60e74e222a87f123720a110ddb5d2e8c1898f4ed"
+                              "kich_thuoc":  518072,
+                              "sha256":  "1e1bff9b1505addb8b2fa131fa487bacaca0a0a8876ba46c28485cfb94b990e1"
                           },
                           {
                               "duong_dan":  "AIHoaDon/tool_trich_xuat_so_phu.py",
@@ -6207,8 +6207,8 @@
                           },
                           {
                               "duong_dan":  "Unesco.NET.exe",
-                              "kich_thuoc":  34348544,
-                              "sha256":  "f74537ab83d54371dad3671ada5633d45d70eaeeb1aae7fdbfa85b7b1cfad69c"
+                              "kich_thuoc":  34399232,
+                              "sha256":  "644f7dd76604bdf1a610513a9293ca02562589b17f89e91bf6035cfc1ced33a1"
                           },
                           {
                               "duong_dan":  "UnescoConnect.dll",

@@ -1,9 +1,26 @@
 {
  "loai": "lich_su_cap_nhat_xii",
  "san_pham": "UNESCO_XII",
- "lap_luc": "2026-11-23 17:15",
+ "lap_luc": "2026-11-26 10:53",
  "ghi_chu_muc_luc": "Mục lục không ký. Gói có da_ky = true: nội dung lấy từ tệp mô tả đã ký <goi>.json (máy khách kiểm lại chữ ký).",
  "goi": [
+  {
+   "goi": "GD234",
+   "ngay": "26/11/2026",
+   "luc": "2026-11-26 10:53",
+   "ghi_chu": [
+    "Go tai khoan (112, 1121...) bang He thong tai khoan dung dung cho; may tinh tinh duoc ty le %; tim khach / vat tu theo ten khong dau",
+    "Nhap Excel tong hop: tu ghep / tao ma hang, chan nhap nham chieu, khong ghi trung, so phu gom theo so giao dich va ghi bang ke khi co 133",
+    "Bang doanh thu - gia von theo hoa don lay gia von da ghi so; Tab TK - Ma - So luong - Gia - Thanh tien o ca hai man chung tu"
+   ],
+   "so_tep": 1241,
+   "kich_thuoc": 47345659,
+   "co_exe": true,
+   "exe_sha256": "644f7dd76604bdf1a610513a9293ca02562589b17f89e91bf6035cfc1ced33a1",
+   "tep": "GD234.json",
+   "nguon": "kenh",
+   "da_ky": true
+  },
   {
    "goi": "GD233",
    "ngay": "23/11/2026",
