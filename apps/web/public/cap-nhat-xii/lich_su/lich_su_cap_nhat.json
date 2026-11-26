@@ -1,9 +1,24 @@
 {
  "loai": "lich_su_cap_nhat_xii",
  "san_pham": "UNESCO_XII",
- "lap_luc": "2026-11-26 13:50",
+ "lap_luc": "2026-11-26 14:28",
  "ghi_chu_muc_luc": "Mục lục không ký. Gói có da_ky = true: nội dung lấy từ tệp mô tả đã ký <goi>.json (máy khách kiểm lại chữ ký).",
  "goi": [
+  {
+   "goi": "GD238",
+   "ngay": "26/11/2026",
+   "luc": "2026-11-26 14:28",
+   "ghi_chu": [
+    "GD238 26/11: Bang ke ban ra / mua vao: hoa don chua xep muc (HTTT 0 hoac trong) nay tu vao dung muc theo thue suat, het nhom khong tieu de va het thieu tong doanh thu chiu thue; nut Xuat Excel chia muc giong ban in"
+   ],
+   "so_tep": 1241,
+   "kich_thuoc": 47366786,
+   "co_exe": true,
+   "exe_sha256": "4ba9dc69523c01e9964080e8135aa81afad8d6989a248115631b8bb68808d0b4",
+   "tep": "GD238.json",
+   "nguon": "kenh",
+   "da_ky": true
+  },
   {
    "goi": "GD237",
    "ngay": "26/11/2026",
