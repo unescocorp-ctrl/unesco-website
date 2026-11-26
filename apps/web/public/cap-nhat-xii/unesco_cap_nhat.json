@@ -1,17 +1,17 @@
 {
     "loai":  "unesco_cap_nhat",
     "san_pham":  "UNESCO_XII",
-    "ten":  "GD243",
-    "goi":  "GD243",
-    "ngay":  "26/11/2026",
-    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261126_GD243.zip",
-    "sha256":  "25c142b63611866e3e87ac35025d55317f5904b157608c4272c350d1992b158f",
-    "kich_thuoc":  47429033,
+    "ten":  "GD244",
+    "goi":  "GD244",
+    "ngay":  "27/11/2026",
+    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261127_GD244.zip",
+    "sha256":  "82b6590a62dee57c0cedf90ac6ddadf8f85bf81364c1c619e5c3789dde479d5b",
+    "kich_thuoc":  47429460,
     "co_exe":  true,
     "bat_buoc":  false,
     "exe":  "Unesco.NET.exe",
     "ghi_chu":  [
-                    "GD243 26/11: Hoa don ban le khong MST (co ten nguoi mua + tien) khong con bi xep thieu dau HD, khong chan chuoi thang; tram noi ERP cho XII dang nhap roi gui lai lenh"
+                    "GD244 27/11: Ma tran tinh trang thang: o HD thieu dau khong con tinh hoa don ban le khong MST co ten nguoi mua + tien (dong bo voi chot tai hoa don GD243)"
                 ],
     "so_tep":  1241,
     "tep_trong_goi":  [
@@ -3618,7 +3618,7 @@
                           {
                               "duong_dan":  "AIHoaDon/phien_ban_goi.txt",
                               "kich_thuoc":  117,
-                              "sha256":  "b913e3dc5447c58218e1716b1d32a762829015a79dc259908c13b0c4e50ee0ba"
+                              "sha256":  "c9caf41d21ba5eb19b2470b18b2574106419ca591022d2857c961fee0d915c63"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py",
@@ -6207,8 +6207,8 @@
                           },
                           {
                               "duong_dan":  "Unesco.NET.exe",
-                              "kich_thuoc":  34586624,
-                              "sha256":  "76e4993bf156542512f51af4e8cea9f4f88bab2a95859c77aa2c4c70760f307e"
+                              "kich_thuoc":  34587648,
+                              "sha256":  "4e7e79e7d85543f81a92e927612849be8bd7a2ff9d2139152ff58bcf463ce754"
                           },
                           {
                               "duong_dan":  "UnescoConnect.dll",
