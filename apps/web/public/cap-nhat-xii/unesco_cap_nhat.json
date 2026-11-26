@@ -1,17 +1,17 @@
 {
     "loai":  "unesco_cap_nhat",
     "san_pham":  "UNESCO_XII",
-    "ten":  "GD240",
-    "goi":  "GD240",
+    "ten":  "GD241",
+    "goi":  "GD241",
     "ngay":  "26/11/2026",
-    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261126_GD240.zip",
-    "sha256":  "d30b95bd404be259ee93aa67f4f7268bcbd0b9b94cf6eb34b324599bdfacd2a1",
-    "kich_thuoc":  47395295,
+    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261126_GD241.zip",
+    "sha256":  "dea726974351aec2b4bd14b677741f6c07fe044a61022adb4e3a13d649bc85f2",
+    "kich_thuoc":  47425806,
     "co_exe":  true,
     "bat_buoc":  false,
     "exe":  "Unesco.NET.exe",
     "ghi_chu":  [
-                    "GD240 26/11: Ten hang / dien giai / nguoi nop co dau nhay mo, ghi, sua duoc (Gia Phu HD 1071); man Giai trinh hoa don dau vao rui ro (mau thue, xuat Excel + PDF) o AI hoa don \u003e Bang ke, rui ro \u0026 cong cu"
+                    "GD241 26/11: Nhap tep Huvisoft (Excel chi tiet) vao man AI hoa don; kiem trung hoan toan hoa don o moi loi nhap (cong thue, AI, Huvisoft, Excel, nhap tay) - trung thi khong cho luu; tai hoa don: hop chon loi (Chrome / Huvisoft; cua so trong chuong trinh khi may co WebView2), Chrome thu trang lon hon cho HD may tinh tien"
                 ],
     "so_tep":  1241,
     "tep_trong_goi":  [
@@ -3557,8 +3557,8 @@
                           },
                           {
                               "duong_dan":  "AIHoaDon/mau_excel_hd.json",
-                              "kich_thuoc":  1780,
-                              "sha256":  "7ead4f1868efabd659f0e4a8752d2f56ca95d6e10701e4f110481f32b3cdcd25"
+                              "kich_thuoc":  3125,
+                              "sha256":  "251671215ff8abbba2730cb8c532ca0555c75ad7fcd9e85169dac6786f4de7ca"
                           },
                           {
                               "duong_dan":  "AIHoaDon/mo_phong_gt133.py",
@@ -3618,7 +3618,7 @@
                           {
                               "duong_dan":  "AIHoaDon/phien_ban_goi.txt",
                               "kich_thuoc":  117,
-                              "sha256":  "6c18e63cb4d4d1335f157d2356a3f87564c9c191244cd1688c1c87248b78285d"
+                              "sha256":  "9178046df598ac29a123405a427cb62158e7b70877ee06bc529b0573567645a1"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py",
@@ -3997,8 +3997,8 @@
                           },
                           {
                               "duong_dan":  "AIHoaDon/tool_tai_hoa_don_unesco.py",
-                              "kich_thuoc":  518072,
-                              "sha256":  "1e1bff9b1505addb8b2fa131fa487bacaca0a0a8876ba46c28485cfb94b990e1"
+                              "kich_thuoc":  551811,
+                              "sha256":  "2378e055e3ad92d30661c1b54636f4738bd323430dec1784f1994cf67b34fad7"
                           },
                           {
                               "duong_dan":  "AIHoaDon/tool_trich_xuat_so_phu.py",
@@ -6207,8 +6207,8 @@
                           },
                           {
                               "duong_dan":  "Unesco.NET.exe",
-                              "kich_thuoc":  34523648,
-                              "sha256":  "bb186324f0dfd2cdb79eb7473069060c67607a52527422d9884505b0cf84e8b7"
+                              "kich_thuoc":  34581504,
+                              "sha256":  "4db52c065f7a012eafb21e6d677b10ac6e6b257318b9481e9600e232e9b3e480"
                           },
                           {
                               "duong_dan":  "UnescoConnect.dll",

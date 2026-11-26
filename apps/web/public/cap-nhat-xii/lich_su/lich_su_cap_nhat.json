@@ -1,9 +1,24 @@
 {
  "loai": "lich_su_cap_nhat_xii",
  "san_pham": "UNESCO_XII",
- "lap_luc": "2026-11-26 17:43",
+ "lap_luc": "2026-11-26 21:51",
  "ghi_chu_muc_luc": "Mục lục không ký. Gói có da_ky = true: nội dung lấy từ tệp mô tả đã ký <goi>.json (máy khách kiểm lại chữ ký).",
  "goi": [
+  {
+   "goi": "GD241",
+   "ngay": "26/11/2026",
+   "luc": "2026-11-26 21:51",
+   "ghi_chu": [
+    "GD241 26/11: Nhap tep Huvisoft (Excel chi tiet) vao man AI hoa don; kiem trung hoan toan hoa don o moi loi nhap (cong thue, AI, Huvisoft, Excel, nhap tay) - trung thi khong cho luu; tai hoa don: hop chon loi (Chrome / Huvisoft; cua so trong chuong trinh khi may co WebView2), Chrome thu trang lon hon cho HD may tinh tien"
+   ],
+   "so_tep": 1241,
+   "kich_thuoc": 47425806,
+   "co_exe": true,
+   "exe_sha256": "4db52c065f7a012eafb21e6d677b10ac6e6b257318b9481e9600e232e9b3e480",
+   "tep": "GD241.json",
+   "nguon": "kenh",
+   "da_ky": true
+  },
   {
    "goi": "GD240",
    "ngay": "26/11/2026",
