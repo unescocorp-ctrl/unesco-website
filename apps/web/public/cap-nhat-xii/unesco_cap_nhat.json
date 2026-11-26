@@ -1,17 +1,17 @@
 {
     "loai":  "unesco_cap_nhat",
     "san_pham":  "UNESCO_XII",
-    "ten":  "GD235",
-    "goi":  "GD235",
+    "ten":  "GD236",
+    "goi":  "GD236",
     "ngay":  "26/11/2026",
-    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261126_GD235.zip",
-    "sha256":  "45af4f5fc2c220dcaf6a615b309efdbb958c9969b00dcd9403c2ac4bead67a32",
-    "kich_thuoc":  47363369,
+    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261126_GD236.zip",
+    "sha256":  "17262f2d1efb8146891cf93bd8230fe8204e1262a44363e6ada36cc85e9b32d0",
+    "kich_thuoc":  47365064,
     "co_exe":  true,
     "bat_buoc":  false,
     "exe":  "Unesco.NET.exe",
     "ghi_chu":  [
-                    "GD235 26/11: sua loi video/anh 23/11 (phieu FPT mat SL khi sua dong, tim so HD * va doan so, 1541 gan T\u003cthang\u003e, 641/642 khi DN dich vu, SoHD = so CT nhu XI); xuat Excel (bang ke ra du HD, NXT lech cot, tieu de lap, so 4,166, ten hang tran o); giao dien man chung tu nhu XI (16 cho); nhap Excel: wizard/HDDT tai ve/AI bang ke/so phu AI chan lan loai, chan trung; sua loi HDDT tai ve hong tren 178 so"
+                    "GD236 26/11: Excel theo mau UNESCO va HDDT tai ve nay ghi bang ke thue (HoaDon) nhu Nhap Excel tong hop; in hoa don ban noi theo MaSo - het thieu dong khi so HD lech so CT (so 0 dau); phieu nhap VT khong dong kho: ghi chu, khong tu tich"
                 ],
     "so_tep":  1241,
     "tep_trong_goi":  [
@@ -3618,7 +3618,7 @@
                           {
                               "duong_dan":  "AIHoaDon/phien_ban_goi.txt",
                               "kich_thuoc":  117,
-                              "sha256":  "90cd7ad070866788c0402c275c5342f25623f05d88da8824c3438ae2a89c44e7"
+                              "sha256":  "a493948096a896cc17838ae89874336d2eb4b3ae334d3a385d93bd5fcf2343c5"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py",
@@ -6207,8 +6207,8 @@
                           },
                           {
                               "duong_dan":  "Unesco.NET.exe",
-                              "kich_thuoc":  34441728,
-                              "sha256":  "27c73d964d3260c8737adf5d55f0d0afbc87a1e1a66843725280f01f62e8360a"
+                              "kich_thuoc":  34452480,
+                              "sha256":  "e78d48bd209179adefef185bc4d743d98f5b65ed2ba4eb78644af2de8afa2b4b"
                           },
                           {
                               "duong_dan":  "UnescoConnect.dll",
