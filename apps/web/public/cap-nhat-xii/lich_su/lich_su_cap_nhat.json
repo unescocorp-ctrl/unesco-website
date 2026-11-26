@@ -1,9 +1,24 @@
 {
  "loai": "lich_su_cap_nhat_xii",
  "san_pham": "UNESCO_XII",
- "lap_luc": "2026-11-26 13:30",
+ "lap_luc": "2026-11-26 13:50",
  "ghi_chu_muc_luc": "Mục lục không ký. Gói có da_ky = true: nội dung lấy từ tệp mô tả đã ký <goi>.json (máy khách kiểm lại chữ ký).",
  "goi": [
+  {
+   "goi": "GD237",
+   "ngay": "26/11/2026",
+   "luc": "2026-11-26 13:50",
+   "ghi_chu": [
+    "GD237 26/11: So phu AI - phi ngan hang co VAT len bang ke mua vao; khai ma doi tuong ngan hang 1 lan o Khai bao TK 112 (may goi y san); dong 133 cua so phu Excel trong Ma khach hang thi tu lay ma ngan hang theo TK 112"
+   ],
+   "so_tep": 1241,
+   "kich_thuoc": 47366374,
+   "co_exe": true,
+   "exe_sha256": "403b134c343de83b41e8ad127f5cf474e188fd564e14d52333f12d03ee4cc2e2",
+   "tep": "GD237.json",
+   "nguon": "kenh",
+   "da_ky": true
+  },
   {
    "goi": "GD236",
    "ngay": "26/11/2026",

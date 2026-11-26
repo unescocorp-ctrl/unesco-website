@@ -1,17 +1,17 @@
 {
     "loai":  "unesco_cap_nhat",
     "san_pham":  "UNESCO_XII",
-    "ten":  "GD236",
-    "goi":  "GD236",
+    "ten":  "GD237",
+    "goi":  "GD237",
     "ngay":  "26/11/2026",
-    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261126_GD236.zip",
-    "sha256":  "17262f2d1efb8146891cf93bd8230fe8204e1262a44363e6ada36cc85e9b32d0",
-    "kich_thuoc":  47365064,
+    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261126_GD237.zip",
+    "sha256":  "56fd395bd8299b75c519a8546c40f64834a50f4e3ffa2754a13376a00844fc4a",
+    "kich_thuoc":  47366374,
     "co_exe":  true,
     "bat_buoc":  false,
     "exe":  "Unesco.NET.exe",
     "ghi_chu":  [
-                    "GD236 26/11: Excel theo mau UNESCO va HDDT tai ve nay ghi bang ke thue (HoaDon) nhu Nhap Excel tong hop; in hoa don ban noi theo MaSo - het thieu dong khi so HD lech so CT (so 0 dau); phieu nhap VT khong dong kho: ghi chu, khong tu tich"
+                    "GD237 26/11: So phu AI - phi ngan hang co VAT len bang ke mua vao; khai ma doi tuong ngan hang 1 lan o Khai bao TK 112 (may goi y san); dong 133 cua so phu Excel trong Ma khach hang thi tu lay ma ngan hang theo TK 112"
                 ],
     "so_tep":  1241,
     "tep_trong_goi":  [
@@ -3618,7 +3618,7 @@
                           {
                               "duong_dan":  "AIHoaDon/phien_ban_goi.txt",
                               "kich_thuoc":  117,
-                              "sha256":  "a493948096a896cc17838ae89874336d2eb4b3ae334d3a385d93bd5fcf2343c5"
+                              "sha256":  "d1bf42c063faf36e3d1c7fba02cfcb85b591fe3b25f5a7817756430ab66652c0"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py",
@@ -6207,8 +6207,8 @@
                           },
                           {
                               "duong_dan":  "Unesco.NET.exe",
-                              "kich_thuoc":  34452480,
-                              "sha256":  "e78d48bd209179adefef185bc4d743d98f5b65ed2ba4eb78644af2de8afa2b4b"
+                              "kich_thuoc":  34458112,
+                              "sha256":  "403b134c343de83b41e8ad127f5cf474e188fd564e14d52333f12d03ee4cc2e2"
                           },
                           {
                               "duong_dan":  "UnescoConnect.dll",
