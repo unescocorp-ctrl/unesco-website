@@ -1,2 +1,2 @@
 Kenh cap nhat UNESCO XII (goi da ky so Ed25519). May khach doc https://www.unescosoft.com/cap-nhat-xii/ - khong sua tay cac tep o day.
-Goi hien tai: GD234
+Goi hien tai: GD235
