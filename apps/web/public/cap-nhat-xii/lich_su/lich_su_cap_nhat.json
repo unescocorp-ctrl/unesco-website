@@ -1,9 +1,24 @@
 {
  "loai": "lich_su_cap_nhat_xii",
  "san_pham": "UNESCO_XII",
- "lap_luc": "2026-11-26 17:07",
+ "lap_luc": "2026-11-26 17:43",
  "ghi_chu_muc_luc": "Mục lục không ký. Gói có da_ky = true: nội dung lấy từ tệp mô tả đã ký <goi>.json (máy khách kiểm lại chữ ký).",
  "goi": [
+  {
+   "goi": "GD240",
+   "ngay": "26/11/2026",
+   "luc": "2026-11-26 17:43",
+   "ghi_chu": [
+    "GD240 26/11: Ten hang / dien giai / nguoi nop co dau nhay mo, ghi, sua duoc (Gia Phu HD 1071); man Giai trinh hoa don dau vao rui ro (mau thue, xuat Excel + PDF) o AI hoa don > Bang ke, rui ro & cong cu"
+   ],
+   "so_tep": 1241,
+   "kich_thuoc": 47395295,
+   "co_exe": true,
+   "exe_sha256": "bb186324f0dfd2cdb79eb7473069060c67607a52527422d9884505b0cf84e8b7",
+   "tep": "GD240.json",
+   "nguon": "kenh",
+   "da_ky": true
+  },
   {
    "goi": "GD239",
    "ngay": "26/11/2026",
