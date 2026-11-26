@@ -1,9 +1,26 @@
 {
  "loai": "lich_su_cap_nhat_xii",
  "san_pham": "UNESCO_XII",
- "lap_luc": "2026-11-26 14:28",
+ "lap_luc": "2026-11-26 17:07",
  "ghi_chu_muc_luc": "Mục lục không ký. Gói có da_ky = true: nội dung lấy từ tệp mô tả đã ký <goi>.json (máy khách kiểm lại chữ ký).",
  "goi": [
+  {
+   "goi": "GD239",
+   "ngay": "26/11/2026",
+   "luc": "2026-11-26 17:07",
+   "ghi_chu": [
+    "GD239 26/11: Ket chuyen thanh pham dong > 2",
+    "147 ty khong mat phieu nhap TP (tran so); Doi TK hien du chung tu; nhat ky chung tu dot 1 (ghi tao/sua/xoa, lo ket chuyen); tinh lai cong no Kq7; chuyen nam so du > 2",
+    "147 ty"
+   ],
+   "so_tep": 1241,
+   "kich_thuoc": 47367689,
+   "co_exe": true,
+   "exe_sha256": "7fff1194f51a2c447d91c0663abe6392fd72dc1a90e65ee882294e99a4c94de1",
+   "tep": "GD239.json",
+   "nguon": "kenh",
+   "da_ky": true
+  },
   {
    "goi": "GD238",
    "ngay": "26/11/2026",
