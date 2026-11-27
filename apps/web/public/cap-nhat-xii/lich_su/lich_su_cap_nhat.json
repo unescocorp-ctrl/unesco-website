@@ -1,9 +1,25 @@
 {
  "loai": "lich_su_cap_nhat_xii",
  "san_pham": "UNESCO_XII",
- "lap_luc": "2026-11-27 07:27",
+ "lap_luc": "2026-11-27 12:28",
  "ghi_chu_muc_luc": "Mục lục không ký. Gói có da_ky = true: nội dung lấy từ tệp mô tả đã ký <goi>.json (máy khách kiểm lại chữ ký).",
  "goi": [
+  {
+   "goi": "GD248",
+   "ngay": "27/11/2026",
+   "luc": "2026-11-27 12:28",
+   "ghi_chu": [
+    "GD248 27/11: Thu vien bao cao ra dung ky dang chon + xuat nhieu bao cao mot lan; dinh muc vat tu bat nut Them/Ghi/Xoa (chi chan thang khoa so); bang luong / phieu luong xem tren man hinh; kinh lup tim khach hang dat con tro o o tim; tim so hoa don o o chung tu goc phieu thu chi; lui o bang mui ten len / Backspace o trong; Excel so 167",
+    "085"
+   ],
+   "so_tep": 1241,
+   "kich_thuoc": 47454546,
+   "co_exe": true,
+   "exe_sha256": "031563b3eea7984efc04edc8eb7a75b1324fa7673d3337a1ddb3f02133e79c24",
+   "tep": "GD248.json",
+   "nguon": "kenh",
+   "da_ky": true
+  },
   {
    "goi": "GD247",
    "ngay": "27/11/2026",
