@@ -1,9 +1,24 @@
 {
  "loai": "lich_su_cap_nhat_xii",
  "san_pham": "UNESCO_XII",
- "lap_luc": "2026-11-27 14:21",
+ "lap_luc": "2026-11-27 15:18",
  "ghi_chu_muc_luc": "Mục lục không ký. Gói có da_ky = true: nội dung lấy từ tệp mô tả đã ký <goi>.json (máy khách kiểm lại chữ ký).",
  "goi": [
+  {
+   "goi": "GD250",
+   "ngay": "27/11/2026",
+   "luc": "2026-11-27 15:18",
+   "ghi_chu": [
+    "GD250: TT99 dinh muc khong co ngay coi la tu ngay 1 (nhap thanh pham tu xuat NVL theo dinh muc - Paparoti); kich ban thang dong man Ket chuyen thanh pham sau khi lap phieu (ket chuyen khong bi huy); kich ban them muc xoa chung tu / dinh muc theo phieu"
+   ],
+   "so_tep": 1241,
+   "kich_thuoc": 47476304,
+   "co_exe": true,
+   "exe_sha256": "ea5e1430862e2885fa28a4fd8f003c62611940c3e5d86842eaae618957452cc6",
+   "tep": "GD250.json",
+   "nguon": "kenh",
+   "da_ky": true
+  },
   {
    "goi": "GD249",
    "ngay": "27/11/2026",
