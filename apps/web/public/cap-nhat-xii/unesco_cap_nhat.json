@@ -1,17 +1,17 @@
 {
     "loai":  "unesco_cap_nhat",
     "san_pham":  "UNESCO_XII",
-    "ten":  "GD245",
-    "goi":  "GD245",
+    "ten":  "GD246",
+    "goi":  "GD246",
     "ngay":  "27/11/2026",
-    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261127_GD245.zip",
-    "sha256":  "a1d98385467e589586a8943f27011f8c063af14e954b4bfa02c887bf7872fb79",
-    "kich_thuoc":  47432058,
+    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261127_GD246.zip",
+    "sha256":  "ab1da99d1a7056144e9dba515ad04d95bc3050966dbcd49e410b0715c48fe288",
+    "kich_thuoc":  47444076,
     "co_exe":  true,
     "bat_buoc":  false,
     "exe":  "Unesco.NET.exe",
     "ghi_chu":  [
-                    "GD245 27/11: Xoa chung tu thi hoa don AI ve lai cho lap chung tu (giu duyet, ghep ma); hoa don nap tu tep khong con bi coi nham la da co chung tu; tram ERP ghi duoc thang da ket chuyen khi lenh co ket chuyen lai (thang khoa so van chan)"
+                    "GD246 27/11: Chuoi thang ghi duoc thang da ket chuyen (lenh co ket chuyen lai); so phu tu chua dong mat chung tu, cham lai dong cho xac nhan; doc bang luong dung sheet luong + BH doanh nghiep; tram ERP tu cap nhat khi ranh, mo lai man dang nhap dien san"
                 ],
     "so_tep":  1241,
     "tep_trong_goi":  [
@@ -42,8 +42,8 @@
                           },
                           {
                               "duong_dan":  "AIHoaDon/bang_luong_gd78.py",
-                              "kich_thuoc":  87106,
-                              "sha256":  "6c0f444d2b14b0c2e1e880b848793ca0f2ae8eb6fe7a95a40f532ee0c5c8f0e7"
+                              "kich_thuoc":  93205,
+                              "sha256":  "23c594df491a0a1081703d9c77b4096a7e53dc3f13d92825d86901e1da9dc2ac"
                           },
                           {
                               "duong_dan":  "AIHoaDon/bao_cao_bo_sung.py",
@@ -3618,7 +3618,7 @@
                           {
                               "duong_dan":  "AIHoaDon/phien_ban_goi.txt",
                               "kich_thuoc":  117,
-                              "sha256":  "e28d2d0400dad37d860b95efe5e523b64e129cc93956aabb252efbd8f10739c3"
+                              "sha256":  "c593a8cacb09be6c666563e1281be9418779688e28bbac0473ab1e45f8558686"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py",
@@ -4062,8 +4062,8 @@
                           },
                           {
                               "duong_dan":  "AIHoaDon/xii_erp_tram.py",
-                              "kich_thuoc":  21529,
-                              "sha256":  "3e884a8a72ee7c99b5f50681b214daeae0ab9a096f5d79a42a40cf160689984b"
+                              "kich_thuoc":  27730,
+                              "sha256":  "b5514305754515cc5a57a07392ae961fbc78372d3c7db440ce639f56a00c7258"
                           },
                           {
                               "duong_dan":  "AIHoaDon/xii_erp_viec.py",
@@ -6207,8 +6207,8 @@
                           },
                           {
                               "duong_dan":  "Unesco.NET.exe",
-                              "kich_thuoc":  34593792,
-                              "sha256":  "6b770f24f6130244f1cdfc61e5b93be0b0711caba8718231a7f52fa365b3be82"
+                              "kich_thuoc":  34613760,
+                              "sha256":  "5fe42b64a44eb6db568474bf226564b739c7b3d39cc3cc6e48911e765b96fa56"
                           },
                           {
                               "duong_dan":  "UnescoConnect.dll",
