@@ -1,17 +1,17 @@
 {
     "loai":  "unesco_cap_nhat",
     "san_pham":  "UNESCO_XII",
-    "ten":  "GD251",
-    "goi":  "GD251",
+    "ten":  "GD252",
+    "goi":  "GD252",
     "ngay":  "27/11/2026",
-    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261127_GD251.zip",
-    "sha256":  "184200be27dfbe72c70ea9c2fb1bbfa917991e1843a6b7799ce2cf357ba70ed5",
-    "kich_thuoc":  47476380,
+    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261127_GD252.zip",
+    "sha256":  "82947a6600101dabd3a06c76f8c5dbe49e091ebf0a82048688bdaac812f376c8",
+    "kich_thuoc":  47480216,
     "co_exe":  true,
     "bat_buoc":  false,
     "exe":  "Unesco.NET.exe",
     "ghi_chu":  [
-                    "GD251: cong ket chuyen khong chan hang khuyen mai nhap 0 d (chu DN giu 0 d, chi XEM); kich ban thang dong man Ket chuyen thanh pham sau ghi lai phieu (het LOI gia o tong hop)"
+                    "GD252: Host ghi XII khong con chet o buoc bao_cao (B02 TT133 doc thong tin cong ty tu License thay vi nhan FormMain - FormMain.New mo hop dang nhap roi Environment.Exit trong Host)"
                 ],
     "so_tep":  1241,
     "tep_trong_goi":  [
@@ -3618,7 +3618,7 @@
                           {
                               "duong_dan":  "AIHoaDon/phien_ban_goi.txt",
                               "kich_thuoc":  117,
-                              "sha256":  "da31d0b4428d913d02e0ebef34ef6a502c573714468a1a74524f47925264c418"
+                              "sha256":  "27fc7ba215a471cf3224530655c33ead784b40f7b7646b69c6c25e011cf4d181"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py",
@@ -6207,8 +6207,8 @@
                           },
                           {
                               "duong_dan":  "Unesco.NET.exe",
-                              "kich_thuoc":  34705408,
-                              "sha256":  "ee42946de760584c8a4b12b2f75b2381522d7f58bf207cf00c9a26605d5f55bc"
+                              "kich_thuoc":  34715136,
+                              "sha256":  "267d6b52dca3b0aba77373ff8e3f3d6585401f7cd23d434e82a980b13ac612ae"
                           },
                           {
                               "duong_dan":  "UnescoConnect.dll",

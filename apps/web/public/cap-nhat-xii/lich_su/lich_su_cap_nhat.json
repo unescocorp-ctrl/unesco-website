@@ -1,9 +1,24 @@
 {
  "loai": "lich_su_cap_nhat_xii",
  "san_pham": "UNESCO_XII",
- "lap_luc": "2026-11-27 18:16",
+ "lap_luc": "2026-11-27 20:23",
  "ghi_chu_muc_luc": "Mục lục không ký. Gói có da_ky = true: nội dung lấy từ tệp mô tả đã ký <goi>.json (máy khách kiểm lại chữ ký).",
  "goi": [
+  {
+   "goi": "GD252",
+   "ngay": "27/11/2026",
+   "luc": "2026-11-27 20:23",
+   "ghi_chu": [
+    "GD252: Host ghi XII khong con chet o buoc bao_cao (B02 TT133 doc thong tin cong ty tu License thay vi nhan FormMain - FormMain.New mo hop dang nhap roi Environment.Exit trong Host)"
+   ],
+   "so_tep": 1241,
+   "kich_thuoc": 47480216,
+   "co_exe": true,
+   "exe_sha256": "267d6b52dca3b0aba77373ff8e3f3d6585401f7cd23d434e82a980b13ac612ae",
+   "tep": "GD252.json",
+   "nguon": "kenh",
+   "da_ky": true
+  },
   {
    "goi": "GD251",
    "ngay": "27/11/2026",
