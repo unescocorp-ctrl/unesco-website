@@ -1,17 +1,17 @@
 {
     "loai":  "unesco_cap_nhat",
     "san_pham":  "UNESCO_XII",
-    "ten":  "GD261",
-    "goi":  "GD261",
+    "ten":  "GD262",
+    "goi":  "GD262",
     "ngay":  "28/11/2026",
-    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261128_GD261.zip",
-    "sha256":  "150fbec92b5d60ce73d8a6dd7fcffe5b1d481cb8ff6b3f7df7241bfb275e05ef",
-    "kich_thuoc":  47565126,
+    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261128_GD262.zip",
+    "sha256":  "bb2a1b1def95708bbe6438941b0d5c6ac64fce1715f10e7a3cdb4b597db712c4",
+    "kich_thuoc":  47566330,
     "co_exe":  true,
     "bat_buoc":  false,
     "exe":  "Unesco.NET.exe",
     "ghi_chu":  [
-                    "GD261: TNCN hop dong NET - quyet toan 05/QTT va chung tu khau tru dung thu nhap quy doi (TNCN_TNQuyDoi); doi chieu Co 334 tru phan quy doi, khong bao lech gia."
+                    "GD262: so phu doc duoc sao ke .xls dang HTML (Vietcombank); so du dau ky lay dung cot; chu sau dong Tong so khong noi vao giao dich cuoi. Chuong trinh (exe) giu nhu GD261."
                 ],
     "so_tep":  1243,
     "tep_trong_goi":  [
@@ -3623,7 +3623,7 @@
                           {
                               "duong_dan":  "AIHoaDon/phien_ban_goi.txt",
                               "kich_thuoc":  117,
-                              "sha256":  "d7e9063bed38ea1665775d7aae7033b7dbefc08d5d2ba172ee5848ebe48c3aff"
+                              "sha256":  "5b0a8454a55a4965139a74cd8e00e5bca1651b5c79f0ca2d9591962118cc22e7"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py",
@@ -3997,8 +3997,8 @@
                           },
                           {
                               "duong_dan":  "AIHoaDon/tool_so_phu_unesco.py",
-                              "kich_thuoc":  147223,
-                              "sha256":  "479e8e63ec285c4c03c212988db13db1cd7ea841a60c3b2f545a38d10955b88b"
+                              "kich_thuoc":  148098,
+                              "sha256":  "a64a1a89b7b3ead4d20c959055142db4e8e2dd7798a418f62c7337e65d791113"
                           },
                           {
                               "duong_dan":  "AIHoaDon/tool_tai_hoa_don_unesco.py",
@@ -4007,8 +4007,8 @@
                           },
                           {
                               "duong_dan":  "AIHoaDon/tool_trich_xuat_so_phu.py",
-                              "kich_thuoc":  140494,
-                              "sha256":  "2c236d36f3bfeb85cb201c2e264e0b009de1ab5268b71ae415a06aef6bffffb8"
+                              "kich_thuoc":  143776,
+                              "sha256":  "bd460fa8b58aab81ca374c5154d0d1f4afe48f0020a2b75da0415c7cc3cef423"
                           },
                           {
                               "duong_dan":  "AIHoaDon/tool_tro_ly_ai.py",

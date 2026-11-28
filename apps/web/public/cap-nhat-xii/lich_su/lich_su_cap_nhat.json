@@ -1,9 +1,24 @@
 {
  "loai": "lich_su_cap_nhat_xii",
  "san_pham": "UNESCO_XII",
- "lap_luc": "2026-11-28 12:57",
+ "lap_luc": "2026-11-28 14:59",
  "ghi_chu_muc_luc": "Mục lục không ký. Gói có da_ky = true: nội dung lấy từ tệp mô tả đã ký <goi>.json (máy khách kiểm lại chữ ký).",
  "goi": [
+  {
+   "goi": "GD262",
+   "ngay": "28/11/2026",
+   "luc": "2026-11-28 14:58",
+   "ghi_chu": [
+    "GD262: so phu doc duoc sao ke .xls dang HTML (Vietcombank); so du dau ky lay dung cot; chu sau dong Tong so khong noi vao giao dich cuoi. Chuong trinh (exe) giu nhu GD261."
+   ],
+   "so_tep": 1243,
+   "kich_thuoc": 47566330,
+   "co_exe": true,
+   "exe_sha256": "b90b0c32bb14cf6cf64274892c9064d80f935825622114c881c7b61a05b9962c",
+   "tep": "GD262.json",
+   "nguon": "kenh",
+   "da_ky": true
+  },
   {
    "goi": "GD261",
    "ngay": "28/11/2026",
