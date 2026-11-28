@@ -1,17 +1,17 @@
 {
     "loai":  "unesco_cap_nhat",
     "san_pham":  "UNESCO_XII",
-    "ten":  "GD264",
-    "goi":  "GD264",
+    "ten":  "GD265",
+    "goi":  "GD265",
     "ngay":  "28/11/2026",
-    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261128_GD264.zip",
-    "sha256":  "7679f8b513bdcf56c7c7e4efa9e6056fcd36fb83686b58e18969e9a64abc1efb",
-    "kich_thuoc":  47590778,
+    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261128_GD265.zip",
+    "sha256":  "e68fbd4e0fa4df048eeb70c1b9958c01519ff4f40a89c9d74d62c7664ee487ad",
+    "kich_thuoc":  47591021,
     "co_exe":  true,
     "bat_buoc":  false,
     "exe":  "Unesco.NET.exe",
     "ghi_chu":  [
-                    "GD264: Luong ghi so tong - man phan bo tam thu nhap khac cho tung nguoi (uoc tinh, hoan lai duoc, BH giu nguyen, tinh lai TNCN thang), nhap bang luong chi tiet thay so tam (phai khop tong tren so); bang luong in dong Tong cong cot Tong thu nhap cong du moi nhom."
+                    "GD265: BCTC TT99 het bao Thieu bang du lieu CDTS o so lap thang TT99 (tu tao bang lam viec CDTS tu CDTS2004)."
                 ],
     "so_tep":  1243,
     "tep_trong_goi":  [
@@ -3623,7 +3623,7 @@
                           {
                               "duong_dan":  "AIHoaDon/phien_ban_goi.txt",
                               "kich_thuoc":  117,
-                              "sha256":  "800b8cf71be52cd5c6d41dc2286dda219552c9fcb378a2380ad5f7afcea76821"
+                              "sha256":  "372c538b5426a75ffa0443540c0bafc6b78fecf13dc18dd0f2a6c57a6bd02fcd"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py",
@@ -6217,8 +6217,8 @@
                           },
                           {
                               "duong_dan":  "Unesco.NET.exe",
-                              "kich_thuoc":  35011584,
-                              "sha256":  "a6a9f7aafa6d44224aae1d6ffd871c9bbf3f81bda43548d3a9983a426a02a899"
+                              "kich_thuoc":  35013120,
+                              "sha256":  "b04767abfc5e5b1de4f160dc2cc7db339dd56e0330f47d9c21223ff47cdbb424"
                           },
                           {
                               "duong_dan":  "UnescoConnect.dll",
