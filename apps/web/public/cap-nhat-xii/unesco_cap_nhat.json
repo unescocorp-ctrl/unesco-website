@@ -1,17 +1,17 @@
 {
     "loai":  "unesco_cap_nhat",
     "san_pham":  "UNESCO_XII",
-    "ten":  "GD260",
-    "goi":  "GD260",
+    "ten":  "GD261",
+    "goi":  "GD261",
     "ngay":  "28/11/2026",
-    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261128_GD260.zip",
-    "sha256":  "043bc83d4571045e2ba95561bd7f39f13f4815beeff06d5d08b2d9ef33411847",
-    "kich_thuoc":  47564522,
+    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261128_GD261.zip",
+    "sha256":  "150fbec92b5d60ce73d8a6dd7fcffe5b1d481cb8ff6b3f7df7241bfb275e05ef",
+    "kich_thuoc":  47565126,
     "co_exe":  true,
     "bat_buoc":  false,
     "exe":  "Unesco.NET.exe",
     "ghi_chu":  [
-                    "GD260: TNCN hop dong NET quy doi GROSS (thue cong ty chiu No CP / Co 3335); 05/KK phan bo theo tinh (XML chua doi chieu HTKK TT89 - ke toan kiem); uy quyen quyet toan 08/UQ + chung tu khau tru TNCN (khong ky, khong gui); man Tuy chon het che chu + o Cho xem tren Internet (UNESCO WEB) chi Administrator."
+                    "GD261: TNCN hop dong NET - quyet toan 05/QTT va chung tu khau tru dung thu nhap quy doi (TNCN_TNQuyDoi); doi chieu Co 334 tru phan quy doi, khong bao lech gia."
                 ],
     "so_tep":  1243,
     "tep_trong_goi":  [
@@ -3623,12 +3623,12 @@
                           {
                               "duong_dan":  "AIHoaDon/phien_ban_goi.txt",
                               "kich_thuoc":  117,
-                              "sha256":  "3e9523e707ce5da552fd1043598ce4cddefadae56ce0f3a682cd478b8de898a8"
+                              "sha256":  "d7e9063bed38ea1665775d7aae7033b7dbefc08d5d2ba172ee5848ebe48c3aff"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py",
-                              "kich_thuoc":  153962,
-                              "sha256":  "d0d7734dc89db0c3908054c8d2deb7d833f484e6ce6bce5f87e64ad0cce3165a"
+                              "kich_thuoc":  155190,
+                              "sha256":  "c27287abfa10ef4ababd19723e02d4d85d90b61c407a5523f6ecdfe4bebc89e4"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py.cu_truoc_TNCN_P0_20261119",
@@ -6218,7 +6218,7 @@
                           {
                               "duong_dan":  "Unesco.NET.exe",
                               "kich_thuoc":  34941440,
-                              "sha256":  "ee7c9335905759c2a25fb2ef993fa9a54ff8568d90f8990f825f7699d73f3f5c"
+                              "sha256":  "b90b0c32bb14cf6cf64274892c9064d80f935825622114c881c7b61a05b9962c"
                           },
                           {
                               "duong_dan":  "UnescoConnect.dll",
