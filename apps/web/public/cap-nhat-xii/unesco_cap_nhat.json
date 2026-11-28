@@ -1,17 +1,17 @@
 {
     "loai":  "unesco_cap_nhat",
     "san_pham":  "UNESCO_XII",
-    "ten":  "GD265",
-    "goi":  "GD265",
+    "ten":  "GD266",
+    "goi":  "GD266",
     "ngay":  "28/11/2026",
-    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261128_GD265.zip",
-    "sha256":  "e68fbd4e0fa4df048eeb70c1b9958c01519ff4f40a89c9d74d62c7664ee487ad",
-    "kich_thuoc":  47591021,
+    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261128_GD266.zip",
+    "sha256":  "d936127bf391e4993eb158abb5317ad027b36bdc068b6dc5dff06f8ca59afec8",
+    "kich_thuoc":  47591161,
     "co_exe":  true,
     "bat_buoc":  false,
     "exe":  "Unesco.NET.exe",
     "ghi_chu":  [
-                    "GD265: BCTC TT99 het bao Thieu bang du lieu CDTS o so lap thang TT99 (tu tao bang lam viec CDTS tu CDTS2004)."
+                    "GD266: hop Tuy chon bo hai hang Dac thu cong ty va Hoa don dien tu / Dong cua HD / dat in (gia tri cu giu nguyen)."
                 ],
     "so_tep":  1243,
     "tep_trong_goi":  [
@@ -3623,7 +3623,7 @@
                           {
                               "duong_dan":  "AIHoaDon/phien_ban_goi.txt",
                               "kich_thuoc":  117,
-                              "sha256":  "372c538b5426a75ffa0443540c0bafc6b78fecf13dc18dd0f2a6c57a6bd02fcd"
+                              "sha256":  "8c5e4da6929d45ae48309ab65bd8739709bc5e5eaa8682639ebf34534d1badb5"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py",
@@ -6218,7 +6218,7 @@
                           {
                               "duong_dan":  "Unesco.NET.exe",
                               "kich_thuoc":  35013120,
-                              "sha256":  "b04767abfc5e5b1de4f160dc2cc7db339dd56e0330f47d9c21223ff47cdbb424"
+                              "sha256":  "c6905b424bba4f945cfd04b5626fdec22820fb8730fa1247802a98e53f86fb7a"
                           },
                           {
                               "duong_dan":  "UnescoConnect.dll",
