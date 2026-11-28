@@ -1,17 +1,17 @@
 {
     "loai":  "unesco_cap_nhat",
     "san_pham":  "UNESCO_XII",
-    "ten":  "GD253",
-    "goi":  "GD253",
+    "ten":  "GD254",
+    "goi":  "GD254",
     "ngay":  "28/11/2026",
-    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261128_GD253.zip",
-    "sha256":  "0b7042b54ed18467322fcf8c53c2f39d1f0278ef19a82d5d97f6a2a8eed2736d",
-    "kich_thuoc":  47480237,
+    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261128_GD254.zip",
+    "sha256":  "6d853bd9ca65e0be1de4f65cb6723210ca9de614aabfd0be34407dcdc919a968",
+    "kich_thuoc":  47480156,
     "co_exe":  true,
     "bat_buoc":  false,
     "exe":  "Unesco.NET.exe",
     "ghi_chu":  [
-                    "GD253: kich ban thang ket chuyen duoc khi chua tai HDDT neu muc ket_chuyen mang loi duyet chu DN (bo_qua_hddt, ghi ro trong bang kiem); tram khong dong/khong bao nham man Ket chuyen thanh pham an (het LOI gia o tong hop)"
+                    "GD254: thay GD253 - giong GD253 (ket chuyen co loi duyet chu DN khi chua tai HDDT; het LOI gia o tong hop) nhung BO sua doi AiBankImportService 28/11 08:54 chua thu (GD253 lo dung nham)"
                 ],
     "so_tep":  1241,
     "tep_trong_goi":  [
@@ -3618,7 +3618,7 @@
                           {
                               "duong_dan":  "AIHoaDon/phien_ban_goi.txt",
                               "kich_thuoc":  117,
-                              "sha256":  "a320c6cd25f223d4709a8d0c3a8bc5d9b3f0fa45f50a8942edb18072b802bbf5"
+                              "sha256":  "b44d710d5eff1ff016aa0d41114020e78b05d74e9518109a71403299b3183894"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py",
@@ -6207,8 +6207,8 @@
                           },
                           {
                               "duong_dan":  "Unesco.NET.exe",
-                              "kich_thuoc":  34717184,
-                              "sha256":  "d0b4d8f51f0c8e149ee88de6f83eb475c0f1481451bd27808a385e54b627e545"
+                              "kich_thuoc":  34715648,
+                              "sha256":  "d0e65653c5c5e5859148fbed3e8b17fa6824a734e75f496eefd14efa45b23280"
                           },
                           {
                               "duong_dan":  "UnescoConnect.dll",

@@ -1,9 +1,24 @@
 {
  "loai": "lich_su_cap_nhat_xii",
  "san_pham": "UNESCO_XII",
- "lap_luc": "2026-11-28 09:25",
+ "lap_luc": "2026-11-28 09:30",
  "ghi_chu_muc_luc": "Mục lục không ký. Gói có da_ky = true: nội dung lấy từ tệp mô tả đã ký <goi>.json (máy khách kiểm lại chữ ký).",
  "goi": [
+  {
+   "goi": "GD254",
+   "ngay": "28/11/2026",
+   "luc": "2026-11-28 09:30",
+   "ghi_chu": [
+    "GD254: thay GD253 - giong GD253 (ket chuyen co loi duyet chu DN khi chua tai HDDT; het LOI gia o tong hop) nhung BO sua doi AiBankImportService 28/11 08:54 chua thu (GD253 lo dung nham)"
+   ],
+   "so_tep": 1241,
+   "kich_thuoc": 47480156,
+   "co_exe": true,
+   "exe_sha256": "d0e65653c5c5e5859148fbed3e8b17fa6824a734e75f496eefd14efa45b23280",
+   "tep": "GD254.json",
+   "nguon": "kenh",
+   "da_ky": true
+  },
   {
    "goi": "GD253",
    "ngay": "28/11/2026",
