@@ -1,9 +1,24 @@
 {
  "loai": "lich_su_cap_nhat_xii",
  "san_pham": "UNESCO_XII",
- "lap_luc": "2026-11-28 11:00",
+ "lap_luc": "2026-11-28 11:13",
  "ghi_chu_muc_luc": "Mục lục không ký. Gói có da_ky = true: nội dung lấy từ tệp mô tả đã ký <goi>.json (máy khách kiểm lại chữ ký).",
  "goi": [
+  {
+   "goi": "GD256",
+   "ngay": "28/11/2026",
+   "luc": "2026-11-28 11:13",
+   "ghi_chu": [
+    "GD256: bo so phu (nhap, phan tich, ghi so; muc tin cay theo loai tep - anh/PDF scan can xem lai; ky KHONG DAT chan tu ghi; luoi goi y hien so/ngay/tien HD; doc anh khong tran dong; tach thue phi NH theo HD); chot chan trung thue phi NH; kiem cuoi ky CP05/CP06/CP08/CP12 + TNCN PIT08-16 (chi canh bao). Chua gom thue P3/TNCN bang luong."
+   ],
+   "so_tep": 1241,
+   "kich_thuoc": 47500307,
+   "co_exe": true,
+   "exe_sha256": "b609ad89f1c2ef98ff64bb6eeb4b656418148ba44b64dae2f979262175a7dbdd",
+   "tep": "GD256.json",
+   "nguon": "kenh",
+   "da_ky": true
+  },
   {
    "goi": "GD255",
    "ngay": "28/11/2026",
