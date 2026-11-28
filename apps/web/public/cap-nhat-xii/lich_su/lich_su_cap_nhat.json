@@ -1,9 +1,24 @@
 {
  "loai": "lich_su_cap_nhat_xii",
  "san_pham": "UNESCO_XII",
- "lap_luc": "2026-11-28 11:13",
+ "lap_luc": "2026-11-28 11:29",
  "ghi_chu_muc_luc": "Mục lục không ký. Gói có da_ky = true: nội dung lấy từ tệp mô tả đã ký <goi>.json (máy khách kiểm lại chữ ký).",
  "goi": [
+  {
+   "goi": "GD257",
+   "ngay": "28/11/2026",
+   "luc": "2026-11-28 11:29",
+   "ghi_chu": [
+    "GD257: kiem thue P3 (C09-C14, CP09-CP11; chi de xuat cho ke toan; giam 30% khong ap DN von nuoc ngoai) + TNCN (PIT01-07 tinh thue bang luong; tu ap 10% thoi vu / 20% khong cu tru, thang da co so khong tinh lai; 3 o co moi o man Nhan vien). Chu DN cho sua tep chot modSAS.vb."
+   ],
+   "so_tep": 1241,
+   "kich_thuoc": 47518351,
+   "co_exe": true,
+   "exe_sha256": "823fd6f1a5dab3dcf9e4a9f7f0dff3de7c93401bad1b4454261a3489f0a836fe",
+   "tep": "GD257.json",
+   "nguon": "kenh",
+   "da_ky": true
+  },
   {
    "goi": "GD256",
    "ngay": "28/11/2026",
