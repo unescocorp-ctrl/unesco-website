@@ -1,17 +1,17 @@
 {
     "loai":  "unesco_cap_nhat",
     "san_pham":  "UNESCO_XII",
-    "ten":  "GD267",
-    "goi":  "GD267",
+    "ten":  "GD268",
+    "goi":  "GD268",
     "ngay":  "28/11/2026",
-    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261128_GD267.zip",
-    "sha256":  "fb2fc61851e58a722e17a8d33d6db2206866bfffa8947d867fb329fa58f3666f",
-    "kich_thuoc":  47591144,
+    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261128_GD268.zip",
+    "sha256":  "808fd5be0a941c4f7005ae85c622f63dca90d264eb249295f12f7e3aa404d2b9",
+    "kich_thuoc":  47591330,
     "co_exe":  true,
     "bat_buoc":  false,
     "exe":  "Unesco.NET.exe",
     "ghi_chu":  [
-                    "GD267: man Bien ban chot va ban giao ho so an nut Mau in cu (dung bien ban Word)."
+                    "GD268: nut Xoa toan bo chung tu hien thi chi hien voi Administrator; nguoi dung khac xoa tung phieu."
                 ],
     "so_tep":  1243,
     "tep_trong_goi":  [
@@ -3623,7 +3623,7 @@
                           {
                               "duong_dan":  "AIHoaDon/phien_ban_goi.txt",
                               "kich_thuoc":  117,
-                              "sha256":  "67438222e2f31544579a3326f62cdd8bc800b8a464c8b256cc16b72b8ad8fc23"
+                              "sha256":  "c8167b2c170dba0e6cada06e732513ee5634d0fa7acc06ce0913c36660d06a59"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py",
@@ -6218,7 +6218,7 @@
                           {
                               "duong_dan":  "Unesco.NET.exe",
                               "kich_thuoc":  35013120,
-                              "sha256":  "f347e7e54a95251a6485cec72e01f565a00d0bd7c0c8273b70d6fd52e79ffcf5"
+                              "sha256":  "1cc2a105f31976e3697db68ea17dbf3dbed655d89082de25baba275606adf084"
                           },
                           {
                               "duong_dan":  "UnescoConnect.dll",

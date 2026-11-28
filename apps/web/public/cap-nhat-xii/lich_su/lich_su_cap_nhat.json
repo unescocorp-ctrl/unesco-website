@@ -1,9 +1,24 @@
 {
  "loai": "lich_su_cap_nhat_xii",
  "san_pham": "UNESCO_XII",
- "lap_luc": "2026-11-28 16:50",
+ "lap_luc": "2026-11-28 17:00",
  "ghi_chu_muc_luc": "Mục lục không ký. Gói có da_ky = true: nội dung lấy từ tệp mô tả đã ký <goi>.json (máy khách kiểm lại chữ ký).",
  "goi": [
+  {
+   "goi": "GD268",
+   "ngay": "28/11/2026",
+   "luc": "2026-11-28 17:00",
+   "ghi_chu": [
+    "GD268: nut Xoa toan bo chung tu hien thi chi hien voi Administrator; nguoi dung khac xoa tung phieu."
+   ],
+   "so_tep": 1243,
+   "kich_thuoc": 47591330,
+   "co_exe": true,
+   "exe_sha256": "1cc2a105f31976e3697db68ea17dbf3dbed655d89082de25baba275606adf084",
+   "tep": "GD268.json",
+   "nguon": "kenh",
+   "da_ky": true
+  },
   {
    "goi": "GD267",
    "ngay": "28/11/2026",
