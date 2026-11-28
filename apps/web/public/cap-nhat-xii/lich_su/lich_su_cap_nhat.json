@@ -1,9 +1,27 @@
 {
  "loai": "lich_su_cap_nhat_xii",
  "san_pham": "UNESCO_XII",
- "lap_luc": "2026-11-28 11:40",
+ "lap_luc": "2026-11-28 12:32",
  "ghi_chu_muc_luc": "Mục lục không ký. Gói có da_ky = true: nội dung lấy từ tệp mô tả đã ký <goi>.json (máy khách kiểm lại chữ ký).",
  "goi": [
+  {
+   "goi": "GD259",
+   "ngay": "28/11/2026",
+   "luc": "2026-11-28 12:32",
+   "ghi_chu": [
+    "GD259: TNCN bang luong tu ap 10% thoi vu / 20% khong cu tru tu thang 11/2026 (so chua dat tham so); NPT so nam-thang; tran tien an 1",
+    "2tr tu 01/07/2026; giam tru theo luat 15",
+    "5/6",
+    "2tr, o Muc tinh thue/Gia canh hien muc luat; TNCN thu nhap khac (lai vay, co tuc, ban quyen, trung thuong, thue tai san) - chi de xuat but toan."
+   ],
+   "so_tep": 1241,
+   "kich_thuoc": 47531654,
+   "co_exe": true,
+   "exe_sha256": "9090ac05565432d6c1b2374ebbb73486ed18a9a8c20a3e8444279acaab1345c7",
+   "tep": "GD259.json",
+   "nguon": "kenh",
+   "da_ky": true
+  },
   {
    "goi": "GD258",
    "ngay": "28/11/2026",
