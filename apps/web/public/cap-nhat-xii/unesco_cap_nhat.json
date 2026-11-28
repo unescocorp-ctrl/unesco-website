@@ -1,17 +1,17 @@
 {
     "loai":  "unesco_cap_nhat",
     "san_pham":  "UNESCO_XII",
-    "ten":  "GD269",
-    "goi":  "GD269",
+    "ten":  "GD270",
+    "goi":  "GD270",
     "ngay":  "28/11/2026",
-    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261128_GD269.zip",
-    "sha256":  "44f6d69756e481cb789382b18be95347fd9609fc50c8a5b90e2fbcb8585310d1",
-    "kich_thuoc":  47591340,
+    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261128_GD270.zip",
+    "sha256":  "44b938b319bb9dd3e5ea51f0055b76932bca520ac85a3c8f1e0dcb09dfac63f1",
+    "kich_thuoc":  47596589,
     "co_exe":  true,
     "bat_buoc":  false,
     "exe":  "Unesco.NET.exe",
     "ghi_chu":  [
-                    "GD269: muc Dang ky may in (menu He thong, Ctrl+P) mo cho moi nguoi dung. Chu DN cho sua tep chot FormMain.vb."
+                    "Trả lương (đặc tả 28/11): máy trích lương chỉ lập BHDN / BHNV / CPNV, không tự lập phiếu chi lương CLNV; thêm đối soát TK 334 (chi vượt, chi trùng với sổ phụ → dừng chờ kế toán).,Sửa Host chết ở bước trích lương (màn Chấm công ẩn đọc nhãn màn chính)."
                 ],
     "so_tep":  1243,
     "tep_trong_goi":  [
@@ -3623,7 +3623,7 @@
                           {
                               "duong_dan":  "AIHoaDon/phien_ban_goi.txt",
                               "kich_thuoc":  117,
-                              "sha256":  "fd592e7d919cf2ea83fac52613847298972b865983b7d4bd10bfe7c6660503d0"
+                              "sha256":  "93ecfa2932023f6eccc2dc2b60cee9e305d00d52577d6d21ce628cda982dcb82"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py",
@@ -6217,8 +6217,8 @@
                           },
                           {
                               "duong_dan":  "Unesco.NET.exe",
-                              "kich_thuoc":  35013120,
-                              "sha256":  "dfa5fe6e5ed6b643b2f964c2dc25ab3203561e3538c0ff080b21b870d557dc8e"
+                              "kich_thuoc":  35031040,
+                              "sha256":  "78e677c00ba23f22c668e8b9609bd407a2d48dc471a2c9887854122b02e7583d"
                           },
                           {
                               "duong_dan":  "UnescoConnect.dll",
