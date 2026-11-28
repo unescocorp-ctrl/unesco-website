@@ -1,9 +1,24 @@
 {
  "loai": "lich_su_cap_nhat_xii",
  "san_pham": "UNESCO_XII",
- "lap_luc": "2026-11-28 17:00",
+ "lap_luc": "2026-11-28 17:05",
  "ghi_chu_muc_luc": "Mục lục không ký. Gói có da_ky = true: nội dung lấy từ tệp mô tả đã ký <goi>.json (máy khách kiểm lại chữ ký).",
  "goi": [
+  {
+   "goi": "GD269",
+   "ngay": "28/11/2026",
+   "luc": "2026-11-28 17:05",
+   "ghi_chu": [
+    "GD269: muc Dang ky may in (menu He thong, Ctrl+P) mo cho moi nguoi dung. Chu DN cho sua tep chot FormMain.vb."
+   ],
+   "so_tep": 1243,
+   "kich_thuoc": 47591340,
+   "co_exe": true,
+   "exe_sha256": "dfa5fe6e5ed6b643b2f964c2dc25ab3203561e3538c0ff080b21b870d557dc8e",
+   "tep": "GD269.json",
+   "nguon": "kenh",
+   "da_ky": true
+  },
   {
    "goi": "GD268",
    "ngay": "28/11/2026",

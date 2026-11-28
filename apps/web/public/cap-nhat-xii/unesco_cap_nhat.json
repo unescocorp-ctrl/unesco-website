@@ -1,17 +1,17 @@
 {
     "loai":  "unesco_cap_nhat",
     "san_pham":  "UNESCO_XII",
-    "ten":  "GD268",
-    "goi":  "GD268",
+    "ten":  "GD269",
+    "goi":  "GD269",
     "ngay":  "28/11/2026",
-    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261128_GD268.zip",
-    "sha256":  "808fd5be0a941c4f7005ae85c622f63dca90d264eb249295f12f7e3aa404d2b9",
-    "kich_thuoc":  47591330,
+    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261128_GD269.zip",
+    "sha256":  "44f6d69756e481cb789382b18be95347fd9609fc50c8a5b90e2fbcb8585310d1",
+    "kich_thuoc":  47591340,
     "co_exe":  true,
     "bat_buoc":  false,
     "exe":  "Unesco.NET.exe",
     "ghi_chu":  [
-                    "GD268: nut Xoa toan bo chung tu hien thi chi hien voi Administrator; nguoi dung khac xoa tung phieu."
+                    "GD269: muc Dang ky may in (menu He thong, Ctrl+P) mo cho moi nguoi dung. Chu DN cho sua tep chot FormMain.vb."
                 ],
     "so_tep":  1243,
     "tep_trong_goi":  [
@@ -3623,7 +3623,7 @@
                           {
                               "duong_dan":  "AIHoaDon/phien_ban_goi.txt",
                               "kich_thuoc":  117,
-                              "sha256":  "c8167b2c170dba0e6cada06e732513ee5634d0fa7acc06ce0913c36660d06a59"
+                              "sha256":  "fd592e7d919cf2ea83fac52613847298972b865983b7d4bd10bfe7c6660503d0"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py",
@@ -6218,7 +6218,7 @@
                           {
                               "duong_dan":  "Unesco.NET.exe",
                               "kich_thuoc":  35013120,
-                              "sha256":  "1cc2a105f31976e3697db68ea17dbf3dbed655d89082de25baba275606adf084"
+                              "sha256":  "dfa5fe6e5ed6b643b2f964c2dc25ab3203561e3538c0ff080b21b870d557dc8e"
                           },
                           {
                               "duong_dan":  "UnescoConnect.dll",
