@@ -1,9 +1,24 @@
 {
  "loai": "lich_su_cap_nhat_xii",
  "san_pham": "UNESCO_XII",
- "lap_luc": "2026-11-28 11:29",
+ "lap_luc": "2026-11-28 11:40",
  "ghi_chu_muc_luc": "Mục lục không ký. Gói có da_ky = true: nội dung lấy từ tệp mô tả đã ký <goi>.json (máy khách kiểm lại chữ ký).",
  "goi": [
+  {
+   "goi": "GD258",
+   "ngay": "28/11/2026",
+   "luc": "2026-11-28 11:40",
+   "ghi_chu": [
+    "GD258: ky to khai 05/KK-TNCN: theo quy tu ky thang 4/2026 (lich viec, ky mac dinh man bao cao); kk_tncn canh bao quy 2/2026 chuyen tiep (thang 4 da khai thang thi tru ra)."
+   ],
+   "so_tep": 1241,
+   "kich_thuoc": 47518628,
+   "co_exe": true,
+   "exe_sha256": "bd6c2c5f0b6a9457dc809288c11063d871c8b8a77b29435e4dd0e5164e384124",
+   "tep": "GD258.json",
+   "nguon": "kenh",
+   "da_ky": true
+  },
   {
    "goi": "GD257",
    "ngay": "28/11/2026",

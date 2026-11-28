@@ -1,17 +1,17 @@
 {
     "loai":  "unesco_cap_nhat",
     "san_pham":  "UNESCO_XII",
-    "ten":  "GD257",
-    "goi":  "GD257",
+    "ten":  "GD258",
+    "goi":  "GD258",
     "ngay":  "28/11/2026",
-    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261128_GD257.zip",
-    "sha256":  "ce767e8cae4eb7985f1ecbb0f6a51db0e3526170e2862750b28d74e3ba84c2ca",
-    "kich_thuoc":  47518351,
+    "tep":  "GOI_CAP_NHAT_KHACH_UNESCO_XII_20261128_GD258.zip",
+    "sha256":  "ba62e7b662876fc3cbf55c16e6d6c1714d8744332831abf8a54033e58535c331",
+    "kich_thuoc":  47518628,
     "co_exe":  true,
     "bat_buoc":  false,
     "exe":  "Unesco.NET.exe",
     "ghi_chu":  [
-                    "GD257: kiem thue P3 (C09-C14, CP09-CP11; chi de xuat cho ke toan; giam 30% khong ap DN von nuoc ngoai) + TNCN (PIT01-07 tinh thue bang luong; tu ap 10% thoi vu / 20% khong cu tru, thang da co so khong tinh lai; 3 o co moi o man Nhan vien). Chu DN cho sua tep chot modSAS.vb."
+                    "GD258: ky to khai 05/KK-TNCN: theo quy tu ky thang 4/2026 (lich viec, ky mac dinh man bao cao); kk_tncn canh bao quy 2/2026 chuyen tiep (thang 4 da khai thang thi tru ra)."
                 ],
     "so_tep":  1241,
     "tep_trong_goi":  [
@@ -3532,8 +3532,8 @@
                           },
                           {
                               "duong_dan":  "AIHoaDon/kk_tncn.py",
-                              "kich_thuoc":  37006,
-                              "sha256":  "5f8504ea74bee155df45af7aecb567a1602daf2a0658e040198e34c4c7008f9d"
+                              "kich_thuoc":  37455,
+                              "sha256":  "719b7eb27c61704d6da11072b04d5f7d4df6f097afc3bc9e576fcb4e04727ecd"
                           },
                           {
                               "duong_dan":  "AIHoaDon/kk_tncn.py.cu_truoc_TNCN_P0_20261119",
@@ -3618,7 +3618,7 @@
                           {
                               "duong_dan":  "AIHoaDon/phien_ban_goi.txt",
                               "kich_thuoc":  117,
-                              "sha256":  "e0aaac3e578705f7b91bd0100227bac839a0397eac54263bac02138949749337"
+                              "sha256":  "53d603e28a2bc80fffb0b42c8bdd1f0d6aae56c64805ffc3f4e140bb154c5794"
                           },
                           {
                               "duong_dan":  "AIHoaDon/qtt_tncn.py",
@@ -6208,7 +6208,7 @@
                           {
                               "duong_dan":  "Unesco.NET.exe",
                               "kich_thuoc":  34840576,
-                              "sha256":  "823fd6f1a5dab3dcf9e4a9f7f0dff3de7c93401bad1b4454261a3489f0a836fe"
+                              "sha256":  "bd6c2c5f0b6a9457dc809288c11063d871c8b8a77b29435e4dd0e5164e384124"
                           },
                           {
                               "duong_dan":  "UnescoConnect.dll",
